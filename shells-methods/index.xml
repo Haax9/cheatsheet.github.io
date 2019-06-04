@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shells Methods on DocDock Documentation</title>
+    <link>/shells-methods/</link>
+    <description>Recent content in Shells Methods on DocDock Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/shells-methods/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/bind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/bind/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/methodology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/methodology/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/reverse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/reverse/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/tty_full/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/tty_full/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/webshell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/webshell/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/windows/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -12,10 +12,757 @@
     
     <item>
       <title>Test</title>
-      <link>/osint/pagetest/</link>
+      <link>/cryptography/aes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/osint/pagetest/</guid>
+      <guid>/cryptography/aes/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/cryptography/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cryptography/misc/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/cryptography/rsa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cryptography/rsa/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/linux-systems/todo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/todo/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/network/arp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/arp/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/network/dns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/dns/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/network/icmp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/icmp/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/network/ldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/ldap/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/network/mac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/mac/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/network/pivot_techniques/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/pivot_techniques/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/buscador/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/buscador/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/belati/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/belati/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/danger_zone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/danger_zone/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/datasploit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/datasploit/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/gasmask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/gasmask/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/osint-spy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/osint-spy/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/omnibus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/omnibus/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/recon-ng/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/recon-ng/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/recondog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/recondog/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/frameworks-correlation/spiderfoot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/frameworks-correlation/spiderfoot/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/general/firefox_addons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/general/firefox_addons/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/hosting-and-repositories/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/hosting-and-repositories/github/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/email/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/email/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/leaks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/leaks/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/searchingsomeone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/skiptracer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/skiptracer/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/facebook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/facebook/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/general/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/general/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/instagram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/multi_networks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/multi_networks/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/tinder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/tinder/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/twitter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/twitter/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/company_meta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/company_meta/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/domain_ip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/dorks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/dorks/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/photon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/photon/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/typofinder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/typofinder/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/open-source-intelligence-osint/technical-recon/web_application_firewall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/web_application_firewall/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/other-systems/todo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/todo/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/passcracking-hashfiles/todo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/todo/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/recon-enumeration/active-recon-scans/application_scan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/active-recon-scans/application_scan/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/recon-enumeration/active-recon-scans/aquatone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/active-recon-scans/aquatone/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/recon-enumeration/active-recon-scans/nmap_cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/active-recon-scans/nmap_cheatsheet/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/recon-enumeration/active-recon-scans/tcp_udp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/active-recon-scans/tcp_udp/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/recon-enumeration/active-recon-scans/vhost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/active-recon-scans/vhost/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/recon-enumeration/services-enumeration/todo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/todo/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/bind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/bind/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/methodology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/methodology/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/reverse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/reverse/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/tty_full/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/tty_full/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/webshell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/webshell/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/shells-methods/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/windows/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/client-side-injections/csrf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/client-side-injections/csrf/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/client-side-injections/xss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/client-side-injections/xss/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/content-management-system-cms/drupal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/drupal/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/content-management-system-cms/joomla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/joomla/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/content-management-system-cms/magento/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/magento/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/content-management-system-cms/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/others/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/content-management-system-cms/wordpress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/wordpress/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/files-inclusions-and-injections/file_upload/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/files-inclusions-and-injections/file_upload/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/files-inclusions-and-injections/lfi_rfi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/files-inclusions-and-injections/lfi_rfi/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/files-inclusions-and-injections/xslt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/files-inclusions-and-injections/xslt/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/files-inclusions-and-injections/xxe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/files-inclusions-and-injections/xxe/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/headers_injections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/headers_injections/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/misc_others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/misc_others/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/php-functions-vulnerabilities/assert/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-functions-vulnerabilities/assert/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/php-functions-vulnerabilities/php_filters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-functions-vulnerabilities/php_filters/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/php-functions-vulnerabilities/preg_match_eval/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-functions-vulnerabilities/preg_match_eval/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/php-functions-vulnerabilities/preg_replace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-functions-vulnerabilities/preg_replace/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/php-functions-vulnerabilities/serialization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-functions-vulnerabilities/serialization/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/php-functions-vulnerabilities/tricks_others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-functions-vulnerabilities/tricks_others/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/php-functions-vulnerabilities/type_juggling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-functions-vulnerabilities/type_juggling/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/server-side-injections/ldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/ldap/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/server-side-injections/nosql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/nosql/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/server-side-injections/sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/sql/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/server-side-injections/ssrf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/ssrf/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/web-attacks/server-side-injections/xpath/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/xpath/</guid>
+      <description>Ceci est une page de test Ceci est un contenu de test</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/windows-systems/todo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/todo/</guid>
       <description>Ceci est une page de test Ceci est un contenu de test</description>
     </item>
     
