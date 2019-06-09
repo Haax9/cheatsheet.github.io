@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Passcracking Hash&amp;Files on DocDock Documentation</title>
+    <title>Passcracking Hash &amp; Files on Offensive Security Cheatsheet</title>
     <link>/passcracking-hashfiles/</link>
-    <description>Recent content in Passcracking Hash&amp;Files on DocDock Documentation</description>
+    <description>Recent content in Passcracking Hash &amp; Files on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -11,12 +11,31 @@
     
     
     <item>
-      <title>Test</title>
-      <link>/passcracking-hashfiles/todo/</link>
+      <title>Hashcat Cheatsheet</title>
+      <link>/passcracking-hashfiles/hashcat_cheatsheet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/passcracking-hashfiles/todo/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/passcracking-hashfiles/hashcat_cheatsheet/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>John Cheatsheet</title>
+      <link>/passcracking-hashfiles/john_cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/john_cheatsheet/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>Cracking files</title>
+      <link>/passcracking-hashfiles/cracking_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/cracking_files/</guid>
+      <description>Cracking archives # RAR rar2john file.rar &amp;gt; rar_hashes.txt john --wordlist=passwords.txt rar_hashes.txt # ZIP zip2john file.rar &amp;gt; zip_hashes.txt john --wordlist=passwords.txt zip_hashes.txt # ZIP Using fcrackzip fcrackzip -u -D -p rockyou.txt recup.zip 
+Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --wordlist=/home/user/Desktop/Certifs/OSCP/Tools/Wordlist/Bruteforce/rockyou.txt --rules shadowjohn.txt john --show shadowjohn.txt # Hashcat SHA512 $6$ shadow file hashcat -m 1800 -a 0 hash.txt rockyou.txt --username #Hashcat MD5 $1$ shadow file hashcat -m 500 -a 0 hash.</description>
     </item>
     
   </channel>

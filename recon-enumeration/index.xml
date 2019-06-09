@@ -1,68 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Recon - Enumerations on DocDock Documentation</title>
+    <title>Recon - Enumeration on Offensive Security Cheatsheet</title>
     <link>/recon-enumeration/</link>
-    <description>Recent content in Recon - Enumerations on DocDock Documentation</description>
+    <description>Recent content in Recon - Enumeration on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
 	<atom:link href="/recon-enumeration/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/application_scan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/application_scan/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/aquatone/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/aquatone/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/nmap_cheatsheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/nmap_cheatsheet/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/tcp_udp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/tcp_udp/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/vhost/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/vhost/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/services-enumeration/todo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/services-enumeration/todo/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
     
   </channel>
 </rss>

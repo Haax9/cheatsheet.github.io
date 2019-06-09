@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Buffer Overflow (BoF) on Offensive Security Cheatsheet</title>
+    <link>/pwn/buffer-overflow/</link>
+    <description>Recent content in Buffer Overflow (BoF) on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/pwn/buffer-overflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Easy - No Protections</title>
+      <link>/pwn/buffer-overflow/easy_no_protection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pwn/buffer-overflow/easy_no_protection/</guid>
+      <description>Simple Buffer Overflow (no protection) - Function call # Code void copy_ordre(char *arg) { char ordre[50]; strcpy(ordre,arg); printf(&amp;#34;\nOrdre reçu : %s\n\n&amp;#34;,ordre); } int main(int argc, char** argv) { if(argc &amp;lt; 2) { printf(&amp;#34;Bienvenue, humain. Donnez-nous vos ordres. En cas de bonne réponse, nous vous épargnerons. Le cas échéant, nous détruirons la terre.\n&amp;#34;); printf(&amp;#34;Usage: %s &amp;lt;ordre&amp;gt;\n&amp;#34;, argv[0]); exit(0); } printf(&amp;#34;Bienvenue, humain. Donnez-nous vos ordres. En cas de bonne réponse, nous vous épargnerons.</description>
+    </item>
+    
+  </channel>
+</rss>

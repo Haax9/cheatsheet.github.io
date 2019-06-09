@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hosting &amp; Repositories on Offensive Security Cheatsheet</title>
+    <link>/open-source-intelligence-osint/hosting-and-repositories/</link>
+    <description>Recent content in Hosting &amp; Repositories on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/open-source-intelligence-osint/hosting-and-repositories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Github</title>
+      <link>/open-source-intelligence-osint/hosting-and-repositories/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/hosting-and-repositories/github/</guid>
+      <description>Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch 
+Gitrob # Gitrob is a github scanner and crawler # Can be used to retrieve sensitive data in github repositories https://michenriksen.</description>
+    </item>
+    
+    <item>
+      <title>Amazon &amp; Digital Ocean Buckets</title>
+      <link>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</guid>
+      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
+Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.com/jordanpotti/AWSBucketDump 
+Teh S3 Bucketeers https://github.com/tomdev/teh_s3_bucketeers/ # You need an AWS account and set your API key in ~/.aws/credentials [default] aws_access_key_id = &amp;lt;key&amp;gt; aws_secret_access_key = &amp;lt;secret&amp;gt; # Then just run it ./bucketeer.sh &amp;lt;target&amp;gt; &amp;lt;target&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

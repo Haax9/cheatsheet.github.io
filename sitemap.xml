@@ -3,8 +3,507 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/recon-enumeration/services-enumeration/21_ftp/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/application-scans/</loc>
+  </url>
+  
+  <url>
+    <loc>/pwn/buffer-overflow/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/domain_ip/</loc>
+  </url>
+  
+  <url>
+    <loc>/pwn/buffer-overflow/easy_no_protection/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/general/firefox_addons/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/general/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/hosting-and-repositories/github/</loc>
+  </url>
+  
+  <url>
+    <loc>/passcracking-hashfiles/hashcat_cheatsheet/</loc>
+  </url>
+  
+  <url>
+    <loc>/other-systems/todo/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/files-inclusions-and-injections/lfi_rfi/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/port-scanning/masscan_cheatsheet/</loc>
+  </url>
+  
+  <url>
+    <loc>/shells-methods/methodology/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/php-vulnerabilities/php_filters/</loc>
+  </url>
+  
+  <url>
+    <loc>/network/pivot_techniques/</loc>
+  </url>
+  
+  <url>
+    <loc>/cryptography/rsa/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/server-side-injections/sql/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/server-side-injections/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/todo/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/todo/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/application-scans/web_application_scan/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/content-management-system-cms/wordpress/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/client-side-injections/xss/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/22_ssh/</loc>
+  </url>
+  
+  <url>
+    <loc>/cryptography/aes/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/application-scans/aquatone/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/client-side-injections/csrf/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/client-side-injections/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/content-management-system-cms/drupal/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/email/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/files-inclusions-and-injections/file_upload/</loc>
+  </url>
+  
+  <url>
+    <loc>/shells-methods/tty_full/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/</loc>
+  </url>
+  
+  <url>
+    <loc>/passcracking-hashfiles/john_cheatsheet/</loc>
+  </url>
+  
+  <url>
+    <loc>/network/ldap_dns/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/port-scanning/nmap_cheatsheet/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/server-side-injections/nosql/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/php-vulnerabilities/functions/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/port-scanning/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/twitter/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/25_smtp/</loc>
+  </url>
+  
+  <url>
+    <loc>/passcracking-hashfiles/cracking_files/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/facebook/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/files-inclusions-and-injections/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/hosting-and-repositories/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/content-management-system-cms/joomla/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/server-side-injections/ldap/</loc>
+  </url>
+  
+  <url>
+    <loc>/network/mac_arp/</loc>
+  </url>
+  
+  <url>
+    <loc>/cryptography/misc/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/php-vulnerabilities/serialization/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/leaks/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/application-scans/vhost/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/web_application_firewall/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/</loc>
+  </url>
+  
+  <url>
+    <loc>/shells-methods/webshell/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/53_dns/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/dorks/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/</loc>
+  </url>
+  
+  <url>
+    <loc>/network/icmp/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/instagram/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/content-management-system-cms/magento/</loc>
+  </url>
+  
+  <url>
+    <loc>/network/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/php-vulnerabilities/type_juggling/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/php-vulnerabilities/</loc>
+  </url>
+  
+  <url>
+    <loc>/shells-methods/reverse/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/searchingsomeone/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/files-inclusions-and-injections/xxe/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/server-side-injections/xpath/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/80_443_https/</loc>
+  </url>
+  
+  <url>
+    <loc>/shells-methods/bind/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/buscador/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/company_meta/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/content-management-system-cms/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/content-management-system-cms/others/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/server-side-injections/ssrf/</loc>
+  </url>
+  
+  <url>
+    <loc>/shells-methods/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/skiptracer/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/tinder/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/php-vulnerabilities/tricks_others/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/110_pop3/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/geolocation/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/headers_injections/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/documents_metadata/</loc>
+  </url>
+  
+  <url>
+    <loc>/shells-methods/windows/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/119_nntp/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/misc_others/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/photon/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/135_rpc/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/misc/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/</loc>
+  </url>
+  
+  <url>
+    <loc>/other-systems/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/139_445_smb/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/</loc>
+  </url>
+  
+  <url>
+    <loc>/passcracking-hashfiles/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/143_imap/</loc>
+  </url>
+  
+  <url>
+    <loc>/cryptography/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/161_162_snmp/</loc>
+  </url>
+  
+  <url>
+    <loc>/pwn/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/389_636_3269_ldap/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/995_pop3s/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/1025_nfs_iis/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/1433_mssql/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/1721_vpn/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/3306_mysql/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/3389_rdp/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/services-enumeration/4555_rsip/</loc>
   </url>
   
   <url>
@@ -13,393 +512,7 @@
   </url>
   
   <url>
-    <loc>/cryptography/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/linux-systems/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/network/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/other-systems/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/passcracking-hashfiles/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/recon-enumeration/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/shells-methods/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/cryptography/aes/</loc>
-  </url>
-  
-  <url>
-    <loc>/cryptography/misc/</loc>
-  </url>
-  
-  <url>
-    <loc>/cryptography/rsa/</loc>
-  </url>
-  
-  <url>
-    <loc>/linux-systems/todo/</loc>
-  </url>
-  
-  <url>
-    <loc>/network/arp/</loc>
-  </url>
-  
-  <url>
-    <loc>/network/dns/</loc>
-  </url>
-  
-  <url>
-    <loc>/network/icmp/</loc>
-  </url>
-  
-  <url>
-    <loc>/network/ldap/</loc>
-  </url>
-  
-  <url>
-    <loc>/network/mac/</loc>
-  </url>
-  
-  <url>
-    <loc>/network/pivot_techniques/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/buscador/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/belati/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/danger_zone/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/datasploit/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/gasmask/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/osint-spy/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/omnibus/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/recon-ng/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/recondog/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/frameworks-correlation/spiderfoot/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/general/firefox_addons/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/hosting-and-repositories/github/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/email/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/leaks/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/searchingsomeone/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/skiptracer/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/facebook/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/general/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/instagram/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/multi_networks/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/tinder/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/twitter/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/company_meta/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/documents_metadata/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/domain_ip/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/dorks/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/misc/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/photon/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/typofinder/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/web_application_firewall/</loc>
-  </url>
-  
-  <url>
-    <loc>/other-systems/todo/</loc>
-  </url>
-  
-  <url>
-    <loc>/passcracking-hashfiles/todo/</loc>
-  </url>
-  
-  <url>
-    <loc>/recon-enumeration/active-recon-scans/application_scan/</loc>
-  </url>
-  
-  <url>
-    <loc>/recon-enumeration/active-recon-scans/aquatone/</loc>
-  </url>
-  
-  <url>
-    <loc>/recon-enumeration/active-recon-scans/nmap_cheatsheet/</loc>
-  </url>
-  
-  <url>
-    <loc>/recon-enumeration/active-recon-scans/tcp_udp/</loc>
-  </url>
-  
-  <url>
-    <loc>/recon-enumeration/active-recon-scans/vhost/</loc>
-  </url>
-  
-  <url>
-    <loc>/recon-enumeration/services-enumeration/todo/</loc>
-  </url>
-  
-  <url>
-    <loc>/shells-methods/bind/</loc>
-  </url>
-  
-  <url>
-    <loc>/shells-methods/methodology/</loc>
-  </url>
-  
-  <url>
-    <loc>/shells-methods/reverse/</loc>
-  </url>
-  
-  <url>
-    <loc>/shells-methods/tty_full/</loc>
-  </url>
-  
-  <url>
-    <loc>/shells-methods/webshell/</loc>
-  </url>
-  
-  <url>
-    <loc>/shells-methods/windows/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/client-side-injections/csrf/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/client-side-injections/xss/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/content-management-system-cms/drupal/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/content-management-system-cms/joomla/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/content-management-system-cms/magento/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/content-management-system-cms/others/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/content-management-system-cms/wordpress/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/files-inclusions-and-injections/file_upload/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/files-inclusions-and-injections/lfi_rfi/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/files-inclusions-and-injections/xslt/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/files-inclusions-and-injections/xxe/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/headers_injections/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/misc_others/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/php-functions-vulnerabilities/assert/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/php-functions-vulnerabilities/php_filters/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/php-functions-vulnerabilities/preg_match_eval/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/php-functions-vulnerabilities/preg_replace/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/php-functions-vulnerabilities/serialization/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/php-functions-vulnerabilities/tricks_others/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/php-functions-vulnerabilities/type_juggling/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/server-side-injections/ldap/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/server-side-injections/nosql/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/server-side-injections/sql/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/server-side-injections/ssrf/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/server-side-injections/xpath/</loc>
-  </url>
-  
-  <url>
-    <loc>/windows-systems/todo/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/windows-systems/</loc>
     <priority>0</priority>
   </url>
   

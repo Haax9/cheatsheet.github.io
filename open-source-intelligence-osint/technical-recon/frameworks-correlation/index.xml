@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Frameworks &amp; Correlation on Offensive Security Cheatsheet</title>
+    <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/</link>
+    <description>Recent content in Frameworks &amp; Correlation on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recon-ng</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/</guid>
+      <description>General Informations https://bitbucket.org/LaNMaSteR53/recon-ng/wiki/Usage%20Guide # Its possible to add your own modules # Reconnaissance → Usage of open sources (passive) # Discovery → More active, packets sent to target # After loading a module, the context of the framework changes, and a new set of commands and options are available. # These commands and options are unique to the module. (help / show) 
+Usage # Add API keys &amp;gt; keys add shodan_api &amp;lt;key&amp;gt; &amp;gt; keys list # Modules &amp;gt; show modules &amp;gt; search &amp;lt;string&amp;gt; &amp;gt; use recon/domains-hosts/builtwith &amp;gt; show infos &amp;gt; set &amp;lt;param&amp;gt; &amp;lt;value&amp;gt; # Workspaces &amp;gt; show workspaces &amp;gt; workspaces list &amp;gt; workspaces add Name &amp;gt; workspaces select &amp;lt;ws&amp;gt; # Add companies and domains to a schema &amp;gt; show schema &amp;gt; add compagnies company &amp;gt; add domains domain.</description>
+    </item>
+    
+    <item>
+      <title>Gasmak</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/</guid>
+      <description>General Informations https://github.com/twelvesec/gasmask # All in one information gathering tool # Automated tool used to gather information on the following sources : # - ask, bing, crt, censys.io, dns, dnsdumpster, dogpile, github # - google, googleplus, instagram, linkedin, netcraft, pgp # - reddit, reverse dns, twitter, vhosts, virustotal, whois, # - yahoo, yandex, youtube # 2 modes : Basic &amp;amp; Nongoogle # - whois/dns/reverse DNS/bing virtual hosts # - search in other engines # API Keys needed : shodan, censys,</description>
+    </item>
+    
+    <item>
+      <title>Omnibus</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</guid>
+      <description>General Informations https://github.com/InQuest/omnibus # An Omnibus is defined as a volume containing several novels or other items previously published separately # and that is exactly what the InQuest Omnibus project intends to be for Open Source Intelligence collection, research, and artifact management. # By providing an easy to use interactive command line application, users are able to create sessions to investigate various artifacts such as # IP addresses, domain names, email addresses, usernames, file hashes, Bitcoin addresses, and more as we continue to expand.</description>
+    </item>
+    
+    <item>
+      <title>Spiderfoot</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</guid>
+      <description>General Informations https://github.com/smicallef/spiderfoot https://www.spiderfoot.net/documentation/ # Query over 100 OSINT sources (IP, domain names, email, names and more) # Select the target, pick modules and spiderfoot will collect and build links # You can identify data leaks, vulnerabilities or sensitive information # Windows and Linux # Needed API Keys : Honeypot Checker, Shodan, VirusTotal, IBM X-Force Exchange # MalwarePatrol, BotScout, Cymon.io, Censys.io, Hunter.io, AlienVault OTX, ClearBit # BuiltWith, FraudGuard, IPinfo.io, CIRCL.</description>
+    </item>
+    
+    <item>
+      <title>Datasploit</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/</guid>
+      <description>General Informations # Performs automated OSINT on a domain / email / username / IP and find out relevant information from different sources. # Easy to contribute OSINT Framework. # Code for Banner, Main and Output function. Datasploit automagically do rest of the things for you. # Useful for Pen-testers, Bug Bounty Hunters, Cyber Investigators, Product companies, Security Engineers, etc. # Collaborate the results, show them in a consolidated manner.</description>
+    </item>
+    
+    <item>
+      <title>Danger Zone</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/</guid>
+      <description>General Informations https://github.com/woj-ciech/Danger-zone ⇒ HORRIBLE SETUP #FuckingGoogleSearchApiModule # Correlate data between domains, ips and email addresses, present it as a graph # And store everything into Elasticsearch and JSON files # You have to edit the settings.json file in order to provide your API keys and Elestic database info # Golden Rule → Don&amp;#39;t jump to conclusions too fast 
+Usage python danger-zone.py -h usage: dangerzone.py [-h] [--email EMAIL] [--address ADDRESS] [--domain DOMAIN] [--elasticsearch] Correlate data between domains, ips and email addresses and present it as a graph.</description>
+    </item>
+    
+    <item>
+      <title>ReconDog</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/</guid>
+      <description>General Informations # Recon Dog is an all in one tool for all your basic information gathering needs. # It uses APIs to gather all the information so your identity is not exposed. # Simple and basic standalone python script # All informations seems to be extracted from API&amp;#39;s services, so it fully passive 
+Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of information about an IP address • NS Lookup: Performs name server search • Port scan: Scans the most common TCP ports • Detect CMS: Can detect more than 400 content management systems • Whois Lookup: Performs whois protocol search • Detect honeypot: Uses Shodan to identify whether the target is a honeypot • Find subdomains: Search for sub-domains using com • Reverse IP Lookup: Does an inverse IP lookup to find domains associated with an IP address • Detect technologies: Uses wappalyzer.</description>
+    </item>
+    
+    <item>
+      <title>OSINT-SPY</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/</guid>
+      <description>General Informations # Performs OSINT scan on email/domain/ip_address/organization using OSINT-SPY. # It can be used by Data Miners, Infosec Researchers, Penetration Testers and cyber crime # investigator in order to find deep information about their target. # Perform scan on IP Address / domain / email address / BTC(bitcoin) address / device # Find out latest bitcoin block information # List out all the ciphers supported by particular website and server # Check whether a particular website is vulnerable to heartbleed or not ?</description>
+    </item>
+    
+    <item>
+      <title>Belati</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/</guid>
+      <description>General Informations # Belati is tool for Collecting Public Data &amp;amp; Public Document from Website and other service for OSINT purpose. # This tools is inspired by Foca and Datasploit for OSINT # Might need root privileges to executes all tools # Like nmap. But it works well without root (nmap won&amp;#39;t be executed) # Not totally passive as long as it does an HTTP Banner Grabbing for earch domain/subdomain found.</description>
+    </item>
+    
+  </channel>
+</rss>

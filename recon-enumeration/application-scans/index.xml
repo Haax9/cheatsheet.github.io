@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Applications Scans on Offensive Security Cheatsheet</title>
+    <link>/recon-enumeration/application-scans/</link>
+    <description>Recent content in Applications Scans on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/recon-enumeration/application-scans/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Web Application Scans</title>
+      <link>/recon-enumeration/application-scans/web_application_scan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/application-scans/web_application_scan/</guid>
+      <description>Nikto # For web applications, you can use nikto to identify potential vulnerabilities # Not very stealth # Think about changing the default user agent ! nitko -h http://monsite.com -o output.xml -Format [csv, xml, html, txt] 
+Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ whatweb -l # Liste les plugins $ whatweb www.monsite.com $ whatweb www.monsite.com -v $ whatweb www.monsite.com -a 1 # Stealhty $ whatweb www.</description>
+    </item>
+    
+    <item>
+      <title>Aquatone</title>
+      <link>/recon-enumeration/application-scans/aquatone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/application-scans/aquatone/</guid>
+      <description>Aquatone # Aquatone is a complete tool separate in three commands to make complete recon # Collector modules : # Dictionary brute force # DNSDB.org # Google Transparency Report # HackerTarget # Netcraft # Shodan (API key needed) # ThreatCrowd # VirusTotal (API key needed) # PHASE 1 : Discovery # aquatone-discover is the first step # It uses name servers and performs some test to see if wildcard is configured # Then it asks each subdomain collector for potential subdomain # Then it tries to resolve them to see which ones are up and creates the hosts.</description>
+    </item>
+    
+    <item>
+      <title>VHOST Scanning</title>
+      <link>/recon-enumeration/application-scans/vhost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/application-scans/vhost/</guid>
+      <description> Virtual Host Scanner # Basic HTTP Scanner that&amp;#39;ll enumerate virtual hosts on a given IP # It may reveal hidden hosts # Docker ? ruby scan.rb --ip=192.168.1.101 --host=domain.tld # Options --ignore-http-codes --ignore-content-length --port --- If running on another port --wordlist --- specify an alternative location for the wordlist file --ssl --- on/off depending if you want to connect to HTTP --output --- output file</description>
+    </item>
+    
+  </channel>
+</rss>

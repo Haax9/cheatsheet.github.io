@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ports Scanning on Offensive Security Cheatsheet</title>
+    <link>/recon-enumeration/port-scanning/</link>
+    <description>Recent content in Ports Scanning on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/recon-enumeration/port-scanning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Masscan Cheatsheet</title>
+      <link>/recon-enumeration/port-scanning/masscan_cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/port-scanning/masscan_cheatsheet/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>Nmap Cheatsheet</title>
+      <link>/recon-enumeration/port-scanning/nmap_cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/port-scanning/nmap_cheatsheet/</guid>
+      <description>Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
+    </item>
+    
+  </channel>
+</rss>

