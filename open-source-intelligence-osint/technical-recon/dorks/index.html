@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-09T21:54:57 CEST">
+<meta name="revised" content="2019-06-11T23:40:45 CEST">
 <title>Dorks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -101,13 +101,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/">
             Subdomain Enumeration
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/web_application_firewall/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/web_application_firewall/">
-            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -373,6 +366,13 @@
         <div>
           <a href="/recon-enumeration/application-scans/vhost/">
             VHOST Scanning
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/recon-enumeration/application-scans/web_application_firewall/" class="dd-item">
+        <div>
+          <a href="/recon-enumeration/application-scans/web_application_firewall/">
+            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -988,7 +988,6 @@
    Technical Recon</option> 
       <option value="/open-source-intelligence-osint/technical-recon/domain_ip/" >-- Domain &amp; IP</option>
       <option value="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/" >-- Subdomain Enumeration</option>
-      <option value="/open-source-intelligence-osint/technical-recon/web_application_firewall/" >-- Web Application Firewall (WAF)</option>
       <option value="/open-source-intelligence-osint/technical-recon/dorks/"  selected>-- Dorks</option>
       <option value="/open-source-intelligence-osint/technical-recon/company_meta/" >-- Company General Informations</option>
       <option value="/open-source-intelligence-osint/technical-recon/documents_metadata/" >-- Public Documents and Metadata</option>
@@ -1054,16 +1053,6 @@
     
     
 
-<h3 id="automated-dorks-tools">Automated Dorks Tools</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># GoogD0rker (https://github.com/ZephrFish/GoogD0rker/)</span>
-./googD0rker-txt.py -d example.com
-
-
-<span style="color:#75715e"># Goohak (https://github.com/1N3/Goohak/</span>
-<span style="color:#75715e"># Just run it on a target domain</span>
-./goohak domain.com</code></pre></div>
-<p><br/></p>
-
 <h3 id="google-dorks">Google Dorks</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Google Hacking made easy</span>
 https://pentest-tools.com/information-gathering/google-hacking#
@@ -1089,6 +1078,87 @@ sites:cadres.apec.fr direction &lt;SOCIETE&gt;
 <span style="color:#d88200">&#34;périmètre de consolisation&#34;</span><span style="color:#111">|</span><span style="color:#d88200">&#34;rapport de référence&#34;</span><span style="color:#111">|</span><span style="color:#d88200">&#34;rapport annuel&#34;</span> filetype:pdf</code></pre></div>
 <p><br/></p>
 
+<h3 id="twitter-dorks">Twitter Dorks</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tweets containing word1 AND word2 (default operator)</span>
+&lt;word1&gt; &lt;word2&gt;
+
+<span style="color:#75715e"># Containing exact expression</span>
+<span style="color:#d88200">&#34;word1&#34;</span>
+
+<span style="color:#75715e"># Tweets containing word1 OR word 2</span>
+&lt;word1&gt; OR &lt;word2&gt;
+
+<span style="color:#75715e"># Containing &#34;cyber&#34; but without &#34;security&#34;</span>
+cyber -security
+
+<span style="color:#75715e"># All tweets from an account or responding to an account</span>
+from:&lt;account&gt;
+to:&lt;account&gt;
+
+<span style="color:#75715e"># Tweets after the date or before the date</span>
+&lt;word&gt; since:2015-02-20
+&lt;word&gt; <span style="color:#00a8c8">until</span>:2015-02-20
+
+<span style="color:#75715e"># Tweets positive and negative</span>
+&lt;word&gt; :<span style="color:#f92672">)</span>
+&lt;word&gt; :<span style="color:#f92672">(</span>
+
+<span style="color:#75715e"># Tweets with a question</span>
+&lt;word&gt; ?
+
+<span style="color:#75715e"># Location (city) with a distance range</span>
+near:Paris withing:25km
+
+<span style="color:#75715e"># Tweets corresponding to &#34;gaming&#34; according the filter</span>
+<span style="color:#75715e"># - safe : potentially hard or deleted</span>
+<span style="color:#75715e"># - media : pictures or videos</span>
+<span style="color:#75715e"># - retweets : only retweets</span>
+<span style="color:#75715e"># - native_video : downloaded video (Amplify, Periscope, Vine)</span>
+<span style="color:#75715e"># - periscope</span> 
+<span style="color:#75715e"># - vine</span>
+<span style="color:#75715e"># - images : identified as photos (also coming from Instagram)</span>
+<span style="color:#75715e"># - twimg : pic.twitter.com links</span>
+<span style="color:#75715e"># - links : links to an URL</span>
+gaming filter:&lt;filter&gt;</code></pre></div>
+<p><br/></p>
+
+<h3 id="github-dorks">Github Dorks</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Github dorks work a lot with filename and extension</span>
+<span style="color:#75715e"># You can build search like this</span>
+filename:bashrc
+extension:pem
+langage:bash
+
+<span style="color:#75715e"># Possible to search terms and use these keywords</span>
+<span style="color:#75715e"># Some usefull examples</span>
+extension:pem private <span style="color:#75715e"># Private SSH Keys</span>
+extension:sql mysql dump <span style="color:#75715e"># MySQL dumps</span>
+extension:sql mysql dump password <span style="color:#75715e"># MySQL dumps with passwords</span>
+filename:wp-config.php <span style="color:#75715e"># Wordpress config file</span>
+filename:.htpasswd <span style="color:#75715e"># .htpasswd</span>
+filename:.git-credentials <span style="color:#75715e"># Git stored credentials</span>
+filename:.bashrc password <span style="color:#75715e"># .bashrc files containing passwords</span>
+filename:.bash_profile aws <span style="color:#75715e"># AWS keys in .bash_profiles</span>
+extension:json mongolab.com <span style="color:#75715e"># Keys/Credentials for mongolab</span>
+HEROKU_API_KEY language:json <span style="color:#75715e"># Heroku API Keys</span>
+filename:filezilla.xml Pass <span style="color:#75715e"># FTP credentials</span>
+filename:recentservers.xml Pass <span style="color:#75715e"># FTP credentials</span>
+filename:config.php dbpasswd <span style="color:#75715e"># PHP Applications databases credentials</span>
+shodan_api_key language:python <span style="color:#75715e"># Shodan API Keys (try others languages)</span>
+filename:logins.json <span style="color:#75715e"># Firefox saved password collection (key3.db usually in same repo)</span>
+filename:settings.py SECRET_KEY <span style="color:#75715e"># Django secret keys (usually allows for session hijacking, RCE, etc)</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="automated-dorks-tools">Automated Dorks Tools</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># GoogD0rker (https://github.com/ZephrFish/GoogD0rker/)</span>
+./googD0rker-txt.py -d example.com
+
+
+<span style="color:#75715e"># Goohak (https://github.com/1N3/Goohak/</span>
+<span style="color:#75715e"># Just run it on a target domain</span>
+./goohak domain.com</code></pre></div>
+<p><br/></p>
+
 <h3 id="pagodo">Pagodo</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tool to gather dorks information and find potential vulnerable web pages</span>
 <span style="color:#75715e"># The first part is the scrapper which will get dorks and save them</span>
@@ -1102,7 +1172,7 @@ python3 pagodo.py -d example.com -g dorks.txt -l <span style="color:#ae81ff">50<
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/open-source-intelligence-osint/technical-recon/web_application_firewall/" title="Web Application Firewall (WAF)"> <i class="fa fa-chevron-left"></i><label>Web Application Firewall (WAF)</label></a>
+<a class="nav nav-prev" href="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/" title="Subdomain Enumeration"> <i class="fa fa-chevron-left"></i><label>Subdomain Enumeration</label></a>
     <a class="nav nav-next" href="/open-source-intelligence-osint/technical-recon/company_meta/" title="Company General Informations" style="margin-right: 0px;"><label>Company General Informations</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 

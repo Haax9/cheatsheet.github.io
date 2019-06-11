@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-06-11T23:40:45 CEST">
-<title>Content Management Systems (CMS) :: Offensive Security Cheatsheet</title>
+<title>Web Application Firewall (WAF) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/web-attacks/content-management-system-cms/">
+  <body data-url="/recon-enumeration/application-scans/web_application_firewall/">
     
       <header>
   <div class="logo">
@@ -334,16 +334,18 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/recon-enumeration/" class="dd-item haschildren
+    <li data-nav-id="/recon-enumeration/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/recon-enumeration/">Recon - Enumeration</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/recon-enumeration/">Recon - Enumeration</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/recon-enumeration/application-scans/" class="dd-item haschildren
+    <li data-nav-id="/recon-enumeration/application-scans/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/recon-enumeration/application-scans/">Applications Scans</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/recon-enumeration/application-scans/">Applications Scans</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/recon-enumeration/application-scans/web_application_scan/" class="dd-item">
@@ -367,7 +369,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/application-scans/web_application_firewall/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/application-scans/web_application_firewall/" class="dd-item active">
         <div>
           <a href="/recon-enumeration/application-scans/web_application_firewall/">
             Web Application Firewall (WAF)
@@ -541,11 +543,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/web-attacks/" class="dd-item parent haschildren
+    <li data-nav-id="/web-attacks/" class="dd-item haschildren
         ">
       <div>
-      <a href="/web-attacks/">Web vulnerabilities &amp; attacks</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/">Web vulnerabilities &amp; attacks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/web-attacks/server-side-injections/" class="dd-item haschildren
@@ -692,11 +693,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/web-attacks/content-management-system-cms/" class="dd-item parent active haschildren
+    <li data-nav-id="/web-attacks/content-management-system-cms/" class="dd-item haschildren
         ">
       <div>
-      <a href="/web-attacks/content-management-system-cms/">Content Management Systems (CMS)</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/content-management-system-cms/">Content Management Systems (CMS)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/web-attacks/content-management-system-cms/wordpress/" class="dd-item">
@@ -981,33 +981,24 @@
     <option value="/open-source-intelligence-osint/" >
    Open Source Intelligence (OSINT)</option>
     <option value="/recon-enumeration/" >
-   Recon - Enumeration</option>
+   Recon - Enumeration</option> 
+    <option value="/recon-enumeration/application-scans/" >
+  - 
+   Applications Scans</option> 
+      <option value="/recon-enumeration/application-scans/web_application_scan/" >-- Web Application Scans</option>
+      <option value="/recon-enumeration/application-scans/aquatone/" >-- Aquatone</option>
+      <option value="/recon-enumeration/application-scans/vhost/" >-- VHOST Scanning</option>
+      <option value="/recon-enumeration/application-scans/web_application_firewall/"  selected>-- Web Application Firewall (WAF)</option>
+  
+    <option value="/recon-enumeration/port-scanning/" >
+  - 
+   Ports Scanning</option>
+    <option value="/recon-enumeration/services-enumeration/" >
+  - 
+   Services Enumeration</option>
+  
     <option value="/web-attacks/" >
-   Web vulnerabilities &amp; attacks</option> 
-    <option value="/web-attacks/server-side-injections/" >
-  - 
-   Server Side Injections</option>
-    <option value="/web-attacks/client-side-injections/" >
-  - 
-   Client Side Injections</option>
-    <option value="/web-attacks/files-inclusions-and-injections/" >
-  - 
-   File Inclusion and Injections</option>
-    <option value="/web-attacks/php-vulnerabilities/" >
-  - 
-   PHP Vulnerabilities</option>
-    <option value="/web-attacks/content-management-system-cms/"  selected>
-  - 
-   Content Management Systems (CMS)</option> 
-      <option value="/web-attacks/content-management-system-cms/wordpress/" >-- Wordpress</option>
-      <option value="/web-attacks/content-management-system-cms/drupal/" >-- Drupal</option>
-      <option value="/web-attacks/content-management-system-cms/joomla/" >-- Joomla!</option>
-      <option value="/web-attacks/content-management-system-cms/magento/" >-- Magento</option>
-      <option value="/web-attacks/content-management-system-cms/others/" >-- MISC &amp; Others</option>
-  
-      <option value="/web-attacks/headers_injections/" >- Headers Injections</option>
-      <option value="/web-attacks/misc_others/" >- MISC &amp; Others</option>
-  
+   Web vulnerabilities &amp; attacks</option>
     <option value="/network/" >
    Network</option>
     <option value="/shells-methods/" >
@@ -1046,33 +1037,76 @@
       </div>
     
 
-    <h1>Content Management Systems (CMS)</h1>
+    <h1>Web Application Firewall (WAF)</h1>
     
     
     
+    
 
+<h3 id="general-testing-wafw00f-https-github-com-enablesecurity-wafw00f">General Testing - WAFW00F (<a href="https://github.com/EnableSecurity/wafw00f">https://github.com/EnableSecurity/wafw00f</a>)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Simple tool used to identify and fingerprint WAF</span>
+<span style="color:#75715e"># Sends a normal HTTP request and analyses the response; this identifies a number of WAF solutions</span>
+<span style="color:#75715e"># If that is not successful, it sends a number of (potentially malicious) HTTP requests and uses simple logic to deduce which WAF it is</span>
+<span style="color:#75715e"># If that is also not successful, it analyses the responses previously returned and uses another</span> 
+<span style="color:#75715e"># simple algorithm to guess if a WAF or security solution is actively responding to our attacks</span>
+./wafw00l -l
+./wafw00t https://target.com</code></pre></div>
+<p><br/></p>
 
+<h3 id="manuel-check">Manuel check</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Through telnet, you can identify if there is a WAF</span>
+telnet &lt;site/ip&gt; &lt;<span style="color:#ae81ff">80</span>/443&gt;
+GET / HTTP/1.1</code></pre></div>
+<p><br/></p>
 
-<h3 id="table-of-content">Table of Content</h3>
+<h3 id="cloudflair">CloudFlair</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># CloudFlair is a tool to find origin servers of websites protected by CloudFlare who are publicly exposed</span> 
+<span style="color:#75715e"># and don&#39;t restrict network access to the CloudFlare IP ranges as they should.</span>
 
-<ul>
-<li>Server Side Injections</li>
-<li>Client Side Injections</li>
-<li>File Inclusions and Injections</li>
-<li>PHP Vulnerabilities</li>
-<li>Content Management Systems (CMS)</li>
-<li>Headers Injections</li>
-<li>MISC &amp; Others</li>
-</ul>
+<span style="color:#75715e"># The tool uses Internet-wide scan data from Censys to find exposed IPv4 hosts</span> 
+<span style="color:#75715e"># presenting an SSL certificate associated with the target&#39;s domain name</span>
 
+<span style="color:#75715e"># Docker image is available (https://github.com/christophetd/CloudFlair)</span>
 
+<span style="color:#75715e"># Create env variable for the Censys API key</span>
+$ <span style="color:#111">export</span> <span style="color:#111">CENSYS_API_ID</span><span style="color:#f92672">=</span>...
+$ <span style="color:#111">export</span> <span style="color:#111">CENSYS_API_SECRET</span><span style="color:#f92672">=</span>...
+
+<span style="color:#75715e"># Then</span>
+python cloudflair.py myvulnerable.site
+
+<span style="color:#75715e"># Docker</span>
+docker run --rm -e <span style="color:#111">CENSYS_API_ID</span><span style="color:#f92672">=</span>your-id -e <span style="color:#111">CENSYS_API_SECRET</span><span style="color:#f92672">=</span>your-secret christophetd/cloudflair myvulnerable.site 
+
+<span style="color:#75715e"># You can also create env file</span>
+cat censys.env 
+<span style="color:#111">CENSYS_API_ID</span><span style="color:#f92672">=</span>your-id
+<span style="color:#111">CENSYS_API_SECRET</span><span style="color:#f92672">=</span>your-secret
+
+docker run --rm --env-file<span style="color:#f92672">=</span>censys.env christophetd/cloudflair myvulnerable.site</code></pre></div>
+<p><br/></p>
+
+<h3 id="cloudfail">CloudFail</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># CloudFail is a tactical reconnaissance tool which aims to gather enough information about a target</span> 
+<span style="color:#75715e"># protected by Cloudflare in the hopes of discovering the location of the server.</span> 
+<span style="color:#75715e"># Using Tor to mask all  requests, the tool as of right now has 3 different attack phases.</span>
+<span style="color:#75715e"># 1. Misconfigured DNS scan using DNSDumpster.com.</span>
+<span style="color:#75715e"># 2. Scan the Crimeflare.com database.</span>
+<span style="color:#75715e"># 3. Bruteforce scan over 2500 subdomains.</span>
+
+<span style="color:#75715e"># Classic scan</span>
+python3 cloudfail.py --target sodifrance.fr
+
+<span style="color:#75715e"># TOR scan</span>
+service tor start
+python3 cloudfail.py --target sodifrance.fr --tor</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/web-attacks/php-vulnerabilities/tricks_others/" title="Tricks &amp; Others"> <i class="fa fa-chevron-left"></i><label>Tricks &amp; Others</label></a>
-    <a class="nav nav-next" href="/web-attacks/content-management-system-cms/wordpress/" title="Wordpress" style="margin-right: 0px;"><label>Wordpress</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/recon-enumeration/application-scans/vhost/" title="VHOST Scanning"> <i class="fa fa-chevron-left"></i><label>VHOST Scanning</label></a>
+    <a class="nav nav-next" href="/recon-enumeration/port-scanning/" title="Ports Scanning" style="margin-right: 0px;"><label>Ports Scanning</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1089,7 +1123,7 @@
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Web%20Attacks/Content%20Management%20System%20%28CMS%29/_index.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Recon%20-%20Enumeration/Application%20Scans/Web_Application_Firewall.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

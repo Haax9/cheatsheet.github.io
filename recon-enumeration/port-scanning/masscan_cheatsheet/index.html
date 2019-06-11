@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-09T21:54:56 CEST">
+<meta name="revised" content="2019-06-11T23:40:44 CEST">
 <title>Masscan Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -99,13 +99,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/">
             Subdomain Enumeration
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/web_application_firewall/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/web_application_firewall/">
-            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -372,6 +365,13 @@
         <div>
           <a href="/recon-enumeration/application-scans/vhost/">
             VHOST Scanning
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/recon-enumeration/application-scans/web_application_firewall/" class="dd-item">
+        <div>
+          <a href="/recon-enumeration/application-scans/web_application_firewall/">
+            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1039,8 +1039,108 @@
     
     
     
-    <p>TODO</p>
+    
 
+<h3 id="usage-and-options">Usage and Options</h3>
+
+<h5 id="target-speficication">Target speficication</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Target specification</span>
+masscan <span style="color:#ae81ff">10</span>.0.0.1 
+masscan <span style="color:#ae81ff">10</span>.0.0.0/24 <span style="color:#ae81ff">192</span>.168.1.0/24
+
+<span style="color:#75715e"># Exclude IP file</span>
+masscan <span style="color:#ae81ff">10</span>.0.0.1/24 --excludeFile &lt;file&gt;
+
+<span style="color:#75715e"># Exclude a single IP from the scan</span>
+masscan <span style="color:#ae81ff">180</span>.215.0.0/16 --exclude<span style="color:#f92672">=</span><span style="color:#ae81ff">180</span>.215.122.120</code></pre></div>
+<h5 id="port-specification">Port specification</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Port specification</span>
+masscan <span style="color:#ae81ff">10</span>.0.0.0.1 -p <span style="color:#ae81ff">80</span>
+masscan <span style="color:#ae81ff">10</span>.0.0.0.1 -p <span style="color:#ae81ff">0</span>-65535
+masscan <span style="color:#ae81ff">10</span>.0.0.0.1 -p <span style="color:#ae81ff">80</span>,443
+
+<span style="color:#75715e"># UDP Scan</span>
+masscan <span style="color:#ae81ff">10</span>.0.0.0.1 -pU <span style="color:#ae81ff">53</span></code></pre></div>
+<h5 id="timing-and-performance">Timing and Performance</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Used to scan in offline mode</span>
+<span style="color:#75715e"># It does not send any traffic but just estimate the time length</span>
+masscan <span style="color:#ae81ff">0</span>.0.0.0/24 --offline
+
+<span style="color:#75715e"># Using the rate to send X packets per second</span>
+masscan <span style="color:#ae81ff">10</span>.0.0.1/24 --rate <span style="color:#ae81ff">10000</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash Usefull options" data-lang="bash Usefull options"># Get banners from services (only few protocols supported)
+# Problem is that masscan uses his own TCP/IP stack so when the local system 
+# received a SYN-ACK from the probed target, it responds with a TST packet that 
+# kills the connection before the banner information can be grabbed.
+# You can use --source-ip to assign another IP to prevent
+masscan 10.0.0.1 --banners
+
+# Assign masscan to another IP
+masscan 10.0.0.1 --source-ip 192.168.1.200
+
+# Include a ping
+masscan 10.0.0.1 --ping
+
+# Change the default user agent
+masscan 10.0.0.1 --http-user-agent &lt;user-agent&gt;
+
+# Report only open ports
+masscan 10.0.0.1 --open-only
+
+# Save sent packet in PCAP
+masscan 10.0.0.1 --pcap &lt;filename&gt;
+
+# Print packets in terminal (ok in low rate but RIP terminal with high rates)
+masscan 10.0.0.1 --packet-trace</code></pre></div>
+<p><br/></p>
+
+<h3 id="output">Output</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Output in binary mode</span>
+massscan <span style="color:#ae81ff">10</span>.1.1.1/24 -p <span style="color:#ae81ff">80</span> -oB &lt;filename&gt;
+
+<span style="color:#75715e"># Output in XML format</span>
+massscan <span style="color:#ae81ff">10</span>.1.1.1/24 -p <span style="color:#ae81ff">80</span> -oX &lt;filename&gt;
+
+<span style="color:#75715e"># Output in grepable format</span>
+massscan <span style="color:#ae81ff">10</span>.1.1.1/24 -p <span style="color:#ae81ff">80</span> -oG &lt;filename&gt;
+
+<span style="color:#75715e"># Output in JSON format</span>
+massscan <span style="color:#ae81ff">10</span>.1.1.1/24 -p <span style="color:#ae81ff">80</span> -oJ &lt;filename&gt;
+
+<span style="color:#75715e"># Output in simple list format</span>
+massscan <span style="color:#ae81ff">10</span>.1.1.1/24 -p <span style="color:#ae81ff">80</span> -oL &lt;filename&gt;
+
+<span style="color:#75715e"># Read a binary output and writes it to the console</span>
+masscan --readscan bin-test.scan
+
+<span style="color:#75715e"># Read a binary scan and convert it to another format</span>
+masscan --readscan bin-test.scan -oX bin-test.xml</code></pre></div>
+<p><br/></p>
+
+<h3 id="complete-commands">Complete commands</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Quick port identification</span>
+<span style="color:#75715e"># - Subnet target</span>
+<span style="color:#75715e"># - Port range</span>
+<span style="color:#75715e"># - High speed</span>
+masscan <span style="color:#ae81ff">10</span>.1.1.1/24 -p <span style="color:#ae81ff">0</span>-65535 --rate <span style="color:#ae81ff">1000000</span> --open-only --http-user-agent <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span><span style="color:#d88200">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0&#34;</span><span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span> -oL <span style="color:#d88200">&#34;output.txt&#34;</span>
+
+<span style="color:#75715e"># Multiple targets specific scan</span>
+<span style="color:#75715e"># - Known ports</span>
+<span style="color:#75715e"># - Fast rate 100.000</span>
+<span style="color:#75715e"># - Banner grabbing and another source IP</span>
+<span style="color:#75715e"># - Only open ports</span>
+<span style="color:#75715e"># - Modified user-agent</span>
+masscan &lt;target1&gt; &lt;target2&gt; &lt;target3&gt; -p <span style="color:#ae81ff">80</span>,433 --rate <span style="color:#ae81ff">100000</span> --banners --open-only<span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>--http-user-agent <span style="color:#d88200">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0&#34;</span><span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>--source-ip <span style="color:#ae81ff">192</span>.168.100.200 -oL <span style="color:#d88200">&#34;output.txt&#34;</span> 
+
+<span style="color:#75715e"># TOP 20 ports scanning</span>
+<span style="color:#75715e"># Modified user-agent</span>
+<span style="color:#75715e"># Medium speed</span>
+masscan &lt;target&gt; -p <span style="color:#ae81ff">21</span>,22,23,25,53,80,110,111,135,139,143,443,445,993,995,1723,3306,3389,5900,8080<span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>--http-user-agent <span style="color:#d88200">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0&#34;</span><span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>--rate <span style="color:#ae81ff">100000</span> --oL <span style="color:#d88200">&#34;output.txt&#34;</span></code></pre></div>
 
     
     

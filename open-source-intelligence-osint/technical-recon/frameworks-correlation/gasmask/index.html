@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-09T21:54:57 CEST">
+<meta name="revised" content="2019-06-11T23:40:45 CEST">
 <title>Gasmak :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -101,13 +101,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/">
             Subdomain Enumeration
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/web_application_firewall/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/web_application_firewall/">
-            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -374,6 +367,13 @@
         <div>
           <a href="/recon-enumeration/application-scans/vhost/">
             VHOST Scanning
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/recon-enumeration/application-scans/web_application_firewall/" class="dd-item">
+        <div>
+          <a href="/recon-enumeration/application-scans/web_application_firewall/">
+            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -989,7 +989,6 @@
    Technical Recon</option> 
       <option value="/open-source-intelligence-osint/technical-recon/domain_ip/" >-- Domain &amp; IP</option>
       <option value="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/" >-- Subdomain Enumeration</option>
-      <option value="/open-source-intelligence-osint/technical-recon/web_application_firewall/" >-- Web Application Firewall (WAF)</option>
       <option value="/open-source-intelligence-osint/technical-recon/dorks/" >-- Dorks</option>
       <option value="/open-source-intelligence-osint/technical-recon/company_meta/" >-- Company General Informations</option>
       <option value="/open-source-intelligence-osint/technical-recon/documents_metadata/" >-- Public Documents and Metadata</option>
@@ -1130,17 +1129,17 @@ optional arguments:
   --count,  Print the count result and <span style="color:#111">exit</span>
   
   -R REPORT, --report REPORT, Stats on given field <span style="color:#f92672">(</span>use value <span style="color:#d88200">&#39;help&#39;</span> <span style="color:#00a8c8">for</span> listing interesting fields<span style="color:#f92672">)</span>
-						
+                        
   -B REPORT_BUCKET, --report_bucket REPORT_BUCKET,  Bucket length in report mode <span style="color:#f92672">(</span>default: <span style="color:#ae81ff">50</span><span style="color:#f92672">)</span>
-						
+                        
   -1 CENSYS_API_ID, --censys_api_id CENSYS_API_ID,  Provide the authentication ID <span style="color:#00a8c8">for</span> the censys.io search engine
   
   -2 CENSYS_API_SECRET, --censys_api_secret CENSYS_API_SECRET, Provide the secret <span style="color:#111">hash</span> <span style="color:#00a8c8">for</span> the censys.io search engine
-						
+                        
   -r, --read_api_keys, Read the API Keys stored in api_keys.txt file. <span style="color:#f92672">(</span>e.g. <span style="color:#d88200">&#39;-i censys -r&#39;</span><span style="color:#f92672">)</span>
   
   -u, --update_api_keys, Update the API Keys stored in api_keys.txt file. <span style="color:#f92672">(</span>e.g. <span style="color:#d88200">&#39;-i censys -u&#39;</span><span style="color:#f92672">)</span>
-						
+                        
   -a ASN, --asn ASN, Filter with ASN <span style="color:#f92672">(</span>e.g <span style="color:#ae81ff">5408</span> <span style="color:#00a8c8">for</span> GR-NET AS<span style="color:#f92672">)</span>
   
   -c COUNTRY, --country COUNTRY, Filter with country
@@ -1150,7 +1149,7 @@ optional arguments:
   -I CERT_ISSUER, --cert-issuer CERT_ISSUER,  Certificate issued by organization
   
   -z CERT_HOST, --cert-host CERT_HOST,  hostname Certificate is issued to
-						
+                        
   -S HTTP_SERVER, --http-server HTTP_SERVER, Server header
   
   -t HTML_TITLE, --html-title HTML_TITLE, Filter on html page title

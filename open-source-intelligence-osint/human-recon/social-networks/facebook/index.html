@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-09T21:54:57 CEST">
+<meta name="revised" content="2019-06-11T23:40:45 CEST">
 <title>Facebook :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -100,13 +100,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/">
             Subdomain Enumeration
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/web_application_firewall/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/web_application_firewall/">
-            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -374,6 +367,13 @@
         <div>
           <a href="/recon-enumeration/application-scans/vhost/">
             VHOST Scanning
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/recon-enumeration/application-scans/web_application_firewall/" class="dd-item">
+        <div>
+          <a href="/recon-enumeration/application-scans/web_application_firewall/">
+            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1095,6 +1095,120 @@ npm start
 
 <span style="color:#75715e"># Ad blocker must be disabled</span>
 <span style="color:#75715e"># When the scrapper is off, it stops tracking</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="facebook-graph-search">Facebook Graph Search</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Graph Search is a Facebook internal search engine used to get precise results when searching</span>
+<span style="color:#75715e"># Facebook need to be in English version to activate the Graph Search</span>
+
+<span style="color:#75715e"># Classic requests are like in natural language</span>
+Photos of my friends
+
+<span style="color:#75715e"># But some requests give bad results or false positive</span>
+<span style="color:#75715e"># Alternative is using the Graph Search through the URL</span>
+facebook.com/search/str/&lt;search&gt;</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Track you Facebook activity</span>
+My favorites pages
+My favorites music
+Books I like
+Photos I have liked
+Photos have I like that are recent
+Places visited by me
+Places nearby I visited
+Games I like
+...</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># View photos of friends or even strangers</span>
+Photos of my friends
+Photos of my friends of friends taken in &lt;Place&gt;
+Photos of people named <span style="color:#f92672">[</span>Name<span style="color:#f92672">]</span>
+Photos of <span style="color:#f92672">(</span>or uploaded by<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Name<span style="color:#f92672">]</span>
+Photos of <span style="color:#f92672">[</span>Name<span style="color:#f92672">]</span> in <span style="color:#f92672">(</span>or before or after<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>Year<span style="color:#f92672">]</span>
+Photos commented on by <span style="color:#f92672">[</span>Name<span style="color:#f92672">]</span>
+Photos liked by <span style="color:#f92672">[</span>Name<span style="color:#f92672">]</span>
+Photos of <span style="color:#f92672">[</span>Person A<span style="color:#f92672">]</span> liked by <span style="color:#f92672">[</span>Person B<span style="color:#f92672">]</span>
+Photos of <span style="color:#f92672">[</span>Person A<span style="color:#f92672">]</span> AND <span style="color:#f92672">[</span>Person B<span style="color:#f92672">]</span>
+photos taken in Paris, France from <span style="color:#ae81ff">2018</span>
+photos taken by phone xperia U
+Photos of friends of my friends
+photos of wedding uploaded by friends of my friends
+photos of graduation uploaded by friends of my friends
+photos of single friends of my friends uploaded by friends of my friends</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find new places</span>
+Restaurants nearby liked by my friends
+<span style="color:#f92672">[</span>Cuisine<span style="color:#f92672">]</span> Restaurants liked by my friends of friends in <span style="color:#f92672">[</span>City<span style="color:#f92672">]</span>
+Hotels nearby liked by my friends of friends
+Friends who live <span style="color:#f92672">(</span>or have lived<span style="color:#f92672">)</span> in <span style="color:#f92672">[</span>Place<span style="color:#f92672">]</span>
+Recent photos taken in <span style="color:#f92672">[</span>Place<span style="color:#f92672">]</span>
+Places in <span style="color:#f92672">[</span>City<span style="color:#f92672">]</span> visited by people who live nearby</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Know your followers</span>
+People who follow me
+People who follow me and like <span style="color:#f92672">[</span>Page Name<span style="color:#f92672">]</span>
+People who follow me and live in <span style="color:#f92672">[</span>City<span style="color:#f92672">]</span>
+People who follow me and work at <span style="color:#f92672">[</span>Company<span style="color:#f92672">]</span>
+People who follow me and were born in <span style="color:#f92672">[</span>Year<span style="color:#f92672">]</span>
+Friends of friends who follow me</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find someone</span>
+People who work nearby
+People who are <span style="color:#f92672">[</span>Profession Name<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>like Doctors, Programmers, etc.<span style="color:#f92672">)</span>
+People who live in <span style="color:#f92672">[</span>Place<span style="color:#f92672">]</span>
+People who are named <span style="color:#f92672">[</span>Full or Partial Name<span style="color:#f92672">]</span>
+People who are <span style="color:#f92672">[</span>Gender<span style="color:#f92672">]</span> and live in <span style="color:#f92672">[</span>City<span style="color:#f92672">]</span> and <span style="color:#f92672">[</span>Relationship Status<span style="color:#f92672">]</span>
+People who believe in <span style="color:#f92672">[</span>Religion Name<span style="color:#f92672">]</span>
+People who are N years old
+People who are older than X and younger than Y years
+People who were born in <span style="color:#f92672">[</span>Year<span style="color:#f92672">]</span>
+People who work at <span style="color:#f92672">[</span>Company A<span style="color:#f92672">]</span> and previously worked at <span style="color:#f92672">[</span>Company B<span style="color:#f92672">]</span>
+People who live in Paris
+People who went to Harvard University
+friends of my friends
+friends of my friends who are single
+friends of my friends who are men interested in men
+people who live in new york city who uploaded photos taken in versailles</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># But some requests give bad results or false positive</span>
+<span style="color:#75715e"># Alternative is using the Graph Search through the URL</span>
+facebook.com/search/str/&lt;search&gt;
+
+<span style="color:#75715e"># If there are several searchs you can use AND / OR parameters</span>
+xxx/intersect 
+xxx/union
+facebook.com/search/str/&lt;search&gt;/str/secondone/intersect
+
+<span style="color:#75715e"># People who live in Paris (present and past)</span>
+www.facebook.com/search/str/paris/pages-named/residents/present/
+www.facebook.com/search/str/paris/pages-named/residents/past/
+
+<span style="color:#75715e"># People who live in Ile de France now or in France (code)</span>
+www.facebook.com/search/str/ile-de-france/pages-named/residents/present/
+www.facebook.com/search/str/105604449474183/residents/present/
+
+<span style="color:#75715e"># Intersect one</span>
+<span style="color:#75715e"># People &#34;Patrick&#34; who live in Toulouse now</span>
+www.facebook.com/search/str/patrick/users-named/str/toulouse/pages-named/residents/present/intersect/
+
+<span style="color:#75715e"># People &#34;Patrick&#34; who live in Toulouse now and Paris in the past</span>
+www.facebook.com/search/str/patrick/users-named/str/toulouse/pages-named/residents/present/str/paris/pages-named/residents/past/intersect/
+
+<span style="color:#75715e"># People who live in Paris and who like the page &#34;afis sciences et pseudo sciences&#34;</span>
+www.facebook.com/search/str/afis%20-%20science%20et%20pseudo-sciences/pages-named/likers/str/paris/pages-named/residents/present/intersect/
+
+<span style="color:#75715e"># Photos containing the keyword &#34;humour&#34;</span>
+www.facebook.com/search/str/humour/photos-keyword/
+
+<span style="color:#75715e"># People &#34;Jeanne&#34; friends of people &#34;Louise&#34;</span>
+www.facebook.com/search/str/jeanne/users-named/friends/str/louise/users-named/intersect/
+
+<span style="color:#75715e"># People who live in Geneva, who like Patrick Bruel&#39;s page and Céline Dion&#39;s page</span>
+www.facebook.com/search/str/geneva/pages-named/residents/present/str/c%C3%A9line%20dion/pages-named/likers/str/patrick%20bruel/pages-named/likers/intersect/
+
+<span style="color:#75715e"># Searching the keyword &#34;scientifique&#34; posted last month</span>
+/www.facebook.com/search/str/scientifique/stories-keyword/last-month/date/stories/intersect/
+
+<span style="color:#75715e"># Searching someone in Ile de France / France who posted the keyword &#34;scientifique&#34; last month</span>
+www.facebook.com/search/str/ile-de-france/pages-named/residents/present/stories/str/scientifique/stories-keyword/stories/intersect/
+www.facebook.com/search/str/105604449474183/pages-named/residents/present/stories/str/scientifique/stories-keyword/stories/intersect/
+
+<span style="color:#75715e"># Searching posts containing &#34;foutaises&#34; or &#34;conneries&#34;</span>
+www.facebook.com/search/str/foutaises/stories-keyword/str/conneries/stories-keyword/union/
+
+<span style="color:#75715e"># Photos posted by French people</span>
+www.facebook.com/search/str/105604449474183/residents/present/photos/
+
+<span style="color:#75715e"># People under 29 who live in Toulouse</span>
+www.facebook.com/search/str/toulouse/pages-named/residents/present/29/users-older/intersect/</code></pre></div>
 
     
     

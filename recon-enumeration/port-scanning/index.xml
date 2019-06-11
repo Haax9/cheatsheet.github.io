@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/recon-enumeration/port-scanning/masscan_cheatsheet/</guid>
-      <description>TODO</description>
+      <description>Usage and Options Target speficication # Target specification masscan 10.0.0.1 masscan 10.0.0.0/24 192.168.1.0/24 # Exclude IP file masscan 10.0.0.1/24 --excludeFile &amp;lt;file&amp;gt; # Exclude a single IP from the scan masscan 180.215.0.0/16 --exclude=180.215.122.120 Port specification # Port specification masscan 10.0.0.0.1 -p 80 masscan 10.0.0.0.1 -p 0-65535 masscan 10.0.0.0.1 -p 80,443 # UDP Scan masscan 10.0.0.0.1 -pU 53 Timing and Performance # Used to scan in offline mode # It does not send any traffic but just estimate the time length masscan 0.</description>
     </item>
     
     <item>

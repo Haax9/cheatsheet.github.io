@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-09T21:54:56 CEST">
+<meta name="revised" content="2019-06-11T23:40:44 CEST">
 <title>CSRF Injections :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -99,13 +99,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/">
             Subdomain Enumeration
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/web_application_firewall/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/web_application_firewall/">
-            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -371,6 +364,13 @@
         <div>
           <a href="/recon-enumeration/application-scans/vhost/">
             VHOST Scanning
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/recon-enumeration/application-scans/web_application_firewall/" class="dd-item">
+        <div>
+          <a href="/recon-enumeration/application-scans/web_application_firewall/">
+            Web Application Firewall (WAF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1053,16 +1053,16 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"># Basic form
 <span style="color:#111">&lt;</span><span style="color:#f92672">form</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;pls&#34;</span> <span style="color:#75af00">action</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;https://xxx.fr/index.php?action=profile&#34;</span> <span style="color:#75af00">method</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;post&#34;</span><span style="color:#111">&gt;</span>
 <span style="color:#111">&lt;</span><span style="color:#f92672">div</span> <span style="color:#75af00">class</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;form-group&#34;</span><span style="color:#111">&gt;</span>
-		<span style="color:#111">&lt;</span><span style="color:#f92672">label</span><span style="color:#111">&gt;</span>Username:<span style="color:#111">&lt;/</span><span style="color:#f92672">label</span><span style="color:#111">&gt;</span>
-		<span style="color:#111">&lt;</span><span style="color:#f92672">input</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;username&#34;</span> <span style="color:#75af00">value</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;devsid&#34;</span> <span style="color:#75af00">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;text&#34;</span><span style="color:#111">&gt;</span>
-		<span style="color:#111">&lt;/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
-		<span style="color:#111">&lt;</span><span style="color:#f92672">br</span><span style="color:#111">&gt;</span>		
-		<span style="color:#111">&lt;</span><span style="color:#f92672">div</span> <span style="color:#75af00">class</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;form-group&#34;</span><span style="color:#111">&gt;</span>
-		<span style="color:#111">&lt;</span><span style="color:#f92672">label</span><span style="color:#111">&gt;</span>Status:<span style="color:#111">&lt;/</span><span style="color:#f92672">label</span><span style="color:#111">&gt;</span>
-		<span style="color:#111">&lt;</span><span style="color:#f92672">input</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;status&#34;</span><span style="color:#75af00">checked</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;checked&#34;</span> <span style="color:#75af00">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;checkbox&#34;</span><span style="color:#111">&gt;</span>
-		<span style="color:#111">&lt;/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
-		<span style="color:#111">&lt;</span><span style="color:#f92672">br</span><span style="color:#111">&gt;</span>	
-		<span style="color:#111">&lt;</span><span style="color:#f92672">button</span> <span style="color:#75af00">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;submit&#34;</span><span style="color:#111">&gt;</span>Submit<span style="color:#111">&lt;/</span><span style="color:#f92672">button</span><span style="color:#111">&gt;</span>
+        <span style="color:#111">&lt;</span><span style="color:#f92672">label</span><span style="color:#111">&gt;</span>Username:<span style="color:#111">&lt;/</span><span style="color:#f92672">label</span><span style="color:#111">&gt;</span>
+        <span style="color:#111">&lt;</span><span style="color:#f92672">input</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;username&#34;</span> <span style="color:#75af00">value</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;devsid&#34;</span> <span style="color:#75af00">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;text&#34;</span><span style="color:#111">&gt;</span>
+        <span style="color:#111">&lt;/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
+        <span style="color:#111">&lt;</span><span style="color:#f92672">br</span><span style="color:#111">&gt;</span>        
+        <span style="color:#111">&lt;</span><span style="color:#f92672">div</span> <span style="color:#75af00">class</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;form-group&#34;</span><span style="color:#111">&gt;</span>
+        <span style="color:#111">&lt;</span><span style="color:#f92672">label</span><span style="color:#111">&gt;</span>Status:<span style="color:#111">&lt;/</span><span style="color:#f92672">label</span><span style="color:#111">&gt;</span>
+        <span style="color:#111">&lt;</span><span style="color:#f92672">input</span> <span style="color:#75af00">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;status&#34;</span><span style="color:#75af00">checked</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;checked&#34;</span> <span style="color:#75af00">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;checkbox&#34;</span><span style="color:#111">&gt;</span>
+        <span style="color:#111">&lt;/</span><span style="color:#f92672">div</span><span style="color:#111">&gt;</span>
+        <span style="color:#111">&lt;</span><span style="color:#f92672">br</span><span style="color:#111">&gt;</span>    
+        <span style="color:#111">&lt;</span><span style="color:#f92672">button</span> <span style="color:#75af00">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;submit&#34;</span><span style="color:#111">&gt;</span>Submit<span style="color:#111">&lt;/</span><span style="color:#f92672">button</span><span style="color:#111">&gt;</span>
 <span style="color:#111">&lt;/</span><span style="color:#f92672">form</span><span style="color:#111">&gt;</span>
 <span style="color:#111">&lt;</span><span style="color:#f92672">script</span> <span style="color:#75af00">language</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;javascript&#34;</span><span style="color:#111">&gt;</span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">pls</span><span style="color:#111">.</span><span style="color:#75af00">submit</span><span style="color:#111">();&lt;/</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"># Basic form
 <span style="color:#111">&lt;</span><span style="color:#f92672">html</span><span style="color:#111">&gt;&lt;</span><span style="color:#f92672">body</span><span style="color:#111">&gt;</span>

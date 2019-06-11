@@ -259,10 +259,6 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/technical-recon/web_application_firewall/</loc>
-  </url>
-  
-  <url>
     <loc>/web-attacks/</loc>
   </url>
   
@@ -316,6 +312,10 @@
   
   <url>
     <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</loc>
+  </url>
+  
+  <url>
+    <loc>/recon-enumeration/application-scans/web_application_firewall/</loc>
   </url>
   
   <url>
