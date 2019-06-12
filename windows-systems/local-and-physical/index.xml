@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Local and Physical on Offensive Security Cheatsheet</title>
+    <link>/windows-systems/local-and-physical/</link>
+    <description>Recent content in Local and Physical on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/windows-systems/local-and-physical/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Local Recon and Enumeration</title>
+      <link>/windows-systems/local-and-physical/local_recon_enumeration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/local-and-physical/local_recon_enumeration/</guid>
+      <description>Basics whoami ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat 
+Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.</description>
+    </item>
+    
+    <item>
+      <title>Physical Access</title>
+      <link>/windows-systems/local-and-physical/physical_access/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/local-and-physical/physical_access/</guid>
+      <description> Live boot from Kali # - USB Live Kali # - Mount the Windows system disk # - Get SAM and SYSTEM files from &amp;#34;C:\Windows\System32\config\&amp;#34; # - Extract hashes → samdump2 SYSTEM SAM &amp;gt; hash.txt # - Crack hashes using JTR (john -format=NT hash.txt) or Hashcat # - You may have to use “bkhive&amp;#34; on the SYSTEM file first # - John format can also be NT2</description>
+    </item>
+    
+  </channel>
+</rss>

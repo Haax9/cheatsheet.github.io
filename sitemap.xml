@@ -7,7 +7,15 @@
   </url>
   
   <url>
+    <loc>/windows-systems/privilege-escalation/admin_processes/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/application-scans/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/programing-languages/bash/</loc>
   </url>
   
   <url>
@@ -20,6 +28,10 @@
   
   <url>
     <loc>/pwn/buffer-overflow/easy_no_protection/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/exploitation/exploitation_tricks/</loc>
   </url>
   
   <url>
@@ -47,6 +59,10 @@
   </url>
   
   <url>
+    <loc>/windows-systems/local-and-physical/local_recon_enumeration/</loc>
+  </url>
+  
+  <url>
     <loc>/web-attacks/files-inclusions-and-injections/lfi_rfi/</loc>
   </url>
   
@@ -59,11 +75,23 @@
   </url>
   
   <url>
+    <loc>/windows-systems/post-exploitation-techniques/ntds_database/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/network-and-domain-recon/</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
   </url>
   
   <url>
     <loc>/open-source-intelligence-osint/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/network-and-domain-recon/no_credentials_recon/</loc>
   </url>
   
   <url>
@@ -76,6 +104,10 @@
   
   <url>
     <loc>/cryptography/rsa/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/recon_enumeration/</loc>
   </url>
   
   <url>
@@ -95,11 +127,7 @@
   </url>
   
   <url>
-    <loc>/linux-systems/todo/</loc>
-  </url>
-  
-  <url>
-    <loc>/windows-systems/todo/</loc>
+    <loc>/linux-systems/privilege-escalation/system_tricks/</loc>
   </url>
   
   <url>
@@ -139,11 +167,19 @@
   </url>
   
   <url>
+    <loc>/windows-systems/network-and-domain-recon/domain_recon/</loc>
+  </url>
+  
+  <url>
     <loc>/web-attacks/content-management-system-cms/drupal/</loc>
   </url>
   
   <url>
     <loc>/open-source-intelligence-osint/human-recon/email/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/file_transfer/</loc>
   </url>
   
   <url>
@@ -167,6 +203,14 @@
   </url>
   
   <url>
+    <loc>/windows-systems/privilege-escalation/lsass_mimikatz/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/local-and-physical/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/port-scanning/nmap_cheatsheet/</loc>
   </url>
   
@@ -179,11 +223,31 @@
   </url>
   
   <url>
+    <loc>/windows-systems/local-and-physical/physical_access/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/port-scanning/</loc>
   </url>
   
   <url>
+    <loc>/linux-systems/programing-languages/python/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/exploitation/remote_execution_techniques/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/privilege-escalation/services/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/post-exploitation-techniques/silver_golden_tickets/</loc>
   </url>
   
   <url>
@@ -203,11 +267,31 @@
   </url>
   
   <url>
+    <loc>/linux-systems/privilege-escalation/abusing_sudo_programs/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/exploitation/crackmapexec/</loc>
+  </url>
+  
+  <url>
     <loc>/passcracking-hashfiles/cracking_files/</loc>
   </url>
   
   <url>
+    <loc>/windows-systems/post-exploitation-techniques/dc_shadow/</loc>
+  </url>
+  
+  <url>
     <loc>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/network-and-domain-recon/domain_mapping/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/exploitation/</loc>
   </url>
   
   <url>
@@ -251,6 +335,14 @@
   </url>
   
   <url>
+    <loc>/linux-systems/programing-languages/perl/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/privilege-escalation/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/services-enumeration/</loc>
   </url>
   
@@ -283,6 +375,10 @@
   </url>
   
   <url>
+    <loc>/windows-systems/exploitation/impacket/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/human-recon/social-networks/instagram/</loc>
   </url>
   
@@ -303,6 +399,14 @@
   </url>
   
   <url>
+    <loc>/windows-systems/privilege-escalation/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/programing-languages/</loc>
+  </url>
+  
+  <url>
     <loc>/shells-methods/reverse/</loc>
   </url>
   
@@ -315,7 +419,15 @@
   </url>
   
   <url>
+    <loc>/windows-systems/privilege-escalation/tricks/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/application-scans/web_application_firewall/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/privilege-escalation/windows_defender/</loc>
   </url>
   
   <url>
@@ -351,7 +463,15 @@
   </url>
   
   <url>
+    <loc>/windows-systems/exploitation/kerberos/</loc>
+  </url>
+  
+  <url>
     <loc>/web-attacks/content-management-system-cms/others/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/post-exploitation-techniques/</loc>
   </url>
   
   <url>
@@ -399,6 +519,10 @@
   </url>
   
   <url>
+    <loc>/windows-systems/exploitation/rdp_exploitation/</loc>
+  </url>
+  
+  <url>
     <loc>/shells-methods/windows/</loc>
   </url>
   
@@ -408,6 +532,10 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/119_nntp/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/exploitation/file_transfer/</loc>
   </url>
   
   <url>

