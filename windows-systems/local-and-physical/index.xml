@@ -26,7 +26,8 @@ Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/local-and-physical/physical_access/</guid>
-      <description> Live boot from Kali # - USB Live Kali # - Mount the Windows system disk # - Get SAM and SYSTEM files from &amp;#34;C:\Windows\System32\config\&amp;#34; # - Extract hashes → samdump2 SYSTEM SAM &amp;gt; hash.txt # - Crack hashes using JTR (john -format=NT hash.txt) or Hashcat # - You may have to use “bkhive&amp;#34; on the SYSTEM file first # - John format can also be NT2</description>
+      <description>Live boot from Kali # - USB Live Kali # - Mount the Windows system disk # - Get SAM and SYSTEM files from &amp;#34;C:\Windows\System32\config\&amp;#34; # - Extract hashes → samdump2 SYSTEM SAM &amp;gt; hash.txt # - Crack hashes using JTR (john -format=NT hash.txt) or Hashcat # - You may have to use “bkhive&amp;#34; on the SYSTEM file first # - John format can also be NT2 
+Utilman.exe attack # You can access a SYSTEM cmd shell if you have access to the filesystem # utilman.</description>
     </item>
     
   </channel>
