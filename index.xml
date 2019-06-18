@@ -401,7 +401,8 @@ Spawning a shell # Using os.system echo os.system(&amp;#39;/bin/bash&amp;#39;)# 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/john_cheatsheet/</guid>
-      <description>TODO</description>
+      <description>Cracking Modes # Dictionnary attack ./john --wordlist=password.lst hashFile # Dictionnary attack using default or specific rules ./john --wordlist=password.lst --rules=rulename hashFile ./john --wordlist=password.lst --rules mypasswd # Incremental mode ./john --incremental hashFile # Loopback attack (password are taken from the potfile) ./john --loopback hashFile # Mask bruteforce attack ./john --mask=?1?1?1?1?1?1 --1=[A-Z] hashFile --min-len=8 # Dictionnary attack using masks ./john --wordlist=password.lst -mask=&amp;#39;?l?l?w?l&amp;#39; hashFile 
+MISC &amp;amp; Tricks # Show hidden options ./john --list=hidden-options # Using session and restoring them .</description>
     </item>
     
     <item>
