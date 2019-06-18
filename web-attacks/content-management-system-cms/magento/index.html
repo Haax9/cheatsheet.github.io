@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-17T18:09:41 CEST">
+<meta name="revised" content="2019-06-18T17:42:50 CEST">
 <title>Magento :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -727,6 +727,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/content-management-system-cms/cmsmap/" class="dd-item">
+        <div>
+          <a href="/web-attacks/content-management-system-cms/cmsmap/">
+            CMSMap
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/web-attacks/content-management-system-cms/others/" class="dd-item">
         <div>
           <a href="/web-attacks/content-management-system-cms/others/">
@@ -1234,6 +1241,7 @@
       <option value="/web-attacks/content-management-system-cms/drupal/" >-- Drupal</option>
       <option value="/web-attacks/content-management-system-cms/joomla/" >-- Joomla!</option>
       <option value="/web-attacks/content-management-system-cms/magento/"  selected>-- Magento</option>
+      <option value="/web-attacks/content-management-system-cms/cmsmap/" >-- CMSMap</option>
       <option value="/web-attacks/content-management-system-cms/others/" >-- MISC &amp; Others</option>
   
       <option value="/web-attacks/headers_injections/" >- Headers Injections</option>
@@ -1281,15 +1289,52 @@
     
     
     
-    <p>TODO</p>
+    
 
+<h3 id="getting-magento-version">Getting Magento Version</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Magento has 2 mains branches, Magento 1 and Magento 2</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># On Magento 2, you can add /magento_version</span>
+targetsite.com/magento_version</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># On magento 1, you have another login interface at /dowloader</span>
+<span style="color:#75715e"># Versions can be displayed in the footer</span>
+https://www.example.com/downloader/
+https://www.example.com/magento/downloader/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can find the version by comparing hash file signatures</span> 
+<span style="color:#75715e"># between several versions and the running one.</span>
+<span style="color:#75715e"># That&#39;s what magescan does.</span>
+https://github.com/steverobbins/magento-version-identification-php</code></pre></div>
+<p><br/></p>
+
+<h3 id="magescan">Magescan</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Online scanner</span>
+<span style="color:#75715e"># Usefull and complete, but online</span>
+https://magescan.com/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Magescan is a complete scanner for Magento applications.</span>
+<span style="color:#75715e"># The idea behind this is to evaluate the quality and security of</span> 
+<span style="color:#75715e"># a Magento site you don&#39;t have access to.</span>
+
+https://github.com/steverobbins/magescan
+
+<span style="color:#75715e"># Scan techniques :</span> 
+<span style="color:#75715e"># - all : full scan</span>
+<span style="color:#75715e"># - catalog : get catalog information</span>
+<span style="color:#75715e"># - modules : get installed modules (plugins)</span>
+<span style="color:#75715e"># - patch : get patch informations</span>
+<span style="color:#75715e"># - server : get server technology</span>
+<span style="color:#75715e"># - sitemap : get sitemap</span>
+<span style="color:#75715e"># - unreachable : check unreachable paths</span>
+<span style="color:#75715e"># - version : get magento version</span>
+magescan.phar scan:&lt;technique&gt; store.example.com
+
+<span style="color:#75715e"># If set, SSL certificates won&#39;t be validated</span>
+magescan.phar scan:&lt;technique&gt; store.example.com --insecure
+magescan.phar scan:&lt;technique&gt; store.example.com -k
+
+<span style="color:#75715e"># Lists all modules searched for, not just those found</span>
+magescan.phar scan:&lt;technique&gt; store.example.com --show-modules</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/web-attacks/content-management-system-cms/joomla/" title="Joomla!"> <i class="fa fa-chevron-left"></i><label>Joomla!</label></a>
-    <a class="nav nav-next" href="/web-attacks/content-management-system-cms/others/" title="MISC &amp; Others" style="margin-right: 0px;"><label>MISC &amp; Others</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/web-attacks/content-management-system-cms/cmsmap/" title="CMSMap" style="margin-right: 0px;"><label>CMSMap</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

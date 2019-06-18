@@ -451,6 +451,10 @@
   </url>
   
   <url>
+    <loc>/web-attacks/content-management-system-cms/cmsmap/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/technical-recon/company_meta/</loc>
   </url>
   
@@ -464,10 +468,6 @@
   
   <url>
     <loc>/windows-systems/exploitation/kerberos/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-attacks/content-management-system-cms/others/</loc>
   </url>
   
   <url>
@@ -512,6 +512,10 @@
   
   <url>
     <loc>/web-attacks/headers_injections/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/content-management-system-cms/others/</loc>
   </url>
   
   <url>

@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-18T17:42:49 CEST">
-<title>Local and Physical :: Offensive Security Cheatsheet</title>
+<meta name="revised" content="2019-06-18T17:42:50 CEST">
+<title>CMSMap :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/windows-systems/local-and-physical/">
+  <body data-url="/web-attacks/content-management-system-cms/cmsmap/">
     
       <header>
   <div class="logo">
@@ -541,10 +541,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/web-attacks/" class="dd-item haschildren
+    <li data-nav-id="/web-attacks/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/web-attacks/">Web vulnerabilities &amp; attacks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/">Web vulnerabilities &amp; attacks</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/web-attacks/server-side-injections/" class="dd-item haschildren
@@ -691,10 +692,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/web-attacks/content-management-system-cms/" class="dd-item haschildren
+    <li data-nav-id="/web-attacks/content-management-system-cms/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/web-attacks/content-management-system-cms/">Content Management Systems (CMS)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/content-management-system-cms/">Content Management Systems (CMS)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/web-attacks/content-management-system-cms/wordpress/" class="dd-item">
@@ -725,7 +727,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/web-attacks/content-management-system-cms/cmsmap/" class="dd-item">
+      <li data-nav-id="/web-attacks/content-management-system-cms/cmsmap/" class="dd-item active">
         <div>
           <a href="/web-attacks/content-management-system-cms/cmsmap/">
             CMSMap
@@ -843,11 +845,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/" class="dd-item parent haschildren
+    <li data-nav-id="/windows-systems/" class="dd-item haschildren
         ">
       <div>
-      <a href="/windows-systems/">Windows Systems</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/">Windows Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/windows-systems/network-and-domain-recon/" class="dd-item haschildren
@@ -879,11 +880,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/local-and-physical/" class="dd-item parent active haschildren
+    <li data-nav-id="/windows-systems/local-and-physical/" class="dd-item haschildren
         ">
       <div>
-      <a href="/windows-systems/local-and-physical/">Local and Physical</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/local-and-physical/">Local and Physical</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/windows-systems/local-and-physical/local_recon_enumeration/" class="dd-item">
@@ -1221,32 +1221,38 @@
     <option value="/recon-enumeration/" >
    Recon - Enumeration</option>
     <option value="/web-attacks/" >
-   Web vulnerabilities &amp; attacks</option>
+   Web vulnerabilities &amp; attacks</option> 
+    <option value="/web-attacks/server-side-injections/" >
+  - 
+   Server Side Injections</option>
+    <option value="/web-attacks/client-side-injections/" >
+  - 
+   Client Side Injections</option>
+    <option value="/web-attacks/files-inclusions-and-injections/" >
+  - 
+   File Inclusion and Injections</option>
+    <option value="/web-attacks/php-vulnerabilities/" >
+  - 
+   PHP Vulnerabilities</option>
+    <option value="/web-attacks/content-management-system-cms/" >
+  - 
+   Content Management Systems (CMS)</option> 
+      <option value="/web-attacks/content-management-system-cms/wordpress/" >-- Wordpress</option>
+      <option value="/web-attacks/content-management-system-cms/drupal/" >-- Drupal</option>
+      <option value="/web-attacks/content-management-system-cms/joomla/" >-- Joomla!</option>
+      <option value="/web-attacks/content-management-system-cms/magento/" >-- Magento</option>
+      <option value="/web-attacks/content-management-system-cms/cmsmap/"  selected>-- CMSMap</option>
+      <option value="/web-attacks/content-management-system-cms/others/" >-- MISC &amp; Others</option>
+  
+      <option value="/web-attacks/headers_injections/" >- Headers Injections</option>
+      <option value="/web-attacks/misc_others/" >- MISC &amp; Others</option>
+  
     <option value="/network/" >
    Network</option>
     <option value="/shells-methods/" >
    Shells methods</option>
     <option value="/windows-systems/" >
-   Windows Systems</option> 
-    <option value="/windows-systems/network-and-domain-recon/" >
-  - 
-   Network and Domain Recon</option>
-    <option value="/windows-systems/local-and-physical/"  selected>
-  - 
-   Local and Physical</option> 
-      <option value="/windows-systems/local-and-physical/local_recon_enumeration/" >-- Local Recon and Enumeration</option>
-      <option value="/windows-systems/local-and-physical/physical_access/" >-- Physical Access</option>
-  
-    <option value="/windows-systems/exploitation/" >
-  - 
-   Exploitation</option>
-    <option value="/windows-systems/privilege-escalation/" >
-  - 
-   Privilege Escalation</option>
-    <option value="/windows-systems/post-exploitation-techniques/" >
-  - 
-   Post Exploitation Techniques</option>
-  
+   Windows Systems</option>
     <option value="/linux-systems/" >
    Linux Systems</option>
     <option value="/other-systems/" >
@@ -1279,64 +1285,72 @@
       </div>
     
 
-    <h1>Local and Physical</h1>
+    <h1>CMSMap</h1>
     
     
     
+    
 
+<h3 id="intro">Intro</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># CMSmap is a python open source CMS scanner that automates the process</span> 
+<span style="color:#75715e"># of detecting security flaws of the most popular CMSs.</span> 
+<span style="color:#75715e"># The main purpose of CMSmap is to integrate common vulnerabilities for</span> 
+<span style="color:#75715e"># different types of CMSs in a single tool.</span>
 
+<span style="color:#75715e"># At the moment, CMSs supported by CMSmap are WordPress, Joomla, Drupal and Moodle.</span></code></pre></div>
+<p><br/></p>
 
-<h3 id="table-of-content">Table of Content</h3>
+<h3 id="usage">Usage</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">usage: cmsmap <span style="color:#f92672">[</span>-f W/J/D<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-F<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-t<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-a<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-H<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-o<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-E<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-d<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p<span style="color:#f92672">]</span>
+              <span style="color:#f92672">[</span>-x<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-k<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-w<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-v<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-D<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-U W/J/D<span style="color:#f92672">]</span>
+              <span style="color:#f92672">[</span>target<span style="color:#f92672">]</span>
 
-<ul>
-<li>Network and Domain Recon
+CMSmap tool v1.0 - Simple CMS Scanner
+Author: Mike Manzotti
 
-<ul>
-<li>Out of domain (no credentials)</li>
-<li>Domain Recon</li>
-<li>Domain Mapping</li>
-</ul></li>
-<li>Local and Physical
+Scan:
+  target                target URL <span style="color:#f92672">(</span>e.g. <span style="color:#d88200">&#39;https://example.com:8080/&#39;</span><span style="color:#f92672">)</span>
+  -f W/J/D, --force W/J/D
+                        force scan <span style="color:#f92672">(</span>W<span style="color:#f92672">)</span>ordpress, <span style="color:#f92672">(</span>J<span style="color:#f92672">)</span>oomla or <span style="color:#f92672">(</span>D<span style="color:#f92672">)</span>rupal
+  -F, --fullscan        full scan using large plugin lists. False positives and slow!
+  -t , --threads        number of threads <span style="color:#f92672">(</span>Default <span style="color:#ae81ff">5</span><span style="color:#f92672">)</span>
+  -a , --agent          <span style="color:#111">set</span> custom user-agent
+  -H , --header         add custom header <span style="color:#f92672">(</span>e.g. <span style="color:#d88200">&#39;Authorization: Basic ABCD...&#39;</span><span style="color:#f92672">)</span>
+  -i , --input          scan multiple targets listed in a given file
+  -o , --output         save output in a file
+  -E, --noedb           enumerate plugins without searching exploits
+  -c, --nocleanurls     disable clean urls <span style="color:#00a8c8">for</span> Drupal only
+  -s, --nosslcheck      don<span style="color:#d88200">&#39;t validate the server&#39;</span>s certificate
+  -d, --dictattack      run low intense dictionary attack during scanning <span style="color:#f92672">(</span><span style="color:#ae81ff">5</span> attempts per user<span style="color:#f92672">)</span>
 
-<ul>
-<li>Local Recon Enumeration</li>
-<li>Physical Access</li>
-</ul></li>
-<li>Exploitation
+Brute-Force:
+  -u , --usr            username or username file
+  -p , --psw            password or password file
+  -x, --noxmlrpc        brute forcing WordPress without XML-RPC
 
-<ul>
-<li>Exploitation Tricks</li>
-<li>CrackMapExec</li>
-<li>Impacket</li>
-<li>Kerberos</li>
-<li>RDP Exploitation</li>
-<li>File Transfer</li>
-</ul></li>
-<li>Privilege Escalation
+Post Exploitation:
+  -k , --crack          password hashes file <span style="color:#f92672">(</span>Require hashcat installed. For WordPress and Joomla only<span style="color:#f92672">)</span>
+  -w , --wordlist       wordlist file
 
-<ul>
-<li>Admin and Processes</li>
-<li>LSASS and Mimikatz</li>
-<li>Windows Defender</li>
-<li>Tricks</li>
-</ul></li>
-<li>Post Exploitation
+Others:
+  -v, --verbose         verbose mode <span style="color:#f92672">(</span>Default <span style="color:#111">false</span><span style="color:#f92672">)</span>
+  -h, --help            show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
+  -D, --default         rum CMSmap with default options
+  -U, --update          use <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>MSmap, <span style="color:#f92672">(</span>P<span style="color:#f92672">)</span>lugins or <span style="color:#f92672">(</span>PC<span style="color:#f92672">)</span> <span style="color:#00a8c8">for</span> both
 
-<ul>
-<li>NTDS Database</li>
-<li>Silver and Golden Tickets</li>
-<li>DC Shadow</li>
-</ul></li>
-</ul>
-
-
+Examples:
+  cmsmap.py https://example.com
+  cmsmap.py https://example.com -f W -F --noedb -d
+  cmsmap.py https://example.com -i targets.txt -o output.txt
+  cmsmap.py https://example.com -u admin -p passwords.txt
+  cmsmap.py -k hashes.txt -w passwords.txt</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/windows-systems/network-and-domain-recon/domain_mapping/" title="Domain Mapping"> <i class="fa fa-chevron-left"></i><label>Domain Mapping</label></a>
-    <a class="nav nav-next" href="/windows-systems/local-and-physical/local_recon_enumeration/" title="Local Recon and Enumeration" style="margin-right: 0px;"><label>Local Recon and Enumeration</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/web-attacks/content-management-system-cms/magento/" title="Magento"> <i class="fa fa-chevron-left"></i><label>Magento</label></a>
+    <a class="nav nav-next" href="/web-attacks/content-management-system-cms/others/" title="MISC &amp; Others" style="margin-right: 0px;"><label>MISC &amp; Others</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1353,7 +1367,7 @@
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Windows%20Systems/Local%20and%20Physical/_index.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Web%20Attacks/Content%20Management%20System%20%28CMS%29/CMSMap.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

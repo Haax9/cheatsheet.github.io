@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-17T18:09:42 CEST">
+<meta name="revised" content="2019-06-18T17:42:51 CEST">
 <title>MISC &amp; Others :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -726,6 +726,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/content-management-system-cms/cmsmap/" class="dd-item">
+        <div>
+          <a href="/web-attacks/content-management-system-cms/cmsmap/">
+            CMSMap
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/web-attacks/content-management-system-cms/others/" class="dd-item">
         <div>
           <a href="/web-attacks/content-management-system-cms/others/">
@@ -1281,6 +1288,7 @@
 <ul>
 <li>MISC</li>
 <li>Hidden Parameters</li>
+<li>Apache Server Status</li>
 <li>Command Injection</li>
 <li>Server Side Template Injection (SSTI)</li>
 <li>Image Tragick</li>
@@ -1338,6 +1346,22 @@ python3 arjun.py -u https://api.example.com/endpoint --get -t <span style="color
 
 <span style="color:#75715e"># Delay between requests</span>
 python3 arjun.py -u https://api.example.com/endpoint --get -d </code></pre></div>
+<p><br/></p>
+
+<h3 id="apache-server-status">Apache Server Status</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Apache server-status is an Apache monitoring instance</span>
+<span style="color:#75715e"># Available by default at http://example.com/server-status.</span>
+<span style="color:#75715e"># In normal cases, the server-status instance is not accessible by non-local IPs.</span> 
+<span style="color:#75715e"># However, due to misconfiguration, it can be publicly accessible.</span> 
+<span style="color:#75715e"># This leads anyone to view the great amount of data by server-status.</span>
+
+<span style="color:#75715e"># Data exposed :</span>
+<span style="color:#75715e"># - All URL requested by all hosts/vhosts, including obscure files/directories and session tokens</span>
+<span style="color:#75715e"># - All requested client&#39;s IPs</span> 
+
+<span style="color:#75715e"># Monitoring and exploiting Server Status</span>
+https://github.com/mazen160/server-status_PWN
+python server-status_PWN.py --url <span style="color:#d88200">&#39;http://example.com/server-status&#39;</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="command-injection">Command Injection</h3>

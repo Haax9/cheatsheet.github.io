@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-17T18:09:40 CEST">
+<meta name="revised" content="2019-06-18T17:42:49 CEST">
 <title>Drupal :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -727,6 +727,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/content-management-system-cms/cmsmap/" class="dd-item">
+        <div>
+          <a href="/web-attacks/content-management-system-cms/cmsmap/">
+            CMSMap
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/web-attacks/content-management-system-cms/others/" class="dd-item">
         <div>
           <a href="/web-attacks/content-management-system-cms/others/">
@@ -1234,6 +1241,7 @@
       <option value="/web-attacks/content-management-system-cms/drupal/"  selected>-- Drupal</option>
       <option value="/web-attacks/content-management-system-cms/joomla/" >-- Joomla!</option>
       <option value="/web-attacks/content-management-system-cms/magento/" >-- Magento</option>
+      <option value="/web-attacks/content-management-system-cms/cmsmap/" >-- CMSMap</option>
       <option value="/web-attacks/content-management-system-cms/others/" >-- MISC &amp; Others</option>
   
       <option value="/web-attacks/headers_injections/" >- Headers Injections</option>
@@ -1281,8 +1289,84 @@
     
     
     
-    <p>TODO</p>
+    
 
+<p><a href="https://github.com/gfoss/attacking-drupal">https://github.com/gfoss/attacking-drupal</a></p>
+
+<h3 id="droopescan">Droopescan</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Not Drupal specific but can work too (Wordpress, SilverStripe, Joomla, Moodle, Drupal)</span>
+droopescan --help
+droopescan scan --help</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Target Identification</span>
+droopescan scan drupal -u example.org
+droopescan scan drupal -U list_of_urls.txt
+
+<span style="color:#75715e"># You can also ommit the drupal argument, so it will trigger the cms identification</span>
+droopescan scan -u example.org
+droopescan scan -U list_of_urls.txt</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scan types</span>
+<span style="color:#75715e"># By default, most of the time, 4 threads</span>
+droopescan scan drupal -u example.org --number xxx --threads xxx
+
+<span style="color:#75715e"># By default, all tests are done, but you can specify some manually</span>
+<span style="color:#75715e"># - p : plugin checks</span>
+<span style="color:#75715e"># - t : theme checks</span>
+<span style="color:#75715e"># - v : version checks (files checksums)</span>
+<span style="color:#75715e"># - i : interesting urls checks</span>
+droopescan scan drupal -u example.org --enumerate &lt;type&gt;</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Getting stats and capabilities for the scanner</span>
+droopescan stats</code></pre></div>
+<p><br/></p>
+
+<h3 id="drupwn">Drupwn</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scanner and complete tool for Drupal 6 and 8</span>
+$ drupwn -h
+
+        ____
+       / __ <span style="color:#8045ff">\_</span>______  ______ _      ______
+      / / / / ___/ / / / __ <span style="color:#8045ff">\ </span><span style="color:#111">|</span> /<span style="color:#111">|</span> / / __ <span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>     / /_/ / /  / /_/ / /_/ / <span style="color:#111">|</span>/ <span style="color:#111">|</span>/ / / / /
+    /_____/_/   <span style="color:#8045ff">\_</span>_,_/ .___/<span style="color:#111">|</span>__/<span style="color:#111">|</span>__/_/ /_/
+                     /_/
+
+usage: drupwn <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--users<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--nodes<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--modules<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--dfiles<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--themes<span style="color:#f92672">]</span>
+              <span style="color:#f92672">[</span>--version VERSION<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--cookies COOKIES<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--thread THREAD<span style="color:#f92672">]</span>
+              <span style="color:#f92672">[</span>--range RANGE<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--ua UA<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--bauth BAUTH<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--delay DELAY<span style="color:#f92672">]</span>
+              <span style="color:#f92672">[</span>--log<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--proxy PROXY <span style="color:#111">|</span> --proxies PROXIES<span style="color:#f92672">]</span>
+              mode target
+
+Drupwn aims to automate drupal information gathering.
+
+positional arguments:
+  mode               enum<span style="color:#111">|</span>exploit
+  target             hostname to scan
+
+optional arguments:
+  -h, --help         show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
+  --users            user enumaration
+  --nodes            node enumeration
+  --modules          module enumeration
+  --dfiles           default files enumeration
+  --themes           theme enumeration
+  --version VERSION  Drupal version
+  --cookies COOKIES  cookies
+  --thread THREAD    threads number
+  --range RANGE      enumeration range
+  --ua UA            User Agent
+  --bauth BAUTH      Basic authentication
+  --delay DELAY      request delay
+  --log              file logging
+  --proxy PROXY      <span style="color:#f92672">[</span>http<span style="color:#111">|</span>https<span style="color:#111">|</span>socks<span style="color:#f92672">]</span>://host:port
+  --proxies PROXIES  Proxies file</code></pre></div>
+<p><br/></p>
+
+<h3 id="online-tools">Online tools</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#  Attempt to detect version of Drupal Core</span>
+<span style="color:#75715e"># Find Plugins in HTML response</span>
+<span style="color:#75715e"># Identify theme in use</span>
+<span style="color:#75715e"># List client side JS in page</span>
+<span style="color:#75715e"># List iframes in page</span>
+<span style="color:#75715e"># Test for directory indexing enabled on key locations</span>
+<span style="color:#75715e"># Check Google Safe Browse for reputation</span>
+<span style="color:#75715e"># Get IP information and Geolocation</span>
+https://hackertarget.com/drupal-security-scan/</code></pre></div>
 
     
     

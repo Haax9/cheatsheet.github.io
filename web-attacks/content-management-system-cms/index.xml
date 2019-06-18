@@ -25,7 +25,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/content-management-system-cms/drupal/</guid>
-      <description>TODO</description>
+      <description>https://github.com/gfoss/attacking-drupal
+Droopescan # Not Drupal specific but can work too (Wordpress, SilverStripe, Joomla, Moodle, Drupal) droopescan --help droopescan scan --help# Target Identification droopescan scan drupal -u example.org droopescan scan drupal -U list_of_urls.txt # You can also ommit the drupal argument, so it will trigger the cms identification droopescan scan -u example.org droopescan scan -U list_of_urls.txt# Scan types # By default, most of the time, 4 threads droopescan scan drupal -u example.</description>
     </item>
     
     <item>
@@ -44,7 +45,18 @@ Reverse Shell # You must first log as admin # Then you must activate the PHP ext
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/content-management-system-cms/magento/</guid>
-      <description>TODO</description>
+      <description>Getting Magento Version # Magento has 2 mains branches, Magento 1 and Magento 2# On Magento 2, you can add /magento_version targetsite.com/magento_version# On magento 1, you have another login interface at /dowloader # Versions can be displayed in the footer https://www.example.com/downloader/ https://www.example.com/magento/downloader/# You can find the version by comparing hash file signatures # between several versions and the running one. # That&amp;#39;s what magescan does. https://github.com/steverobbins/magento-version-identification-php 
+Magescan # Online scanner # Usefull and complete, but online https://magescan.</description>
+    </item>
+    
+    <item>
+      <title>CMSMap</title>
+      <link>/web-attacks/content-management-system-cms/cmsmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/content-management-system-cms/cmsmap/</guid>
+      <description>Intro # CMSmap is a python open source CMS scanner that automates the process # of detecting security flaws of the most popular CMSs. # The main purpose of CMSmap is to integrate common vulnerabilities for # different types of CMSs in a single tool. # At the moment, CMSs supported by CMSmap are WordPress, Joomla, Drupal and Moodle. 
+Usage usage: cmsmap [-f W/J/D] [-F] [-t] [-a] [-H] [-i] [-o] [-E] [-d] [-u] [-p] [-x] [-k] [-w] [-v] [-h] [-D] [-U W/J/D] [target] CMSmap tool v1.</description>
     </item>
     
     <item>
