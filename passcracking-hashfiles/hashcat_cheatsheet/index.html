@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-18T23:02:32 CEST">
+<meta name="revised" content="2019-06-30T22:15:28 CEST">
 <title>Hashcat Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1267,8 +1267,84 @@
     
     
     
-    <p>TODO</p>
+    
 
+<h3 id="misc-and-tricks">MISC and tricks</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.notsosecure.com/one-rule-to-rule-them-all/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># MAX POWER</span>
+<span style="color:#75715e"># force the CUDA GPU interface, optimize for &lt;32 char passwords and set the workload to insane (-w 4).</span>
+<span style="color:#75715e"># It is supposed to make the computer unusable during the cracking process</span>
+<span style="color:#75715e"># Finnally, use both the GPU and CPU to handle the cracking</span>
+--force -O -w <span style="color:#ae81ff">4</span> --opencl-device-types <span style="color:#ae81ff">1</span>,2</code></pre></div>
+<p><br/></p>
+
+<h3 id="attack-modes">Attack modes</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-a <span style="color:#ae81ff">0</span> <span style="color:#75715e"># Straight : hash dict</span>
+-a <span style="color:#ae81ff">1</span> <span style="color:#75715e"># Combination : hash dict dict</span>
+-a <span style="color:#ae81ff">3</span> <span style="color:#75715e"># Bruteforce : hash mask</span>
+-a <span style="color:#ae81ff">6</span> <span style="color:#75715e"># Hybrid wordlist + mask : hash dict mask</span>
+-a <span style="color:#ae81ff">7</span> <span style="color:#75715e"># Hybrid mask + wordlist : hash mask dict</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="charsets">Charsets</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">?l <span style="color:#75715e"># Lowercase a-z</span>
+?u <span style="color:#75715e"># Uppercase A-Z</span>
+?d <span style="color:#75715e"># Decimals</span>
+?h <span style="color:#75715e"># Hex using lowercase chars</span>
+?H <span style="color:#75715e"># Hex using uppercase chars</span>
+?s <span style="color:#75715e"># Special chars</span>
+?a <span style="color:#75715e"># All (l,u,d,s)</span>
+?b <span style="color:#75715e"># Binary</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="options">Options</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-m <span style="color:#75715e"># Hash type</span>
+-a <span style="color:#75715e"># Attack mode</span>
+-r <span style="color:#75715e"># Rules file</span>
+-V <span style="color:#75715e"># Version</span>
+--status <span style="color:#75715e"># Keep screen updated</span>
+-b <span style="color:#75715e"># Benchmark</span>
+--runtime <span style="color:#75715e"># Abort after X seconds</span>
+--session <span style="color:#f92672">[</span>text<span style="color:#f92672">]</span> <span style="color:#75715e"># Set session name</span>
+--restore <span style="color:#75715e"># Restore/Resume session</span>
+-o filename <span style="color:#75715e"># Output to filename</span>
+--username <span style="color:#75715e"># Ignore username field in a hash</span>
+--potfile-disable <span style="color:#75715e"># Ignore potfile and do not write</span>
+-d <span style="color:#75715e"># Specify an OpenCL Device</span>
+-D <span style="color:#75715e"># Specify an OpenCL Device Type</span>
+-l <span style="color:#75715e"># List OpenCL Devices &amp; Types</span>
+-O <span style="color:#75715e"># Optimized Kernel, Passwords &lt;32 chars</span>
+-i <span style="color:#75715e"># Increment (bruteforce)</span>
+--increment-min <span style="color:#75715e"># Start increment at X chars</span>
+--increment-max <span style="color:#75715e"># Stop increment at X chars</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="examples">Examples</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Benchmark MD4 hashes</span>
+hashcat -b -m <span style="color:#ae81ff">900</span>
+
+<span style="color:#75715e"># Create a hashcat session to hash Kerberos 5 tickets using wordlist</span>
+hashcat -m <span style="color:#ae81ff">13100</span> -a <span style="color:#ae81ff">0</span> --session crackin1 hashes.txt wordlist.txt -o output.pot
+
+<span style="color:#75715e"># Crack MD5 hashes using all char in 7 char passwords</span>
+hashcat -m <span style="color:#ae81ff">0</span> -a <span style="color:#ae81ff">3</span> -i hashes.txt ?a?a?a?a?a?a?a -o output.pot
+
+<span style="color:#75715e"># Crack SHA1 by using wordlist with 2 char at the end</span> 
+hashcat -m <span style="color:#ae81ff">100</span> -a <span style="color:#ae81ff">6</span> hashes.txt wordlist.txt ?a?a -o output.pot
+
+<span style="color:#75715e"># Crack WinZip hash using mask (Summer2018!)</span>
+hashcat -m <span style="color:#ae81ff">13600</span> -a <span style="color:#ae81ff">3</span> hashes.txt ?u?l?l?l?l?l?l?d?d?d?d! -o output.pot
+
+<span style="color:#75715e"># Crack MD5 hashes using dictionnary and rules</span>
+hashcat -a <span style="color:#ae81ff">0</span> -m <span style="color:#ae81ff">0</span> example0.hash example.dict -r rules/best64.rules
+
+<span style="color:#75715e"># Crack MD5 using combinator function with 2 dictionnaries</span>
+hashcat -a <span style="color:#ae81ff">1</span> -m <span style="color:#ae81ff">0</span> example0.hash example.dict example.dict
+
+<span style="color:#75715e"># Cracking NTLM hashes</span>
+hashcat64 -m <span style="color:#ae81ff">1000</span> -a <span style="color:#ae81ff">0</span> -w <span style="color:#ae81ff">4</span> --force --opencl-device-types <span style="color:#ae81ff">1</span>,2 -O d:<span style="color:#8045ff">\h</span>ashsample.hash <span style="color:#d88200">&#34;d:\WORDLISTS\realuniq.lst&#34;</span> -r OneRuleToRuleThemAll.rule
+
+<span style="color:#75715e"># Cracking hashes from kerberoasting</span>
+hashcat64 -m <span style="color:#ae81ff">13100</span> -a <span style="color:#ae81ff">0</span> -w <span style="color:#ae81ff">4</span> --force --opencl-device-types <span style="color:#ae81ff">1</span>,2 -O d:<span style="color:#8045ff">\k</span>rb5tgs.hash d:<span style="color:#8045ff">\W</span>ORDLISTS<span style="color:#8045ff">\r</span>ealhuman_phill.txt -r OneRuleToRuleThemAll.rule </code></pre></div>
 
     
     
