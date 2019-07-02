@@ -135,6 +135,10 @@
   </url>
   
   <url>
+    <loc>/wireless/wifi_cracking/</loc>
+  </url>
+  
+  <url>
     <loc>/web-attacks/content-management-system-cms/wordpress/</loc>
   </url>
   
@@ -620,6 +624,10 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/389_636_3269_ldap/</loc>
+  </url>
+  
+  <url>
+    <loc>/wireless/</loc>
   </url>
   
   <url>

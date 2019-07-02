@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-02T10:57:18 CEST">
+<meta name="revised" content="2019-07-02T15:56:58 CEST">
 <title>Subdomain Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1223,6 +1223,21 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/wireless/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/wireless/">Wireless</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/wireless/wifi_cracking/" class="dd-item">
+        <div>
+          <a href="/wireless/wifi_cracking/">
+            WiFi Cracking
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
 
 
 
@@ -1284,6 +1299,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/wireless/" >
+   Wireless</option>
 
 
 
@@ -1389,6 +1406,29 @@ python sublist3r.py -d domain.fr
 fierce -dns domain.fr
 
 <span style="color:#75715e"># Aquatone is also a great tool</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="knockpy">Knockpy</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Knockpy is a python tool designed to enumerate subdomains on a target</span> 
+<span style="color:#75715e"># domain through a wordlist. It is designed to scan for DNS zone transfer</span> 
+<span style="color:#75715e"># and to try to bypass the wildcard DNS record automatically if it is enabled.</span> 
+<span style="color:#75715e"># Now knockpy supports queries to VirusTotal subdomains, you can set</span> 
+<span style="color:#75715e"># the API_KEY within the config.json file.</span>
+
+<span style="color:#75715e"># Classic research with internal wordlist</span>
+knockpy domain.com
+
+<span style="color:#75715e"># Use a specific wordlist</span>
+knockpy domain.com -w wordlist.txt
+
+<span style="color:#75715e"># Resolve IP</span>
+knockpy -r domain.com or IP
+
+<span style="color:#75715e"># Save output to CSV</span>
+knockpy -c domain.com
+
+<span style="color:#75715e"># export in JSON</span>
+knockpy -j domain.com</code></pre></div>
 <p><br/></p>
 
 <h3 id="permutation-scanning">Permutation Scanning</h3>

