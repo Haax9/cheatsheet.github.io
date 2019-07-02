@@ -135,6 +135,10 @@
   </url>
   
   <url>
+    <loc>/wireless/wifi_cracking/</loc>
+  </url>
+  
+  <url>
     <loc>/web-attacks/content-management-system-cms/wordpress/</loc>
   </url>
   
@@ -503,10 +507,6 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</loc>
-  </url>
-  
-  <url>
     <loc>/open-source-intelligence-osint/human-recon/geolocation/</loc>
   </url>
   
@@ -527,6 +527,10 @@
   </url>
   
   <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</loc>
+  </url>
+  
+  <url>
     <loc>/shells-methods/windows/</loc>
   </url>
   
@@ -540,6 +544,10 @@
   
   <url>
     <loc>/windows-systems/exploitation/file_transfer/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</loc>
   </url>
   
   <url>
@@ -560,6 +568,10 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/135_rpc/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/burpsuite/</loc>
   </url>
   
   <url>
@@ -591,6 +603,10 @@
   </url>
   
   <url>
+    <loc>/web-attacks/postman/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/services-enumeration/143_imap/</loc>
   </url>
   
@@ -608,6 +624,10 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/389_636_3269_ldap/</loc>
+  </url>
+  
+  <url>
+    <loc>/wireless/</loc>
   </url>
   
   <url>

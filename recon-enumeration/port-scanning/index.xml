@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/recon-enumeration/port-scanning/nmap_cheatsheet/</guid>
-      <description>Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
+      <description>https://github.com/Tib3rius/AutoRecon Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
     </item>
     
   </channel>
