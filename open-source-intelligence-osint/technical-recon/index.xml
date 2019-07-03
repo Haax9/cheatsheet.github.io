@@ -17,7 +17,7 @@
       
       <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
       <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx 
-Online Passive Identification Tools # Many passive tests can be done http://www.ipvoid.com/ # Informations about the target https://securitytrails.com/ # When you have a name or a e-mail adress you can perform a reverse whois lookup to find domain # names oned by a person of a company https://viewdns.</description>
+Online Passive Identification Tools # You can identify IP block owned by a company ipv4info.com # Then you can find domains and subdomains associated to an IP by using Passive Reverse DNS https://www.virustotal.com/gui/home/search RiskIQ Passive DNS # Many passive tests can be done http://www.</description>
     </item>
     
     <item>

