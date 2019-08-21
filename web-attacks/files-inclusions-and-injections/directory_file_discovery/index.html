@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-02T15:56:58 CEST">
+<meta name="revised" content="2019-08-21T14:34:16 CEST">
 <title>Directory &amp; File Discovery :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -978,6 +978,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/iis/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/iis/">
+            IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1040,6 +1047,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/dc_shadow/">
             DC Shadow
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/searching_informations/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
+            Searching Informations
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1133,10 +1147,17 @@
       <a href="/other-systems/">Other Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/other-systems/todo/" class="dd-item">
+      <li data-nav-id="/other-systems/ipbx/" class="dd-item">
         <div>
-          <a href="/other-systems/todo/">
+          <a href="/other-systems/ipbx/">
             IPBX
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/misc/" class="dd-item">
+        <div>
+          <a href="/other-systems/misc/">
+            MISC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1166,6 +1187,13 @@
         <div>
           <a href="/passcracking-hashfiles/cracking_files/">
             Cracking files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/wordlists/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/wordlists/">
+            Wordlists &amp; Co
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1220,6 +1248,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/pwn/general_infos/" class="dd-item">
+        <div>
+          <a href="/pwn/general_infos/">
+            General Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -1352,7 +1387,20 @@ patator http_fuzz <span style="color:#111">url</span><span style="color:#f92672"
 
 
 <span style="color:#75715e"># Auth basic</span>
-patator http_fuzz <span style="color:#111">url</span><span style="color:#f92672">=</span>https://IP/FILE0 <span style="color:#111">0</span><span style="color:#f92672">=</span>.wordlisttxt -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span> -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">404</span> <span style="color:#111">header</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;Authorization: Basic YOUR_BASE64_HERE&#39;</span></code></pre></div>
+patator http_fuzz <span style="color:#111">url</span><span style="color:#f92672">=</span>https://IP/FILE0 <span style="color:#111">0</span><span style="color:#f92672">=</span>.wordlisttxt -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span> -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">404</span> <span style="color:#111">header</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;Authorization: Basic YOUR_BASE64_HERE&#39;</span>
+
+<span style="color:#75715e"># Admin wordlist</span>
+patator http_fuzz <span style="color:#111">url</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;url/FILE0&#39;</span> <span style="color:#111">0</span><span style="color:#f92672">=</span>wordlist/admin.lst -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span> -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">404</span> -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">403</span> 
+
+<span style="color:#75715e"># Directory wordlist (dirbuster)</span>
+patator http_fuzz <span style="color:#111">url</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;url/FILE0&#39;</span> <span style="color:#111">0</span><span style="color:#f92672">=</span>wordlist/directory-lowercase.txt -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span> -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">404</span> -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">403</span>
+
+<span style="color:#75715e"># File wordlist (raft)</span>
+patator http_fuzz <span style="color:#111">url</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;url/FILE0&#39;</span> <span style="color:#111">0</span><span style="color:#f92672">=</span>wordlist/raft-lowercase.txt -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span> -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">404</span> -x ignore:code<span style="color:#f92672">=</span><span style="color:#ae81ff">403</span></code></pre></div>
+<p><br/></p>
+
+<h2 id="dirs-endpoits">DIRs endpoits</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/uplynk/examples/dash.html</code></pre></div>
 
     
     

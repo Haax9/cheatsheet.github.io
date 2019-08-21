@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-02T15:56:58 CEST">
+<meta name="revised" content="2019-08-21T14:34:16 CEST">
 <title>Domain Mapping :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -978,6 +978,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/iis/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/iis/">
+            IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1040,6 +1047,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/dc_shadow/">
             DC Shadow
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/searching_informations/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
+            Searching Informations
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1133,10 +1147,17 @@
       <a href="/other-systems/">Other Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/other-systems/todo/" class="dd-item">
+      <li data-nav-id="/other-systems/ipbx/" class="dd-item">
         <div>
-          <a href="/other-systems/todo/">
+          <a href="/other-systems/ipbx/">
             IPBX
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/misc/" class="dd-item">
+        <div>
+          <a href="/other-systems/misc/">
+            MISC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1166,6 +1187,13 @@
         <div>
           <a href="/passcracking-hashfiles/cracking_files/">
             Cracking files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/wordlists/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/wordlists/">
+            Wordlists &amp; Co
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1220,6 +1248,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/pwn/general_infos/" class="dd-item">
+        <div>
+          <a href="/pwn/general_infos/">
+            General Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -1326,6 +1361,29 @@
 
 <h3 id="bloodhound">BloodHound</h3>
 
+<h4 id="tips">Tips</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Right Click</span>
+<span style="color:#75715e"># Get information about the node and also how to compromise the user / machine</span>
+
+<span style="color:#75715e"># Owned</span>
+<span style="color:#75715e"># Can be usefull during an internal pentest to note where you are</span>
+<span style="color:#75715e"># Nodes will be tagged with a skull</span>
+<span style="color:#75715e"># It&#39;s then possible to ask the shortest path to a node from the owned ones</span>
+
+<span style="color:#75715e"># Filters</span>
+<span style="color:#75715e"># Can be usefull</span>
+
+<span style="color:#75715e"># Shortcuts</span>
+<span style="color:#75715e"># CTRL --&gt; Change node display</span>
+<span style="color:#75715e"># CTRL+SHIFT+I --&gt; Developper Tools</span>
+<span style="color:#75715e"># CTRL+R --&gt; Reload display</span>
+
+<span style="color:#75715e"># Still possible to edit data to set what you want</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you don&#39;t have access to a domain machine but have creds</span>
+<span style="color:#75715e"># You can run from host</span>
+runas /netonly /user:FQDN.local<span style="color:#8045ff">\U</span>SER powershell
+<span style="color:#75715e"># Then</span>
+Import-Module Sharphound.ps1
+Invoke-BloodHound -ZipFileName <span style="color:#d88200">&#39;PATH/TO/ZIP.zip&#39;</span> -JsonFolder <span style="color:#d88200">&#39;PATH/TO/folderas above&#39;</span> -CollectionMethod All -Domain  FQDN</code></pre></div>
 <h5 id="setup">Setup</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Bloodhound directement depuis la machine cible</span>
 <span style="color:#75715e"># apt-get install bloodhound</span>
@@ -1354,12 +1412,17 @@ Invoke-BloodHound -CollectionMethod All
 <span style="color:#75715e"># Default : Domains, Computers, Users, Groups</span>
 <span style="color:#75715e"># All : Domains, Computers, Users, Groups, OUs, GPOs</span>
 
-
 <span style="color:#75715e"># Exe</span>
 <span style="color:#75715e"># You may need some .NET packages</span>
 C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe
 C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe — CollectionMethod SessionLoop — MaxLoopTime 1h
-C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe — CollectionMethod ACL</code></pre></div>
+C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe — CollectionMethod ACL
+
+C:<span style="color:#8045ff">\&gt;</span> ShardHound.exe --Domain factory.lan --DomainController &lt;ip&gt; --LDAPUser user --LDAPPass <span style="color:#d88200">&#34;pass&#34;</span> --CollectionMethod All,GPOLocalGroup,LoggedOn</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Python based ingestor (for remote work)</span>
+https://github.com/fox-it/BloodHound.py
+
+<span style="color:#75715e"># Collection Methods : Default, Group, LocalAdmin, RDP, DCOM, Session, Acl, Trusts, LoggedOn, ObjectProps, All (except LoggedOn)</span>
+bloodhound-python -u USERNAME -p PASSWORD -d DOMAIN --collectionmethod All </code></pre></div>
 <h4 id="analysis">Analysis</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Results will be zipped</span>
 <span style="color:#75715e"># Get back zip, unzip it and upload files into bloodhound</span></code></pre></div>

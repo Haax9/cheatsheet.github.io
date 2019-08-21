@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-02T15:56:59 CEST">
+<meta name="revised" content="2019-08-21T14:34:16 CEST">
 <title>PHP Type Juggling :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -786,6 +786,34 @@
       <a href="/network/">Network</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/network/pivot_techniques/" class="dd-item">
+        <div>
+          <a href="/network/pivot_techniques/">
+            Pivot Techniques
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/ldap_dns/" class="dd-item">
+        <div>
+          <a href="/network/ldap_dns/">
+            LDAP &amp; DNS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/mac_arp/" class="dd-item">
+        <div>
+          <a href="/network/mac_arp/">
+            MAC &amp; ARP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/icmp/" class="dd-item">
+        <div>
+          <a href="/network/icmp/">
+            ICMP Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/shells-methods/" class="dd-item haschildren
@@ -950,6 +978,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/iis/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/iis/">
+            IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1012,6 +1047,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/dc_shadow/">
             DC Shadow
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/searching_informations/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
+            Searching Informations
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1105,10 +1147,17 @@
       <a href="/other-systems/">Other Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/other-systems/todo/" class="dd-item">
+      <li data-nav-id="/other-systems/ipbx/" class="dd-item">
         <div>
-          <a href="/other-systems/todo/">
+          <a href="/other-systems/ipbx/">
             IPBX
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/misc/" class="dd-item">
+        <div>
+          <a href="/other-systems/misc/">
+            MISC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1138,6 +1187,13 @@
         <div>
           <a href="/passcracking-hashfiles/cracking_files/">
             Cracking files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/wordlists/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/wordlists/">
+            Wordlists &amp; Co
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1192,6 +1248,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/pwn/general_infos/" class="dd-item">
+        <div>
+          <a href="/pwn/general_infos/">
+            General Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -1316,7 +1379,9 @@
 <span style="color:#75715e"># In PHP, if “==” is used, then 2 strings beginning by “0e” and filled with numbers will always be equal</span>
 <span style="color:#75715e"># It means that you can use magic hashes (0exxxx...) to break the comparison</span>
 <span style="color:#75715e"># md5(240610708) = 0e462097431906509019562988736854</span>
-<span style="color:#75715e"># So 0e == 240610708 → true</span></code></pre></div>
+<span style="color:#75715e"># So 0e == 240610708 → true</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Magic hash for SHA-224</span>
+<span style="color:#ae81ff">10885164793773</span> --&gt; 0e281250946775200129471613219196999537878926740638594636</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Magic hash for SHA-256</span>
+<span style="color:#ae81ff">34250003024812</span> --&gt; 0e46289032038065916139621039085883773413820991920706299695051332</code></pre></div>
 <p><br/></p>
 
 <h3 id="strcmp">strcmp()</h3>

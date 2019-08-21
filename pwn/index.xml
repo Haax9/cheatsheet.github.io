@@ -10,5 +10,14 @@
 	<atom:link href="/pwn/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>General Informations</title>
+      <link>/pwn/general_infos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pwn/general_infos/</guid>
+      <description>MISC - Tricks # Checking program/binary protections checksec --file ./binary # Getting more informations about an ELF readelf -a ./binary # Gettign system() adress # Can be simple objdump -D ./binary | grep system # Getting known string (&amp;#34;GNU&amp;#34; for example) # Look for objdump -s ./binary# Getting padding using pwntools &amp;gt;&amp;gt; from pwn import * # Generate pattern &amp;gt;&amp;gt; cyclic(400) ## Find offset where SIGSEGV &amp;gt;&amp;gt; find_cyclic(&amp;#39;&amp;lt;RSPoffset&amp;gt;&amp;#39;) &amp;gt;&amp;gt; find_cyclic(&amp;#39;yaac&amp;#39;)# You can list gadgets using ROPGadgets.</description>
+    </item>
+    
   </channel>
 </rss>

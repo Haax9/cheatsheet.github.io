@@ -55,7 +55,7 @@ Blind LDAP Injection # You have to find/imagine how is the request built # test 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/server-side-injections/ssrf/</guid>
-      <description>https://vinc.top/2016/11/24/server-side-request-forgery 
+      <description>https://vinc.top/2016/11/24/server-side-request-forgery https://github.com/allanlw/svg-cheatsheet 
 PoC and enumeration # It is possible to prove the vulnerability by reading local files # Using the file protocol url=file:///etc/passwd # Then you can enumerate local services that are listening # Depending on the response http://localhost:&amp;lt;port&amp;gt; # It is also possible to use others protocols like gopher and dict # They don&amp;#39;t send HTTP headers and can avoid misinterpretation gopher://127.0.0.1:6379/test # Filter bypass http://127.1 instead of http://127.</description>
     </item>
     

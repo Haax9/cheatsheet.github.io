@@ -35,7 +35,9 @@ MISC # Install files # You can check for backup files using the following extens
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/burpsuite/</guid>
-      <description>TODO</description>
+      <description>WORK IN PROGRESS 
+Modules / Addons TODO 
+Resources to check # Complete MOOC style course (subscribing but it&amp;#39;s free) (2 links are the same course) https://www.udemy.com/burp-suite/ https://hackademy.aetherlab.net/p/burp-suite # Video course https://www.tutorialspoint.com/burpsuite/index.asp # Kinda detailed tutorial (text + pictures) https://www.pentestgeek.com/web-applications/burp-suite-tutorial-1 https://www.pentestgeek.com/web-applications/how-to-use-burp-suite # Fast course/tutorial (text + images) https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-2 https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-3 https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-4 # ??? https://portswigger.net/web-security # Conferences slides https://fr.slideshare.net/ZackMeyers/web-hacking-with-burp-suite-101 # Not free (but it seems to have a kind of 10 days free ?</description>
     </item>
     
     <item>
@@ -44,7 +46,8 @@ MISC # Install files # You can check for backup files using the following extens
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/postman/</guid>
-      <description>https://www.guru99.com/postman-tutorial.html https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5123020-testez-votre-api-grace-a-postman https://www.toolsqa.com/postman-tutorial/ https://amethyste16.wordpress.com/2016/02/24/tutoriel-postman/ User Interface Header # Import --&amp;gt; Used to import collection or environment. # Runner --&amp;gt; Automation tests can be executed through the Collection Runner. # Workspace --&amp;gt; You can divide work using workspaces Sidebar # History --&amp;gt; Past requests that you have sent will be displayed in History. # This makes it easy to track actions that you have done. # Organize --&amp;gt; your test suite by creating collections.</description>
+      <description>https://www.guru99.com/postman-tutorial.html https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5123020-testez-votre-api-grace-a-postman https://www.toolsqa.com/postman-tutorial/ https://amethyste16.wordpress.com/2016/02/24/tutoriel-postman/ 
+User Interface Header # Import --&amp;gt; Used to import collection or environment. # Runner --&amp;gt; Automation tests can be executed through the Collection Runner. # Workspace --&amp;gt; You can divide work using workspaces Sidebar # History --&amp;gt; Past requests that you have sent will be displayed in History. # This makes it easy to track actions that you have done. # Organize --&amp;gt; your test suite by creating collections.</description>
     </item>
     
   </channel>

@@ -26,8 +26,8 @@ Methodology _ Keep it simple, test for very basic things. | | |________ Which la
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/tty_full/</guid>
-      <description>Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; Ctrl-Z # In Kali $ stty raw -echo $ fg # In reverse shell $ reset $ export SHELL=bash $ export TERM=xterm-256color $ stty -raw echo OR $ stty rows &amp;lt;num&amp;gt; columns &amp;lt;cols&amp;gt; 
-Spawning a shell # Using os.system echo os.system(&amp;#39;/bin/bash&amp;#39;)# Using interactive sh /bin/sh -i# Using Perl, Ruby or Lua perl -e &amp;#39;exec &amp;#34;/bin/sh&amp;#34;;&amp;#39; perl: exec &amp;#34;/bin/sh&amp;#34;; ruby: exec &amp;#34;/bin/sh&amp;#34;; lua: os.</description>
+      <description>MISC # RLWRAP allows you to interface local and remote keyboards # It gives access to keyboard arrows and history rlwrap ncat -lvp port 
+Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; Ctrl-Z # In Kali $ stty raw -echo $ fg # In reverse shell $ reset $ export SHELL=bash $ export TERM=xterm-256color $ stty -raw echo OR $ stty rows &amp;lt;num&amp;gt; columns &amp;lt;cols&amp;gt;</description>
     </item>
     
     <item>

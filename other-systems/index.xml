@@ -12,11 +12,20 @@
     
     <item>
       <title>IPBX</title>
-      <link>/other-systems/todo/</link>
+      <link>/other-systems/ipbx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/other-systems/todo/</guid>
+      <guid>/other-systems/ipbx/</guid>
       <description># You can browse to the following URL to get all users registered with an extension 178.33.47.167/panel/ # Sipvicious is a great tool to attack VoIP # You can bruteforce a special extension/account ./svcrack.py -u 2000 178.33.47.167 -d ./notre_dictionnaire -vv</description>
+    </item>
+    
+    <item>
+      <title>MISC</title>
+      <link>/other-systems/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/misc/</guid>
+      <description> RTSP and VLC # RTSP (Real Time Streaming Protocol) is used with IP camera # You can view it from VLC Media Player # Open Network Stream &amp;gt; rtsp://ip/endpoint</description>
     </item>
     
   </channel>

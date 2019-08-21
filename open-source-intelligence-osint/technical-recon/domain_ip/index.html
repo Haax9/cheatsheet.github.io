@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-02T15:56:57 CEST">
+<meta name="revised" content="2019-08-21T14:34:14 CEST">
 <title>Domain &amp; IP :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -978,6 +978,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/iis/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/iis/">
+            IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1040,6 +1047,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/dc_shadow/">
             DC Shadow
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/searching_informations/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
+            Searching Informations
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1133,10 +1147,17 @@
       <a href="/other-systems/">Other Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/other-systems/todo/" class="dd-item">
+      <li data-nav-id="/other-systems/ipbx/" class="dd-item">
         <div>
-          <a href="/other-systems/todo/">
+          <a href="/other-systems/ipbx/">
             IPBX
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/misc/" class="dd-item">
+        <div>
+          <a href="/other-systems/misc/">
+            MISC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1166,6 +1187,13 @@
         <div>
           <a href="/passcracking-hashfiles/cracking_files/">
             Cracking files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/wordlists/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/wordlists/">
+            Wordlists &amp; Co
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1212,7 +1240,21 @@
       <a href="/pwn/buffer-overflow/">Buffer Overflow (BoF)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/pwn/buffer-overflow/easy_no_protection/" class="dd-item">
+        <div>
+          <a href="/pwn/buffer-overflow/easy_no_protection/">
+            Easy - No Protections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
+    </li>
+      <li data-nav-id="/pwn/general_infos/" class="dd-item">
+        <div>
+          <a href="/pwn/general_infos/">
+            General Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -1340,7 +1382,15 @@ ip:xxx.xxx.xxx.xxx</code></pre></div>
 <p><br/></p>
 
 <h3 id="online-passive-identification-tools">Online Passive Identification Tools</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Many passive tests can be done</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can identify IP block owned by a company</span>
+ipv4info.com
+
+<span style="color:#75715e"># Then you can find domains and subdomains associated to an IP by using Passive Reverse DNS</span>
+https://www.virustotal.com/gui/home/search
+RiskIQ Passive DNS
+
+<span style="color:#75715e"># Many passive tests can be done</span>
+<span style="color:#75715e"># Reverse IP Lookup to find new domains</span>
 http://www.ipvoid.com/
 
 <span style="color:#75715e"># Informations about the target</span>
@@ -1356,7 +1406,11 @@ https://www.onyphe.io/
 <span style="color:#75715e"># Shodan.io and Censys.io are also usefull</span>
 
 <span style="color:#75715e"># Robtex is a great and complete tool</span>
-https://www.robtex.com</code></pre></div>
+https://www.robtex.com
+
+<span style="color:#75715e"># You can identify new domains in the &#34;RelationShip&#34; section</span>
+<span style="color:#75715e"># of Builtwith</span>
+https://builtwith.com/relationships/sodifrance.fr</code></pre></div>
 <p><br/></p>
 
 <h3 id="r3con1z3r-https-github-com-abdulgaphy-r3con1z3r">r3con1z3r (<a href="https://github.com/abdulgaphy/r3con1z3r">https://github.com/abdulgaphy/r3con1z3r</a>)</h3>
@@ -1396,7 +1450,8 @@ python discraper.py -u &lt;url&gt; -o &lt;output&gt;
 python discraper.py -u &lt;url&gt; -s -o &lt;output&gt;
 
 <span style="color:#75715e"># Relative URL Extractor is another good tool to scrape from JS files (https://github.com/jobertabma/relative-url-extractor)</span>
-ruby extract.rb https://hackerone.com/some-file.js</code></pre></div>
+ruby extract.rb https://hackerone.com/some-file.js</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Extract all API endpoints from AngularJS &amp; Angular javascript files</span>
+curl -s URL <span style="color:#111">|</span> grep -Po <span style="color:#d88200">&#34;(\/)((?:[a-zA-Z\-_\:\.0-9\{\}]+))(\/)*((?:[a-zA-Z\-_\:\.0-9\{\}]+))(\/)((?:[a-zA-Z\-_\/\:\.0-9\{\}]+))&#34;</span> <span style="color:#111">|</span> sort -u</code></pre></div>
 <p><br/></p>
 
 <h3 id="more-information-gathering">More Information Gathering</h3>

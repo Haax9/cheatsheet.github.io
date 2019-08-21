@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-07-02T15:56:59 CEST">
+<meta name="revised" content="2019-08-21T14:34:16 CEST">
 <title>Dorks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -978,6 +978,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/iis/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/iis/">
+            IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1040,6 +1047,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/dc_shadow/">
             DC Shadow
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/searching_informations/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
+            Searching Informations
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1133,10 +1147,17 @@
       <a href="/other-systems/">Other Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/other-systems/todo/" class="dd-item">
+      <li data-nav-id="/other-systems/ipbx/" class="dd-item">
         <div>
-          <a href="/other-systems/todo/">
+          <a href="/other-systems/ipbx/">
             IPBX
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/misc/" class="dd-item">
+        <div>
+          <a href="/other-systems/misc/">
+            MISC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1166,6 +1187,13 @@
         <div>
           <a href="/passcracking-hashfiles/cracking_files/">
             Cracking files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/wordlists/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/wordlists/">
+            Wordlists &amp; Co
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1220,6 +1248,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/pwn/general_infos/" class="dd-item">
+        <div>
+          <a href="/pwn/general_infos/">
+            General Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -1355,7 +1390,9 @@ sites:cadres.apec.fr direction &lt;SOCIETE&gt;
 <p><br/></p>
 
 <h3 id="twitter-dorks">Twitter Dorks</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tweets containing word1 AND word2 (default operator)</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/BNFC_13/status/1160890864337600512
+
+<span style="color:#75715e"># Tweets containing word1 AND word2 (default operator)</span>
 &lt;word1&gt; &lt;word2&gt;
 
 <span style="color:#75715e"># Containing exact expression</span>
@@ -1371,9 +1408,21 @@ cyber -security
 from:&lt;account&gt;
 to:&lt;account&gt;
 
+<span style="color:#75715e"># Filter results and display only results from followed accounts</span>
+filter:follows
+exclude:medias
+
 <span style="color:#75715e"># Tweets after the date or before the date</span>
 &lt;word&gt; since:2015-02-20
 &lt;word&gt; <span style="color:#00a8c8">until</span>:2015-02-20
+
+<span style="color:#75715e"># Minimal RT / likes / replies</span>
+min_retweets:x
+min_faves:x
+min_replies:x
+
+<span style="color:#75715e"># Language</span>
+lang:fr
 
 <span style="color:#75715e"># Tweets positive and negative</span>
 &lt;word&gt; :<span style="color:#f92672">)</span>
@@ -1383,7 +1432,7 @@ to:&lt;account&gt;
 &lt;word&gt; ?
 
 <span style="color:#75715e"># Location (city) with a distance range</span>
-near:Paris withing:25km
+near:Paris within:25km
 
 <span style="color:#75715e"># Tweets corresponding to &#34;gaming&#34; according the filter</span>
 <span style="color:#75715e"># - safe : potentially hard or deleted</span>

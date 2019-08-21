@@ -43,6 +43,10 @@
   </url>
   
   <url>
+    <loc>/pwn/general_infos/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/hosting-and-repositories/github/</loc>
   </url>
   
@@ -51,7 +55,7 @@
   </url>
   
   <url>
-    <loc>/other-systems/todo/</loc>
+    <loc>/other-systems/ipbx/</loc>
   </url>
   
   <url>
@@ -212,6 +216,10 @@
   
   <url>
     <loc>/windows-systems/local-and-physical/</loc>
+  </url>
+  
+  <url>
+    <loc>/other-systems/misc/</loc>
   </url>
   
   <url>
@@ -415,6 +423,10 @@
   </url>
   
   <url>
+    <loc>/windows-systems/post-exploitation-techniques/searching_informations/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/human-recon/searchingsomeone/</loc>
   </url>
   
@@ -432,6 +444,10 @@
   
   <url>
     <loc>/windows-systems/privilege-escalation/windows_defender/</loc>
+  </url>
+  
+  <url>
+    <loc>/passcracking-hashfiles/wordlists/</loc>
   </url>
   
   <url>
@@ -572,6 +588,10 @@
   
   <url>
     <loc>/web-attacks/burpsuite/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/exploitation/iis/</loc>
   </url>
   
   <url>

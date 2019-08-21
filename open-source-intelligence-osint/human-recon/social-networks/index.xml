@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</guid>
-      <description>ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile 
-linkScrape # linkScrape is another enumeration tool # Pure Web Scrapper → It does not use the LinkedIn API # /!</description>
+      <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
+ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile</description>
     </item>
     
     <item>
@@ -46,8 +46,8 @@ Facebook Sleep Stats # A small tool to show the potential privacy implications m
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
-      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com 
-Instaloader (https://github.com/instaloader/instaloader) # Downloads public and private profiles, hashtags, user stories,feeds and saved media, # Downloads comments, geotags and captions of each post, # Automatically detects profile name changes and renames the targetdirectory accordingly, # Allows fine-grained customization of filters and where to storedownloaded media.</description>
+      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com # Full size Instagram photos https://www.instadp.com/ 
+InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT Tool gets a range of information from an Instagram account # that you normally wouldn&amp;#39;t be able to get from just looking at their profile # Username # Profile Name # URL # Followers # Following # Number of Posts # Bio # Profile Picture URL # Is Business Account?</description>
     </item>
     
     <item>
@@ -74,9 +74,8 @@ Instaloader (https://github.com/instaloader/instaloader) # Downloads public and 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
-      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php 
-SocialBlade # Socialblade is an online tool where you can see and analyze Youtube, Instagram, Twitch, Twitter or Dailymotion accounts https://socialblade.com/twitter/user/***REMOVED*** 
-Youtube # Yasiv is an online tool allowing to map links and relations between Youtube videos https://yasiv.</description>
+      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
+Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&amp;#34; # Filters&amp;gt;G’MIC&amp;gt;Details&amp;gt;Sharpen (Deblur)# Pixelize # The Pixelize blur works by dividing an image into a number of squares # and then replacing all the pixels in each square by average of their values.</description>
     </item>
     
   </channel>

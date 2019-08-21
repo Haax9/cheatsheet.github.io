@@ -26,8 +26,9 @@ LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#3
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/domain_recon/</guid>
-      <description>RPC # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
-Enumeration # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.fr ./enum4linux.pl -R 1090-1200 # windapsearch is also a very good tool to perform automated LDAP queries # Enumerate users .</description>
+      <description>Tips # Enumerate sessions net session \\computer 
+RPC # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
+Enumeration # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.</description>
     </item>
     
     <item>
@@ -36,7 +37,7 @@ Enumeration # You can use enum4linux to enumerate domain users # You can try ano
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/domain_mapping/</guid>
-      <description>BloodHound Setup # Bloodhound directement depuis la machine cible # apt-get install bloodhound # Setup $ sudo neo4j console ... ... http://localhost:7474 user/pass = neo4j/neo4j # Start $ bloodhound URL : bolt://127.0.0.1:7687 Target Collection # On the target, drop the Sharphound ingestor # You can drop it through shared folder or by download https://github.com/BloodHoundAD/BloodHound https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1 # Powershell Powershell.exe -Exec Bypass Import-Module .\Sharphound.ps1 Invoke-Bloodhound Invoke-BloodHound -CollectionMethod All # Default : Domains, Computers, Users, Groups # All : Domains, Computers, Users, Groups, OUs, GPOs # Exe # You may need some .</description>
+      <description>BloodHound Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want# If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
     </item>
     
   </channel>

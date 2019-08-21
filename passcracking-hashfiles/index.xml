@@ -40,5 +40,15 @@ MISC &amp;amp; Tricks # Show hidden options ./john --list=hidden-options # Using
 Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --wordlist=/home/user/Desktop/Certifs/OSCP/Tools/Wordlist/Bruteforce/rockyou.txt --rules shadowjohn.txt john --show shadowjohn.txt # Hashcat SHA512 $6$ shadow file hashcat -m 1800 -a 0 hash.txt rockyou.txt --username #Hashcat MD5 $1$ shadow file hashcat -m 500 -a 0 hash.</description>
     </item>
     
+    <item>
+      <title>Wordlists &amp; Co</title>
+      <link>/passcracking-hashfiles/wordlists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/wordlists/</guid>
+      <description>Resources https://github.com/kaonashi-passwords/Kaonashi https://github.com/tarraschk/richelieu https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt https://packetstormsecurity.com/Crackers/wordlists/page4/ http://www.gwicks.net/dictionaries.htm # ... 
+CeWL # CeWL allows you to build custom wordlists based on online resources # If you know that your target is target.com, you can parse web content to build lists # Can be time consuming # 5 levels of depth and minimum 7 char per word cewl -w customwordlist.txt -d 5 -m 7 www.sans.org # Also visit and parse other sites cewl -w customwordlist.</description>
+    </item>
+    
   </channel>
 </rss>
