@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-08-21T14:34:16 CEST">
+<meta name="revised" content="2019-08-23T16:02:42 CEST">
 <title>Facebook :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1413,7 +1413,40 @@ npm start
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Graph Search is a Facebook internal search engine used to get precise results when searching</span>
 <span style="color:#75715e"># Facebook need to be in English version to activate the Graph Search</span>
 
-<span style="color:#75715e"># Classic requests are like in natural language</span>
+<span style="color:#75715e"># On June 2019, Facebook shut down its Graph Search options.</span>
+<span style="color:#75715e"># The ‘new’ Graph Search seems a little comprehensive at first</span>
+<span style="color:#75715e"># but it’s pretty easy once you get the hang of it. It involves some JSON and Base64.</span></code></pre></div>
+<h4 id="the-new-graph-search-methods">The New Graph Search Methods</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-1/
+https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-2/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Identifiers are always required to performs queries</span>
+<span style="color:#75715e"># CTRL+U on page, profile, group...</span>
+<span style="color:#75715e"># CTFL+F</span> 
+<span style="color:#75715e"># &#34;entity_id&#34; = Profile</span> 
+<span style="color:#75715e"># &#34;page_id&#34; = Page</span>
+<span style="color:#75715e"># &#34;group_id&#34; = Group</span>
+
+<span style="color:#75715e"># EVERY Facebook requests start like this</span>
+facebook.com/search/top/?q<span style="color:#f92672">=</span>people<span style="color:#111">&amp;</span><span style="color:#111">epa</span><span style="color:#f92672">=</span>FILTERS<span style="color:#111">&amp;</span><span style="color:#111">filters</span><span style="color:#f92672">=</span>
+
+<span style="color:#75715e"># top/  Search top content</span>
+<span style="color:#75715e"># posts/    Search public posts</span>
+<span style="color:#75715e"># people/   Search for people</span>
+<span style="color:#75715e"># photos/   Search for photos</span>
+<span style="color:#75715e"># videos/   Search for videos</span>
+<span style="color:#75715e"># pages/    Search for pages</span>
+<span style="color:#75715e"># places/   Search for places</span>
+
+<span style="color:#75715e"># And then the content of the query</span>
+facebook.com/search/posts/?q<span style="color:#f92672">=</span>baseball<span style="color:#111">&amp;</span><span style="color:#111">epa</span><span style="color:#f92672">=</span>FILTERS<span style="color:#111">&amp;</span><span style="color:#111">filters</span><span style="color:#f92672">=</span>
+
+<span style="color:#75715e"># It uses then JSON and BASE64 to apply filters</span>
+<span style="color:#75715e"># For example, the JSON string for &#34;most recent&#34; is</span>
+<span style="color:#f92672">{</span>“rp_chrono_sort”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>chronosort<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Then base64 encode it</span>
+facebook.com/search/posts/?q<span style="color:#f92672">=</span>baseball<span style="color:#111">&amp;</span><span style="color:#111">epa</span><span style="color:#f92672">=</span>FILTERS<span style="color:#111">&amp;</span><span style="color:#111">filters</span><span style="color:#f92672">=</span>&lt;BASE64&gt;</code></pre></div>
+<h4 id="old-graph-search">Old Graph Search</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Classic requests are like in natural language</span>
 Photos of my friends
 
 <span style="color:#75715e"># But some requests give bad results or false positive</span>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-08-21T14:34:15 CEST">
+<meta name="revised" content="2019-08-23T16:02:40 CEST">
 <title>Hashcat Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1494,7 +1494,10 @@ cewl -d <span style="color:#ae81ff">5</span> -m <span style="color:#ae81ff">4</s
 <span style="color:#75715e"># Finally use your already cracked passwords to build a new wordlist</span>
 .<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot --show <span style="color:#111">|</span> %<span style="color:#f92672">{</span><span style="color:#111">$_</span>.split<span style="color:#f92672">(</span><span style="color:#d88200">&#39;:&#39;</span><span style="color:#f92672">)[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]}</span> &gt; cracked.txt
 .<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt -a <span style="color:#ae81ff">6</span> cracked.txt <span style="color:#d88200">&#39;?d?d?d?d&#39;</span> -j c --increment --force -O
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt -a <span style="color:#ae81ff">0</span> cracked.txt -r .rules<span style="color:#8045ff">\O</span>neRuleToRuleThemAll.rule --force -O</code></pre></div>
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt -a <span style="color:#ae81ff">0</span> cracked.txt -r .rules<span style="color:#8045ff">\O</span>neRuleToRuleThemAll.rule --force -O
+
+<span style="color:#75715e"># You can also checks the target in popular leaks to find some password</span>
+<span style="color:#75715e"># Then try reuse or rules on them</span></code></pre></div>
 
     
     
