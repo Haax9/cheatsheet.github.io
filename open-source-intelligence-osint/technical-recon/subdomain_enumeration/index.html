@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-09-02T09:51:10 CEST">
+<meta name="revised" content="2019-09-27T17:20:37 CEST">
 <title>Subdomain Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1370,7 +1370,11 @@ site:wikipedia.org
 site:*.wikipedia.org -www -store -jobs -uk
 
 <span style="color:#75715e"># Bing also support dorks and can give others results</span>
-site:</code></pre></div>
+site:
+
+<span style="color:#75715e"># When you use the Google Dork:  site:*.example.com, NEVER forget to check</span>
+site:*.*.example.com
+site:*.*.*.example.com </code></pre></div>
 <p><br/></p>
 
 <h3 id="online-dns-tools-and-services">Online DNS tools and services</h3>

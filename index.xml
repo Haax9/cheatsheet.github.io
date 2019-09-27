@@ -537,9 +537,8 @@ Golden Ticket # Golden Ticket &amp;gt; Nom du compte administrateur (Administrat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</guid>
-      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: 
-Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains 
-OWASP Amass # OWASP Amass tool suite is used to build a network map of the target # It relies for subdomain enumeration on scrapping data-sources, recursive bruteforcing, crawling web services, permuting names and reverse DNS sweeping # Basic use (DNS lookups and name alterations) amass -d example.</description>
+      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com  
+Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains</description>
     </item>
     
     <item>
@@ -771,7 +770,7 @@ General # Almost every Impacket scripts follows the same option syntax authentic
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
-      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com # Full size Instagram photos https://www.instadp.com/ 
+      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Good online to search for accounts and browse them https://www.pictame.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com # Full size Instagram photos https://www.instadp.com/ 
 InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT Tool gets a range of information from an Instagram account # that you normally wouldn&amp;#39;t be able to get from just looking at their profile # Username # Profile Name # URL # Followers # Following # Number of Posts # Bio # Profile Picture URL # Is Business Account?</description>
     </item>
     
@@ -822,7 +821,7 @@ WinSCP # WinSCP is potentially exploitable in the registry if not using a master
       
       <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
       <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 
-Searching People https://i-sight.com/resources/101-osint-resources-for-investigators/ # You can use many online resources to search for people by name, phone number, etc.. Ancestry - Search for genealogy Filae - Search for genealogy, family, relationships... Infobel - Search worldwide people (white pages, yellow pages etc, you can find relations by name) MarketVisual - Map a company organization chart Numberway - Way to find others resources to get phone numbers Pipl - Search engines only for people Spokeo - Search for people information (only in USA) Usersearch - Search engine tool to find someone using pseudo/username Webmii - Search engine that compiles information on one person # Search by photo Tineye # Search on communities and blogs (reddit.</description>
+Searching People # Very good and accurtate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/https://i-sight.com/resources/101-osint-resources-for-investigators/ # You can use many online resources to search for people by name, phone number, etc.. Ancestry - Search for genealogy Filae - Search for genealogy, family, relationships... Infobel - Search worldwide people (white pages, yellow pages etc, you can find relations by name) MarketVisual - Map a company organization chart Numberway - Way to find others resources to get phone numbers Pipl - Search engines only for people Spokeo - Search for people information (only in USA) Usersearch - Search engine tool to find someone using pseudo/username Webmii - Search engine that compiles information on one person # Search by photo Tineye # Search on communities and blogs (reddit.</description>
     </item>
     
     <item>
@@ -1023,7 +1022,8 @@ Usage python danger-zone.py -h usage: dangerzone.py [-h] [--email EMAIL] [--addr
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description>Creepy # Creepy is a tool that performs geolocalization through social network inputs # Written in Python, you get a GUI # It uses modules for social networks # You need to first configurate your plugins (using API key for example) # Then you can start a new person project # You choose your plugins, let the soft searches and then add targets to the global search # Once done, you can start searching (often several minutes) # Then you will get locations on the world map for data found # Possible to export results https://www.</description>
+      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com 
+Creepy # Creepy is a tool that performs geolocalization through social network inputs # Written in Python, you get a GUI # It uses modules for social networks # You need to first configurate your plugins (using API key for example) # Then you can start a new person project # You choose your plugins, let the soft searches and then add targets to the global search # Once done, you can start searching (often several minutes) # Then you will get locations on the world map for data found # Possible to export results https://www.</description>
     </item>
     
     <item>
