@@ -255,6 +255,10 @@
   </url>
   
   <url>
+    <loc>/wireless/rogue_ap/</loc>
+  </url>
+  
+  <url>
     <loc>/linux-systems/privilege-escalation/services/</loc>
   </url>
   

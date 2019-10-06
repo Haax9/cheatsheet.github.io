@@ -512,6 +512,15 @@ Utilman.exe attack # You can access a SYSTEM cmd shell if you have access to the
     </item>
     
     <item>
+      <title>Rogue AP Attack</title>
+      <link>/wireless/rogue_ap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/wireless/rogue_ap/</guid>
+      <description>General Informations # If you need several external eth interfaces, connect then at the beginning # To ensure having wlan0 and wlan1 # And avoid having wlan0mon and then wlan0 when you connect the second one # It could result in conflicts# Evil Twin / Hostapd-wpe is used against MSCHAPv2 access points, usually used by companies # Manually creating a rogue AP for classical WPA/WPA2 requires more configuration</description>
+    </item>
+    
+    <item>
       <title>Services</title>
       <link>/linux-systems/privilege-escalation/services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -695,7 +704,8 @@ PHP Serialisation (PHP Slim __wakeup) # Context - \App\Controller\Confidential.p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/leaks/</guid>
-      <description>PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool used to check haveIbeenpwned leaks for an e-mail or a list # The tool will then check if the dump is accessible (using haveibeenpwned/pastebin) to get passwords python pwnedornot.py -h python pwnedornot.py -e email@test.com python pwnedornot.py -f file.txt Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search leaks and retrieve known passwords python pwndb.py --target email@test.fr python pwndb.py --list file python pwndb.py --target email@test.</description>
+      <description>PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool used to check haveIbeenpwned leaks for an e-mail or a list # The tool will then check if the dump is accessible (using haveibeenpwned/pastebin) to get passwords python pwnedornot.py -h python pwnedornot.py -e email@test.com python pwnedornot.py -f file.txt 
+Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search leaks and retrieve known passwords python pwndb.py --target email@test.fr python pwndb.py --list file python pwndb.py --target email@test.</description>
     </item>
     
     <item>
