@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-10-07T16:14:43 CEST">
+<meta name="revised" content="2019-10-07T17:44:25 CEST">
 <title>Rogue AP Attack :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1367,7 +1367,8 @@
 <span style="color:#75715e"># To ensure having wlan0 and wlan1</span>
 <span style="color:#75715e"># And avoid having wlan0mon and then wlan0 when you connect the second one</span>
 <span style="color:#75715e"># It could result in conflicts</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Evil Twin / Hostapd-wpe is used against MSCHAPv2 access points, usually used by companies</span>
-<span style="color:#75715e"># Manually creating a rogue AP for classical WPA/WPA2 requires more configuration</span></code></pre></div>
+<span style="color:#75715e"># Manually creating a rogue AP for classical WPA/WPA2 requires more configuration</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You might need to patch your hostapd version</span>
+https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe/hostapd-wpe</code></pre></div>
 <p><br/></p>
 
 <h3 id="evil-twin-attack">Evil Twin attack</h3>

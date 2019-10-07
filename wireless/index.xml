@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/wireless/rogue_ap/</guid>
-      <description>General Informations # If you need several external eth interfaces, connect then at the beginning # To ensure having wlan0 and wlan1 # And avoid having wlan0mon and then wlan0 when you connect the second one # It could result in conflicts# Evil Twin / Hostapd-wpe is used against MSCHAPv2 access points, usually used by companies # Manually creating a rogue AP for classical WPA/WPA2 requires more configuration</description>
+      <description>General Informations # If you need several external eth interfaces, connect then at the beginning # To ensure having wlan0 and wlan1 # And avoid having wlan0mon and then wlan0 when you connect the second one # It could result in conflicts# Evil Twin / Hostapd-wpe is used against MSCHAPv2 access points, usually used by companies # Manually creating a rogue AP for classical WPA/WPA2 requires more configuration# You might need to patch your hostapd version https://github.</description>
     </item>
     
   </channel>
