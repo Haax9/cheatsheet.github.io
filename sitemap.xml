@@ -159,6 +159,10 @@
   </url>
   
   <url>
+    <loc>/linux-systems/privilege-escalation/abusing_sudo_rights/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</loc>
   </url>
   
@@ -259,10 +263,6 @@
   </url>
   
   <url>
-    <loc>/linux-systems/privilege-escalation/services/</loc>
-  </url>
-  
-  <url>
     <loc>/windows-systems/post-exploitation-techniques/silver_golden_tickets/</loc>
   </url>
   
@@ -280,10 +280,6 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/25_smtp/</loc>
-  </url>
-  
-  <url>
-    <loc>/linux-systems/privilege-escalation/abusing_sudo_programs/</loc>
   </url>
   
   <url>
@@ -356,6 +352,10 @@
   
   <url>
     <loc>/linux-systems/privilege-escalation/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/privilege-escalation/suid/</loc>
   </url>
   
   <url>
@@ -435,6 +435,10 @@
   </url>
   
   <url>
+    <loc>/linux-systems/privilege-escalation/services/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</loc>
   </url>
   
@@ -484,6 +488,10 @@
   
   <url>
     <loc>/web-attacks/content-management-system-cms/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/privilege-escalation/crontab/</loc>
   </url>
   
   <url>

