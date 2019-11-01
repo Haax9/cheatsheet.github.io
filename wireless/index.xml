@@ -16,7 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/wireless/wifi_cracking/</guid>
-      <description>Aircrack-NG Suite # Turning on the monitor mode # We can not see packages from SSIDs that we are not associated with airmon-ng start wlan0** # Monitoring # We capture packages running: airodump-ng mon0** # Speeding up # We can launch a de-authentication attack to speed up the process: aireplay-ng -0 3 -a &amp;lt;macaddress of the ap&amp;gt; mon0** # Capturing packages airodump-ng mon0 --bssid –c (channel) –w (file name to save)** # Cracking the cap aircrack-ng RHAWEP-0.</description>
+      <description>General Informations # Bypass MAC filter macchanger –m B0:D0:9C:5C:EF:86 wlan0 
+Monitoring, Recon and Dumping # Using the aircrack-ng suite # Turning on the monitor mode sudo airmon-ng start wlan0mon # Simple passive listening and capture # Used to discover AP in the environment sudo airodump-ng wlan0mon # Targetted listening and capture # Focus on one AP and one channel sudo airodump-ng wlan0mon --bssid xx:xx:xx:xx:xx:xx –c 1 –w outfile</description>
     </item>
     
     <item>

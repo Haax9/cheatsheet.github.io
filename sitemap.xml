@@ -103,6 +103,10 @@
   </url>
   
   <url>
+    <loc>/phishing-redteam-and-se/phishing_campaign_setup/</loc>
+  </url>
+  
+  <url>
     <loc>/network/pivot_techniques/</loc>
   </url>
   
@@ -664,6 +668,10 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/995_pop3s/</loc>
+  </url>
+  
+  <url>
+    <loc>/phishing-redteam-and-se/</loc>
   </url>
   
   <url>

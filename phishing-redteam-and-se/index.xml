@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Phishing, RedTeam and SE on Offensive Security Cheatsheet</title>
+    <link>/phishing-redteam-and-se/</link>
+    <description>Recent content in Phishing, RedTeam and SE on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/phishing-redteam-and-se/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Phishing Infrastructure (Gophish&#43;Vultr)</title>
+      <link>/phishing-redteam-and-se/phishing_campaign_setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/phishing-redteam-and-se/phishing_campaign_setup/</guid>
+      <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup 
+Domain Configuration # First step is to buy a domain name # Ex : totallylegit.eu # internetbs, gandhi, OVH.</description>
+    </item>
+    
+  </channel>
+</rss>
