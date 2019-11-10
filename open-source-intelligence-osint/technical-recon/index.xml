@@ -72,8 +72,7 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
-      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json 
-Wayback Machine (https://archive.org/web/) # You can also uses as CLI tool https://github.</description>
+      <description>Secrets # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com “apikey” site:http://ideone.com “aws_access_key_id” Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.</description>
     </item>
     
   </channel>

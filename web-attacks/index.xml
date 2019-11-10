@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/misc_others/</guid>
-      <description>Table of Content  MISC Hidden Parameters Apache Server Status Command Injection Server Side Template Injection (SSTI) Image Tragick Shellshock Heartbleed  
+      <description>Table of Content  MISC IDOR Hidden Parameters Apache Server Status Command Injection Server Side Template Injection (SSTI) Image Tragick Shellshock Heartbleed  
 MISC # Install files # You can check for backup files using the following extensions .backup, .bck, .old, .save, .bak, .sav, ~, .copy, .old, .orig, .tmp, .txt, .back, .bkp, .bac, .tar, .gz, .tar.gz, .zip, .rar # Check headers # They often give informations curl -v &amp;lt;target&amp;gt; # Test for others HTTP methods (verb tampering) # Bypass .</description>
     </item>
     

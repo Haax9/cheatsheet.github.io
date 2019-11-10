@@ -219,10 +219,6 @@
   </url>
   
   <url>
-    <loc>/windows-systems/privilege-escalation/lsass_mimikatz/</loc>
-  </url>
-  
-  <url>
     <loc>/windows-systems/local-and-physical/</loc>
   </url>
   
@@ -328,6 +324,10 @@
   
   <url>
     <loc>/web-attacks/server-side-injections/ldap/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/privilege-escalation/lsass_mimikatz/</loc>
   </url>
   
   <url>
@@ -508,6 +508,10 @@
   
   <url>
     <loc>/windows-systems/post-exploitation-techniques/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/privilege-escalation/privexchange/</loc>
   </url>
   
   <url>

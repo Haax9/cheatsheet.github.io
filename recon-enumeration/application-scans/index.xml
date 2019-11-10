@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/recon-enumeration/application-scans/web_application_scan/</guid>
-      <description>Nikto # For web applications, you can use nikto to identify potential vulnerabilities # Not very stealth # Think about changing the default user agent ! nitko -h http://monsite.com -o output.xml -Format [csv, xml, html, txt] 
-Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ whatweb -l # Liste les plugins $ whatweb www.monsite.com $ whatweb www.monsite.com -v $ whatweb www.monsite.com -a 1 # Stealhty $ whatweb www.</description>
+      <description>API Endpoints wordlist https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d  Nikto # For web applications, you can use nikto to identify potential vulnerabilities # Not very stealth # Think about changing the default user agent ! nitko -h http://monsite.com -o output.xml -Format [csv, xml, html, txt] 
+Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ whatweb -l # Liste les plugins $ whatweb www.monsite.com $ whatweb www.monsite.com -v $ whatweb www.</description>
     </item>
     
     <item>

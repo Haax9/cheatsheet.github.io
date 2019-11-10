@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/system_tricks/</guid>
-      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://marc.info/?l=full-disclosure&amp;amp;m=128776663124692&amp;amp;w=2 
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://marc.info/?l=full-disclosure&amp;amp;m=128776663124692&amp;amp;w=2# Search for a binary privesc python3 gtfo -b systemctl 
 Recon and Enumeration # Look for strange process ps aux # Look for setuid programs (everyone can run them as root) find / -perm -4000 # Example, if perl perl -e ‘$ENV{PATH}=&amp;#34;/usr/bin&amp;#34;;system(&amp;#34;whoami&amp;#34;);’ → root # List processes running as root, permissions and NFS exports echo &amp;#39;services running as root&amp;#39;; ps aux | grep root; echo &amp;#39;permissions&amp;#39;; ps aux | awk &amp;#39;{print $11}&amp;#39;|xargs -r ls -la 2&amp;gt;/dev/null |awk &amp;#39;!</description>
     </item>
     

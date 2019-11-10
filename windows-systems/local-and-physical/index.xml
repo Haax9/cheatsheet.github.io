@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/local-and-physical/local_recon_enumeration/</guid>
-      <description>Basics whoami ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat 
-Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.</description>
+      <description>Basics whoami ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat # If you can&amp;#39;t browse a folder because of space char # You can use an old trick cmd&amp;gt; cd progra~1</description>
     </item>
     
     <item>

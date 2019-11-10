@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:28 CET">
+<meta name="revised" content="2019-11-10T13:29:02 CET">
 <title>MISC :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1402,6 +1409,11 @@
     
     
 
+<h3 id="secrets">Secrets</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Looking for passwors, API keys etc</span>
+<span style="color:#75715e"># Check Online IDES</span>
+site:http://ideone.com “apikey” 
+site:http://ideone.com “aws_access_key_id”</code></pre></div>
 <h3 id="orbit-cryto-wallet-analysis">Orbit - Cryto Wallet Analysis</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information.</span>
 python3 orbit.py

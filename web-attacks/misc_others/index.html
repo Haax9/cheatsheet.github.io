@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:28 CET">
+<meta name="revised" content="2019-11-10T13:29:01 CET">
 <title>MISC &amp; Others :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1020,6 +1020,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1400,6 +1407,7 @@
 
 <ul>
 <li>MISC</li>
+<li>IDOR</li>
 <li>Hidden Parameters</li>
 <li>Apache Server Status</li>
 <li>Command Injection</li>
@@ -1455,7 +1463,26 @@ https://emojipedia.org/pile-of-poo/
 /proc/self/cwd
 
 <span style="color:#75715e"># When facing JWT, try to crack them</span>
-<span style="color:#75715e"># Using jwt-tool</span></code></pre></div>
+<span style="color:#75715e"># Using jwt-tool</span>
+
+<span style="color:#75715e"># Large values in POST params may cause verbose SQL errors leakin sensitive data</span>
+<span style="color:#75715e"># Strings : AAAAAA...</span>
+<span style="color:#75715e"># Number, use the Euler number : 9e9999</span>
+
+<span style="color:#75715e"># Fuzz non-printable characters in any user input</span>
+<span style="color:#75715e"># Could result in regex bypass, account takeover...</span>
+0x00, 0x2F, 0x3A, 0x40, 0x5B, 0x60, 0x7B, 0xFF
+%00, %2F, %3A, %40, %5B, %60, %7B, %FF
+
+<span style="color:#75715e"># Unclaimed domains in a code source can lead to XSS</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="idor-insecure-directo-object-reference">IDOR (Insecure Directo Object Reference)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Bypass restrictions using parameter pollution</span>
+<span style="color:#75715e"># You can use the same parameter several times</span>
+api.example/profile?UserId<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span> <span style="color:#75715e"># Ok, your profile</span>
+api.example/profile?UserId<span style="color:#f92672">=</span><span style="color:#ae81ff">456</span> <span style="color:#75715e"># ERROR</span>
+api.example/profile?UserId<span style="color:#f92672">=</span><span style="color:#ae81ff">456</span><span style="color:#111">&amp;</span><span style="color:#111">UserId</span><span style="color:#f92672">=</span><span style="color:#ae81ff">123</span> <span style="color:#75715e"># OK, it can work</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="hidden-parameters">Hidden parameters</h3>

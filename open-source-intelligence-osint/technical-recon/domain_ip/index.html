@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:24 CET">
+<meta name="revised" content="2019-11-10T13:28:42 CET">
 <title>Domain &amp; IP :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1489,7 +1496,9 @@ python discraper.py -u &lt;url&gt; -s -o &lt;output&gt;
 
 <span style="color:#75715e"># Relative URL Extractor is another good tool to scrape from JS files (https://github.com/jobertabma/relative-url-extractor)</span>
 ruby extract.rb https://hackerone.com/some-file.js</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Extract all API endpoints from AngularJS &amp; Angular javascript files</span>
-curl -s URL <span style="color:#111">|</span> grep -Po <span style="color:#d88200">&#34;(\/)((?:[a-zA-Z\-_\:\.0-9\{\}]+))(\/)*((?:[a-zA-Z\-_\:\.0-9\{\}]+))(\/)((?:[a-zA-Z\-_\/\:\.0-9\{\}]+))&#34;</span> <span style="color:#111">|</span> sort -u</code></pre></div>
+curl -s URL <span style="color:#111">|</span> grep -Po <span style="color:#d88200">&#34;(\/)((?:[a-zA-Z\-_\:\.0-9\{\}]+))(\/)*((?:[a-zA-Z\-_\:\.0-9\{\}]+))(\/)((?:[a-zA-Z\-_\/\:\.0-9\{\}]+))&#34;</span> <span style="color:#111">|</span> sort -u</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># https://github.com/incogbyte/jsearch</span>
+<span style="color:#75715e"># simple script that grep infos from javascript files</span>
+python3 jsearch.py -u https://google.com -n google</code></pre></div>
 <p><br/></p>
 
 <h3 id="more-information-gathering">More Information Gathering</h3>

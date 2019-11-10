@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:24 CET">
+<meta name="revised" content="2019-11-10T13:28:44 CET">
 <title>Local Recon and Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1421,7 +1428,11 @@ powershell “<span style="color:#111">$var</span><span style="color:#f92672">=<
 <span style="color:#75715e"># If x86 ? Drop windows-privesc-check.exe</span>
 
 <span style="color:#75715e"># You can use WinPrivCheck.bat to check common misconfigurations and KB</span>
-https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat</code></pre></div>
+https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat
+
+<span style="color:#75715e"># If you can&#39;t browse a folder because of space char</span>
+<span style="color:#75715e"># You can use an old trick</span>
+cmd&gt; <span style="color:#111">cd</span> progra~1</code></pre></div>
 <p><br/></p>
 
 <h3 id="enumeration-host-information">Enumeration - Host Information</h3>

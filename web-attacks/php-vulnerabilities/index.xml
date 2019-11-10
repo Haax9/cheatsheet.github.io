@@ -53,7 +53,8 @@ PHP Serialisation (PHP Slim __wakeup) # Context - \App\Controller\Confidential.p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/php-vulnerabilities/tricks_others/</guid>
-      <description>Bypass PHP disable_functions and open_basedir # PHP in Linux calls a binary (sendmail) when the mail() function is executed. # If we have putenv() allowed, we can set the environment variable &amp;#34;LD_PRELOAD&amp;#34;, so we can # preload an arbitrary shared object. Our shared object will execute our custom # payload (a binary or a bash script) without the PHP restrictions, so we can have a reverse shell, for example. # Chankro tool is used for that (https://github.</description>
+      <description>Code auditing / Looking for vulnerabilities https://github.com/dustyfresh/PHP-vulnerability-audit-cheatsheet 
+Bypass PHP disable_functions and open_basedir # PHP in Linux calls a binary (sendmail) when the mail() function is executed. # If we have putenv() allowed, we can set the environment variable &amp;#34;LD_PRELOAD&amp;#34;, so we can # preload an arbitrary shared object. Our shared object will execute our custom # payload (a binary or a bash script) without the PHP restrictions, so we can have a reverse shell, for example.</description>
     </item>
     
   </channel>

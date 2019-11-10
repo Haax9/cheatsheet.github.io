@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-01T16:53:27 CET">
+<meta name="revised" content="2019-11-10T13:28:55 CET">
 <title>Web Application Firewall (WAF) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1021,6 +1021,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1402,7 +1409,16 @@
 ./wafw00t https://target.com</code></pre></div>
 <p><br/></p>
 
-<h3 id="manuel-check">Manuel check</h3>
+<h3 id="global-methodology">Global Methodology</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Recon by Subdomains Enumeration --&gt; Check DNS records</span>
+
+<span style="color:#75715e"># Recon by Web Interface --&gt; Browse URL</span>
+
+<span style="color:#75715e"># Recon by Ports/Services --&gt; Some vendors have special ports</span>
+<span style="color:#75715e"># --&gt; Checkpoint = 264 / 18264</span>
+<span style="color:#75715e"># --&gt; Sophos and Sonicwall = 4443</span>
+<span style="color:#75715e"># --&gt; Cisco-VPN = 500 (UDP)</span></code></pre></div>
+<h3 id="manual-check">Manual check</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Through telnet, you can identify if there is a WAF</span>
 telnet &lt;site/ip&gt; &lt;<span style="color:#ae81ff">80</span>/443&gt;
 GET / HTTP/1.1</code></pre></div>
