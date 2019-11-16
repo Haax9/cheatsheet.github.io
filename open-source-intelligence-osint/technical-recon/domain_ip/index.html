@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-10T13:28:42 CET">
+<meta name="revised" content="2019-11-16T14:02:38 CET">
 <title>Domain &amp; IP :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1423,7 +1423,10 @@ nslookup domain.fr
 ping domain.fr
 
 <span style="color:#75715e"># Bing dorks to identify host sharing</span>
-ip:xxx.xxx.xxx.xxx</code></pre></div>
+ip:xxx.xxx.xxx.xxx
+
+<span style="color:#75715e"># Reverse DNS Resolution (also usefull for subdomains)</span>
+<span style="color:#00a8c8">for</span> x in <span style="color:#f92672">{</span><span style="color:#ae81ff">1</span>..255<span style="color:#f92672">}</span><span style="color:#111">;</span> <span style="color:#00a8c8">do</span> host xx.xx.xx.<span style="color:#111">$x</span><span style="color:#111">;</span> <span style="color:#00a8c8">done</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="online-passive-identification-tools">Online Passive Identification Tools</h3>
