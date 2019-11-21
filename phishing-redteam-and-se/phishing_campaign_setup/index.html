@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-16T14:02:38 CET">
+<meta name="revised" content="2019-11-21T10:03:58 CET">
 <title>Phishing Infrastructure (Gophish&#43;Vultr) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1704,7 +1704,14 @@ chmod <span style="color:#ae81ff">640</span> config.json
 <span style="color:#75715e"># Self Signed Certificate (Don&#39;t usually need if you use Let&#39;s Encrypt)</span>
 openssl req -newkey rsa:2048 -nodes -keyout gophish.key -x509 -days <span style="color:#ae81ff">365</span> -out gophish.crt
 
-<span style="color:#75715e"># Lancement</span>
+<span style="color:#75715e"># By default, normal users can&#39;t bind ports &lt;1024 to services</span>
+<span style="color:#75715e"># So, in order to get the phishing server on port 443</span>
+<span style="color:#75715e"># And to avoid running as root, yo can set capabilities</span>
+sudo setcap <span style="color:#111">cap_net_bind_service</span><span style="color:#f92672">=</span>-ep /home/user/gophish/gophish
+
+<span style="color:#75715e"># You can also use iptables rules to forward local port</span>
+
+<span style="color:#75715e"># Starting</span>
 ./gophish
 
 <span style="color:#75715e"># Default credentials are admin/gophish</span>
@@ -1775,7 +1782,7 @@ Morning Catch IT Team
 <pre><code># STEP 4 : Sending profile
 # The SMTP Relay
 # &quot;From&quot; e-mail adress needs to be valid one (for example contact@domain.fr)
-# SMTP Server format (VPS used) : host:port
+# SMTP Server format (VPS used) : host:port (localhost:25)
 # You can send test e-mails
 </code></pre>
 

@@ -17,7 +17,7 @@
       
       <guid>/recon-enumeration/services-enumeration/21_ftp/</guid>
       <description>Identification # Base connection ftp &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # It can be usefull to try passive mode ftp -p &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # Using telnet telnet &amp;lt;IP&amp;gt; 21 Anonymous test bin (binary mode, don\&amp;#39;t forget it before transfering exe file) get / send # FTP Web Access ? # Try upload and execute through web access ftp://IP 
-Bruteforce `bash hydra -L users.</description>
+Bruteforce hydra -L users.</description>
     </item>
     
     <item>

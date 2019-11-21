@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-16T14:02:35 CET">
+<meta name="revised" content="2019-11-21T10:03:55 CET">
 <title>21 - FTP :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1438,11 +1438,16 @@ ftp://IP</code></pre></div>
 <p><br/></p>
 
 <h3 id="bruteforce">Bruteforce</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hydra -L users.txt -P passwords.txt -t <span style="color:#ae81ff">3</span> -s <span style="color:#ae81ff">21</span> IP ftp</code></pre></div>
+<p><br/></p>
 
-<p>`<code>bash
-hydra -L users.txt -P passwords.txt -t 3 -s 21 IP ftp
-</code></p>
+<h3 id="mount-remote-ftp-locally">Mount remote FTP locally</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install curlftpfs
+mkdir /mnt/my_ftp
+curlftpfs ftp-user:ftp-pass@my-ftp-location.local /mnt/my_ftp/
 
+<span style="color:#75715e"># To allow other users</span>
+curlftpfs -o allow_other ftp-user:ftp-pass@my-ftp-location.local /mnt/my_ftp/</code></pre></div>
 
     
     
