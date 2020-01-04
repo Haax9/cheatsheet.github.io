@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-21T10:03:58 CET">
+<meta name="revised" content="2020-01-04T16:29:44 CET">
 <title>Phishing Infrastructure (Gophish&#43;Vultr) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -276,6 +276,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/snapchat/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/snapchat/">
+            Snapchat
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -614,6 +621,13 @@
         <div>
           <a href="/web-attacks/client-side-injections/csrf/">
             CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-attacks/client-side-injections/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1391,7 +1405,43 @@
 
 <span style="color:#75715e"># All the server configuration is pulled from the following Github repository</span>
 <span style="color:#75715e"># it provides a fully functionnal bash script to automate the process</span>
-https://github.com/n0pe-sled/Postfix-Server-Setup</code></pre></div>
+https://github.com/n0pe-sled/Postfix-Server-Setup
+
+<span style="color:#75715e"># Generate typo &amp; permutations on a domain name</span>
+https://dnstwister.report/</code></pre></div>
+<p><br/></p>
+
+<h3 id="debugging-tips-important-notes">Debugging Tips / Important notes</h3>
+
+<h5 id="blacklisted-spam-domain">Blacklisted/Spam domain</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If the domain is blacklisted / considered as spam, you can try to reference www.domain.fr, just update SSL certs</span></code></pre></div>
+<h5 id="capturing-data">Capturing data</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Login form need to be in POST</span>
+<span style="color:#75715e"># Variables have to be set</span>
+
+&lt;form <span style="color:#111">action</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;&#34;</span> <span style="color:#111">method</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;post&#34;</span> <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;form&#34;</span>&gt;
+    &lt;label&gt;Username:&lt;/label&gt;
+    &lt;input <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;username&#34;</span> <span style="color:#111">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;text&#34;</span>/&gt;
+    &lt;label&gt;Password:&lt;/label&gt;
+    &lt;input <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;password&#34;</span> <span style="color:#111">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;password&#34;</span>/&gt;
+&lt;/form&gt;</code></pre></div>
+<h5 id="e-mail-not-sent-tls">E-mail not sent / TLS</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># For TLS, you could need to set option as &#34;may&#34; instead of &#34;encrypt&#34;</span></code></pre></div>
+<h5 id="incoherent-raw-events-and-results">Incoherent raw events and results</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If raw events are incoherent compared to gophish results, it may be caused by the &#34;Email Opened&#34; tracker.</span> 
+<span style="color:#75715e"># If images are unavailable for the recipient, the tracker could not be triggered.</span>
+<span style="color:#75715e"># If so, the &#34;E-mail Opened&#34; event won&#39;t be generated but Gophish will increment the counter if &#34;Clicked Link&#34; is triggered.</span>
+<span style="color:#75715e"># Solution : for these people, use the &#34;Clicked Link&#34; event as &#34;E-mail Opened&#34; for stats</span></code></pre></div>
+<h5 id="embedded-images">Embedded Images</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#  In the actually HTML, reference the image by typing &lt;img src=&#34;cid:###&#34;&gt;.</span>
+<span style="color:#75715e"># The ### should be the EXACT file name uploaded like cat.png.</span>
+<span style="color:#75715e"># This will not put the attachment in the &#34;attachment bar&#34; in Outlook but embed it directly where</span>
+<span style="color:#75715e"># the image tag is located inline in the email without requiring the downloading of external resources.</span></code></pre></div>
+<h4 id="statistics">Statistics</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Timeline</span>
+<span style="color:#75715e"># Get sorted and unique data for users</span>
+<span style="color:#75715e"># The awk part allows to manipulate/sort on only one part of the line</span>
+cat raw_events.csv <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;Submitted&#34;</span> <span style="color:#111">|</span> cut -d <span style="color:#d88200">&#39;,&#39;</span> -f <span style="color:#ae81ff">1</span>,2 <span style="color:#111">|</span> awk -F, <span style="color:#d88200">&#39;!seen[substr($1,1,8)]++&#39;</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="domain-configuration">Domain Configuration</h3>

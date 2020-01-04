@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-21T10:03:57 CET">
+<meta name="revised" content="2020-01-04T16:29:44 CET">
 <title>Local Recon and Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -276,6 +276,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/snapchat/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/snapchat/">
+            Snapchat
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -614,6 +621,13 @@
         <div>
           <a href="/web-attacks/client-side-injections/csrf/">
             CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-attacks/client-side-injections/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1458,7 +1472,8 @@ DRIVERQUERY</code></pre></div>
 netstat -ano
 route print
 netsh firewall show state
-netsh firewall show config</code></pre></div>
+netsh firewall show config
+arp -A</code></pre></div>
 <p><br/></p>
 
 <h3 id="enumeration-users-groups">Enumeration - Users &amp; Groups</h3>
@@ -1512,7 +1527,27 @@ foreach<span style="color:#f92672">(</span><span style="color:#111">$result</spa
         <span style="color:#111">$SPN</span>       
     <span style="color:#f92672">}</span>
     Write-host <span style="color:#d88200">&#34;&#34;</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<span style="color:#f92672">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># WMIC help</span>
+wmic /?
+
+<span style="color:#75715e"># patchlevel</span>
+wmic qfe get Caption,Description,HotFixID,InstalledOn
+<span style="color:#75715e"># Grep for particular patch</span>
+wmic qfe get Caption,Description,HotFixID,InstalledOn <span style="color:#111">|</span> findstr /C:<span style="color:#d88200">&#34;KB..&#34;</span> /C:<span style="color:#d88200">&#34;KB..&#34;</span>
+
+<span style="color:#75715e"># Check typical files for passwords</span>
+c:<span style="color:#8045ff">\s</span>ysprep.inf
+c:<span style="color:#8045ff">\s</span>ysprep<span style="color:#8045ff">\s</span>ysprep.xml
+%WINDIR%<span style="color:#8045ff">\P</span>anther<span style="color:#8045ff">\U</span>nattend<span style="color:#8045ff">\U</span>nattended.xml
+%WINDIR%<span style="color:#8045ff">\P</span>anther<span style="color:#8045ff">\U</span>nattended.xml
+
+<span style="color:#75715e"># SYSVOL passwords... (msf or powersploit)</span>
+<span style="color:#75715e"># Other files that can contain passwords</span>
+Services<span style="color:#8045ff">\S</span>ervices.xml
+ScheduledTasks<span style="color:#8045ff">\S</span>cheduledTasks.xml
+Printers<span style="color:#8045ff">\P</span>rinters.xml
+Drives<span style="color:#8045ff">\D</span>rives.xml
+DataSources<span style="color:#8045ff">\D</span>ataSources.xml</code></pre></div>
 <p><br/></p>
 
 <h3 id="enumeration-running-processes">Enumeration - Running Processes</h3>

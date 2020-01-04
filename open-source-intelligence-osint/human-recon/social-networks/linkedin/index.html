@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-21T10:03:57 CET">
+<meta name="revised" content="2020-01-04T16:29:44 CET">
 <title>LinkedIn :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -279,6 +279,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/snapchat/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/snapchat/">
+            Snapchat
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -617,6 +624,13 @@
         <div>
           <a href="/web-attacks/client-side-injections/csrf/">
             CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-attacks/client-side-injections/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1353,6 +1367,7 @@
       <option value="/open-source-intelligence-osint/human-recon/social-networks/facebook/" >--- Facebook</option>
       <option value="/open-source-intelligence-osint/human-recon/social-networks/instagram/" >--- Instagram</option>
       <option value="/open-source-intelligence-osint/human-recon/social-networks/tinder/" >--- Tinder</option>
+      <option value="/open-source-intelligence-osint/human-recon/social-networks/snapchat/" >--- Snapchat</option>
       <option value="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/" >--- Usernames and Emails</option>
       <option value="/open-source-intelligence-osint/human-recon/social-networks/general_misc/" >--- General - MISC - Multi</option>
   
@@ -1457,6 +1472,21 @@ Search options:
 -c &lt;company&gt; Search company name or company ID.
 -r &lt;results&gt; Searches X number of LinkedIn.com pages, or a range of pages <span style="color:#f92672">(</span>Default is <span style="color:#ae81ff">1</span>-3<span style="color:#f92672">)</span>.
 -t &lt;secs&gt;    Sets timeout value. <span style="color:#f92672">(</span>Default is <span style="color:#ae81ff">3</span>.<span style="color:#f92672">)</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="peasant">Peasant</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Peaseant is a scraping tool that uses the LinkedIn API</span>
+<span style="color:#75715e"># You can harvest data from a company, set a large connection campaign and even spoof a profile</span>
+
+<span style="color:#75715e"># Harvesting</span>
+<span style="color:#75715e"># Will generate CSV file</span>
+./peasant.py harvest -C <span style="color:#d88200">&#34;user:password&#34;</span> -cns company -of out.csv
+
+<span style="color:#75715e"># Contact Requests</span>
+./peasant.py add_contacts -if dundermifflin.csv -C <span style="color:#d88200">&#34;</span><span style="color:#111">$creds</span><span style="color:#d88200">&#34;</span>
+
+<span style="color:#75715e"># Spoofing</span> 
+./peasant.py spoof_profile -pu paul-m-04773b1 -C <span style="color:#d88200">&#34;</span><span style="color:#111">$creds</span><span style="color:#d88200">&#34;</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="linkedin2username-https-github-com-initstring-linkedin2username">Linkedin2Username (<a href="https://github.com/initstring/linkedin2username">https://github.com/initstring/linkedin2username</a>)</h3>

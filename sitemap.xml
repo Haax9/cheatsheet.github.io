@@ -339,6 +339,10 @@
   </url>
   
   <url>
+    <loc>/web-attacks/client-side-injections/misc_others/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</loc>
   </url>
   
@@ -563,7 +567,7 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</loc>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</loc>
   </url>
   
   <url>
@@ -583,10 +587,6 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</loc>
-  </url>
-  
-  <url>
     <loc>/linux-systems/</loc>
   </url>
   
@@ -603,11 +603,19 @@
   </url>
   
   <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/services-enumeration/135_rpc/</loc>
   </url>
   
   <url>
     <loc>/web-attacks/burpsuite/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</loc>
   </url>
   
   <url>

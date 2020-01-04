@@ -46,8 +46,7 @@ Facebook Sleep Stats # A small tool to show the potential privacy implications m
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
-      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Good online to search for accounts and browse them https://www.pictame.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com # Full size Instagram photos https://www.instadp.com/ 
-InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT Tool gets a range of information from an Instagram account # that you normally wouldn&amp;#39;t be able to get from just looking at their profile # Username # Profile Name # URL # Followers # Following # Number of Posts # Bio # Profile Picture URL # Is Business Account?</description>
+      <description>Tips &amp;amp; Tricks # Instagram User ID can be very important to investigate # Each account has a unique user ID linked to the @username # Some websites allows to get it for an account https://codeofaninja.com/tools/find-instagram-user-id # You can then trace and spot re-used instagram account by # searching for old names and post, for example using # Google Dorks # Instagram Mirrors can be usefull to browse Instagram accounts # Search features are less restrictive # Some deleted content can still be indexed https://rankersta.</description>
     </item>
     
     <item>
@@ -57,6 +56,15 @@ InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT 
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/tinder/</guid>
       <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.</description>
+    </item>
+    
+    <item>
+      <title>Snapchat</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</guid>
+      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.</description>
     </item>
     
     <item>

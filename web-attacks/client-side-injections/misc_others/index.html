@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2020-01-04T16:29:46 CET">
-<title>Windows Defender :: Offensive Security Cheatsheet</title>
+<title>MISC &amp; Others :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/windows-systems/privilege-escalation/windows_defender/">
+  <body data-url="/web-attacks/client-side-injections/misc_others/">
     
       <header>
   <div class="logo">
@@ -555,10 +555,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/web-attacks/" class="dd-item haschildren
+    <li data-nav-id="/web-attacks/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/web-attacks/">Web vulnerabilities &amp; attacks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/">Web vulnerabilities &amp; attacks</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/web-attacks/server-side-injections/" class="dd-item haschildren
@@ -604,10 +605,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/web-attacks/client-side-injections/" class="dd-item haschildren
+    <li data-nav-id="/web-attacks/client-side-injections/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/web-attacks/client-side-injections/">Client Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/client-side-injections/">Client Side Injections</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/web-attacks/client-side-injections/xss/" class="dd-item">
@@ -624,7 +626,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item active">
         <div>
           <a href="/web-attacks/client-side-injections/misc_others/">
             MISC &amp; Others
@@ -878,11 +880,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/" class="dd-item parent haschildren
+    <li data-nav-id="/windows-systems/" class="dd-item haschildren
         ">
       <div>
-      <a href="/windows-systems/">Windows Systems</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/">Windows Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/windows-systems/network-and-domain-recon/" class="dd-item haschildren
@@ -1000,11 +1001,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item parent haschildren
+    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
         ">
       <div>
-      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/windows-systems/privilege-escalation/admin_processes/" class="dd-item">
@@ -1028,7 +1028,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/windows_defender/" class="dd-item active">
+      <li data-nav-id="/windows-systems/privilege-escalation/windows_defender/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/windows_defender/">
             Windows Defender
@@ -1349,35 +1349,37 @@
     <option value="/recon-enumeration/" >
    Recon - Enumeration</option>
     <option value="/web-attacks/" >
-   Web vulnerabilities &amp; attacks</option>
+   Web vulnerabilities &amp; attacks</option> 
+    <option value="/web-attacks/server-side-injections/" >
+  - 
+   Server Side Injections</option>
+    <option value="/web-attacks/client-side-injections/" >
+  - 
+   Client Side Injections</option> 
+      <option value="/web-attacks/client-side-injections/xss/" >-- XSS Injections</option>
+      <option value="/web-attacks/client-side-injections/csrf/" >-- CSRF Injections</option>
+      <option value="/web-attacks/client-side-injections/misc_others/"  selected>-- MISC &amp; Others</option>
+  
+    <option value="/web-attacks/files-inclusions-and-injections/" >
+  - 
+   File Inclusion and Injections</option>
+    <option value="/web-attacks/php-vulnerabilities/" >
+  - 
+   PHP Vulnerabilities</option>
+    <option value="/web-attacks/content-management-system-cms/" >
+  - 
+   Content Management Systems (CMS)</option>
+      <option value="/web-attacks/headers_injections/" >- Headers Injections</option>
+      <option value="/web-attacks/misc_others/" >- MISC &amp; Others</option>
+      <option value="/web-attacks/burpsuite/" >- BurpSuite</option>
+      <option value="/web-attacks/postman/" >- Postman</option>
+  
     <option value="/network/" >
    Network</option>
     <option value="/shells-methods/" >
    Shells methods</option>
     <option value="/windows-systems/" >
-   Windows Systems</option> 
-    <option value="/windows-systems/network-and-domain-recon/" >
-  - 
-   Network and Domain Recon</option>
-    <option value="/windows-systems/local-and-physical/" >
-  - 
-   Local and Physical</option>
-    <option value="/windows-systems/exploitation/" >
-  - 
-   Exploitation</option>
-    <option value="/windows-systems/privilege-escalation/" >
-  - 
-   Privilege Escalation</option> 
-      <option value="/windows-systems/privilege-escalation/admin_processes/" >-- Admin and Processes</option>
-      <option value="/windows-systems/privilege-escalation/lsass_mimikatz/" >-- LSASS and Mimikatz</option>
-      <option value="/windows-systems/privilege-escalation/tricks/" >-- Tricks</option>
-      <option value="/windows-systems/privilege-escalation/windows_defender/"  selected>-- Windows Defender</option>
-      <option value="/windows-systems/privilege-escalation/privexchange/" >-- PrivExchange</option>
-  
-    <option value="/windows-systems/post-exploitation-techniques/" >
-  - 
-   Post Exploitation Techniques</option>
-  
+   Windows Systems</option>
     <option value="/linux-systems/" >
    Linux Systems</option>
     <option value="/other-systems/" >
@@ -1414,31 +1416,36 @@
       </div>
     
 
-    <h1>Windows Defender</h1>
+    <h1>MISC &amp; Others</h1>
     
     
     
-    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1)</span>
-powershell -ExecutionPolicy ByPass -command <span style="color:#d88200">&#34;&amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&#34;</span>
+    
 
-<span style="color:#75715e"># Stop Windows Defender using cmd.exe</span>
-sc stop WinDefend
+<h3 id="cross-origin-resource-sharing-cors">Cross Origin Resource Sharing (CORS)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://portswigger.net/web-security/cors
 
-<span style="color:#75715e"># Identify firewall profiles for an user</span>
-netsh advfirewall show allprofiles
+<span style="color:#75715e"># CORS is a feature allowing access to resources hosted on different domains</span>
+<span style="color:#75715e"># If badly configured, it can allow cross-domain attacks like CSRF</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Corsy is an automated tool to discover potential CORS misconfiguration and issues</span>
+https://github.com/s0md3v/Corsy
 
-<span style="color:#75715e"># Disable all firewall profiles for an user</span>
-netsh advfirewall <span style="color:#111">set</span> allprofiles state off
+<span style="color:#75715e"># Usage</span>
+$ python3 corsy.py -u https://haax.fr
 
-<span style="color:#75715e"># Totally disable the firewall</span>
-netsh firewall <span style="color:#111">set</span> opmode disable</code></pre></div>
+    ＣＯＲＳＹ  <span style="color:#f92672">{</span>v0.2-beta<span style="color:#f92672">}</span>
+
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Misconfiguration found!
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Title: Wildcard value
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Description: This host allows requests made from any origin. However, browsers will block all requests to this host by default.
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Severity: Low
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Exploitation: Not possible</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/windows-systems/privilege-escalation/tricks/" title="Tricks"> <i class="fa fa-chevron-left"></i><label>Tricks</label></a>
-    <a class="nav nav-next" href="/windows-systems/privilege-escalation/privexchange/" title="PrivExchange" style="margin-right: 0px;"><label>PrivExchange</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/web-attacks/client-side-injections/csrf/" title="CSRF Injections"> <i class="fa fa-chevron-left"></i><label>CSRF Injections</label></a>
+    <a class="nav nav-next" href="/web-attacks/files-inclusions-and-injections/" title="File Inclusion and Injections" style="margin-right: 0px;"><label>File Inclusion and Injections</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1455,7 +1462,7 @@ netsh firewall <span style="color:#111">set</span> opmode disable</code></pre></
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Windows%20Systems/Privilege%20Escalation/Windows_Defender.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Web%20Attacks/Client%20Side%20Injections/MISC_Others.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

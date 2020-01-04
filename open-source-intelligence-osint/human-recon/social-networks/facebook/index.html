@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-21T10:03:59 CET">
+<meta name="revised" content="2020-01-04T16:29:46 CET">
 <title>Facebook :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -279,6 +279,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/snapchat/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/snapchat/">
+            Snapchat
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -617,6 +624,13 @@
         <div>
           <a href="/web-attacks/client-side-injections/csrf/">
             CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-attacks/client-side-injections/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1353,6 +1367,7 @@
       <option value="/open-source-intelligence-osint/human-recon/social-networks/facebook/"  selected>--- Facebook</option>
       <option value="/open-source-intelligence-osint/human-recon/social-networks/instagram/" >--- Instagram</option>
       <option value="/open-source-intelligence-osint/human-recon/social-networks/tinder/" >--- Tinder</option>
+      <option value="/open-source-intelligence-osint/human-recon/social-networks/snapchat/" >--- Snapchat</option>
       <option value="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/" >--- Usernames and Emails</option>
       <option value="/open-source-intelligence-osint/human-recon/social-networks/general_misc/" >--- General - MISC - Multi</option>
   
@@ -1452,6 +1467,18 @@ npm start
 
 <span style="color:#75715e"># Ad blocker must be disabled</span>
 <span style="color:#75715e"># When the scrapper is off, it stops tracking</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="ultimate-facebook-scraper">Ultimate Facebook Scraper</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Python automated script used to scrape and parse data from a Facebook account</span>
+<span style="color:#75715e"># You need to provide your credentials (dedicated account) and targets as input in &#34;input.txt&#34;.</span>
+
+<span style="color:#75715e"># Limits :</span> 
+<span style="color:#75715e"># - If the profile target is configured and not in your friends, you may see nothing</span>
+<span style="color:#75715e"># - If you request too much profiles, Facebook can block requests, resulting in crash</span>
+<span style="color:#75715e"># - If target profiles are big, can be very long an resources hungry</span>
+
+<span style="color:#75715e"># Results are stored in txt format, easily grepable by dates for examples.</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="facebook-graph-search">Facebook Graph Search</h3>

