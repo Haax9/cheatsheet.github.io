@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-04T16:29:46 CET">
+<meta name="revised" content="2020-01-25T16:00:32 CET">
 <title>Instagram :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -81,6 +81,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/open-source-intelligence-osint/general/methodology/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/general/methodology/">
+            Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/open-source-intelligence-osint/technical-recon/" class="dd-item haschildren
@@ -114,13 +121,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/company_meta/">
             Company General Informations
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
-            Public Documents and Metadata
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -208,6 +208,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
+            
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -337,6 +344,20 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/geolocation/">
             Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/phone_number/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/phone_number/">
+            Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/images/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/images/">
+            Images
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -793,6 +814,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/amazon_web_services/" class="dd-item">
+        <div>
+          <a href="/web-attacks/amazon_web_services/">
+            Amazon Web Services (AWS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1190,6 +1218,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/freeipa/" class="dd-item">
+        <div>
+          <a href="/other-systems/freeipa/">
+            FREEIPA
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/other-systems/misc/" class="dd-item">
         <div>
           <a href="/other-systems/misc/">
@@ -1376,6 +1411,8 @@
       <option value="/open-source-intelligence-osint/human-recon/searchingsomeone/" >-- Searching Someone</option>
       <option value="/open-source-intelligence-osint/human-recon/skiptracer/" >-- Skiptracer</option>
       <option value="/open-source-intelligence-osint/human-recon/geolocation/" >-- Geolocation</option>
+      <option value="/open-source-intelligence-osint/human-recon/phone_number/" >-- Geolocation</option>
+      <option value="/open-source-intelligence-osint/human-recon/images/" >-- Images</option>
   
       <option value="/open-source-intelligence-osint/buscador/" >- Buscador</option>
   
@@ -1453,7 +1490,34 @@ https://web.stagram.com
 <span style="color:#75715e"># Instagram Online Downloaders</span>
 https://downloadgram.com/
 https://www.instadp.com/
-https://www.instadp.com/</code></pre></div>
+https://www.instadp.com/
+https://instasave.xyz/</code></pre></div>
+<p><br/></p>
+
+<h3 id="manual-investigation">Manual investigation</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Viewing Instagram accounts without being logged in</span>
+
+<span style="color:#75715e"># METHOD 1 - JSON</span>
+<span style="color:#75715e"># You can User ID, user bio, posts infos...</span>
+<span style="color:#75715e"># But you can only see the first 11 messages</span>
+https://www.instagram.com/targetAccount
+https://www.instagram.com/targetAccount?__a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># METHOD 2 - Developper Tools</span>
+<span style="color:#75715e"># On the profile, go F12</span>
+<span style="color:#75715e"># View the &#34;&lt;body class =&#34; &#34;style =&#34; overflow: hidden; &#34;&gt;&#34; section ==&gt; visible</span>
+<span style="color:#75715e"># &#34;&lt;div class =&#34; RnEpo Yx5HN &#34;role = presentation&#34;&gt;&#34; ==&gt; Delete node</span>
+
+<span style="color:#75715e"># METHOD 3 - Adlocker</span>
+<span style="color:#75715e"># Ublock Origin ==&gt; &#34;Element Sector Mode&#34;</span>
+<span style="color:#75715e"># Click on the Instagram pop-up</span>
+<span style="color:#75715e"># Add &amp; Create :</span> 
+<span style="color:#75715e">#	- ##.Yx5HN.RnEpo</span>
+<span style="color:#75715e">#	- ##body:style(overflow: visible !important;)</span>
+
+<span style="color:#75715e"># METHOD 4 : Images</span>
+<span style="color:#75715e"># Go to target account</span>
+<span style="color:#75715e"># Click on any image and browse using arrow keys</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="instagramosint-https-github-com-sc1341-instagramosint">InstagramOSINT (<a href="https://github.com/sc1341/InstagramOSINT">https://github.com/sc1341/InstagramOSINT</a>)</h3>

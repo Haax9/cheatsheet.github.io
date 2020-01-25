@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-04T16:29:47 CET">
+<meta name="revised" content="2020-01-25T16:00:34 CET">
 <title>BurpSuite :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -80,6 +80,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/open-source-intelligence-osint/general/methodology/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/general/methodology/">
+            Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/open-source-intelligence-osint/technical-recon/" class="dd-item haschildren
@@ -113,13 +120,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/company_meta/">
             Company General Informations
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
-            Public Documents and Metadata
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -207,6 +207,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
+            
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -334,6 +341,20 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/geolocation/">
             Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/phone_number/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/phone_number/">
+            Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/images/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/images/">
+            Images
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -791,6 +812,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/amazon_web_services/" class="dd-item">
+        <div>
+          <a href="/web-attacks/amazon_web_services/">
+            Amazon Web Services (AWS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1188,6 +1216,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/freeipa/" class="dd-item">
+        <div>
+          <a href="/other-systems/freeipa/">
+            FREEIPA
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/other-systems/misc/" class="dd-item">
         <div>
           <a href="/other-systems/misc/">
@@ -1368,6 +1403,7 @@
       <option value="/web-attacks/misc_others/" >- MISC &amp; Others</option>
       <option value="/web-attacks/burpsuite/"  selected>- BurpSuite</option>
       <option value="/web-attacks/postman/" >- Postman</option>
+      <option value="/web-attacks/amazon_web_services/" >- Amazon Web Services (AWS)</option>
   
     <option value="/network/" >
    Network</option>
@@ -1426,7 +1462,27 @@
 <p><br/></p>
 
 <h3 id="modules-addons">Modules / Addons</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">TODO</code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Autorize</span>
+<span style="color:#75715e"># For Each Request you do, it will send an equal request</span>
+<span style="color:#75715e"># But with changed cookies of the session or any additional header used for authorization.</span>
+
+<span style="color:#75715e"># Just add cookies for user B and browse app using user A</span>
+<span style="color:#75715e"># Try accessing restricted ressources for user B and check for server responses</span>
+<span style="color:#75715e"># 200 --&gt; Possible IDOR</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># JSON Beautifier</span>
+<span style="color:#75715e"># This extension adds a new tab to Burp&#39;s HTTP message viewer to beautify JSON content.</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># HTTP Request Smuggler</span>
+<span style="color:#75715e"># Help finding HTTP Request Smuggling vulnerabilities</span>
+
+<span style="color:#75715e"># Right click on a request and click &#39;Launch Smuggle probe&#39;, then watch the extension&#39;s output pane</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Logger++</span>
+<span style="color:#75715e"># This extension can be used to log the requests and responses made by all Burp tools</span>
+<span style="color:#75715e"># And display them in a sortable table. It can also save the logged data in CSV format.</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Param Miner</span>
+<span style="color:#75715e"># This extension identifies hidden, unlinked parameters.</span>
+<span style="color:#75715e"># It&#39;s particularly useful for finding web cache poisoning vulnerabilities.</span>
+
+<span style="color:#75715e"># Right click on a request in Burp and click &#34;Guess (cookies|headers|params)&#34;</span>
+<span style="color:#75715e"># You can find them listed under Extender-&gt;Extensions-&gt;Param Miner-&gt;Output</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Wsdler</span>
+<span style="color:#75715e"># This extension takes a WSDL request, parses out the operations that are associated</span>
+<span style="color:#75715e"># With the targeted web service, and generates SOAP requests</span>
+<span style="color:#75715e"># That can then be sent to the SOAP endpoints.</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="resources-to-check">Resources to check</h3>

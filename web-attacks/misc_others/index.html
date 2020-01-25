@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-04T16:29:47 CET">
+<meta name="revised" content="2020-01-25T16:00:34 CET">
 <title>MISC &amp; Others :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -80,6 +80,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/open-source-intelligence-osint/general/methodology/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/general/methodology/">
+            Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/open-source-intelligence-osint/technical-recon/" class="dd-item haschildren
@@ -113,13 +120,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/company_meta/">
             Company General Informations
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
-            Public Documents and Metadata
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -207,6 +207,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
+            
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -334,6 +341,20 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/geolocation/">
             Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/phone_number/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/phone_number/">
+            Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/images/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/images/">
+            Images
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -791,6 +812,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/amazon_web_services/" class="dd-item">
+        <div>
+          <a href="/web-attacks/amazon_web_services/">
+            Amazon Web Services (AWS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1188,6 +1216,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/freeipa/" class="dd-item">
+        <div>
+          <a href="/other-systems/freeipa/">
+            FREEIPA
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/other-systems/misc/" class="dd-item">
         <div>
           <a href="/other-systems/misc/">
@@ -1368,6 +1403,7 @@
       <option value="/web-attacks/misc_others/"  selected>- MISC &amp; Others</option>
       <option value="/web-attacks/burpsuite/" >- BurpSuite</option>
       <option value="/web-attacks/postman/" >- Postman</option>
+      <option value="/web-attacks/amazon_web_services/" >- Amazon Web Services (AWS)</option>
   
     <option value="/network/" >
    Network</option>
@@ -1498,7 +1534,13 @@ https://emojipedia.org/pile-of-poo/
 <span style="color:#75715e"># If some JSON objects are in the response but not in the request</span>
 <span style="color:#75715e"># Try do add them in the request, you could override properties</span>
 <span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span><span style="color:#f92672">}</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span>, <span style="color:#d88200">&#34;admin&#34;</span>:false<span style="color:#f92672">}</span>
-<span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span>, <span style="color:#d88200">&#34;admin&#34;</span>:true<span style="color:#f92672">}</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span>, <span style="color:#d88200">&#34;admin&#34;</span>:true<span style="color:#f92672">}</span></code></pre></div>
+<span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span>, <span style="color:#d88200">&#34;admin&#34;</span>:true<span style="color:#f92672">}</span> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">{</span><span style="color:#d88200">&#34;id&#34;</span>:<span style="color:#d88200">&#34;7&#34;</span>, <span style="color:#d88200">&#34;admin&#34;</span>:true<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Fuzzing Wordlists</span>
+https://github.com/fuzzdb-project/fuzzdb
+
+<span style="color:#75715e"># AWS</span>
+https://github.com/toniblyx/my-arsenal-of-aws-security-tools</code></pre></div>
 <p><br/></p>
 
 <h3 id="idor-insecure-directo-object-reference">IDOR (Insecure Directo Object Reference)</h3>
@@ -1512,6 +1554,46 @@ api.example/profile?UserId<span style="color:#f92672">=</span><span style="color
 <span style="color:#75715e"># - Parameter Polluttion (HPP)</span>
 <span style="color:#75715e"># - Switch between POST and PUT to bypass potential controls</span>
 <span style="color:#75715e"># -</span> </code></pre></div>
+<p><br/></p>
+
+<h3 id="http-request-smuggling">HTTP Request Smuggling</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://portswigger.net/web-security/request-smuggling
+
+<span style="color:#75715e"># Smuggler.py is a small tool used to test that</span>
+python smuggler.py -h
+
+                                         _                             
+         ___ _ __ ___  _   _  __ _  __ _<span style="color:#111">|</span> <span style="color:#111">|</span> ___ _ __       _ __  _   _ 
+        / __<span style="color:#111">|</span> <span style="color:#d88200">&#39;_ ` _ \| | | |/ _` |/ _` | |/ _ \ &#39;</span>__<span style="color:#111">|</span>     <span style="color:#111">|</span> <span style="color:#960050;background-color:#1e0010">&#39;</span>_ <span style="color:#8045ff">\|</span> <span style="color:#111">|</span> <span style="color:#111">|</span> <span style="color:#111">|</span>
+        <span style="color:#8045ff">\_</span>_ <span style="color:#8045ff">\ </span><span style="color:#111">|</span> <span style="color:#111">|</span> <span style="color:#111">|</span> <span style="color:#111">|</span> <span style="color:#111">|</span> <span style="color:#111">|</span>_<span style="color:#111">|</span> <span style="color:#111">|</span> <span style="color:#f92672">(</span>_<span style="color:#111">|</span> <span style="color:#111">|</span> <span style="color:#f92672">(</span>_<span style="color:#111">|</span> <span style="color:#111">|</span> <span style="color:#111">|</span>  __/ <span style="color:#111">|</span>     _  <span style="color:#111">|</span> <span style="color:#111">|</span>_<span style="color:#f92672">)</span> <span style="color:#111">|</span> <span style="color:#111">|</span>_<span style="color:#111">|</span> <span style="color:#111">|</span>
+        <span style="color:#111">|</span>___/_<span style="color:#111">|</span> <span style="color:#111">|</span>_<span style="color:#111">|</span> <span style="color:#111">|</span>_<span style="color:#111">|</span><span style="color:#8045ff">\_</span>_,_<span style="color:#111">|</span><span style="color:#8045ff">\_</span>_, <span style="color:#111">|</span><span style="color:#8045ff">\_</span>_, <span style="color:#111">|</span>_<span style="color:#111">|</span><span style="color:#8045ff">\_</span>__<span style="color:#111">|</span>_<span style="color:#111">|</span>    <span style="color:#f92672">(</span>_<span style="color:#f92672">)</span> <span style="color:#111">|</span> .__/ <span style="color:#8045ff">\_</span>_, <span style="color:#111">|</span>
+                             <span style="color:#111">|</span>___/ <span style="color:#111">|</span>___/                  <span style="color:#111">|</span>_<span style="color:#111">|</span>    <span style="color:#111">|</span>___/ 
+
+                        by @gwendallecoguic
+
+
+usage: smuggler.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-a PATH<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-d HEADER<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i TIMEOUT<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-m METHOD<span style="color:#f92672">]</span>
+                   <span style="color:#f92672">[</span>-o HOSTS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s SCHEME<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-t THREADS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u URLS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-v VERBOSE<span style="color:#f92672">]</span>
+
+optional arguments:
+  -h, --help            show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
+  -a PATH, --path PATH  <span style="color:#111">set</span> paths list
+  -d HEADER, --header HEADER
+                        custom headers
+  -i TIMEOUT, --timeout TIMEOUT
+                        <span style="color:#111">set</span> timeout, default <span style="color:#ae81ff">10</span>
+  -m METHOD, --method METHOD
+                        <span style="color:#111">set</span> methods separated by comma, default: all
+  -o HOSTS, --hosts HOSTS
+                        <span style="color:#111">set</span> host list <span style="color:#f92672">(</span>required or -u<span style="color:#f92672">)</span>
+  -s SCHEME, --scheme SCHEME
+                        scheme to use, default: http,https
+  -t THREADS, --threads THREADS
+                        threads, default <span style="color:#ae81ff">10</span>
+  -u URLS, --urls URLS  <span style="color:#111">set</span> url list <span style="color:#f92672">(</span>required or -o<span style="color:#f92672">)</span>
+  -v VERBOSE, --verbose VERBOSE
+                        display output, <span style="color:#111">0</span><span style="color:#f92672">=</span>nothing, <span style="color:#111">1</span><span style="color:#f92672">=</span>only vulnerable, <span style="color:#111">2</span><span style="color:#f92672">=</span>all
+                        requests, <span style="color:#111">3</span><span style="color:#f92672">=</span>requests+headers, <span style="color:#111">4</span><span style="color:#f92672">=</span>full debug, default: <span style="color:#ae81ff">1</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="hidden-parameters">Hidden parameters</h3>

