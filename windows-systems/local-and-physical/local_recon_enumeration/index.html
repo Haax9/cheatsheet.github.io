@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-25T16:00:29 CET">
+<meta name="revised" content="2020-02-04T17:53:34 CET">
 <title>Local Recon and Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1539,8 +1539,7 @@ netstat -ano
 C:<span style="color:#8045ff">\W</span>INDOWS<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\d</span>rivers<span style="color:#8045ff">\e</span>tc<span style="color:#8045ff">\h</span>osts
 
 <span style="color:#75715e"># Firewall</span>
-netsh firewall show state
-netsh firewall show config
+netsh advfirewall show allprofiles state
 netsh advfirewall firewall show rule <span style="color:#111">name</span><span style="color:#f92672">=</span>all
 netsh advfirewall <span style="color:#111">export</span> <span style="color:#d88200">&#34;firewall.txt&#34;</span>
 

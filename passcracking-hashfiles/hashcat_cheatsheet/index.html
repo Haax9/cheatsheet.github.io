@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-01-25T16:00:29 CET">
+<meta name="revised" content="2020-02-04T17:53:34 CET">
 <title>Hashcat Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1536,7 +1536,7 @@ cewl -d <span style="color:#ae81ff">5</span> -m <span style="color:#ae81ff">4</s
 
 <span style="color:#75715e"># With some basic dictionnary cracking (use known wordlists)</span>
 <span style="color:#75715e"># rockyou, hibp, crackstation, richelieu, kaonashi, french and english</span> 
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">0</span> rockyou.txt --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">0</span> rockyou.txt --force -O
 
 <span style="color:#75715e"># Then start to use wordlists + masks + simple rule</span>
 <span style="color:#75715e"># For special chars, you can use a custom charset : &#34;?!%$&amp;#-_@+=* &#34;</span>
@@ -1550,35 +1550,42 @@ cewl -d <span style="color:#ae81ff">5</span> -m <span style="color:#ae81ff">4</s
 .<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt -a <span style="color:#ae81ff">6</span> CEWL_WORDLIST.txt -1 .<span style="color:#8045ff">\c</span>harsets<span style="color:#8045ff">\c</span>ustom.chr <span style="color:#d88200">&#39;?d?d?d?d?1&#39;</span> -j c --force -O
 .<span style="color:#8045ff">\h</span>ashcat64.exe ...
 
+<span style="color:#75715e"># Same commands and behavior but using mask after the tested word (mode 7)</span>
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt -a <span style="color:#ae81ff">7</span> <span style="color:#d88200">&#39;?d?d?d?d&#39;</span> .<span style="color:#8045ff">\f</span>rench<span style="color:#8045ff">\*</span> -j c --increment --force -O
+
 <span style="color:#75715e"># Then, wordlists + complex rules</span>
 <span style="color:#75715e"># Once again run against multiple wordlists (including generated ones)</span>
 <span style="color:#75715e"># Kaonashi and OneRuleToRuleThemAll can produce maaaaaassive cracking time</span>
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">0</span> french.txt -r .rules<span style="color:#8045ff">\b</span>est64.rule --force -O
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">0</span> french.txt -r .rules<span style="color:#8045ff">\O</span>neRuleToRuleThemAll.rule --force -O
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">0</span> french.txt -r .rules<span style="color:#8045ff">\b</span>est64.rule --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">0</span> french.txt -r .rules<span style="color:#8045ff">\b</span>est64.rule --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">0</span> french.txt -r .rules<span style="color:#8045ff">\O</span>neRuleToRuleThemAll.rule --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">0</span> french.txt -r .rules<span style="color:#8045ff">\b</span>est64.rule --force -O
 .<span style="color:#8045ff">\h</span>ashcat64.exe ...
 
 <span style="color:#75715e"># Then smart bruteforce using masks (custom charset can be usefull too)</span>
 <span style="color:#75715e"># Can be quite long, depending on the mask. Many little tests with different masks</span>
 <span style="color:#75715e"># Knowing for example that password is min 8 char long, only 8+ masks</span>
 <span style="color:#75715e"># Play by incrementing or decrementing char vs decimal (you can also use specific charset to reduce time)</span>
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?d?d?d?d&#39;</span> --force -O
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?l?d?d?d&#39;</span> --force -O
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?l?l?d?d&#39;</span> --force -O
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">3</span> -1 .<span style="color:#8045ff">\c</span>harset<span style="color:#8045ff">\c</span>ustom <span style="color:#d88200">&#39;?u?l?l?l?l?l?d?1&#39;</span> --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?d?d?d?d&#39;</span> --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?l?d?d?d&#39;</span> --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?l?l?d?d&#39;</span> --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">3</span> -1 .<span style="color:#8045ff">\c</span>harset<span style="color:#8045ff">\c</span>ustom <span style="color:#d88200">&#39;?u?l?l?l?l?l?d?1&#39;</span> --force -O
 .<span style="color:#8045ff">\h</span>ashcat64.exe ...
 
 <span style="color:#75715e"># Then increment mask size and play again</span>
 <span style="color:#75715e"># Can be longer for 9 char and above.. Up to you to decide which masks and how long you wanna wait</span>
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?d?d?d?d?d&#39;</span> --force -l
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?l?d?d?d?d&#39;</span> --force -O
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?l?l?d?d?d&#39;</span> --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?d?d?d?d?d&#39;</span> --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?l?d?d?d?d&#39;</span> --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">3</span> <span style="color:#d88200">&#39;?u?l?l?l?l?l?d?d?d&#39;</span> --force -O
 .<span style="color:#8045ff">\h</span>ashcat64.exe ...
+
+<span style="color:#75715e"># If you have few hashes and small/medium wordlist, you can use random rules</span>
+<span style="color:#75715e"># And make several loops</span>
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">0</span> wl.txt -g <span style="color:#ae81ff">1000000</span>  --force -O -w <span style="color:#ae81ff">3</span>
 
 <span style="color:#75715e"># You can use combination attacks</span>
 <span style="color:#75715e"># For example, combine different names, or combine names with dates.. Then apply masks</span>
 <span style="color:#75715e"># Directly using hashcat</span>
-.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot a <span style="color:#ae81ff">1</span> wordlist1.txt wordlist2.txt --force -O
+.<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">1</span> wordlist1.txt wordlist2.txt --force -O
 <span style="color:#75715e"># Or in memory feeding, it allows you to use rules but not masks</span>
 .<span style="color:#8045ff">\c</span>ombinator.exe wordlist1.txt wordlist2.txt <span style="color:#111">|</span> .<span style="color:#8045ff">\h</span>ashcat64.exe -m <span style="color:#ae81ff">1000</span> hashs.txt --potfile-path potfile.pot -a <span style="color:#ae81ff">0</span> -rules .<span style="color:#8045ff">\r</span>ules<span style="color:#8045ff">\b</span>est64.rule --force -O
 <span style="color:#75715e"># Or create the wordlist before and use it</span>
