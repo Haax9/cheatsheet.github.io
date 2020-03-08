@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-11-21T10:03:58 CET">
+<meta name="revised" content="2020-03-08T15:40:51 CET">
 <title>Phishing Infrastructure (Gophish&#43;Vultr) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -67,275 +67,232 @@
       <a href="/open-source-intelligence-osint/">Open Source Intelligence (OSINT)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/open-source-intelligence-osint/general/" class="dd-item haschildren
+    <li data-nav-id="/web-attacks/server-side-injections/" class="dd-item haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/general/">General</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/server-side-injections/">Server Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/open-source-intelligence-osint/general/firefox_addons/" class="dd-item">
+      <li data-nav-id="/web-attacks/server-side-injections/sql/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/general/firefox_addons/">
-            Firefox addons
+          <a href="/web-attacks/server-side-injections/sql/">
+            SQL Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/server-side-injections/nosql/" class="dd-item">
+        <div>
+          <a href="/web-attacks/server-side-injections/nosql/">
+            NoSQL Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/server-side-injections/ldap/" class="dd-item">
+        <div>
+          <a href="/web-attacks/server-side-injections/ldap/">
+            LDAP Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/server-side-injections/xpath/" class="dd-item">
+        <div>
+          <a href="/web-attacks/server-side-injections/xpath/">
+            XPath Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/server-side-injections/ssrf/" class="dd-item">
+        <div>
+          <a href="/web-attacks/server-side-injections/ssrf/">
+            Server Side Request Forgery (SSRF)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/open-source-intelligence-osint/technical-recon/" class="dd-item haschildren
+    <li data-nav-id="/web-attacks/client-side-injections/" class="dd-item haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/technical-recon/">Technical Recon</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/client-side-injections/">Client Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/domain_ip/" class="dd-item">
+      <li data-nav-id="/web-attacks/client-side-injections/xss/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/technical-recon/domain_ip/">
-            Domain &amp; IP
+          <a href="/web-attacks/client-side-injections/xss/">
+            XSS Injections
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/" class="dd-item">
+      <li data-nav-id="/web-attacks/client-side-injections/csrf/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/technical-recon/subdomain_enumeration/">
-            Subdomain Enumeration
+          <a href="/web-attacks/client-side-injections/csrf/">
+            CSRF Injections
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/dorks/" class="dd-item">
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/technical-recon/dorks/">
-            Dorks
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/company_meta/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/company_meta/">
-            Company General Informations
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/documents_metadata/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/documents_metadata/">
-            Public Documents and Metadata
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/photon/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/photon/">
-            Photon
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/misc/">
-            MISC
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/">Frameworks &amp; Correlation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/">
-            Recon-ng
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/">
-            Gasmak
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/">
-            Omnibus
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/">
-            Spiderfoot
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/">
-            Datasploit
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/">
-            Danger Zone
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/">
-            ReconDog
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/">
-            OSINT-SPY
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
-            Belati
+          <a href="/web-attacks/client-side-injections/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
         </ul>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="/open-source-intelligence-osint/hosting-and-repositories/" class="dd-item haschildren
+    <li data-nav-id="/web-attacks/files-inclusions-and-injections/" class="dd-item haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/hosting-and-repositories/">Hosting &amp; Repositories</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/files-inclusions-and-injections/">File Inclusion and Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/open-source-intelligence-osint/hosting-and-repositories/github/" class="dd-item">
+      <li data-nav-id="/web-attacks/files-inclusions-and-injections/file_upload/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/hosting-and-repositories/github/">
-            Github
+          <a href="/web-attacks/files-inclusions-and-injections/file_upload/">
+            File Upload
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/" class="dd-item">
+      <li data-nav-id="/web-attacks/files-inclusions-and-injections/directory_file_discovery/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/">
-            Amazon &amp; Digital Ocean Buckets
+          <a href="/web-attacks/files-inclusions-and-injections/directory_file_discovery/">
+            Directory &amp; File Discovery
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/files-inclusions-and-injections/xxe/" class="dd-item">
+        <div>
+          <a href="/web-attacks/files-inclusions-and-injections/xxe/">
+            XML External Entity (XXE) and XSLT
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/open-source-intelligence-osint/human-recon/" class="dd-item haschildren
+    <li data-nav-id="/web-attacks/php-vulnerabilities/" class="dd-item haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/human-recon/">Human Recon</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/php-vulnerabilities/">PHP Vulnerabilities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/" class="dd-item haschildren
+      <li data-nav-id="/web-attacks/php-vulnerabilities/php_filters/" class="dd-item">
+        <div>
+          <a href="/web-attacks/php-vulnerabilities/php_filters/">
+            PHP Filters
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/php-vulnerabilities/functions/" class="dd-item">
+        <div>
+          <a href="/web-attacks/php-vulnerabilities/functions/">
+            PHP Functions
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/php-vulnerabilities/serialization/" class="dd-item">
+        <div>
+          <a href="/web-attacks/php-vulnerabilities/serialization/">
+            PHP Serialization
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/php-vulnerabilities/type_juggling/" class="dd-item">
+        <div>
+          <a href="/web-attacks/php-vulnerabilities/type_juggling/">
+            PHP Type Juggling
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/php-vulnerabilities/tricks_others/" class="dd-item">
+        <div>
+          <a href="/web-attacks/php-vulnerabilities/tricks_others/">
+            Tricks &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-attacks/content-management-system-cms/" class="dd-item haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/human-recon/social-networks/">Social Networks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-attacks/content-management-system-cms/">Content Management Systems (CMS)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/linkedin/" class="dd-item">
+      <li data-nav-id="/web-attacks/content-management-system-cms/wordpress/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/social-networks/linkedin/">
-            LinkedIn
+          <a href="/web-attacks/content-management-system-cms/wordpress/">
+            Wordpress
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/twitter/" class="dd-item">
+      <li data-nav-id="/web-attacks/content-management-system-cms/drupal/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/social-networks/twitter/">
-            Twitter
+          <a href="/web-attacks/content-management-system-cms/drupal/">
+            Drupal
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/facebook/" class="dd-item">
+      <li data-nav-id="/web-attacks/content-management-system-cms/joomla/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/social-networks/facebook/">
-            Facebook
+          <a href="/web-attacks/content-management-system-cms/joomla/">
+            Joomla!
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/instagram/" class="dd-item">
+      <li data-nav-id="/web-attacks/content-management-system-cms/magento/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/social-networks/instagram/">
-            Instagram
+          <a href="/web-attacks/content-management-system-cms/magento/">
+            Magento
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/tinder/" class="dd-item">
+      <li data-nav-id="/web-attacks/content-management-system-cms/cmsmap/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/social-networks/tinder/">
-            Tinder
+          <a href="/web-attacks/content-management-system-cms/cmsmap/">
+            CMSMap
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/" class="dd-item">
+      <li data-nav-id="/web-attacks/content-management-system-cms/others/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/">
-            Usernames and Emails
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/social-networks/general_misc/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/human-recon/social-networks/general_misc/">
-            General - MISC - Multi
+          <a href="/web-attacks/content-management-system-cms/others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
         </ul>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/email/" class="dd-item">
+      <li data-nav-id="/web-attacks/headers_injections/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/email/">
-            E-mails
+          <a href="/web-attacks/headers_injections/">
+            Headers Injections
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/leaks/" class="dd-item">
+      <li data-nav-id="/web-attacks/misc_others/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/leaks/">
-            Password leaks
+          <a href="/web-attacks/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/searchingsomeone/" class="dd-item">
+      <li data-nav-id="/web-attacks/burpsuite/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/searchingsomeone/">
-            Searching Someone
+          <a href="/web-attacks/burpsuite/">
+            BurpSuite
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/skiptracer/" class="dd-item">
+      <li data-nav-id="/web-attacks/postman/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/skiptracer/">
-            Skiptracer
+          <a href="/web-attacks/postman/">
+            Postman
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/human-recon/geolocation/" class="dd-item">
+      <li data-nav-id="/web-attacks/amazon_web_services/" class="dd-item">
         <div>
-          <a href="/open-source-intelligence-osint/human-recon/geolocation/">
-            Geolocation
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/buscador/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/buscador/">
-            Buscador
+          <a href="/web-attacks/amazon_web_services/">
+            Amazon Web Services (AWS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -617,6 +574,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-attacks/client-side-injections/misc_others/">
+            MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/web-attacks/files-inclusions-and-injections/" class="dd-item haschildren
@@ -625,13 +589,6 @@
       <a href="/web-attacks/files-inclusions-and-injections/">File Inclusion and Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/web-attacks/files-inclusions-and-injections/lfi_rfi/" class="dd-item">
-        <div>
-          <a href="/web-attacks/files-inclusions-and-injections/lfi_rfi/">
-            Local and Remote File Inclusions
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
       <li data-nav-id="/web-attacks/files-inclusions-and-injections/file_upload/" class="dd-item">
         <div>
           <a href="/web-attacks/files-inclusions-and-injections/file_upload/">
@@ -773,6 +730,13 @@
         <div>
           <a href="/web-attacks/postman/">
             Postman
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-attacks/amazon_web_services/" class="dd-item">
+        <div>
+          <a href="/web-attacks/amazon_web_services/">
+            Amazon Web Services (AWS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -998,17 +962,17 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
-        <div>
-          <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
       <li data-nav-id="/windows-systems/privilege-escalation/tricks/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/tricks/">
             Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
+            LSASS and Mimikatz
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1023,6 +987,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/privexchange/">
             PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/dnsadmins_group/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/dnsadmins_group/">
+            DNSadmins group
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1173,10 +1144,24 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/freeipa/" class="dd-item">
+        <div>
+          <a href="/other-systems/freeipa/">
+            FREEIPA
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/other-systems/misc/" class="dd-item">
         <div>
           <a href="/other-systems/misc/">
             MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/docker_stuff/" class="dd-item">
+        <div>
+          <a href="/other-systems/docker_stuff/">
+            Docker Stuff
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1391,7 +1376,43 @@
 
 <span style="color:#75715e"># All the server configuration is pulled from the following Github repository</span>
 <span style="color:#75715e"># it provides a fully functionnal bash script to automate the process</span>
-https://github.com/n0pe-sled/Postfix-Server-Setup</code></pre></div>
+https://github.com/n0pe-sled/Postfix-Server-Setup
+
+<span style="color:#75715e"># Generate typo &amp; permutations on a domain name</span>
+https://dnstwister.report/</code></pre></div>
+<p><br/></p>
+
+<h3 id="debugging-tips-important-notes">Debugging Tips / Important notes</h3>
+
+<h5 id="blacklisted-spam-domain">Blacklisted/Spam domain</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If the domain is blacklisted / considered as spam, you can try to reference www.domain.fr, just update SSL certs</span></code></pre></div>
+<h5 id="capturing-data">Capturing data</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Login form need to be in POST</span>
+<span style="color:#75715e"># Variables have to be set</span>
+
+&lt;form <span style="color:#111">action</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;&#34;</span> <span style="color:#111">method</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;post&#34;</span> <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;form&#34;</span>&gt;
+    &lt;label&gt;Username:&lt;/label&gt;
+    &lt;input <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;username&#34;</span> <span style="color:#111">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;text&#34;</span>/&gt;
+    &lt;label&gt;Password:&lt;/label&gt;
+    &lt;input <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;password&#34;</span> <span style="color:#111">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;password&#34;</span>/&gt;
+&lt;/form&gt;</code></pre></div>
+<h5 id="e-mail-not-sent-tls">E-mail not sent / TLS</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># For TLS, you could need to set option as &#34;may&#34; instead of &#34;encrypt&#34;</span></code></pre></div>
+<h5 id="incoherent-raw-events-and-results">Incoherent raw events and results</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If raw events are incoherent compared to gophish results, it may be caused by the &#34;Email Opened&#34; tracker.</span> 
+<span style="color:#75715e"># If images are unavailable for the recipient, the tracker could not be triggered.</span>
+<span style="color:#75715e"># If so, the &#34;E-mail Opened&#34; event won&#39;t be generated but Gophish will increment the counter if &#34;Clicked Link&#34; is triggered.</span>
+<span style="color:#75715e"># Solution : for these people, use the &#34;Clicked Link&#34; event as &#34;E-mail Opened&#34; for stats</span></code></pre></div>
+<h5 id="embedded-images">Embedded Images</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#  In the actually HTML, reference the image by typing &lt;img src=&#34;cid:###&#34;&gt;.</span>
+<span style="color:#75715e"># The ### should be the EXACT file name uploaded like cat.png.</span>
+<span style="color:#75715e"># This will not put the attachment in the &#34;attachment bar&#34; in Outlook but embed it directly where</span>
+<span style="color:#75715e"># the image tag is located inline in the email without requiring the downloading of external resources.</span></code></pre></div>
+<h4 id="statistics">Statistics</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Timeline</span>
+<span style="color:#75715e"># Get sorted and unique data for users</span>
+<span style="color:#75715e"># The awk part allows to manipulate/sort on only one part of the line</span>
+cat raw_events.csv <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;Submitted&#34;</span> <span style="color:#111">|</span> cut -d <span style="color:#d88200">&#39;,&#39;</span> -f <span style="color:#ae81ff">1</span>,2 <span style="color:#111">|</span> awk -F, <span style="color:#d88200">&#39;!seen[substr($1,1,8)]++&#39;</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="domain-configuration">Domain Configuration</h3>

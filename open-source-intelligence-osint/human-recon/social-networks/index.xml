@@ -26,7 +26,7 @@ ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/twitter/</guid>
-      <description>Tips &amp;amp; Tricks # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://tweepsect.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Find stalker (checks who&amp;#39;s following and who&amp;#39;s followed) and intersect them https://tweepsect.com/ # You can triangulate accounts by looking who&amp;#39;s following x+x or who y+y follows http://twiangulate.com # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweeter account analysis (account needed) https://tweetreach.</description>
+      <description>Tips &amp;amp; Tricks # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://tweepsect.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Find stalker (checks who&amp;#39;s following and who&amp;#39;s followed) and intersect them https://tweepsect.com/ # You can triangulate accounts by looking who&amp;#39;s following x+x or who y+y follows http://twiangulate.com https://doesfollow.com/ # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com # Tweeter account analysis (account needed) https://tweetreach.</description>
     </item>
     
     <item>
@@ -35,9 +35,8 @@ ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/facebook/</guid>
-      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com 
-Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE 
-Facebook Sleep Stats # A small tool to show the potential privacy implications modern social media have. # By tracking online/offline status of people on Facebook, it is possible to get an accurate image of their sleep pattern.</description>
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ 
+Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE # You can search for car using plate number # For example ST-597-NS will give you car photos identified with relating plate number</description>
     </item>
     
     <item>
@@ -46,8 +45,7 @@ Facebook Sleep Stats # A small tool to show the potential privacy implications m
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
-      <description>Tips &amp;amp; Tricks # Webstagram allows you to browse any Instagram account https://web.stagram.com # Grampsy https://gramfly.com/ # Good online to search for accounts and browse them https://www.pictame.com/ # Instagram photo and video downloader https://downloadgram.com/ # SaveIG (public profiles) https://saveig.com # Full size Instagram photos https://www.instadp.com/ 
-InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT Tool gets a range of information from an Instagram account # that you normally wouldn&amp;#39;t be able to get from just looking at their profile # Username # Profile Name # URL # Followers # Following # Number of Posts # Bio # Profile Picture URL # Is Business Account?</description>
+      <description>Tips &amp;amp; Tricks # Instagram User ID can be very important to investigate # Each account has a unique user ID linked to the @username # Some websites allows to get it for an account https://codeofaninja.com/tools/find-instagram-user-id # You can then trace and spot re-used instagram account by # searching for old names and post, for example using # Google Dorks # Instagram Mirrors can be usefull to browse Instagram accounts # Search features are less restrictive # Some deleted content can still be indexed https://rankersta.</description>
     </item>
     
     <item>
@@ -56,7 +54,16 @@ InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/tinder/</guid>
-      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.</description>
+      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.learnallthethings.net/osmosis # You can browe users https://www.</description>
+    </item>
+    
+    <item>
+      <title>Snapchat</title>
+      <link>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</guid>
+      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.</description>
     </item>
     
     <item>
@@ -65,7 +72,8 @@ InstagramOSINT (https://github.com/sc1341/InstagramOSINT) # The Instagram OSINT 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</guid>
-      <description>Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
+      <description># Username availability https://namechk.com/ 
+Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
     </item>
     
     <item>

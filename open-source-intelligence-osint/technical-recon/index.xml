@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
-      <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx # Reverse DNS Resolution (also usefull for subdomains) for x in {1..255}; do host xx.xx.xx.$x; done 
-Online Passive Identification Tools # You can identify IP block owned by a company ipv4info.com # Then you can find domains and subdomains associated to an IP by using Passive Reverse DNS https://www.</description>
+      <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx # Reverse DNS Resolution (also usefull for subdomains) for x in {1..255}; do host xx.xx.xx.$x; done # Knockknock is a small automated script allowing you to find domaine names # For a registrant (person or company) python3 k2.</description>
     </item>
     
     <item>
@@ -26,7 +25,7 @@ Online Passive Identification Tools # You can identify IP block owned by a compa
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</guid>
-      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com  
+      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com # Github dorks also allow to find many subdomains &amp;#34;teslamotors.com&amp;#34; password # ... 
 Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains</description>
     </item>
     
@@ -45,16 +44,7 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/company_meta/</guid>
-      <description>Company Informations # Find informations about a company https://opencorporates.com # Find multiples sites owned by the same individual/company http://www.spyonweb.com https://www.crunchbase.com https://fr.kompass.com/ https://www.infogreffe.fr/ # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ # Cadastre FR https://cadastre.gouv.fr # Call for tender → BOAMP https://www.boamp.fr/ # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ # Brands https://www.inpi.fr/fr # Look for reported vulnerabilities https://www.</description>
-    </item>
-    
-    <item>
-      <title>Public Documents and Metadata</title>
-      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
-      <description>Metagoofil # Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites # The tool first perform a query in Google requesting different filetypes that can have useful metadata (pdf, doc, xls,ppt,etc) # Then will download those documents to the disk and extracts the metadata of the file using specific libraries for # parsing different file types (Hachoir, Pdfminer, etc) # Options # -d: domain to search # -t: filetype to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx) # -l: limit of results to search (default 200) # -h: work with documents in directory (use \&amp;#34;yes\&amp;#34; for local analysis) # -n: limit of files to download # -o: working directory (location to save downloaded files) # -f: output file metagoofil.</description>
+      <description>Company Informations # Find informations about a company https://opencorporates.com # Find multiples sites owned by the same individual/company http://www.spyonweb.com https://www.crunchbase.com https://fr.kompass.com/ https://www.infogreffe.fr/ # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ # Cadastre FR https://cadastre.gouv.fr # Call for tender → BOAMP https://www.boamp.fr/ # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ # Brands https://www.inpi.fr/fr # Look for reported vulnerabilities https://www.openbugbounty.org/ # OSINT on Chinese companies https://www.</description>
     </item>
     
     <item>
@@ -72,7 +62,17 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
-      <description>Secrets # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com “apikey” site:http://ideone.com “aws_access_key_id” Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.</description>
+      <description>Secrets # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com “apikey” site:http://ideone.com “aws_access_key_id”# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
+      <description>sudo +++ title = &amp;ldquo;Public Documents and Metadata&amp;rdquo; weight = &amp;ldquo;60&amp;rdquo; +++
+Tricks ### Metagoofil ```bash # Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites # The tool first perform a query in Google requesting different filetypes that can have useful metadata (pdf, doc, xls,ppt,etc) # Then will download those documents to the disk and extracts the metadata of the file using specific libraries for # parsing different file types (Hachoir, Pdfminer, etc) # Options # -d: domain to search # -t: filetype to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx) # -l: limit of results to search (default 200) # -h: work with documents in directory (use \&amp;#34;yes\&amp;#34; for local analysis) # -n: limit of files to download # -o: working directory (location to save downloaded files) # -f: output file metagoofil.</description>
     </item>
     
   </channel>

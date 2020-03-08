@@ -20,12 +20,31 @@
     </item>
     
     <item>
+      <title>FREEIPA</title>
+      <link>/other-systems/freeipa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/freeipa/</guid>
+      <description>What is FreeIPA ? https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1# Open source alternative to Microsoft Windows Active Directory # Primarily used as an integrated management solution for Unix environments. # Similar to Active Directory, FreeIPA implements a full LDAP directory infrastructure # So all together we have a Unix host management system # Complete with LDAP and Kerberos that allows for multi-factor authentication. 
+Informations Files # Kerberos informations to get enrolled (location of KDCs.</description>
+    </item>
+    
+    <item>
       <title>MISC</title>
       <link>/other-systems/misc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/other-systems/misc/</guid>
       <description> RTSP and VLC # RTSP (Real Time Streaming Protocol) is used with IP camera # You can view it from VLC Media Player # Open Network Stream &amp;gt; rtsp://ip/endpoint</description>
+    </item>
+    
+    <item>
+      <title>Docker Stuff</title>
+      <link>/other-systems/docker_stuff/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/docker_stuff/</guid>
+      <description>Basics - Tips # Get a shell within the container docker ps sudo docker exec -u 0 -it &amp;lt;id_container&amp;gt; bash # Investigating container # --no-trunc option allow to have full output sudo docker history cont/ainer --no-trunc # Getting the container filesystem from the host # Then chmod and extract it # It can be usefull if some files have been deleted sudo docker save cont/ainer -o container.</description>
     </item>
     
   </channel>

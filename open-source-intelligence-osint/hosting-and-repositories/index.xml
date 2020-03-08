@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/hosting-and-repositories/github/</guid>
-      <description>Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch 
-Gitrob # Gitrob is a github scanner and crawler # Can be used to retrieve sensitive data in github repositories https://michenriksen.</description>
+      <description>Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch# Usually, credential leaks do not occur on the company public Github # But more on developer/employees personal Github</description>
     </item>
     
     <item>

