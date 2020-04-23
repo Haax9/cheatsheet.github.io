@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:24 CET">
+<meta name="revised" content="2020-04-23T18:56:15 CEST">
 <title>Instagram :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -204,6 +204,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -547,10 +554,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -814,6 +821,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1021,6 +1035,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1104,6 +1125,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1537,6 +1565,21 @@ The informations about : starbucks
 User id : <span style="color:#ae81ff">1034466</span>
 Phone of starbucks : <span style="color:#ae81ff">18007827282</span>
 Mail of starbucks : info@starbucks.com</code></pre></div>
+<p><br/></p>
+
+<h3 id="osi-ig">OSI.IG</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Simple python script used to scrape and parse data from Instagram</span>
+<span style="color:#75715e"># NOTE : pictures downloaded are sent to tinyurl</span>
+
+$ python3 main.py -h             
+usage: main.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> -u USERNAME <span style="color:#f92672">[</span>-p<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-s<span style="color:#f92672">]</span>
+
+optional arguments:
+  -h, --help            show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
+  -u USERNAME, --username USERNAME
+                        username of account to scan
+  -p, --postscrap       scrape all uploaded images info
+  -s, --savedata        save data to file</code></pre></div>
 <p><br/></p>
 
 <h3 id="instagramosint-https-github-com-sc1341-instagramosint">InstagramOSINT (<a href="https://github.com/sc1341/InstagramOSINT">https://github.com/sc1341/InstagramOSINT</a>)</h3>

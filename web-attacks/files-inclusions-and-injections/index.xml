@@ -28,7 +28,7 @@ MIME Type # Classical, using Burp for example Content-Type: application/x-php â†
       
       <guid>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</guid>
       <description>Test for directory traversal  
-General &amp;amp; Tricks # Check for .git # If there is a git, possible to download the source code # Check for temp saved files # Vim creates .swp files index.php/.admin.html.swp # Path traversal cheat sheet https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/ 
+General &amp;amp; Tricks # Check for .git # If there is a git, possible to download the source code # Check for temp saved files # Vim creates .swp files index.php/.admin.html.swp # Path traversal cheat sheet https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/ https://pentestwiki.org/wiki/Path_traversal#Windows 
 Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt -x ignore:code=400 -x ignore:code=404 # Auth basic patator http_fuzz url=https://IP/FILE0 0=.wordlisttxt -x ignore:code=400 -x ignore:code=404 header=&amp;#39;Authorization: Basic YOUR_BASE64_HERE&amp;#39; # Admin wordlist patator http_fuzz url=&amp;#39;url/FILE0&amp;#39; 0=wordlist/admin.</description>
     </item>
     

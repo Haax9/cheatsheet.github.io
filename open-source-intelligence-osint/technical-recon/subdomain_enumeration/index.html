@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:23 CET">
+<meta name="revised" content="2020-04-23T18:56:15 CEST">
 <title>Subdomain Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -205,6 +205,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -546,10 +553,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -813,6 +820,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1020,6 +1034,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1103,6 +1124,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1606,6 +1634,12 @@ nmap --script targets-asn --script-args targets-asn.asn<span style="color:#f9267
 dig +multi AXFR @ns1.insecuredns.com insecuredns.com</code></pre></div>
 <p><br/></p>
 
+<h3 id="subdomain-takeover">Subdomain Takeover</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Resource</span>
+https://www.hackerone.com/blog/Guide-Subdomain-Takeovers</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Subjack is a tool used to automate subdomain takeover discovery (https://github.com/haccer/subjack)</span>
+./subjack -w subdomains.txt -t <span style="color:#ae81ff">100</span> -timeout <span style="color:#ae81ff">30</span> -o results.txt -ssl</code></pre></div>
+<p><br/></p>
+
 <h3 id="dnssec-walking">DNSSEC Walking</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># To prove things that do not exist, DNSSEC list all the things that exist</span>
 <span style="color:#75715e"># If the list is proven, then everything not listed must not exist</span>
@@ -1632,7 +1666,10 @@ cat icann.org.unhash <span style="color:#111">|</span> grep <span style="color:#
 <span style="color:#75715e"># You can download the dataset and parse it but IT&#39;S HUGE (20Gb compressed, 300+ Gb uncompressed)</span>
 <span style="color:#75715e"># It seems to be the best solution to find subdomains</span>
 
-curl -silent https://scans.io/data/rapid7/sonar.fdns_v2/20170417-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep “.icann.org” <span style="color:#111">|</span> jq</code></pre></div>
+curl -silent https://scans.io/data/rapid7/sonar.fdns_v2/20170417-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep “.icann.org” <span style="color:#111">|</span> jq
+
+wget https://opendata.rapid7.com/sonar.fdns_v2/2019-11-29-1574985929-fdns_a.json.gz
+cat <span style="color:#ae81ff">20170417</span>-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;.target.org&#34;</span> <span style="color:#111">|</span> jq</code></pre></div>
 
     
     

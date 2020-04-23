@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:24 CET">
+<meta name="revised" content="2020-04-23T18:56:15 CEST">
 <title>Password leaks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -204,6 +204,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -546,10 +553,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -813,6 +820,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1020,6 +1034,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1103,6 +1124,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1490,6 +1518,7 @@ https://haveibeenpwned.com</code></pre></div>
 
 <h3 id="h8mail-https-github-com-khast3x-h8mail">h8mail (<a href="https://github.com/khast3x/h8mail">https://github.com/khast3x/h8mail</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Email OSINT and password finder</span>
+<span style="color:#75715e"># Usefull when targetting specific emails</span>
 <span style="color:#75715e"># It uses different sources to get information (HaveIBeenPwned, Shodan, Hunter.io Public &amp; Free tier, WeLeakInfo Public &amp; Service, Snusbase)</span>
 
 <span style="color:#75715e"># NodeJS is required to bypass CloudFlare. Docker is available</span>
@@ -1504,7 +1533,10 @@ python h8mail.py -t targets.txt -c config.ini -o pwned_targets.csv
 python h8mail.py -t targets.txt -bc ../Downloads/BreachCompilation/ -k <span style="color:#d88200">&#34;snusbase_url:</span><span style="color:#111">$snusbase_url</span><span style="color:#d88200">,snusbase_token:</span><span style="color:#111">$snusbase_token</span><span style="color:#d88200">&#34;</span>
 
 <span style="color:#75715e"># No API call</span>
-python h8mail.py -t targets.txt -bc ../Downloads/BreachCompilation/ --local</code></pre></div>
+python h8mail.py -t targets.txt -bc ../Downloads/BreachCompilation/ --local
+
+<span style="color:#75715e"># Chasing (using hunter.io to get new emails)</span>
+$ h8mail -t john.smith@fcorp.com --chase <span style="color:#ae81ff">2</span> -k <span style="color:#d88200">&#34;hunterio:abc1234&#34;</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="leaked-2-1-https-github-com-githacktools-leaked">Leaked 2.1 (<a href="https://github.com/GitHackTools/Leaked">https://github.com/GitHackTools/Leaked</a>)</h3>

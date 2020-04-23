@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:23 CET">
+<meta name="revised" content="2020-04-23T18:56:14 CEST">
 <title>Methodology :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -205,6 +205,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -546,10 +553,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -813,6 +820,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -942,45 +956,17 @@
       <a href="/windows-systems/local-and-physical/">Local and Physical</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/shells-methods/methodology/" class="dd-item">
+      <li data-nav-id="/windows-systems/local-and-physical/local_recon_enumeration/" class="dd-item">
         <div>
-          <a href="/shells-methods/methodology/">
-            Methodology
+          <a href="/windows-systems/local-and-physical/local_recon_enumeration/">
+            Local Recon and Enumeration
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/shells-methods/tty_full/" class="dd-item">
+      <li data-nav-id="/windows-systems/local-and-physical/physical_access/" class="dd-item">
         <div>
-          <a href="/shells-methods/tty_full/">
-            Fully Interactive TTY Shell
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/shells-methods/webshell/" class="dd-item">
-        <div>
-          <a href="/shells-methods/webshell/">
-            Webshell
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/shells-methods/reverse/" class="dd-item">
-        <div>
-          <a href="/shells-methods/reverse/">
-            Reverse Shell
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/shells-methods/bind/" class="dd-item">
-        <div>
-          <a href="/shells-methods/bind/">
-            Bind Shell
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/shells-methods/windows/" class="dd-item">
-        <div>
-          <a href="/shells-methods/windows/">
-            Windows Shells Methods
+          <a href="/windows-systems/local-and-physical/physical_access/">
+            Physical Access
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1045,6 +1031,13 @@
         <div>
           <a href="/windows-systems/exploitation/iis/">
             IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1131,6 +1124,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1487,11 +1487,36 @@
 
 <p>Sources : <a href="https://www.dfir.training/osint">https://www.dfir.training/osint</a></p>
 
+<h3 id="gap-analysis-others">Gap Analysis &amp; others</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In OSINT - Analytical mind</span>
+<span style="color:#75715e"># Ask a lot of questions : Who, What, When, Where, Why, and How</span>
+
+<span style="color:#75715e"># Be Curious and Craft a Storyline</span>
+
+<span style="color:#75715e"># Use Gap Analysis</span>
+shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-track/
+<span style="color:#ae81ff">1</span>. What <span style="color:#00a8c8">do</span> we know ?
+<span style="color:#ae81ff">2</span>. What does the information mean?
+<span style="color:#ae81ff">3</span>. What <span style="color:#00a8c8">do</span> I still need to know?
+<span style="color:#ae81ff">4</span>. How <span style="color:#00a8c8">do</span> I find out?
+
+<span style="color:#75715e"># Reflect on failures but also wins</span>
+<span style="color:#ae81ff">1</span>. What part is taking the most time?
+<span style="color:#ae81ff">2</span>. Is this necessary <span style="color:#00a8c8">for</span> the investigation?
+<span style="color:#ae81ff">3</span>. What could I change in my process?
+<span style="color:#ae81ff">4</span>. Could any part be automated?
+<span style="color:#ae81ff">5</span>. Who could I ask <span style="color:#00a8c8">for</span> input/advice?</code></pre></div>
+<p><br/></p>
+
 <h3 id="workflow">Workflow</h3>
 
 <h4 id="domain">Domain</h4>
 
 <p><center><img src="/img/OSINT-Domain.png" alt="OSINT Domain" height="800px"/></center></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># This one is good too</span>
+https://twitter.com/sinwindie/status/1251320697370095617?s<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+@sinwindie</code></pre></div>
+<p><center><img src="/img/OSINT-Website.jfif" alt="OSINT Domain" height="800px"/></center></p>
 
 <h4 id="e-mail">E-mail</h4>
 

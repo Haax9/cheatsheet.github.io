@@ -17,7 +17,7 @@
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</guid>
       <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
-ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile</description>
+ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile # Full size profile photo # Then right click &amp;#34;view image&amp;#34; https://linkedin.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/facebook/</guid>
-      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ 
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ 
 Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE # You can search for car using plate number # For example ST-597-NS will give you car photos identified with relating plate number</description>
     </item>
     
@@ -63,7 +63,7 @@ Facebook Tricks # You can search by e-mail # You can find accounts by e-mail wit
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</guid>
-      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.</description>
+      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.snapchat.com/ Snapchat Map https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/ # Using the map you can view public content # You can play with overlays and save videos # To get video # - Developper Tools (F12) # - Network and filter on medias # - Reload (Ctrl+R) # - On the snap link, right click and open in new tab # By default it removes extra graphics layer https://s.</description>
     </item>
     
     <item>

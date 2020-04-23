@@ -16,7 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/general/firefox_addons/</guid>
-      <description>Flag Fox Flagfox is an extension that displays a flag icon indicating the current webserver&amp;rsquo;s physical location.
+      <description>OSINT Bookmarks https://www.osintcombine.com/osint-bookmarks 
+Flag Fox Flagfox is an extension that displays a flag icon indicating the current webserver&amp;rsquo;s physical location.
 It then launch a geotool webpage to get more informations about the website you are visiting About IP &amp;amp; Domain.
 Google Cache Google Cache lets you visit retrieve the web page from Google Web Cache when the site is offline.
 If the site is offline, you can just press toolbar button and request cached version of the page from Google Cache.</description>
@@ -29,12 +30,7 @@ If the site is offline, you can just press toolbar button and request cached ver
       
       <guid>/open-source-intelligence-osint/general/methodology/</guid>
       <description>Sources : https://www.dfir.training/osint
-Workflow Domain 
-E-mail 
-Username 
-Real Name 
-Phone 
-Location</description>
+Gap Analysis &amp;amp; others # In OSINT - Analytical mind # Ask a lot of questions : Who, What, When, Where, Why, and How # Be Curious and Craft a Storyline # Use Gap Analysis shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-track/ 1. What do we know ? 2. What does the information mean? 3. What do I still need to know? 4. How do I find out? # Reflect on failures but also wins 1.</description>
     </item>
     
   </channel>

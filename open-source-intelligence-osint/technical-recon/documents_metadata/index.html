@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:24 CET">
+<meta name="revised" content="2020-04-23T18:56:15 CEST">
 <title> :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -205,6 +205,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -546,10 +553,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -813,6 +820,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1020,6 +1034,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1103,6 +1124,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1470,11 +1498,40 @@ title = &ldquo;Public Documents and Metadata&rdquo;
 weight = &ldquo;60&rdquo;
 +++</p>
 
-<h3 id="tricks">Tricks</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">### Metagoofil</span>
+<h3 id="getting-pdf-on-web-archive">Getting PDF on Web Archive</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Great resource</span>
+https://openfacto.fr/2020/04/19/recuperer-des-fichiers-pdf-en-masse-sur-archive-org/
 
-<span style="color:#d88200">```</span>bash
-<span style="color:#75715e"># Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites</span>
+<span style="color:#75715e"># Step 1</span>
+<span style="color:#75715e"># By adding &#39;*&#39; at the and of a company URL, you can get all indexed documents</span>
+<span style="color:#75715e"># Then you can filter by &#34;PDF&#34; (right search bar)</span>
+https://web.archive.org/web/*/https://testcompany.fr/*
+
+<span style="color:#75715e"># Step 2</span>
+<span style="color:#75715e"># Here you want to get URL list</span>
+<span style="color:#75715e"># In the Firefox developer tools -&gt; Network</span>
+<span style="color:#75715e"># You can get an HTTP request to a JSON file containing URLs</span>
+<span style="color:#75715e"># Copy as curl and get the file</span>
+
+<span style="color:#75715e"># Step 3</span>
+<span style="color:#75715e"># OpenRefine can help to parse and process the file</span>
+<span style="color:#75715e"># Filter on PDF</span>
+
+<span style="color:#75715e"># Step 4</span>
+<span style="color:#75715e"># NEVER download directly</span>
+<span style="color:#75715e"># You can do it through archived document</span>
+<span style="color:#75715e"># Add the prefix for every line</span>
+https://web.archive.org/web/
+
+<span style="color:#75715e"># Step 5</span>
+<span style="color:#75715e"># To get the document, the &#39;*&#39; in URL must be replaced by the timestamp</span>
+<span style="color:#75715e"># If several documents have been indexed (you can download the first, or the last)</span>
+<span style="color:#75715e"># Also, add &#34;if_&#34;</span>
+https://web.archive.org/web/20160102030102if_/http://www.xxx.fr/document.pdf</code></pre></div>
+<p><br/></p>
+
+<h3 id="metagoofil">Metagoofil</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites</span>
 
 <span style="color:#75715e"># The tool first perform a query in Google requesting different filetypes that can have useful metadata (pdf, doc, xls,ppt,etc)</span>
 <span style="color:#75715e"># Then will download those documents to the disk and extracts the metadata of the file using specific libraries for</span>
@@ -1534,7 +1591,7 @@ truffleHog --json --max_depth <span style="color:#ae81ff">10</span> https://gith
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/" title="Belati"> <i class="fa fa-chevron-left"></i><label>Belati</label></a>
+<a class="nav nav-prev" href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" title="sn0int"> <i class="fa fa-chevron-left"></i><label>sn0int</label></a>
     <a class="nav nav-next" href="/open-source-intelligence-osint/hosting-and-repositories/" title="Hosting &amp; Repositories" style="margin-right: 0px;"><label>Hosting &amp; Repositories</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 

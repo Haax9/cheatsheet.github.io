@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:24 CET">
+<meta name="revised" content="2020-04-23T18:56:15 CEST">
 <title>MISC &amp; Others :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -203,6 +203,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -544,10 +551,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -812,6 +819,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1019,6 +1033,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1102,6 +1123,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1411,6 +1439,7 @@
       <option value="/web-attacks/burpsuite/" >- BurpSuite</option>
       <option value="/web-attacks/postman/" >- Postman</option>
       <option value="/web-attacks/amazon_web_services/" >- Amazon Web Services (AWS)</option>
+      <option value="/web-attacks/attacking_apis/" >- Attacking APIs</option>
   
     <option value="/network/" >
    Network</option>
@@ -1547,7 +1576,22 @@ https://emojipedia.org/pile-of-poo/
 https://github.com/fuzzdb-project/fuzzdb
 
 <span style="color:#75715e"># AWS</span>
-https://github.com/toniblyx/my-arsenal-of-aws-security-tools</code></pre></div>
+https://github.com/toniblyx/my-arsenal-of-aws-security-tools
+
+<span style="color:#75715e"># Redirections / Bypass filters for SSRF</span>
+<span style="color:#75715e"># &lt;anything&gt;.&lt;IP&gt;.nip.io will redirect to the &lt;IP&gt; you specify</span>
+<span style="color:#ae81ff">1</span>.1.1.1.nip.io  will resolve to <span style="color:#ae81ff">1</span>.1.1.1
+
+<span style="color:#75715e"># Check for broken links and domain takeover</span>
+<span style="color:#75715e"># For twitter, TwitterBFTD is great</span>
+https://github.com/stevenvachon/broken-link-checker
+$ blc -rof --filter-level <span style="color:#ae81ff">3</span> https://example.com/
+$ blc -rfoi --exclude linkedin.com --exclude youtube.com --filter-level <span style="color:#ae81ff">3</span> https://example.com/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If facing OWA applications, you can check if the target is using O365 or on premise applications</span>
+<span style="color:#75715e"># If the following is &#34;Managed&#34;, the targets uses o365</span>
+https://login.microsoftonline.com/getuserrealm.srf?login<span style="color:#f92672">=</span>targetemail@company.com<span style="color:#111">&amp;</span><span style="color:#111">xml</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Fuzzing and Content Discovery</span>
+https://github.com/kaimi-io/web-fuzz-wordlists
+
+$ python3 dirsearch.py -u https://www.target.fr -f -e php,xml,txt -t <span style="color:#ae81ff">10</span> -w wordpress.fuzz.txt</code></pre></div>
 <p><br/></p>
 
 <h3 id="idor-insecure-directo-object-reference">IDOR (Insecure Directo Object Reference)</h3>

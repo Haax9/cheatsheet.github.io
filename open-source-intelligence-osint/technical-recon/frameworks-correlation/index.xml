@@ -94,5 +94,14 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
       <description>General Informations # Belati is tool for Collecting Public Data &amp;amp; Public Document from Website and other service for OSINT purpose. # This tools is inspired by Foca and Datasploit for OSINT # Might need root privileges to executes all tools # Like nmap. But it works well without root (nmap won&amp;#39;t be executed) # Not totally passive as long as it does an HTTP Banner Grabbing for earch domain/subdomain found.</description>
     </item>
     
+    <item>
+      <title>sn0int</title>
+      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/</guid>
+      <description>Getting Started # Documentation https://github.com/kpcyrd/sn0int https://sn0int.readthedocs.io # Registry https://sn0int.com/ # Default, no modules installed # Quick install &amp;gt; pkg quickstart &amp;gt; pkg --help # Scopes &amp;gt; workspace demo &amp;gt; add domain Domain : domain.com # Confirm &amp;gt; select domains &amp;gt; select domains where id=1 &amp;gt; select domains where value like %.com &amp;gt; select domains where ( value like e% and value like %m ) or false # Modules # Informations gathered by modules can be picked up by others &amp;gt; pkg list # Certificate transparency &amp;gt; use ctlogs &amp;gt; run # DNS &amp;gt; use dns-resolve &amp;gt; run # Scan for discovered URLs &amp;gt; use url-scan &amp;gt; target &amp;gt; target where resolvable &amp;gt; run &amp;gt; select urls</description>
+    </item>
+    
   </channel>
 </rss>

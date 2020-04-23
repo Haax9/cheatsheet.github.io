@@ -519,6 +519,10 @@
   </url>
   
   <url>
+    <loc>/windows-systems/post-exploitation-techniques/persistence/</loc>
+  </url>
+  
+  <url>
     <loc>/windows-systems/post-exploitation-techniques/</loc>
   </url>
   
@@ -663,6 +667,10 @@
   </url>
   
   <url>
+    <loc>/windows-systems/exploitation/ipv6/</loc>
+  </url>
+  
+  <url>
     <loc>/passcracking-hashfiles/</loc>
   </url>
   
@@ -679,7 +687,15 @@
   </url>
   
   <url>
+    <loc>/web-attacks/attacking_apis/</loc>
+  </url>
+  
+  <url>
     <loc>/cryptography/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/</loc>
   </url>
   
   <url>
@@ -711,11 +727,15 @@
   </url>
   
   <url>
+    <loc>/resources/</loc>
+  </url>
+  
+  <url>
     <loc>/recon-enumeration/services-enumeration/1433_mssql/</loc>
   </url>
   
   <url>
-    <loc>/recon-enumeration/services-enumeration/1721_vpn/</loc>
+    <loc>/recon-enumeration/services-enumeration/1721_500_vpn/</loc>
   </url>
   
   <url>

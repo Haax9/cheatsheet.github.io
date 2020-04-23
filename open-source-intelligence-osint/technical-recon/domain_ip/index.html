@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:23 CET">
+<meta name="revised" content="2020-04-23T18:56:14 CEST">
 <title>Domain &amp; IP :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -205,6 +205,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -546,10 +553,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -813,6 +820,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1020,6 +1034,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1103,6 +1124,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1517,7 +1545,9 @@ cat subdomains_servers <span style="color:#111">|</span> aquatone
 <span style="color:#75715e"># Dirsearch is good for recursive</span>
 https://github.com/ffuf/ffuf
 ffuf -u site/FUZZ -w wordlist
-ffuf -u site/FUZZ/HERE -w wordlist</code></pre></div>
+ffuf -u site/FUZZ/HERE -w wordlist</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># One line</span>
+<span style="color:#75715e"># Getting page title without following redirections</span>
+<span style="color:#00a8c8">for</span> i in <span style="color:#00a8c8">$(</span>cat urls_or_subdomains.txt<span style="color:#00a8c8">)</span><span style="color:#111">;</span> <span style="color:#00a8c8">do</span> <span style="color:#111">echo</span> <span style="color:#d88200">&#34;</span><span style="color:#111">$i</span><span style="color:#d88200"> | </span><span style="color:#00a8c8">$(</span>curl --connect-timeout <span style="color:#ae81ff">3</span> <span style="color:#111">$i</span> -s -v <span style="color:#ae81ff">2</span>&gt;<span style="color:#111">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#111">|</span> grep -Poz <span style="color:#d88200">&#39;((?&lt;=title&gt;)(.*)(?=&lt;/title&gt;)|(?&lt;=Location:)(.*)/|(Could not resolve host:.*))&#39;</span> <span style="color:#111">|</span> tr -d <span style="color:#d88200">&#39;\0&#39;</span> <span style="color:#111">|</span> sed -r <span style="color:#d88200">&#39;s/(https?:\/\/.*\/?)(.*)(301 Moved Permanently)/\3 \2\1/g&#39;</span> <span style="color:#00a8c8">)</span><span style="color:#d88200">&#34;</span><span style="color:#111">;</span> <span style="color:#00a8c8">done</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="online-passive-identification-tools">Online Passive Identification Tools</h3>
@@ -1547,7 +1577,10 @@ https://www.robtex.com
 
 <span style="color:#75715e"># You can identify new domains in the &#34;RelationShip&#34; section</span>
 <span style="color:#75715e"># of Builtwith</span>
-https://builtwith.com/relationships/sodifrance.fr</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Shodan.io and Censys.io are also usefull</span>
+https://builtwith.com/relationships/sodifrance.fr
+
+<span style="color:#75715e"># Many tools</span>
+https://intelx.io/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Shodan.io and Censys.io are also usefull</span>
 <span style="color:#75715e"># Keywords on Shodan</span>
 https://beta.shodan.io/search/filters
 city:<span style="color:#d88200">&#34;Grenoble&#34;</span>

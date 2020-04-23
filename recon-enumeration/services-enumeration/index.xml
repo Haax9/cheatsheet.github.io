@@ -160,12 +160,12 @@ Manual WebDAV exploitation (cadaver) cadaver http://IP/ # Goal is to upload file
     </item>
     
     <item>
-      <title>1721 - VPN</title>
-      <link>/recon-enumeration/services-enumeration/1721_vpn/</link>
+      <title>1721/500 - VPN</title>
+      <link>/recon-enumeration/services-enumeration/1721_500_vpn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/1721_vpn/</guid>
-      <description>Resources https://github.com/0x90/vpn-arsenal https://opensourceforu.com/2012/01/ipsec-vpn-penetration-testing-backtrack-tools/ 
+      <guid>/recon-enumeration/services-enumeration/1721_500_vpn/</guid>
+      <description>Resources https://github.com/0x90/vpn-arsenal https://opensourceforu.com/2012/01/ipsec-vpn-penetration-testing-backtrack-tools/ http://devloop.users.sourceforge.net/index.php?article108/solution-du-ctf-hacklab-vulnvpn https://resources.infosecinstitute.com/vulnvpn/#gref https://0xrick.github.io/hack-the-box/conceal/#ike-scan-Setting-up-The-Connection 
 Exploitation Techniques # IKEv2 Authenthication IP spoofing ike-scan --sport=1723 --dport=1723 --sourceip=IP_To_Spoof --ikev2 &amp;lt;IP&amp;gt; # Trying all authentication modes ike-scan --dport=1723 --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing using ike-scan ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing and agressive mode ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 &amp;lt;IP&amp;gt; # Show fingerprint ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 --showbackoff &amp;lt;IP&amp;gt; # Crack the key using psk-crack psk-crack hash-file.</description>
     </item>
     

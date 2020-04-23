@@ -36,8 +36,8 @@ MISC # Security Headers https://securityheaders.com # /!\ HTTP POST Requests nee
       
       <guid>/web-attacks/burpsuite/</guid>
       <description>WORK IN PROGRESS 
-Notes / Tips # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! 
-Modules / Addons # Autorize # For Each Request you do, it will send an equal request # But with changed cookies of the session or any additional header used for authorization. # Just add cookies for user B and browse app using user A # Try accessing restricted ressources for user B and check for server responses # 200 --&amp;gt; Possible IDOR# JSON Beautifier # This extension adds a new tab to Burp&amp;#39;s HTTP message viewer to beautify JSON content.</description>
+Notes / Tips # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Firefox sends an HTTP GET every 60s to hxxp://detectportal.firefox.com. To avoid : about:config &amp;gt; network.captive-portal-service.enabled ==&amp;gt; false 
+Modules / Addons # Autorize # For Each Request you do, it will send an equal request # But with changed cookies of the session or any additional header used for authorization.</description>
     </item>
     
     <item>
@@ -56,9 +56,19 @@ User Interface Header # Import --&amp;gt; Used to import collection or environme
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-attacks/amazon_web_services/</guid>
-      <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty 
-Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed). 
-SQLmap proxy for AWS https://github.</description>
+      <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy # Cheatsheet https://www.magnussen.funcmylife.fr/article_35 GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty 
+Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed).</description>
+    </item>
+    
+    <item>
+      <title>Attacking APIs</title>
+      <link>/web-attacks/attacking_apis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-attacks/attacking_apis/</guid>
+      <description>Resources https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93 https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765 https://github.com/smodnix/31-days-of-API-Security-Tips https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0 https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2 
+SOAP vs REST # REST uses: HTTP, JSON , URL and XML # SOAP uses: mostly HTTP and XML # SOAP can be more recommandded in terms of security, if you have to process critical data. 
+Checklist # Test tokens # Authentication token, JWT, Base64 encoded... # Input validation # All entry points (command injection, sql injections, html...) # Cookies, Headers ?</description>
     </item>
     
   </channel>

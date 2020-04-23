@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-03-08T15:44:23 CET">
+<meta name="revised" content="2020-04-23T18:56:14 CEST">
 <title>Domain Recon :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -203,6 +203,13 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/">
             Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/">
+            sn0int
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -544,10 +551,10 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/recon-enumeration/services-enumeration/1721_vpn/" class="dd-item">
+      <li data-nav-id="/recon-enumeration/services-enumeration/1721_500_vpn/" class="dd-item">
         <div>
-          <a href="/recon-enumeration/services-enumeration/1721_vpn/">
-            1721 - VPN
+          <a href="/recon-enumeration/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -811,6 +818,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-attacks/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-attacks/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/network/" class="dd-item haschildren
@@ -1020,6 +1034,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1103,6 +1124,13 @@
         <div>
           <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
             Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1524,9 +1552,23 @@ tool.py domain<span style="color:#8045ff">\u</span>ser:password@IP &lt;command/p
 
 
 <span style="color:#75715e"># You can list all shares on a shares on a machine to find potential entry points</span>
-cme smb <span style="color:#ae81ff">10</span>.69.88.23 -u user -p password --shares</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using smbclient</span>
+cme smb <span style="color:#ae81ff">10</span>.69.88.23 -u user -p password --shares</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Enumerate hostname</span>
+nmblookup -A &lt;victim_ip&gt;
+enum4linux -n &lt;victim_ip&gt;
+$ nmap --script<span style="color:#f92672">=</span>smb-enum* --script-args<span style="color:#f92672">=</span><span style="color:#111">unsafe</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> -T5 &lt;victim_ip&gt;
+
+<span style="color:#75715e"># Check for null sessions</span>
+smbmap -H &lt;victim_ip&gt;
+
+<span style="color:#75715e"># Checking for vulns</span>
+nmap --script smb-vuln* -p139,445 -T4 -Pn &lt;victim_ip&gt;</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using smbclient</span>
 smbclient -L &lt;IP&gt;
-smbclient -U GALACTIC.LAN<span style="color:#8045ff">\\</span>d.vador -L //10.69.88.10</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can browse SMB share using smbclient</span>
+smbclient -U GALACTIC.LAN<span style="color:#8045ff">\\</span>d.vador -L //10.69.88.10
+
+<span style="color:#75715e"># Youu can recursively download a folder</span>
+smb: &gt; recurse ON
+smb: &gt; prompt OFF
+smb: &gt; mget *</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can browse SMB share using smbclient</span>
 <span style="color:#75715e"># The SYSVOL share contains GPO, you can look for a MS14-025</span>
 smbclient -U user //10.34.67.4/SYSVOL</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># MS14-025</span>
 → smb: <span style="color:#8045ff">\N</span>ORZH.LAN<span style="color:#8045ff">\P</span>olicies<span style="color:#8045ff">\{</span>195471B6-B0C6-4AD2-9853-28E2B4E9CEF6<span style="color:#f92672">}</span><span style="color:#8045ff">\M</span>achine<span style="color:#8045ff">\P</span>references<span style="color:#8045ff">\G</span>roups<span style="color:#8045ff">\G</span>roups.xml
