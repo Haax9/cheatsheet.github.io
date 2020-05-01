@@ -95,5 +95,14 @@ Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound dat
       <description># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
     </item>
     
+    <item>
+      <title>Azure AD</title>
+      <link>/windows-systems/privilege-escalation/azure_ad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/azure_ad/</guid>
+      <description>Exploiting Password Hash Synchronisation (PHS) https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html # The main target is the sync account # You can identify it using the description $ ldapsearch -H ldap://DC01.DOMAIN.LAN:389 -D &amp;#34;DOMAIN\user&amp;#34; -w &amp;#34;****&amp;#34; -b &amp;#34;DC=DOMAIN,DC=LAN&amp;#34; &amp;#39;(description=*Azure*)&amp;#39; description # To exploit this, need local admin or ADSync service account # Can decrypt using C:\Program Files\Microsoft Azure AD Sync\Binn\mcrypt.dll # The default configuration of Azure AD Connect uses a SQL Server Express database # but a fully deployed SQL Server can also be used.</description>
+    </item>
+    
   </channel>
 </rss>

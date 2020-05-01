@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-01T13:23:30 CEST">
-<title>Aquatone :: Offensive Security Cheatsheet</title>
+<meta name="revised" content="2020-05-01T13:23:31 CEST">
+<title>Azure AD :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/web-pentest/applicative-scans/aquatone/">
+  <body data-url="/windows-systems/privilege-escalation/azure_ad/">
     
       <header>
   <div class="logo">
@@ -455,11 +455,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/web-pentest/" class="dd-item parent haschildren
+    <li data-nav-id="/web-pentest/" class="dd-item haschildren
         ">
       <div>
-      <a href="/web-pentest/">Web Pentest</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-pentest/">Web Pentest</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/web-pentest/resources-discovery/" class="dd-item haschildren
@@ -505,11 +504,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/web-pentest/applicative-scans/" class="dd-item parent haschildren
+    <li data-nav-id="/web-pentest/applicative-scans/" class="dd-item haschildren
         ">
       <div>
-      <a href="/web-pentest/applicative-scans/">Applicative Scans</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/web-pentest/applicative-scans/">Applicative Scans</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/web-pentest/applicative-scans/web_application_scan/" class="dd-item">
@@ -519,7 +517,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/web-pentest/applicative-scans/aquatone/" class="dd-item active">
+      <li data-nav-id="/web-pentest/applicative-scans/aquatone/" class="dd-item">
         <div>
           <a href="/web-pentest/applicative-scans/aquatone/">
             Aquatone
@@ -1066,10 +1064,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/" class="dd-item haschildren
+    <li data-nav-id="/windows-systems/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/windows-systems/">Windows Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/">Windows Systems</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/windows-systems/network-and-domain-recon/" class="dd-item haschildren
@@ -1194,10 +1193,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
+    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/windows-systems/privilege-escalation/automated_recon/" class="dd-item">
@@ -1263,7 +1263,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/azure_ad/" class="dd-item">
+      <li data-nav-id="/windows-systems/privilege-escalation/azure_ad/" class="dd-item active">
         <div>
           <a href="/windows-systems/privilege-escalation/azure_ad/">
             Azure AD
@@ -1639,44 +1639,40 @@
     <option value="/open-source-intelligence-osint/" >
    Open Source Intelligence (OSINT)</option>
     <option value="/web-pentest/" >
-   Web Pentest</option> 
-    <option value="/web-pentest/resources-discovery/" >
-  - 
-   Resources Discovery</option>
-    <option value="/web-pentest/applicative-scans/" >
-  - 
-   Applicative Scans</option> 
-      <option value="/web-pentest/applicative-scans/web_application_scan/" >-- Web Application Scans</option>
-      <option value="/web-pentest/applicative-scans/aquatone/"  selected>-- Aquatone</option>
-      <option value="/web-pentest/applicative-scans/vhost/" >-- VHOST Scanning</option>
-      <option value="/web-pentest/applicative-scans/web_application_firewall/" >-- Web Application Firewall (WAF)</option>
-  
-    <option value="/web-pentest/content-management-system-cms/" >
-  - 
-   Content Management Systems (CMS)</option>
-    <option value="/web-pentest/injections/" >
-  - 
-   Injections</option>
-    <option value="/web-pentest/files-and-files-inclusions/" >
-  - 
-   File &amp; File Inclusions</option>
-    <option value="/web-pentest/php-vulnerabilities/" >
-  - 
-   PHP Vulnerabilities</option>
-    <option value="/web-pentest/tools/" >
-  - 
-   Tools</option>
-      <option value="/web-pentest/attacking_apis/" >- Attacking APIs</option>
-      <option value="/web-pentest/cve_exploits/" >- CVE &amp; Vulns exploits</option>
-      <option value="/web-pentest/bug_bounty_tips/" >- Bug Bounty Tips</option>
-      <option value="/web-pentest/misc_tricks/" >- MISC</option>
-  
+   Web Pentest</option>
     <option value="/network/" >
    Network</option>
     <option value="/shells-methods/" >
    Shells methods</option>
     <option value="/windows-systems/" >
-   Windows Systems</option>
+   Windows Systems</option> 
+    <option value="/windows-systems/network-and-domain-recon/" >
+  - 
+   Network and Domain Recon</option>
+    <option value="/windows-systems/local-and-physical/" >
+  - 
+   Local and Physical</option>
+    <option value="/windows-systems/exploitation/" >
+  - 
+   Exploitation</option>
+    <option value="/windows-systems/privilege-escalation/" >
+  - 
+   Privilege Escalation</option> 
+      <option value="/windows-systems/privilege-escalation/automated_recon/" >-- Automated Recon</option>
+      <option value="/windows-systems/privilege-escalation/tricks/" >-- Tricks</option>
+      <option value="/windows-systems/privilege-escalation/services_scheduled_tasks/" >-- Services &amp; Scheduled Tasks</option>
+      <option value="/windows-systems/privilege-escalation/lsass_mimikatz/" >-- LSASS and Mimikatz</option>
+      <option value="/windows-systems/privilege-escalation/admin_processes/" >-- Admin and Processes</option>
+      <option value="/windows-systems/privilege-escalation/dnsadmins_group/" >-- DNSadmins group</option>
+      <option value="/windows-systems/privilege-escalation/delegations/" >-- Active Directory Delegations</option>
+      <option value="/windows-systems/privilege-escalation/privexchange/" >-- PrivExchange</option>
+      <option value="/windows-systems/privilege-escalation/windows_defender/" >-- Windows Defender</option>
+      <option value="/windows-systems/privilege-escalation/azure_ad/"  selected>-- Azure AD</option>
+  
+    <option value="/windows-systems/post-exploitation-techniques/" >
+  - 
+   Post Exploitation Techniques</option>
+  
     <option value="/linux-systems/" >
    Linux Systems</option>
     <option value="/other-systems/" >
@@ -1715,69 +1711,34 @@
       </div>
     
 
-    <h1>Aquatone</h1>
+    <h1>Azure AD</h1>
     
     
     
     
 
-<h3 id="aquatone">Aquatone</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Aquatone is a complete tool separate in three commands to make complete recon</span>
+<h3 id="exploiting-password-hash-synchronisation-phs">Exploiting Password Hash Synchronisation (PHS)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html
 
-<span style="color:#75715e"># Collector modules :</span>
-<span style="color:#75715e"># Dictionary brute force</span>
-<span style="color:#75715e"># DNSDB.org</span>
-<span style="color:#75715e"># Google Transparency Report</span>
-<span style="color:#75715e"># HackerTarget</span>
-<span style="color:#75715e"># Netcraft</span>
-<span style="color:#75715e"># Shodan (API key needed)</span>
-<span style="color:#75715e"># ThreatCrowd</span>
-<span style="color:#75715e"># VirusTotal (API key needed)</span>
+<span style="color:#75715e"># The main target is the sync account</span>
+<span style="color:#75715e"># You can identify it using the description</span>
+$ ldapsearch -H ldap://DC01.DOMAIN.LAN:389 -D <span style="color:#d88200">&#34;DOMAIN\user&#34;</span> -w <span style="color:#d88200">&#34;****&#34;</span> -b <span style="color:#d88200">&#34;DC=DOMAIN,DC=LAN&#34;</span> <span style="color:#d88200">&#39;(description=*Azure*)&#39;</span> description
 
-<span style="color:#75715e"># PHASE 1 : Discovery</span>
-<span style="color:#75715e"># aquatone-discover is the first step</span>
-<span style="color:#75715e"># It uses name servers and performs some test to see if wildcard is configured</span>
-<span style="color:#75715e"># Then it asks each subdomain collector for potential subdomain</span>
-<span style="color:#75715e"># Then it tries to resolve them to see which ones are up and creates the hosts.txt file</span>
-aquatone-discover -d domain.com
+<span style="color:#75715e"># To exploit this, need local admin or ADSync service account</span>
+<span style="color:#75715e"># Can decrypt using C:\Program Files\Microsoft Azure AD Sync\Binn\mcrypt.dll</span>
 
-<span style="color:#75715e"># PHASE 2 : Scanning</span>
-<span style="color:#75715e"># aquatone-scan will try to find which subdomains serve web content</span>
-<span style="color:#75715e"># By default it will scan 80, 443, 8000, 8080 and 8443 but you can specify ports with --ports or pre-configured aliases (small, medium, large, huge)</span>
-<span style="color:#75715e"># It creates open_ports.txt and urls.tx</span>
-
-<span style="color:#75715e"># PHASE 3 : Gathering</span>
-<span style="color:#75715e"># aquatone-gather can collect HTTP response and screenshots</span>
-<span style="color:#75715e"># It uses Nightmare tool to do that</span>
-<span style="color:#75715e"># It creates headers, html, report and screenshots folder</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="cli-tricks">CLI Tricks</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get server technology stats (headers folder)</span>
-cat * <span style="color:#111">|</span> grep <span style="color:#d88200">&#39;Server:&#39;</span> <span style="color:#111">|</span> sort <span style="color:#111">|</span> uniq -c <span style="color:#111">|</span> sort -nr
-
-<span style="color:#75715e"># Find more subdomains (html folder)</span>
-cat * <span style="color:#111">|</span> egrep -o <span style="color:#d88200">&#39;[a-z0-9\-\_\.]+\.corp\.yahoo\.com&#39;</span> <span style="color:#111">|</span> sort -u
-
-<span style="color:#75715e"># Find HTML comments (html folder)</span>
-cat * <span style="color:#111">|</span> egrep -o <span style="color:#d88200">&#39;&lt;!--.*--&gt;&#39;</span>
-
-<span style="color:#75715e"># Find pages with password field (html folder)</span>
-grep <span style="color:#d88200">&#39;type=&#34;password&#34;&#39;</span> *
-
-<span style="color:#75715e"># Get hosts listening on port 443</span>
-cat open_ports.txt <span style="color:#111">|</span> grep <span style="color:#d88200">&#39;,443&#39;</span> <span style="color:#111">|</span> cut -d <span style="color:#d88200">&#34;,&#34;</span> -f <span style="color:#ae81ff">1</span>
-
-<span style="color:#75715e"># Check HTTPS hosts for Heartbleed</span>
-grep https urls.txt <span style="color:#111">|</span> cut -d <span style="color:#d88200">&#39;/&#39;</span> -f <span style="color:#ae81ff">3</span> &gt; /tmp/targets.lst
-sslscan --targets<span style="color:#f92672">=</span>/tmp/targets.lst --no-ciphersuites --no-fallback --no-renegotiation --no-compression --no-check-certificate</code></pre></div>
+<span style="color:#75715e"># The default configuration of Azure AD Connect uses a SQL Server Express database</span> 
+<span style="color:#75715e"># but a fully deployed SQL Server can also be used.</span> 
+<span style="color:#75715e"># In that case, the connection string from the POC must be replaced by the following:</span>
+<span style="color:#75715e"># &#34;Server=LocalHost;Database=ADSync;Trusted_Connection=True;&#34;.</span>
+https://blog.xpnsec.com/azuread-connect-for-redteam/</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/web-pentest/applicative-scans/web_application_scan/" title="Web Application Scans"> <i class="fa fa-chevron-left"></i><label>Web Application Scans</label></a>
-    <a class="nav nav-next" href="/web-pentest/applicative-scans/vhost/" title="VHOST Scanning" style="margin-right: 0px;"><label>VHOST Scanning</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/windows-systems/privilege-escalation/windows_defender/" title="Windows Defender"> <i class="fa fa-chevron-left"></i><label>Windows Defender</label></a>
+    <a class="nav nav-next" href="/windows-systems/post-exploitation-techniques/" title="Post Exploitation Techniques" style="margin-right: 0px;"><label>Post Exploitation Techniques</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1794,7 +1755,7 @@ sslscan --targets<span style="color:#f92672">=</span>/tmp/targets.lst --no-ciphe
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Web%20Pentest/Applicative%20Scans/Aquatone.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Windows%20Systems/Privilege%20Escalation/Azure_AD.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

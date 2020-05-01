@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-01T12:00:27 CEST">
+<meta name="revised" content="2020-05-01T13:23:30 CEST">
 <title>Domain Recon :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1263,6 +1263,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/azure_ad/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/azure_ad/">
+            Azure AD
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1807,7 +1814,7 @@ C:<span style="color:#8045ff">\&gt;</span> net session
 C:<span style="color:#8045ff">\&gt;</span> net session <span style="color:#8045ff">\[</span>LinuxIPaddr<span style="color:#f92672">]</span> /del</code></pre></div>
 <p><br/></p>
 
-<h3 id="misc-azure-stuff">MISC - Azure stuff</h3>
+<h3 id="azure-ad-recon">Azure AD Recon</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Applications using Azure API Management</span>
 <span style="color:#75715e"># Requests made to that</span>
 &lt;name&gt;.azure-api.net
@@ -1826,7 +1833,45 @@ C:<span style="color:#8045ff">\&gt;</span> net session <span style="color:#8045f
 &lt;name&gt;.management.azure-api.net
 
 <span style="color:#75715e"># Git</span>
-&lt;name&gt;.scm.azure-api.net</code></pre></div>
+&lt;name&gt;.scm.azure-api.net</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html
+
+<span style="color:#75715e"># Tool o365recon can be used (https://github.com/nyxgeek/o365recon)</span>
+<span style="color:#75715e"># It mainly uses MS Online Powershell module</span>
+
+PS&gt; Connect-MsolService
+PS&gt; powershell -ep bypass .<span style="color:#8045ff">\o</span>365recon.ps1 -outputfile TEST_OUTPUT
+
+<span style="color:#75715e"># The -users_detailed flag can be used in order to query more information about users</span>
+<span style="color:#75715e"># LastDirSyncTime empty == User only exist in the cloud</span>
+
+<span style="color:#75715e"># The id suffixed to the SYNC cloud account == same id for the MSOL account belonging to the on-premises Active Directory</span>
+
+<span style="color:#75715e"># You can also list Azure AD roles and members (cf attached link)</span>
+
+<span style="color:#75715e"># MailSniper can also be used to get the Adress List</span>
+PS C:<span style="color:#8045ff">\&gt;</span> Get-GlobalAddressList -ExchHostname outlook.office365.com -UserName xxxx -Password xxxx -OutFile xxxx
+
+<span style="color:#75715e"># And associated usernames</span>
+PS C:<span style="color:#8045ff">\&gt;</span> Get-ADUsernameFromEWS -EmailList list.txt -ExchHostname outlook.office365.com -Remote</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When having admin privileges you can check for MFA for users</span>
+PS C:<span style="color:#8045ff">\&gt;</span> Connect-MsolService
+PS C:<span style="color:#8045ff">\&gt;</span> Get-MsolUser -EnabledFilter EnabledOnly -MaxResults <span style="color:#ae81ff">50000</span> <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> DisplayName,UserPrincipalName,@<span style="color:#f92672">{</span><span style="color:#111">N</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;MFA Status&#34;</span><span style="color:#111">;</span> <span style="color:#111">E</span><span style="color:#f92672">={</span> <span style="color:#00a8c8">if</span><span style="color:#f92672">(</span> <span style="color:#111">$_</span>.StrongAuthenticationRequirements.State -ne <span style="color:#111">$null</span><span style="color:#f92672">){</span> <span style="color:#111">$_</span>. StrongAuthenticationRequirements.State<span style="color:#f92672">}</span> <span style="color:#00a8c8">else</span> <span style="color:#f92672">{</span> <span style="color:#d88200">&#34;Disabled&#34;</span><span style="color:#f92672">}}}</span> <span style="color:#111">|</span> export-csv mfaresults.csv</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ROADTools (https://github.com/dirkjanm/ROADtools)*</span>
+<span style="color:#75715e"># It uses an internal undocumented version of Microsoft Graph API</span>
+
+PS C:<span style="color:#8045ff">\&gt;</span> roadrecon.exe auth -u user@domain
+Tokens were written to .roadtools_auth
+
+PS C:<span style="color:#8045ff">\&gt;</span> roadrecon.exe dump
+
+PS C:<span style="color:#8045ff">\&gt;</span> roadrecon-gui.exe -debug -d .<span style="color:#8045ff">\r</span>oadrecon.db
+ * Serving Flask app <span style="color:#d88200">&#34;roadtools.roadrecon.server&#34;</span> <span style="color:#f92672">(</span>lazy loading<span style="color:#f92672">)</span>
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ <span style="color:#f92672">(</span>Press CTRL+C to quit<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># Plugin for getting Conditional Access Policies</span>
+PS C:<span style="color:#8045ff">\&gt;</span> roadrecon plugin policies</code></pre></div>
 
     
     

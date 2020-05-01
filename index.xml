@@ -169,8 +169,7 @@ Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/tools-and-methodology/methodology/</guid>
-      <description>Sources : https://www.dfir.training/osint
-Gap Analysis &amp;amp; others # In OSINT - Analytical mind # Ask a lot of questions : Who, What, When, Where, Why, and How # Be Curious and Craft a Storyline # Use Gap Analysis shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-track/ 1. What do we know ? 2. What does the information mean? 3. What do I still need to know? 4. How do I find out? # Reflect on failures but also wins 1.</description>
+      <description>Gap Analysis &amp;amp; others # In OSINT - Analytical mind # Ask a lot of questions : Who, What, When, Where, Why, and How # Be Curious and Craft a Storyline # Use Gap Analysis shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-track/ 1. What do we know ? 2. What does the information mean? 3. What do I still need to know? 4. How do I find out? # Reflect on failures but also wins 1.</description>
     </item>
     
     <item>
@@ -1601,6 +1600,15 @@ Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets 
       <guid>/other-systems/amazon_web_services/</guid>
       <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy # Cheatsheet https://www.magnussen.funcmylife.fr/article_35 GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty 
 Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed).</description>
+    </item>
+    
+    <item>
+      <title>Azure AD</title>
+      <link>/windows-systems/privilege-escalation/azure_ad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/azure_ad/</guid>
+      <description>Exploiting Password Hash Synchronisation (PHS) https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html # The main target is the sync account # You can identify it using the description $ ldapsearch -H ldap://DC01.DOMAIN.LAN:389 -D &amp;#34;DOMAIN\user&amp;#34; -w &amp;#34;****&amp;#34; -b &amp;#34;DC=DOMAIN,DC=LAN&amp;#34; &amp;#39;(description=*Azure*)&amp;#39; description # To exploit this, need local admin or ADSync service account # Can decrypt using C:\Program Files\Microsoft Azure AD Sync\Binn\mcrypt.dll # The default configuration of Azure AD Connect uses a SQL Server Express database # but a fully deployed SQL Server can also be used.</description>
     </item>
     
     <item>

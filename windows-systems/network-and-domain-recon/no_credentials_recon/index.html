@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-01T12:00:26 CEST">
+<meta name="revised" content="2020-05-01T13:23:30 CEST">
 <title>Out of Domain (No credentials) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1263,6 +1263,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/azure_ad/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/azure_ad/">
+            Azure AD
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1791,6 +1798,17 @@ snmp-check -t <span style="color:#ae81ff">192</span>.168.1.2 -c public/private</
 <span style="color:#75715e"># Tick &#34;Data not stored in document&#34;</span>
 <span style="color:#75715e"># Save &amp; close.</span>
 <span style="color:#75715e"># Open the document -&gt; free credentials :)</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="azure-ad-recon">Azure AD Recon</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html
+
+<span style="color:#75715e"># https://login.microsoftonline.com/getuserrealm.srf?login=username@gothamlab.onmicrosoft.com&amp;xml=1</span>
+<span style="color:#75715e"># If the NameSpaceType indicates &#34;Managed&#34;, then the company is using Azure AD.</span> 
+
+<span style="color:#75715e"># Discover accounts</span>
+<span style="color:#75715e"># o365creeper can be used, it does not produce logs on the AD side</span>
+https://github.com/LMGsec/o365creeper</code></pre></div>
 
     
     
