@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Technical Recon on Offensive Security Cheatsheet</title>
+    <title>Technical Investigation on Offensive Security Cheatsheet</title>
     <link>/open-source-intelligence-osint/technical-recon/</link>
-    <description>Recent content in Technical Recon on Offensive Security Cheatsheet</description>
+    <description>Recent content in Technical Investigation on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -11,68 +11,32 @@
     
     
     <item>
-      <title>Domain &amp; IP</title>
-      <link>/open-source-intelligence-osint/technical-recon/domain_ip/</link>
+      <title>IP Address</title>
+      <link>/open-source-intelligence-osint/technical-recon/ip_address/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
-      <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx # Reverse DNS Resolution (also usefull for subdomains) for x in {1..255}; do host xx.xx.xx.$x; done # Knockknock is a small automated script allowing you to find domaine names # For a registrant (person or company) python3 k2.</description>
+      <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries# Get information about the target IP https://www.onyphe.io/ # Robtex is a great and complete tool https://www.</description>
     </item>
     
     <item>
-      <title>Subdomain Enumeration</title>
-      <link>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</link>
+      <title>Domain &amp; URLs</title>
+      <link>/open-source-intelligence-osint/technical-recon/domains_urls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</guid>
+      <guid>/open-source-intelligence-osint/technical-recon/domains_urls/</guid>
+      <description>Getting Informations Get information on an IP whois &amp;lt;IP&amp;gt; # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Knockknock is a small automated script allowing you to find domain names # For a registrant (person or company) python3 k2.py -n company -d # Many tools https://intelx.io/ 
+Online Passive Identification Tools Target Mapping and Informations # Informations about the target https://securitytrails.com/ # Robtex is a great and complete tool https://www.</description>
+    </item>
+    
+    <item>
+      <title>Subdomain Discovery</title>
+      <link>/open-source-intelligence-osint/technical-recon/subdomain_discovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/subdomain_discovery/</guid>
       <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com # Github dorks also allow to find many subdomains &amp;#34;teslamotors.com&amp;#34; password # ... 
 Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains</description>
-    </item>
-    
-    <item>
-      <title>Dorks</title>
-      <link>/open-source-intelligence-osint/technical-recon/dorks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/dorks/</guid>
-      <description>Google Dorks # Google Hacking made easy https://pentest-tools.com/information-gathering/google-hacking# # Search for documents on popular clouds site:drive.google.com &amp;lt;searchterm&amp;gt; site:dl.dropbox.com &amp;lt;searchterm&amp;gt; site:s3.amazonaws.com &amp;lt;searchterm&amp;gt; site:onedrive.live.com &amp;lt;searchterm&amp;gt; site:cryptome.org &amp;lt;searchterm&amp;gt; # Admins credentials intext:company_keyword &amp;amp; ext:txt | ext:sql | ext:cnf | ext:config | ext:log &amp;amp; intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;administrator&amp;#34; &amp;amp; intext:&amp;#34;password&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;administrator&amp;#34; # Look for domains indexed by others website site:bgp.he.net inurl:ndd site:dnslookup.fr inurl:ndd # Get information on the internal organization sites:cadres.</description>
-    </item>
-    
-    <item>
-      <title>Company General Informations</title>
-      <link>/open-source-intelligence-osint/technical-recon/company_meta/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/company_meta/</guid>
-      <description>Company Informations # Find informations about a company https://opencorporates.com # Find multiples sites owned by the same individual/company http://www.spyonweb.com https://www.crunchbase.com https://fr.kompass.com/ https://www.infogreffe.fr/ # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ # Cadastre FR https://cadastre.gouv.fr # Call for tender → BOAMP https://www.boamp.fr/ # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ # Brands https://www.inpi.fr/fr # Look for reported vulnerabilities https://www.openbugbounty.org/ # OSINT on Chinese companies https://www.</description>
-    </item>
-    
-    <item>
-      <title>Photon</title>
-      <link>/open-source-intelligence-osint/technical-recon/photon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/photon/</guid>
-      <description>General Informations # Photon is a fast OSINT web crawler which can retrieve the following data for a target : # URLs (in-scope &amp;amp; out-of-scope) # URLs with parameters (example.com/gallery.php?id=2) # Intel (emails, social media accounts, amazon buckets etc.) # Files (pdf, png, xml etc.) # Secret keys (auth/API keys &amp;amp; hashes) # JavaScript files &amp;amp; Endpoints present in them # Strings matching custom regex pattern # Subdomains &amp;amp; DNS related data # You can use the --ninja 4 option to get 4 clients requesting server.</description>
-    </item>
-    
-    <item>
-      <title>MISC</title>
-      <link>/open-source-intelligence-osint/technical-recon/misc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
-      <description>Secrets # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com “apikey” site:http://ideone.com “aws_access_key_id”# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
-      <description>sudo +++ title = &amp;ldquo;Public Documents and Metadata&amp;rdquo; weight = &amp;ldquo;60&amp;rdquo; +++
-Getting PDF on Web Archive # Great resource https://openfacto.fr/2020/04/19/recuperer-des-fichiers-pdf-en-masse-sur-archive-org/ # Step 1 # By adding &amp;#39;*&amp;#39; at the and of a company URL, you can get all indexed documents # Then you can filter by &amp;#34;PDF&amp;#34; (right search bar) https://web.archive.org/web/*/https://testcompany.fr/* # Step 2 # Here you want to get URL list # In the Firefox developer tools -&amp;gt; Network # You can get an HTTP request to a JSON file containing URLs # Copy as curl and get the file # Step 3 # OpenRefine can help to parse and process the file # Filter on PDF # Step 4 # NEVER download directly # You can do it through archived document # Add the prefix for every line https://web.</description>
     </item>
     
   </channel>

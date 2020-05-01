@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dorks on Offensive Security Cheatsheet</title>
+    <link>/open-source-intelligence-osint/dorks/</link>
+    <description>Recent content in Dorks on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/open-source-intelligence-osint/dorks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Dorks</title>
+      <link>/open-source-intelligence-osint/dorks/google_dorks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/dorks/google_dorks/</guid>
+      <description>Google Dorks # Google Hacking made easy https://pentest-tools.com/information-gathering/google-hacking# # Search for documents on popular clouds site:drive.google.com &amp;lt;searchterm&amp;gt; site:dl.dropbox.com &amp;lt;searchterm&amp;gt; site:s3.amazonaws.com &amp;lt;searchterm&amp;gt; site:onedrive.live.com &amp;lt;searchterm&amp;gt; site:cryptome.org &amp;lt;searchterm&amp;gt; # Admins credentials intext:company_keyword &amp;amp; ext:txt | ext:sql | ext:cnf | ext:config | ext:log &amp;amp; intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;administrator&amp;#34; &amp;amp; intext:&amp;#34;password&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;administrator&amp;#34; # Look for domains indexed by others website site:bgp.he.net inurl:ndd site:dnslookup.fr inurl:ndd # Get information on the internal organization sites:cadres.</description>
+    </item>
+    
+    <item>
+      <title>Twitter Dorks</title>
+      <link>/open-source-intelligence-osint/dorks/twitter_dorks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/dorks/twitter_dorks/</guid>
+      <description>Twitter Dorks https://twitter.com/BNFC_13/status/1160890864337600512 # Tweets containing word1 AND word2 (default operator) &amp;lt;word1&amp;gt; &amp;lt;word2&amp;gt; # Containing exact expression &amp;#34;word1&amp;#34; # Tweets containing word1 OR word 2 &amp;lt;word1&amp;gt; OR &amp;lt;word2&amp;gt; # Containing &amp;#34;cyber&amp;#34; but without &amp;#34;security&amp;#34; cyber -security # All tweets from an account or responding to an account from:&amp;lt;account&amp;gt; to:&amp;lt;account&amp;gt; # Filter results and display only results from followed accounts filter:follows exclude:medias # Tweets after the date or before the date &amp;lt;word&amp;gt; since:2015-02-20 &amp;lt;word&amp;gt; until:2015-02-20 # Minimal RT / likes / replies min_retweets:x min_faves:x min_replies:x # Language lang:fr # Tweets positive and negative &amp;lt;word&amp;gt; :) &amp;lt;word&amp;gt; :( # Tweets with a question &amp;lt;word&amp;gt; ?</description>
+    </item>
+    
+    <item>
+      <title>Github Dorks</title>
+      <link>/open-source-intelligence-osint/dorks/github_dorks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/dorks/github_dorks/</guid>
+      <description>Github Dorks https://gist.github.com/jhaddix/77253cea49bf4bd4bfd5d384a37ce7a4 # Github dorks work a lot with filename and extension # You can build search like this filename:bashrc extension:pem langage:bash # Possible to search terms and use these keywords # Some usefull examples extension:pem private # Private SSH Keys extension:sql mysql dump # MySQL dumps extension:sql mysql dump password # MySQL dumps with passwords filename:wp-config.php # Wordpress config file filename:.htpasswd # .htpasswd filename:.git-credentials # Git stored credentials filename:.</description>
+    </item>
+    
+  </channel>
+</rss>

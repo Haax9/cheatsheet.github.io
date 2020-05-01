@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ports Scanning on Offensive Security Cheatsheet</title>
+    <link>/network/port-scanning/</link>
+    <description>Recent content in Ports Scanning on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/network/port-scanning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Masscan Cheatsheet</title>
+      <link>/network/port-scanning/masscan_cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/port-scanning/masscan_cheatsheet/</guid>
+      <description>Usage and Options Target speficication # Target specification masscan 10.0.0.1 masscan 10.0.0.0/24 192.168.1.0/24 # Exclude IP file masscan 10.0.0.1/24 --excludeFile &amp;lt;file&amp;gt; # Exclude a single IP from the scan masscan 180.215.0.0/16 --exclude=180.215.122.120 Port specification # Port specification masscan 10.0.0.0.1 -p 80 masscan 10.0.0.0.1 -p 0-65535 masscan 10.0.0.0.1 -p 80,443 # UDP Scan masscan 10.0.0.0.1 -pU 53 Timing and Performance # Used to scan in offline mode # It does not send any traffic but just estimate the time length masscan 0.</description>
+    </item>
+    
+    <item>
+      <title>Nmap Cheatsheet</title>
+      <link>/network/port-scanning/nmap_cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/port-scanning/nmap_cheatsheet/</guid>
+      <description>https://github.com/Tib3rius/AutoRecon Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
+    </item>
+    
+  </channel>
+</rss>

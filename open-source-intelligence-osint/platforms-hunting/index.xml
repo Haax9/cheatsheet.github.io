@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Platforms Hunting on Offensive Security Cheatsheet</title>
+    <link>/open-source-intelligence-osint/platforms-hunting/</link>
+    <description>Recent content in Platforms Hunting on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/open-source-intelligence-osint/platforms-hunting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/google/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/google/</guid>
+      <description>Get UserIDs Google Drive Documents # Get user ID from Google Drive document # Logged # Open the source code and search for: &amp;#34;\x2210&amp;#34; and &amp;#34;\x2211&amp;#34; # Paste it in the Google Photos or Maps URL and find out more about your target. # Not logged in # Developer tools &amp;gt; Network &amp;gt; Filter &amp;#34;Permissions&amp;#34; # Load the document and get informations for owner &amp;amp; co Google Contacts # Google Contacts can help getting IDs from e-mails # But it may not work !</description>
+    </item>
+    
+    <item>
+      <title>LinkedIn</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/linkedin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/linkedin/</guid>
+      <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
+ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile # Full size profile photo # Then right click &amp;#34;view image&amp;#34; https://linkedin.</description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/twitter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/twitter/</guid>
+      <description>Tips &amp;amp; Tricks Geolocation # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com Downloader # Twitter video downloader https://twdown.net/ Account Analysis # Tweeter account analysis (account needed) https://tweetreach.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Sleeping time (account needed) http://sleepingtime.org/ # Simple analysis/analytics https://socialbearing.com/search/general/sodifrance https://foller.me # See all tweets from one account (account needed) https://www.allmytweets.net/connect/ Tracking Accounts &amp;amp; Modifications # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://spoonbill.</description>
+    </item>
+    
+    <item>
+      <title>Facebook</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/facebook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/facebook/</guid>
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ 
+Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE # You can search for car using plate number # For example ST-597-NS will give you car photos identified with relating plate number</description>
+    </item>
+    
+    <item>
+      <title>Instagram</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/instagram/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/instagram/</guid>
+      <description>Tips &amp;amp; Tricks Instagram ID # Instagram User ID can be very important to investigate # Each account has a unique user ID linked to the @username # Some websites allows to get it for an account https://codeofaninja.com/tools/find-instagram-user-id # You can then trace and spot re-used instagram account by # searching for old names and post, for example using # Google Dorks Mirrors # Instagram Mirrors can be usefull to browse Instagram accounts # Search features are less restrictive # Some deleted content can still be indexed https://rankersta.</description>
+    </item>
+    
+    <item>
+      <title>Snapchat</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/snapchat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/snapchat/</guid>
+      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.snapchat.com/ Snapchat Map https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/ # Using the map you can view public content # You can play with overlays and save videos # To get video # - Developper Tools (F12) # - Network and filter on medias # - Reload (Ctrl+R) # - On the snap link, right click and open in new tab # By default it removes extra graphics layer https://s.</description>
+    </item>
+    
+    <item>
+      <title>TikTok</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/tiktok/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/tiktok/</guid>
+      <description>TikTok # Resources https://www.skopenow.com/news/tiktok-investigations-and-osint-tips # Searching info https://www.osintcombine.com/tiktok-quick-search # Downloader https://ttdown.org/ https://en.savefrom.net/download-from-tiktok # Tiktok Analytics https://cloutmeter.com/ Profile Discovery # Method 1 : You have usernames tiktok.com/@{username} # Method 2 : Involving Dorks site:tiktok.com &amp;#34;username&amp;#34; OR &amp;#34;first and last name&amp;#34; # Method 3 : Search for mentions on other social media &amp;#34;username&amp;#34; OR &amp;#34;first and last name&amp;#34; &amp;#34;tiktok.com&amp;#34; -site:tiktok.com Profile Picture # Method 1 # Right click --&amp;gt; Inspect # Method 2 https://tiktok.</description>
+    </item>
+    
+    <item>
+      <title>Tinder</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/tinder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/tinder/</guid>
+      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.learnallthethings.net/osmosis # You can browe users https://www.</description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/github/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/github/</guid>
+      <description>General # Online Service used to search in many git repositories https://grep.app/ 
+Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch# Usually, credential leaks do not occur on the company public Github # But more on developer/employees personal Github</description>
+    </item>
+    
+    <item>
+      <title>Amazon &amp; Digital Ocean Buckets</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</guid>
+      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
+AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
+Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

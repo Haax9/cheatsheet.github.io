@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Offensive Security Cheatsheet</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2020-05-01T11:49:08 CEST">
+<title>Subdomain Discovery :: Offensive Security Cheatsheet</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/open-source-intelligence-osint/technical-recon/subdomain_discovery/">
+    
+      <header>
+  <div class="logo">
+    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/vjeantet/hugo-theme-docdock"  rel="noopener">
+                  <i class='fa fa-github'></i> <label>Github repo</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://github.com/vjeantet/hugo-theme-docdock/archive/master.zip"  rel="noopener">
+                  <i class='fa fa-cloud-download'></i> <label>Download</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://gohugo.io/"  rel="noopener">
+                  <i class='fa fa-bookmark'></i> <label>Hugo Documentation</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/credits"  rel="noopener">
+                  <i class='fa fa-bullhorn'></i> <label>Credits</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/open-source-intelligence-osint/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/">Open Source Intelligence (OSINT)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/tools-and-methodology/">Tools &amp; Methodology</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/methodology/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/methodology/">
+            Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/">
+            Firefox addons
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/buscador/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/buscador/">
+            Buscador
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/">Frameworks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recon-ng/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recon-ng/">
+            Recon-ng
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/gasmask/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/gasmask/">
+            Gasmak
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/omnibus/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/omnibus/">
+            Omnibus
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/">
+            Spiderfoot
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/">
+            Datasploit
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/">
+            Danger Zone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recondog/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recondog/">
+            ReconDog
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/osint-spy/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/osint-spy/">
+            OSINT-SPY
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/belati/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/belati/">
+            Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/">
+            sn0int
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/photon/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/photon/">
+            Photon
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/dorks/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/dorks/">Dorks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/dorks/google_dorks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/dorks/google_dorks/">
+            Google Dorks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/dorks/twitter_dorks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/dorks/twitter_dorks/">
+            Twitter Dorks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/dorks/github_dorks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/dorks/github_dorks/">
+            Github Dorks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/technical-recon/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/technical-recon/">Technical Investigation</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/ip_address/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/ip_address/">
+            IP Address
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/domains_urls/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/domains_urls/">
+            Domain &amp; URLs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/subdomain_discovery/" class="dd-item active">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/subdomain_discovery/">
+            Subdomain Discovery
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/technical-recon/misc/">MISC</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/url_shortener/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/url_shortener/">
+            URL Shortener
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/opsec/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/opsec/">
+            OPSEC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/">
+            Darkweb Investigation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/">
+            Cryptocurrency Investigation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/others/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/others/">
+            Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/company_investigations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/company_investigations/">Company Investigations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/company_investigations/company_informations/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/company_investigations/company_informations/">
+            Information Gathering
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/company_investigations/wayback_machine/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/company_investigations/wayback_machine/">
+            Wayback Web Archive
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/company_investigations/documents_metadata/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/company_investigations/documents_metadata/">
+            Public Documents and Metadata
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/human-recon/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/human-recon/">Human Investigation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/searchingsomeone/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/searchingsomeone/">
+            Searching Someone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/email/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/email/">
+            E-mails
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/leaks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/leaks/">
+            Credentials Leaks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/username/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/username/">
+            Usernames
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/pictures/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/pictures/">
+            Picture Investigation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/phone/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/phone/">
+            Phone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/geolocation/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/geolocation/">
+            Geolocation &amp; GEOINT
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/misc/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/misc/">
+            MISC - Tips &amp; Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/platforms-hunting/">Platforms Hunting</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/google/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/google/">
+            Google
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/linkedin/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/linkedin/">
+            LinkedIn
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/twitter/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/twitter/">
+            Twitter
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/facebook/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/facebook/">
+            Facebook
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/instagram/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/instagram/">
+            Instagram
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/snapchat/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/snapchat/">
+            Snapchat
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tiktok/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/tiktok/">
+            TikTok
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tinder/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/tinder/">
+            Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/github/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/github/">
+            Github
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/">
+            Amazon &amp; Digital Ocean Buckets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/">Web Pentest</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/web-pentest/resources-discovery/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/resources-discovery/">Resources Discovery</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/resources-discovery/content_discovery/" class="dd-item">
+        <div>
+          <a href="/web-pentest/resources-discovery/content_discovery/">
+            Content Discovery
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/resources-discovery/parameters/" class="dd-item">
+        <div>
+          <a href="/web-pentest/resources-discovery/parameters/">
+            Parameters
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/resources-discovery/known_endpoints/" class="dd-item">
+        <div>
+          <a href="/web-pentest/resources-discovery/known_endpoints/">
+            Sensitive Endpoints
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/resources-discovery/idor/" class="dd-item">
+        <div>
+          <a href="/web-pentest/resources-discovery/idor/">
+            IDOR
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/resources-discovery/http_request_smuggling/" class="dd-item">
+        <div>
+          <a href="/web-pentest/resources-discovery/http_request_smuggling/">
+            HTTP Request Smuggling
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/applicative-scans/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/applicative-scans/">Applicative Scans</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/applicative-scans/web_application_scan/" class="dd-item">
+        <div>
+          <a href="/web-pentest/applicative-scans/web_application_scan/">
+            Web Application Scans
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/applicative-scans/aquatone/" class="dd-item">
+        <div>
+          <a href="/web-pentest/applicative-scans/aquatone/">
+            Aquatone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/applicative-scans/vhost/" class="dd-item">
+        <div>
+          <a href="/web-pentest/applicative-scans/vhost/">
+            VHOST Scanning
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/applicative-scans/web_application_firewall/" class="dd-item">
+        <div>
+          <a href="/web-pentest/applicative-scans/web_application_firewall/">
+            Web Application Firewall (WAF)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/content-management-system-cms/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/content-management-system-cms/">Content Management Systems (CMS)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/content-management-system-cms/wordpress/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/wordpress/">
+            Wordpress
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/drupal/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/drupal/">
+            Drupal
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/joomla/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/joomla/">
+            Joomla!
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/magento/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/magento/">
+            Magento
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/cmsmap/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/cmsmap/">
+            CMSMap
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/others/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/others/">
+            MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/injections/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/injections/">Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/web-pentest/injections/server-side-injections/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/injections/server-side-injections/">Server Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/sql/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/sql/">
+            SQL Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/nosql/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/nosql/">
+            NoSQL Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ldap/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ldap/">
+            LDAP Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/xpath/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/xpath/">
+            XPath Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ssrf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ssrf/">
+            Server Side Request Forgery (SSRF)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/os/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/os/">
+            OS Command Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ssti/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ssti/">
+            SSTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/injections/client-side-injections/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/injections/client-side-injections/">Client Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/xss/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/xss/">
+            XSS Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/csrf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/csrf/">
+            CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/misc_others/">
+            MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/web-pentest/injections/headers_injections/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/headers_injections/">
+            Headers Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/files-and-files-inclusions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/files-and-files-inclusions/">File &amp; File Inclusions</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/files-and-files-inclusions/file_upload/" class="dd-item">
+        <div>
+          <a href="/web-pentest/files-and-files-inclusions/file_upload/">
+            File Upload
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/files-and-files-inclusions/directory_file_discovery/" class="dd-item">
+        <div>
+          <a href="/web-pentest/files-and-files-inclusions/directory_file_discovery/">
+            Directory &amp; File Discovery
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/files-and-files-inclusions/xxe/" class="dd-item">
+        <div>
+          <a href="/web-pentest/files-and-files-inclusions/xxe/">
+            XML External Entity (XXE) and XSLT
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/php-vulnerabilities/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/php-vulnerabilities/">PHP Vulnerabilities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/php_filters/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/php_filters/">
+            PHP Filters
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/functions/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/functions/">
+            PHP Functions
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/serialization/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/serialization/">
+            PHP Serialization
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/type_juggling/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/type_juggling/">
+            PHP Type Juggling
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/tricks_others/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/tricks_others/">
+            Tricks &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/tools/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/tools/">Tools</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/tools/burpsuite/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/burpsuite/">
+            BurpSuite
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/tools/postman/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/postman/">
+            Postman
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/web-pentest/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-pentest/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/cve_exploits/" class="dd-item">
+        <div>
+          <a href="/web-pentest/cve_exploits/">
+            CVE &amp; Vulns exploits
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/bug_bounty_tips/" class="dd-item">
+        <div>
+          <a href="/web-pentest/bug_bounty_tips/">
+            Bug Bounty Tips
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/misc_tricks/" class="dd-item">
+        <div>
+          <a href="/web-pentest/misc_tricks/">
+            MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/network/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/network/">Network</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/network/pivot_techniques/" class="dd-item">
+        <div>
+          <a href="/network/pivot_techniques/">
+            Pivot Techniques
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/ldap_dns/" class="dd-item">
+        <div>
+          <a href="/network/ldap_dns/">
+            LDAP &amp; DNS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/network/port-scanning/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/network/port-scanning/">Ports Scanning</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/network/port-scanning/masscan_cheatsheet/" class="dd-item">
+        <div>
+          <a href="/network/port-scanning/masscan_cheatsheet/">
+            Masscan Cheatsheet
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/port-scanning/nmap_cheatsheet/" class="dd-item">
+        <div>
+          <a href="/network/port-scanning/nmap_cheatsheet/">
+            Nmap Cheatsheet
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/network/mac_arp/" class="dd-item">
+        <div>
+          <a href="/network/mac_arp/">
+            MAC &amp; ARP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/network/services-enumeration/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/network/services-enumeration/">Services Enumeration</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/network/services-enumeration/21_ftp/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/21_ftp/">
+            21 - FTP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/22_ssh/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/22_ssh/">
+            22 - SSH
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/25_smtp/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/25_smtp/">
+            25 - SMTP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/53_dns/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/53_dns/">
+            53 - DNS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/80_443_https/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/80_443_https/">
+            80/443 - HTTP/HTTPS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/110_pop3/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/110_pop3/">
+            110 - POP3
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/119_nntp/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/119_nntp/">
+            119 - NTP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/135_rpc/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/135_rpc/">
+            135 - RPC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/139_445_smb/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/139_445_smb/">
+            139/445 - SMB
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/143_imap/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/143_imap/">
+            143 - IMAP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/161_162_snmp/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/161_162_snmp/">
+            161/162 - SNMP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/389_636_3269_ldap/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/389_636_3269_ldap/">
+            389/636/3269 - LDAP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/995_pop3s/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/995_pop3s/">
+            995 - POP3S
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/1025_nfs_iis/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/1025_nfs_iis/">
+            1025 - NFS/IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/1433_mssql/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/1433_mssql/">
+            1433 - MSSQL
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/1721_500_vpn/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/1721_500_vpn/">
+            1721/500 - VPN
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/3306_mysql/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/3306_mysql/">
+            3306 - MySQL
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/3389_rdp/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/3389_rdp/">
+            3389 - RDP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/network/services-enumeration/4555_rsip/" class="dd-item">
+        <div>
+          <a href="/network/services-enumeration/4555_rsip/">
+            4555 - RSIP
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/network/icmp/" class="dd-item">
+        <div>
+          <a href="/network/icmp/">
+            ICMP Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/shells-methods/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/shells-methods/">Shells methods</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/shells-methods/methodology/" class="dd-item">
+        <div>
+          <a href="/shells-methods/methodology/">
+            Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/shells-methods/tty_full/" class="dd-item">
+        <div>
+          <a href="/shells-methods/tty_full/">
+            Fully Interactive TTY Shell
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/shells-methods/webshell/" class="dd-item">
+        <div>
+          <a href="/shells-methods/webshell/">
+            Webshell
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/shells-methods/reverse/" class="dd-item">
+        <div>
+          <a href="/shells-methods/reverse/">
+            Reverse Shell
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/shells-methods/bind/" class="dd-item">
+        <div>
+          <a href="/shells-methods/bind/">
+            Bind Shell
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/shells-methods/windows/" class="dd-item">
+        <div>
+          <a href="/shells-methods/windows/">
+            Windows Shells Methods
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/windows-systems/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/windows-systems/">Windows Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/windows-systems/network-and-domain-recon/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/windows-systems/network-and-domain-recon/">Network and Domain Recon</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/windows-systems/network-and-domain-recon/no_credentials_recon/" class="dd-item">
+        <div>
+          <a href="/windows-systems/network-and-domain-recon/no_credentials_recon/">
+            Out of Domain (No credentials)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/network-and-domain-recon/domain_recon/" class="dd-item">
+        <div>
+          <a href="/windows-systems/network-and-domain-recon/domain_recon/">
+            Domain Recon
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/network-and-domain-recon/domain_mapping/" class="dd-item">
+        <div>
+          <a href="/windows-systems/network-and-domain-recon/domain_mapping/">
+            Domain Mapping
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/windows-systems/local-and-physical/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/windows-systems/local-and-physical/">Local and Physical</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/windows-systems/local-and-physical/local_recon_enumeration/" class="dd-item">
+        <div>
+          <a href="/windows-systems/local-and-physical/local_recon_enumeration/">
+            Local Recon and Enumeration
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/local-and-physical/physical_access/" class="dd-item">
+        <div>
+          <a href="/windows-systems/local-and-physical/physical_access/">
+            Physical Access
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/windows-systems/exploitation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/windows-systems/exploitation/">Exploitation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/windows-systems/exploitation/exploitation_tricks/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/exploitation_tricks/">
+            Exploitation Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/remote_execution_techniques/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/remote_execution_techniques/">
+            Remote Execution Techniques
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/crackmapexec/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/crackmapexec/">
+            CrackMapExec
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/impacket/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/impacket/">
+            Impacket
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/kerberos/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/kerberos/">
+            Kerberos
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/rdp_exploitation/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/rdp_exploitation/">
+            RDP Exploitation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/file_transfer/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/file_transfer/">
+            File Transfer
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/iis/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/iis/">
+            IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/windows-systems/privilege-escalation/automated_recon/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/automated_recon/">
+            Automated Recon
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/tricks/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/tricks/">
+            Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/services_scheduled_tasks/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/services_scheduled_tasks/">
+            Services &amp; Scheduled Tasks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
+            LSASS and Mimikatz
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/admin_processes/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/admin_processes/">
+            Admin and Processes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/dnsadmins_group/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/dnsadmins_group/">
+            DNSadmins group
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/delegations/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/delegations/">
+            Active Directory Delegations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/privexchange/">
+            PrivExchange
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/windows_defender/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/windows_defender/">
+            Windows Defender
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/windows-systems/post-exploitation-techniques/">Post Exploitation Techniques</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/ntds_database/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/ntds_database/">
+            NTDS Database
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/silver_golden_tickets/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/silver_golden_tickets/">
+            Silver and Golden Tickets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/dc_shadow/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/dc_shadow/">
+            DC Shadow
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/searching_informations/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/searching_informations/">
+            Searching Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/post-exploitation-techniques/persistence/" class="dd-item">
+        <div>
+          <a href="/windows-systems/post-exploitation-techniques/persistence/">
+            Persistence
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/linux-systems/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/linux-systems/">Linux Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/linux-systems/recon_enumeration/" class="dd-item">
+        <div>
+          <a href="/linux-systems/recon_enumeration/">
+            Recon and Enumeration
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/linux-systems/file_transfer/" class="dd-item">
+        <div>
+          <a href="/linux-systems/file_transfer/">
+            File Transfer
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/linux-systems/privilege-escalation/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/linux-systems/privilege-escalation/">Privilege Escalation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/linux-systems/privilege-escalation/system_tricks/" class="dd-item">
+        <div>
+          <a href="/linux-systems/privilege-escalation/system_tricks/">
+            System Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/linux-systems/privilege-escalation/abusing_sudo_rights/" class="dd-item">
+        <div>
+          <a href="/linux-systems/privilege-escalation/abusing_sudo_rights/">
+            Abusing Sudo Rights
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/linux-systems/privilege-escalation/suid/" class="dd-item">
+        <div>
+          <a href="/linux-systems/privilege-escalation/suid/">
+            SUID Files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/linux-systems/privilege-escalation/services/" class="dd-item">
+        <div>
+          <a href="/linux-systems/privilege-escalation/services/">
+            Services
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/linux-systems/privilege-escalation/crontab/" class="dd-item">
+        <div>
+          <a href="/linux-systems/privilege-escalation/crontab/">
+            Crontab
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/linux-systems/programing-languages/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/linux-systems/programing-languages/">Programing Languages</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/linux-systems/programing-languages/bash/" class="dd-item">
+        <div>
+          <a href="/linux-systems/programing-languages/bash/">
+            Bash
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/linux-systems/programing-languages/python/" class="dd-item">
+        <div>
+          <a href="/linux-systems/programing-languages/python/">
+            Python
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/linux-systems/programing-languages/perl/" class="dd-item">
+        <div>
+          <a href="/linux-systems/programing-languages/perl/">
+            Perl
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/other-systems/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/other-systems/">Other Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/other-systems/ipbx/" class="dd-item">
+        <div>
+          <a href="/other-systems/ipbx/">
+            IPBX
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/freeipa/" class="dd-item">
+        <div>
+          <a href="/other-systems/freeipa/">
+            FREEIPA
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/misc/" class="dd-item">
+        <div>
+          <a href="/other-systems/misc/">
+            MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/docker_stuff/" class="dd-item">
+        <div>
+          <a href="/other-systems/docker_stuff/">
+            Docker Stuff
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/other-systems/amazon_web_services/" class="dd-item">
+        <div>
+          <a href="/other-systems/amazon_web_services/">
+            Amazon Web Services (AWS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/passcracking-hashfiles/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/passcracking-hashfiles/">Passcracking Hash &amp; Files</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/passcracking-hashfiles/hashcat_cheatsheet/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/hashcat_cheatsheet/">
+            Hashcat Cheatsheet
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/john_cheatsheet/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/john_cheatsheet/">
+            John Cheatsheet
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/cracking_files/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/cracking_files/">
+            Cracking files
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/wordlists/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/wordlists/">
+            Wordlists &amp; Co
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/phishing-redteam-and-se/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/phishing-redteam-and-se/">Phishing, RedTeam and SE</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/phishing-redteam-and-se/phishing_campaign_setup/" class="dd-item">
+        <div>
+          <a href="/phishing-redteam-and-se/phishing_campaign_setup/">
+            Phishing Infrastructure (Gophish&#43;Vultr)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/wireless/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/wireless/">Wireless</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/wireless/wifi_cracking/" class="dd-item">
+        <div>
+          <a href="/wireless/wifi_cracking/">
+            WiFi Cracking
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/wireless/rogue_ap/" class="dd-item">
+        <div>
+          <a href="/wireless/rogue_ap/">
+            Rogue AP Attack
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cryptography/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/cryptography/">Cryptography</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/cryptography/rsa/" class="dd-item">
+        <div>
+          <a href="/cryptography/rsa/">
+            RSA Encryption
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/aes/" class="dd-item">
+        <div>
+          <a href="/cryptography/aes/">
+            AES Encryption
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/misc/" class="dd-item">
+        <div>
+          <a href="/cryptography/misc/">
+            MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/pwn/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/pwn/">Pwn</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/pwn/buffer-overflow/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/pwn/buffer-overflow/">Buffer Overflow (BoF)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/pwn/buffer-overflow/easy_no_protection/" class="dd-item">
+        <div>
+          <a href="/pwn/buffer-overflow/easy_no_protection/">
+            Easy - No Protections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/pwn/general_infos/" class="dd-item">
+        <div>
+          <a href="/pwn/general_infos/">
+            General Informations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/resources/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/resources/">External Resources</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/resources/general_infosec/" class="dd-item">
+        <div>
+          <a href="/resources/general_infosec/">
+            General Infosec
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/resources/osint/" class="dd-item">
+        <div>
+          <a href="/resources/osint/">
+            OSINT
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/resources/systems/" class="dd-item">
+        <div>
+          <a href="/resources/systems/">
+            Systems
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/resources/web_bug_bounty/" class="dd-item">
+        <div>
+          <a href="/resources/web_bug_bounty/">
+            Web / Bug Bounty
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/open-source-intelligence-osint/" >
+   Open Source Intelligence (OSINT)</option> 
+    <option value="/open-source-intelligence-osint/tools-and-methodology/" >
+  - 
+   Tools &amp; Methodology</option>
+    <option value="/open-source-intelligence-osint/dorks/" >
+  - 
+   Dorks</option>
+    <option value="/open-source-intelligence-osint/technical-recon/" >
+  - 
+   Technical Investigation</option> 
+      <option value="/open-source-intelligence-osint/technical-recon/ip_address/" >-- IP Address</option>
+      <option value="/open-source-intelligence-osint/technical-recon/domains_urls/" >-- Domain &amp; URLs</option>
+      <option value="/open-source-intelligence-osint/technical-recon/subdomain_discovery/"  selected>-- Subdomain Discovery</option>
+    <option value="/open-source-intelligence-osint/technical-recon/misc/" >
+  -- 
+   MISC</option>
+  
+    <option value="/open-source-intelligence-osint/company_investigations/" >
+  - 
+   Company Investigations</option>
+    <option value="/open-source-intelligence-osint/human-recon/" >
+  - 
+   Human Investigation</option>
+    <option value="/open-source-intelligence-osint/platforms-hunting/" >
+  - 
+   Platforms Hunting</option>
+  
+    <option value="/web-pentest/" >
+   Web Pentest</option>
+    <option value="/network/" >
+   Network</option>
+    <option value="/shells-methods/" >
+   Shells methods</option>
+    <option value="/windows-systems/" >
+   Windows Systems</option>
+    <option value="/linux-systems/" >
+   Linux Systems</option>
+    <option value="/other-systems/" >
+   Other Systems</option>
+    <option value="/passcracking-hashfiles/" >
+   Passcracking Hash &amp; Files</option>
+    <option value="/phishing-redteam-and-se/" >
+   Phishing, RedTeam and SE</option>
+    <option value="/wireless/" >
+   Wireless</option>
+    <option value="/cryptography/" >
+   Cryptography</option>
+    <option value="/pwn/" >
+   Pwn</option>
+    <option value="/resources/" >
+   External Resources</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    
+
+    <h1>Subdomain Discovery</h1>
+    
+    
+    
+    
+
+<h3 id="google-dorks-bing-dorks">Google Dorks &amp; Bing Dorks</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Google dorks are usefull for finding new subdomains</span>
+site:wikipedia.org
+site:*.wikipedia.org -www -store -jobs -uk
+
+<span style="color:#75715e"># Bing also support dorks and can give others results</span>
+site:
+
+<span style="color:#75715e"># When you use the Google Dork:  site:*.example.com, NEVER forget to check</span>
+site:*.*.example.com
+site:*.*.*.example.com </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Github dorks also allow to find many subdomains</span>
+<span style="color:#d88200">&#34;teslamotors.com&#34;</span> password
+<span style="color:#75715e"># ...</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="online-dns-tools-and-services">Online DNS tools and services</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># VirusTotal runs its own passive DNS replication service</span>
+
+<span style="color:#75715e"># DNS Dumpster can also find large number of sub-domains</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="certificate-transparency">Certificate Transparency</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># It&#39;s a project started by Google to log and audit SSL/TLS certificates for every CA</span>
+<span style="color:#75715e"># Interesting because you can request these certificates using some tools</span>
+
+https://crt.sh/
+https://censys.io/
+https://developers.facebook.com/tools/ct/
+https://transparencyreport.google.com/https/certificates
+
+<span style="color:#75715e"># crt.sh also provides public access to their CT logs using postgresql interface</span>
+psql -h crt.sh -p <span style="color:#ae81ff">5432</span> -U guest certwatch
+
+<span style="color:#75715e"># Appsecco wrote some scripts to automate these queries</span>
+https://github.com/appsecco/the-art-of-subdomain-enumeration
+https://github.com/appsecco/bugcrowd-levelup-subdomain-enumeration
+
+<span style="color:#75715e"># You can use ct.py and massdns to find resolvable or not subdomains</span>
+./ct.py icann.org <span style="color:#111">|</span> ./bin/massdns -r resolvers.txt -t A -q -a -o -w icann_resolvable_domains.txt -
+
+<span style="color:#75715e"># Another tool is ct-exposer</span>
+ct-exposer.py -d domain.com</code></pre></div>
+<p><br/></p>
+
+<h3 id="dns-enumeration-tools">DNS Enumeration Tools</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DNSRecon is a powerfull enumeration tool</span>
+dnsrecon.py -h
+dnsrecon.py -d domain.fr
+
+<span style="color:#75715e"># You can do dictionnary enumeration</span>
+<span style="color:#75715e"># -n : nameserver used</span>
+<span style="color:#75715e"># -t : type (brt=brute domain and hosts using a given dictionnary)</span>
+dnsrecon.py -n ns1.insecuredns.com -d insecuredns.com -D subdomains-top1mil-5000.txt -t brt
+
+<span style="color:#75715e"># dnsenum is another tool</span>
+dnsenum domain.fr
+
+<span style="color:#75715e"># Subdomains bruteforce</span>
+python sublist3r.py -d domain.fr
+
+<span style="color:#75715e"># DNS enumeration and information gathering using fierce (not really passiv)</span>
+fierce -dns domain.fr
+
+<span style="color:#75715e"># Aquatone is also a great tool</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="owasp-amass">OWASP Amass</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># OWASP Amass tool suite is used to build a network map of the target</span>
+<span style="color:#75715e"># It relies for subdomain enumeration on scrapping data-sources, recursive bruteforcing, crawling web services, permuting names and reverse DNS sweeping</span>
+
+<span style="color:#75715e"># Basic use (DNS lookups and name alterations)</span>
+amass -d example.com
+
+<span style="color:#75715e"># Brute force subdomain enumeration and print data sources and ip for discovered names</span>
+amass -src -ip -brute -d example.com
+
+<span style="color:#75715e"># Passiv mode</span>
+amass -passiv -d example.com
+
+<span style="color:#75715e"># Importing Amass results into Maltego</span>
+amass -src -ip --active -brute -do owasp.json -d owasp.org
+amass.viz -i owasp.json --maltego owasp.csv
+→ Then import csv files</code></pre></div>
+<p><br/></p>
+
+<h3 id="knockpy">Knockpy</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Knockpy is a python tool designed to enumerate subdomains on a target</span> 
+<span style="color:#75715e"># domain through a wordlist. It is designed to scan for DNS zone transfer</span> 
+<span style="color:#75715e"># and to try to bypass the wildcard DNS record automatically if it is enabled.</span> 
+<span style="color:#75715e"># Now knockpy supports queries to VirusTotal subdomains, you can set</span> 
+<span style="color:#75715e"># the API_KEY within the config.json file.</span>
+
+<span style="color:#75715e"># Classic research with internal wordlist</span>
+knockpy domain.com
+
+<span style="color:#75715e"># Use a specific wordlist</span>
+knockpy domain.com -w wordlist.txt
+
+<span style="color:#75715e"># Resolve IP</span>
+knockpy -r domain.com or IP
+
+<span style="color:#75715e"># Save output to CSV</span>
+knockpy -c domain.com
+
+<span style="color:#75715e"># export in JSON</span>
+knockpy -j domain.com</code></pre></div>
+<p><br/></p>
+
+<h3 id="permutation-scanning">Permutation Scanning</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Another technique is to use permutations, alterations and mutations of known subdomains to find new ones</span>
+<span style="color:#75715e"># Tools like altdns.py can do that</span>
+<span style="color:#75715e"># -i : already known subdomains used in input</span>
+<span style="color:#75715e"># -o : file containing a massiv list of permuted subdomains</span>
+<span style="color:#75715e"># -w : words usef for permutations</span>
+<span style="color:#75715e"># -r : resolve each newly generated subdomain</span> 
+<span style="color:#75715e"># -s : result for the resolved permuted subdomains</span>
+altdns.py -i icann.domains -o data_output -w icann.words -r -s results_output.txt </code></pre></div>
+<p><br/></p>
+
+<h3 id="autonomous-system-as-numbers">Autonomous System (AS) Numbers</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can use ASN to identify netblocks belonging to a company</span>
+
+<span style="color:#75715e"># Resolve the IP of a given domain, using dig or host</span>
+
+<span style="color:#75715e"># Then look for the ASN associated</span>
+ https://asn.cymru.com/cgi-bin/whois.cgi <span style="color:#f92672">(</span>given an IP address<span style="color:#f92672">)</span>
+https://bgp.he.net/ <span style="color:#f92672">(</span>given a domain name<span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># Then you can use nmap NSE scripts to find netblocks for an ASN</span>
+nmap --script targets-asn --script-args targets-asn.asn<span style="color:#f92672">=</span><span style="color:#ae81ff">17012</span> &gt; netblocks.txt
+
+<span style="color:#75715e"># You will get range networks on which you can investigate more</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="zone-transfer">Zone Transfer</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DNS transaction where a DNS Server gives a full/part copy of it&#39;s zone file to another DNS Server</span>
+<span style="color:#75715e"># If bad configuration, anyone can initiate a zone transfer and so access to the zone file</span>
+
+dig +multi AXFR @ns1.insecuredns.com insecuredns.com</code></pre></div>
+<p><br/></p>
+
+<h3 id="subdomain-takeover">Subdomain Takeover</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Resource</span>
+https://www.hackerone.com/blog/Guide-Subdomain-Takeovers</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Subjack is a tool used to automate subdomain takeover discovery (https://github.com/haccer/subjack)</span>
+./subjack -w subdomains.txt -t <span style="color:#ae81ff">100</span> -timeout <span style="color:#ae81ff">30</span> -o results.txt -ssl</code></pre></div>
+<p><br/></p>
+
+<h3 id="dnssec-walking">DNSSEC Walking</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># To prove things that do not exist, DNSSEC list all the things that exist</span>
+<span style="color:#75715e"># If the list is proven, then everything not listed must not exist</span>
+<span style="color:#75715e"># This list is created by the NSEC (or NSEC3) records</span>
+
+<span style="color:#75715e"># Interesting side-effect, it allows anyone to list the zone content by following the linked list of NSEC records.</span>
+→ zone walking
+
+<span style="color:#75715e"># Tools like ldns-walk can exploit this</span>
+ldns-walk @ns1.insecuredns.com insecuredns.com
+ldns-walk insecuredns.com
+
+<span style="color:#75715e"># Some DNSSEC zones uses NSEC3 → Hashed domain names to prevent attackers</span>
+<span style="color:#75715e"># It&#39;s still possible to collect hashes and crack them</span>
+<span style="color:#75715e"># Tools like nsec3walker</span>
+./collect icann.org &gt; icann.org.collect
+cat icann.org.unhash <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;icann&#34;</span> <span style="color:#111">|</span> awk <span style="color:#d88200">&#39;{print $2;}&#39;</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="project-collecting-data">Project Collecting Data</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Some projects collect data and provide them to the community</span>
+<span style="color:#75715e"># ForwardDNS dataset is a part of Project Sonar</span>
+<span style="color:#75715e"># This dataset is created by extracting domain names from a number of sources and then sending an ANY query for each domain</span>
+<span style="color:#75715e"># You can download the dataset and parse it but IT&#39;S HUGE (20Gb compressed, 300+ Gb uncompressed)</span>
+<span style="color:#75715e"># It seems to be the best solution to find subdomains</span>
+
+curl -silent https://scans.io/data/rapid7/sonar.fdns_v2/20170417-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep “.icann.org” <span style="color:#111">|</span> jq
+
+wget https://opendata.rapid7.com/sonar.fdns_v2/2019-11-29-1574985929-fdns_a.json.gz
+cat <span style="color:#ae81ff">20170417</span>-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;.target.org&#34;</span> <span style="color:#111">|</span> jq</code></pre></div>
+<p><br/></p>
+
+<h3 id="asn-burp-example">ASN/Burp example</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get ASN for your target</span>
+bgp.he.net
+
+<span style="color:#75715e"># Then you a use amass to find top level domains</span>
+amass intel -active -asn 361XXXX
+
+<span style="color:#75715e"># Then look on crunchbase for acquisitions</span>
+
+<span style="color:#75715e"># Link discovery in Burp</span>
+<span style="color:#75715e"># Set target, go on the main website, then look for requests made to different domains</span>
+<span style="color:#75715e"># Select all and send them to spider --&gt; Discover new ones</span>
+<span style="color:#75715e"># Doing it from a VPN can be better to avoid IP ban</span>
+
+<span style="color:#75715e"># Reverse whois / By owner</span>
+
+<span style="color:#75715e"># Test HTTP for subdomains</span>
+<span style="color:#75715e"># To get domain running webservers</span>
+cat subdomains_list <span style="color:#111">|</span> httprobe
+
+<span style="color:#75715e"># Using aquatone to get screenshots of discovered sites</span>
+cat subdomains_servers <span style="color:#111">|</span> aquatone
+
+<span style="color:#75715e"># OpenList Firefox extension can help to visualize websites</span>
+
+<span style="color:#75715e"># Content Discovery</span>
+<span style="color:#75715e"># Ffuf is one of the fastest web fuzzer but not recursive</span>
+<span style="color:#75715e"># Dirsearch is good for recursive</span>
+https://github.com/ffuf/ffuf
+ffuf -u site/FUZZ -w wordlist
+ffuf -u site/FUZZ/HERE -w wordlist</code></pre></div>
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/open-source-intelligence-osint/technical-recon/domains_urls/" title="Domain &amp; URLs"> <i class="fa fa-chevron-left"></i><label>Domain &amp; URLs</label></a>
+    <a class="nav nav-next" href="/open-source-intelligence-osint/technical-recon/misc/" title="MISC" style="margin-right: 0px;"><label>MISC</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Open%20Source%20Intelligence%20%28OSINT%29/Technical%20Recon/Subdomain_Discovery.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools &amp; Methodology on Offensive Security Cheatsheet</title>
+    <link>/open-source-intelligence-osint/tools-and-methodology/</link>
+    <description>Recent content in Tools &amp; Methodology on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/open-source-intelligence-osint/tools-and-methodology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Methodology</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/methodology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/methodology/</guid>
+      <description>Sources : https://www.dfir.training/osint
+Gap Analysis &amp;amp; others # In OSINT - Analytical mind # Ask a lot of questions : Who, What, When, Where, Why, and How # Be Curious and Craft a Storyline # Use Gap Analysis shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-track/ 1. What do we know ? 2. What does the information mean? 3. What do I still need to know? 4. How do I find out? # Reflect on failures but also wins 1.</description>
+    </item>
+    
+    <item>
+      <title>Firefox addons</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</guid>
+      <description>OSINT Bookmarks https://www.osintcombine.com/osint-bookmarks 
+Flag Fox Flagfox is an extension that displays a flag icon indicating the current webserver&amp;rsquo;s physical location.
+It then launch a geotool webpage to get more informations about the website you are visiting About IP &amp;amp; Domain.
+Google Cache Google Cache lets you visit retrieve the web page from Google Web Cache when the site is offline.
+If the site is offline, you can just press toolbar button and request cached version of the page from Google Cache.</description>
+    </item>
+    
+    <item>
+      <title>Buscador</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/buscador/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/buscador/</guid>
+      <description>Tools Custom Firefox Browser &amp;amp; Add-Ons Custom Chrome Browser &amp;amp; Extensions Tor Browser Custom Video Manipulation Utilities Custom Video Download Utility Amass BleachBit EmailHarvester ExifTool EyeWitness Ghiro GIMP Google Earth Pro HTTrack Cloner InstaLooter KeePassXC Kleopatra Knock Pages LibreOffice LinkedInt Maltego	Metagoofil MediaInfo Metadata Anonymisation Toolkit PhoneInfoga Photon ReconDog Recon-NG SkipTracer SocialMapper Spiderfoot StegoSuite SubBrute Sublist3r theHarvester Tinfoleak Twint Twitter Exporter VeraCrypt VLC Yubico Utilities 
+Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Firefox multiaccount - HTTPS Everywhere - Image Search Options - MJsonViewer - Nimbus Screen Capture - Resurrect Pages - Take Webpage Screenshots Entirely - uBlock Origin - User-Agent Switcher - Video DownloadHelper # Google Chrome with other plugins # TOR Browser # Custom Video Manipulation Utilities # Custom Video Download Utility # Amass → DNS Enumeration → Network Mapping # BleachBit → Clean your PC # EmailHarvester → Collect emails using search engines # Exiftool → Extract metadata from images # EyeWitness → Take screenshots from website → Get HTTP headers → Identify some credentials → Basic tool semi passive # Ghiro → Ghiro is a fully automated tool designed to run forensics analysis over a massive amount of images → Just using an user friendly and fancy web application.</description>
+    </item>
+    
+  </channel>
+</rss>

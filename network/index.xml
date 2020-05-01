@@ -26,8 +26,8 @@ Proxychains Pivot # When you have access to a machine, you can use it as pivot t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/ldap_dns/</guid>
-      <description>LDAP Null Bind Enumeration # Syntax ldapsearch -h &amp;#34;LENOMDELAMACHINELDAP&amp;#34; -p &amp;#34;LEPORTSURLEQUELONYACCEDE&amp;#34; -x -b &amp;#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&amp;#34; -v # Classic research ldapsearch -h challenge01.root-me.org -p 54013 -x -b &amp;#34;ou=anonymous,dc=challenge01,dc=root-me,dc=org&amp;#34; &amp;#34;cn=*&amp;#34; 
-DNS Zone Transfer # Zone transfer using dig dig @challenge01.root-me.org -p 54011 AXFR ch11.challenge01.root-me.org. # Zone transfer using nslookup nslookup -type=any &amp;gt; set port &amp;lt;port&amp;gt; &amp;gt; server challenge01.root-me.org &amp;gt; ch11.challenge01.root-me.org# Custom PERL zone transfer #!/usr/bin/env perl use warnings; use strict; use Net::DNS; # ici je teste rapidement si j&amp;#39;ai bien installe le module Net::DNS print Net::DNS-&amp;gt;version, &amp;#34;\n&amp;#34;; # creation de l&amp;#39;instance du resolveur maison.</description>
+      <description>LDAP Null Bind Enumeration # Syntax ldapsearch -h &amp;#34;LENOMDELAMACHINELDAP&amp;#34; -p &amp;#34;LEPORTSURLEQUELONYACCEDE&amp;#34; -x -b &amp;#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&amp;#34; -v 
+DNS Zone Transfer # Zone transfer using dig dig @&amp;lt;ns&amp;gt; -p 54011 AXFR &amp;lt;host&amp;gt; # Zone transfer using nslookup nslookup -type=any &amp;gt; set port &amp;lt;port&amp;gt; &amp;gt; server &amp;lt;ns&amp;gt; &amp;gt; &amp;lt;host&amp;gt;# Custom PERL zone transfer #!/usr/bin/env perl use warnings; use strict; use Net::DNS; # ici je teste rapidement si j&amp;#39;ai bien installe le module Net::DNS print Net::DNS-&amp;gt;version, &amp;#34;\n&amp;#34;; # creation de l&amp;#39;instance du resolveur maison.</description>
     </item>
     
     <item>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>External Resources on Offensive Security Cheatsheet</title>
+    <link>/resources/</link>
+    <description>Recent content in External Resources on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/resources/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>General Infosec</title>
+      <link>/resources/general_infosec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/general_infosec/</guid>
+      <description>Training Resources  HackTheBox video WU (https://ippsec.rocks/#) Resources, cheatsheets etc about EVERYTHING (https://github.com/trimstray/the-book-of-secret-knowledge)  Network &amp;amp; Pentest  Network Pivoting (https://orangecyberdefense.com/fr/insights/blog/ethical_hacking/etat-de-lart-du-pivoting-reseau-en-2019/) Remote Access Cheatsheet (https://dolosgroup.io/blog/remote-access-cheat-sheet) Many Reverse Shells (https://alamot.github.io/reverse_shells/)  Passcracking, Worlists &amp;amp; Passwords  Kaonashi worlists and rules (https://github.com/kaonashi-passwords/Kaonashi) One rule to rule them all (https://www.notsosecure.com/one-rule-to-rule-them-all/) Common French Passwords (https://github.com/tarraschk/richelieu) Rockyou (https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) Passwords Wordlists (https://weakpass.com/) Several Wordlists types (https://github.com/berzerk0/Probable-Wordlists) Language Dictionnaries (https://packetstormsecurity.com/Crackers/wordlists/page4/) Language Dictionnaries (http://www.gwicks.net/dictionaries.htm) SCADA default passwords (http://www.</description>
+    </item>
+    
+    <item>
+      <title>OSINT</title>
+      <link>/resources/osint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/osint/</guid>
+      <description>Social Networks  The new Facebook Graph Search Part 1 (https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-1/) The new Facebook Graph Search Part 2 (https://osintcurio.us/2019/08/22/the-new-facebook-graph-search-part-2/) Find Instagram User ID (https://codeofaninja.com/tools/find-instagram-user-id) Using Snapchat for OSINT (https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/) TikTok investigations and OSINT Tips (https://www.skopenow.com/news/tiktok-investigations-and-osint-tips)s How can we use Messenger Apps in OSINT (https://medium.com/@Ginger_T/how-can-we-use-messenger-apps-in-osint-682cbc634f) A better way to find and archive OSINT on Twitter (https://jakecreps.com/2020/04/10/threadreaderapp-osint-archive-twitter/amp/) OSINT : How to find information on anyone (https://medium.com/the-first-digit/osint-how-to-find-information-on-anyone-5029a3c7fd56) Getting a Grasp on Google ID&amp;rsquo;s (https://medium.</description>
+    </item>
+    
+    <item>
+      <title>Systems</title>
+      <link>/resources/systems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/systems/</guid>
+      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)  Privilege Escalation  PrivExchange (https://github.com/dirkjanm/PrivExchange) Abusing Exchange (https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/) Exploiting PrivExchange (https://chryzsh.github.io/exploiting-privexchange/)
+ LOLBAS (https://lolbas-project.github.io/#)
+ Windows EoP Cheatsheet (https://guif.re/windowseop)
+ Windows Privilege Escalation (https://hackingandsecurity.</description>
+    </item>
+    
+    <item>
+      <title>Web / Bug Bounty</title>
+      <link>/resources/web_bug_bounty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/web_bug_bounty/</guid>
+      <description>APIs  API endpoints (https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d) API Security part 1 (https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93) 31 Tips for pentesting APIs (https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765) 31 Tips (drive document) (https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0) IDOR/BOLA through API (https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2)  Server-Side Injections  SQL Injections filter bypass (https://websec.wordpress.com/tag/sql-filter-bypass/) SQL Injection Cheatsheet (https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md) SSRF SVG Cheatsheet (https://github.com/allanlw/svg-cheatsheet)  Client-Side Injections  HTML5 Security Cheatsheet (https://html5sec.org/) XSS Payloads (https://gbhackers.com/top-500-important-xss-cheat-sheet/) Polyglot XSS (https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot) AwesomeXSS Payloads (https://github.com/s0md3v/AwesomeXSS/)  PHP  PHP Object Injections (https://owasp.org/www-community/vulnerabilities/PHP_Object_Injection) PHP Vulnerability Audit Cheatsheet (https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

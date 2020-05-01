@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MISC on Offensive Security Cheatsheet</title>
+    <link>/open-source-intelligence-osint/technical-recon/misc/</link>
+    <description>Recent content in MISC on Offensive Security Cheatsheet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/open-source-intelligence-osint/technical-recon/misc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>URL Shortener</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</guid>
+      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+</description>
+    </item>
+    
+    <item>
+      <title>OPSEC</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/opsec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/opsec/</guid>
+      <description>[WIP]</description>
+    </item>
+    
+    <item>
+      <title>Darkweb Investigation</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
+      <description>[WIP]
+Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/</description>
+    </item>
+    
+    <item>
+      <title>Cryptocurrency Investigation</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</guid>
+      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json</description>
+    </item>
+    
+    <item>
+      <title>Others</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/others/</guid>
+      <description>Secrets &amp;amp; Default Passwords # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com &amp;#34;apikey&amp;#34; site:http://ideone.com &amp;#34;aws_access_key_id&amp;#34;# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Code replication # You can find same website piece of code to identify same vendors https://nerdydata.com/search https://searchcode.com/ 
+Forums # Find informations on forums http://boardreader.com https://raidforums.com/</description>
+    </item>
+    
+  </channel>
+</rss>

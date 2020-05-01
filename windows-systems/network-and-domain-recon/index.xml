@@ -27,8 +27,8 @@ LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#3
       
       <guid>/windows-systems/network-and-domain-recon/domain_recon/</guid>
       <description>Tips # Enumerate sessions net session \\computer 
-RPC # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
-Enumeration # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.</description>
+Domain Properties rpcclient # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
+enum4linux # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.</description>
     </item>
     
     <item>
