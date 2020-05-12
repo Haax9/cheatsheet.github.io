@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-01T13:27:59 CEST">
+<meta name="revised" content="2020-05-12T14:20:26 CEST">
 <title>Google Dorks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -443,6 +443,20 @@
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/github/">
             Github
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/reddit/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/reddit/">
+            Reddit
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tumblr/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/tumblr/">
+            Tumblr
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1746,7 +1760,10 @@ site:http://trello.com  site:*/boards
 site:http://trello.com  password + admin OR username
 
 <span style="color:#75715e"># Recon to find sensivite data</span>
-site:http://ideone.com  <span style="color:#111">|</span> site:http://codebeautify.org  <span style="color:#111">|</span> site:http://codeshare.io  <span style="color:#111">|</span> site:http://codepen.io  <span style="color:#111">|</span> site:http://repl.it  <span style="color:#111">|</span> site:http://justpaste.it  <span style="color:#111">|</span> site:http://pastebin.com  <span style="color:#111">|</span> site:http://jsfiddle.net  <span style="color:#111">|</span> site:http://trello.com  <span style="color:#d88200">&#34;</span><span style="color:#111">$TARGET</span><span style="color:#d88200">&#34;</span></code></pre></div>
+site:http://ideone.com  <span style="color:#111">|</span> site:http://codebeautify.org  <span style="color:#111">|</span> site:http://codeshare.io  <span style="color:#111">|</span> site:http://codepen.io  <span style="color:#111">|</span> site:http://repl.it  <span style="color:#111">|</span> site:http://justpaste.it  <span style="color:#111">|</span> site:http://pastebin.com  <span style="color:#111">|</span> site:http://jsfiddle.net  <span style="color:#111">|</span> site:http://trello.com  <span style="color:#d88200">&#34;</span><span style="color:#111">$TARGET</span><span style="color:#d88200">&#34;</span>
+
+<span style="color:#75715e"># Piwik Anonymous Access</span>
+inurl:token_auth inurl:anonymous</code></pre></div>
 <p><br/></p>
 
 <h3 id="automated-dorks-tools">Automated Dorks Tools</h3>

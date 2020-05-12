@@ -791,10 +791,6 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</loc>
-  </url>
-  
-  <url>
     <loc>/other-systems/amazon_web_services/</loc>
   </url>
   
@@ -804,6 +800,10 @@
   
   <url>
     <loc>/web-pentest/bug_bounty_tips/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/platforms-hunting/reddit/</loc>
   </url>
   
   <url>
@@ -831,7 +831,15 @@
   </url>
   
   <url>
+    <loc>/open-source-intelligence-osint/platforms-hunting/tumblr/</loc>
+  </url>
+  
+  <url>
     <loc>/network/services-enumeration/389_636_3269_ldap/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</loc>
   </url>
   
   <url>

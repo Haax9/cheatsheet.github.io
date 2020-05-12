@@ -68,7 +68,7 @@ Broken Links # Check for broken links and domain takeover # For twitter, Twitter
       
       <guid>/windows-systems/exploitation/exploitation_tricks/</guid>
       <description>Obfuscation # There are many ways you can use to obfuscate conten # PyFuscation (https://github.com/CBHue/PyFuscation) bring small usefull features $ python3 PyFuscation.py -fvp --ps ./Scripts/Invoke-Mimikatz.ps1  
-Using Powershell AD Module without RSAT # The secret to being able to run AD enumeration commands from the AD Powershell # is the DLL located in C:\Windows\Microsoft.NET\assembly\GAC_64\Microsoft.ActiveDirectory.Management # You can just grab it on a system with RSAT and drop it on the target Import-Module .</description>
+&amp;ldquo;Double Hop&amp;rdquo; - What is it and how to solve ? # Great resource (french) http://inf0sec.fr/article-16.php # TL;DR # 2 authentications types # Network Logon --&amp;gt; Ex : WinRM through PtH (Windows won&amp;#39;t store credentials) # Non-Network Logon --&amp;gt; Ex : RDP, entering directly password and Windows storing it # In order to access privileged commands (typical, psexec on a DC) # Windows needs to have credentials in the Logon Session # If the authentication is &amp;#34;Network Logon&amp;#34;, you have no creds in session and can&amp;#39;t exec # Solution : local pass the hash (or runas) # Mimikatz</description>
     </item>
     
     <item>
@@ -123,7 +123,7 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
-      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries# Get information about the target IP https://www.onyphe.io/ # Robtex is a great and complete tool https://www.</description>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries# Get information about the target IP https://www.onyphe.io/ # Robtex is a great and complete tool https://www.</description>
     </item>
     
     <item>
@@ -141,7 +141,7 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/company_investigations/company_informations/</guid>
-      <description>Company Informations General # Find informations about a company https://opencorporates.com # Giant database project containing many informations https://aleph.occrp.org/ Financial &amp;amp; Administrative # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ https://www.infogreffe.fr/ https://www.crunchbase.com https://fr.kompass.com/ Technical &amp;amp; Hosted # Find multiples sites owned by the same individual/company http://www.spyonweb.com # Look for reported vulnerabilities https://www.openbugbounty.org/ Jobs # Jobs https://www.glassdoor.fr/index.htm # Find people based on several websites https://recruitin.net/ Business # Call for tender → BOAMP https://www.</description>
+      <description>Company Informations General # Find informations about a company https://opencorporates.com # Giant database projects containing many informations # Can be about leaks, offshore companies leaks etc https://aleph.occrp.org/ https://offshoreleaks.icij.org/ # Notices / Gazettes for EU companies http://opengazettes.com/ Financial &amp;amp; Administrative # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ https://www.infogreffe.fr/ https://www.crunchbase.com https://fr.kompass.com/ # European Justice Portal # Informations are not free https://e-justice.europa.eu Technical &amp;amp; Hosted # Find multiples sites owned by the same individual/company http://www.</description>
     </item>
     
     <item>
@@ -523,7 +523,7 @@ DNS Zone Transfer # Zone transfer using dig dig @&amp;lt;ns&amp;gt; -p 54011 AXF
       
       <guid>/open-source-intelligence-osint/platforms-hunting/linkedin/</guid>
       <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
-ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile # Full size profile photo # Then right click &amp;#34;view image&amp;#34; https://linkedin.</description>
+Getting account linked to an e-mail # Great trick https://www.intelligencewithsteve.com/post/a-guide-to-searching-linkedin-by-email-address # Sales feature have been discontinued # Log to OWA and go to contacts https://outlook.live.com/owa/ https://outlook.live.com/people # Then add contact, using the target e-mail # Go to the LinkedIn tab and connect using a fake account # If an account is linked to the target e-mail, you should now see it in Outlook</description>
     </item>
     
     <item>
@@ -551,7 +551,8 @@ Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/opsec/</guid>
-      <description>[WIP]</description>
+      <description>[WIP]
+https://amiunique.org/fp https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.</description>
     </item>
     
     <item>
@@ -1393,9 +1394,8 @@ SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserve
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
       <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ 
-Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.org 
-Photo identification # Find photos taken by the same camera using serial number # We don&amp;#39;t know how files are processed/stored.. https://www.stolencamerafinder.com/ 
-Tips &amp;amp; Trick for GeoINT # GREAT resource about tips from Geoguessr https://somerandomstuff1.</description>
+Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.org # Sun position over time https://www.suncalc.org/#/48.8376,2.3456,8/2020.05.08/12:42/1/3 
+Photo identification # Find photos taken by the same camera using serial number # We don&amp;#39;t know how files are processed/stored.</description>
     </item>
     
     <item>
@@ -1582,17 +1582,6 @@ User Interface Header # Import --&amp;gt; Used to import collection or environme
     </item>
     
     <item>
-      <title>Amazon &amp; Digital Ocean Buckets</title>
-      <link>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</guid>
-      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
-AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
-Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
-    </item>
-    
-    <item>
       <title>Amazon Web Services (AWS)</title>
       <link>/other-systems/amazon_web_services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1619,6 +1608,17 @@ Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the p
       <guid>/web-pentest/bug_bounty_tips/</guid>
       <description> General # This section will be mainly used to store information found on Twitter # About some bug bounty tips &amp;amp; web tricks 
 Password Reset https://twitter.com/HusseiN98D/status/1254888748216655872/photo/1 # 1/ Include controlled mail as a second parameter # 2/ Bruteforce reset token # 3/ Try to use a reset token on another account # 4/ Try to figure out how token are generated</description>
+    </item>
+    
+    <item>
+      <title>Reddit</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/reddit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/reddit/</guid>
+      <description>Basics https://www.secjuice.com/reddit-osint-techniques/
+Username/Picture # Username and profile picture can help to identify cross platforms accounts # Banner too 
+Posts # Topic is a thread where the user is the original poster (Known as OP) # Get topics for an user https://www.reddit.com/user/REPLACEWITHUSERNAME/posts/ # Pay attention to the subreddits # It can give information about interests # Comments https://www.reddit.com/user/REPLACEWITHUSERNAME/comments/# Deleted content # You can use services like removeddit to check for deleted content # Original thread https://www.</description>
     </item>
     
     <item>
@@ -1662,12 +1662,32 @@ Spring Boot # Spring Boot / Metrics /metrics → Endpoint showing tons of endpoi
     </item>
     
     <item>
+      <title>Tumblr</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/tumblr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/tumblr/</guid>
+      <description>Basics https://www.secjuice.com/tumblr-osint/ # Tumblr is an old platform (2007) and may contain old target accounts not deleted # For example, old blogs# Username will appear on the URL # As well as on multiple points userxxx.tumblr.com# User&amp;#39;s likes # The section can be disabled by the user # To find out userxx.tumblr.com/likes # Same for followers / following userxx.tumblr.com/followers userxx.tumblr.com/following userxx.tumblr.com/Followers userxx.tumblr.com/FOLLOWERS# Archives # User&amp;#39;s posts, media, reblog, text... userxx.</description>
+    </item>
+    
+    <item>
       <title>389/636/3269 - LDAP</title>
       <link>/network/services-enumeration/389_636_3269_ldap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/389_636_3269_ldap/</guid>
       <description>General Informations # Ports 389 - LDAP 636 - LDAPS (SSL) 3269 - LDAP Global Catalog # Architecture (LDAP is hierarchical) - DC = Domain Component, the domain name - OU = Organizational Unit, \&amp;#34;folders - CN = Common Name, the name fiven to the objects (Username, Group name, Computer name, etc.) # Research syntax ldapsearch &amp;lt;bind options&amp;gt; -b &amp;lt;base to search from&amp;gt; &amp;lt;search filter&amp;gt; &amp;lt;attributes&amp;gt; # Interesting attributes for user class ldapsearch “(objectClass=user)” interesting attributes: - sAMAccountName - userPrincipalName - memberOf (groups) - badPwdCount (failed logins) - lastLogoff (timestamp) - lastLogon (timestamp) - pwdLastSet (timestamp) - logonCount # Interesting attributes for group class ldapsearch “(objectClass=group)” interesting attributes: - cn - member (one per user/group) - memberOf (if nested in another group) # Interesting attributes for computer class ldapsearch “(objectClass=computer)” interesting attributes: - name (NetBIOS name) - DNSHostName (FQDN) =&amp;gt; combine it with DNS lookups and you can enumerate every IP address in the domain without scanning - operatingSystem - operatingSystemVersion (patch level) - lastLogonTimestamp - servicePrincipalName (running services =&amp;gt; TERMSRV, HTTP, MSSQL)</description>
+    </item>
+    
+    <item>
+      <title>Amazon &amp; Digital Ocean Buckets</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</guid>
+      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
+AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
+Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
     </item>
     
     <item>

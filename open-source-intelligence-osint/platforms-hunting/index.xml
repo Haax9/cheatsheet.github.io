@@ -26,7 +26,7 @@
       
       <guid>/open-source-intelligence-osint/platforms-hunting/linkedin/</guid>
       <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
-ScrapedIn # Tool created to assist in performing recon using the LinkedIn API. # Provide a search string # Ouput as XLSX but intented to work with Google Sheets # After importing you&amp;#39;ll have a dataset and report worksheet # Dataset : First name, last name, occupation, industry, profile URL, picture URL # Report : Picture (displayed), Full name, occupation, Link to profile # Full size profile photo # Then right click &amp;#34;view image&amp;#34; https://linkedin.</description>
+Getting account linked to an e-mail # Great trick https://www.intelligencewithsteve.com/post/a-guide-to-searching-linkedin-by-email-address # Sales feature have been discontinued # Log to OWA and go to contacts https://outlook.live.com/owa/ https://outlook.live.com/people # Then add contact, using the target e-mail # Go to the LinkedIn tab and connect using a fake account # If an account is linked to the target e-mail, you should now see it in Outlook</description>
     </item>
     
     <item>
@@ -92,6 +92,26 @@ Facebook Tricks # You can search by e-mail # You can find accounts by e-mail wit
       <guid>/open-source-intelligence-osint/platforms-hunting/github/</guid>
       <description>General # Online Service used to search in many git repositories https://grep.app/ 
 Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch# Usually, credential leaks do not occur on the company public Github # But more on developer/employees personal Github</description>
+    </item>
+    
+    <item>
+      <title>Reddit</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/reddit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/reddit/</guid>
+      <description>Basics https://www.secjuice.com/reddit-osint-techniques/
+Username/Picture # Username and profile picture can help to identify cross platforms accounts # Banner too 
+Posts # Topic is a thread where the user is the original poster (Known as OP) # Get topics for an user https://www.reddit.com/user/REPLACEWITHUSERNAME/posts/ # Pay attention to the subreddits # It can give information about interests # Comments https://www.reddit.com/user/REPLACEWITHUSERNAME/comments/# Deleted content # You can use services like removeddit to check for deleted content # Original thread https://www.</description>
+    </item>
+    
+    <item>
+      <title>Tumblr</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/tumblr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/tumblr/</guid>
+      <description>Basics https://www.secjuice.com/tumblr-osint/ # Tumblr is an old platform (2007) and may contain old target accounts not deleted # For example, old blogs# Username will appear on the URL # As well as on multiple points userxxx.tumblr.com# User&amp;#39;s likes # The section can be disabled by the user # To find out userxx.tumblr.com/likes # Same for followers / following userxx.tumblr.com/followers userxx.tumblr.com/following userxx.tumblr.com/Followers userxx.tumblr.com/FOLLOWERS# Archives # User&amp;#39;s posts, media, reblog, text... userxx.</description>
     </item>
     
     <item>

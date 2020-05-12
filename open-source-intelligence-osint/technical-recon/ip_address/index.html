@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-01T13:27:59 CEST">
+<meta name="revised" content="2020-05-12T14:20:26 CEST">
 <title>IP Address :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -443,6 +443,20 @@
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/github/">
             Github
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/reddit/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/reddit/">
+            Reddit
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tumblr/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/tumblr/">
+            Tumblr
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1725,7 +1739,8 @@ whois &lt;IP&gt;
 <span style="color:#75715e"># Enhanced Whois</span>
 https://domainbigdata.com
 https://whois.domaintools.com
-https://www.ip2location.com</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get ASN for your target</span>
+https://www.ip2location.com
+https://whoisology.com</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get ASN for your target</span>
 bgp.he.net</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can identify IP block owned by a company</span>
 ipv4info.com</code></pre></div>
 <h4 id="online-scanners">Online Scanners</h4>
@@ -1744,7 +1759,37 @@ port:22
 https://www.onyphe.io/
 
 <span style="color:#75715e"># Robtex is a great and complete tool</span>
-https://www.robtex.com</code></pre></div>
+https://www.robtex.com</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Zoomeye can be very efficient, but in Chinese</span>
+https://www.zoomeye.org/
+
+<span style="color:#75715e"># BinaryEdge is also known and powerfull</span>
+https://www.binaryedge.io/</code></pre></div>
+<p><br/></p>
+
+<h4 id="finding-real-ip-behind-cloudflare-or-tor">Finding real IP behind CloudFlare or Tor</h4>
+
+<p><a href="https://www.secjuice.com/finding-real-ips-of-origin-servers-behind-cloudflare-or-tor/">https://www.secjuice.com/finding-real-ips-of-origin-servers-behind-cloudflare-or-tor/</a></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SSL Certificates</span>
+
+<span style="color:#75715e"># Using a given domain name</span>
+<span style="color:#75715e"># By using an SSL certificate between the server and CloudFlare, you can search for the real server</span>
+<span style="color:#75715e"># Search by &#34;Certificates&#34;</span>
+https://censys.io/
+
+<span style="color:#75715e"># You need to search the certificates for target and show valid ones</span>
+parsed.names: xyz123boot.com and tags.raw: trusted
+
+<span style="color:#75715e"># Then for each result</span>
+<span style="color:#75715e"># Explore &gt; What&#39;s using this certificate &gt; IPv4 Hosts</span>
+
+<span style="color:#75715e"># One of the servers could be the real one</span>
+<span style="color:#75715e"># Does it redirect ?</span> </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DNS Records</span>
+
+<span style="color:#75715e"># Even after moving to CloudFlare, some data-driven services still have old A records</span>
+<span style="color:#75715e"># SecurityTrails can do it (&#34;historical data&#34;)</span>
+https://securitytrails.com/
+
+<span style="color:#75715e"># MX can also be a good way</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="domain-identification">Domain Identification</h3>
