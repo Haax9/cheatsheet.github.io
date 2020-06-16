@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-12T14:20:26 CEST">
+<meta name="revised" content="2020-06-16T13:58:58 CEST">
 <title>E-mails :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1337,6 +1337,13 @@
       <a href="/linux-systems/">Linux Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/linux-systems/tricks/" class="dd-item">
+        <div>
+          <a href="/linux-systems/tricks/">
+            Global Tricks (sysadmin)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/linux-systems/recon_enumeration/" class="dd-item">
         <div>
           <a href="/linux-systems/recon_enumeration/">
@@ -1742,7 +1749,10 @@ https://tools.verifyemailaddress.io/
 http://mailtester.com
 https://dnslytics.com/email-test
 https://verify-email.org/
-https://verifalia.com/validate-email</code></pre></div>
+https://verifalia.com/validate-email
+
+<span style="color:#75715e"># IntelX new tool allows to browse records for a given domain</span>
+https://phonebook.cz/</code></pre></div>
 <p><br/></p>
 
 <h3 id="the-harvester">The Harvester</h3>
@@ -1815,6 +1825,43 @@ python zen.py https://github.com/orgs/organzation
 
 <span style="color:#75715e"># Search if the e-mail is present in a breach</span>
 python zen.py s0md3v --breach</code></pre></div>
+<p><br/></p>
+
+<h3 id="quidam-https-github-com-megadose-quidam">Quidam (<a href="https://github.com/megadose/Quidam">https://github.com/megadose/Quidam</a>)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Quidam allows you to retrieve information thanks to the forgotten password function of some sites.</span>
+$ python3 quidam.py --help
+usage: quidam.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> -u USERNAME -m MODULE
+
+optional arguments:
+  -h, --help            show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
+  -u USERNAME, --username USERNAME
+                        The uername of the target
+  -m MODULE, --module MODULE
+                        Modules to use instagram, twitter, github or all
+
+$ python3 quidam.py --username <span style="color:#111">test</span> --module all   
+You <span style="color:#00a8c8">select</span> all
+Email extract with instagram of test: z*******1@gmail.com
+Email extract with twitter of test: te**@b********.***
+Possible email : 
+te**@barcelona.com
+te**@beethoven.com
+te**@bellsouth.net
+te**@bellsouth.net
+te**@bigassweb.com
+te**@bikeracer.com
+te**@bikerider.com
+te**@birdowner.net
+te**@blazemail.com
+te**@bluehyppo.com
+te**@blushmail.com
+te**@bmlsports.net
+te**@bornnaked.com
+te**@broadcast.net
+te**@buffymail.com
+te**@bullsgame.com
+te**@buyersusa.com
+Not informations found in github</code></pre></div>
 
     
     

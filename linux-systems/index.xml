@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>Global Tricks (sysadmin)</title>
+      <link>/linux-systems/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/tricks/</guid>
+      <description>[WIP]
+# If you need to kill a specific process using a given port sudo fuser -k 445/tcp</description>
+    </item>
+    
+    <item>
       <title>Recon and Enumeration</title>
       <link>/linux-systems/recon_enumeration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

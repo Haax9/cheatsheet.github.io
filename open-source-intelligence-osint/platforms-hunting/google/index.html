@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-12T14:20:26 CEST">
+<meta name="revised" content="2020-06-16T13:58:58 CEST">
 <title>Google :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1337,6 +1337,13 @@
       <a href="/linux-systems/">Linux Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/linux-systems/tricks/" class="dd-item">
+        <div>
+          <a href="/linux-systems/tricks/">
+            Global Tricks (sysadmin)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/linux-systems/recon_enumeration/" class="dd-item">
         <div>
           <a href="/linux-systems/recon_enumeration/">
@@ -1782,6 +1789,17 @@ people/c0123456789...
 
 <span style="color:#75715e"># personFields</span>
 metada</code></pre></div>
+<h5 id="google-hangouts">Google Hangouts</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://medium.com/week-in-osint/keeping-a-grip-on-googleids-506814ae098b
+
+<span style="color:#75715e"># Using the &#34;network&#34; developper tool, open a new chat and fill in the target e-mail address</span>
+<span style="color:#75715e"># Filter on the word &#34;lookup&#34; to get informations such as the ID</span>
+<span style="color:#75715e"># You can also get the list of other connected Apps (Youtube...) (&#34;appType&#34;)</span>
+
+<span style="color:#75715e"># Look for &#34;autocomplete&#34;</span>
+<span style="color:#75715e"># You can get information about other Google Accounts connected to this ID</span>
+
+<span style="color:#75715e"># &#34;lastUpdateTimeMicros&#34; is the last time the account was edited (or sometimes created)</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="using-userids">Using UserIDs</h3>

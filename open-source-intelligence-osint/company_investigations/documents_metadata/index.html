@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-12T14:20:26 CEST">
+<meta name="revised" content="2020-06-16T13:58:58 CEST">
 <title>Public Documents and Metadata :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1337,6 +1337,13 @@
       <a href="/linux-systems/">Linux Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/linux-systems/tricks/" class="dd-item">
+        <div>
+          <a href="/linux-systems/tricks/">
+            Global Tricks (sysadmin)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/linux-systems/recon_enumeration/" class="dd-item">
         <div>
           <a href="/linux-systems/recon_enumeration/">
@@ -1744,6 +1751,20 @@
 <span style="color:#75715e"># -f: output file</span>
 
 metagoofil.py -d domain.com -t doc,pdf -l <span style="color:#ae81ff">10</span> -n <span style="color:#ae81ff">10</span> -o /tmp/result -f /tmp/result/result.html</code></pre></div>
+<p><br/></p>
+
+<h3 id="investigate-powerpoint-documents">Investigate Powerpoint Documents</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://medium.com/@osint/powerpoint-what-data-is-beneath-the-surface-2eb000ef95fb
+https://medium.com/week-in-osint/week-in-osint-2020-21-4c92d335116a
+
+<span style="color:#75715e"># You can potentially get lots of data from PPTX files</span>
+<span style="color:#75715e"># 1/ Obvious metadate such as author</span>
+<span style="color:#75715e"># 2/ But also from embedded content such as screenshots</span>
+
+<span style="color:#75715e"># - Some people often use shapes to hide content. If you can edit, you can delete them and get the content</span>
+<span style="color:#75715e"># - &#34;Crop&#34; feature can also be used to get the full content of a screenshot</span>
+
+<span style="color:#75715e"># You can also simply unpack the whole document (if using Open XML Format) and get the embedded content</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="trufflehog">TruffleHog</h3>

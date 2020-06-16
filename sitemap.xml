@@ -39,6 +39,10 @@
   </url>
   
   <url>
+    <loc>/linux-systems/tricks/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/platforms-hunting/google/</loc>
   </url>
   
@@ -112,10 +116,6 @@
   
   <url>
     <loc>/cryptography/rsa/</loc>
-  </url>
-  
-  <url>
-    <loc>/linux-systems/recon_enumeration/</loc>
   </url>
   
   <url>
@@ -219,10 +219,6 @@
   </url>
   
   <url>
-    <loc>/linux-systems/file_transfer/</loc>
-  </url>
-  
-  <url>
     <loc>/web-pentest/files-and-files-inclusions/file_upload/</loc>
   </url>
   
@@ -288,6 +284,10 @@
   
   <url>
     <loc>/linux-systems/programing-languages/python/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/recon_enumeration/</loc>
   </url>
   
   <url>
@@ -363,6 +363,10 @@
   </url>
   
   <url>
+    <loc>/linux-systems/file_transfer/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/dorks/github_dorks/</loc>
   </url>
   
@@ -404,10 +408,6 @@
   
   <url>
     <loc>/linux-systems/programing-languages/perl/</loc>
-  </url>
-  
-  <url>
-    <loc>/linux-systems/privilege-escalation/</loc>
   </url>
   
   <url>
@@ -507,11 +507,11 @@
   </url>
   
   <url>
-    <loc>/windows-systems/privilege-escalation/</loc>
+    <loc>/linux-systems/privilege-escalation/</loc>
   </url>
   
   <url>
-    <loc>/linux-systems/programing-languages/</loc>
+    <loc>/windows-systems/privilege-escalation/</loc>
   </url>
   
   <url>
@@ -616,6 +616,10 @@
   
   <url>
     <loc>/windows-systems/post-exploitation-techniques/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/programing-languages/</loc>
   </url>
   
   <url>

