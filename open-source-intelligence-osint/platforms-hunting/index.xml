@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/google/</guid>
-      <description>Get UserIDs Google Drive Documents # Get user ID from Google Drive document # Logged # Open the source code and search for: &amp;#34;\x2210&amp;#34; and &amp;#34;\x2211&amp;#34; # Paste it in the Google Photos or Maps URL and find out more about your target. # Not logged in # Developer tools &amp;gt; Network &amp;gt; Filter &amp;#34;Permissions&amp;#34; # Load the document and get informations for owner &amp;amp; co Google Contacts # Google Contacts can help getting IDs from e-mails # But it may not work !</description>
+      <description>Linking to Google Account https://subfn.net/2020/06/15/ga-osint-trick/ # Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account # Log into Google Analytics # Navigate to Admin &amp;gt; Account User Management &amp;gt; Add user # At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed</description>
     </item>
     
     <item>
