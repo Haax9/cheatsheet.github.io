@@ -279,7 +279,7 @@ General and Tricks # Classical test &#39; or 1=1 LIMIT 1 -- &#39; or 1=1 LIMIT 1
       
       <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
       <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43 https://www.aware-online.com/en 
-Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org # Dead people registry (EU) https://deces.matchid.io# 118218 for France is very good # Reverse dict https://www.</description>
+Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org # Dead people registry (EU) https://deces.matchid.io # French search engine for dead people https://www.</description>
     </item>
     
     <item>
@@ -429,8 +429,8 @@ Droopescan # Not Drupal specific but can work too (Wordpress, SilverStripe, Joom
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/email/</guid>
-      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.cz/ 
-The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results # TheHarvester received a great # Following modules need API key (api-keys.yaml) # bing, github, hunter, intlex, securitytrails, shodan, spyse Usage: theharvester options -d: Domain to search or company name -b: data source: baidu, bing, bingapi, dogpile, google, googleCSE, googleplus, google-profiles, linkedin, pgp, twitter, vhost, virustotal, threatcrowd, crtsh, netcraft, yahoo, all -s: start in result number X (default: 0) -v: verify host name via dns resolution and search for virtual hosts -f: save the results into an HTML and XML file (both) -n: perform a DNS reverse query on all ranges discovered -c: perform a DNS brute force for the domain name -t: perform a DNS TLD expansion discovery -e: use this DNS server -p: port scan the detected hosts and check for Takeovers (80,443,22,21,8080) -l: limit the number of results to work with(bing goes from 50 to 50 results, google 100 to 100, and pgp doesn\&amp;#39;t use this option) -h: use SHODAN database to query discovered hosts Examples: theharvester -d microsoft.</description>
+      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # Omail can find domain syntax as well as related e-mails addresses https://omail.io/ # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.cz/ 
+The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results # TheHarvester received a great # Following modules need API key (api-keys.</description>
     </item>
     
     <item>
@@ -1249,8 +1249,7 @@ Userland &amp;amp; Elevated # Userland techniques # HKCU # Create a REG_SZ value
       <guid>/open-source-intelligence-osint/human-recon/pictures/</guid>
       <description>General # Flickr Image search https://www.flickr.com/map 
 Reverse Image Search # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ # Dedicated to faces # Results are not free but previews are available (used then on traditionnal engines) https://pimeyes.com/en/ 
-Image Investigation # EXIF and metadata http://exif.regex.info/exif.cgi # Basics Forensics https://fotoforensics.com/ # Text recognition (OCR) https://www.newocr.com/ # Stolen Camera Finder https://www.stolencamerafinder.com/ 
-Deblurring images # Gaussian Blur # Install GIMP Plugin &amp;#34;G&amp;#39;MIC&amp;#34; # Filters&amp;gt;G’MIC&amp;gt;Details&amp;gt;Sharpen (Deblur)# Pixelize # The Pixelize blur works by dividing an image into a number of squares # and then replacing all the pixels in each square by average of their values.</description>
+Image Investigation # EXIF and metadata http://exif.regex.info/exif.cgi # Basics Forensics https://fotoforensics.com/ # Text recognition (OCR) https://www.newocr.com/ # Stolen Camera Finder https://www.stolencamerafinder.com/ # Hate Symbols Database https://www.</description>
     </item>
     
     <item>
