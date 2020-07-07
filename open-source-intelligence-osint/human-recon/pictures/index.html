@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-06-22T14:58:27 CEST">
+<meta name="revised" content="2020-07-07T18:40:39 CEST">
 <title>Picture Investigation :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1776,6 +1776,22 @@ https://www.stolencamerafinder.com/
 
 <span style="color:#75715e"># Hate Symbols Database</span>
 https://www.adl.org/hate-symbols</code></pre></div>
+<p><br/></p>
+
+<h3 id="working-with-videos">Working with videos</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Downloading videos from different platforms</span>
+https://nixintel.info/linux/grabbing-videos-for-osint-how-to-use-youtube-dl/
+
+$ youtube-dl https://www.youtube.com/watch?v<span style="color:#f92672">=</span>B9xE-40c2Oc
+$ youtube-dl https://twitter.com/i/status/1159811569045295104
+$ youtube-dl -o ~/Videos/facebookvideo https://www.facebook.com/watch/?v<span style="color:#f92672">=</span><span style="color:#ae81ff">328211061465570</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Getting frames and/or audio for a given video</span>
+https://nixintel.info/osint-tools/using-ffmpeg-to-grab-stills-and-audio-for-osint/
+
+<span style="color:#75715e"># Getting frames</span>
+ffmpeg -i myvideo.mp4 img%06d.png -hide_banner
+
+<span style="color:#75715e"># Getting audio</span>
+ffmpeg -i myvideo.mp4 -r <span style="color:#ae81ff">1</span> img%06d.png -hide_banner</code></pre></div>
 <p><br/></p>
 
 <h3 id="deblurring-images">Deblurring images</h3>

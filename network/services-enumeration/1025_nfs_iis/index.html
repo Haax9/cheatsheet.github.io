@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-06-22T14:58:28 CEST">
+<meta name="revised" content="2020-07-07T18:40:39 CEST">
 <title>1025 - NFS/IIS :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1613,31 +1613,355 @@
       <a href="/resources/">External Resources</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/resources/general_infosec/" class="dd-item">
+    <li data-nav-id="/web-pentest/resources-discovery/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/resources-discovery/">Resources Discovery</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/resources-discovery/content_discovery/" class="dd-item">
         <div>
-          <a href="/resources/general_infosec/">
-            General Infosec
+          <a href="/web-pentest/resources-discovery/content_discovery/">
+            Content Discovery
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/resources/osint/" class="dd-item">
+      <li data-nav-id="/web-pentest/resources-discovery/parameters/" class="dd-item">
         <div>
-          <a href="/resources/osint/">
-            OSINT
+          <a href="/web-pentest/resources-discovery/parameters/">
+            Parameters
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/resources/systems/" class="dd-item">
+      <li data-nav-id="/web-pentest/resources-discovery/known_endpoints/" class="dd-item">
         <div>
-          <a href="/resources/systems/">
-            Systems
+          <a href="/web-pentest/resources-discovery/known_endpoints/">
+            Sensitive Endpoints
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/resources/web_bug_bounty/" class="dd-item">
+      <li data-nav-id="/web-pentest/resources-discovery/idor/" class="dd-item">
         <div>
-          <a href="/resources/web_bug_bounty/">
-            Web / Bug Bounty
+          <a href="/web-pentest/resources-discovery/idor/">
+            IDOR
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/resources-discovery/http_request_smuggling/" class="dd-item">
+        <div>
+          <a href="/web-pentest/resources-discovery/http_request_smuggling/">
+            HTTP Request Smuggling
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/applicative-scans/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/applicative-scans/">Applicative Scans</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/applicative-scans/web_application_scan/" class="dd-item">
+        <div>
+          <a href="/web-pentest/applicative-scans/web_application_scan/">
+            Web Application Scans
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/applicative-scans/aquatone/" class="dd-item">
+        <div>
+          <a href="/web-pentest/applicative-scans/aquatone/">
+            Aquatone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/applicative-scans/vhost/" class="dd-item">
+        <div>
+          <a href="/web-pentest/applicative-scans/vhost/">
+            VHOST Scanning
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/applicative-scans/web_application_firewall/" class="dd-item">
+        <div>
+          <a href="/web-pentest/applicative-scans/web_application_firewall/">
+            Web Application Firewall (WAF)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/content-management-system-cms/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/content-management-system-cms/">Content Management Systems (CMS)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/content-management-system-cms/wordpress/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/wordpress/">
+            Wordpress
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/drupal/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/drupal/">
+            Drupal
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/joomla/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/joomla/">
+            Joomla!
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/magento/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/magento/">
+            Magento
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/cmsmap/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/cmsmap/">
+            CMSMap
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/content-management-system-cms/others/" class="dd-item">
+        <div>
+          <a href="/web-pentest/content-management-system-cms/others/">
+            MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/injections/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/injections/">Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/web-pentest/injections/server-side-injections/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/injections/server-side-injections/">Server Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/sql/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/sql/">
+            SQL Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/nosql/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/nosql/">
+            NoSQL Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ldap/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ldap/">
+            LDAP Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/xpath/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/xpath/">
+            XPath Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ssrf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ssrf/">
+            Server Side Request Forgery (SSRF)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/os/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/os/">
+            OS Command Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ssti/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ssti/">
+            SSTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/injections/client-side-injections/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/injections/client-side-injections/">Client Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/xss/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/xss/">
+            XSS Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/csrf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/csrf/">
+            CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/misc_others/">
+            MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/web-pentest/injections/headers_injections/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/headers_injections/">
+            Headers Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/files-and-files-inclusions/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/files-and-files-inclusions/">File &amp; File Inclusions</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/files-and-files-inclusions/file_upload/" class="dd-item">
+        <div>
+          <a href="/web-pentest/files-and-files-inclusions/file_upload/">
+            File Upload
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/files-and-files-inclusions/directory_file_discovery/" class="dd-item">
+        <div>
+          <a href="/web-pentest/files-and-files-inclusions/directory_file_discovery/">
+            Directory &amp; File Discovery
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/files-and-files-inclusions/xxe/" class="dd-item">
+        <div>
+          <a href="/web-pentest/files-and-files-inclusions/xxe/">
+            XML External Entity (XXE) and XSLT
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/php-vulnerabilities/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/php-vulnerabilities/">PHP Vulnerabilities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/php_filters/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/php_filters/">
+            PHP Filters
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/functions/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/functions/">
+            PHP Functions
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/serialization/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/serialization/">
+            PHP Serialization
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/type_juggling/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/type_juggling/">
+            PHP Type Juggling
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/php-vulnerabilities/tricks_others/" class="dd-item">
+        <div>
+          <a href="/web-pentest/php-vulnerabilities/tricks_others/">
+            Tricks &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/tools/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/tools/">Tools</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/tools/burpsuite/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/burpsuite/">
+            BurpSuite
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/tools/postman/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/postman/">
+            Postman
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/web-pentest/attacking_apis/" class="dd-item">
+        <div>
+          <a href="/web-pentest/attacking_apis/">
+            Attacking APIs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/cve_exploits/" class="dd-item">
+        <div>
+          <a href="/web-pentest/cve_exploits/">
+            CVE &amp; Vulns exploits
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/bug_bounty_tips/" class="dd-item">
+        <div>
+          <a href="/web-pentest/bug_bounty_tips/">
+            Bug Bounty Tips
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/misc_tricks/" class="dd-item">
+        <div>
+          <a href="/web-pentest/misc_tricks/">
+            MISC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>

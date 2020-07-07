@@ -46,8 +46,8 @@ Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --word
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/wordlists/</guid>
-      <description>Resources https://github.com/kaonashi-passwords/Kaonashi https://github.com/tarraschk/richelieu https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt https://packetstormsecurity.com/Crackers/wordlists/page4/ http://www.gwicks.net/dictionaries.htm # SCADA Default Passwords http://www.critifence.com/default-password-database/ https://weakpass.com/ https://github.com/berzerk0/Probable-Wordlists 
-CeWL # CeWL allows you to build custom wordlists based on online resources # If you know that your target is target.com, you can parse web content to build lists # Can be time consuming # 5 levels of depth and minimum 7 char per word cewl -w customwordlist.txt -d 5 -m 7 www.sans.org # Also visit and parse other sites cewl -w customwordlist.</description>
+      <description>Resources https://github.com/kaonashi-passwords/Kaonashi https://github.com/tarraschk/richelieu https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt https://packetstormsecurity.com/Crackers/wordlists/page4/ http://www.gwicks.net/dictionaries.htm # SCADA Default Passwords http://www.critifence.com/default-password-database/ https://weakpass.com/ https://github.com/berzerk0/Probable-Wordlists # Looks very cool wordlists https://github.com/FlameOfIgnis/Pwdb-Public 
+CeWL # CeWL allows you to build custom wordlists based on online resources # If you know that your target is target.com, you can parse web content to build lists # Can be time consuming # 5 levels of depth and minimum 7 char per word cewl -w customwordlist.txt -d 5 -m 7 www.</description>
     </item>
     
   </channel>
