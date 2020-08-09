@@ -57,8 +57,7 @@ Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an
       
       <guid>/open-source-intelligence-osint/human-recon/pictures/</guid>
       <description>General # Flickr Image search https://www.flickr.com/map 
-Reverse Image Search # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ # Dedicated to faces # Results are not free but previews are available (used then on traditionnal engines) https://pimeyes.com/en/ 
-Image Investigation # EXIF and metadata http://exif.regex.info/exif.cgi # Basics Forensics https://fotoforensics.com/ # Text recognition (OCR) https://www.newocr.com/ # Stolen Camera Finder https://www.stolencamerafinder.com/ # Hate Symbols Database https://www.</description>
+Reverse Image Search # Mutiple sources reverse image search https://www.duplichecker.com/reverse-image-search.php # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ # Dedicated to faces # Results are not free but previews are available (used then on traditionnal engines) https://pimeyes.com/en/# If the classical method doesn&amp;#39;t give any result, for example for a logo # You can try to calculate the file hash (VT, Powershell, CyberChef.</description>
     </item>
     
     <item>
@@ -77,8 +76,7 @@ Image Investigation # EXIF and metadata http://exif.regex.info/exif.cgi # Basics
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
       <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # Aerial pictures of building and monuments https://www.euroluftbild.de/en/ https://www.euroluftbild.de/ 
-Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.org # Sun position over time https://www.suncalc.org/#/48.8376,2.3456,8/2020.05.08/12:42/1/3 
-Photo identification # Find photos taken by the same camera using serial number # We don&amp;#39;t know how files are processed/stored.</description>
+Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.org # Mappillary is also a great service providing tons of images from transports # (Cars, Train, etc) # Can be usefull to identify locations where there is no roads (ex : trains) https://www.</description>
     </item>
     
     <item>
@@ -88,7 +86,7 @@ Photo identification # Find photos taken by the same camera using serial number 
       
       <guid>/open-source-intelligence-osint/human-recon/misc/</guid>
       <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
-SocialBlade # Socialblade is an online tool where you can see and analyze Youtube, Instagram, Twitch, Twitter or Dailymotion accounts https://socialblade.</description>
+Skype # Online source tool used to find and get information about Skype accounts https://www.</description>
     </item>
     
   </channel>

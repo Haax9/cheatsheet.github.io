@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-07-07T18:40:39 CEST">
+<meta name="revised" content="2020-08-09T12:32:59 CEST">
 <title>Picture Investigation :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1745,7 +1745,10 @@ https://www.flickr.com/map</code></pre></div>
 <p><br/></p>
 
 <h3 id="reverse-image-search">Reverse Image Search</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># General Engines</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Mutiple sources reverse image search</span>
+https://www.duplichecker.com/reverse-image-search.php
+
+<span style="color:#75715e"># General Engines</span>
 https://images.google.com/
 https://tineye.com/
 https://www.bing.com/?scope<span style="color:#f92672">=</span>images<span style="color:#111">&amp;</span><span style="color:#111">nr</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#111">&amp;</span><span style="color:#111">FORM</span><span style="color:#f92672">=</span>NOFORM
@@ -1758,7 +1761,10 @@ http://images.baidu.com/
 
 <span style="color:#75715e"># Dedicated to faces</span>
 <span style="color:#75715e"># Results are not free but previews are available (used then on traditionnal engines)</span>
-https://pimeyes.com/en/</code></pre></div>
+https://pimeyes.com/en/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If the classical method doesn&#39;t give any result, for example for a logo</span>
+<span style="color:#75715e"># You can try to calculate the file hash (VT, Powershell, CyberChef...)</span>
+<span style="color:#75715e"># And then search for this hash on urlscan.io</span>
+Get-FileHash -Algorithm SHA256 -Path <span style="color:#d88200">&#34;file path&#34;</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="image-investigation">Image Investigation</h3>
