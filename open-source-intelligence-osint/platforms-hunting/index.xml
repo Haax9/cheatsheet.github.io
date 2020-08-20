@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/google/</guid>
-      <description>Linking to Google Account https://subfn.net/2020/06/15/ga-osint-trick/ # Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account # Log into Google Analytics # Navigate to Admin &amp;gt; Account User Management &amp;gt; Add user # At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed</description>
+      <description>Linking to Google Account https://medium.com/week-in-osint/keeping-a-grip-on-googleids-506814ae098b https://subfn.net/2020/06/15/ga-osint-trick/ # Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account # Log into Google Analytics # Navigate to Admin &amp;gt; Account User Management &amp;gt; Add user # At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed# Automated tool for identifying Google account, getting ID and relations on Google services # Works like a charm (from https://epieos.</description>
     </item>
     
     <item>

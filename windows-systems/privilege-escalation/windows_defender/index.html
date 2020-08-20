@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-08-09T12:33:00 CEST">
+<meta name="revised" content="2020-08-20T15:40:56 CEST">
 <title>Windows Defender :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -77,6 +77,13 @@
         <div>
           <a href="/open-source-intelligence-osint/tools-and-methodology/methodology/">
             Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/opsec/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/opsec/">
+            OPSEC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -247,13 +254,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/misc/url_shortener/">
             URL Shortener
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/opsec/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/misc/opsec/">
-            OPSEC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1736,7 +1736,10 @@
     
     
     
-    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1)</span>
+    
+
+<h3 id="start-stop">Start/Stop</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1)</span>
 powershell -ExecutionPolicy ByPass -command <span style="color:#d88200">&#34;&amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&#34;</span>
 
 <span style="color:#75715e"># Stop Windows Defender using cmd.exe</span>
@@ -1750,6 +1753,12 @@ netsh advfirewall <span style="color:#111">set</span> allprofiles state off
 
 <span style="color:#75715e"># Totally disable the firewall</span>
 netsh firewall <span style="color:#111">set</span> opmode disable</code></pre></div>
+<p><br/></p>
+
+<h3 id="bypass">Bypass</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SigThief allow to sign a payload binary</span>
+<span style="color:#75715e"># by stealing a legit signature</span>
+https://github.com/secretsquirrel/SigThief</code></pre></div>
 
     
     

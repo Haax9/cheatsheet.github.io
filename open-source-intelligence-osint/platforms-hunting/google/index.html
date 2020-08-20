@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-08-09T12:32:59 CEST">
+<meta name="revised" content="2020-08-20T15:40:56 CEST">
 <title>Google :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -78,6 +78,13 @@
         <div>
           <a href="/open-source-intelligence-osint/tools-and-methodology/methodology/">
             Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/opsec/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/opsec/">
+            OPSEC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -248,13 +255,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/misc/url_shortener/">
             URL Shortener
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/opsec/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/misc/opsec/">
-            OPSEC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1744,13 +1744,16 @@
     
 
 <h3 id="linking-to-google-account">Linking to Google Account</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://subfn.net/2020/06/15/ga-osint-trick/
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://medium.com/week-in-osint/keeping-a-grip-on-googleids-506814ae098b
+https://subfn.net/2020/06/15/ga-osint-trick/
 
 <span style="color:#75715e"># Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account</span>
 
 <span style="color:#75715e"># Log into Google Analytics</span>
 <span style="color:#75715e"># Navigate to Admin &gt; Account User Management &gt; Add user</span>
-<span style="color:#75715e"># At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed</span></code></pre></div>
+<span style="color:#75715e"># At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Automated tool for identifying Google account, getting ID and relations on Google services</span>
+<span style="color:#75715e"># Works like a charm (from https://epieos.com/)</span>
+https://tools.epieos.com/google-account.php</code></pre></div>
 <p><br/></p>
 
 <h3 id="get-userids">Get UserIDs</h3>

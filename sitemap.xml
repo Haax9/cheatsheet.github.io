@@ -195,6 +195,10 @@
   </url>
   
   <url>
+    <loc>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/technical-recon/domains_urls/</loc>
   </url>
   
@@ -220,10 +224,6 @@
   
   <url>
     <loc>/web-pentest/files-and-files-inclusions/file_upload/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</loc>
   </url>
   
   <url>
@@ -259,7 +259,7 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/technical-recon/misc/opsec/</loc>
+    <loc>/open-source-intelligence-osint/tools-and-methodology/opsec/</loc>
   </url>
   
   <url>
@@ -323,10 +323,6 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/tools-and-methodology/buscador/</loc>
-  </url>
-  
-  <url>
     <loc>/web-pentest/content-management-system-cms/</loc>
   </url>
   
@@ -343,11 +339,11 @@
   </url>
   
   <url>
-    <loc>/windows-systems/post-exploitation-techniques/dc_shadow/</loc>
+    <loc>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</loc>
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</loc>
+    <loc>/windows-systems/post-exploitation-techniques/dc_shadow/</loc>
   </url>
   
   <url>
@@ -364,6 +360,10 @@
   
   <url>
     <loc>/linux-systems/file_transfer/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</loc>
   </url>
   
   <url>
@@ -459,11 +459,11 @@
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/company_investigations/</loc>
+    <loc>/open-source-intelligence-osint/tools-and-methodology/buscador/</loc>
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</loc>
+    <loc>/open-source-intelligence-osint/company_investigations/</loc>
   </url>
   
   <url>
@@ -500,6 +500,10 @@
   
   <url>
     <loc>/web-pentest/content-management-system-cms/magento/</loc>
+  </url>
+  
+  <url>
+    <loc>/open-source-intelligence-osint/technical-recon/misc/others/</loc>
   </url>
   
   <url>
@@ -600,10 +604,6 @@
   
   <url>
     <loc>/windows-systems/exploitation/kerberos/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/technical-recon/misc/others/</loc>
   </url>
   
   <url>

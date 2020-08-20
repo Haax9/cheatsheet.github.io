@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-08-09T12:32:59 CEST">
+<meta name="revised" content="2020-08-20T15:40:56 CEST">
 <title>Methodology :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -79,6 +79,13 @@
         <div>
           <a href="/open-source-intelligence-osint/tools-and-methodology/methodology/">
             Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/opsec/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/opsec/">
+            OPSEC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -249,13 +256,6 @@
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/misc/url_shortener/">
             URL Shortener
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/opsec/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/misc/opsec/">
-            OPSEC
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1663,7 @@
   - 
    Tools &amp; Methodology</option> 
       <option value="/open-source-intelligence-osint/tools-and-methodology/methodology/"  selected>-- Methodology</option>
+      <option value="/open-source-intelligence-osint/tools-and-methodology/opsec/" >-- OPSEC</option>
       <option value="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/" >-- Firefox addons</option>
       <option value="/open-source-intelligence-osint/tools-and-methodology/buscador/" >-- Buscador</option>
     <option value="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/" >
@@ -1758,6 +1759,36 @@ shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-
 <span style="color:#ae81ff">5</span>. Who could I ask <span style="color:#00a8c8">for</span> input/advice?</code></pre></div>
 <p><br/></p>
 
+<h3 id="preserving-data-recover">Preserving data &amp; recover</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Great post, presenting why it&#39;s important and some tools</span>
+https://nixintel.info/osint/the-attrition-of-information-in-osint-why-acting-quickly-matters-and-how-to-recover-when-you-dont/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Preservation tools</span>
+
+<span style="color:#75715e"># Screenshots</span>
+<span style="color:#75715e"># --&gt; Fireshot (extension)</span>
+<span style="color:#75715e"># --&gt; Shutter (Linux)</span>
+<span style="color:#75715e"># --&gt; Snipping Tool (Windows)</span>
+
+<span style="color:#75715e"># Saving a web page</span>
+https://tweetbeaver.com/ <span style="color:#75715e"># Twitter</span>
+https://pypi.org/project/twint/ <span style="color:#75715e"># Twitter</span>
+
+https://archive.is/ 
+https://www.httrack.com/page/1/en/index.html
+
+https://mrs0m30n3.github.io/youtube-dl-gui/ <span style="color:#75715e"># Not only Youtube</span>
+
+<span style="color:#75715e"># Complete Browser</span>
+http://osirtbrowser.com/?LMCL<span style="color:#f92672">=</span>J79jsX</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Recovery Tools</span>
+
+<span style="color:#75715e"># Google Cache</span>
+<span style="color:#75715e"># Time parameter search can also filter</span>
+
+<span style="color:#75715e"># Wayback Machine</span>
+https://archive.org/
+
+<span style="color:#75715e"># Reddit</span>
+https://www.resavr.com/
+https://snew.notabug.io/r/all</code></pre></div>
 <h3 id="workflow">Workflow</h3>
 
 <h4 id="domain">Domain</h4>
@@ -1794,7 +1825,7 @@ https://twitter.com/sinwindie/status/1251320697370095617?s<span style="color:#f9
         <div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/open-source-intelligence-osint/tools-and-methodology/" title="Tools &amp; Methodology"> <i class="fa fa-chevron-left"></i><label>Tools &amp; Methodology</label></a>
-    <a class="nav nav-next" href="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/" title="Firefox addons" style="margin-right: 0px;"><label>Firefox addons</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/open-source-intelligence-osint/tools-and-methodology/opsec/" title="OPSEC" style="margin-right: 0px;"><label>OPSEC</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

@@ -20,17 +20,6 @@
     </item>
     
     <item>
-      <title>OPSEC</title>
-      <link>/open-source-intelligence-osint/technical-recon/misc/opsec/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/misc/opsec/</guid>
-      <description>[WIP]
-Technical OPSEC https://amiunique.org/fp https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ https://www.privacytools.io/providers/email/ 
-Human Related OPSEC # Image Cloaking for Personal Privacy # Fawkes takes your personal images and makes tiny, pixel-level changes that are invisible to the human eye # if and when someone tries to use these photos to build a facial recognition model # &amp;#34;cloaked&amp;#34; images will teach the model an highly distorted version of what makes you look like you http://sandlab.</description>
-    </item>
-    
-    <item>
       <title>Darkweb Investigation</title>
       <link>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

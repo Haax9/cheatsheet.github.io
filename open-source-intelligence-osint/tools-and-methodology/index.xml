@@ -20,6 +20,17 @@
     </item>
     
     <item>
+      <title>OPSEC</title>
+      <link>/open-source-intelligence-osint/tools-and-methodology/opsec/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/tools-and-methodology/opsec/</guid>
+      <description>[WIP]
+Technical OPSEC # Simple data analysis (headers, OS...) https://amiunique.org/fp # Creating profile pictures for sock # Mixing two pictures https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ # Email providers comparison https://www.privacytools.io/providers/email/ # Compilation of great ressources https://shutuptrackers.com/index.php # Windows 10 Tracking https://github.com/10se1ucgo/DisableWinTracking 
+Human Related OPSEC # Image Cloaking for Personal Privacy # Fawkes takes your personal images and makes tiny, pixel-level changes that are invisible to the human eye # if and when someone tries to use these photos to build a facial recognition model # &amp;#34;cloaked&amp;#34; images will teach the model an highly distorted version of what makes you look like you http://sandlab.</description>
+    </item>
+    
+    <item>
       <title>Firefox addons</title>
       <link>/open-source-intelligence-osint/tools-and-methodology/firefox_addons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
