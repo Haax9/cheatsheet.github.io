@@ -41,6 +41,17 @@ Symbolic link attack # base program int main(void) { system(&amp;#34;ls /path/to
     </item>
     
     <item>
+      <title>BurpSuite</title>
+      <link>/web-pentest/tools/burpsuite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/tools/burpsuite/</guid>
+      <description>WORK IN PROGRESS 
+Notes / Tips # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Firefox sends an HTTP GET every 60s to hxxp://detectportal.firefox.com. To avoid : about:config &amp;gt; network.captive-portal-service.enabled ==&amp;gt; false 
+Modules / Addons # Autorize # For Each Request you do, it will send an equal request # But with changed cookies of the session or any additional header used for authorization.</description>
+    </item>
+    
+    <item>
       <title>Content Discovery</title>
       <link>/web-pentest/resources-discovery/content_discovery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -133,7 +144,7 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
-      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries # Using a premium account, you can search by image https://images.</description>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries # Using a premium account, you can search by image https://images.</description>
     </item>
     
     <item>
@@ -151,7 +162,7 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/company_investigations/company_informations/</guid>
-      <description>Company Informations General # Find informations about a company https://opencorporates.com # Giant database projects containing many informations # Can be about leaks, offshore companies leaks etc https://aleph.occrp.org/ https://offshoreleaks.icij.org/ # Notices / Gazettes for EU companies http://opengazettes.com/ # Societe.ninja can give great informations about a company https://societe.ninja/ Financial &amp;amp; Administrative # Legal and Financial informations (might not be free for full informations) https://www.societe.com/ https://www.infogreffe.fr/ https://www.crunchbase.com https://fr.kompass.com/ # European Justice Portal # Informations are not free https://e-justice.</description>
+      <description>Company Informations General # Find informations about a company https://opencorporates.com # Giant database projects containing many informations # Can be about leaks, offshore companies leaks etc https://aleph.occrp.org/ https://offshoreleaks.icij.org/ # Notices / Gazettes for EU companies http://opengazettes.com/ # Societe.ninja can give great informations about a company https://societe.ninja/ # Pappers.com is dedicated to French companies https://www.pappers.fr/ Financial &amp;amp; Administrative # Legal and Financial informations (might not be free for full informations) https://www.</description>
     </item>
     
     <item>
@@ -430,7 +441,8 @@ enum4linux # You can use enum4linux to enumerate domain users # You can try anon
       
       <guid>/web-pentest/content-management-system-cms/drupal/</guid>
       <description>https://github.com/gfoss/attacking-drupal
-Droopescan # Not Drupal specific but can work too (Wordpress, SilverStripe, Joomla, Moodle, Drupal) droopescan --help droopescan scan --help# Target Identification droopescan scan drupal -u example.org droopescan scan drupal -U list_of_urls.txt # You can also ommit the drupal argument, so it will trigger the cms identification droopescan scan -u example.org droopescan scan -U list_of_urls.txt# Scan types # By default, most of the time, 4 threads droopescan scan drupal -u example.</description>
+Tips &amp;amp; Tricks # Manual user enumeration # Step 1 : check for existing user # 403 --&amp;gt; User exist # 404 --&amp;gt; User doesn&amp;#39;t exist https://www.site.com/user/x # Then you can get username https://www.site.com/reset/user/x/1/1 
+Droopescan # Not Drupal specific but can work too (Wordpress, SilverStripe, Joomla, Moodle, Drupal) droopescan --help droopescan scan --help# Target Identification droopescan scan drupal -u example.org droopescan scan drupal -U list_of_urls.txt # You can also ommit the drupal argument, so it will trigger the cms identification droopescan scan -u example.</description>
     </item>
     
     <item>
@@ -439,8 +451,8 @@ Droopescan # Not Drupal specific but can work too (Wordpress, SilverStripe, Joom
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/email/</guid>
-      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # Omail can find domain syntax as well as related e-mails addresses https://omail.io/ # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.cz/ 
-The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results # TheHarvester received a great # Following modules need API key (api-keys.</description>
+      <description>Tips &amp;amp; Tricks https://twitter.com/henkvaness/status/1308417260848062464 # Using Google Dorks you can search for e-mails like this # It can helps in identifying one target specific e-mail address # &amp;#34;john doe &amp;#34; &amp;#34;john * * com&amp;#34; 
+Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # Omail can find domain syntax as well as related e-mails addresses https://omail.io/ # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.</description>
     </item>
     
     <item>
@@ -578,6 +590,16 @@ Human Related OPSEC # Image Cloaking for Personal Privacy # Fawkes takes your pe
       <guid>/windows-systems/local-and-physical/physical_access/</guid>
       <description>Live boot from Kali # - USB Live Kali # - Mount the Windows system disk # - Get SAM and SYSTEM files from &amp;#34;C:\Windows\System32\config\&amp;#34; # - Extract hashes → samdump2 SYSTEM SAM &amp;gt; hash.txt # - Crack hashes using JTR (john -format=NT hash.txt) or Hashcat # - You may have to use “bkhive&amp;#34; on the SYSTEM file first # - John format can also be NT2 
 Utilman.exe attack # You can access a SYSTEM cmd shell if you have access to the filesystem # utilman.</description>
+    </item>
+    
+    <item>
+      <title>Postman</title>
+      <link>/web-pentest/tools/postman/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/tools/postman/</guid>
+      <description>https://www.guru99.com/postman-tutorial.html https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5123020-testez-votre-api-grace-a-postman https://www.toolsqa.com/postman-tutorial/ https://amethyste16.wordpress.com/2016/02/24/tutoriel-postman/ 
+User Interface Header # Import --&amp;gt; Used to import collection or environment. # Runner --&amp;gt; Automation tests can be executed through the Collection Runner. # Workspace --&amp;gt; You can divide work using workspaces Sidebar # History --&amp;gt; Past requests that you have sent will be displayed in History. # This makes it easy to track actions that you have done. # Organize --&amp;gt; your test suite by creating collections.</description>
     </item>
     
     <item>
@@ -938,6 +960,15 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
     </item>
     
     <item>
+      <title>ffuf</title>
+      <link>/web-pentest/tools/ffuf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/tools/ffuf/</guid>
+      <description>Resources / Notes # A fast web fuzzer written in Go. https://github.com/ffuf/ffuf Typical commands &amp;amp; Usage # Directory discovery ffuf -w /path/to/wordlist -u https://target/FUZZ # Adding classical header (some WAF bypass) ffuf -c -w &amp;#34;/opt/host/main.txt:FILE&amp;#34; -H &amp;#34;X-Originating-IP: 127.0.0.1, X-Forwarded-For: 127.0.0.1, X-Remote-IP: 127.0.0.1, X-Remote-Addr: 127.0.0.1, X-Client-IP: 127.0.0.1&amp;#34; -fs 5682,0 -u https://target/FUZZ # match all responses but filter out those with content-size 42 ffuf -w wordlist.txt -u https://example.org/FUZZ -mc all -fs 42 -c -v # Fuzz Host-header, match HTTP 200 responses.</description>
+    </item>
+    
+    <item>
       <title>53 - DNS</title>
       <link>/network/services-enumeration/53_dns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -972,8 +1003,8 @@ Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Fir
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/facebook/</guid>
-      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ 
-Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.facebook.com/login/identify # Search photo by ID https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE # You can search for car using plate number # For example ST-597-NS will give you car photos identified with relating plate number</description>
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ # You can search for Facebook videos indexed on Google &amp;#34;topic&amp;#34; site:facebok.com!/*/videos # Source + script to do that https://twitter.com/lorenzoromani/status/1301843624230035456?s=19 https://github.com/lorenzoromani1983/facebookTranscripts/blob/master/facebookTranscripts.py 
+Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.</description>
     </item>
     
     <item>
@@ -1401,7 +1432,7 @@ SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserve
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # Aerial pictures of building and monuments https://www.euroluftbild.de/en/ https://www.euroluftbild.de/ 
+      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ 
 Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.org # Mappillary is also a great service providing tons of images from transports # (Cars, Train, etc) # Can be usefull to identify locations where there is no roads (ex : trains) https://www.</description>
     </item>
     
@@ -1451,17 +1482,6 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
       <description>Resources https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93 https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765 https://github.com/smodnix/31-days-of-API-Security-Tips https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0 https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2 
 SOAP vs REST # REST uses: HTTP, JSON , URL and XML # SOAP uses: mostly HTTP and XML # SOAP can be more recommandded in terms of security, if you have to process critical data. 
 Checklist # Test tokens # Authentication token, JWT, Base64 encoded... # Input validation # All entry points (command injection, sql injections, html...) # Cookies, Headers ?</description>
-    </item>
-    
-    <item>
-      <title>BurpSuite</title>
-      <link>/web-pentest/tools/burpsuite/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-pentest/tools/burpsuite/</guid>
-      <description>WORK IN PROGRESS 
-Notes / Tips # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Firefox sends an HTTP GET every 60s to hxxp://detectportal.firefox.com. To avoid : about:config &amp;gt; network.captive-portal-service.enabled ==&amp;gt; false 
-Modules / Addons # Autorize # For Each Request you do, it will send an equal request # But with changed cookies of the session or any additional header used for authorization.</description>
     </item>
     
     <item>
@@ -1558,16 +1578,6 @@ Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxx
       
       <guid>/windows-systems/exploitation/ipv6/</guid>
       <description>Mitm6 # Resources https://github.com/fox-it/mitm6 https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/ https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/ https://systemadminspro.com/domain-attacks-getting-an-account/ https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/ https://blog.vonahi.io/taking-over-ipv6-networks/ https://intrinium.com/mitm6-pen-testing/ # mitm6 is a pentesting tool that exploits the default configuration of Windows to take over the default DNS server. # It does this by replying to DHCPv6 messages, providing victims with a link-local # IPv6 address and setting the attackers host as default DNS server # When using mitm6, it issues a DHCPv6 lease to clients that last for a period of 300 seconds (or 5 minutes) # Due to this, it&amp;#39;s possible that several DNS queries will actually fail, resulting in clients # not being able to access services that rely on DNS names.</description>
-    </item>
-    
-    <item>
-      <title>Postman</title>
-      <link>/web-pentest/tools/postman/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/web-pentest/tools/postman/</guid>
-      <description>https://www.guru99.com/postman-tutorial.html https://openclassrooms.com/fr/courses/4668056-construisez-des-microservices/5123020-testez-votre-api-grace-a-postman https://www.toolsqa.com/postman-tutorial/ https://amethyste16.wordpress.com/2016/02/24/tutoriel-postman/ 
-User Interface Header # Import --&amp;gt; Used to import collection or environment. # Runner --&amp;gt; Automation tests can be executed through the Collection Runner. # Workspace --&amp;gt; You can divide work using workspaces Sidebar # History --&amp;gt; Past requests that you have sent will be displayed in History. # This makes it easy to track actions that you have done. # Organize --&amp;gt; your test suite by creating collections.</description>
     </item>
     
     <item>

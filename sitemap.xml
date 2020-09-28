@@ -19,6 +19,10 @@
   </url>
   
   <url>
+    <loc>/web-pentest/tools/burpsuite/</loc>
+  </url>
+  
+  <url>
     <loc>/web-pentest/resources-discovery/content_discovery/</loc>
   </url>
   
@@ -283,6 +287,10 @@
   </url>
   
   <url>
+    <loc>/web-pentest/tools/postman/</loc>
+  </url>
+  
+  <url>
     <loc>/linux-systems/programing-languages/python/</loc>
   </url>
   
@@ -452,6 +460,10 @@
   
   <url>
     <loc>/shells-methods/webshell/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-pentest/tools/ffuf/</loc>
   </url>
   
   <url>
@@ -731,10 +743,6 @@
   </url>
   
   <url>
-    <loc>/web-pentest/tools/burpsuite/</loc>
-  </url>
-  
-  <url>
     <loc>/windows-systems/exploitation/iis/</loc>
   </url>
   
@@ -780,10 +788,6 @@
   
   <url>
     <loc>/phishing-redteam-and-se/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-pentest/tools/postman/</loc>
   </url>
   
   <url>

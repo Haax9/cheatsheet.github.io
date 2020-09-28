@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-08-20T15:40:56 CEST">
+<meta name="revised" content="2020-09-28T18:26:38 CEST">
 <title>Google :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -796,6 +796,13 @@
         <div>
           <a href="/web-pentest/tools/postman/">
             Postman
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/tools/ffuf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/ffuf/">
+            ffuf
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1833,7 +1840,12 @@ https://www.google.com/maps/contrib/<span style="color:#f92672">{</span>userID<s
 <span style="color:#75715e"># But the users reviews can be accessed via the option on the left.</span>
 <span style="color:#75715e"># You are still able to find out someones real name.</span></code></pre></div>
 <h5 id="youtube">Youtube</h5>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># YouTube channel</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Youtube ressources and tools</span>
+https://www.osintessentials.com/youtube
+
+<span style="color:#75715e"># Data can be different for different languages (descriptions...) and can be used to hide some infos</span>
+
+<span style="color:#75715e"># YouTube channel</span>
 <span style="color:#75715e"># Does not work with userID but accountName</span>
 <span style="color:#75715e"># Possible to have several channels/profiles, but only one account</span>
 https://www.youtube.com/feeds/videos.xml?user<span style="color:#f92672">={</span>accountName<span style="color:#f92672">}</span>

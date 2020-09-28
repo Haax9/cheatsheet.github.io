@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-08-20T15:40:56 CEST">
+<meta name="revised" content="2020-09-28T18:26:38 CEST">
 <title>Domain &amp; URLs :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -675,73 +675,24 @@
       <a href="/web-pentest/injections/client-side-injections/">Client Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/windows-systems/privilege-escalation/automated_recon/" class="dd-item">
+      <li data-nav-id="/web-pentest/injections/client-side-injections/xss/" class="dd-item">
         <div>
-          <a href="/windows-systems/privilege-escalation/automated_recon/">
-            Automated Recon
+          <a href="/web-pentest/injections/client-side-injections/xss/">
+            XSS Injections
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/tricks/" class="dd-item">
+      <li data-nav-id="/web-pentest/injections/client-side-injections/csrf/" class="dd-item">
         <div>
-          <a href="/windows-systems/privilege-escalation/tricks/">
-            Tricks
+          <a href="/web-pentest/injections/client-side-injections/csrf/">
+            CSRF Injections
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/services_scheduled_tasks/" class="dd-item">
+      <li data-nav-id="/web-pentest/injections/client-side-injections/misc_others/" class="dd-item">
         <div>
-          <a href="/windows-systems/privilege-escalation/services_scheduled_tasks/">
-            Services &amp; Scheduled Tasks
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
-        <div>
-          <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/admin_processes/" class="dd-item">
-        <div>
-          <a href="/windows-systems/privilege-escalation/admin_processes/">
-            Admin and Processes
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/dnsadmins_group/" class="dd-item">
-        <div>
-          <a href="/windows-systems/privilege-escalation/dnsadmins_group/">
-            DNSadmins group
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/delegations/" class="dd-item">
-        <div>
-          <a href="/windows-systems/privilege-escalation/delegations/">
-            Active Directory Delegations
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/privexchange/" class="dd-item">
-        <div>
-          <a href="/windows-systems/privilege-escalation/privexchange/">
-            PrivExchange
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/windows_defender/" class="dd-item">
-        <div>
-          <a href="/windows-systems/privilege-escalation/windows_defender/">
-            Windows Defender
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/windows-systems/privilege-escalation/azure_ad/" class="dd-item">
-        <div>
-          <a href="/windows-systems/privilege-escalation/azure_ad/">
-            Azure AD
+          <a href="/web-pentest/injections/client-side-injections/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -845,6 +796,13 @@
         <div>
           <a href="/web-pentest/tools/postman/">
             Postman
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/tools/ffuf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/ffuf/">
+            ffuf
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1858,6 +1816,29 @@ python3 jsearch.py -u https://google.com -n google</code></pre></div>
 <span style="color:#00a8c8">for</span> i in <span style="color:#00a8c8">$(</span>cat urls_or_subdomains.txt<span style="color:#00a8c8">)</span><span style="color:#111">;</span> <span style="color:#00a8c8">do</span> <span style="color:#111">echo</span> <span style="color:#d88200">&#34;</span><span style="color:#111">$i</span><span style="color:#d88200"> | </span><span style="color:#00a8c8">$(</span>curl --connect-timeout <span style="color:#ae81ff">3</span> <span style="color:#111">$i</span> -s -v <span style="color:#ae81ff">2</span>&gt;<span style="color:#111">&amp;</span><span style="color:#ae81ff">1</span> <span style="color:#111">|</span> grep -Poz <span style="color:#d88200">&#39;((?&lt;=title&gt;)(.*)(?=&lt;/title&gt;)|(?&lt;=Location:)(.*)/|(Could not resolve host:.*))&#39;</span> <span style="color:#111">|</span> tr -d <span style="color:#d88200">&#39;\0&#39;</span> <span style="color:#111">|</span> sed -r <span style="color:#d88200">&#39;s/(https?:\/\/.*\/?)(.*)(301 Moved Permanently)/\3 \2\1/g&#39;</span> <span style="color:#00a8c8">)</span><span style="color:#d88200">&#34;</span><span style="color:#111">;</span> <span style="color:#00a8c8">done</span></code></pre></div>
 <p><br/></p>
 
+<h3 id="investigate-a-website-crosspost-methodology">Investigate a website (crosspost methodology)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Thread by Aware Online about some website investigation methodology</span>
+https://twitter.com/aware_online/status/1308312883248467975
+
+<span style="color:#75715e"># 1 - Tactical informations</span>
+<span style="color:#75715e"># 2 - WHOIS</span>
+<span style="color:#75715e"># 3 - Archives</span>
+<span style="color:#75715e"># 4 - Text</span>
+<span style="color:#75715e"># 5 - Reverse Image Search</span>
+<span style="color:#75715e"># 6 - Images and EXIF data</span>
+<span style="color:#75715e"># 7 - Source code</span>
+<span style="color:#75715e"># 8 - Others TLD</span>
+<span style="color:#75715e"># 9 - Mentions of target</span>
+<span style="color:#75715e"># 10 - Check infos via RSS</span>
+<span style="color:#75715e"># 11 - SSL certificates</span>
+<span style="color:#75715e"># 12 - Robots/Sitemap</span>
+<span style="color:#75715e"># 13 - Port scans</span>
+<span style="color:#75715e"># 14 - Reverse IP lookup</span>
+<span style="color:#75715e"># 15 - Reverse DNS lookup</span>
+<span style="color:#75715e"># 16 - Monitoring changes</span>
+<span style="color:#75715e"># 17 - Malware check</span></code></pre></div>
+<p><br/></p>
+
 <h3 id="r3con1z3r-https-github-com-abdulgaphy-r3con1z3r">r3con1z3r (<a href="https://github.com/abdulgaphy/r3con1z3r">https://github.com/abdulgaphy/r3con1z3r</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># OSINT Tool used to perform some OSINT tests and generates a report</span>
 <span style="color:#75715e"># HTTP Headers, Whois, Traceroute, DNS, nmap, website on the same server, Reverse IP, Page Links</span>
@@ -1865,11 +1846,19 @@ python3 jsearch.py -u https://google.com -n google</code></pre></div>
 ./r3con1z3r.py google.com</code></pre></div>
 <p><br/></p>
 
-<h3 id="domain-spoofing">Domain spoofing</h3>
+<h3 id="domain-spoofing-and-typosquatting">Domain spoofing and typosquatting</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tools like spoofcheck (https://github.com/BishopFox/spoofcheck)</span> 
 <span style="color:#75715e"># It checks SPF and DMARC records for weak configuration that allow domain spoofing</span>
 <span style="color:#75715e"># Domain is spoofable if lack of an SPF or DMARC record, SPF record never specifies ~all or -all, DMARC policy is set to p=none or is nonexistent</span>
-./spoofcheck.py <span style="color:#f92672">[</span>DOMAIN<span style="color:#f92672">]</span></code></pre></div>
+./spoofcheck.py <span style="color:#f92672">[</span>DOMAIN<span style="color:#f92672">]</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># urlcrazy allow to generate typo for a given domain and will check different elements</span>
+<span style="color:#75715e"># such as IP, country, Nameserver and MX</span>
+https://github.com/urbanadventurer/urlcrazy/
+
+<span style="color:#75715e"># Default search</span>
+$ urlcrazy domain.com
+
+<span style="color:#75715e"># You can also search with popularity estimate</span>
+$ urlcrazy -p domain.com</code></pre></div>
 <p><br/></p>
 
 <h3 id="more-information-gathering">More Information Gathering</h3>

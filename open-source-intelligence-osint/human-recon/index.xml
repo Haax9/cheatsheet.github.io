@@ -26,8 +26,8 @@ Searching People # Very good and accurate tool # You can search by name, reverse
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/email/</guid>
-      <description>Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # Omail can find domain syntax as well as related e-mails addresses https://omail.io/ # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.cz/ 
-The Harvester # theHarvester is a famous OSINT and scrapping tool for passiv recon on targets # Using API keys will highly increase results # TheHarvester received a great # Following modules need API key (api-keys.</description>
+      <description>Tips &amp;amp; Tricks https://twitter.com/henkvaness/status/1308417260848062464 # Using Google Dorks you can search for e-mails like this # It can helps in identifying one target specific e-mail address # &amp;#34;john doe &amp;#34; &amp;#34;john * * com&amp;#34; 
+Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # Omail can find domain syntax as well as related e-mails addresses https://omail.io/ # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.</description>
     </item>
     
     <item>
@@ -75,7 +75,7 @@ Reverse Image Search # Mutiple sources reverse image search https://www.dupliche
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # Aerial pictures of building and monuments https://www.euroluftbild.de/en/ https://www.euroluftbild.de/ 
+      <description># Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ 
 Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.org # Mappillary is also a great service providing tons of images from transports # (Cars, Train, etc) # Can be usefull to identify locations where there is no roads (ex : trains) https://www.</description>
     </item>
     
