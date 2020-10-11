@@ -17,7 +17,7 @@
       
       <guid>/linux-systems/tricks/</guid>
       <description>[WIP]
-# If you need to kill a specific process using a given port sudo fuser -k 445/tcp</description>
+# If you need to kill a specific process using a given port sudo fuser -k 445/tcp# You can use the following trick to easy navigate and select paths or others args # $_ takes the last argument of the last simplec command executed cd $_ # For example mkdir my-folder &amp;amp;&amp;amp; cd $_# You can use xclip to automate clipping # Can be usefull for long outputs (enum4linux, privcheck.</description>
     </item>
     
     <item>

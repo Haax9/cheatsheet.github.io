@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-09-28T18:26:38 CEST">
+<meta name="revised" content="2020-10-11T16:30:26 CEST">
 <title>Global Tricks (sysadmin) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1727,7 +1727,18 @@
     
     <p>[WIP]</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you need to kill a specific process using a given port</span>
-sudo fuser -k <span style="color:#ae81ff">445</span>/tcp</code></pre></div>
+sudo fuser -k <span style="color:#ae81ff">445</span>/tcp</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can use the following trick to easy navigate and select paths or others args</span>
+<span style="color:#75715e"># $_ takes the last argument of the last simplec command executed</span>
+<span style="color:#111">cd</span> <span style="color:#111">$_</span> 
+
+<span style="color:#75715e"># For example</span>
+mkdir my-folder <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">cd</span> <span style="color:#111">$_</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can use xclip to automate clipping</span>
+<span style="color:#75715e"># Can be usefull for long outputs (enum4linux, privcheck...)</span>
+cat /etc/resolv.conf <span style="color:#111">|</span> xclip -sel clip
+
+<span style="color:#75715e"># You can even create aliases</span>
+<span style="color:#111">alias</span> <span style="color:#111">toclip</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;xclip -sel clip&#34;</span>
+cat /etc/resolv.conf <span style="color:#111">|</span> toclip</code></pre></div>
 
     
     

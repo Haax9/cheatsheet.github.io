@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-09-28T18:26:38 CEST">
+<meta name="revised" content="2020-10-11T16:30:26 CEST">
 <title>Domain Recon :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1763,7 +1763,10 @@ rpcclient $&gt; getusrdompwinfo 0x42</code></pre></div>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can use enum4linux to enumerate domain users</span>
 <span style="color:#75715e"># You can try anonymous binding</span>
 sudo enum4linux domaine.fr
-./enum4linux.pl -R <span style="color:#ae81ff">1090</span>-1200</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># enum4linux-ng is a rewrite of the official tool (python3)</span>
+./enum4linux.pl -R <span style="color:#ae81ff">1090</span>-1200
+
+<span style="color:#75715e"># When using authenticated users, you need to provide options for enumeration</span>
+$ enum4linux -a -u <span style="color:#d88200">&#34;DOMAIN\\user&#34;</span> -p <span style="color:#d88200">&#34;pass&#34;</span> xx.xx.xx.xx</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># enum4linux-ng is a rewrite of the official tool (python3)</span>
 <span style="color:#75715e"># adding some features like colors and parsing</span>
 https://github.com/cddmp/enum4linux-ng</code></pre></div>
 <p><br/></p>
@@ -1820,7 +1823,12 @@ smb: &gt; mget *</code></pre></div>
 <h4 id="sysvol-ms14-025">SYSVOL &amp; MS14-025</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can browse SMB share using smbclient</span>
 <span style="color:#75715e"># The SYSVOL share contains GPO, you can look for a MS14-025</span>
-smbclient -U user //10.34.67.4/SYSVOL</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># MS14-025</span>
+smbclient -U user //10.34.67.4/SYSVOL
+
+<span style="color:#75715e"># Instead of remotely connecting to SYSVOL and manually search</span>
+<span style="color:#75715e"># You can mount it locally and grep for informations</span>
+<span style="color:#75715e"># FASTER!</span>
+sudo mount -t cifs -o <span style="color:#111">username</span><span style="color:#f92672">=</span>domainUser,domainn<span style="color:#f92672">=</span>domain.com //IP/SYSVOL</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># MS14-025</span>
 → smb: <span style="color:#8045ff">\N</span>ORZH.LAN<span style="color:#8045ff">\P</span>olicies<span style="color:#8045ff">\{</span>195471B6-B0C6-4AD2-9853-28E2B4E9CEF6<span style="color:#f92672">}</span><span style="color:#8045ff">\M</span>achine<span style="color:#8045ff">\P</span>references<span style="color:#8045ff">\G</span>roups<span style="color:#8045ff">\G</span>roups.xml
 → gpp-decrypt password</code></pre></div>
 <h4 id="crackmapexec-impacket">CrackMapExec &amp; Impacket</h4>

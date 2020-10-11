@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-09-28T18:26:38 CEST">
+<meta name="revised" content="2020-10-11T16:30:26 CEST">
 <title>OPSEC :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1773,6 +1773,20 @@ https://github.com/10se1ucgo/DisableWinTracking</code></pre></div>
 <span style="color:#75715e"># &#34;cloaked&#34; images will teach the model an highly distorted version of what makes you look like you</span>
 http://sandlab.cs.uchicago.edu/fawkes/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Lycamobile can be used to get a Burner SIM / phone number</span>
 https://www.lycamobile.fr/fr/</code></pre></div>
+<p><br/></p>
+
+<h3 id="watermarking-sent-documents">Watermarking sent documents</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/_trou_/status/1313951783182651393?s<span style="color:#f92672">=</span><span style="color:#ae81ff">19</span>
+
+<span style="color:#75715e"># Watermarking documents sent over the Internet can help for identification if they leak</span>
+<span style="color:#75715e"># You can watermark using the company and date for example</span>
+<span style="color:#75715e"># Not perfect as it can be removed !</span>
+
+<span style="color:#75715e"># In case of text watermarking it can be done through this</span>
+<span style="color:#75715e"># $1 = source file</span>
+<span style="color:#75715e"># $2 = watermark text</span>
+<span style="color:#75715e"># $3 = destination file</span>
+convert -density <span style="color:#ae81ff">150</span> -fill  <span style="color:#d88200">&#34;rgba(255,0,0,0.25)&#34;</span>  -gravity Center -pointsize <span style="color:#ae81ff">80</span> -draw <span style="color:#d88200">&#34;rotate -45 text 0,0 \&#34;</span><span style="color:#111">$2</span><span style="color:#d88200">\&#34;&#34;</span>  <span style="color:#d88200">&#34;</span><span style="color:#111">$1</span><span style="color:#d88200">&#34;</span> <span style="color:#d88200">&#34;</span><span style="color:#111">$3</span><span style="color:#d88200">&#34;</span></code></pre></div>
 
     
     

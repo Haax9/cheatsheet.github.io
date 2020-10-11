@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/no_credentials_recon/</guid>
-      <description>Identification # Passiv network listening to identify machines sudo netdiscover -p -i eth0 # You can find the domain big using dig dig -x IP # If the NAC is blocking, you can listen broadcast and collect MAC address # Use printer&amp;#39;s MAC address to bypass NAC 
-LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#39;re bad configured sudo responder -I eth0 -wFv # If you get hashes, will be necessary to crack them john --format=netntlmv2 --wordlist=&amp;#34;/usr/share/wordlists/rockyou.</description>
+      <description>Identification # Passiv network listening to identify machines # By default, it uses interactive mode (incompatible with clean output) # You can use the -P option to get off interactive sudo netdiscover -p -i eth0 sudo netdiscover -p -i eth0 -P # You can find the domain big using dig dig -x IP # If the NAC is blocking, you can listen broadcast and collect MAC address # Use printer&amp;#39;s MAC address to bypass NAC</description>
     </item>
     
     <item>

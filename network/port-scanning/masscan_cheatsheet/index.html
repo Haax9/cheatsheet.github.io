@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-09-28T18:26:38 CEST">
+<meta name="revised" content="2020-10-11T16:30:26 CEST">
 <title>Masscan Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1831,7 +1831,13 @@ masscan &lt;target1&gt; &lt;target2&gt; &lt;target3&gt; -p <span style="color:#a
 <span style="color:#75715e"># Medium speed</span>
 masscan &lt;target&gt; -p <span style="color:#ae81ff">21</span>,22,23,25,53,80,110,111,135,139,143,443,445,993,995,1723,3306,3389,5900,8080<span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span>--http-user-agent <span style="color:#d88200">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0&#34;</span><span style="color:#8045ff">\
-</span><span style="color:#8045ff"></span>--rate <span style="color:#ae81ff">100000</span> --oL <span style="color:#d88200">&#34;output.txt&#34;</span></code></pre></div>
+</span><span style="color:#8045ff"></span>--rate <span style="color:#ae81ff">100000</span> --oL <span style="color:#d88200">&#34;output.txt&#34;</span>
+
+<span style="color:#75715e"># In some cases, masscan can be better than nmap</span>
+<span style="color:#75715e"># For example, when searching for a big range on some ports only</span>
+<span style="color:#75715e"># (Internal pentest for example) you can do multiple iterations of scans</span>
+<span style="color:#75715e"># XML output are interesting for db_import in metasploit</span>
+sudo masscan &lt;target/16&gt; -p <span style="color:#ae81ff">22</span> --rate <span style="color:#ae81ff">2000</span> -oX output_port_22.xml</code></pre></div>
 
     
     
