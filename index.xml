@@ -171,8 +171,8 @@ Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/local-and-physical/local_recon_enumeration/</guid>
-      <description>Tips # Powershell whoami $env:UserName # Display hidden files dir /a # Recursive dir dir /s # If you can&amp;#39;t browse a folder because of space char # You can use an old trick cmd&amp;gt; cd progra~1 
-Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.txt type C:\Windows\System32\drivers\etc\hosts# OS Arch systeminfo wmic qfe # Envionment variables ? DC on the logon server ? set powershell&amp;gt; Get-ChildItem Env: | ft Key,Value # Other connecte drives ?</description>
+      <description>Tips # Powershell whoami $env:UserName # Display hidden files dir /a # Recursive dir dir /s # If you can&amp;#39;t browse a folder because of space char # You can use an old trick # It has to be 8 chars cmd&amp;gt; cd progra~1 cmd&amp;gt; cd progra~2 
+Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.txt type C:\Windows\System32\drivers\etc\hosts# OS Arch systeminfo wmic qfe # Envionment variables ? DC on the logon server ?</description>
     </item>
     
     <item>
@@ -303,12 +303,13 @@ Recon and Enumeration # Look for strange process ps aux # Look for setuid progra
     </item>
     
     <item>
-      <title>URL Shortener</title>
+      <title>URL Shortener &amp; Redirect</title>
       <link>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</guid>
-      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+</description>
+      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+ 
+Redirections # These tools allow you to check redirection and resolving path for a given target URL https://redirectdetective.com/ https://wheregoes.com # Lookyloo also gives this kind of information https://lookyloo.</description>
     </item>
     
     <item>

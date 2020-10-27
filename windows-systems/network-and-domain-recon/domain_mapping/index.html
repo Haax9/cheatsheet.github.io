@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-11T16:30:26 CEST">
+<meta name="revised" content="2020-10-27T18:01:17 CET">
 <title>Domain Mapping :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -253,7 +253,7 @@
       <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/url_shortener/" class="dd-item">
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/misc/url_shortener/">
-            URL Shortener
+            URL Shortener &amp; Redirect
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1823,7 +1823,13 @@ copy C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\x</
 https://github.com/hausec/Bloodhound-Custom-Queries
 
 <span style="color:#75715e"># Replace or update the following file</span>
-C:<span style="color:#8045ff">\U</span>sers<span style="color:#f92672">[</span>USERNAME<span style="color:#f92672">]</span><span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\R</span>oaming<span style="color:#8045ff">\B</span>loodHound<span style="color:#8045ff">\c</span>ustomqueries.json</code></pre></div>
+C:<span style="color:#8045ff">\U</span>sers<span style="color:#f92672">[</span>USERNAME<span style="color:#f92672">]</span><span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\R</span>oaming<span style="color:#8045ff">\B</span>loodHound<span style="color:#8045ff">\c</span>ustomqueries.json
+
+<span style="color:#75715e"># Automated, extensible toolset that runs cypher queries against Bloodhound&#39;s Neo4j backend and saves output to spreadsheets.</span>
+https://github.com/seajaysec/cypheroth/
+
+./cypheroth.sh -u neo4j -p BloodHound -d TESTLAB.LOCAL
+./cypheroth.sh -u neo4j -p hunter2 -d BigTech.corp -a <span style="color:#ae81ff">10</span>.0.0.1:7687 -t 5m -v true</code></pre></div>
 <p><br/></p>
 
 <h3 id="pingcastle">PingCastle</h3>

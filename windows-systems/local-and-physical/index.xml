@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/local-and-physical/local_recon_enumeration/</guid>
-      <description>Tips # Powershell whoami $env:UserName # Display hidden files dir /a # Recursive dir dir /s # If you can&amp;#39;t browse a folder because of space char # You can use an old trick cmd&amp;gt; cd progra~1 
-Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.txt type C:\Windows\System32\drivers\etc\hosts# OS Arch systeminfo wmic qfe # Envionment variables ? DC on the logon server ? set powershell&amp;gt; Get-ChildItem Env: | ft Key,Value # Other connecte drives ?</description>
+      <description>Tips # Powershell whoami $env:UserName # Display hidden files dir /a # Recursive dir dir /s # If you can&amp;#39;t browse a folder because of space char # You can use an old trick # It has to be 8 chars cmd&amp;gt; cd progra~1 cmd&amp;gt; cd progra~2 
+Enumeration - Host Information # Exact OS version type C:/Windows/system32/eula.txt type C:\Windows\System32\drivers\etc\hosts# OS Arch systeminfo wmic qfe # Envionment variables ? DC on the logon server ?</description>
     </item>
     
     <item>

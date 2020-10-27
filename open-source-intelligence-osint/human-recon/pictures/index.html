@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-11T16:30:26 CEST">
+<meta name="revised" content="2020-10-27T18:01:18 CET">
 <title>Picture Investigation :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -254,7 +254,7 @@
       <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/url_shortener/" class="dd-item">
         <div>
           <a href="/open-source-intelligence-osint/technical-recon/misc/url_shortener/">
-            URL Shortener
+            URL Shortener &amp; Redirect
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1775,7 +1775,9 @@ Get-FileHash -Algorithm SHA256 -Path <span style="color:#d88200">&#34;file path&
 <p><br/></p>
 
 <h3 id="image-investigation">Image Investigation</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># EXIF and metadata</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://medium.com/@raebaker/5-tools-to-detect-digitally-altered-images-719db4015b5d
+
+<span style="color:#75715e"># EXIF and metadata</span>
 http://exif.regex.info/exif.cgi
 
 <span style="color:#75715e"># Basics Forensics</span>
@@ -1788,7 +1790,14 @@ https://www.newocr.com/
 https://www.stolencamerafinder.com/
 
 <span style="color:#75715e"># Hate Symbols Database</span>
-https://www.adl.org/hate-symbols</code></pre></div>
+https://www.adl.org/hate-symbols
+
+<span style="color:#75715e"># Check differences betweek images</span>
+https://www.diffchecker.com/image-diff
+
+<span style="color:#75715e"># Online tool to chekc if provided image have been edited</span>
+<span style="color:#75715e"># Take care because images are sent to the server and may be stored</span>
+http://imageedited.com/</code></pre></div>
 <p><br/></p>
 
 <h3 id="working-with-videos">Working with videos</h3>
