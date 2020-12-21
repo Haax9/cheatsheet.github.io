@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-27T18:01:18 CET">
+<meta name="revised" content="2020-12-21T15:31:52 CET">
 <title>Geolocation &amp; GEOINT :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -464,6 +464,13 @@
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/">
             Amazon &amp; Digital Ocean Buckets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/parler/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/parler/">
+            Parler
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1746,11 +1753,32 @@
     
     
 
+<h3 id="maps">Maps</h3>
+
+<h4 id="misc">MISC</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Snapchat Live Map can be good and funny source</span>
 https://map.snapchat.com
 
 <span style="color:#75715e"># Learn to use Overpass API</span>
-https://osmlab.github.io/learnoverpass//en/</code></pre></div>
+https://osmlab.github.io/learnoverpass//en/
+
+<span style="color:#75715e"># 360° pictures database</span>
+https://www.360cities.net/
+
+<span style="color:#75715e"># Compare maps by time</span>
+<span style="color:#75715e"># Many historical maps</span>
+http://www.georeferencer.com</code></pre></div>
+<h4 id="google-maps-alternatices">Google Maps Alternatices</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/y_vdw/status/1339984896022876160
+
+<span style="color:#75715e"># Other maps services</span>
+https://yandex.com/maps
+http://openstreetcam.org/map/
+https://www.mapillary.com/
+
+<span style="color:#75715e"># Search for specific country</span>
+https://twitter.com/y_vdw/status/1339984940377624576?s<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+https://en.wikipedia.org/wiki/List_of_street_view_services</code></pre></div>
 <p><br/></p>
 
 <h3 id="realtime-movement-misc">Realtime Movement (MISC)</h3>
@@ -1775,7 +1803,10 @@ https://www.mapillary.com
 https://railcabrides.com/en/
 
 <span style="color:#75715e"># Sun position over time</span>
-https://www.suncalc.org/#/48.8376,2.3456,8/2020.05.08/12:42/1/3</code></pre></div>
+https://www.suncalc.org/#/48.8376,2.3456,8/2020.05.08/12:42/1/3
+
+<span style="color:#75715e"># Shadow calculator for GEOINT</span>
+http://shadowcalculator.eu</code></pre></div>
 <p><br/></p>
 
 <h3 id="photo-identification">Photo identification</h3>
@@ -1823,14 +1854,110 @@ https://www.euroluftbild.de/
 https://gisgeography.com/free-historical-imagery-viewers/
 https://worldview.earthdata.nasa.gov/
 https://livingatlas.arcgis.com/wayback/
-https://www.planet.com/explorer/</code></pre></div>
+https://www.planet.com/explorer/
+
+<span style="color:#75715e"># Collaborative platform for searching, sharing and viewing aerial images</span>
+https://soar.earth/</code></pre></div>
+<p><br/></p>
+
+<h3 id="open-streep-map-and-overpass-turbo">Open Streep Map and Overpass Turbo</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># WIP - Will probably make a dedicated page when I&#39;ll get more content</span>
+
+<span style="color:#75715e"># Learning</span>
+https://osmlab.github.io/learnoverpass//en/
+
+<span style="color:#75715e"># Wiki</span>
+https://wiki.openstreetmap.org/wiki/Main_Page
+
+<span style="color:#75715e"># All available features</span>
+https://wiki.openstreetmap.org/wiki/Map_features
+
+<span style="color:#75715e"># Blogposts explaining queries</span>
+https://bearhunt38.medium.com/geo-locating-photos-with-osm-overpass-api-10ed35b95f11
+https://twitter.com/quiztime/status/1336678621910589447</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Overpass turbo query - Pedestrian bridge within 100m of Railways</span>
+
+<span style="color:#f92672">[</span>out:json<span style="color:#f92672">][</span>bbox:<span style="color:#f92672">{{</span>bbox<span style="color:#f92672">}}][</span>timeout:800<span style="color:#f92672">]</span><span style="color:#111">;</span>
+
+// determine <span style="color:#111">set</span> of electrified railways
+<span style="color:#f92672">(</span>
+ way
+   <span style="color:#f92672">[</span><span style="color:#111">railway</span><span style="color:#f92672">=</span>rail<span style="color:#f92672">]</span>        
+ <span style="color:#111">;</span>
+  node
+   <span style="color:#f92672">[</span><span style="color:#111">railway</span><span style="color:#f92672">=</span>rail<span style="color:#f92672">]</span>        
+ <span style="color:#111">;</span>
+  rel
+   <span style="color:#f92672">[</span><span style="color:#111">railway</span><span style="color:#f92672">=</span>rail<span style="color:#f92672">]</span>
+ <span style="color:#111">;</span>
+ 
+<span style="color:#f92672">)</span>-&gt;.railways<span style="color:#111">;</span> // put them into the <span style="color:#111">set</span> <span style="color:#d88200">&#34;railways&#34;</span>
+
+// determine <span style="color:#111">set</span> of pedestrian bridges
+<span style="color:#f92672">(</span>
+way
+ <span style="color:#f92672">[</span><span style="color:#111">highway</span><span style="color:#f92672">=</span>footway<span style="color:#f92672">]</span>
+ <span style="color:#f92672">[</span><span style="color:#111">bridge</span><span style="color:#f92672">=</span>yes<span style="color:#f92672">]</span><span style="color:#111">;</span>
+node
+ <span style="color:#f92672">[</span><span style="color:#111">highway</span><span style="color:#f92672">=</span>footway<span style="color:#f92672">]</span>
+ <span style="color:#f92672">[</span><span style="color:#111">bridge</span><span style="color:#f92672">=</span>yes<span style="color:#f92672">]</span><span style="color:#111">;</span>
+rel
+ <span style="color:#f92672">[</span><span style="color:#111">highway</span><span style="color:#f92672">=</span>footway<span style="color:#f92672">]</span>
+ <span style="color:#f92672">[</span><span style="color:#111">bridge</span><span style="color:#f92672">=</span>yes<span style="color:#f92672">]</span><span style="color:#111">;</span>
+<span style="color:#f92672">)</span>-&gt;.pedbridge<span style="color:#111">;</span> // put them into the <span style="color:#111">set</span> <span style="color:#d88200">&#34;pedbridge&#34;</span>
+ 
+// determine <span style="color:#111">set</span> of pedbridges near railways
+<span style="color:#f92672">(</span>
+ node.pedbridge<span style="color:#f92672">(</span>around.railways:100<span style="color:#f92672">)</span><span style="color:#111">;</span>
+ way.pedbridge<span style="color:#f92672">(</span>around.railways:100<span style="color:#f92672">)</span><span style="color:#111">;</span>
+ rel.pedbridge<span style="color:#f92672">(</span>around.railways:100<span style="color:#f92672">)</span><span style="color:#111">;</span>
+<span style="color:#f92672">)</span>-&gt;.pedbridgerailway<span style="color:#111">;</span> // put them into the <span style="color:#111">set</span> <span style="color:#d88200">&#34;pedbridgerailway&#34;</span>
+
+// determine pedestrian bridges near railways
+<span style="color:#f92672">(</span>.pedbridgerailway<span style="color:#111">;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
+
+// <span style="color:#00a8c8">return</span> node, ways, relations as determined above
+out geom meta<span style="color:#111">;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Another example</span> 
+
+<span style="color:#f92672">[</span>out:json<span style="color:#f92672">][</span>timeout:800<span style="color:#f92672">]</span><span style="color:#111">;</span>
+
+// Get all mills in current bounding box <span style="color:#f92672">(</span>Netherlands<span style="color:#f92672">)</span>
+<span style="color:#f92672">(</span> way<span style="color:#f92672">[</span>“generator:source”<span style="color:#f92672">=</span>”wind”<span style="color:#f92672">]({{</span>bbox<span style="color:#f92672">}})</span><span style="color:#111">;</span>
+node<span style="color:#f92672">[</span>“generator:source”<span style="color:#f92672">=</span>”wind”<span style="color:#f92672">]({{</span>bbox<span style="color:#f92672">}})</span><span style="color:#111">;</span>
+relation<span style="color:#f92672">[</span>“generator:source”<span style="color:#f92672">=</span>”wind”<span style="color:#f92672">]({{</span>bbox<span style="color:#f92672">}})</span><span style="color:#111">;</span>
+<span style="color:#f92672">)</span>-&gt;.mills<span style="color:#111">;</span> // store in variable ‘mills’
+
+// Get all highways in current bounding box and store them in the variable motorways
+way<span style="color:#f92672">(</span>around.mills:250<span style="color:#f92672">)[</span><span style="color:#111">highway</span><span style="color:#f92672">=</span>motorway<span style="color:#f92672">]</span>-&gt;.motorways<span style="color:#111">;</span>
+
+// get all canals near windmills <span style="color:#f92672">(</span>500m<span style="color:#f92672">)</span> in current bbox
+way<span style="color:#f92672">(</span>around.mills:500<span style="color:#f92672">)[</span><span style="color:#111">waterway</span><span style="color:#f92672">=</span>canal<span style="color:#f92672">]</span>-&gt;.canals<span style="color:#111">;</span>
+
+// get mills in 100m distance <span style="color:#00a8c8">for</span> all identified relevant motorways
+<span style="color:#f92672">(</span> node.mills<span style="color:#f92672">(</span>around.motorways:250<span style="color:#f92672">)</span> <span style="color:#111">;</span>
+way.mills<span style="color:#f92672">(</span>around.motorways:250<span style="color:#f92672">)</span><span style="color:#111">;</span>
+rel.mills<span style="color:#f92672">(</span>around.motorways:250<span style="color:#f92672">)</span><span style="color:#111">;</span>
+<span style="color:#f92672">)</span>-&gt;.matchingmills<span style="color:#111">;</span>
+
+// get mills in <span style="color:#ae81ff">500</span> distance <span style="color:#00a8c8">for</span> all identified relevant canals
+// get mills in <span style="color:#ae81ff">500</span> distance of canals and motorways
+<span style="color:#f92672">(</span> node.matchingmills<span style="color:#f92672">(</span>around.canals:500<span style="color:#f92672">)</span><span style="color:#111">;</span>
+way.matchingmills<span style="color:#f92672">(</span>around.canals:500<span style="color:#f92672">)</span><span style="color:#111">;</span>
+rel.matchingmills<span style="color:#f92672">(</span>around.canals:500<span style="color:#f92672">)</span><span style="color:#111">;</span>
+<span style="color:#f92672">)</span>-&gt;.matchingmills<span style="color:#111">;</span>
+
+// <span style="color:#00a8c8">return</span> results, mills and motorways
+<span style="color:#f92672">(</span>.matchingmills<span style="color:#111">;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
+out geom<span style="color:#111">;</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="tips-trick-for-geoint">Tips &amp; Trick for GeoINT</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># GREAT resource about tips from Geoguessr</span>
 https://somerandomstuff1.wordpress.com/2019/02/08/geoguessr-the-top-tips-tricks-and-techniques/
 
-<span style="color:#75715e"># Geogussr is a good tool/game to practice GEOINT skills</span>
+<span style="color:#75715e"># Second GREAT resource about many countries</span>
+https://geotips.net/
+
+<span style="color:#75715e"># Geoguessr is a good tool/game to practice GEOINT skills</span>
 <span style="color:#75715e"># These tips can also be applied to a given picture to geolocate and identify</span>
 
 <span style="color:#75715e"># Indoor geolocation</span>

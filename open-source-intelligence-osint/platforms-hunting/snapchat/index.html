@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-27T18:01:18 CET">
+<meta name="revised" content="2020-12-21T15:31:52 CET">
 <title>Snapchat :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -464,6 +464,13 @@
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/">
             Amazon &amp; Digital Ocean Buckets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/parler/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/parler/">
+            Parler
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1696,6 +1703,7 @@
       <option value="/open-source-intelligence-osint/platforms-hunting/reddit/" >-- Reddit</option>
       <option value="/open-source-intelligence-osint/platforms-hunting/tumblr/" >-- Tumblr</option>
       <option value="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/" >-- Amazon &amp; Digital Ocean Buckets</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/parler/" >-- Parler</option>
   
   
     <option value="/web-pentest/" >
@@ -1750,6 +1758,8 @@
     
     
 
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Snapchat guide for law enforcment</span>
+https://storage.googleapis.com/snap-inc/privacy/lawenforcement.pdf</code></pre></div>
 <h3 id="online-research-tools">Online Research Tools</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Online browser</span>
 <span style="color:#75715e"># Potentially NSFW</span>
@@ -1777,7 +1787,30 @@ https://map.snapchat.com/</code></pre></div>
 https://s.sc-cdn.net/&lt;some random string&gt;/default/media.mp4
 
 <span style="color:#75715e"># You can get original video by tweaking media.mp4 to embedded.mp4</span>
-https://s.sc-cdn.net/&lt;some random string&gt;/default/embedded.mp4</code></pre></div>
+https://s.sc-cdn.net/&lt;some random string&gt;/default/embedded.mp4</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scraper for the snapcat map</span>
+https://github.com/nemec/snapchat-map-scraper
+
+<span style="color:#75715e"># Create the db</span>
+$ python3 story_downloader.py create snap.db
+
+<span style="color:#75715e"># Add locations</span>
+<span style="color:#75715e"># Added downtown dallas to database</span>
+$ python3 story_downloader.py add --database snap.db --label <span style="color:#d88200">&#34;downtown dallas&#34;</span> <span style="color:#ae81ff">32</span>.783038 -96.796388
+
+<span style="color:#75715e"># The scrape command iterates through all of the added locations and downloads snaps at that location</span>
+<span style="color:#75715e"># --randomize will randomize the geo location within 500m, intended to prompt Snapchat&#39;s API to</span> 
+<span style="color:#75715e"># send new videos that it hasn&#39;t yet served.</span>
+<span style="color:#75715e"># --repeat will cause the application to loop infinitely looking for new videos.</span>
+<span style="color:#75715e"># Leave it running overnight to collect as much as possible.</span>
+<span style="color:#75715e"># --sleep will modify how long the application sleeps before repeating.</span>
+<span style="color:#75715e"># Defaults to 120 seconds and only takes effect if --repeat is included</span>
+$ python3 story_downloader.py scrape --database snap.db --randomize --repeat
+
+<span style="color:#75715e"># The review command looks through all unreviewed videos and opens each one in a video player for review</span>
+$ python3 story_downloader.py review --database snap.db
+
+<span style="color:#75715e"># The export command will copy all videos which are &#34;classified&#34; to a new folder for further review/editing/publishing.</span>
+$ python3 story_downloader.py <span style="color:#111">export</span> --database snap.db export/</code></pre></div>
 <p><br/></p>
 
 <h3 id="snapchat-stories">Snapchat Stories</h3>

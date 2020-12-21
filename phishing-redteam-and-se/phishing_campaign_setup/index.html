@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-27T18:01:17 CET">
+<meta name="revised" content="2020-12-21T15:31:51 CET">
 <title>Phishing Infrastructure (Gophish&#43;Vultr) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -462,6 +462,13 @@
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/">
             Amazon &amp; Digital Ocean Buckets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/parler/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/parler/">
+            Parler
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1746,7 +1753,10 @@ https://dnstwister.report/</code></pre></div>
     &lt;input <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;password&#34;</span> <span style="color:#111">type</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;password&#34;</span>/&gt;
 &lt;/form&gt;</code></pre></div>
 <h5 id="e-mail-not-sent-tls">E-mail not sent / TLS</h5>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># For TLS, you could need to set option as &#34;may&#34; instead of &#34;encrypt&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># For TLS, you could need to set option as &#34;may&#34; instead of &#34;encrypt&#34;</span>
+
+<span style="color:#75715e"># Another possible thing : postfix configuration</span>
+https://www.digitalocean.com/community/questions/is-this-a-spammer-trying-to-access-or-just-the-system</code></pre></div>
 <h5 id="incoherent-raw-events-and-results">Incoherent raw events and results</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If raw events are incoherent compared to gophish results, it may be caused by the &#34;Email Opened&#34; tracker.</span> 
 <span style="color:#75715e"># If images are unavailable for the recipient, the tracker could not be triggered.</span>
@@ -1761,7 +1771,25 @@ https://dnstwister.report/</code></pre></div>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Timeline</span>
 <span style="color:#75715e"># Get sorted and unique data for users</span>
 <span style="color:#75715e"># The awk part allows to manipulate/sort on only one part of the line</span>
-cat raw_events.csv <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;Submitted&#34;</span> <span style="color:#111">|</span> cut -d <span style="color:#d88200">&#39;,&#39;</span> -f <span style="color:#ae81ff">1</span>,2 <span style="color:#111">|</span> awk -F, <span style="color:#d88200">&#39;!seen[substr($1,1,8)]++&#39;</span></code></pre></div>
+cat raw_events.csv <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;Submitted&#34;</span> <span style="color:#111">|</span> cut -d <span style="color:#d88200">&#39;,&#39;</span> -f <span style="color:#ae81ff">1</span>,2 <span style="color:#111">|</span> awk -F, <span style="color:#d88200">&#39;!seen[substr($1,1,8)]++&#39;</span>
+
+<span style="color:#75715e"># Dirty solution to deal with Gophish UTC hours</span>
+&gt;&gt;&gt; <span style="color:#111">events</span> <span style="color:#f92672">=</span> open<span style="color:#f92672">(</span><span style="color:#d88200">&#34;CUTED_EVENTS&#34;</span>,<span style="color:#d88200">&#34;r&#34;</span><span style="color:#f92672">)</span>
+&gt;&gt;&gt; <span style="color:#111">outfile</span> <span style="color:#f92672">=</span> open<span style="color:#f92672">(</span><span style="color:#d88200">&#34;PARSED_EVENTS&#34;</span>,<span style="color:#d88200">&#34;w&#34;</span><span style="color:#f92672">)</span>
+&gt;&gt;&gt; <span style="color:#00a8c8">for</span> event in events:
+...     <span style="color:#111">tbl1</span> <span style="color:#f92672">=</span> event.split<span style="color:#f92672">(</span><span style="color:#d88200">&#39;T&#39;</span><span style="color:#f92672">)</span>
+...     <span style="color:#111">tbl2</span> <span style="color:#f92672">=</span> tbl1<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]</span>.split<span style="color:#f92672">(</span><span style="color:#d88200">&#39;:&#39;</span><span style="color:#f92672">)</span>
+...     <span style="color:#00a8c8">if</span> tbl2<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;24&#34;</span>:
+...             <span style="color:#111">realHour</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;00&#34;</span>
+...     <span style="color:#00a8c8">else</span>:
+...             <span style="color:#111">realHour</span> <span style="color:#f92672">=</span> int<span style="color:#f92672">(</span>tbl2<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">])</span> + <span style="color:#ae81ff">1</span>
+...     <span style="color:#111">realEvent</span> <span style="color:#f92672">=</span> tbl1<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span> + <span style="color:#d88200">&#39;T&#39;</span> + str<span style="color:#f92672">(</span>realHour<span style="color:#f92672">)</span> + <span style="color:#d88200">&#34;:&#34;</span> + tbl2<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]</span> + <span style="color:#d88200">&#34;:&#34;</span> + tbl2<span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>
+...     outfile.write<span style="color:#f92672">(</span>realEvent<span style="color:#f92672">)</span>
+...     print<span style="color:#f92672">(</span>realEvent<span style="color:#f92672">)</span></code></pre></div>
+<h4 id="testing-e-mail-spam-level">Testing e-mail &ldquo;spam&rdquo; level</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.mail-tester.com/
+
+<span style="color:#75715e"># Making a text version of your HTML e-mail can also be usefull to avoid spam</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="domain-configuration">Domain Configuration</h3>
@@ -1816,6 +1844,8 @@ sudo rm -r /var/log/exim4/
 sudo update-rc.d nfs-common disable &gt; /dev/null <span style="color:#ae81ff">2</span>&gt;<span style="color:#111">&amp;</span><span style="color:#ae81ff">1</span>
 sudo update-rc.d rpcbind disable &gt; /dev/null <span style="color:#ae81ff">2</span>&gt;<span style="color:#111">&amp;</span><span style="color:#ae81ff">1</span>
 
+sudo timedatectl set-timezone Europe/Paris
+
 cat <span style="color:#d88200">&lt;&lt;-EOF &gt;&gt; /etc/sysctl.conf
 </span><span style="color:#d88200">net.ipv6.conf.all.disable_ipv6 = 1
 </span><span style="color:#d88200">net.ipv6.conf.default.disable_ipv6 = 1
@@ -1842,9 +1872,24 @@ cat <span style="color:#d88200">&lt;&lt;-EOF &gt; /etc/hostname
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In order to avoid errors, DNS should be set before setting SSL</span>
 
 <span style="color:#75715e"># SSL / Let&#39;s Encrypt</span>
-git clone https://github.com/certbot/certbot.git /opt/letsencrypt
-<span style="color:#111">cd</span> /opt/letsencrypt
-./certbot-auto certonly --standalone -d domain.fr -n --register-unsafely-without-email --agree-tos</code></pre></div>
+<span style="color:#75715e"># Certbot-auto is now deprecated</span>
+https://community.letsencrypt.org/t/certbot-auto-no-longer-works-on-debian-based-systems/139702/6
+
+<span style="color:#75715e"># Now</span>
+https://certbot.eff.org/lets-encrypt/debianbuster-apache
+
+<span style="color:#75715e"># Install</span>
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+<span style="color:#75715e"># Set up</span>
+certbot certonly --standalone -d domain.fr --register-unsafely-without-email --agree-tos
+
+<span style="color:#75715e"># Verify</span> 
+ls -l /etc/letsencrypt/live/domain.fr
+
+<span style="color:#75715e"># If you need to remove an SSL cert</span>
+sudo certbot delete --cert-name domain.fr</code></pre></div>
 <p><br/></p>
 
 <h4 id="postfix-dovecot-installation-configuration">Postfix/Dovecot Installation &amp; Configuration</h4>

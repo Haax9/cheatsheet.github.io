@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-27T18:01:17 CET">
+<meta name="revised" content="2020-12-21T15:31:51 CET">
 <title>Hashcat Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -462,6 +462,13 @@
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/">
             Amazon &amp; Digital Ocean Buckets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/parler/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/parler/">
+            Parler
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1728,6 +1735,13 @@
 <span style="color:#75715e"># It is supposed to make the computer unusable during the cracking process</span>
 <span style="color:#75715e"># Finnally, use both the GPU and CPU to handle the cracking</span>
 --force -O -w <span style="color:#ae81ff">4</span> --opencl-device-types <span style="color:#ae81ff">1</span>,2</code></pre></div>
+<p><br/></p>
+
+<h3 id="wrapcat-automating-hashcat-commands">Wrapcat - Automating hashcat commands</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/Haax9_/status/1340354639464722434?s<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+https://github.com/Haax9/Wrapcat
+
+$ python wrapcat.py -m <span style="color:#ae81ff">1000</span> -f HASH_FILE.txt -p POT_FILE.txt --full --save</code></pre></div>
 <p><br/></p>
 
 <h3 id="attack-modes">Attack modes</h3>

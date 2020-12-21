@@ -27,7 +27,7 @@ Redirections # These tools allow you to check redirection and resolving path for
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
       <description>[WIP]
-Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/https://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
+Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/ # Dark Web Searching https://www.osintcombine.com/post/dark-web-searchinghttps://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
     </item>
     
     <item>
@@ -45,8 +45,8 @@ Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/others/</guid>
-      <description>Secrets &amp;amp; Default Passwords # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com &amp;#34;apikey&amp;#34; site:http://ideone.com &amp;#34;aws_access_key_id&amp;#34;# Default passwords https://www.routerpasswords.com/ https://cirt.net/passwords https://default-password.info/ http://defaultpassword.us/ http://www.passwordsdatabase.com/ http://open-sez.me/ Code replication # You can find same website piece of code to identify same vendors https://nerdydata.com/search https://searchcode.com/ 
-Forums # Find informations on forums http://boardreader.com https://raidforums.com/</description>
+      <description>MISC / Tips # Wget Wizard # Generate wget commands depending what you want https://www.whatismybrowser.com/developers/tools/wget-wizard/# You can simulate Google Search from other locations using Isearchfrom # It&amp;#39;s useful for searching Google as if you were somewhere else, as well as for SEO &amp;amp; SEA testing. https://isearchfrom.com/ 
+Secrets &amp;amp; Default Passwords # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com &amp;#34;apikey&amp;#34; site:http://ideone.com &amp;#34;aws_access_key_id&amp;#34;# Default passwords https://www.routerpasswords.com/ https://cirt.</description>
     </item>
     
   </channel>

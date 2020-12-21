@@ -35,7 +35,7 @@ Getting account linked to an e-mail # Great trick https://www.intelligencewithst
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/twitter/</guid>
-      <description>Tips &amp;amp; Tricks Geolocation # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com Downloader # Twitter video downloader https://twdown.net/ Account Analysis # Tweeter account analysis (account needed) https://tweetreach.com/ # When was created an account http://twbirthday.com/haaxmax/ # Sleeping time (account needed) http://sleepingtime.org/ # Simple analysis/analytics https://socialbearing.com/search/general/sodifrance https://foller.me # See all tweets from one account (account needed) https://www.allmytweets.net/connect/ # Tool to see what some accounts have in common https://tweepdiff.com/ Data visualization # Free tool to build graph and visualize the spread of claims and fact checking https://hoaxy.</description>
+      <description>Tips &amp;amp; Tricks Geolocation # Search using geocode geocode:36.1143855,-115.1727518,1km # Tweet geolocation https://onemilliontweetmap.com Downloader # Twitter video downloader https://twdown.net/ Account Analysis # Tweeter account analysis (account needed) https://tweetreach.com/ # When was created an account http://twbirthday.com/haaxmax/ # Sleeping time (account needed) http://sleepingtime.org/ # Simple analysis/analytics https://socialbearing.com/search/general/sodifrance https://foller.me # See all tweets from one account (account needed) https://www.allmytweets.net/connect/ # Tool to see what some accounts have in common https://tweepdiff.com/ # Another account analysis service https://accountanalysis.</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@ Facebook Tricks # You can search by e-mail # You can find accounts by e-mail wit
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/snapchat/</guid>
-      <description>Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.snapchat.com/ Snapchat Map https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/ # Using the map you can view public content # You can play with overlays and save videos # To get video # - Developper Tools (F12) # - Network and filter on medias # - Reload (Ctrl+R) # - On the snap link, right click and open in new tab # By default it removes extra graphics layer https://s.</description>
+      <description># Snapchat guide for law enforcment https://storage.googleapis.com/snap-inc/privacy/lawenforcement.pdf Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.snapchat.com/ Snapchat Map https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/ # Using the map you can view public content # You can play with overlays and save videos # To get video # - Developper Tools (F12) # - Network and filter on medias # - Reload (Ctrl+R) # - On the snap link, right click and open in new tab # By default it removes extra graphics layer https://s.</description>
     </item>
     
     <item>
@@ -123,6 +123,16 @@ Posts # Topic is a thread where the user is the original poster (Known as OP) # 
       <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
 AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
 Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
+    </item>
+    
+    <item>
+      <title>Parler</title>
+      <link>/open-source-intelligence-osint/platforms-hunting/parler/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open-source-intelligence-osint/platforms-hunting/parler/</guid>
+      <description>Resources https://www.skopenow.com/news/the-new-digital-meeting-place-what-parler-means-for-osint-investigators 
+Tips &amp;amp; Tricks # You can use dorks without account to find content site:parler.com site:parler.com/post/ site:parler.com/profile/ site:parler.</description>
     </item>
     
   </channel>

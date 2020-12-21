@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-27T18:01:18 CET">
+<meta name="revised" content="2020-12-21T15:31:52 CET">
 <title>Instagram :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -464,6 +464,13 @@
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/">
             Amazon &amp; Digital Ocean Buckets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/parler/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/parler/">
+            Parler
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1696,6 +1703,7 @@
       <option value="/open-source-intelligence-osint/platforms-hunting/reddit/" >-- Reddit</option>
       <option value="/open-source-intelligence-osint/platforms-hunting/tumblr/" >-- Tumblr</option>
       <option value="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/" >-- Amazon &amp; Digital Ocean Buckets</option>
+      <option value="/open-source-intelligence-osint/platforms-hunting/parler/" >-- Parler</option>
   
   
     <option value="/web-pentest/" >
@@ -1776,6 +1784,15 @@ https://downloadgram.com/
 https://www.instadp.com/
 https://www.instadp.com/
 https://instasave.xyz/</code></pre></div>
+<h4 id="location-search">Location Search</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/quiztime/status/1339231557509402624
+https://github.com/bellingcat/instagram-location-search
+
+<span style="color:#75715e"># You can searh instagram posts for a specific location</span> 
+python3 instagram-locations.py --session <span style="color:#d88200">&#34;&lt;session-id-token&gt;&#34;</span> --lat <span style="color:#ae81ff">32</span>.22 --lng -110.97 --csv locs.csv
+
+<span style="color:#75715e"># Usage with date</span>
+python3 instagram-locations.py --session <span style="color:#d88200">&#34;&lt;session-id-token&gt;&#34;</span> --lat <span style="color:#ae81ff">47</span>.6164311 --lng -122.3203952 --map map.html --date <span style="color:#ae81ff">2020</span>-06-09</code></pre></div>
 <p><br/></p>
 
 <h3 id="manual-investigation">Manual investigation</h3>

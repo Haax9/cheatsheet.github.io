@@ -17,7 +17,7 @@
       
       <guid>/passcracking-hashfiles/hashcat_cheatsheet/</guid>
       <description>MISC and tricks https://www.notsosecure.com/one-rule-to-rule-them-all/# MAX POWER # force the CUDA GPU interface, optimize for &amp;lt;32 char passwords and set the workload to insane (-w 4). # It is supposed to make the computer unusable during the cracking process # Finnally, use both the GPU and CPU to handle the cracking --force -O -w 4 --opencl-device-types 1,2 
-Attack modes -a 0 # Straight : hash dict -a 1 # Combination : hash dict dict -a 3 # Bruteforce : hash mask -a 6 # Hybrid wordlist + mask : hash dict mask -a 7 # Hybrid mask + wordlist : hash mask dict</description>
+Wrapcat - Automating hashcat commands https://twitter.com/Haax9_/status/1340354639464722434?s=20 https://github.com/Haax9/Wrapcat $ python wrapcat.py -m 1000 -f HASH_FILE.</description>
     </item>
     
     <item>

