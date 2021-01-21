@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2020-12-21T15:31:51 CET">
+<meta name="revised" content="2021-01-21T17:33:37 CET">
 <title>OPSEC :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1538,6 +1538,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/phishing-redteam-and-se/lockpicking_keys/" class="dd-item">
+        <div>
+          <a href="/phishing-redteam-and-se/lockpicking_keys/">
+            Lockpicking and Keys stuff
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/wireless/" class="dd-item haschildren
@@ -1805,6 +1812,60 @@ convert -density <span style="color:#ae81ff">150</span> -fill  <span style="colo
 
 <span style="color:#75715e"># Repeated text</span>
 $ convert original.png <span style="color:#8045ff">\(</span> -background none -pointsize <span style="color:#ae81ff">35</span> -fill <span style="color:#d88200">&#34;rgba(255,0,0,0.30)&#34;</span> label:<span style="color:#d88200">&#34;TEXT&#34;</span> -rotate -45 -write mpr:tile +delete <span style="color:#8045ff">\)</span> <span style="color:#8045ff">\(</span> +clone -tile mpr:tile -draw <span style="color:#d88200">&#34;color 0,100 reset&#34;</span> <span style="color:#8045ff">\)</span> -compose over -composite watermarked.png</code></pre></div>
+<p><br/></p>
+
+<h3 id="browser-configuration">Browser Configuration</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Some resources</span>
+https://daring-india-marten-972.medium.com/osint-comment-naviguer-en-eaux-troubles-32f11ab985ac
+https://openfacto.fr/2019/09/01/firefox-iv-securiser-un-peu-plus-sa-navigation/
+https://medium.com/@mattybv3/firefox-browser-settings-configuration-and-add-ons-extensions-for-privacy-security-and-osint-114e76d8a468
+https://proprivacy.com/privacy-service/guides/firefox-privacy-security-guide
+https://www.maketecheasier.com/28-coolest-firefox-aboutconfig-tricks/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Profiles</span>
+
+<span style="color:#75715e"># You can first segment your browing by using different profiles</span>
+about:profiles</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Preferences</span>
+
+<span style="color:#75715e"># DNS over HTTPS (DoH)</span>
+<span style="color:#75715e"># General &gt; Network</span>
+network.trr.mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+network.trr.uri <span style="color:#f92672">=</span> your resolver
+<span style="color:#75715e"># Cloudflare or Quad9 (https://dns.quad9.net/dns-query)</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Config</span>
+
+<span style="color:#75715e"># ESNI (Hide sites to your ISP)</span>
+network.security.esni.enabled <span style="color:#f92672">=</span> <span style="color:#111">true</span>
+
+<span style="color:#75715e"># Disable copy/paste blocking</span>
+dom.event.clipboardevents.enabled <span style="color:#f92672">=</span> <span style="color:#111">false</span>
+
+<span style="color:#75715e"># Disable WebRTC</span>
+<span style="color:#75715e"># You can switch using an add-on</span>
+media.peerconnection.enabled <span style="color:#f92672">=</span> <span style="color:#111">false</span>
+
+<span style="color:#75715e"># Auto start the private mode</span>
+browser.privatebrowsing.autostart <span style="color:#f92672">=</span> <span style="color:#111">true</span>
+
+<span style="color:#75715e"># Disable the Google safebrowing feature</span>
+<span style="color:#75715e"># Job already done by add-ons</span>
+browser.safebrowsing.phishing.enabled <span style="color:#f92672">=</span> <span style="color:#111">false</span>
+browser.safebrowsing.malware.enabled <span style="color:#f92672">=</span> <span style="color:#111">false</span>
+
+<span style="color:#75715e"># Don&#39;t send report to Mozilla</span>
+datareporting.healthreport.uploadEnabled <span style="color:#f92672">=</span> <span style="color:#111">false</span>
+
+geo.wifi.uri ?
+geo.enabled ?
+
+<span style="color:#75715e"># Disable referer forwarding</span>
+<span style="color:#75715e"># Can break some sites</span>
+network.http.sendRefererHeader <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+network.http.sendSecureXSiteReferrer <span style="color:#f92672">=</span> <span style="color:#111">false</span>
+
+<span style="color:#75715e"># Preload embedded links when visiting a page</span>
+network.prefetch-next <span style="color:#f92672">=</span> <span style="color:#111">false</span>
+
+<span style="color:#75715e"># Get sources in an external editor</span>
+view_source.editor.external <span style="color:#f92672">=</span> <span style="color:#111">true</span>
+view_source.editor.path <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;C:\Program Files\Sublime Text 3\sublime_text.exe&#34;</span></code></pre></div>
 
     
     

@@ -107,7 +107,7 @@ Broken Links # Check for broken links and domain takeover # For twitter, Twitter
       
       <guid>/linux-systems/tricks/</guid>
       <description>[WIP]
-# If you need to kill a specific process using a given port sudo fuser -k 445/tcp# You can use the following trick to easy navigate and select paths or others args # $_ takes the last argument of the last simplec command executed cd $_ # For example mkdir my-folder &amp;amp;&amp;amp; cd $_# You can use xclip to automate clipping # Can be usefull for long outputs (enum4linux, privcheck.</description>
+MISC / TIPS # If you need to kill a specific process using a given port sudo fuser -k 445/tcp# You can use the following trick to easy navigate and select paths or others args # $_ takes the last argument of the last simplec command executed cd $_ # For example mkdir my-folder &amp;amp;&amp;amp; cd $_# You can use xclip to automate clipping # Can be usefull for long outputs (enum4linux, privcheck.</description>
     </item>
     
     <item>
@@ -144,7 +144,7 @@ Wrapcat - Automating hashcat commands https://twitter.com/Haax9_/status/13403546
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
-      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/# Get ASN for your target bgp.he.net# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.shodan.io/search/filters city:&amp;#34;Grenoble&amp;#34; country:&amp;#34;FR&amp;#34; geo:&amp;#34;21.452673,56.245212&amp;#34; server: &amp;#34;gws&amp;#34; hostname:&amp;#34;google&amp;#34; net:210.214.0.0/16 os:&amp;#34;windows 10&amp;#34; port:22 # https://github.com/jakejarvis/awesome-shodan-queries # Using a premium account, you can search by image https://images.</description>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/# Get ASN for your target bgp.he.net # Pear is a tool used to get informations about an AS https://github.com/routeur/Pear python3 Pear.py -a [ASNumber]# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.</description>
     </item>
     
     <item>
@@ -523,6 +523,15 @@ DNS Zone Transfer # Zone transfer using dig dig @&amp;lt;ns&amp;gt; -p 54011 AXF
       <guid>/open-source-intelligence-osint/platforms-hunting/linkedin/</guid>
       <description>Tips &amp;amp; Tricks # Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources# Getting likes, comment etc. /detail/recent-activity 
 Getting account linked to an e-mail # Great trick https://www.intelligencewithsteve.com/post/a-guide-to-searching-linkedin-by-email-address # Sales feature have been discontinued # Log to OWA and go to contacts https://outlook.live.com/owa/ https://outlook.live.com/people # Then add contact, using the target e-mail # Go to the LinkedIn tab and connect using a fake account # If an account is linked to the target e-mail, you should now see it in Outlook</description>
+    </item>
+    
+    <item>
+      <title>Lockpicking and Keys stuff</title>
+      <link>/phishing-redteam-and-se/lockpicking_keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/phishing-redteam-and-se/lockpicking_keys/</guid>
+      <description>Key Decoder https://github.com/MaximeBeasse/KeyDecoder https://twitter.com/FrenchKey_fr/status/1343543963454754816?s=20</description>
     </item>
     
     <item>
@@ -1135,7 +1144,7 @@ Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resources/web_bug_bounty/</guid>
-      <description>APIs  API endpoints (https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d) API Security part 1 (https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93) 31 Tips for pentesting APIs (https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765) 31 Tips (drive document) (https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0) IDOR/BOLA through API (https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2)  Server-Side Injections  SQL Injections filter bypass (https://websec.wordpress.com/tag/sql-filter-bypass/) SQL Injection Cheatsheet (https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md) SSRF SVG Cheatsheet (https://github.com/allanlw/svg-cheatsheet)  Client-Side Injections  HTML5 Security Cheatsheet (https://html5sec.org/) XSS Payloads (https://gbhackers.com/top-500-important-xss-cheat-sheet/) Polyglot XSS (https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot) AwesomeXSS Payloads (https://github.com/s0md3v/AwesomeXSS/)  PHP  PHP Object Injections (https://owasp.org/www-community/vulnerabilities/PHP_Object_Injection) PHP Vulnerability Audit Cheatsheet (https://github.</description>
+      <description>APIs  API endpoints (https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d) API Security part 1 (https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93) 31 Tips for pentesting APIs (https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765) 31 Tips (drive document) (https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0) IDOR/BOLA through API (https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2) KeyHacks, show how to use popular APIs (https://github.com/streaak/keyhacks)  Server-Side Injections  SQL Injections filter bypass (https://websec.wordpress.com/tag/sql-filter-bypass/) SQL Injection Cheatsheet (https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md) SSRF SVG Cheatsheet (https://github.com/allanlw/svg-cheatsheet)  Client-Side Injections  HTML5 Security Cheatsheet (https://html5sec.org/) XSS Payloads (https://gbhackers.com/top-500-important-xss-cheat-sheet/) Polyglot XSS (https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot) AwesomeXSS Payloads (https://github.com/s0md3v/AwesomeXSS/)  PHP  PHP Object Injections (https://owasp.</description>
     </item>
     
     <item>
@@ -1434,7 +1443,7 @@ SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserve
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com Google Maps Alternatices https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services 
+      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services 
 Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.</description>
     </item>
     
@@ -1481,9 +1490,9 @@ Modules &amp;amp; Tools • Censys: uses censys.io to collect a large amount of 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-pentest/attacking_apis/</guid>
-      <description>Resources https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93 https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765 https://github.com/smodnix/31-days-of-API-Security-Tips https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0 https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2 
+      <description>Resources https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93 https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765 https://github.com/smodnix/31-days-of-API-Security-Tips https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0 https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2 # How to use different known APIs https://github.com/streaak/keyhacks 
 SOAP vs REST # REST uses: HTTP, JSON , URL and XML # SOAP uses: mostly HTTP and XML # SOAP can be more recommandded in terms of security, if you have to process critical data. 
-Checklist # Test tokens # Authentication token, JWT, Base64 encoded... # Input validation # All entry points (command injection, sql injections, html...) # Cookies, Headers ?</description>
+Checklist # Test tokens # Authentication token, JWT, Base64 encoded... # Input validation # All entry points (command injection, sql injections, html.</description>
     </item>
     
     <item>

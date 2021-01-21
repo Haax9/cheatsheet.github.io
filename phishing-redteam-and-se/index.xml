@@ -20,5 +20,14 @@
 Debugging Tips / Important notes Blacklisted/Spam domain # If the domain is blacklisted / considered as spam, you can try to reference www.</description>
     </item>
     
+    <item>
+      <title>Lockpicking and Keys stuff</title>
+      <link>/phishing-redteam-and-se/lockpicking_keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/phishing-redteam-and-se/lockpicking_keys/</guid>
+      <description>Key Decoder https://github.com/MaximeBeasse/KeyDecoder https://twitter.com/FrenchKey_fr/status/1343543963454754816?s=20</description>
+    </item>
+    
   </channel>
 </rss>
