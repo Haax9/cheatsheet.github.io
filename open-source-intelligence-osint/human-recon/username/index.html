@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-21T17:33:37 CET">
+<meta name="revised" content="2021-02-06T18:37:10 CET">
 <title>Usernames :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1662,6 +1662,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/resources/cti/" class="dd-item">
+        <div>
+          <a href="/resources/cti/">
+            Cyber Threat Intel
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
 
@@ -1814,6 +1821,40 @@ https://github.com/sherlock-project/sherlock/blob/master/sites.md
 
 <span style="color:#75715e"># Check only on specified sites</span>
 ./sherlock username123 --site site1,site2,sit3</code></pre></div>
+<p><br/></p>
+
+<h3 id="maigret">Maigret</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Fork of Sherlock project</span>
+https://github.com/soxoj/maigret
+
+<span style="color:#75715e"># Supported sites</span>
+https://github.com/soxoj/maigret/blob/main/sites.md
+
+<span style="color:#75715e"># Usage</span>
+maigret user
+
+<span style="color:#75715e"># make HTML and PDF reports</span>
+maigret user --html --pdf
+
+<span style="color:#75715e"># search on sites marked with tags photo &amp; dating</span>
+maigret user --tags photo,dating
+
+
+<span style="color:#75715e"># search for three usernames on all available sites</span>
+maigret user1 user2 user3 -a</code></pre></div>
+<p><br/></p>
+
+<h3 id="social-analyzer">Social Analyzer</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># API, CLI &amp; Web App for analyzing &amp; finding a person profile across +300 social media websites</span>
+https://github.com/qeeqbox/social-analyzer
+
+<span style="color:#75715e"># Web App also available</span>
+<span style="color:#75715e"># Sometimes better</span>
+
+<span style="color:#75715e"># If you want to list all websites use python3 app.py --cli --list</span>
+<span style="color:#75715e"># Remember the following runs as FindUserProfilesFast</span>
+<span style="color:#75715e"># You can also scan all websites using --websites &#34;all&#34;</span>
+python3 app.py --cli --mode <span style="color:#d88200">&#34;fast&#34;</span> --username <span style="color:#d88200">&#34;johndoe&#34;</span> --websites <span style="color:#d88200">&#34;youtube pinterest tumblr&#34;</span> --output <span style="color:#d88200">&#34;pretty&#34;</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="email-enum-https-github-com-fringitt0-email-enum">Email-enum (<a href="https://github.com/Fringitt0/email-enum">https://github.com/Fringitt0/email-enum</a>)</h3>

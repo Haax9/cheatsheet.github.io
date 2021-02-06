@@ -410,7 +410,7 @@ Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /et
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
       <description>[WIP]
-Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/ # Dark Web Searching https://www.osintcombine.com/post/dark-web-searchinghttps://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
+Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/ # Dark Web Searching https://www.osintcombine.com/post/dark-web-searching # Conducting OSINT on .onion sites https://www.osintme.com/index.php/2019/11/24/darknet-diving-conducting-osint-on-onion-sites/ # List of darknet markets for investigators https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/https://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
     </item>
     
     <item>
@@ -482,7 +482,7 @@ MIME Type # Classical, using Burp for example Content-Type: application/x-php �
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/tty_full/</guid>
-      <description>MISC # RLWRAP allows you to interface local and remote keyboards # It gives access to keyboard arrows and history rlwrap ncat -lvp port 
+      <description>MISC # RLWRAP allows you to interface local and remote keyboards # It gives access to keyboard arrows and history rlwrap ncat -lvp port# Another way to get a better shell # script is almost everytime present on the machine /usr/bin/script -qc /bin/bash /dev/null 
 Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; Ctrl-Z # In Kali $ stty raw -echo $ fg # In reverse shell $ reset $ export SHELL=bash $ export TERM=xterm-256color $ stty -raw echo OR $ stty rows &amp;lt;num&amp;gt; columns &amp;lt;cols&amp;gt;</description>
     </item>
     
@@ -1014,8 +1014,8 @@ Tools descriptions # Firefox and some plugins - Download Star - ExifViewer - Fir
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/facebook/</guid>
-      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ # You can search for Facebook videos indexed on Google &amp;#34;topic&amp;#34; site:facebok.com!/*/videos # Source + script to do that https://twitter.com/lorenzoromani/status/1301843624230035456?s=19 https://github.com/lorenzoromani1983/facebookTranscripts/blob/master/facebookTranscripts.py 
-Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.facebook.com/login/identify?ctx=recover https://www.</description>
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ # You can search for Facebook videos indexed on Google &amp;#34;topic&amp;#34; site:facebok.com!/*/videos # Source + script to do that https://twitter.com/lorenzoromani/status/1301843624230035456?s=19 https://github.com/lorenzoromani1983/facebookTranscripts/blob/master/facebookTranscripts.py # DumpItBlue Extension # Facebook tool box https://le-tools.com/DumpItBlueExtensionDoc.html 
+Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.</description>
     </item>
     
     <item>
@@ -1238,6 +1238,16 @@ Exploiting crontab # If a script is running with higher privileges echo &amp;#34
     </item>
     
     <item>
+      <title>Cyber Threat Intel</title>
+      <link>/resources/cti/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/cti/</guid>
+      <description> Some CTI Resources  Threat Actor Map (https://aptmap.netlify.app/#) Darknet Markets For Investigators (https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/)  
+Not really CTI Related but can help  Le Dessous des Cartes (Geopolitics) (https://www.youtube.com/c/LeDessousdesCartesARTE/videos)  </description>
+    </item>
+    
+    <item>
       <title>Datasploit</title>
       <link>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1443,8 +1453,8 @@ SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserve
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services 
-Realtime Movement (MISC) # Flight Radar in realtime https://www.flightradar24.com # Marine Trafic in realtime https://www.marinetraffic.com/ # Instant StreetView https://www.</description>
+      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com # Word Postal Codes https://worldpostalcode.com/ Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services 
+Realtime Movement (MISC) Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.</description>
     </item>
     
     <item>
@@ -1676,9 +1686,8 @@ Snmpwalk snmpwalk -c public -v1 IP 1 &amp;gt; snmpwalk.txt Windows RUNNING PROCE
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-pentest/misc_tricks/</guid>
-      <description># Security Headers https://securityheaders.com # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! 
-NIP IO / SSRF Redirections # Redirections / Bypass filters for SSRF # &amp;lt;anything&amp;gt;.&amp;lt;IP&amp;gt;.nip.io will redirect to the &amp;lt;IP&amp;gt; you specify 1.1.1.1.nip.io will resolve to 1.1.1.1 
-Spring Boot # Spring Boot / Metrics /metrics → Endpoint showing tons of endpoints /heapdump → Get a memory dump of the application Exploit → jhat -port 7401 -J-Xmx4G heapdump2016-12-27-13-54-live2196484565712626494.</description>
+      <description># Security Headers https://securityheaders.com # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Firefox extension for security https://addons.mozilla.org/fr/firefox/addon/hacktools/ 
+HTTP Methods # With this script, you can test various HTTP methods against an URL. # Cool and usefull tool by Shutdown for the recon phase https://github.com/ShutdownRepo/httpmethods HTTP Methods Tester, v1.0.2 usage: httpmethods.py [-h] -u URL [-v] [-q] [-k] [-w WORDLIST] [-t THREADS] [-j JSONFILE] This Python script can be used for HTTP verb tampering to bypass forbidden access, and for HTTP methods enumeration to find dangerous enabled methods like PUT optional arguments: -h, --help show this help message and exit -u URL, --url URL e.</description>
     </item>
     
     <item>

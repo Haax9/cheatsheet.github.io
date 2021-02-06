@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-21T17:33:37 CET">
+<meta name="revised" content="2021-02-06T18:37:09 CET">
 <title>Fully Interactive TTY Shell :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1661,6 +1661,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/resources/cti/" class="dd-item">
+        <div>
+          <a href="/resources/cti/">
+            Cyber Threat Intel
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
 
@@ -1741,7 +1748,9 @@
 <h3 id="misc">MISC</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># RLWRAP allows you to interface local and remote keyboards</span>
 <span style="color:#75715e"># It gives access to keyboard arrows and history</span>
-rlwrap ncat -lvp port</code></pre></div>
+rlwrap ncat -lvp port</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Another way to get a better shell</span>
+<span style="color:#75715e"># script is almost everytime present on the machine</span>
+/usr/bin/script -qc /bin/bash /dev/null</code></pre></div>
 <p><br/></p>
 
 <h3 id="fully-interactive-tty-shell">Fully Interactive TTY Shell</h3>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-21T17:33:37 CET">
+<meta name="revised" content="2021-02-06T18:37:09 CET">
 <title>Nmap Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1662,6 +1662,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/resources/cti/" class="dd-item">
+        <div>
+          <a href="/resources/cti/">
+            Cyber Threat Intel
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
 
@@ -1884,7 +1891,12 @@ nmap <span style="color:#ae81ff">192</span>.168.1.1 --max-retries <span style="c
 
 <span style="color:#75715e"># No faster or no slower than 100 packets/second</span>
 nmap <span style="color:#ae81ff">192</span>.168.1.1 --min-rate <span style="color:#ae81ff">100</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --max-rate <span style="color:#ae81ff">100</span></code></pre></div>
+nmap <span style="color:#ae81ff">192</span>.168.1.1 --max-rate <span style="color:#ae81ff">100</span>
+
+<span style="color:#75715e"># If you need to scan a large network in a short period of time</span>
+<span style="color:#75715e"># You can set up a timeout value for connection attemps</span>
+https://nmap.org/book/ncat-man-timing-options.html
+nmap <span style="color:#ae81ff">192</span>.168.0.0/16  --host-timeout &lt;msec&gt;</code></pre></div>
 <p><br/></p>
 
 <h3 id="evading-ids">Evading IDS</h3>

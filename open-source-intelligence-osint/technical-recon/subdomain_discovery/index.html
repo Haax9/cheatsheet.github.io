@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-01-21T17:33:37 CET">
+<meta name="revised" content="2021-02-06T18:37:09 CET">
 <title>Subdomain Discovery :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1662,6 +1662,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/resources/cti/" class="dd-item">
+        <div>
+          <a href="/resources/cti/">
+            Cyber Threat Intel
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
 
@@ -1802,7 +1809,7 @@ https://github.com/appsecco/bugcrowd-levelup-subdomain-enumeration
 ct-exposer.py -d domain.com</code></pre></div>
 <p><br/></p>
 
-<h3 id="dns-enumeration-tools">DNS Enumeration Tools</h3>
+<h3 id="dns-enumeration-bruteforce-and-passive-tools">DNS Enumeration, Bruteforce and Passive Tools</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DNSRecon is a powerfull enumeration tool</span>
 dnsrecon.py -h
 dnsrecon.py -d domain.fr
@@ -1821,10 +1828,32 @@ python sublist3r.py -d domain.fr
 <span style="color:#75715e"># DNS enumeration and information gathering using fierce (not really passiv)</span>
 fierce -dns domain.fr
 
-<span style="color:#75715e"># Aquatone is also a great tool</span></code></pre></div>
-<p><br/></p>
+<span style="color:#75715e"># Aquatone is also a great tool</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Subfinder</span>
+<span style="color:#75715e"># Subdomain discovery tool that discovers valid subdomains for websites by using passive online sources.https://github.com/projectdiscovery/subfinder</span>
+$ subfinder -d freelancer.com -o output.txt
 
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+$ subfinder -dL domains.txt -oD ~/path/to/output
+
+$ cat domains.txt <span style="color:#111">|</span> subfinders -subs</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Findomain</span>
+https://github.com/Findomain/Findomain
+
+<span style="color:#75715e"># Install</span>
+$ git clone https://github.com/Edu4rdSHL/findomain.git
+$ <span style="color:#111">cd</span> findomain
+$ cargo build --release
+$ sudo cp target/release/findomain /usr/bin/
+$ findomain
+
+$ findomain -t domain.com</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can also uses ffuf in order to bruteforce for subdomains</span>
+
+<span style="color:#75715e"># Option 1</span>
+<span style="color:#75715e"># Redirecting to the host</span>
+$ ffuf -u https://mydomain.com -w my_wordlist -H <span style="color:#d88200">&#34;Host: FUZZ.mydomain.com&#34;</span>
+
+<span style="color:#75715e"># Option 2</span>
+<span style="color:#75715e"># But you&#39;ll have to wait for the timeout</span>
+$ ffuf -u https://FUZZ.mydomain.com -w my_wordlist</code></pre></div>
+<p><br/></p>
 
 <h3 id="linked-discovery-using-burpsuite-pro">Linked Discovery (using BurpSuite Pro)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://drive.google.com/file/d/1aG_qqRvNW-s5_8vvPk5rJiMSMeNL2uY9/view
@@ -1840,23 +1869,7 @@ fierce -dns domain.fr
 <span style="color:#75715e"># &#34;Engagement Tools&#34; --&gt; &#34;Analyze Target&#34;</span>
 <span style="color:#75715e"># Save report as HTML</span>
 <span style="color:#75715e"># Copy hosts from the HTML</span></code></pre></div>
-<h1 id="br"><br/></h1>
-
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>5a7e26c7c7b85240bc30705362501eac2d21507f</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<p><br/></p>
 
 <h3 id="owasp-amass">OWASP Amass</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># OWASP Amass tool suite is used to build a network map of the target</span>

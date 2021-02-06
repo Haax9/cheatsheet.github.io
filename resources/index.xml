@@ -48,5 +48,15 @@
       <description>APIs  API endpoints (https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d) API Security part 1 (https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93) 31 Tips for pentesting APIs (https://medium.com/bugbountywriteup/31-tips-api-security-pentesting-480b5998b765) 31 Tips (drive document) (https://docs.google.com/spreadsheets/d/1jn3JnWzQFZW41gKo5Fhxwf2ke2w-pvrpCGhBmKhyIBE/edit#gid=0) IDOR/BOLA through API (https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2) KeyHacks, show how to use popular APIs (https://github.com/streaak/keyhacks)  Server-Side Injections  SQL Injections filter bypass (https://websec.wordpress.com/tag/sql-filter-bypass/) SQL Injection Cheatsheet (https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md) SSRF SVG Cheatsheet (https://github.com/allanlw/svg-cheatsheet)  Client-Side Injections  HTML5 Security Cheatsheet (https://html5sec.org/) XSS Payloads (https://gbhackers.com/top-500-important-xss-cheat-sheet/) Polyglot XSS (https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot) AwesomeXSS Payloads (https://github.com/s0md3v/AwesomeXSS/)  PHP  PHP Object Injections (https://owasp.</description>
     </item>
     
+    <item>
+      <title>Cyber Threat Intel</title>
+      <link>/resources/cti/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/resources/cti/</guid>
+      <description> Some CTI Resources  Threat Actor Map (https://aptmap.netlify.app/#) Darknet Markets For Investigators (https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/)  
+Not really CTI Related but can help  Le Dessous des Cartes (Geopolitics) (https://www.youtube.com/c/LeDessousdesCartesARTE/videos)  </description>
+    </item>
+    
   </channel>
 </rss>
