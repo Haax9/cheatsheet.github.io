@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-06T18:37:09 CET">
+<meta name="revised" content="2021-07-14T16:39:38 CEST">
 <title>Recon and Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -811,6 +811,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-pentest/tools/nuclei/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/nuclei/">
+            nuclei
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/web-pentest/attacking_apis/" class="dd-item">
@@ -1296,6 +1303,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/amsi_and_evasion/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
+            AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1486,6 +1500,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/kubernetes/" class="dd-item">
+        <div>
+          <a href="/other-systems/kubernetes/">
+            Kubernetes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/passcracking-hashfiles/" class="dd-item haschildren
@@ -1519,6 +1540,13 @@
         <div>
           <a href="/passcracking-hashfiles/wordlists/">
             Wordlists &amp; Co
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/misc_others/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1592,6 +1620,13 @@
         <div>
           <a href="/cryptography/misc/">
             MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/ssl_keys_extraction/" class="dd-item">
+        <div>
+          <a href="/cryptography/ssl_keys_extraction/">
+            SSL Keys extraction
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1846,6 +1881,32 @@ https://github.com/codingo/OSCP-2/blob/master/BASH/LinuxPrivCheck.sh
 
 <span style="color:#75715e"># Clear and efficient</span>
 https://github.com/diego-treitos/linux-smart-enumeration</code></pre></div>
+<p><br/></p>
+
+<h3 id="swap-digger">Swap Digger</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/sevagas/swap_digger
+
+<span style="color:#75715e"># swap_digger is a bash script used to automate Linux swap analysis for post-exploitation</span> 
+<span style="color:#75715e"># or forensics purpose. It automates swap extraction and searches for Linux user credentials,</span>
+<span style="color:#75715e"># Web form credentials, Web form emails, HTTP basic authentication, WiFi SSID and keys, etc.</span>
+
+ ./swap_digger.sh <span style="color:#f92672">[</span> OPTIONS <span style="color:#f92672">]</span>
+ Options : 
+  -x, --extended    Run Extended tests on the target swap to retrieve other interesting data
+        <span style="color:#f92672">(</span>web passwords, emails, wifi creds, most accessed urls, etc<span style="color:#f92672">)</span>
+  -g, --guessing  Try to guess potential passwords based on observations and stats
+        Warning: This option is not reliable, it may dig more passwords as well as hundreds <span style="color:#111">false</span> positives.
+  -h, --help    Display this help.
+  -v, --verbose Verbose mode.
+  -l, --log Log all outputs in a log file <span style="color:#f92672">(</span>protected inside the generated working directory<span style="color:#f92672">)</span>.
+  -c, --clean Automatically erase the generated working directory at end of script <span style="color:#f92672">(</span>will also remove log file<span style="color:#f92672">)</span>
+  -r PATH, --root-path<span style="color:#f92672">=</span>PATH   Location of the target file-system root <span style="color:#f92672">(</span>default value is /<span style="color:#f92672">)</span>
+        Change this value <span style="color:#00a8c8">for</span> forensic analysis when target is a mounted file system.
+        This option has to  be used along the -s option to indicate path to swap device.
+  -s PATH, --swap-path<span style="color:#f92672">=</span>PATH   Location of swap device or swap dump to analyse
+        Use this option <span style="color:#00a8c8">for</span> forensic/remote analysis of a swap dump or a mounted external swap partition.
+        This option should be used with the -r option where at least /&lt;root-path&gt;/etc/shadow exists.
+  -S, --swap-search   Search <span style="color:#00a8c8">for</span> all available swap devices <span style="color:#f92672">(</span>use <span style="color:#00a8c8">for</span> forensics<span style="color:#f92672">)</span>.</code></pre></div>
 
     
     

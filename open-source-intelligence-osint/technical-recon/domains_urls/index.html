@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-06T18:37:09 CET">
+<meta name="revised" content="2021-07-14T16:39:38 CEST">
 <title>Domain &amp; URLs :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -682,6 +682,27 @@
       <a href="/web-pentest/injections/client-side-injections/">Client Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/xss/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/xss/">
+            XSS Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/csrf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/csrf/">
+            CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/misc_others/">
+            MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/web-pentest/injections/headers_injections/" class="dd-item">
@@ -789,6 +810,13 @@
         <div>
           <a href="/web-pentest/tools/ffuf/">
             ffuf
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/tools/nuclei/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/nuclei/">
+            nuclei
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1277,6 +1305,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/amsi_and_evasion/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
+            AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1466,6 +1501,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/kubernetes/" class="dd-item">
+        <div>
+          <a href="/other-systems/kubernetes/">
+            Kubernetes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/passcracking-hashfiles/" class="dd-item haschildren
@@ -1499,6 +1541,13 @@
         <div>
           <a href="/passcracking-hashfiles/wordlists/">
             Wordlists &amp; Co
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/misc_others/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1572,6 +1621,13 @@
         <div>
           <a href="/cryptography/misc/">
             MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/ssl_keys_extraction/" class="dd-item">
+        <div>
+          <a href="/cryptography/ssl_keys_extraction/">
+            SSL Keys extraction
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1794,27 +1850,6 @@ https://viewdns.info/reversewhois/
 
 <span style="color:#75715e"># Multi tool</span>
 https://osint.sh/</code></pre></div>
-<p><br/></p>
-
-<h3 id="scrapping-from-js">Scrapping from JS</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can parse and scrape javascript content in a target website to look for hidden subdomains or interesting paths</span>
-<span style="color:#75715e"># Often, endpoints are not public but users can still interact with them</span>
-<span style="color:#75715e"># Tools like dirscraper automates this (https://github.com/Cillian-Collins/dirscraper)</span>
-
-<span style="color:#75715e"># Classic</span>
-python discraper.py -u &lt;url&gt;
-
-<span style="color:#75715e"># Output mode</span>
-python discraper.py -u &lt;url&gt; -o &lt;output&gt;
-
-<span style="color:#75715e"># Silent mode (you won&#39;t see result in term)</span>
-python discraper.py -u &lt;url&gt; -s -o &lt;output&gt;
-
-<span style="color:#75715e"># Relative URL Extractor is another good tool to scrape from JS files (https://github.com/jobertabma/relative-url-extractor)</span>
-ruby extract.rb https://hackerone.com/some-file.js</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Extract all API endpoints from AngularJS &amp; Angular javascript files</span>
-curl -s URL <span style="color:#111">|</span> grep -Po <span style="color:#d88200">&#34;(\/)((?:[a-zA-Z\-_\:\.0-9\{\}]+))(\/)*((?:[a-zA-Z\-_\:\.0-9\{\}]+))(\/)((?:[a-zA-Z\-_\/\:\.0-9\{\}]+))&#34;</span> <span style="color:#111">|</span> sort -u</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># https://github.com/incogbyte/jsearch</span>
-<span style="color:#75715e"># simple script that grep infos from javascript files</span>
-python3 jsearch.py -u https://google.com -n google</code></pre></div>
 <p><br/></p>
 
 <h3 id="getting-page-title">Getting page title</h3>

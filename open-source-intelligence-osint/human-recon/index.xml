@@ -46,7 +46,7 @@ PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool us
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/username/</guid>
-      <description># Username availability https://namechk.com/ 
+      <description># Username availability https://namechk.com/ # Another service (290 tests) https://whatsmyname.app/ 
 Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
     </item>
     
@@ -75,8 +75,7 @@ Reverse Image Search # Mutiple sources reverse image search https://www.dupliche
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com # Word Postal Codes https://worldpostalcode.com/ Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services 
-Realtime Movement (MISC) Instant StreetView https://www.instantstreetview.com/ # Car embedded cameras tracks https://openstreetcam.</description>
+      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com # Word Postal Codes https://worldpostalcode.com/ Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services # ZoomEarth provides really great images and features such as estimation and live pictures https://zoom.</description>
     </item>
     
     <item>
@@ -86,6 +85,7 @@ Realtime Movement (MISC) Instant StreetView https://www.instantstreetview.com/ #
       
       <guid>/open-source-intelligence-osint/human-recon/misc/</guid>
       <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
+Newspaper # Elephind is a search engine for newspaper archives https://www.elephind.com/ 
 Skype # Online source tool used to find and get information about Skype accounts https://www.</description>
     </item>
     

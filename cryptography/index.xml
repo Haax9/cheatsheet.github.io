@@ -40,5 +40,15 @@ Decipher encrypted aes256cbc file using openssl # Key d49af309a4c69382ff07bc6f83
 GPG Encryption sudo gpg --decrypt /mnt/media/dir2/findme.</description>
     </item>
     
+    <item>
+      <title>SSL Keys extraction</title>
+      <link>/cryptography/ssl_keys_extraction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cryptography/ssl_keys_extraction/</guid>
+      <description>Resources https://github.com/aviat/passe-partout 
+Extraction SSH Agent $ sudo ./passe-partout 4712 Target has pid 4712 on_signal(17 - SIGCHLD) from 4712 [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [X] Valid RSA key found. [X] Key saved to file id_rsa-0.key [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. done for pid 4712 OpenSSH_4.3p2 Debian-6, OpenSSL 0.</description>
+    </item>
+    
   </channel>
 </rss>

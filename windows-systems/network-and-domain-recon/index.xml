@@ -36,7 +36,7 @@ enum4linux # You can use enum4linux to enumerate domain users # You can try anon
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/domain_mapping/</guid>
-      <description>BloodHound Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want# If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
+      <description>BloodHound # /!\ Information here might be outdated # Future update incoming Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want# If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
     </item>
     
   </channel>

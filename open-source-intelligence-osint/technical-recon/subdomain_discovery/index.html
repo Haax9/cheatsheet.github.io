@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-06T18:37:09 CET">
+<meta name="revised" content="2021-07-14T16:39:38 CEST">
 <title>Subdomain Discovery :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -813,6 +813,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-pentest/tools/nuclei/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/nuclei/">
+            nuclei
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/web-pentest/attacking_apis/" class="dd-item">
@@ -1298,6 +1305,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/amsi_and_evasion/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
+            AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1487,6 +1501,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/kubernetes/" class="dd-item">
+        <div>
+          <a href="/other-systems/kubernetes/">
+            Kubernetes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/passcracking-hashfiles/" class="dd-item haschildren
@@ -1520,6 +1541,13 @@
         <div>
           <a href="/passcracking-hashfiles/wordlists/">
             Wordlists &amp; Co
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/misc_others/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1593,6 +1621,13 @@
         <div>
           <a href="/cryptography/misc/">
             MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/ssl_keys_extraction/" class="dd-item">
+        <div>
+          <a href="/cryptography/ssl_keys_extraction/">
+            SSL Keys extraction
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -2008,7 +2043,22 @@ cat icann.org.unhash <span style="color:#111">|</span> grep <span style="color:#
 curl -silent https://scans.io/data/rapid7/sonar.fdns_v2/20170417-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep “.icann.org” <span style="color:#111">|</span> jq
 
 wget https://opendata.rapid7.com/sonar.fdns_v2/2019-11-29-1574985929-fdns_a.json.gz
-cat <span style="color:#ae81ff">20170417</span>-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;.target.org&#34;</span> <span style="color:#111">|</span> jq</code></pre></div>
+cat <span style="color:#ae81ff">20170417</span>-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;.target.org&#34;</span> <span style="color:#111">|</span> jq</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SonarSearch is a project built arond the Rapid7 Sonar&#39;s database</span>
+https://github.com/Cgboal/SonarSearch
+
+<span style="color:#75715e"># An API instance is available at</span>
+https://omnisint.io/
+
+<span style="color:#75715e"># Crobat is a CLI tool designed to query this API</span>
+$ crobat -h                                                                                                                                                                      
+Usage of crobat:
+  -r string
+        Perform reverse lookup on IP address or CIDR range. Supports files and quoted lists
+  -s string
+        Get subdomains <span style="color:#00a8c8">for</span> this value. Supports files and quoted lists
+  -t string
+        Get tlds <span style="color:#00a8c8">for</span> this value. Supports files and quoted lists
+  -u    Ensures results are unique, may cause instability on large queries due to RAM requirements</code></pre></div>
 <p><br/></p>
 
 <h3 id="asn-burp-example">ASN/Burp example</h3>

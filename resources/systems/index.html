@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-06T18:37:09 CET">
+<meta name="revised" content="2021-07-14T16:39:38 CEST">
 <title>Systems :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -811,6 +811,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-pentest/tools/nuclei/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/nuclei/">
+            nuclei
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/web-pentest/attacking_apis/" class="dd-item">
@@ -1296,6 +1303,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/amsi_and_evasion/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
+            AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1485,6 +1499,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/kubernetes/" class="dd-item">
+        <div>
+          <a href="/other-systems/kubernetes/">
+            Kubernetes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/passcracking-hashfiles/" class="dd-item haschildren
@@ -1518,6 +1539,13 @@
         <div>
           <a href="/passcracking-hashfiles/wordlists/">
             Wordlists &amp; Co
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/misc_others/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1591,6 +1619,13 @@
         <div>
           <a href="/cryptography/misc/">
             MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/ssl_keys_extraction/" class="dd-item">
+        <div>
+          <a href="/cryptography/ssl_keys_extraction/">
+            SSL Keys extraction
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1763,6 +1798,9 @@
 
 <ul>
 <li>Kerberos Cheatsheet (<a href="https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a">https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a</a>)</li>
+<li>Hunting for Skeleton Key implants (<a href="https://riccardoancarani.github.io/2020-08-08-hunting-for-skeleton-keys/">https://riccardoancarani.github.io/2020-08-08-hunting-for-skeleton-keys/</a>)</li>
+<li>Hunting for Impacket (<a href="https://riccardoancarani.github.io/2020-05-10-hunting-for-impacket/">https://riccardoancarani.github.io/2020-05-10-hunting-for-impacket/</a>)</li>
+<li>Kerberoasting without SPNs (<a href="https://swarm.ptsecurity.com/kerberoasting-without-spns/">https://swarm.ptsecurity.com/kerberoasting-without-spns/</a>)</li>
 </ul>
 
 <h4 id="privilege-escalation">Privilege Escalation</h4>
@@ -1792,6 +1830,16 @@
 <li><p>Dumping credentials (offline) (<a href="https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/">https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/</a>)</p></li>
 </ul>
 
+<h4 id="evasion">Evasion</h4>
+
+<ul>
+<li>AMSI Bypass Methods and tools (<a href="https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/">https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/</a>)</li>
+<li>AMSI.fail (<a href="https://amsi.fail/">https://amsi.fail/</a>)</li>
+<li>Resurecting an old AMSI Bypass (<a href="https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/">https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/</a>)</li>
+<li>AMSI Bypass (<a href="https://www.contextis.com/us/blog/amsi-bypass">https://www.contextis.com/us/blog/amsi-bypass</a>)</li>
+<li>Getting Rastamouse’s AmsiScanBufferBypass to Work Again (<a href="https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/">https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/</a>)</li>
+</ul>
+
 <h4 id="others">Others</h4>
 
 <ul>
@@ -1805,7 +1853,9 @@
 <li>SigThief (<a href="https://github.com/secretsquirrel/SigThief">https://github.com/secretsquirrel/SigThief</a>)</li>
 <li>AD Pentesting mindmap (<a href="https://raw.githubusercontent.com/Orange-Cyberdefense/arsenal/master/mindmap/pentest_ad.png">https://raw.githubusercontent.com/Orange-Cyberdefense/arsenal/master/mindmap/pentest_ad.png</a>)</li>
 <li>MS Exchange Server pentesting mindmap (<a href="https://raw.githubusercontent.com/Orange-Cyberdefense/arsenal/master/mindmap/Pentesting_MS_Exchange_Server_on_the_Perimeter.png">https://raw.githubusercontent.com/Orange-Cyberdefense/arsenal/master/mindmap/Pentesting_MS_Exchange_Server_on_the_Perimeter.png</a>)</li>
-<li>WADComs interactive Cheatsheet (<a href="https://wadcoms.github.io/">https://wadcoms.github.io/</a>)
+<li>WADComs interactive Cheatsheet (<a href="https://wadcoms.github.io/">https://wadcoms.github.io/</a>)</li>
+<li>Windows &amp; AD Exploitation Cheat Sheet and Command Reference (<a href="https://casvancooten.com/posts/2020/11/windows-active-directory-exploitation-cheat-sheet-and-command-reference/">https://casvancooten.com/posts/2020/11/windows-active-directory-exploitation-cheat-sheet-and-command-reference/</a>)</li>
+<li>Attacking Active Directory (<a href="https://zer1t0.gitlab.io/posts/attacking_ad/">https://zer1t0.gitlab.io/posts/attacking_ad/</a>)
 <br/>
 <br/></li>
 </ul>
@@ -1819,7 +1869,10 @@
 <ul>
 <li>Basic Linux Privilege Escalation (<a href="https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/">https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/</a>)</li>
 <li>Restricted Linux Shell Escaping Techniques (<a href="https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/">https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/</a>)</li>
-<li>GTFO Bins (<a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a>)</li>
+
+<li><p>GTFO Bins (<a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a>)</p></li>
+
+<li><p>Privilege Escalation Cheatsheet for OSCP (Vulnhub) (<a href="https://github.com/Ignitetechnologies/Privilege-Escalation#kernel">https://github.com/Ignitetechnologies/Privilege-Escalation#kernel</a>)</p></li>
 </ul>
 
 <h4 id="others-1">Others</h4>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-06T18:37:09 CET">
+<meta name="revised" content="2021-07-14T16:39:38 CEST">
 <title>Domain Recon :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -811,6 +811,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-pentest/tools/nuclei/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/nuclei/">
+            nuclei
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/web-pentest/attacking_apis/" class="dd-item">
@@ -1298,6 +1305,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/amsi_and_evasion/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
+            AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1487,6 +1501,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/kubernetes/" class="dd-item">
+        <div>
+          <a href="/other-systems/kubernetes/">
+            Kubernetes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/passcracking-hashfiles/" class="dd-item haschildren
@@ -1520,6 +1541,13 @@
         <div>
           <a href="/passcracking-hashfiles/wordlists/">
             Wordlists &amp; Co
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/misc_others/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1593,6 +1621,13 @@
         <div>
           <a href="/cryptography/misc/">
             MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/ssl_keys_extraction/" class="dd-item">
+        <div>
+          <a href="/cryptography/ssl_keys_extraction/">
+            SSL Keys extraction
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1819,6 +1854,13 @@ https://github.com/cddmp/enum4linux-ng</code></pre></div>
 python pywerview.py get-netgroup -w GALACTIC.LAN -u d.traya --dc-ip <span style="color:#ae81ff">192</span>.168.56.103 --username d.vador</code></pre></div>
 <p><br/></p>
 
+<h4 id="built-in-functions">Built-in functions</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/NinjaParanoid/status/1407137264283504640/photo/1
+
+<span style="color:#75715e"># You can use [adsisearcher] to enumerate AD objects</span>
+PS&gt; <span style="color:#f92672">([</span>adsisearcher<span style="color:#f92672">])</span><span style="color:#d88200">&#34;(&amp;(objectcategory=useer)(userAccountControl:1.2.840.113556.1.4.803:=65536))&#34;</span><span style="color:#f92672">)</span>.findAll<span style="color:#f92672">()</span></code></pre></div>
+<p><br/></p>
+
 <h3 id="smb-share">SMB &amp; Share</h3>
 
 <h4 id="basic-enumeration">Basic enumeration</h4>
@@ -1851,7 +1893,12 @@ smbclient -U user //10.34.67.4/SYSVOL
 <span style="color:#75715e"># FASTER!</span>
 sudo mount -t cifs -o <span style="color:#111">username</span><span style="color:#f92672">=</span>domainUser,domainn<span style="color:#f92672">=</span>domain.com //IP/SYSVOL</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># MS14-025</span>
 → smb: <span style="color:#8045ff">\N</span>ORZH.LAN<span style="color:#8045ff">\P</span>olicies<span style="color:#8045ff">\{</span>195471B6-B0C6-4AD2-9853-28E2B4E9CEF6<span style="color:#f92672">}</span><span style="color:#8045ff">\M</span>achine<span style="color:#8045ff">\P</span>references<span style="color:#8045ff">\G</span>roups<span style="color:#8045ff">\G</span>roups.xml
-→ gpp-decrypt password</code></pre></div>
+→ gpp-decrypt password
+
+<span style="color:#75715e"># The following tool allows a great decryption</span>
+https://github.com/lucasko/gpp-encrypt-decrypt</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you ever need to recreate this vulnerability</span>
+<span style="color:#75715e"># You can encrypt a password using the following</span>
+https://gchq.github.io/CyberChef/#recipe<span style="color:#f92672">=</span>AES_Encrypt<span style="color:#f92672">(</span>%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;4e9906e8fcb66cc9faf49310620ffee8f496e806cc057990209b09a433b66c1b&#39;</span>%7D,%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;0000000000000000000000000000000&#39;</span>%7D,<span style="color:#d88200">&#39;CBC&#39;</span>,<span style="color:#d88200">&#39;Raw&#39;</span>,<span style="color:#d88200">&#39;Raw&#39;</span>,%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;&#39;</span>%7D<span style="color:#f92672">)</span>To_Base64<span style="color:#f92672">(</span><span style="color:#d88200">&#39;A-Za-z0-9%2B/%3D&#39;</span><span style="color:#f92672">)</span><span style="color:#111">&amp;</span><span style="color:#111">input</span><span style="color:#f92672">=</span>cGFzcw</code></pre></div>
 <h4 id="crackmapexec-impacket">CrackMapExec &amp; Impacket</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Impacket SMB/MSRPC tools</span>
 <span style="color:#75715e"># lookupsids → SID Bruteforce through MSRPC Interface</span>
@@ -1911,7 +1958,9 @@ PS&gt; powershell -ep bypass .<span style="color:#8045ff">\o</span>365recon.ps1 
 PS C:<span style="color:#8045ff">\&gt;</span> Get-GlobalAddressList -ExchHostname outlook.office365.com -UserName xxxx -Password xxxx -OutFile xxxx
 
 <span style="color:#75715e"># And associated usernames</span>
-PS C:<span style="color:#8045ff">\&gt;</span> Get-ADUsernameFromEWS -EmailList list.txt -ExchHostname outlook.office365.com -Remote</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When having admin privileges you can check for MFA for users</span>
+PS C:<span style="color:#8045ff">\&gt;</span> Get-ADUsernameFromEWS -EmailList list.txt -ExchHostname outlook.office365.com -Remote</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># C# Module for Azure AD enumeration</span>
+https://twitter.com/benpturner/status/1384595006917431301?s<span style="color:#f92672">=</span><span style="color:#ae81ff">19</span>
+https://gist.github.com/benpturner/c7376718558bb118111c7cad651a25ce</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When having admin privileges you can check for MFA for users</span>
 PS C:<span style="color:#8045ff">\&gt;</span> Connect-MsolService
 PS C:<span style="color:#8045ff">\&gt;</span> Get-MsolUser -EnabledFilter EnabledOnly -MaxResults <span style="color:#ae81ff">50000</span> <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> DisplayName,UserPrincipalName,@<span style="color:#f92672">{</span><span style="color:#111">N</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;MFA Status&#34;</span><span style="color:#111">;</span> <span style="color:#111">E</span><span style="color:#f92672">={</span> <span style="color:#00a8c8">if</span><span style="color:#f92672">(</span> <span style="color:#111">$_</span>.StrongAuthenticationRequirements.State -ne <span style="color:#111">$null</span><span style="color:#f92672">){</span> <span style="color:#111">$_</span>. StrongAuthenticationRequirements.State<span style="color:#f92672">}</span> <span style="color:#00a8c8">else</span> <span style="color:#f92672">{</span> <span style="color:#d88200">&#34;Disabled&#34;</span><span style="color:#f92672">}}}</span> <span style="color:#111">|</span> export-csv mfaresults.csv</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ROADTools (https://github.com/dirkjanm/ROADtools)*</span>
 <span style="color:#75715e"># It uses an internal undocumented version of Microsoft Graph API</span>

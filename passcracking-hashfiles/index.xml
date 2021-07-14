@@ -50,5 +50,14 @@ Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --word
 CeWL # CeWL allows you to build custom wordlists based on online resources # If you know that your target is target.com, you can parse web content to build lists # Can be time consuming # 5 levels of depth and minimum 7 char per word cewl -w customwordlist.txt -d 5 -m 7 www.</description>
     </item>
     
+    <item>
+      <title>MISC &amp; Others</title>
+      <link>/passcracking-hashfiles/misc_others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/passcracking-hashfiles/misc_others/</guid>
+      <description> Argon2 cracker https://github.com/CyberKnight00/Argon2_Cracker # Argon2 is a key derivation function that was selected as the winner of the Password Hashing # Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich # from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id. ./crack_argon2.py -c &amp;#39;&amp;lt; Argon2 Hash &amp;gt;&amp;#39; -w &amp;#39;&amp;lt; Path/To/Wordlist &amp;gt;&amp;#39;</description>
+    </item>
+    
   </channel>
 </rss>

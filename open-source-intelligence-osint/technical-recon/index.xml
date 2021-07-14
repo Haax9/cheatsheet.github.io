@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
-      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/# Get ASN for your target bgp.he.net # Pear is a tool used to get informations about an AS https://github.com/routeur/Pear python3 Pear.py -a [ASNumber]# You can identify IP block owned by a company ipv4info.com Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.</description>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/# Get ASN for your target bgp.he.net # Pear is a tool used to get informations about an AS https://github.com/routeur/Pear python3 Pear.py -a [ASNumber]# You can identify IP block owned by a company ipv4info.com# IP Reputation https://reputation.team-cymru.com/ Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.</description>
     </item>
     
     <item>

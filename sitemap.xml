@@ -539,6 +539,10 @@
   </url>
   
   <url>
+    <loc>/cryptography/ssl_keys_extraction/</loc>
+  </url>
+  
+  <url>
     <loc>/windows-systems/post-exploitation-techniques/searching_informations/</loc>
   </url>
   
@@ -579,11 +583,19 @@
   </url>
   
   <url>
+    <loc>/web-pentest/tools/nuclei/</loc>
+  </url>
+  
+  <url>
     <loc>/network/services-enumeration/80_443_https/</loc>
   </url>
   
   <url>
     <loc>/windows-systems/privilege-escalation/admin_processes/</loc>
+  </url>
+  
+  <url>
+    <loc>/other-systems/amazon_web_services/</loc>
   </url>
   
   <url>
@@ -624,6 +636,10 @@
   
   <url>
     <loc>/windows-systems/exploitation/kerberos/</loc>
+  </url>
+  
+  <url>
+    <loc>/passcracking-hashfiles/misc_others/</loc>
   </url>
   
   <url>
@@ -668,6 +684,10 @@
   
   <url>
     <loc>/web-pentest/injections/headers_injections/</loc>
+  </url>
+  
+  <url>
+    <loc>/other-systems/kubernetes/</loc>
   </url>
   
   <url>
@@ -807,10 +827,6 @@
   </url>
   
   <url>
-    <loc>/other-systems/amazon_web_services/</loc>
-  </url>
-  
-  <url>
     <loc>/windows-systems/privilege-escalation/azure_ad/</loc>
   </url>
   
@@ -832,6 +848,10 @@
   
   <url>
     <loc>/network/services-enumeration/161_162_snmp/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/privilege-escalation/amsi_and_evasion/</loc>
   </url>
   
   <url>

@@ -6,7 +6,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-02-06T18:37:09 CET">
+<meta name="revised" content="2021-07-14T16:39:37 CEST">
 <title>Offensive Security Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -812,6 +812,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/web-pentest/tools/nuclei/" class="dd-item">
+        <div>
+          <a href="/web-pentest/tools/nuclei/">
+            nuclei
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
       <li data-nav-id="/web-pentest/attacking_apis/" class="dd-item">
@@ -1297,6 +1304,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/amsi_and_evasion/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
+            AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/post-exploitation-techniques/" class="dd-item haschildren
@@ -1486,6 +1500,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/other-systems/kubernetes/" class="dd-item">
+        <div>
+          <a href="/other-systems/kubernetes/">
+            Kubernetes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/passcracking-hashfiles/" class="dd-item haschildren
@@ -1519,6 +1540,13 @@
         <div>
           <a href="/passcracking-hashfiles/wordlists/">
             Wordlists &amp; Co
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/passcracking-hashfiles/misc_others/" class="dd-item">
+        <div>
+          <a href="/passcracking-hashfiles/misc_others/">
+            MISC &amp; Others
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1592,6 +1620,13 @@
         <div>
           <a href="/cryptography/misc/">
             MISC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/cryptography/ssl_keys_extraction/" class="dd-item">
+        <div>
+          <a href="/cryptography/ssl_keys_extraction/">
+            SSL Keys extraction
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1756,7 +1791,7 @@
 3/ Content is taken from my personnal experience but also from several
    online resources and cheatsheets. I also made a resources sections, linking to several
    resources I found or used. This section has been made lately, so all informations might
-   not be sourced!
+   not be sourced (but well, I try to)!
 
 4/ This website is for educationnal and &quot;memo&quot; purpose only.
    It does not aim to weaponize anyone.
@@ -1764,7 +1799,10 @@
 5/ If you have any request (Something that is wrong, removing informations...)  
    please do not hesitate to contact me on Twitter (@Haax9_).
 
-6/ I'm also posting some writeups (HackTheBox, CTF..) and other cybersecurity stuff on a blog,
+6/ If this place have been useful to you, leave a star on the github project, or retweet/follow through Twitter (@Haax9_).
+   Don't mind sharing it, as it could help others too =).
+
+7/ I'm also posting some writeups (HackTheBox, CTF..) and other cybersecurity stuff on a blog,
    available in French and English !
    --&gt; https://haax.fr
 </code></pre>
@@ -1772,6 +1810,68 @@
 <p><br/></p>
 
 <h3 id="updates">Updates</h3>
+
+<h5 id="14-07-2021">14/07/2021</h5>
+
+<pre><code>- General Info : 
+   - Update format modified (category instead of information type, web, OSINT, Windows...)
+
+- CTI :
+   - Resource : A Cyber Threat Intelligence Self-Study Plan: Part 1
+
+- Web :
+   - Tool : Qsreplace
+   - Tool : Nuclei usage and infos
+   - Tool : page-fetch
+   - Tool : x8
+   - Tool : NoSQLMap
+   - Tool : subjs / LinkFinder / SecretFinder (JS extraction)
+   - Tool : XSStrike
+   - Resource : Prototype Pollution
+   - Resource : x8, Arjun, Param Miner comparison
+
+- OSINT : 
+   - Tool : Ignorant (Phone numbers)
+   - Tool : Zoom.earth (GEOINT)
+   - Tool : Justgetmydata website (OPSEC)
+   - Tool : Elephind (Newspaper Archives)
+   - Tool : Peakvisor app (Mountains identification)
+   - Tool : International Numbering Plan (Phone number analysis)
+   - Tool : HLR Lookups (Phone identification)
+   - Tool : Lusha
+   - Tool : Kaspr
+   - Tool : Whatsmyname.app 
+   - Tool : IP Reputation Lookup (Team Cymru)
+   - Tool : Thingful.net (IoT map)
+   - Tool : w3dt.net (DNS, HTTP, Database lookups...)
+   - Tool : Crobat / Sonarsearch / Omnisint (Web/DNS)
+   - Resource : The space speedometer : Using some simple algebra and satellite imagery to determine ship speed
+   - Resource : &quot;OSINT&quot; : Explorer l'espace informel Russe (OSINT Russia guide)
+   - Resource : Geolocating a Plane Shot Down in Ethiopia – Case Studies on Mountain Profiling with PeakVisor
+   - Resource : Phone numbers investigation, the open source way
+
+- Windows Systems :
+   - Tool : Bloodhound-quickwins
+   - Tool : AzureAD enumeration module
+   - Tricks/Methods : MS14-025 Cyberchef encryption
+   - Tricks/Methods : AMSI Bypass methods
+   - Tricks/Methods : [adsisearcher] built-in AD enumeration
+   - Tricks/Methods : Kerberoasting attack without prior access
+   - Resource : Kerberoasting without SPNs
+   - Resource : Windows &amp; Active Directory Exploitation Cheat Sheet and Command Reference
+   - Resource : zer1t0's guide for attacking Active Directory (really great paper!)
+   - Resource : Hunting for Skeleton Key implants
+   - Resource : Hunting for Impacket
+   - Resource : Windows AMSI Bypass links
+
+- MISC :
+   - Tool : Passe-partout (SSL Extraction)
+   - Tool : Swap Digger (Linux)
+   - Tool : Argon2 Cracker
+   - Tool : Message Header Analysis
+   - New section : Kubernetes (Other Systems)
+   - Resource : Privilege Escalation cheatsheet for OSCP (Vulnhub)
+</code></pre>
 
 <h5 id="06-02-2021">06/02/2021</h5>
 
