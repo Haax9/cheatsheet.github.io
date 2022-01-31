@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:37 CEST">
+<meta name="revised" content="2022-01-31T14:36:10 CET">
 <title>Information Gathering :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1259,7 +1259,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1309,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1670,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1767,6 +1796,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1815,7 +1846,11 @@ http://opengazettes.com/
 https://societe.ninja/
 
 <span style="color:#75715e"># Pappers.com is dedicated to French companies</span>
-https://www.pappers.fr/</code></pre></div>
+https://www.pappers.fr/
+
+<span style="color:#75715e"># OSINT World Map with dedicated services per countries</span>
+<span style="color:#75715e"># Really usefull resource</span>
+https://cipher387.github.io/osintmap/</code></pre></div>
 <h5 id="financial-administrative">Financial &amp; Administrative</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Legal and Financial informations (might not be free for full informations)</span>
 https://www.societe.com/
@@ -1825,7 +1860,10 @@ https://fr.kompass.com/
 
 <span style="color:#75715e"># European Justice Portal</span>
 <span style="color:#75715e"># Informations are not free</span>
-https://e-justice.europa.eu</code></pre></div>
+https://e-justice.europa.eu
+
+<span style="color:#75715e"># French justice</span>
+https://jurisprudence.ninja/</code></pre></div>
 <h5 id="technical-hosted">Technical &amp; Hosted</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find multiples sites owned by the same individual/company</span>
 http://www.spyonweb.com

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:38 CEST">
+<meta name="revised" content="2022-01-31T14:36:11 CET">
 <title>E-mails :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1259,7 +1259,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1309,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1670,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1772,6 +1801,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1950,6 +1981,49 @@ $ holehe -e test@gmail.com
 
 <span style="color:#75715e"># WEB VERSION BY EPIEOS</span>
 https://tools.epieos.com/holehe.php</code></pre></div>
+<p><br/></p>
+
+<h3 id="mailcat">Mailcat</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/sharsil/mailcat
+
+<span style="color:#75715e"># The only cat who can find existing email addresses by nickname.</span>
+./mailcat.py username
+
+<span style="color:#75715e"># Total 34 providers, &gt; 60 domains and &gt; 100 aliases.</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="mosint">MOSINT</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/alpkeskin/mosint
+
+<span style="color:#75715e"># MOSINT is an OSINT Tool for emails. It helps you gather information about the target email.</span>
+go run main.go -e example@domain.com -all
+
+<span style="color:#75715e"># It can use several APIs</span>
+<span style="color:#75715e"># ipapi.co</span>
+<span style="color:#75715e"># hunter.io</span>
+<span style="color:#75715e"># emailrep.io</span>
+<span style="color:#75715e"># scylla.io</span>
+<span style="color:#75715e"># breachdirectory.org</span>
+
++-------+--------------------------------+------------+
+<span style="color:#111">|</span> FLAGS <span style="color:#111">|</span>          DESCRIPTION           <span style="color:#111">|</span> ISREQUIRED <span style="color:#111">|</span>
++-------+--------------------------------+------------+
+<span style="color:#111">|</span> -e    <span style="color:#111">|</span> Set target email               <span style="color:#111">|</span> Yes        <span style="color:#111">|</span>
+<span style="color:#111">|</span> -v    <span style="color:#111">|</span> Verify the target email        <span style="color:#111">|</span> No         <span style="color:#111">|</span>
+<span style="color:#111">|</span> -ss   <span style="color:#111">|</span> Social scan <span style="color:#00a8c8">for</span> target email   <span style="color:#111">|</span> No         <span style="color:#111">|</span>
+<span style="color:#111">|</span> -re   <span style="color:#111">|</span> Find related emails with       <span style="color:#111">|</span> No         <span style="color:#111">|</span>
+<span style="color:#111">|</span>       <span style="color:#111">|</span> target email                   <span style="color:#111">|</span>            <span style="color:#111">|</span>
+<span style="color:#111">|</span> -rd   <span style="color:#111">|</span> Find related domains with      <span style="color:#111">|</span> No         <span style="color:#111">|</span>
+<span style="color:#111">|</span>       <span style="color:#111">|</span> target email                   <span style="color:#111">|</span>            <span style="color:#111">|</span>
+<span style="color:#111">|</span> -l    <span style="color:#111">|</span> Find password leaks <span style="color:#00a8c8">for</span> target <span style="color:#111">|</span> No         <span style="color:#111">|</span>
+<span style="color:#111">|</span>       <span style="color:#111">|</span> email                          <span style="color:#111">|</span>            <span style="color:#111">|</span>
+<span style="color:#111">|</span> -pd   <span style="color:#111">|</span> Search pastebin dumps <span style="color:#00a8c8">for</span>      <span style="color:#111">|</span> No         <span style="color:#111">|</span>
+<span style="color:#111">|</span>       <span style="color:#111">|</span> target email                   <span style="color:#111">|</span>            <span style="color:#111">|</span>
+<span style="color:#111">|</span> -er   <span style="color:#111">|</span> EmailRep.io API                <span style="color:#111">|</span> No         <span style="color:#111">|</span>
+<span style="color:#111">|</span> -d    <span style="color:#111">|</span> More information about target  <span style="color:#111">|</span> No         <span style="color:#111">|</span>
+<span style="color:#111">|</span>       <span style="color:#111">|</span> email<span style="color:#960050;background-color:#1e0010">&#39;</span>s domain                 <span style="color:#111">|</span>            <span style="color:#111">|</span>
+<span style="color:#111">|</span> -all  <span style="color:#111">|</span> All features!                  <span style="color:#111">|</span> No         <span style="color:#111">|</span>
++-------+--------------------------------+------------+</code></pre></div>
 <p><br/></p>
 
 <h3 id="yopmail-co">Yopmail &amp; co</h3>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:38 CEST">
+<meta name="revised" content="2022-01-31T14:36:11 CET">
 <title>Usernames :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1259,7 +1259,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1309,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1670,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1772,6 +1801,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1882,6 +1913,59 @@ maigret user --tags photo,dating
 maigret user1 user2 user3 -a</code></pre></div>
 <p><br/></p>
 
+<h3 id="nexfil">Nexfil</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Over 350 websites checked</span>
+<span style="color:#75715e"># Mairgret alternative</span>
+https://github.com/thewhiteh4t/nexfil
+
+python3 nexfil.py -h
+usage: nexfil.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u U<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-d D <span style="color:#f92672">[</span>D ...<span style="color:#f92672">]]</span> <span style="color:#f92672">[</span>-f F<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-l L<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-t T<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-v<span style="color:#f92672">]</span>
+
+nexfil - Find social media profiles on the web <span style="color:#111">|</span> v1.0.0
+
+optional arguments:
+  -h, --help    show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
+  -u U          Specify username
+  -d D <span style="color:#f92672">[</span>D ...<span style="color:#f92672">]</span>  Specify DNS Servers <span style="color:#f92672">[</span>Default : <span style="color:#ae81ff">1</span>.1.1.1<span style="color:#f92672">]</span>
+  -f F          Specify a file containing username list
+  -l L          Specify multiple comma separated usernames
+  -t T          Specify timeout <span style="color:#f92672">[</span>Default : <span style="color:#ae81ff">20</span><span style="color:#f92672">]</span>
+  -v            Prints version
+
+<span style="color:#75715e"># Single username</span>
+python3 nexfil.py -u username
+
+<span style="color:#75715e"># Multiple *comma* separated usernames</span>
+python3 nexfil.py -l <span style="color:#d88200">&#34;user1, user2&#34;</span>
+
+<span style="color:#75715e"># Username list in a file</span>
+python3 nexfil.py -f users.txt</code></pre></div>
+<p><br/></p>
+
+<h3 id="marple">Marple</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># OSINT tool that collect links to profiles by username through search engines</span>
+<span style="color:#75715e"># Collect links to profiles by username through 10+ search engines</span>
+https://github.com/soxoj/marple
+
+python marple.py --help
+  -h, --help            show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
+  -t THRESHOLD, --threshold THRESHOLD
+                        Threshold to discard junk search results
+  --results-count RESULTS_COUNT
+                        Count of results parsed from each search engine
+  --no-url-filter       Disable filtering results by usernames in URLs
+
+  --engines <span style="color:#f92672">{</span>baidu,dogpile,google,bing,ask,aol,torch,yandex,naver,paginated,yahoo,startpage,duckduckgo,qwant<span style="color:#f92672">}</span>
+                        Engines to run <span style="color:#f92672">(</span>you can choose more than one<span style="color:#f92672">)</span>
+
+  --plugins <span style="color:#f92672">{</span>socid_extractor,metadata,maigret<span style="color:#f92672">}</span> <span style="color:#f92672">[{</span>socid_extractor,metadata,maigret<span style="color:#f92672">}</span> ...<span style="color:#f92672">]</span>
+                        Additional plugins to analyze links
+
+  -v, --verbose         Display junk score <span style="color:#00a8c8">for</span> each result
+  -d, --debug           Display all the results from sources and debug messages
+  -l, --list            Display only list of all the URLs
+  --proxy PROXY         Proxy string <span style="color:#f92672">(</span>e.g. https://user:pass@1.2.3.4:8080<span style="color:#f92672">)</span>
+  --csv CSV             Save results to the CSV file</code></pre></div>
 <h3 id="social-analyzer">Social Analyzer</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># API, CLI &amp; Web App for analyzing &amp; finding a person profile across +300 social media websites</span>
 https://github.com/qeeqbox/social-analyzer

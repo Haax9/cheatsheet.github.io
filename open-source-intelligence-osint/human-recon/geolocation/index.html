@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:38 CEST">
+<meta name="revised" content="2022-01-31T14:36:11 CET">
 <title>Geolocation &amp; GEOINT :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1259,7 +1259,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1309,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1670,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1772,6 +1801,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1832,8 +1863,30 @@ https://www.mapillary.com/
 https://twitter.com/y_vdw/status/1339984940377624576?s<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
 https://en.wikipedia.org/wiki/List_of_street_view_services
 
+<span style="color:#75715e"># Sentinel Hub can be good</span>
+<span style="color:#75715e"># Not always very clear, but easier to go back in time</span>
+https://apps.sentinel-hub.com/sentinel-playground/
+
 <span style="color:#75715e"># ZoomEarth provides really great images and features such as estimation and live pictures</span>
 https://zoom.earth</code></pre></div>
+<p><br/></p>
+
+<h3 id="aerial-imagery">Aerial Imagery</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Aerial Imagery Research</span>
+https://sector035.nl/articles/aerial-imagery-in-qgis
+
+<span style="color:#75715e"># Aerial pictures of building and monuments</span>
+https://www.euroluftbild.de/en/
+https://www.euroluftbild.de/
+
+<span style="color:#75715e"># 5 free tools for viewing past aerial imagery</span>
+https://gisgeography.com/free-historical-imagery-viewers/
+https://worldview.earthdata.nasa.gov/
+https://livingatlas.arcgis.com/wayback/
+https://www.planet.com/explorer/
+
+<span style="color:#75715e"># Collaborative platform for searching, sharing and viewing aerial images</span>
+https://soar.earth/</code></pre></div>
 <p><br/></p>
 
 <h3 id="realtime-movement-misc">Realtime Movement (MISC)</h3>
@@ -1847,6 +1900,10 @@ https://openstreetcam.org
 <span style="color:#75715e"># (Cars, Train, etc)</span>
 <span style="color:#75715e"># Can be usefull to identify locations where there is no roads (ex : trains)</span>
 https://www.mapillary.com
+
+<span style="color:#75715e"># Trains map about French lines</span>
+<span style="color:#75715e"># Real times trains</span>
+https://carto.graou.info
 
 <span style="color:#75715e"># Cab Ride Videos from Rail Transport Vehicles</span>
 https://railcabrides.com/en/
@@ -1945,24 +2002,6 @@ https://directories.lloydslist.com/company</code></pre></div>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find photos taken by the same camera using serial number</span>
 <span style="color:#75715e"># We don&#39;t know how files are processed/stored..</span> 
 https://www.stolencamerafinder.com/</code></pre></div>
-<p><br/></p>
-
-<h3 id="aerial-imagery">Aerial Imagery</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Aerial Imagery Research</span>
-https://sector035.nl/articles/aerial-imagery-in-qgis
-
-<span style="color:#75715e"># Aerial pictures of building and monuments</span>
-https://www.euroluftbild.de/en/
-https://www.euroluftbild.de/
-
-<span style="color:#75715e"># 5 free tools for viewing past aerial imagery</span>
-https://gisgeography.com/free-historical-imagery-viewers/
-https://worldview.earthdata.nasa.gov/
-https://livingatlas.arcgis.com/wayback/
-https://www.planet.com/explorer/
-
-<span style="color:#75715e"># Collaborative platform for searching, sharing and viewing aerial images</span>
-https://soar.earth/</code></pre></div>
 <p><br/></p>
 
 <h3 id="open-streep-map-and-overpass-turbo">Open Streep Map and Overpass Turbo</h3>

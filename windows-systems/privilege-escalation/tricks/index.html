@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:38 CEST">
+<meta name="revised" content="2022-01-31T14:36:11 CET">
 <title>Tricks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1259,7 +1259,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1309,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1670,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1745,7 +1774,7 @@
       <option value="/windows-systems/privilege-escalation/automated_recon/" >-- Automated Recon</option>
       <option value="/windows-systems/privilege-escalation/tricks/"  selected>-- Tricks</option>
       <option value="/windows-systems/privilege-escalation/services_scheduled_tasks/" >-- Services &amp; Scheduled Tasks</option>
-      <option value="/windows-systems/privilege-escalation/lsass_mimikatz/" >-- LSASS and Mimikatz</option>
+      <option value="/windows-systems/privilege-escalation/lsass_mimikatz/" >-- LSASS, Mimikatz, SAM</option>
       <option value="/windows-systems/privilege-escalation/admin_processes/" >-- Admin and Processes</option>
       <option value="/windows-systems/privilege-escalation/dnsadmins_group/" >-- DNSadmins group</option>
       <option value="/windows-systems/privilege-escalation/delegations/" >-- Active Directory Delegations</option>
@@ -1753,6 +1782,7 @@
       <option value="/windows-systems/privilege-escalation/windows_defender/" >-- Windows Defender</option>
       <option value="/windows-systems/privilege-escalation/azure_ad/" >-- Azure AD</option>
       <option value="/windows-systems/privilege-escalation/amsi_and_evasion/" >-- AMSI Bypass and Evasion</option>
+      <option value="/windows-systems/privilege-escalation/spoolerservice/" >-- Spooler Service</option>
   
     <option value="/windows-systems/post-exploitation-techniques/" >
   - 
@@ -1772,6 +1802,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 

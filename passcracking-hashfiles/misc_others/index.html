@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:38 CEST">
+<meta name="revised" content="2022-01-31T14:36:11 CET">
 <title>MISC &amp; Others :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -317,6 +317,62 @@
       <a href="/open-source-intelligence-osint/human-recon/">Human Investigation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/searchingsomeone/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/searchingsomeone/">
+            Searching Someone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/email/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/email/">
+            E-mails
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/leaks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/leaks/">
+            Credentials Leaks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/username/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/username/">
+            Usernames
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/pictures/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/pictures/">
+            Picture Investigation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/phone/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/phone/">
+            Phone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/geolocation/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/geolocation/">
+            Geolocation &amp; GEOINT
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/misc/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/misc/">
+            MISC - Tips &amp; Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/" class="dd-item haschildren
@@ -1201,7 +1257,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1251,6 +1307,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1606,6 +1669,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1693,6 +1778,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1731,6 +1818,49 @@
 <span style="color:#75715e"># from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id.</span>
 
 ./crack_argon2.py -c <span style="color:#d88200">&#39;&lt; Argon2 Hash &gt;&#39;</span> -w <span style="color:#d88200">&#39;&lt; Path/To/Wordlist &gt;&#39;</span></code></pre></div>
+<h3 id="lestat">Lestat</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/astar-security/Lestat
+<span style="color:#75715e"># Great tool by Astar Security, multiple scripts for extraction, parsing and creating wordlists...</span>
+
+<span style="color:#75715e"># Wiki is also cool to get informations about the different prerequisites and tools</span>
+https://github.com/astar-security/Lestat/wiki</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LesterTheLooter cna be used to get data about cracked passwords</span>
+<span style="color:#75715e"># - the list of the domain groups of each craked account</span>
+<span style="color:#75715e"># - an indicator about whether a cracked account is admin or not</span>
+<span style="color:#75715e"># - the status of each cracked account: ACCOUNT_DISABLED or ACCOUNT_ENABLED</span>
+<span style="color:#75715e"># - the list of all the domain groups compromised through the cracked accounts</span> 
+<span style="color:#75715e">#   (no false positive due to disabled users)</span>
+<span style="color:#75715e"># - a comprehensive set of stats about the passwords cracked</span>
+<span style="color:#75715e">#   (length distribution, charset, robustness evaluation, most frequent pattern, ...)</span>
+
+$ python3 LesterTheLooter.py --priv JOHN_RESULT.txt USERS_INFO.txt
+<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Importing john result from JOHN_RESULT.txt and domain info from USERS_INFO.txt
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Line ignored in JOHN_RESULT.txt file <span style="color:#f92672">(</span>not a valid user:password form<span style="color:#f92672">)</span>: 
+<span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Line ignored in JOHN_RESULT.txt file <span style="color:#f92672">(</span>not a valid user:password form<span style="color:#f92672">)</span>: <span style="color:#ae81ff">124</span> password hashes cracked, <span style="color:#ae81ff">589</span> left
+<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Computing groups information
+<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Exporting data to users_compromised.csv and group_compromised.csv
+<span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Privileged accounts compromised are listed below:
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> disabled     domain admins        n.sarko                  Cecilia&lt;<span style="color:#ae81ff">3</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> enabled      likely admin         f.maçon                  NOMondial2020!
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> enabled      enterprise admins    adm.boloré               Y4tch4life
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> enabled      domain admins        e.macron                 Macron2022!!!
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> enabled      enterprise admins    b.gates                  VaccineApple!
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> disabled     account operators    e.philippe               Prosac2k19
+
+<span style="color:#75715e"># Get some stats in addition of the CSV files</span>
+$ python3 LesterTheLooter.py --stats JOHN_RESULT.txt USERS_INFO.txt
+
+<span style="color:#75715e"># You can get comprehensive stats if you configured the wordlists :</span>
+python3 LesterTheLooter.py --wordlists &lt;PATH_TO_WORDLISTS&gt; --stats JOHN_RESULT.txt USERS_INFO.txt</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># PNG charts can be generated from the lestat.csv file</span>
+<span style="color:#75715e"># It is recommended to present the result in a Excel file</span>
+python3 GregTheGrapher.py -w charts --transparent lestat.csv </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Working on Wordlists</span>
+https://github.com/astar-security/Lestat/wiki/GetWordlists
+
+<span style="color:#75715e"># Check for leaked NTLM</span>
+<span style="color:#75715e"># Look for presence of users in the HaveIBeenPwned list:</span>
+python3 LesterTheLooter.py --verbose &lt;HASHES_FILE&gt; &lt;HAVEIBEENPWNED_LIST&gt;
+
+<span style="color:#75715e"># Wordlist generation scripts</span>
+https://github.com/astar-security/Lestat/tree/master/wordlists</code></pre></div>
 
     
     

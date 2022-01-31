@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</guid>
-      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+ 
-Redirections # These tools allow you to check redirection and resolving path for a given target URL https://redirectdetective.com/ https://wheregoes.com # Lookyloo also gives this kind of information https://lookyloo.</description>
+      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+ # bit.ly - add + at the end # http://cutt.ly - add @ # http://tiny.cc - add = # http://tinyurl.com - add preview. before http://tinyurl.com</description>
     </item>
     
     <item>

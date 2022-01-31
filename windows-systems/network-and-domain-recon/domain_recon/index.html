@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:38 CEST">
+<meta name="revised" content="2022-01-31T14:36:11 CET">
 <title>Domain Recon :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -680,27 +680,6 @@
       <a href="/web-pentest/injections/client-side-injections/">Client Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/web-pentest/injections/client-side-injections/xss/" class="dd-item">
-        <div>
-          <a href="/web-pentest/injections/client-side-injections/xss/">
-            XSS Injections
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/web-pentest/injections/client-side-injections/csrf/" class="dd-item">
-        <div>
-          <a href="/web-pentest/injections/client-side-injections/csrf/">
-            CSRF Injections
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/web-pentest/injections/client-side-injections/misc_others/" class="dd-item">
-        <div>
-          <a href="/web-pentest/injections/client-side-injections/misc_others/">
-            MISC &amp; Others
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
         </ul>
     </li>
       <li data-nav-id="/web-pentest/injections/headers_injections/" class="dd-item">
@@ -1259,7 +1238,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1309,6 +1288,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1649,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1764,6 +1772,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1861,10 +1871,33 @@ python pywerview.py get-netgroup -w GALACTIC.LAN -u d.traya --dc-ip <span style=
 PS&gt; <span style="color:#f92672">([</span>adsisearcher<span style="color:#f92672">])</span><span style="color:#d88200">&#34;(&amp;(objectcategory=useer)(userAccountControl:1.2.840.113556.1.4.803:=65536))&#34;</span><span style="color:#f92672">)</span>.findAll<span style="color:#f92672">()</span></code></pre></div>
 <p><br/></p>
 
-<h3 id="smb-share">SMB &amp; Share</h3>
+<h3 id="users-and-passwords">Users and Passwords</h3>
 
-<h4 id="basic-enumeration">Basic enumeration</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Enumerate hostname</span>
+<h4 id="smartbrute">Smartbrute</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/ShutdownRepo/smartbrute
+<span style="color:#75715e"># The smart password spraying and bruteforcing tool for Active Directory Domain Services.</span>
+
+<span style="color:#75715e"># Smart mode</span>
+<span style="color:#75715e"># This mode can be used to make sure NOT to lock any account when bruteforcing by:</span>
+<span style="color:#75715e"># Fetching the enabled users from Active Directory</span>
+<span style="color:#75715e"># Fetching bad password count for each user</span>
+<span style="color:#75715e"># Fetching lockout policies</span>
+<span style="color:#75715e"># Bruteforcing users according to the information found</span>
+smartbrute.py -v smart -bP passwords.txt ntlm -d domain.local -u user -p password kerberos
+
+<span style="color:#75715e"># Brute mode</span>
+<span style="color:#75715e"># The brute mode doesn&#39;t require prior knowledge of a low-priv user credentials but doesn&#39;t</span> 
+<span style="color:#75715e"># have safety features like the smart mode. This mode CAN effectively lock accounts</span>
+<span style="color:#d88200">````</span>
+&lt;br/&gt;
+
+
+<span style="color:#75715e">### SMB &amp; Share</span>
+
+<span style="color:#75715e">#### Basic enumeration</span>
+
+<span style="color:#d88200">```</span>bash
+<span style="color:#75715e"># Enumerate hostname</span>
 nmblookup -A &lt;victim_ip&gt;
 enum4linux -n &lt;victim_ip&gt;
 $ nmap --script<span style="color:#f92672">=</span>smb-enum* --script-args<span style="color:#f92672">=</span><span style="color:#111">unsafe</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> -T5 &lt;victim_ip&gt;
@@ -1918,6 +1951,22 @@ cme smb <span style="color:#ae81ff">10</span>.69.88.23 -u user -p password --sha
 C:<span style="color:#8045ff">\&gt;</span> net session
 <span style="color:#75715e"># And kill them</span>
 C:<span style="color:#8045ff">\&gt;</span> net session <span style="color:#8045ff">\[</span>LinuxIPaddr<span style="color:#f92672">]</span> /del</code></pre></div>
+<p><br/></p>
+
+<h3 id="dns-zones">DNS zones</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/dirkjanm/adidnsdump
+https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/
+
+<span style="color:#75715e"># By default any user in Active Directory can enumerate all DNS records in the Domain</span> 
+<span style="color:#75715e"># or Forest DNS zones, similar to a zone transfer.</span> 
+<span style="color:#75715e"># This tool enables enumeration and exporting of all DNS records in the zone for</span> 
+<span style="color:#75715e"># recon purposes of internal networks.</span>
+
+<span style="color:#75715e"># Get DNS zones</span>
+$ adidnsdump -u icorp<span style="color:#8045ff">\\</span>testuser --print-zones icorp-dc.internal.corp
+
+<span style="color:#75715e"># Get zone content</span>
+$ adidnsdump -u icorp<span style="color:#8045ff">\\</span>testuser --zone zonename icorp-dc.internal.corp</code></pre></div>
 <p><br/></p>
 
 <h3 id="azure-ad-recon">Azure AD Recon</h3>

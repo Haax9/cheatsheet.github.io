@@ -27,6 +27,10 @@
   </url>
   
   <url>
+    <loc>/defensive-monitoring-cti/defensive_osint_cti/</loc>
+  </url>
+  
+  <url>
     <loc>/pwn/buffer-overflow/easy_no_protection/</loc>
   </url>
   
@@ -200,6 +204,10 @@
   
   <url>
     <loc>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</loc>
+  </url>
+  
+  <url>
+    <loc>/defensive-monitoring-cti/defensive_active_directory/</loc>
   </url>
   
   <url>
@@ -883,11 +891,15 @@
   </url>
   
   <url>
+    <loc>/windows-systems/privilege-escalation/spoolerservice/</loc>
+  </url>
+  
+  <url>
     <loc>/network/services-enumeration/995_pop3s/</loc>
   </url>
   
   <url>
-    <loc>/resources/</loc>
+    <loc>/defensive-monitoring-cti/</loc>
   </url>
   
   <url>
@@ -896,6 +908,10 @@
   
   <url>
     <loc>/network/services-enumeration/1025_nfs_iis/</loc>
+  </url>
+  
+  <url>
+    <loc>/resources/</loc>
   </url>
   
   <url>

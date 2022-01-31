@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:37 CEST">
+<meta name="revised" content="2022-01-31T14:36:10 CET">
 <title>General Infosec :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1257,7 +1257,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1307,6 +1307,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1661,6 +1668,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item parent haschildren
         ">
       <div>
@@ -1743,6 +1772,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option> 
       <option value="/resources/general_infosec/"  selected>- General Infosec</option>
@@ -1779,11 +1810,24 @@
     
     
 
-<h4 id="training-resources">Training Resources</h4>
+<h4 id="training-ctf-challenges-resources">Training/CTF/Challenges Resources</h4>
 
 <ul>
-<li>HackTheBox video WU (<a href="https://ippsec.rocks/#">https://ippsec.rocks/#</a>)</li>
 <li>Resources, cheatsheets etc about EVERYTHING (<a href="https://github.com/trimstray/the-book-of-secret-knowledge">https://github.com/trimstray/the-book-of-secret-knowledge</a>)</li>
+
+<li><p>Burp Suite: In Depth Survival Guide (Udemy course) (<a href="https://www.udemy.com/course/burp-suite-in-depth-survival-guide/">https://www.udemy.com/course/burp-suite-in-depth-survival-guide/</a>)</p></li>
+
+<li><p>TheBlackSide, challenges / CTF (<a href="https://theblackside.fr/">https://theblackside.fr/</a>)</p></li>
+
+<li><p>HackTheBox video WU (<a href="https://ippsec.rocks/#">https://ippsec.rocks/#</a>)</p></li>
+
+<li><p>CyberDefenders (Blueteam challenges) (<a href="https://cyberdefenders.org/">https://cyberdefenders.org/</a>)</p></li>
+
+<li><p>CyberSoc Wales (OSINT challenges) (<a href="https://investigator.cybersoc.wales">https://investigator.cybersoc.wales</a>)</p></li>
+
+<li><p>BTLO (Blue Team Labs Online) (<a href="https://blueteamlabs.online/login">https://blueteamlabs.online/login</a>)</p></li>
+
+<li><p>Hacktoria (Realists and complex OSINT challenges) (<a href="https://hacktoria.com/">https://hacktoria.com/</a>)</p></li>
 </ul>
 
 <h4 id="network-pentest">Network &amp; Pentest</h4>
@@ -1808,6 +1852,8 @@
 <li>Language Dictionnaries (<a href="http://www.gwicks.net/dictionaries.htm">http://www.gwicks.net/dictionaries.htm</a>)</li>
 <li>SCADA default passwords (<a href="http://www.critifence.com/default-password-database/">http://www.critifence.com/default-password-database/</a>)</li>
 <li>Tons of wordlists (<a href="https://wordlists.assetnote.io/">https://wordlists.assetnote.io/</a>)</li>
+<li>Default Creds Cheatsheet (<a href="https://github.com/ihebski/DefaultCreds-cheat-sheet">https://github.com/ihebski/DefaultCreds-cheat-sheet</a>)</li>
+<li>Lestat Tool (<a href="https://github.com/astar-security/Lestat">https://github.com/astar-security/Lestat</a>)</li>
 </ul>
 
 <h4 id="some-crypto-cryptocurrencies">Some Crypto / Cryptocurrencies</h4>

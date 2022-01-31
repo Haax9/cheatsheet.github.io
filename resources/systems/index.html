@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:38 CEST">
+<meta name="revised" content="2022-01-31T14:36:11 CET">
 <title>Systems :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1257,7 +1257,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1307,6 +1307,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1661,6 +1668,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item parent haschildren
         ">
       <div>
@@ -1743,6 +1772,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option> 
       <option value="/resources/general_infosec/" >- General Infosec</option>
@@ -1828,6 +1859,12 @@
 <li><p>Invoke-Recon (<a href="https://github.com/phackt/Invoke-Recon">https://github.com/phackt/Invoke-Recon</a>)</p></li>
 
 <li><p>Dumping credentials (offline) (<a href="https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/">https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/</a>)</p></li>
+
+<li><p>#HiveNightmare aka #SeriousSAM — anybody can read the registry in Windows 10 (<a href="https://doublepulsar.com/hivenightmare-aka-serioussam-anybody-can-read-the-registry-in-windows-10-7a871c465fa5">https://doublepulsar.com/hivenightmare-aka-serioussam-anybody-can-read-the-registry-in-windows-10-7a871c465fa5</a>)</p></li>
+
+<li><p>MS-EFSRPC to coerce machine authentification (<a href="https://github.com/topotam/PetitPotam">https://github.com/topotam/PetitPotam</a>)</p></li>
+
+<li><p>Spooler Service Abuse (<a href="https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse">https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse</a>)</p></li>
 </ul>
 
 <h4 id="evasion">Evasion</h4>
@@ -1838,6 +1875,22 @@
 <li>Resurecting an old AMSI Bypass (<a href="https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/">https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/</a>)</li>
 <li>AMSI Bypass (<a href="https://www.contextis.com/us/blog/amsi-bypass">https://www.contextis.com/us/blog/amsi-bypass</a>)</li>
 <li>Getting Rastamouse’s AmsiScanBufferBypass to Work Again (<a href="https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/">https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/</a>)</li>
+</ul>
+
+<h4 id="azure-services">Azure Services</h4>
+
+<ul>
+<li>MicroBurst: A PowerShell Toolkit for Attacking Azure (<a href="https://github.com/NetSPI/MicroBurst">https://github.com/NetSPI/MicroBurst</a>)</li>
+<li>A Beginners Guide to Gathering Azure Passwords (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/a-beginners-guide-to-gathering-azure-passwords/">https://www.netspi.com/blog/technical/cloud-penetration-testing/a-beginners-guide-to-gathering-azure-passwords/</a>)</li>
+<li>Anonymously Enumerating Azure Services (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/enumerating-azure-services/">https://www.netspi.com/blog/technical/cloud-penetration-testing/enumerating-azure-services/</a>)</li>
+<li>Anonymously Enumerating Azure File Resources (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/anonymously-enumerating-azure-file-resources/">https://www.netspi.com/blog/technical/cloud-penetration-testing/anonymously-enumerating-azure-file-resources/</a>)</li>
+<li>Get-AzurePasswords: Exporting Azure RunAs Certificates for Persistence (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/exporting-azure-runas-certificates/">https://www.netspi.com/blog/technical/cloud-penetration-testing/exporting-azure-runas-certificates/</a>)</li>
+<li>Maintaining Azure Persistence via Automation Accounts (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/maintaining-azure-persistence-via-automation-accounts/">https://www.netspi.com/blog/technical/cloud-penetration-testing/maintaining-azure-persistence-via-automation-accounts/</a>)</li>
+<li>Attacking Azure with Custom Script Extensions (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/attacking-azure-with-custom-script-extensions/">https://www.netspi.com/blog/technical/cloud-penetration-testing/attacking-azure-with-custom-script-extensions/</a>)</li>
+<li>Lateral Movement in Azure App Services (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/lateral-movement-azure-app-services/">https://www.netspi.com/blog/technical/cloud-penetration-testing/lateral-movement-azure-app-services/</a>)</li>
+<li>Azure Privilege Escalation Using Managed Identities (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/azure-privilege-escalation-using-managed-identities/">https://www.netspi.com/blog/technical/cloud-penetration-testing/azure-privilege-escalation-using-managed-identities/</a>)</li>
+<li>Azure Persistence with Desired State Configurations (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/azure-persistence-with-desired-state-configurations/">https://www.netspi.com/blog/technical/cloud-penetration-testing/azure-persistence-with-desired-state-configurations/</a>)</li>
+<li>Webcast: Getting Started in Pentesting The Cloud: Azure (<a href="https://www.blackhillsinfosec.com/webcast-getting-started-in-pentesting-the-cloud-azure/">https://www.blackhillsinfosec.com/webcast-getting-started-in-pentesting-the-cloud-azure/</a>)</li>
 </ul>
 
 <h4 id="others">Others</h4>
@@ -1852,13 +1905,18 @@
 <li>Over-Pass-The-Hash (<a href="http://inf0sec.fr/article-17.php">http://inf0sec.fr/article-17.php</a>)</li>
 <li>SigThief (<a href="https://github.com/secretsquirrel/SigThief">https://github.com/secretsquirrel/SigThief</a>)</li>
 <li>AD Pentesting mindmap (<a href="https://raw.githubusercontent.com/Orange-Cyberdefense/arsenal/master/mindmap/pentest_ad.png">https://raw.githubusercontent.com/Orange-Cyberdefense/arsenal/master/mindmap/pentest_ad.png</a>)</li>
+<li>Pentesting Active Directory Mindmap (<a href="https://www.xmind.net/m/5dypm8/#">https://www.xmind.net/m/5dypm8/#</a>)</li>
 <li>MS Exchange Server pentesting mindmap (<a href="https://raw.githubusercontent.com/Orange-Cyberdefense/arsenal/master/mindmap/Pentesting_MS_Exchange_Server_on_the_Perimeter.png">https://raw.githubusercontent.com/Orange-Cyberdefense/arsenal/master/mindmap/Pentesting_MS_Exchange_Server_on_the_Perimeter.png</a>)</li>
 <li>WADComs interactive Cheatsheet (<a href="https://wadcoms.github.io/">https://wadcoms.github.io/</a>)</li>
 <li>Windows &amp; AD Exploitation Cheat Sheet and Command Reference (<a href="https://casvancooten.com/posts/2020/11/windows-active-directory-exploitation-cheat-sheet-and-command-reference/">https://casvancooten.com/posts/2020/11/windows-active-directory-exploitation-cheat-sheet-and-command-reference/</a>)</li>
-<li>Attacking Active Directory (<a href="https://zer1t0.gitlab.io/posts/attacking_ad/">https://zer1t0.gitlab.io/posts/attacking_ad/</a>)
-<br/>
-<br/></li>
+<li>Attacking Active Directory (<a href="https://zer1t0.gitlab.io/posts/attacking_ad/">https://zer1t0.gitlab.io/posts/attacking_ad/</a>)</li>
+<li>Atomic Red Team repository (<a href="https://github.com/redcanaryco/atomic-red-team">https://github.com/redcanaryco/atomic-red-team</a>)</li>
+<li>PowerShell commands for enumerating Active Directory (<a href="https://www.notion.so/53512dc072c241589fc45c577ccea2ee?v=7b908e7e76a9416f98f40d9d3843d3cb">https://www.notion.so/53512dc072c241589fc45c577ccea2ee?v=7b908e7e76a9416f98f40d9d3843d3cb</a>)</li>
+<li>Detecting Resilient Adversaries - Active Directory (<a href="https://raw.githubusercontent.com/RiccardoAncarani/talks/master/r00tMI/20200709-r00tMi-ADDtalk_v1.0.pdf">https://raw.githubusercontent.com/RiccardoAncarani/talks/master/r00tMI/20200709-r00tMi-ADDtalk_v1.0.pdf</a>)</li>
 </ul>
+
+<p><br/>
+<br/></p>
 
 <hr />
 
@@ -1879,9 +1937,19 @@
 
 <ul>
 <li>TMUX Cheatsheet (<a href="https://gist.github.com/MohamedAlaa/2961058">https://gist.github.com/MohamedAlaa/2961058</a>)</li>
-<li>Blocky, un proxy DNS pour votre nunux (<a href="https://lord.re/posts/204-profiter-de-dns-over-httpstls-sur-linux/">https://lord.re/posts/204-profiter-de-dns-over-httpstls-sur-linux/</a>)
+<li>Blocky, un proxy DNS pour votre nunux (<a href="https://lord.re/posts/204-profiter-de-dns-over-httpstls-sur-linux/">https://lord.re/posts/204-profiter-de-dns-over-httpstls-sur-linux/</a>)</li>
+<li>List of everyday enhanced tools (<a href="https://twitter.com/amilajack/status/1479328649820000256?t=MXq9Cw3whFODqwFtqJOgsA&amp;s=19">https://twitter.com/amilajack/status/1479328649820000256?t=MXq9Cw3whFODqwFtqJOgsA&amp;s=19</a>)
+
+<ul>
+<li>bat (Enhanced cat) <a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a></li>
+<li>diff-so-fancy (diff) <a href="https://github.com/so-fancy/diff-so-fancy">https://github.com/so-fancy/diff-so-fancy</a></li>
+<li>fx (JSON viewer) <a href="https://github.com/antonmedv/fx">https://github.com/antonmedv/fx</a></li>
+<li>fzf (fast fuzzy search) <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></li>
+<li>exa (ls colored) <a href="https://twitter.com/fig/status/1479189142743384064">https://twitter.com/fig/status/1479189142743384064</a></li>
+<li>duf (enhanced du) <a href="https://github.com/muesli/duf">https://github.com/muesli/duf</a>
 <br/>
 <br/></li>
+</ul></li>
 </ul>
 
 <hr />

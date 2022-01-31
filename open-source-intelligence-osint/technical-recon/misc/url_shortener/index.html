@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:37 CEST">
+<meta name="revised" content="2022-01-31T14:36:10 CET">
 <title>URL Shortener &amp; Redirect :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1260,7 +1260,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1310,6 +1310,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1664,6 +1671,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1776,6 +1805,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1816,7 +1847,12 @@ http://redirectdetective.com/
 <span style="color:#75715e"># Get information directly from the creator (bitly for example</span>
 <span style="color:#75715e"># Add + at the the end (you can get creation date)</span>
 https://bit.ly/3b7QP9M
-https://bit.ly/3b7QP9M+</code></pre></div>
+https://bit.ly/3b7QP9M+
+
+<span style="color:#75715e"># bit.ly - add + at the end</span>
+<span style="color:#75715e"># http://cutt.ly - add @</span>
+<span style="color:#75715e"># http://tiny.cc - add =</span>
+<span style="color:#75715e"># http://tinyurl.com - add preview. before http://tinyurl.com</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="redirections">Redirections</h3>
@@ -1825,7 +1861,10 @@ https://redirectdetective.com/
 https://wheregoes.com
 
 <span style="color:#75715e"># Lookyloo also gives this kind of information</span>
-https://lookyloo.circl.lu</code></pre></div>
+https://lookyloo.circl.lu
+
+<span style="color:#75715e"># Unfurl is also a great tool</span>
+https://dfir.blog/unfurl/</code></pre></div>
 
     
     

@@ -56,7 +56,7 @@ CeWL # CeWL allows you to build custom wordlists based on online resources # If 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/misc_others/</guid>
-      <description> Argon2 cracker https://github.com/CyberKnight00/Argon2_Cracker # Argon2 is a key derivation function that was selected as the winner of the Password Hashing # Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich # from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id. ./crack_argon2.py -c &amp;#39;&amp;lt; Argon2 Hash &amp;gt;&amp;#39; -w &amp;#39;&amp;lt; Path/To/Wordlist &amp;gt;&amp;#39;</description>
+      <description>Argon2 cracker https://github.com/CyberKnight00/Argon2_Cracker # Argon2 is a key derivation function that was selected as the winner of the Password Hashing # Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich # from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id. ./crack_argon2.py -c &amp;#39;&amp;lt; Argon2 Hash &amp;gt;&amp;#39; -w &amp;#39;&amp;lt; Path/To/Wordlist &amp;gt;&amp;#39; Lestat https://github.com/astar-security/Lestat # Great tool by Astar Security, multiple scripts for extraction, parsing and creating wordlists.</description>
     </item>
     
   </channel>

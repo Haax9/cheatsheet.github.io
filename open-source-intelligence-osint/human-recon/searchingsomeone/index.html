@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:37 CEST">
+<meta name="revised" content="2022-01-31T14:36:10 CET">
 <title>Searching Someone :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1259,7 +1259,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1309,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1663,6 +1670,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1772,6 +1801,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1848,6 +1879,28 @@ Webmii - Search engine that compiles information on one person
 Tineye
 
 <span style="color:#75715e"># Search on communities and blogs (reddit...)</span></code></pre></div>
+<p><br/></p>
+
+<h3 id="daprofiler">DaProfiler</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/TheRealDalunacrobate/DaProfiler
+<span style="color:#75715e"># DaProfiler allows you to create a profile on your target based in France only</span>
+<span style="color:#75715e"># The particularity of this program is its ability to find the e-mail addresses of a target</span> 
+<span style="color:#75715e"># via searches on Skype, Pinterest and tests of combining e-mail addresses followed</span> 
+<span style="color:#75715e"># by a check to know if the email address exists or not</span>
+
+profiler.py -n <span style="color:#f92672">[</span>NAME<span style="color:#f92672">]</span> -ln <span style="color:#f92672">[</span>LAST NAME<span style="color:#f92672">]</span> -l True -O txt_file.txt
+<span style="color:#f92672">(</span>Target Name<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>Target Last Name<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>Enable Terminal Logging<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>Output to txt_file.txt<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">=====================================================================</span>
+
+usage: profiler.py <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-n NAME<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-l LOGGING<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-ln LASTNAME<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-O OUTPUT<span style="color:#f92672">]</span>
+
+  -h, --help            show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
+  -n NAME, --name NAME  Victim name
+  -ln LASTNAME, --lastname LASTNAME
+                        Last name of victim
+  -u UPDATE, --update UPDATE
+                        Update DaProfiler <span style="color:#f92672">(</span>Optional</code></pre></div>
 <p><br/></p>
 
 <h3 id="naming-conventions">Naming Conventions</h3>

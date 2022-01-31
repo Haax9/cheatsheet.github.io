@@ -63,6 +63,16 @@ Scrapping from JS # You can parse and scrape javascript content in a target webs
     </item>
     
     <item>
+      <title>Defensive OSINT and CTI</title>
+      <link>/defensive-monitoring-cti/defensive_osint_cti/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/defensive-monitoring-cti/defensive_osint_cti/</guid>
+      <description>[WIP]
+Monitoring Certificate Transparendy https://certstream.calidog.io/ # Real-time certificate transparency log update stream. # See SSL certificates as they&amp;#39;re issued in real time. https://certstream.calidog.io/example.json # All Certstreams Github repos https://github.com/search?q=org%3ACaliDog+certstream # Certstream server https://github.com/CaliDog/certstream-server https://github.com/CaliDog/certstream-server-python # Certstream https://github.</description>
+    </item>
+    
+    <item>
       <title>Easy - No Protections</title>
       <link>/pwn/buffer-overflow/easy_no_protection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -78,7 +88,7 @@ Scrapping from JS # You can parse and scrape javascript content in a target webs
       
       <guid>/windows-systems/exploitation/exploitation_tricks/</guid>
       <description>Obfuscation # There are many ways you can use to obfuscate conten # PyFuscation (https://github.com/CBHue/PyFuscation) bring small usefull features $ python3 PyFuscation.py -fvp --ps ./Scripts/Invoke-Mimikatz.ps1  
-&amp;ldquo;Double Hop&amp;rdquo; - What is it and how to solve ? # Great resource (french) http://inf0sec.fr/article-16.php # TL;DR # 2 authentications types # Network Logon --&amp;gt; Ex : WinRM through PtH (Windows won&amp;#39;t store credentials) # Non-Network Logon --&amp;gt; Ex : RDP, entering directly password and Windows storing it # In order to access privileged commands (typical, psexec on a DC) # Windows needs to have credentials in the Logon Session # If the authentication is &amp;#34;Network Logon&amp;#34;, you have no creds in session and can&amp;#39;t exec # Solution : local pass the hash (or runas) # Mimikatz</description>
+Monitoring LDAP changes during attacks - LDAPMonitor https://github.com/p0dalirius/LDAPmonitor # Monitor creation, deletion and changes to LDAP objects live during your pentest or system administration! # You need to be administrator in order to access events ID ./LDAPmonitor.py -d domain.local -u Admin -p &amp;#34;password&amp;#34; --dc-ip xx.</description>
     </item>
     
     <item>
@@ -96,7 +106,14 @@ Scrapping from JS # You can parse and scrape javascript content in a target webs
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resources/general_infosec/</guid>
-      <description>Training Resources  HackTheBox video WU (https://ippsec.rocks/#) Resources, cheatsheets etc about EVERYTHING (https://github.com/trimstray/the-book-of-secret-knowledge)  Network &amp;amp; Pentest  Network Pivoting (https://orangecyberdefense.com/fr/insights/blog/ethical_hacking/etat-de-lart-du-pivoting-reseau-en-2019/) Remote Access Cheatsheet (https://dolosgroup.io/blog/remote-access-cheat-sheet) Many Reverse Shells (https://alamot.github.io/reverse_shells/) Shad0w C2 (https://github.com/bats3c/shad0w)  Passcracking, Worlists &amp;amp; Passwords  Kaonashi worlists and rules (https://github.com/kaonashi-passwords/Kaonashi) One rule to rule them all (https://www.notsosecure.com/one-rule-to-rule-them-all/) Common French Passwords (https://github.com/tarraschk/richelieu) Rockyou (https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) Passwords Wordlists (https://weakpass.com/) Several Wordlists types (https://github.com/berzerk0/Probable-Wordlists) Language Dictionnaries (https://packetstormsecurity.com/Crackers/wordlists/page4/) Language Dictionnaries (http://www.gwicks.net/dictionaries.htm) SCADA default passwords (http://www.</description>
+      <description>Training/CTF/Challenges Resources  Resources, cheatsheets etc about EVERYTHING (https://github.com/trimstray/the-book-of-secret-knowledge) Burp Suite: In Depth Survival Guide (Udemy course) (https://www.udemy.com/course/burp-suite-in-depth-survival-guide/)
+ TheBlackSide, challenges / CTF (https://theblackside.fr/)
+ HackTheBox video WU (https://ippsec.rocks/#)
+ CyberDefenders (Blueteam challenges) (https://cyberdefenders.org/)
+ CyberSoc Wales (OSINT challenges) (https://investigator.cybersoc.wales)
+ BTLO (Blue Team Labs Online) (https://blueteamlabs.online/login)
+ Hacktoria (Realists and complex OSINT challenges) (https://hacktoria.com/)
+  Network &amp;amp; Pentest  Network Pivoting (https://orangecyberdefense.com/fr/insights/blog/ethical_hacking/etat-de-lart-du-pivoting-reseau-en-2019/) Remote Access Cheatsheet (https://dolosgroup.io/blog/remote-access-cheat-sheet) Many Reverse Shells (https://alamot.</description>
     </item>
     
     <item>
@@ -161,7 +178,7 @@ Wrapcat - Automating hashcat commands https://twitter.com/Haax9_/status/13403546
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/company_investigations/company_informations/</guid>
-      <description>Company Informations General # Find informations about a company https://opencorporates.com # Giant database projects containing many informations # Can be about leaks, offshore companies leaks etc https://aleph.occrp.org/ https://offshoreleaks.icij.org/ # Notices / Gazettes for EU companies http://opengazettes.com/ # Societe.ninja can give great informations about a company https://societe.ninja/ # Pappers.com is dedicated to French companies https://www.pappers.fr/ Financial &amp;amp; Administrative # Legal and Financial informations (might not be free for full informations) https://www.</description>
+      <description>Company Informations General # Find informations about a company https://opencorporates.com # Giant database projects containing many informations # Can be about leaks, offshore companies leaks etc https://aleph.occrp.org/ https://offshoreleaks.icij.org/ # Notices / Gazettes for EU companies http://opengazettes.com/ # Societe.ninja can give great informations about a company https://societe.ninja/ # Pappers.com is dedicated to French companies https://www.pappers.fr/ # OSINT World Map with dedicated services per countries # Really usefull resource https://cipher387.github.io/osintmap/ Financial &amp;amp; Administrative # Legal and Financial informations (might not be free for full informations) https://www.</description>
     </item>
     
     <item>
@@ -307,8 +324,7 @@ Recon and Enumeration # Look for strange process ps aux # Look for setuid progra
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</guid>
-      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+ 
-Redirections # These tools allow you to check redirection and resolving path for a given target URL https://redirectdetective.com/ https://wheregoes.com # Lookyloo also gives this kind of information https://lookyloo.</description>
+      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+ # bit.ly - add + at the end # http://cutt.ly - add @ # http://tiny.cc - add = # http://tinyurl.com - add preview. before http://tinyurl.com</description>
     </item>
     
     <item>
@@ -410,6 +426,15 @@ Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /et
       <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
       <description>[WIP]
 Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/ # Dark Web Searching https://www.osintcombine.com/post/dark-web-searching # Conducting OSINT on .onion sites https://www.osintme.com/index.php/2019/11/24/darknet-diving-conducting-osint-on-onion-sites/ # List of darknet markets for investigators https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/https://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
+    </item>
+    
+    <item>
+      <title>Defensive Active Directory</title>
+      <link>/defensive-monitoring-cti/defensive_active_directory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/defensive-monitoring-cti/defensive_active_directory/</guid>
+      <description>Resources (cross-post resources) # Talk by Riccardo Ancarani &amp;#34;Detecting Resilient Adversaries - Active Directory&amp;#34; # Prevention/Detection # - DCSync # - AdminSDHolder # - Ticket Forgery # - DSRM # - Skeleton Key # - DCShadow https://raw.githubusercontent.com/RiccardoAncarani/talks/master/r00tMI/20200709-r00tMi-ADDtalk_v1.0.pdf ```` &amp;lt;br/&amp;gt; ### BloodHound for defense ```bash https://posts.specterops.io/bloodhound-versus-ransomware-a-defenders-guide-28147dedb73b # Great post explaining how BloodHound can be used by defenders</description>
     </item>
     
     <item>
@@ -561,8 +586,7 @@ Blind NoSQL Injection # Get size index.php ?chall_name=nosqlblind&amp;amp;flag[$
       <guid>/open-source-intelligence-osint/tools-and-methodology/opsec/</guid>
       <description>[WIP]
 Resources https://github.com/devbret/online-opsec/ https://anonymousplanet.github.io/thgtoa/guide.html 
-Technical OPSEC # Simple data analysis (headers, OS...) https://amiunique.org/fp # Creating profile pictures for sock # Mixing two pictures https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ # Email providers comparison https://www.privacytools.io/providers/email/ # Compilation of great ressources https://shutuptrackers.com/index.php # Windows 10 Tracking https://github.com/10se1ucgo/DisableWinTracking # Firefox Configuration Posts https://daring-india-marten-972.medium.com/osint-comment-naviguer-en-eaux-troubles-32f11ab985ac# A directory of direct links for you to obtain your data from web services. https://justgetmydata.com/ 
-Human Related OPSEC # Image Cloaking for Personal Privacy # Fawkes takes your personal images and makes tiny, pixel-level changes that are invisible to the human eye # if and when someone tries to use these photos to build a facial recognition model # &amp;#34;cloaked&amp;#34; images will teach the model an highly distorted version of what makes you look like you http://sandlab.</description>
+Technical OPSEC # Simple data analysis (headers, OS...) https://amiunique.org/fp # Creating profile pictures for sock # Mixing two pictures https://twitter.com/OSINTgeek/status/1258857825868156930?s=19 https://www.artbreeder.com/ # Email providers comparison https://www.privacytools.io/providers/email/ # Compilation of great ressources https://shutuptrackers.com/index.php # Windows 10 Tracking https://github.com/10se1ucgo/DisableWinTracking # Firefox Configuration Posts https://daring-india-marten-972.medium.com/osint-comment-naviguer-en-eaux-troubles-32f11ab985ac # Browserling allow you to do cross-browser testing https://www.browserling.com/# A directory of direct links for you to obtain your data from web services.</description>
     </item>
     
     <item>
@@ -1046,13 +1070,12 @@ General # Almost every Impacket scripts follows the same option syntax authentic
     </item>
     
     <item>
-      <title>LSASS and Mimikatz</title>
+      <title>LSASS, Mimikatz, SAM</title>
       <link>/windows-systems/privilege-escalation/lsass_mimikatz/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
-      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp # Several dumping methods here https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/ 
-Mimikatz # If you have an LSASS dump, you can use the minidump module mimikatz # sekurlsa::minidump lsass.DMP mimikatz # sekurlsa::logonPasswords /full # You can upload mimikatz to a remote machine with smbclient # Or you can use crackmapexec # Executon may fail but the binary will be uploaded in C:\\Windows\\mimikatz.</description>
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp # Several dumping methods here - https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/ - https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dump-credentials-from-lsass-process-without-mimikatz - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md # You can use the cmsvcs.dll DLL in order the dump LSASS (https://beta.hackndo.com/remote-lsass-dump-passwords/) # C:\Windows\System32 rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump &amp;lt;lsass pid&amp;gt; lsass.dmp full# Dumping LSASS using the Windows Error Reporting process https://www.</description>
     </item>
     
     <item>
@@ -1319,7 +1342,7 @@ General &amp;amp; Theory # Kerberos is just SSO, it&amp;#39;s like SAML or OpenI
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/misc_others/</guid>
-      <description> Argon2 cracker https://github.com/CyberKnight00/Argon2_Cracker # Argon2 is a key derivation function that was selected as the winner of the Password Hashing # Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich # from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id. ./crack_argon2.py -c &amp;#39;&amp;lt; Argon2 Hash &amp;gt;&amp;#39; -w &amp;#39;&amp;lt; Path/To/Wordlist &amp;gt;&amp;#39;</description>
+      <description>Argon2 cracker https://github.com/CyberKnight00/Argon2_Cracker # Argon2 is a key derivation function that was selected as the winner of the Password Hashing # Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich # from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id. ./crack_argon2.py -c &amp;#39;&amp;lt; Argon2 Hash &amp;gt;&amp;#39; -w &amp;#39;&amp;lt; Path/To/Wordlist &amp;gt;&amp;#39; Lestat https://github.com/astar-security/Lestat # Great tool by Astar Security, multiple scripts for extraction, parsing and creating wordlists.</description>
     </item>
     
     <item>
@@ -1500,7 +1523,7 @@ SMB Server setup # Set up a SMB server using smbserver.py from impacket smbserve
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/geolocation/</guid>
-      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com # Word Postal Codes https://worldpostalcode.com/ Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services # ZoomEarth provides really great images and features such as estimation and live pictures https://zoom.</description>
+      <description>Maps MISC # Snapchat Live Map can be good and funny source https://map.snapchat.com # Learn to use Overpass API https://osmlab.github.io/learnoverpass//en/ # 360° pictures database https://www.360cities.net/ # Compare maps by time # Many historical maps http://www.georeferencer.com # Word Postal Codes https://worldpostalcode.com/ Google Maps Alternatives https://twitter.com/y_vdw/status/1339984896022876160 # Other maps services https://yandex.com/maps http://openstreetcam.org/map/ https://www.mapillary.com/ # Search for specific country https://twitter.com/y_vdw/status/1339984940377624576?s=20 https://en.wikipedia.org/wiki/List_of_street_view_services # Sentinel Hub can be good # Not always very clear, but easier to go back in time https://apps.</description>
     </item>
     
     <item>
@@ -1567,9 +1590,7 @@ Exploiting the classic Manager # Metasploit provides an easy to use module to up
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/misc/</guid>
-      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig 
-Newspaper # Elephind is a search engine for newspaper archives https://www.elephind.com/ 
-Skype # Online source tool used to find and get information about Skype accounts https://www.</description>
+      <description>Tips &amp;amp; Tricks # Liveleak allows to see what will be removed on others video website.. # Take care https://www.liveleak.com/ # Webcams (legit and bad configuration) http://www.insecam.org/ https://www.earthcam.com # Download Periscope videos https://downloadperiscopevideos.com/index.php # Professionnal profiles (like photos) can be used to search for differents # personal profiles which are easier to exploit and dig # Not really people oriented # But public funds for french towns and cities can be found here https://www.</description>
     </item>
     
     <item>
@@ -1774,6 +1795,16 @@ JSON Web Tokens (JWT) https://jwt.</description>
       <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
 AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
 Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
+    </item>
+    
+    <item>
+      <title>Spooler Service</title>
+      <link>/windows-systems/privilege-escalation/spoolerservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/spoolerservice/</guid>
+      <description>WIP Finding Spooler Services # https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse # Finding Windows Servers on the domain Get-ADComputer -Filter {(OperatingSystem -like &amp;#34;*windows*server*&amp;#34;) -and (OperatingSystem -notlike &amp;#34;2016&amp;#34;) -and (Enabled -eq &amp;#34;True&amp;#34;)} -Properties * | select Name | ft -HideTableHeaders &amp;gt; servers.txt # Finding Spooler services listening # https://github.com/NotMedic/NetNTLMtoSilverTicket .\Get-SpoolStatus.ps1 ForEach ($server in Get-Content servers.txt) {Get-SpoolStatus $server} # Or on Linux rpcdump.py DOMAIN/USER:PASSWORD@SERVER.DOMAIN.COM | grep MS-RPRN 
+MS-RPRN Abuse (Printer Bug) https://www.thehacker.recipes/active-directory-domain-services/movement/mitm-and-coerced-authentications/ms-rprn # Ask the service to authenticate against an arbitrary host # Using SpoolSample (https://github.</description>
     </item>
     
     <item>

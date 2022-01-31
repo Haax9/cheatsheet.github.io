@@ -6,7 +6,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-14T16:39:37 CEST">
+<meta name="revised" content="2022-01-31T14:36:10 CET">
 <title>Offensive Security Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1258,7 +1258,7 @@
       <li data-nav-id="/windows-systems/privilege-escalation/lsass_mimikatz/" class="dd-item">
         <div>
           <a href="/windows-systems/privilege-escalation/lsass_mimikatz/">
-            LSASS and Mimikatz
+            LSASS, Mimikatz, SAM
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1308,6 +1308,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/amsi_and_evasion/">
             AMSI Bypass and Evasion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/spoolerservice/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/spoolerservice/">
+            Spooler Service
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1662,6 +1669,28 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="/defensive-monitoring-cti/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/defensive-monitoring-cti/">Defensive, Monitoring, CTI...</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
+            Defensive OSINT and CTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+        <div>
+          <a href="/defensive-monitoring-cti/defensive_active_directory/">
+            Defensive Active Directory
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="/resources/" class="dd-item haschildren
         ">
       <div>
@@ -1743,6 +1772,8 @@
    Cryptography</option>
     <option value="/pwn/" >
    Pwn</option>
+    <option value="/defensive-monitoring-cti/" >
+   Defensive, Monitoring, CTI...</option>
     <option value="/resources/" >
    External Resources</option>
 
@@ -1810,6 +1841,59 @@
 <p><br/></p>
 
 <h3 id="updates">Updates</h3>
+
+<h5 id="31-01-2022">31/01/2022</h5>
+
+<pre><code>- OSINT :
+   - Tool : nexfil (Username checking)
+   - Tool : Sentinel Hub Playground
+   - Tool : Carto GRAOU (French trains)
+   - Tool : Marple (Username)
+   - Tool : Mailcait (Emails/Use)
+   - Tool : DaProfiler (French recon)
+   - Tool : OSINT World Map
+   - Tool : MOSINT (E-mail)
+   - Resource : OSINT At Home #9 – My Top 4 Free Satellite Imagery Sources (BenDoBrown)
+   - Resource : Décomptes Publics
+
+- Web : 
+   - Resource : Web Vulnerability Analysis Category (SecurityOnline)
+   - Resource : Web App Pentesting With Burp Suite Scan Profiles
+
+- Windows :
+   - New section : Print Spooler
+   - Tool : PetitPotam
+   - Tool : MicroBusrt (A PowerShell Toolkit for Attacking Azure)
+   - Tool : HiveNightmare (SeriousSAM)
+   - Tool : Snaffler
+   - Tool : Adidnsdump
+   - Tool : ItWasAllADream
+   - Tips : MS14-025 password encoder
+   - Tool : DonPAPI
+   - Tool : LDAPMonitor
+   - Tips : rundll32.exe to dump LSASS
+   - Ressource : #HiveNightmare aka #SeriousSAM — anybody can read the registry in Windows 10
+   - Resource : Azure Services related
+   - Resource : Force NTLM Privileged Authentication (HackTricks)
+   - Resource : MS-RPRN abuse (PrinterBug)
+   - Resource : MS-EFSR abuse (PetitPotam)
+   - Resource : Pentesting Active Directory Mindmap
+   - Resource : Atomic Red Team
+   - Resource : Powershell command for enumerating AD
+   - Resource : Webcast Getting Started in Pentesting The Cloud: Azure
+
+- MISC :
+   - Resource : Default Creds Cheatsheet
+   - Resource : TheBlackSide CTF platform + Others challenges platform
+   - Tool : Lestat (Passcracking)
+
+- New Section : Defensive, Monitoring, CTI...
+   - New subsection : Defensive OSINT and CTI
+      - Tool : Certstream (Monitoring CT)
+   - New subsection : Defensive Active Directory
+      - Resource : BloodHound versus Ransomware: A Defender’s Guide
+      - Resource : Detecting Resilient Adversaries - Active Directory
+</code></pre>
 
 <h5 id="14-07-2021">14/07/2021</h5>
 
