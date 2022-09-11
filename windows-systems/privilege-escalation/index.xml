@@ -123,5 +123,14 @@ AMSI Bypass Methods # Methods pulled from the previous mentionned resources # Mo
 MS-RPRN Abuse (Printer Bug) https://www.thehacker.recipes/active-directory-domain-services/movement/mitm-and-coerced-authentications/ms-rprn # Ask the service to authenticate against an arbitrary host # Using SpoolSample (https://github.</description>
     </item>
     
+    <item>
+      <title>Specific Domain Groups</title>
+      <link>/windows-systems/privilege-escalation/specific_domain_groups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/specific_domain_groups/</guid>
+      <description>Backup Operator / SeBackupPrivilege https://github.com/mpgn/BackupOperatorToDA # If you compromise an account member of the group Backup Operators # you can become the Domain Admin without RDP or WinRM on the Domain Controller. # With this POC you don&amp;#39;t need to have an access with WinRM or RPD : .\BackupOperatorToDA.exe -h Backup Operator to Domain Admin (by @mpgn_x64) This tool exist thanks to @filip_dragovic / https://github.com/Wh04m1001 Mandatory argument: -t &amp;lt;TARGET&amp;gt; \\computer_name (ex: \\dc01.</description>
+    </item>
+    
   </channel>
 </rss>

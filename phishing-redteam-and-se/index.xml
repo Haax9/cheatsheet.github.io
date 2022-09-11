@@ -17,7 +17,7 @@
       
       <guid>/phishing-redteam-and-se/phishing_campaign_setup/</guid>
       <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup # Generate typo &amp;amp; permutations on a domain name https://dnstwister.report/# Message Header Analyzer https://mha.azurewebsites.net/ 
-Debugging Tips / Important notes Blacklisted/Spam domain # If the domain is blacklisted / considered as spam, you can try to reference www.</description>
+# The Spamhaus Project # Interesting stats about The World&amp;#39;s Most Abused TLDs.</description>
     </item>
     
     <item>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-01-31T14:36:11 CET">
+<meta name="revised" content="2022-09-11T16:52:52 CEST">
 <title>Domain Mapping :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1090,13 +1090,6 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/shells-methods/windows/" class="dd-item">
-        <div>
-          <a href="/shells-methods/windows/">
-            Windows Shells Methods
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/" class="dd-item parent haschildren
@@ -1316,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/spoolerservice/">
             Spooler Service
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/specific_domain_groups/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/specific_domain_groups/">
+            Specific Domain Groups
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1920,7 +1920,18 @@ https://github.com/seajaysec/cypheroth/
 ./cypheroth.sh -u neo4j -p hunter2 -d BigTech.corp -a <span style="color:#ae81ff">10</span>.0.0.1:7687 -t 5m -v <span style="color:#111">true</span>
 
 <span style="color:#75715e"># Some quickwin queries against a BloodHound database</span>
-https://github.com/kaluche/bloodhound-quickwin</code></pre></div>
+https://github.com/kaluche/bloodhound-quickwin
+
+<span style="color:#75715e"># BloodHound tips for when the built-in queries are just not finding anything for you</span>
+https://twitter.com/n00py1/status/1508868743451090944?t<span style="color:#f92672">=</span>QfZV1rg7sjy6EG_pRAfiFg<span style="color:#111">&amp;</span><span style="color:#111">s</span><span style="color:#f92672">=</span><span style="color:#ae81ff">19</span>
+<span style="color:#75715e"># - Mark any user you compromise as &#34;owned&#34;.</span>
+<span style="color:#75715e"># - Mark high value targets</span>
+<span style="color:#75715e"># - Find groups that have the &#34;Admin Count&#34; flag set but are not yet marked as high value</span>
+<span style="color:#75715e"># - Find groups that do not have the &#34;Admin Count&#34; flag set, but have local admin on computers</span>
+<span style="color:#75715e"># - Find all computers that can perform unconstrained delegation but are not DCs</span>
+<span style="color:#75715e"># - Find any object that has inbound control over the domain. Mark them all as high value. Mark the domain as high value also.</span>
+<span style="color:#75715e"># - Find groups that can reset passwords. Mark these groups as high value.</span>
+<span style="color:#75715e"># - Then : MATCH p=shortestPath((g {owned:true})-[*1..]-&gt;(n {highvalue:true})) WHERE g&lt;&gt;n return p</span></code></pre></div>
 <p><br/></p>
 
 <h3 id="pingcastle">PingCastle</h3>

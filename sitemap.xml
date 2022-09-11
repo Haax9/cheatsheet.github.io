@@ -731,10 +731,6 @@
   </url>
   
   <url>
-    <loc>/shells-methods/windows/</loc>
-  </url>
-  
-  <url>
     <loc>/network/services-enumeration/119_nntp/</loc>
   </url>
   
@@ -904,6 +900,10 @@
   
   <url>
     <loc>/open-source-intelligence-osint/platforms-hunting/parler/</loc>
+  </url>
+  
+  <url>
+    <loc>/windows-systems/privilege-escalation/specific_domain_groups/</loc>
   </url>
   
   <url>

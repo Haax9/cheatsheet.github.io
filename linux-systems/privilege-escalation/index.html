@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-01-31T14:36:11 CET">
+<meta name="revised" content="2022-09-11T16:52:52 CEST">
 <title>Privilege Escalation :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -617,17 +617,96 @@
       <a href="/web-pentest/injections/">Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/defensive-monitoring-cti/defensive_osint_cti/" class="dd-item">
+    <li data-nav-id="/web-pentest/injections/server-side-injections/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/injections/server-side-injections/">Server Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/sql/" class="dd-item">
         <div>
-          <a href="/defensive-monitoring-cti/defensive_osint_cti/">
-            Defensive OSINT and CTI
+          <a href="/web-pentest/injections/server-side-injections/sql/">
+            SQL Injections
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/defensive-monitoring-cti/defensive_active_directory/" class="dd-item">
+      <li data-nav-id="/web-pentest/injections/server-side-injections/nosql/" class="dd-item">
         <div>
-          <a href="/defensive-monitoring-cti/defensive_active_directory/">
-            Defensive Active Directory
+          <a href="/web-pentest/injections/server-side-injections/nosql/">
+            NoSQL Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ldap/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ldap/">
+            LDAP Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/xpath/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/xpath/">
+            XPath Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ssrf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ssrf/">
+            Server Side Request Forgery (SSRF)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/os/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/os/">
+            OS Command Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/server-side-injections/ssti/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/server-side-injections/ssti/">
+            SSTI
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/web-pentest/injections/client-side-injections/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/web-pentest/injections/client-side-injections/">Client Side Injections</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/xss/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/xss/">
+            XSS Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/csrf/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/csrf/">
+            CSRF Injections
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/web-pentest/injections/client-side-injections/misc_others/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/client-side-injections/misc_others/">
+            MISC &amp; Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+      <li data-nav-id="/web-pentest/injections/headers_injections/" class="dd-item">
+        <div>
+          <a href="/web-pentest/injections/headers_injections/">
+            Headers Injections
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -1011,13 +1090,6 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/shells-methods/windows/" class="dd-item">
-        <div>
-          <a href="/shells-methods/windows/">
-            Windows Shells Methods
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/" class="dd-item haschildren
@@ -1235,6 +1307,13 @@
         <div>
           <a href="/windows-systems/privilege-escalation/spoolerservice/">
             Spooler Service
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/privilege-escalation/specific_domain_groups/" class="dd-item">
+        <div>
+          <a href="/windows-systems/privilege-escalation/specific_domain_groups/">
+            Specific Domain Groups
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
