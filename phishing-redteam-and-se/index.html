@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Phishing, RedTeam and SE :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -73,119 +102,6 @@
       <a href="/open-source-intelligence-osint/tools-and-methodology/">Tools &amp; Methodology</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/methodology/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/methodology/">
-            Methodology
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/opsec/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/opsec/">
-            OPSEC
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/">
-            Firefox addons
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/buscador/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/buscador/">
-            Buscador
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/">Frameworks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recon-ng/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recon-ng/">
-            Recon-ng
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/gasmask/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/gasmask/">
-            Gasmak
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/omnibus/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/omnibus/">
-            Omnibus
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/">
-            Spiderfoot
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/">
-            Datasploit
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/">
-            Danger Zone
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recondog/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recondog/">
-            ReconDog
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/osint-spy/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/osint-spy/">
-            OSINT-SPY
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/belati/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/belati/">
-            Belati
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/">
-            sn0int
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/photon/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/photon/">
-            Photon
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/open-source-intelligence-osint/dorks/" class="dd-item haschildren
@@ -223,63 +139,6 @@
       <a href="/open-source-intelligence-osint/technical-recon/">Technical Investigation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/ip_address/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/ip_address/">
-            IP Address
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/domains_urls/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/domains_urls/">
-            Domain &amp; URLs
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/subdomain_discovery/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/subdomain_discovery/">
-            Subdomain Discovery
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-    <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/open-source-intelligence-osint/technical-recon/misc/">MISC</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/url_shortener/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/misc/url_shortener/">
-            URL Shortener &amp; Redirect
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/">
-            Darkweb Investigation
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/">
-            Cryptocurrency Investigation
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/others/" class="dd-item">
-        <div>
-          <a href="/open-source-intelligence-osint/technical-recon/misc/others/">
-            Others
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/open-source-intelligence-osint/company_investigations/" class="dd-item haschildren
@@ -1814,7 +1673,6 @@
     ':;;:::::::::::: . .
       ':
 </code></pre>
-
 
 
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>MISC &amp; Others :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1808,26 +1837,25 @@
     
     
     
-    
-
-<h3 id="argon2-cracker">Argon2 cracker</h3>
+    <h3 id="argon2-cracker">Argon2 cracker</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/CyberKnight00/Argon2_Cracker
 
-<span style="color:#75715e"># Argon2 is a key derivation function that was selected as the winner of the Password Hashing</span> 
+<span style="color:#75715e"># Argon2 is a key derivation function that was selected as the winner of the Password Hashing </span>
 <span style="color:#75715e"># Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich</span>
 <span style="color:#75715e"># from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id.</span>
 
-./crack_argon2.py -c <span style="color:#d88200">&#39;&lt; Argon2 Hash &gt;&#39;</span> -w <span style="color:#d88200">&#39;&lt; Path/To/Wordlist &gt;&#39;</span></code></pre></div>
-<h3 id="lestat">Lestat</h3>
+./crack_argon2.py -c <span style="color:#d88200">&#39;&lt; Argon2 Hash &gt;&#39;</span> -w <span style="color:#d88200">&#39;&lt; Path/To/Wordlist &gt;&#39;</span>
+</code></pre></div><h3 id="lestat">Lestat</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/astar-security/Lestat
 <span style="color:#75715e"># Great tool by Astar Security, multiple scripts for extraction, parsing and creating wordlists...</span>
 
 <span style="color:#75715e"># Wiki is also cool to get informations about the different prerequisites and tools</span>
-https://github.com/astar-security/Lestat/wiki</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LesterTheLooter cna be used to get data about cracked passwords</span>
+https://github.com/astar-security/Lestat/wiki
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LesterTheLooter cna be used to get data about cracked passwords</span>
 <span style="color:#75715e"># - the list of the domain groups of each craked account</span>
 <span style="color:#75715e"># - an indicator about whether a cracked account is admin or not</span>
 <span style="color:#75715e"># - the status of each cracked account: ACCOUNT_DISABLED or ACCOUNT_ENABLED</span>
-<span style="color:#75715e"># - the list of all the domain groups compromised through the cracked accounts</span> 
+<span style="color:#75715e"># - the list of all the domain groups compromised through the cracked accounts </span>
 <span style="color:#75715e">#   (no false positive due to disabled users)</span>
 <span style="color:#75715e"># - a comprehensive set of stats about the passwords cracked</span>
 <span style="color:#75715e">#   (length distribution, charset, robustness evaluation, most frequent pattern, ...)</span>
@@ -1839,20 +1867,22 @@ $ python3 LesterTheLooter.py --priv JOHN_RESULT.txt USERS_INFO.txt
 <span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Computing groups information
 <span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Exporting data to users_compromised.csv and group_compromised.csv
 <span style="color:#f92672">[</span>*<span style="color:#f92672">]</span> Privileged accounts compromised are listed below:
-<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> disabled     domain admins        n.sarko                  Cecilia&lt;<span style="color:#ae81ff">3</span>
-<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> enabled      likely admin         f.maçon                  NOMondial2020!
-<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> enabled      enterprise admins    adm.boloré               Y4tch4life
-<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> enabled      domain admins        e.macron                 Macron2022!!!
-<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> enabled      enterprise admins    b.gates                  VaccineApple!
-<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> disabled     account operators    e.philippe               Prosac2k19
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>	disabled     domain admins        n.sarko                  Cecilia&lt;<span style="color:#ae81ff">3</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>	enabled      likely admin         f.maçon                  NOMondial2020!
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>	enabled      enterprise admins    adm.boloré               Y4tch4life
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>	enabled      domain admins        e.macron                 Macron2022!!!
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>	enabled      enterprise admins    b.gates                  VaccineApple!
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span>	disabled     account operators    e.philippe               Prosac2k19
 
 <span style="color:#75715e"># Get some stats in addition of the CSV files</span>
 $ python3 LesterTheLooter.py --stats JOHN_RESULT.txt USERS_INFO.txt
 
 <span style="color:#75715e"># You can get comprehensive stats if you configured the wordlists :</span>
-python3 LesterTheLooter.py --wordlists &lt;PATH_TO_WORDLISTS&gt; --stats JOHN_RESULT.txt USERS_INFO.txt</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># PNG charts can be generated from the lestat.csv file</span>
+python3 LesterTheLooter.py --wordlists &lt;PATH_TO_WORDLISTS&gt; --stats JOHN_RESULT.txt USERS_INFO.txt
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># PNG charts can be generated from the lestat.csv file</span>
 <span style="color:#75715e"># It is recommended to present the result in a Excel file</span>
-python3 GregTheGrapher.py -w charts --transparent lestat.csv </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Working on Wordlists</span>
+python3 GregTheGrapher.py -w charts --transparent lestat.csv 
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Working on Wordlists</span>
 https://github.com/astar-security/Lestat/wiki/GetWordlists
 
 <span style="color:#75715e"># Check for leaked NTLM</span>
@@ -1860,7 +1890,8 @@ https://github.com/astar-security/Lestat/wiki/GetWordlists
 python3 LesterTheLooter.py --verbose &lt;HASHES_FILE&gt; &lt;HAVEIBEENPWNED_LIST&gt;
 
 <span style="color:#75715e"># Wordlist generation scripts</span>
-https://github.com/astar-security/Lestat/tree/master/wordlists</code></pre></div>
+https://github.com/astar-security/Lestat/tree/master/wordlists
+</code></pre></div>
 
     
     

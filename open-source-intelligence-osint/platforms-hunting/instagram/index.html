@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Instagram :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1836,10 +1865,7 @@
     
     
     
-    
-
-<h3 id="tips-tricks">Tips &amp; Tricks</h3>
-
+    <h3 id="tips--tricks">Tips &amp; Tricks</h3>
 <h5 id="instagram-id">Instagram ID</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Instagram User ID can be very important to investigate</span>
 <span style="color:#75715e"># Each account has a unique user ID linked to the @username</span>
@@ -1848,8 +1874,8 @@ https://codeofaninja.com/tools/find-instagram-user-id
 
 <span style="color:#75715e"># You can then trace and spot re-used instagram account by</span>
 <span style="color:#75715e"># searching for old names and post, for example using</span>
-<span style="color:#75715e"># Google Dorks</span></code></pre></div>
-<h5 id="mirrors">Mirrors</h5>
+<span style="color:#75715e"># Google Dorks</span>
+</code></pre></div><h5 id="mirrors">Mirrors</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Instagram Mirrors can be usefull to browse Instagram accounts</span>
 <span style="color:#75715e"># Search features are less restrictive</span>
 <span style="color:#75715e"># Some deleted content can still be indexed</span>
@@ -1857,24 +1883,23 @@ https://rankersta.com/
 https://pikdo.biz/
 https://www.piwox.com/
 https://gramfly.com/
-https://web.stagram.com</code></pre></div>
-<h4 id="downloaders">Downloaders</h4>
+https://web.stagram.com
+</code></pre></div><h4 id="downloaders">Downloaders</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Instagram Online Downloaders</span>
 https://downloadgram.com/
 https://www.instadp.com/
 https://www.instadp.com/
-https://instasave.xyz/</code></pre></div>
-<h4 id="location-search">Location Search</h4>
+https://instasave.xyz/
+</code></pre></div><h4 id="location-search">Location Search</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/quiztime/status/1339231557509402624
 https://github.com/bellingcat/instagram-location-search
 
-<span style="color:#75715e"># You can searh instagram posts for a specific location</span> 
-python3 instagram-locations.py --session <span style="color:#d88200">&#34;&lt;session-id-token&gt;&#34;</span> --lat <span style="color:#ae81ff">32</span>.22 --lng -110.97 --csv locs.csv
+<span style="color:#75715e"># You can searh instagram posts for a specific location </span>
+python3 instagram-locations.py --session <span style="color:#d88200">&#34;&lt;session-id-token&gt;&#34;</span> --lat 32.22 --lng -110.97 --csv locs.csv
 
 <span style="color:#75715e"># Usage with date</span>
-python3 instagram-locations.py --session <span style="color:#d88200">&#34;&lt;session-id-token&gt;&#34;</span> --lat <span style="color:#ae81ff">47</span>.6164311 --lng -122.3203952 --map map.html --date <span style="color:#ae81ff">2020</span>-06-09</code></pre></div>
-<p><br/></p>
-
+python3 instagram-locations.py --session <span style="color:#d88200">&#34;&lt;session-id-token&gt;&#34;</span> --lat 47.6164311 --lng -122.3203952 --map map.html --date 2020-06-09
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="manual-investigation">Manual investigation</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Viewing Instagram accounts without being logged in</span>
 
@@ -1892,9 +1917,9 @@ https://www.instagram.com/targetAccount?__a<span style="color:#f92672">=</span><
 <span style="color:#75715e"># METHOD 3 - Adlocker</span>
 <span style="color:#75715e"># Ublock Origin ==&gt; &#34;Element Sector Mode&#34;</span>
 <span style="color:#75715e"># Click on the Instagram pop-up</span>
-<span style="color:#75715e"># Add &amp; Create :</span> 
-<span style="color:#75715e">#   - ##.Yx5HN.RnEpo</span>
-<span style="color:#75715e">#   - ##body:style(overflow: visible !important;)</span>
+<span style="color:#75715e"># Add &amp; Create : </span>
+<span style="color:#75715e">#	- ##.Yx5HN.RnEpo</span>
+<span style="color:#75715e">#	- ##body:style(overflow: visible !important;)</span>
 
 <span style="color:#75715e"># METHOD 4 : Images</span>
 <span style="color:#75715e"># Go to target account</span>
@@ -1902,10 +1927,9 @@ https://www.instagram.com/targetAccount?__a<span style="color:#f92672">=</span><
 
 <span style="color:#75715e"># METHOD 5 : Embed</span>
 <span style="color:#75715e"># You can add /embed/captioned at the end of the URL to get the post</span>
-/p/CGvIxnpFrzL/embed/captioned</code></pre></div>
-<p><br/></p>
-
-<h3 id="toutatis-https-github-com-megadose-toutatis">Toutatis (<a href="https://github.com/megadose/toutatis/">https://github.com/megadose/toutatis/</a>)</h3>
+/p/CGvIxnpFrzL/embed/captioned
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="toutatis-httpsgithubcommegadosetoutatis">Toutatis (<a href="https://github.com/megadose/toutatis/">https://github.com/megadose/toutatis/</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Toutatis is a small python script used to retrieve informations such as phone number or target e-mail.</span>
 <span style="color:#75715e"># It needs a valid session id (cookie)</span>
 <span style="color:#75715e"># You can also search for a bunch of profiles</span>
@@ -1914,10 +1938,10 @@ $ python toutatis.py -u starbucks -i ep -s &lt;session_id&gt;
 The informations about : starbucks
 User id : <span style="color:#ae81ff">1034466</span>
 Phone of starbucks : <span style="color:#ae81ff">18007827282</span>
-Mail of starbucks : info@starbucks.com</code></pre></div>
-<p><br/></p>
+Mail of starbucks : info@starbucks.com
 
-<h3 id="osi-ig">OSI.IG</h3>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="osiig">OSI.IG</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Simple python script used to scrape and parse data from Instagram</span>
 <span style="color:#75715e"># NOTE : pictures downloaded are sent to tinyurl</span>
 
@@ -1929,10 +1953,9 @@ optional arguments:
   -u USERNAME, --username USERNAME
                         username of account to scan
   -p, --postscrap       scrape all uploaded images info
-  -s, --savedata        save data to file</code></pre></div>
-<p><br/></p>
-
-<h3 id="instagramosint-https-github-com-sc1341-instagramosint">InstagramOSINT (<a href="https://github.com/sc1341/InstagramOSINT">https://github.com/sc1341/InstagramOSINT</a>)</h3>
+  -s, --savedata        save data to file
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="instagramosint-httpsgithubcomsc1341instagramosint">InstagramOSINT (<a href="https://github.com/sc1341/InstagramOSINT">https://github.com/sc1341/InstagramOSINT</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The Instagram OSINT Tool gets a range of information from an Instagram account</span>
 <span style="color:#75715e"># that you normally wouldn&#39;t be able to get from just looking at their profile</span>
 <span style="color:#75715e"># Username</span>
@@ -1952,10 +1975,9 @@ optional arguments:
 <span style="color:#75715e"># Is Verified?</span>
 <span style="color:#75715e"># Downloads Public Photos</span>
 
-python3 main.py --username USERNAME</code></pre></div>
-<p><br/></p>
-
-<h3 id="instaloader-https-github-com-instaloader-instaloader">Instaloader (<a href="https://github.com/instaloader/instaloader">https://github.com/instaloader/instaloader</a>)</h3>
+python3 main.py --username USERNAME
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="instaloader-httpsgithubcominstaloaderinstaloader">Instaloader (<a href="https://github.com/instaloader/instaloader">https://github.com/instaloader/instaloader</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Downloads public and private profiles, hashtags, user stories,feeds and saved media,</span>
 <span style="color:#75715e"># Downloads comments, geotags and captions of each post,</span>
 <span style="color:#75715e"># Automatically detects profile name changes and renames the targetdirectory accordingly,</span>
@@ -1965,10 +1987,9 @@ python3 main.py --username USERNAME</code></pre></div>
 instaloader profile &lt;profile-name&gt;
 
 <span style="color:#75715e"># Download private profile informations</span>
-instaloader --login<span style="color:#f92672">=</span>&lt;username&gt; profile &lt;profile-name&gt;</code></pre></div>
-<p><br/></p>
-
-<h3 id="instalooter-https-github-com-althonos-instalooter">InstaLooter (<a href="https://github.com/althonos/InstaLooter">https://github.com/althonos/InstaLooter</a>)</h3>
+instaloader --login<span style="color:#f92672">=</span>&lt;username&gt; profile &lt;profile-name&gt;
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="instalooter-httpsgithubcomalthonosinstalooter">InstaLooter (<a href="https://github.com/althonos/InstaLooter">https://github.com/althonos/InstaLooter</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Another tool used to download information on public profiles</span>
 <span style="color:#75715e"># No API call</span>
 
@@ -1982,7 +2003,8 @@ instalooter user &lt;username&gt;
 instalooter post <span style="color:#d88200">&#34;https://www.instagram.com/p/BFB6znLg5s1/&#34;</span> ~/Pictures
 
 <span style="color:#75715e"># Download the latest 20 pictures or videos tagged with python to /tmp</span>
-instalooter hashtag python /tmp -n <span style="color:#ae81ff">20</span> -v -c MYLOGIN</code></pre></div>
+instalooter hashtag python /tmp -n <span style="color:#ae81ff">20</span> -v -c MYLOGIN
+</code></pre></div>
 
     
     

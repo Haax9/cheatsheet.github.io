@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Passcracking Hash &amp; Files on Offensive Security Cheatsheet</title>
     <link>/passcracking-hashfiles/</link>
     <description>Recent content in Passcracking Hash &amp; Files on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/passcracking-hashfiles/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/passcracking-hashfiles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hashcat Cheatsheet</title>
       <link>/passcracking-hashfiles/hashcat_cheatsheet/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/hashcat_cheatsheet/</guid>
-      <description>MISC and tricks https://www.notsosecure.com/one-rule-to-rule-them-all/# MAX POWER # force the CUDA GPU interface, optimize for &amp;lt;32 char passwords and set the workload to insane (-w 4). # It is supposed to make the computer unusable during the cracking process # Finnally, use both the GPU and CPU to handle the cracking --force -O -w 4 --opencl-device-types 1,2 
-Wrapcat - Automating hashcat commands https://twitter.com/Haax9_/status/1340354639464722434?s=20 https://github.com/Haax9/Wrapcat $ python wrapcat.py -m 1000 -f HASH_FILE.</description>
+      <description>MISC and tricks https://www.notsosecure.com/one-rule-to-rule-them-all/ # MAX POWER # force the CUDA GPU interface, optimize for &amp;lt;32 char passwords and set the workload to insane (-w 4). # It is supposed to make the computer unusable during the cracking process # Finnally, use both the GPU and CPU to handle the cracking --force -O -w 4 --opencl-device-types 1,2 Wrapcat - Automating hashcat commands https://twitter.com/Haax9_/status/1340354639464722434?s=20 https://github.com/Haax9/Wrapcat $ python wrapcat.py -m 1000 -f HASH_FILE.</description>
     </item>
     
     <item>
@@ -26,8 +21,7 @@ Wrapcat - Automating hashcat commands https://twitter.com/Haax9_/status/13403546
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/john_cheatsheet/</guid>
-      <description>Cracking Modes # Dictionnary attack ./john --wordlist=password.lst hashFile # Dictionnary attack using default or specific rules ./john --wordlist=password.lst --rules=rulename hashFile ./john --wordlist=password.lst --rules mypasswd # Incremental mode ./john --incremental hashFile # Loopback attack (password are taken from the potfile) ./john --loopback hashFile # Mask bruteforce attack ./john --mask=?1?1?1?1?1?1 --1=[A-Z] hashFile --min-len=8 # Dictionnary attack using masks ./john --wordlist=password.lst -mask=&amp;#39;?l?l?w?l&amp;#39; hashFile 
-MISC &amp;amp; Tricks # Show hidden options ./john --list=hidden-options # Using session and restoring them .</description>
+      <description>Cracking Modes # Dictionnary attack ./john --wordlist=password.lst hashFile # Dictionnary attack using default or specific rules ./john --wordlist=password.lst --rules=rulename hashFile ./john --wordlist=password.lst --rules mypasswd # Incremental mode ./john --incremental hashFile # Loopback attack (password are taken from the potfile) ./john --loopback hashFile # Mask bruteforce attack ./john --mask=?1?1?1?1?1?1 --1=[A-Z] hashFile --min-len=8 # Dictionnary attack using masks ./john --wordlist=password.lst -mask=&amp;#39;?l?l?w?l&amp;#39; hashFile MISC &amp;amp; Tricks # Show hidden options ./john --list=hidden-options # Using session and restoring them .</description>
     </item>
     
     <item>
@@ -36,8 +30,7 @@ MISC &amp;amp; Tricks # Show hidden options ./john --list=hidden-options # Using
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/cracking_files/</guid>
-      <description>Cracking archives # RAR rar2john file.rar &amp;gt; rar_hashes.txt john --wordlist=passwords.txt rar_hashes.txt # ZIP zip2john file.rar &amp;gt; zip_hashes.txt john --wordlist=passwords.txt zip_hashes.txt # ZIP Using fcrackzip fcrackzip -u -D -p rockyou.txt recup.zip 
-Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --wordlist=/home/user/Desktop/Certifs/OSCP/Tools/Wordlist/Bruteforce/rockyou.txt --rules shadowjohn.txt john --show shadowjohn.txt # Hashcat SHA512 $6$ shadow file hashcat -m 1800 -a 0 hash.txt rockyou.txt --username #Hashcat MD5 $1$ shadow file hashcat -m 500 -a 0 hash.</description>
+      <description>Cracking archives # RAR rar2john file.rar &amp;gt; rar_hashes.txt john --wordlist=passwords.txt rar_hashes.txt # ZIP zip2john file.rar &amp;gt; zip_hashes.txt john --wordlist=passwords.txt zip_hashes.txt # ZIP Using fcrackzip fcrackzip -u -D -p rockyou.txt recup.zip Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --wordlist=/home/user/Desktop/Certifs/OSCP/Tools/Wordlist/Bruteforce/rockyou.txt --rules shadowjohn.txt john --show shadowjohn.txt # Hashcat SHA512 $6$ shadow file  hashcat -m 1800 -a 0 hash.txt rockyou.txt --username #Hashcat MD5 $1$ shadow file  hashcat -m 500 -a 0 hash.</description>
     </item>
     
     <item>
@@ -46,8 +39,7 @@ Cracking shadow files unshadow passwd shadow &amp;gt; shadowjohn.txt john --word
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/wordlists/</guid>
-      <description>Resources https://github.com/kaonashi-passwords/Kaonashi https://github.com/tarraschk/richelieu https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt https://packetstormsecurity.com/Crackers/wordlists/page4/ http://www.gwicks.net/dictionaries.htm # SCADA Default Passwords http://www.critifence.com/default-password-database/ https://weakpass.com/ https://github.com/berzerk0/Probable-Wordlists # Looks very cool wordlists https://github.com/FlameOfIgnis/Pwdb-Public 
-CeWL # CeWL allows you to build custom wordlists based on online resources # If you know that your target is target.com, you can parse web content to build lists # Can be time consuming # 5 levels of depth and minimum 7 char per word cewl -w customwordlist.txt -d 5 -m 7 www.</description>
+      <description>Resources https://github.com/kaonashi-passwords/Kaonashi https://github.com/tarraschk/richelieu https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt https://packetstormsecurity.com/Crackers/wordlists/page4/ http://www.gwicks.net/dictionaries.htm # SCADA Default Passwords http://www.critifence.com/default-password-database/ https://weakpass.com/ https://github.com/berzerk0/Probable-Wordlists # Looks very cool wordlists https://github.com/FlameOfIgnis/Pwdb-Public CeWL # CeWL allows you to build custom wordlists based on online resources # If you know that your target is target.com, you can parse web content to build lists # Can be time consuming # 5 levels of depth and minimum 7 char per word cewl -w customwordlist.txt -d 5 -m 7 www.</description>
     </item>
     
     <item>
@@ -56,7 +48,7 @@ CeWL # CeWL allows you to build custom wordlists based on online resources # If 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/passcracking-hashfiles/misc_others/</guid>
-      <description>Argon2 cracker https://github.com/CyberKnight00/Argon2_Cracker # Argon2 is a key derivation function that was selected as the winner of the Password Hashing # Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich # from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id. ./crack_argon2.py -c &amp;#39;&amp;lt; Argon2 Hash &amp;gt;&amp;#39; -w &amp;#39;&amp;lt; Path/To/Wordlist &amp;gt;&amp;#39; Lestat https://github.com/astar-security/Lestat # Great tool by Astar Security, multiple scripts for extraction, parsing and creating wordlists.</description>
+      <description>Argon2 cracker https://github.com/CyberKnight00/Argon2_Cracker # Argon2 is a key derivation function that was selected as the winner of the Password Hashing  # Competition in July 2015. It is designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich # from University of Luxembourg. Argon2 has 3 variants : Argon2d, Argon2i and Argon2id. ./crack_argon2.py -c &amp;#39;&amp;lt; Argon2 Hash &amp;gt;&amp;#39; -w &amp;#39;&amp;lt; Path/To/Wordlist &amp;gt;&amp;#39; Lestat https://github.com/astar-security/Lestat # Great tool by Astar Security, multiple scripts for extraction, parsing and creating wordlists.</description>
     </item>
     
   </channel>

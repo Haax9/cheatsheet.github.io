@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on Offensive Security Cheatsheet</title>
     <link>/network/</link>
     <description>Recent content in Network on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/network/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pivot Techniques</title>
       <link>/network/pivot_techniques/</link>
@@ -17,7 +13,7 @@
       
       <guid>/network/pivot_techniques/</guid>
       <description>https://cyberdefense.orange.com/fr/blog/etat-de-lart-du-pivoting-reseau-en-2019/
-Proxychains Pivot # When you have access to a machine, you can use it as pivot to target machines # Getting known machines arp -a # Setup SSH Dynamic on the attacking box ssh -D &amp;lt;local_port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;ip&amp;gt; # Setup proxychains in /etc/proxychains.conf [ProxyList] socks4 127.0.0.1 &amp;lt;local_port&amp;gt; # Reduce timeout in /etc/proxychains.conf to gain speed tcp_read_time_out 800 tcp_connect_time-out 800 # Then proxychains...# Scanning (nmap) can be very long through proxychains # You can speed it up by using xargs and multithreading # The main goal is to spread ports between different threads (-P 50) $ seq 1 65535 | xargs -P 50 -I port proxychains -q nmap -p port -sT -T4 10.</description>
+Proxychains Pivot # When you have access to a machine, you can use it as pivot to target machines # Getting known machines arp -a # Setup SSH Dynamic on the attacking box ssh -D &amp;lt;local_port&amp;gt; &amp;lt;user&amp;gt;@&amp;lt;ip&amp;gt; # Setup proxychains in /etc/proxychains.conf [ProxyList] socks4 127.0.0.1 &amp;lt;local_port&amp;gt; # Reduce timeout in /etc/proxychains.conf to gain speed tcp_read_time_out 800 tcp_connect_time-out 800 # Then proxychains... # Scanning (nmap) can be very long through proxychains # You can speed it up by using xargs and multithreading # The main goal is to spread ports between different threads (-P 50) $ seq 1 65535 | xargs -P 50 -I port proxychains -q nmap -p port -sT -T4 10.</description>
     </item>
     
     <item>
@@ -26,8 +22,7 @@ Proxychains Pivot # When you have access to a machine, you can use it as pivot t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/ldap_dns/</guid>
-      <description>LDAP Null Bind Enumeration # Syntax ldapsearch -h &amp;#34;LENOMDELAMACHINELDAP&amp;#34; -p &amp;#34;LEPORTSURLEQUELONYACCEDE&amp;#34; -x -b &amp;#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&amp;#34; -v 
-DNS Zone Transfer # Zone transfer using dig dig @&amp;lt;ns&amp;gt; -p 54011 AXFR &amp;lt;host&amp;gt; # Zone transfer using nslookup nslookup -type=any &amp;gt; set port &amp;lt;port&amp;gt; &amp;gt; server &amp;lt;ns&amp;gt; &amp;gt; &amp;lt;host&amp;gt;# Custom PERL zone transfer #!/usr/bin/env perl use warnings; use strict; use Net::DNS; # ici je teste rapidement si j&amp;#39;ai bien installe le module Net::DNS print Net::DNS-&amp;gt;version, &amp;#34;\n&amp;#34;; # creation de l&amp;#39;instance du resolveur maison.</description>
+      <description>LDAP Null Bind Enumeration # Syntax ldapsearch -h &amp;#34;LENOMDELAMACHINELDAP&amp;#34; -p &amp;#34;LEPORTSURLEQUELONYACCEDE&amp;#34; -x -b &amp;#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&amp;#34; -v DNS Zone Transfer # Zone transfer using dig dig @&amp;lt;ns&amp;gt; -p 54011 AXFR &amp;lt;host&amp;gt; # Zone transfer using nslookup nslookup -type=any &amp;gt; set port &amp;lt;port&amp;gt; &amp;gt; server &amp;lt;ns&amp;gt; &amp;gt; &amp;lt;host&amp;gt; # Custom PERL zone transfer #!/usr/bin/env perl use warnings; use strict; use Net::DNS; # ici je teste rapidement si j&amp;#39;ai bien installe le module Net::DNS print Net::DNS-&amp;gt;version, &amp;#34;\n&amp;#34;; # creation de l&amp;#39;instance du resolveur maison.</description>
     </item>
     
     <item>
@@ -36,8 +31,7 @@ DNS Zone Transfer # Zone transfer using dig dig @&amp;lt;ns&amp;gt; -p 54011 AXF
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/mac_arp/</guid>
-      <description>MAC Filtering Ethernet sudo macchanger -a eth0 WiFi sudo airmon-ng start wlan0 $ airodump-ng –c [channel]–bssid [target router MAC Address]–i wlan0mon # Trouver des MAC whitelisted sudo airmon-ng stop wlan0mon sudo ifconfig wlan0 down sudo macchanger -m [New MAC Address] wlan0 sudo ifconfig wlan0 up 
-ARP Spoofing # Old technique but still usable sometimes # You can spoof ARP trafic in order to discover new machines # If you are pivoting through a machine, you may need to upload arpspoof on the target scp /usr/sbin/arpspoof user@ip:/tmp # Then, you may need to identify and upload specific librairies # WARNING : It can be dangerous for target ldd /usr/sbin/arpspoof scp &amp;lt;path&amp;gt; user@ip:/tmp export LD_PRELOAD=.</description>
+      <description>MAC Filtering Ethernet sudo macchanger -a eth0 WiFi sudo airmon-ng start wlan0 $ airodump-ng –c [channel]–bssid [target router MAC Address]–i wlan0mon # Trouver des MAC whitelisted sudo airmon-ng stop wlan0mon sudo ifconfig wlan0 down sudo macchanger -m [New MAC Address] wlan0 sudo ifconfig wlan0 up ARP Spoofing # Old technique but still usable sometimes # You can spoof ARP trafic in order to discover new machines # If you are pivoting through a machine, you may need to upload arpspoof on the target scp /usr/sbin/arpspoof user@ip:/tmp # Then, you may need to identify and upload specific librairies # WARNING : It can be dangerous for target ldd /usr/sbin/arpspoof scp &amp;lt;path&amp;gt; user@ip:/tmp export LD_PRELOAD=.</description>
     </item>
     
     <item>
@@ -46,8 +40,7 @@ ARP Spoofing # Old technique but still usable sometimes # You can spoof ARP traf
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/icmp/</guid>
-      <description>ICMP exfiltration # Using scapy $ scapy Welcome to Scapy (2.2.0) &amp;gt;&amp;gt;&amp;gt; pkts = rdpcap(&amp;#34;ch6.pcap&amp;#34;) &amp;gt;&amp;gt;&amp;gt; payload_echo_request = [ p[ICMP].load for p in pkts if (p[ICMP].type == 8 and p[ICMP].code == 0)] &amp;gt;&amp;gt;&amp;gt; outfile = open(&amp;#39;ICMP_payload.dump&amp;#39;, &amp;#39;wt&amp;#39;) &amp;gt;&amp;gt;&amp;gt; outfile.write(&amp;#34;&amp;#34;.join(payload_echo_request)) &amp;gt;&amp;gt;&amp;gt; outfile.close()# Using Python #!/usr/bin/python from scapy.all import * import yenc pkts = rdpcap(&amp;#34;./echo_request.pcap&amp;#34;) fichier = open(&amp;#34;./donnees&amp;#34;,&amp;#34;w&amp;#34;) for i in range(0,len(pkts)): fichier.write(pkts[i].load) print yenc.decode(&amp;#34;./donnees&amp;#34;,&amp;#34;./résultat&amp;#34;) 
-ICMP Exfiltration 2 #!/usr/bin/env python from scapy.</description>
+      <description>ICMP exfiltration # Using scapy $ scapy Welcome to Scapy (2.2.0) &amp;gt;&amp;gt;&amp;gt; pkts = rdpcap(&amp;#34;ch6.pcap&amp;#34;) &amp;gt;&amp;gt;&amp;gt; payload_echo_request = [ p[ICMP].load for p in pkts if (p[ICMP].type == 8 and p[ICMP].code == 0)] &amp;gt;&amp;gt;&amp;gt; outfile = open(&amp;#39;ICMP_payload.dump&amp;#39;, &amp;#39;wt&amp;#39;) &amp;gt;&amp;gt;&amp;gt; outfile.write(&amp;#34;&amp;#34;.join(payload_echo_request)) &amp;gt;&amp;gt;&amp;gt; outfile.close() # Using Python #!/usr/bin/python from scapy.all import * import yenc pkts = rdpcap(&amp;#34;./echo_request.pcap&amp;#34;) fichier = open(&amp;#34;./donnees&amp;#34;,&amp;#34;w&amp;#34;) for i in range(0,len(pkts)): fichier.write(pkts[i].load) print yenc.decode(&amp;#34;./donnees&amp;#34;,&amp;#34;./résultat&amp;#34;) ICMP Exfiltration 2 #!/usr/bin/env python from scapy.</description>
     </item>
     
   </channel>

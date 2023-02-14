@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MISC on Offensive Security Cheatsheet</title>
     <link>/open-source-intelligence-osint/technical-recon/misc/</link>
     <description>Recent content in MISC on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/open-source-intelligence-osint/technical-recon/misc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/open-source-intelligence-osint/technical-recon/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>URL Shortener &amp; Redirect</title>
       <link>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/url_shortener/</guid>
-      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+ # bit.ly - add + at the end # http://cutt.ly - add @ # http://tiny.cc - add = # http://tinyurl.com - add preview. before http://tinyurl.com</description>
+      <description>Short URL &amp;amp; Redirections # Get informations about a shortened link https://checkshorturl.com # Find where does redirection go http://redirectdetective.com/ # Get information directly from the creator (bitly for example # Add + at the the end (you can get creation date) https://bit.ly/3b7QP9M https://bit.ly/3b7QP9M+ # bit.ly - add + at the end # http://cutt.ly - add @ # http://tiny.cc - add = # http://tinyurl.com - add preview. before http://tinyurl.com Redirections # These tools allow you to check redirection and resolving path for a given target URL https://redirectdetective.</description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/</guid>
       <description>[WIP]
-Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/ # Dark Web Searching https://www.osintcombine.com/post/dark-web-searching # Conducting OSINT on .onion sites https://www.osintme.com/index.php/2019/11/24/darknet-diving-conducting-osint-on-onion-sites/ # List of darknet markets for investigators https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/https://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch</description>
+Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search-engine-dark-web-darksearch-vs-ahmia-84852fd4c51b https://darksearch.io/ # Dark Web Searching https://www.osintcombine.com/post/dark-web-searching # Conducting OSINT on .onion sites https://www.osintme.com/index.php/2019/11/24/darknet-diving-conducting-osint-on-onion-sites/ # List of darknet markets for investigators https://www.osintme.com/index.php/2020/11/21/list-of-darknet-markets-for-investigators/ https://webhose.io/blog/dark-web/the-top-5-dark-web-search-engines/ # - Candle # - Torch # - Kilos # - AHMIA # - Tor77 # - Darksearch </description>
     </item>
     
     <item>
@@ -35,7 +31,7 @@ Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/</guid>
-      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json</description>
+      <description>Orbit - Cryto Wallet Analysis # Give it a blockchain based crypto wallet address and it will crawl 3 levels deep in transaction data to plot a graph out of the information. python3 orbit.py # Next thing is to plot a graph for which we will be using quark framework # Then use the html output python quark.py /path/to/file.json </description>
     </item>
     
     <item>
@@ -44,8 +40,7 @@ Search the Darkweb https://medium.com/@darksearch/darksearch-the-1st-real-search
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/misc/others/</guid>
-      <description>MISC / Tips # Wget Wizard # Generate wget commands depending what you want https://www.whatismybrowser.com/developers/tools/wget-wizard/# You can simulate Google Search from other locations using Isearchfrom # It&amp;#39;s useful for searching Google as if you were somewhere else, as well as for SEO &amp;amp; SEA testing. https://isearchfrom.com/ 
-Secrets &amp;amp; Default Passwords # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com &amp;#34;apikey&amp;#34; site:http://ideone.com &amp;#34;aws_access_key_id&amp;#34;# Default passwords https://www.routerpasswords.com/ https://cirt.</description>
+      <description>MISC / Tips # Wget Wizard # Generate wget commands depending what you want https://www.whatismybrowser.com/developers/tools/wget-wizard/ # You can simulate Google Search from other locations using Isearchfrom # It&amp;#39;s useful for searching Google as if you were somewhere else, as well as for SEO &amp;amp; SEA testing. https://isearchfrom.com/ Secrets &amp;amp; Default Passwords # Looking for passwors, API keys etc # Check Online IDES site:http://ideone.com &amp;#34;apikey&amp;#34; site:http://ideone.com &amp;#34;aws_access_key_id&amp;#34; # Default passwords https://www.routerpasswords.com/ https://cirt.</description>
     </item>
     
   </channel>

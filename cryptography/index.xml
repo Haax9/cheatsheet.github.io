@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cryptography on Offensive Security Cheatsheet</title>
     <link>/cryptography/</link>
     <description>Recent content in Cryptography on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/cryptography/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/cryptography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RSA Encryption</title>
       <link>/cryptography/rsa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/cryptography/rsa/</guid>
-      <description>Resources https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-1/ # Think about factordb.com to retrieve p and q from n 
-Theory # Used # c → cyphertext # m → Plaintext message converted as a number # e → public exponent # d → private exponent # n → modulo =&amp;gt; p * q # Encrypt c = (m^e)[n] =&amp;gt; pow(m,e,n) # Decrypt m = (c^d)[n] =&amp;gt; pow(c,d,n) # 5 times encryption c = m^(e1 * e2 * e3 * e4 * e5) m = c^(d1 * d2 * d3 * d4 * d5) # Can get n and e from openssl like this cat alice_pubkey.</description>
+      <description>Resources https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-1/ # Think about factordb.com to retrieve p and q from n Theory # Used # c → cyphertext # m → Plaintext message converted as a number # e → public exponent # d → private exponent # n → modulo =&amp;gt; p * q # Encrypt c = (m^e)[n] =&amp;gt; pow(m,e,n) # Decrypt m = (c^d)[n] =&amp;gt; pow(c,d,n) # 5 times encryption c = m^(e1 * e2 * e3 * e4 * e5) m = c^(d1 * d2 * d3 * d4 * d5) # Can get n and e from openssl like this cat alice_pubkey.</description>
     </item>
     
     <item>
@@ -26,8 +21,7 @@ Theory # Used # c → cyphertext # m → Plaintext message converted as a number
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/cryptography/aes/</guid>
-      <description>Retrieve AES Key and mount partition # Dump AES key aeskeyfind dump # Result 8d 3f 52 7d e5 14 87 2f 59 59 08 95 8d bc 0e d1 # Mount partition echo 8d3f527de514872f595908958dbc0ed1 | xxd -r -p &amp;gt; key.bin sudo cryptsetup luksFormat --verify-passphrase --cipher=aes-ecb --hash=sha1 --key-size=128 --master-key-file=key.bin dump sudo cryptsetup luksOpen dump test sudo mount -t ext4 /dev/mapper/test /mnt/media sudo ls /mnt/media/dir2 
-Decipher encrypted aes256cbc file using openssl # Key d49af309a4c69382ff07bc6f83ba4c2595a7f086d3e5b69e119e2337cb75172d&amp;#39; ----&amp;gt; SHA-256 de &amp;#39;mcsTnTld1dDn&amp;#39;: # Decipher openssl enc -aes-256-cbc -d -in Confidentiel.</description>
+      <description>Retrieve AES Key and mount partition # Dump AES key aeskeyfind dump # Result 8d 3f 52 7d e5 14 87 2f 59 59 08 95 8d bc 0e d1 # Mount partition echo 8d3f527de514872f595908958dbc0ed1 | xxd -r -p &amp;gt; key.bin sudo cryptsetup luksFormat --verify-passphrase --cipher=aes-ecb --hash=sha1 --key-size=128 --master-key-file=key.bin dump sudo cryptsetup luksOpen dump test sudo mount -t ext4 /dev/mapper/test /mnt/media sudo ls /mnt/media/dir2 Decipher encrypted aes256cbc file using openssl # Key d49af309a4c69382ff07bc6f83ba4c2595a7f086d3e5b69e119e2337cb75172d&amp;#39; ----&amp;gt; SHA-256 de &amp;#39;mcsTnTld1dDn&amp;#39;: # Decipher openssl enc -aes-256-cbc -d -in Confidentiel.</description>
     </item>
     
     <item>
@@ -36,8 +30,7 @@ Decipher encrypted aes256cbc file using openssl # Key d49af309a4c69382ff07bc6f83
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/cryptography/misc/</guid>
-      <description>XOR Encryption https://github.com/hellman/xortool https://github.com/tomchop/unxor 
-GPG Encryption sudo gpg --decrypt /mnt/media/dir2/findme.</description>
+      <description>XOR Encryption https://github.com/hellman/xortool https://github.com/tomchop/unxor GPG Encryption sudo gpg --decrypt /mnt/media/dir2/findme.txt.gpg </description>
     </item>
     
     <item>
@@ -46,8 +39,7 @@ GPG Encryption sudo gpg --decrypt /mnt/media/dir2/findme.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/cryptography/ssl_keys_extraction/</guid>
-      <description>Resources https://github.com/aviat/passe-partout 
-Extraction SSH Agent $ sudo ./passe-partout 4712 Target has pid 4712 on_signal(17 - SIGCHLD) from 4712 [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [X] Valid RSA key found. [X] Key saved to file id_rsa-0.key [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. done for pid 4712 OpenSSH_4.3p2 Debian-6, OpenSSL 0.</description>
+      <description>Resources https://github.com/aviat/passe-partout Extraction SSH Agent $ sudo ./passe-partout 4712 Target has pid 4712 on_signal(17 - SIGCHLD) from 4712 [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [X] Valid RSA key found. [X] Key saved to file id_rsa-0.key [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. [-] invalid DSA key. done for pid 4712 OpenSSH_4.3p2 Debian-6, OpenSSL 0.9.8e 23 Feb 2007 debug1: Reading configuration data /dev/null debug1: Connecting to 192.</description>
     </item>
     
   </channel>

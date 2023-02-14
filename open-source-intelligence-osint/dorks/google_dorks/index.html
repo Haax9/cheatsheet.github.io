@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Google Dorks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1826,9 +1855,7 @@
     
     
     
-    
-
-<h3 id="google-dorks">Google Dorks</h3>
+    <h3 id="google-dorks">Google Dorks</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Google Hacking made easy</span>
 https://pentest-tools.com/information-gathering/google-hacking#
 
@@ -1864,9 +1891,8 @@ site:http://trello.com  password + admin OR username
 site:http://ideone.com  <span style="color:#111">|</span> site:http://codebeautify.org  <span style="color:#111">|</span> site:http://codeshare.io  <span style="color:#111">|</span> site:http://codepen.io  <span style="color:#111">|</span> site:http://repl.it  <span style="color:#111">|</span> site:http://justpaste.it  <span style="color:#111">|</span> site:http://pastebin.com  <span style="color:#111">|</span> site:http://jsfiddle.net  <span style="color:#111">|</span> site:http://trello.com  <span style="color:#d88200">&#34;</span><span style="color:#111">$TARGET</span><span style="color:#d88200">&#34;</span>
 
 <span style="color:#75715e"># Piwik Anonymous Access</span>
-inurl:token_auth inurl:anonymous</code></pre></div>
-<p><br/></p>
-
+inurl:token_auth inurl:anonymous
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="automated-dorks-tools">Automated Dorks Tools</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># GoogD0rker (https://github.com/ZephrFish/GoogD0rker/)</span>
 ./googD0rker-txt.py -d example.com
@@ -1874,9 +1900,8 @@ inurl:token_auth inurl:anonymous</code></pre></div>
 
 <span style="color:#75715e"># Goohak (https://github.com/1N3/Goohak/</span>
 <span style="color:#75715e"># Just run it on a target domain</span>
-./goohak domain.com</code></pre></div>
-<p><br/></p>
-
+./goohak domain.com
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="pagodo">Pagodo</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tool to gather dorks information and find potential vulnerable web pages</span>
 <span style="color:#75715e"># The first part is the scrapper which will get dorks and save them</span>
@@ -1884,7 +1909,8 @@ python3 ghdb_scraper.py -j -s
 
 <span style="color:#75715e"># And then the tool to leverage data and try to find vulnerable pages</span>
 <span style="color:#75715e"># -d option can be used to target a domain</span>
-python3 pagodo.py -d example.com -g dorks.txt -l <span style="color:#ae81ff">50</span> -s -e <span style="color:#ae81ff">35</span>.0 -j <span style="color:#ae81ff">1</span>.1</code></pre></div>
+python3 pagodo.py -d example.com -g dorks.txt -l <span style="color:#ae81ff">50</span> -s -e 35.0 -j 1.1
+</code></pre></div>
 
     
     

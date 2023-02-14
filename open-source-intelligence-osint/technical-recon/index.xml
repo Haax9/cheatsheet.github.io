@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technical Investigation on Offensive Security Cheatsheet</title>
     <link>/open-source-intelligence-osint/technical-recon/</link>
     <description>Recent content in Technical Investigation on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/open-source-intelligence-osint/technical-recon/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/open-source-intelligence-osint/technical-recon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IP Address</title>
       <link>/open-source-intelligence-osint/technical-recon/ip_address/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/ip_address/</guid>
-      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/# Get ASN for your target bgp.he.net # Pear is a tool used to get informations about an AS https://github.com/routeur/Pear python3 Pear.py -a [ASNumber]# You can identify IP block owned by a company ipv4info.com# IP Reputation https://reputation.team-cymru.com/ Online Scanners # Shodan.io and Censys.io are also usefull # Keywords on Shodan https://beta.</description>
+      <description>Getting Informations Whois and ASN # Get information on an IP whois &amp;lt;IP&amp;gt; # Enhanced Whois https://domainbigdata.com https://whois.domaintools.com https://www.ip2location.com https://whoisology.com # myip.ms can provie additional informations https://myip.ms/ # Get ASN for your target bgp.he.net # Pear is a tool used to get informations about an AS https://github.com/routeur/Pear python3 Pear.py -a [ASNumber] # You can identify IP block owned by a company ipv4info.com # IP Reputation https://reputation.team-cymru.com/ Online Scanners # Shodan.io and Censys.</description>
     </item>
     
     <item>
@@ -25,8 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/domains_urls/</guid>
-      <description>Getting Informations Get information on an IP whois &amp;lt;IP&amp;gt; # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Knockknock is a small automated script allowing you to find domain names # For a registrant (person or company) python3 k2.py -n company -d # Many tools https://intelx.io/ # Estimate the creation date of a website http://carbondate.cs.odu.edu/ https://github.com/Lazza/Carbon14 
-Online Passive Identification Tools Target Mapping and Informations # Informations about the target https://securitytrails.</description>
+      <description>Getting Informations Get information on an IP whois &amp;lt;IP&amp;gt; # Get IP address associated to a domain nslookup domain.fr ping domain.fr # Knockknock is a small automated script allowing you to find domain names # For a registrant (person or company) python3 k2.py -n company -d # Many tools https://intelx.io/ # Estimate the creation date of a website http://carbondate.cs.odu.edu/ https://github.com/Lazza/Carbon14 Online Passive Identification Tools Target Mapping and Informations # Informations about the target https://securitytrails.</description>
     </item>
     
     <item>
@@ -35,8 +30,7 @@ Online Passive Identification Tools Target Mapping and Informations # Informatio
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/technical-recon/subdomain_discovery/</guid>
-      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com # Github dorks also allow to find many subdomains &amp;#34;teslamotors.com&amp;#34; password # ... 
-Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains</description>
+      <description>Google Dorks &amp;amp; Bing Dorks # Google dorks are usefull for finding new subdomains site:wikipedia.org site:*.wikipedia.org -www -store -jobs -uk # Bing also support dorks and can give others results site: # When you use the Google Dork: site:*.example.com, NEVER forget to check site:*.*.example.com site:*.*.*.example.com # Github dorks also allow to find many subdomains &amp;#34;teslamotors.com&amp;#34; password # ... Online DNS tools and services # VirusTotal runs its own passive DNS replication service # DNS Dumpster can also find large number of sub-domains Certificate Transparency # It&amp;#39;s a project started by Google to log and audit SSL/TLS certificates for every CA # Interesting because you can request these certificates using some tools https://crt.</description>
     </item>
     
   </channel>

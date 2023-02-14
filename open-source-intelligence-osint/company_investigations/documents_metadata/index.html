@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Public Documents and Metadata :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1826,12 +1855,9 @@
     
     
     
-    
-
-<h3 id="online-resources">Online Resources</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.documentcloud.org</code></pre></div>
-<p><br/></p>
-
+    <h3 id="online-resources">Online Resources</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.documentcloud.org
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="metagoofil">Metagoofil</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Extracting metadata of public documents (pdf,doc,xls,ppt,etc) availables in the target websites</span>
 
@@ -1848,9 +1874,8 @@
 <span style="color:#75715e"># -o: working directory (location to save downloaded files)</span>
 <span style="color:#75715e"># -f: output file</span>
 
-metagoofil.py -d domain.com -t doc,pdf -l <span style="color:#ae81ff">10</span> -n <span style="color:#ae81ff">10</span> -o /tmp/result -f /tmp/result/result.html</code></pre></div>
-<p><br/></p>
-
+metagoofil.py -d domain.com -t doc,pdf -l <span style="color:#ae81ff">10</span> -n <span style="color:#ae81ff">10</span> -o /tmp/result -f /tmp/result/result.html
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="investigate-powerpoint-documents">Investigate Powerpoint Documents</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://medium.com/@osint/powerpoint-what-data-is-beneath-the-surface-2eb000ef95fb
 https://medium.com/week-in-osint/week-in-osint-2020-21-4c92d335116a
@@ -1862,9 +1887,8 @@ https://medium.com/week-in-osint/week-in-osint-2020-21-4c92d335116a
 <span style="color:#75715e"># - Some people often use shapes to hide content. If you can edit, you can delete them and get the content</span>
 <span style="color:#75715e"># - &#34;Crop&#34; feature can also be used to get the full content of a screenshot</span>
 
-<span style="color:#75715e"># You can also simply unpack the whole document (if using Open XML Format) and get the embedded content</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># You can also simply unpack the whole document (if using Open XML Format) and get the embedded content</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="trufflehog">TruffleHog</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Searches through git repositories for secrets, digging deep into commit history and branches.</span>
 <span style="color:#75715e"># This is effective at finding secrets accidentally committed.</span>
@@ -1872,9 +1896,8 @@ https://github.com/dxa4481/truffleHog
 
 truffleHog --regex --entropy<span style="color:#f92672">=</span>False https://github.com/dxa4481/truffleHog.git
 
-truffleHog --json --max_depth <span style="color:#ae81ff">10</span> https://github.com/dxa4481/truffleHog.git</code></pre></div>
-<p><br/></p>
-
+truffleHog --json --max_depth <span style="color:#ae81ff">10</span> https://github.com/dxa4481/truffleHog.git
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="just-metadata">Just-Metadata</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Collect metadata about IP</span>
 <span style="color:#75715e"># You have two main functionnalities divided into modules (gather and analyze)</span>
@@ -1901,7 +1924,8 @@ truffleHog --json --max_depth <span style="color:#ae81ff">10</span> https://gith
 
 <span style="color:#75715e"># You can save your result to use it later</span>
 <span style="color:#f92672">[</span>&gt;<span style="color:#f92672">]</span> save
-<span style="color:#f92672">[</span>&gt;<span style="color:#f92672">]</span> import /path/to/file.state</code></pre></div>
+<span style="color:#f92672">[</span>&gt;<span style="color:#f92672">]</span> import /path/to/file.state
+</code></pre></div>
 
     
     

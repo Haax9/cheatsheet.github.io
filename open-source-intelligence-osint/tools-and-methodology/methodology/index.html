@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Methodology :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1830,9 +1859,7 @@
     
     
     
-    
-
-<h3 id="gap-analysis-others">Gap Analysis &amp; others</h3>
+    <h3 id="gap-analysis--others">Gap Analysis &amp; others</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In OSINT - Analytical mind</span>
 <span style="color:#75715e"># Ask a lot of questions : Who, What, When, Where, Why, and How</span>
 
@@ -1840,22 +1867,22 @@
 
 <span style="color:#75715e"># Use Gap Analysis</span>
 shttps://nixintel.info/osint/using-gap-analysis-to-keep-osint-investigations-on-track/
-<span style="color:#ae81ff">1</span>. What <span style="color:#00a8c8">do</span> we know ?
-<span style="color:#ae81ff">2</span>. What does the information mean?
-<span style="color:#ae81ff">3</span>. What <span style="color:#00a8c8">do</span> I still need to know?
-<span style="color:#ae81ff">4</span>. How <span style="color:#00a8c8">do</span> I find out?
+1. What <span style="color:#00a8c8">do</span> we know ?
+2. What does the information mean?
+3. What <span style="color:#00a8c8">do</span> I still need to know?
+4. How <span style="color:#00a8c8">do</span> I find out?
 
 <span style="color:#75715e"># Reflect on failures but also wins</span>
-<span style="color:#ae81ff">1</span>. What part is taking the most time?
-<span style="color:#ae81ff">2</span>. Is this necessary <span style="color:#00a8c8">for</span> the investigation?
-<span style="color:#ae81ff">3</span>. What could I change in my process?
-<span style="color:#ae81ff">4</span>. Could any part be automated?
-<span style="color:#ae81ff">5</span>. Who could I ask <span style="color:#00a8c8">for</span> input/advice?</code></pre></div>
-<p><br/></p>
-
-<h3 id="preserving-data-recover">Preserving data &amp; recover</h3>
+1. What part is taking the most time?
+2. Is this necessary <span style="color:#00a8c8">for</span> the investigation?
+3. What could I change in my process?
+4. Could any part be automated?
+5. Who could I ask <span style="color:#00a8c8">for</span> input/advice?
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="preserving-data--recover">Preserving data &amp; recover</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Great post, presenting why it&#39;s important and some tools</span>
-https://nixintel.info/osint/the-attrition-of-information-in-osint-why-acting-quickly-matters-and-how-to-recover-when-you-dont/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Preservation tools</span>
+https://nixintel.info/osint/the-attrition-of-information-in-osint-why-acting-quickly-matters-and-how-to-recover-when-you-dont/
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Preservation tools</span>
 
 <span style="color:#75715e"># Screenshots</span>
 <span style="color:#75715e"># --&gt; Fireshot (extension)</span>
@@ -1866,13 +1893,14 @@ https://nixintel.info/osint/the-attrition-of-information-in-osint-why-acting-qui
 https://tweetbeaver.com/ <span style="color:#75715e"># Twitter</span>
 https://pypi.org/project/twint/ <span style="color:#75715e"># Twitter</span>
 
-https://archive.is/ 
+https://archive.is/	
 https://www.httrack.com/page/1/en/index.html
 
 https://mrs0m30n3.github.io/youtube-dl-gui/ <span style="color:#75715e"># Not only Youtube</span>
 
 <span style="color:#75715e"># Complete Browser</span>
-http://osirtbrowser.com/?LMCL<span style="color:#f92672">=</span>J79jsX</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Recovery Tools</span>
+http://osirtbrowser.com/?LMCL<span style="color:#f92672">=</span>J79jsX
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Recovery Tools</span>
 
 <span style="color:#75715e"># Google Cache</span>
 <span style="color:#75715e"># Time parameter search can also filter</span>
@@ -1882,16 +1910,14 @@ https://archive.org/
 
 <span style="color:#75715e"># Reddit</span>
 https://www.resavr.com/
-https://snew.notabug.io/r/all</code></pre></div>
-<p><br/></p>
-
+https://snew.notabug.io/r/all
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="storing-and-indexing-local-data">Storing and indexing local data</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tools like recoll can help to index gathered data and to fastly search for them locally</span>
 https://doc.ubuntu-fr.org/recoll
-https://www.lesbonscomptes.com/recoll/</code></pre></div>
-<p><br/></p>
-
-<h3 id="investigate-a-website-crosspost-domains-url">Investigate a website (crosspost Domains &amp; URL)</h3>
+https://www.lesbonscomptes.com/recoll/
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="investigate-a-website-crosspost-domains--url">Investigate a website (crosspost Domains &amp; URL)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Thread by Aware Online about some website investigation methodology</span>
 https://twitter.com/aware_online/status/1308312883248467975
 
@@ -1911,9 +1937,8 @@ https://twitter.com/aware_online/status/1308312883248467975
 <span style="color:#75715e"># 14 - Reverse IP lookup</span>
 <span style="color:#75715e"># 15 - Reverse DNS lookup</span>
 <span style="color:#75715e"># 16 - Monitoring changes</span>
-<span style="color:#75715e"># 17 - Malware check</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># 17 - Malware check</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="screenshots">Screenshots</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/Sector035/status/1335539230072823809
 
@@ -1924,38 +1949,25 @@ https://monosnap.com
 https://getsharex.com/
 
 <span style="color:#75715e"># Linux - Flameshot (img):</span>
-https://github.com/flameshot-org/flameshot</code></pre></div>
-<p><br/></p>
-
+https://github.com/flameshot-org/flameshot
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="workflow">Workflow</h3>
-
 <h4 id="domain">Domain</h4>
-
-<p><center><img src="/img/OSINT-Domain.png" alt="OSINT Domain" height="800px"/></center></p>
+<!-- raw HTML omitted -->
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># This one is good too</span>
 https://twitter.com/sinwindie/status/1251320697370095617?s<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
-@sinwindie</code></pre></div>
-<p><center><img src="/img/OSINT-Website.jfif" alt="OSINT Domain" height="800px"/></center></p>
-
+@sinwindie
+</code></pre></div><!-- raw HTML omitted -->
 <h4 id="e-mail">E-mail</h4>
-
-<p><center><img src="/img/osintemail.JPG" alt="OSINT E-mail" height="800px"/></center></p>
-
+<!-- raw HTML omitted -->
 <h4 id="username">Username</h4>
-
-<p><center><img src="/img/OSINT-Location.png" alt="OSINT Username" height="800px"/></center></p>
-
+<!-- raw HTML omitted -->
 <h4 id="real-name">Real Name</h4>
-
-<p><center><img src="/img/OSINT-Real-Name.png" alt="OSINT Real Name" height="800px"/></center></p>
-
+<!-- raw HTML omitted -->
 <h4 id="phone">Phone</h4>
-
-<p><center><img src="/img/OSINT-Telephone.png" alt="OSINT Phone" height="800px"/></center></p>
-
+<!-- raw HTML omitted -->
 <h4 id="location">Location</h4>
-
-<p><center><img src="/img/OSINT-Location.png" alt="OSINT Location" height="800px"/></center></p>
+<!-- raw HTML omitted -->
 
 
     

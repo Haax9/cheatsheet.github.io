@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Systems :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1808,12 +1837,8 @@
     
     
     
-    
-
-<h2 id="windows">Windows</h2>
-
-<h4 id="network-ipv6">Network / IPv6</h4>
-
+    <h2 id="windows">Windows</h2>
+<h4 id="network--ipv6">Network / IPv6</h4>
 <ul>
 <li>MITM6 (<a href="https://github.com/fox-it/mitm6">https://github.com/fox-it/mitm6</a>)</li>
 <li>NTLM Relaying and Kerberos Delegation (<a href="https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/">https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/</a>)</li>
@@ -1825,51 +1850,62 @@
 <li>A pivot cheatsheet for pentesters (<a href="https://nullsweep.com/pivot-cheatsheet-for-pentesters/">https://nullsweep.com/pivot-cheatsheet-for-pentesters/</a>)</li>
 <li>I’m bringing relaying back: A comprehensive guide on relaying anno 2022 (<a href="https://www.trustedsec.com/blog/a-comprehensive-guide-on-relaying-anno-2022/">https://www.trustedsec.com/blog/a-comprehensive-guide-on-relaying-anno-2022/</a>)</li>
 </ul>
-
 <h4 id="kerberos">Kerberos</h4>
-
 <ul>
 <li>Kerberos Cheatsheet (<a href="https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a">https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a</a>)</li>
 <li>Hunting for Skeleton Key implants (<a href="https://riccardoancarani.github.io/2020-08-08-hunting-for-skeleton-keys/">https://riccardoancarani.github.io/2020-08-08-hunting-for-skeleton-keys/</a>)</li>
 <li>Hunting for Impacket (<a href="https://riccardoancarani.github.io/2020-05-10-hunting-for-impacket/">https://riccardoancarani.github.io/2020-05-10-hunting-for-impacket/</a>)</li>
 <li>Kerberoasting without SPNs (<a href="https://swarm.ptsecurity.com/kerberoasting-without-spns/">https://swarm.ptsecurity.com/kerberoasting-without-spns/</a>)</li>
 </ul>
-
 <h4 id="privilege-escalation">Privilege Escalation</h4>
-
 <ul>
-<li>PrivExchange (<a href="https://github.com/dirkjanm/PrivExchange">https://github.com/dirkjanm/PrivExchange</a>)</li>
-<li>Abusing Exchange (<a href="https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/">https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/</a>)</li>
-
-<li><p>Exploiting PrivExchange (<a href="https://chryzsh.github.io/exploiting-privexchange/">https://chryzsh.github.io/exploiting-privexchange/</a>)</p></li>
-
-<li><p>LOLBAS (<a href="https://lolbas-project.github.io/#">https://lolbas-project.github.io/#</a>)</p></li>
-
-<li><p>Windows EoP Cheatsheet (<a href="https://guif.re/windowseop">https://guif.re/windowseop</a>)</p></li>
-
-<li><p>Windows Privilege Escalation (<a href="https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html">https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html</a>)</p></li>
-
-<li><p>Abusing Active Directory Permissions with PowerView (<a href="http://www.harmj0y.net/blog/redteaming/abusing-active-directory-permissions-with-powerview/">http://www.harmj0y.net/blog/redteaming/abusing-active-directory-permissions-with-powerview/</a>)</p></li>
-
-<li><p>DCSync: Dump Password Hashes from Domain Controller (<a href="https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/dump-password-hashes-from-domain-controller-with-dcsync">https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/dump-password-hashes-from-domain-controller-with-dcsync</a>)</p></li>
-
-<li><p>Unconstrained Delegations (<a href="https://johnkol.com/unconstrained-delegation/">https://johnkol.com/unconstrained-delegation/</a>)</p></li>
-
-<li><p>No Shells Required - a Walkthrough on Using Impacket and Kerberos to Delegate Your Way to DA (<a href="http://blog.redxorblue.com/2019/12/no-shells-required-using-impacket-to.html">http://blog.redxorblue.com/2019/12/no-shells-required-using-impacket-to.html</a>)</p></li>
-
-<li><p>Invoke-Recon (<a href="https://github.com/phackt/Invoke-Recon">https://github.com/phackt/Invoke-Recon</a>)</p></li>
-
-<li><p>Dumping credentials (offline) (<a href="https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/">https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/</a>)</p></li>
-
-<li><p>#HiveNightmare aka #SeriousSAM — anybody can read the registry in Windows 10 (<a href="https://doublepulsar.com/hivenightmare-aka-serioussam-anybody-can-read-the-registry-in-windows-10-7a871c465fa5">https://doublepulsar.com/hivenightmare-aka-serioussam-anybody-can-read-the-registry-in-windows-10-7a871c465fa5</a>)</p></li>
-
-<li><p>MS-EFSRPC to coerce machine authentification (<a href="https://github.com/topotam/PetitPotam">https://github.com/topotam/PetitPotam</a>)</p></li>
-
-<li><p>Spooler Service Abuse (<a href="https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse">https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse</a>)</p></li>
+<li>
+<p>PrivExchange (<a href="https://github.com/dirkjanm/PrivExchange">https://github.com/dirkjanm/PrivExchange</a>)</p>
+</li>
+<li>
+<p>Abusing Exchange (<a href="https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/">https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/</a>)</p>
+</li>
+<li>
+<p>Exploiting PrivExchange (<a href="https://chryzsh.github.io/exploiting-privexchange/">https://chryzsh.github.io/exploiting-privexchange/</a>)</p>
+</li>
+<li>
+<p>LOLBAS (<a href="https://lolbas-project.github.io/#">https://lolbas-project.github.io/#</a>)</p>
+</li>
+<li>
+<p>Windows EoP Cheatsheet (<a href="https://guif.re/windowseop">https://guif.re/windowseop</a>)</p>
+</li>
+<li>
+<p>Windows Privilege Escalation (<a href="https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html">https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html</a>)</p>
+</li>
+<li>
+<p>Abusing Active Directory Permissions with PowerView (<a href="http://www.harmj0y.net/blog/redteaming/abusing-active-directory-permissions-with-powerview/">http://www.harmj0y.net/blog/redteaming/abusing-active-directory-permissions-with-powerview/</a>)</p>
+</li>
+<li>
+<p>DCSync: Dump Password Hashes from Domain Controller (<a href="https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/dump-password-hashes-from-domain-controller-with-dcsync">https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/dump-password-hashes-from-domain-controller-with-dcsync</a>)</p>
+</li>
+<li>
+<p>Unconstrained Delegations (<a href="https://johnkol.com/unconstrained-delegation/">https://johnkol.com/unconstrained-delegation/</a>)</p>
+</li>
+<li>
+<p>No Shells Required - a Walkthrough on Using Impacket and Kerberos to Delegate Your Way to DA (<a href="http://blog.redxorblue.com/2019/12/no-shells-required-using-impacket-to.html">http://blog.redxorblue.com/2019/12/no-shells-required-using-impacket-to.html</a>)</p>
+</li>
+<li>
+<p>Invoke-Recon (<a href="https://github.com/phackt/Invoke-Recon">https://github.com/phackt/Invoke-Recon</a>)</p>
+</li>
+<li>
+<p>Dumping credentials (offline) (<a href="https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/">https://kaluche.github.io/posts/2020/09/dumping-credentials-offline/</a>)</p>
+</li>
+<li>
+<p>#HiveNightmare aka #SeriousSAM — anybody can read the registry in Windows 10 (<a href="https://doublepulsar.com/hivenightmare-aka-serioussam-anybody-can-read-the-registry-in-windows-10-7a871c465fa5">https://doublepulsar.com/hivenightmare-aka-serioussam-anybody-can-read-the-registry-in-windows-10-7a871c465fa5</a>)</p>
+</li>
+<li>
+<p>MS-EFSRPC to coerce machine authentification (<a href="https://github.com/topotam/PetitPotam">https://github.com/topotam/PetitPotam</a>)</p>
+</li>
+<li>
+<p>Spooler Service Abuse (<a href="https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse">https://book.hacktricks.xyz/windows/active-directory-methodology/printers-spooler-service-abuse</a>)</p>
+</li>
 </ul>
-
 <h4 id="evasion">Evasion</h4>
-
 <ul>
 <li>AMSI Bypass Methods and tools (<a href="https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/">https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/</a>)</li>
 <li>AMSI.fail (<a href="https://amsi.fail/">https://amsi.fail/</a>)</li>
@@ -1877,9 +1913,7 @@
 <li>AMSI Bypass (<a href="https://www.contextis.com/us/blog/amsi-bypass">https://www.contextis.com/us/blog/amsi-bypass</a>)</li>
 <li>Getting Rastamouse’s AmsiScanBufferBypass to Work Again (<a href="https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/">https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/</a>)</li>
 </ul>
-
-<h4 id="azure-services-azure-ad">Azure Services / Azure AD</h4>
-
+<h4 id="azure-services--azure-ad">Azure Services / Azure AD</h4>
 <ul>
 <li>Azure Active Directory Redteam (<a href="https://github.com/rootsecdev/Azure-Red-Team">https://github.com/rootsecdev/Azure-Red-Team</a>)</li>
 <li>Introduction to Azure Penetration Testing (<a href="https://azure.enterprisesecurity.io/">https://azure.enterprisesecurity.io/</a>)</li>
@@ -1895,9 +1929,7 @@
 <li>Azure Persistence with Desired State Configurations (<a href="https://www.netspi.com/blog/technical/cloud-penetration-testing/azure-persistence-with-desired-state-configurations/">https://www.netspi.com/blog/technical/cloud-penetration-testing/azure-persistence-with-desired-state-configurations/</a>)</li>
 <li>Webcast: Getting Started in Pentesting The Cloud: Azure (<a href="https://www.blackhillsinfosec.com/webcast-getting-started-in-pentesting-the-cloud-azure/">https://www.blackhillsinfosec.com/webcast-getting-started-in-pentesting-the-cloud-azure/</a>)</li>
 </ul>
-
 <h4 id="others">Others</h4>
-
 <ul>
 <li>Virtual/Remote Environments Breakout (<a href="https://www.pentestpartners.com/security-blog/breaking-out-of-citrix-and-other-restricted-desktop-environments/">https://www.pentestpartners.com/security-blog/breaking-out-of-citrix-and-other-restricted-desktop-environments/</a>)</li>
 <li>WriteUp LeHack19 Akerva (<a href="https://github.com/aas-n/leHACK19">https://github.com/aas-n/leHACK19</a>)</li>
@@ -1917,32 +1949,29 @@
 <li>PowerShell commands for enumerating Active Directory (<a href="https://www.notion.so/53512dc072c241589fc45c577ccea2ee?v=7b908e7e76a9416f98f40d9d3843d3cb">https://www.notion.so/53512dc072c241589fc45c577ccea2ee?v=7b908e7e76a9416f98f40d9d3843d3cb</a>)</li>
 <li>Detecting Resilient Adversaries - Active Directory (<a href="https://raw.githubusercontent.com/RiccardoAncarani/talks/master/r00tMI/20200709-r00tMi-ADDtalk_v1.0.pdf">https://raw.githubusercontent.com/RiccardoAncarani/talks/master/r00tMI/20200709-r00tMi-ADDtalk_v1.0.pdf</a>)</li>
 </ul>
-
-<p><br/>
-<br/></p>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <h2 id="linux">Linux</h2>
-
 <h4 id="privilege-escalation-1">Privilege Escalation</h4>
-
 <ul>
-<li>Basic Linux Privilege Escalation (<a href="https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/">https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/</a>)</li>
-<li>Restricted Linux Shell Escaping Techniques (<a href="https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/">https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/</a>)</li>
-
-<li><p>GTFO Bins (<a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a>)</p></li>
-
-<li><p>Privilege Escalation Cheatsheet for OSCP (Vulnhub) (<a href="https://github.com/Ignitetechnologies/Privilege-Escalation#kernel">https://github.com/Ignitetechnologies/Privilege-Escalation#kernel</a>)</p></li>
+<li>
+<p>Basic Linux Privilege Escalation (<a href="https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/">https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/</a>)</p>
+</li>
+<li>
+<p>Restricted Linux Shell Escaping Techniques (<a href="https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/">https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/</a>)</p>
+</li>
+<li>
+<p>GTFO Bins (<a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a>)</p>
+</li>
+<li>
+<p>Privilege Escalation Cheatsheet for OSCP (Vulnhub) (<a href="https://github.com/Ignitetechnologies/Privilege-Escalation#kernel">https://github.com/Ignitetechnologies/Privilege-Escalation#kernel</a>)</p>
+</li>
 </ul>
-
 <h4 id="others-1">Others</h4>
-
 <ul>
 <li>TMUX Cheatsheet (<a href="https://gist.github.com/MohamedAlaa/2961058">https://gist.github.com/MohamedAlaa/2961058</a>)</li>
 <li>Blocky, un proxy DNS pour votre nunux (<a href="https://lord.re/posts/204-profiter-de-dns-over-httpstls-sur-linux/">https://lord.re/posts/204-profiter-de-dns-over-httpstls-sur-linux/</a>)</li>
 <li>List of everyday enhanced tools (<a href="https://twitter.com/amilajack/status/1479328649820000256?t=MXq9Cw3whFODqwFtqJOgsA&amp;s=19">https://twitter.com/amilajack/status/1479328649820000256?t=MXq9Cw3whFODqwFtqJOgsA&amp;s=19</a>)
-
 <ul>
 <li>bat (Enhanced cat) <a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a></li>
 <li>diff-so-fancy (diff) <a href="https://github.com/so-fancy/diff-so-fancy">https://github.com/so-fancy/diff-so-fancy</a></li>
@@ -1950,26 +1979,21 @@
 <li>fzf (fast fuzzy search) <a href="https://github.com/junegunn/fzf">https://github.com/junegunn/fzf</a></li>
 <li>exa (ls colored) <a href="https://twitter.com/fig/status/1479189142743384064">https://twitter.com/fig/status/1479189142743384064</a></li>
 <li>duf (enhanced du) <a href="https://github.com/muesli/duf">https://github.com/muesli/duf</a>
-<br/>
-<br/></li>
-</ul></li>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></li>
 </ul>
-
-<hr />
-
+</li>
+</ul>
+<hr>
 <h2 id="freeipa">FreeIPA</h2>
-
 <ul>
 <li>Attacking FreeIPA Part 1 (<a href="https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a">https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a</a>)</li>
 <li>Attacking FreeIPA Part 2 (<a href="https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1">https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1</a>)
-<br/>
-<br/></li>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></li>
 </ul>
-
-<hr />
-
+<hr>
 <h2 id="aws">AWS</h2>
-
 <ul>
 <li>My arsenal of AWS Security Tools (<a href="https://github.com/toniblyx/my-arsenal-of-aws-security-tools">https://github.com/toniblyx/my-arsenal-of-aws-security-tools</a>)</li>
 <li>AWS Cheatsheet (<a href="https://www.magnussen.funcmylife.fr/article_35">https://www.magnussen.funcmylife.fr/article_35</a>)</li>

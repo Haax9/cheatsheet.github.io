@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Other Systems on Offensive Security Cheatsheet</title>
     <link>/other-systems/</link>
     <description>Recent content in Other Systems on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/other-systems/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/other-systems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IPBX</title>
       <link>/other-systems/ipbx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/other-systems/ipbx/</guid>
-      <description># You can browse to the following URL to get all users registered with an extension 178.33.47.167/panel/ # Sipvicious is a great tool to attack VoIP # You can bruteforce a special extension/account ./svcrack.py -u 2000 178.33.47.167 -d ./notre_dictionnaire -vv</description>
+      <description># You can browse to the following URL to get all users registered with an extension 178.33.47.167/panel/ # Sipvicious is a great tool to attack VoIP # You can bruteforce a special extension/account ./svcrack.py -u 2000 178.33.47.167 -d ./notre_dictionnaire -vv </description>
     </item>
     
     <item>
@@ -25,8 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/other-systems/freeipa/</guid>
-      <description>What is FreeIPA ? https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1# Open source alternative to Microsoft Windows Active Directory # Primarily used as an integrated management solution for Unix environments. # Similar to Active Directory, FreeIPA implements a full LDAP directory infrastructure # So all together we have a Unix host management system # Complete with LDAP and Kerberos that allows for multi-factor authentication. 
-Informations Files # Kerberos informations to get enrolled (location of KDCs.</description>
+      <description>What is FreeIPA ? https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1 # Open source alternative to Microsoft Windows Active Directory # Primarily used as an integrated management solution for Unix environments. # Similar to Active Directory, FreeIPA implements a full LDAP directory infrastructure # So all together we have a Unix host management system # Complete with LDAP and Kerberos that allows for multi-factor authentication. Informations Files # Kerberos informations to get enrolled (location of KDCs.</description>
     </item>
     
     <item>
@@ -35,7 +30,7 @@ Informations Files # Kerberos informations to get enrolled (location of KDCs.</d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/other-systems/misc/</guid>
-      <description> RTSP and VLC # RTSP (Real Time Streaming Protocol) is used with IP camera # You can view it from VLC Media Player # Open Network Stream &amp;gt; rtsp://ip/endpoint</description>
+      <description>RTSP and VLC # RTSP (Real Time Streaming Protocol) is used with IP camera # You can view it from VLC Media Player # Open Network Stream &amp;gt; rtsp://ip/endpoint </description>
     </item>
     
     <item>
@@ -44,7 +39,7 @@ Informations Files # Kerberos informations to get enrolled (location of KDCs.</d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/other-systems/docker_stuff/</guid>
-      <description>Basics - Tips # Get a shell within the container docker ps sudo docker exec -u 0 -it &amp;lt;id_container&amp;gt; bash # Investigating container # --no-trunc option allow to have full output sudo docker history cont/ainer --no-trunc # Getting the container filesystem from the host # Then chmod and extract it # It can be usefull if some files have been deleted sudo docker save cont/ainer -o container.</description>
+      <description>Basics - Tips # Get a shell within the container docker ps sudo docker exec -u 0 -it &amp;lt;id_container&amp;gt; bash # Investigating container # --no-trunc option allow to have full output sudo docker history cont/ainer --no-trunc # Getting the container filesystem from the host # Then chmod and extract it # It can be usefull if some files have been deleted sudo docker save cont/ainer -o container.tar </description>
     </item>
     
     <item>
@@ -53,8 +48,7 @@ Informations Files # Kerberos informations to get enrolled (location of KDCs.</d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/other-systems/amazon_web_services/</guid>
-      <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy # Cheatsheet https://www.magnussen.funcmylife.fr/article_35 GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty 
-Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed).</description>
+      <description>https://github.com/toniblyx/my-arsenal-of-aws-security-tools https://github.com/RhinoSecurityLabs/ccat https://github.com/RhinoSecurityLabs/pacu https://github.com/carnal0wnage/weirdAAL https://github.com/Static-Flow/CloudCopy # Cheatsheet https://www.magnussen.funcmylife.fr/article_35 GitLeaks (https://github.com/zricethezav/gitleaks) # Audit git repos for secrets keys ./gitleaks --repo=xxxxx --verbose --pretty Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the permissions associated with AWS credential set  ./enumerate-iam.py --access-key AKIA... --secret-key StF0q... # enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. # The calls performed by this tool are all non-destructive (only get* and list* calls are performed). SQLmap proxy for AWS https://github.</description>
     </item>
     
     <item>
@@ -63,7 +57,7 @@ Enumerate IAM (https://github.com/andresriancho/enumerate-iam) # Enumerate the p
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/other-systems/kubernetes/</guid>
-      <description>Resources https://book.hacktricks.xyz/pentesting/pentesting-kubernetes</description>
+      <description>Resources https://book.hacktricks.xyz/pentesting/pentesting-kubernetes </description>
     </item>
     
   </channel>

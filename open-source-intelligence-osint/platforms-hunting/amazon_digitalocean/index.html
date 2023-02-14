@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Amazon &amp; Digital Ocean Buckets :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1836,13 +1865,8 @@
     
     
     
-    
-
-<pre><code>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it
-</code></pre>
-
-<p><br/></p>
-
+    <pre><code>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it
+</code></pre><!-- raw HTML omitted -->
 <h3 id="aws-bucket-access-ssrf-for-example">AWS Bucket access (SSRF for example)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can get informations and secret about an S3 bucket</span>
 
@@ -1853,18 +1877,16 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/
 <span style="color:#75715e"># You might need the zone</span>
 http://169.254.169.254/latest/dynamic/instance-identity/document
 
-<span style="color:#75715e"># Then set</span> 
+<span style="color:#75715e"># Then set </span>
 <span style="color:#75715e"># AWS_ACCESS_KEY_ID</span>
 <span style="color:#75715e"># AWS_SECRET_ACCESS_KEY</span>
 <span style="color:#75715e"># AWS_DEFAULT_REGION</span>
-<span style="color:#75715e"># AWS_SESSION_TOKEN</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># AWS_SESSION_TOKEN</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="amazon-s3-aws-buckets">Amazon S3 (AWS) Buckets</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tools like AWSBucketDump can enumerate AWS S3 buckets</span>
-https://github.com/jordanpotti/AWSBucketDump</code></pre></div>
-<p><br/></p>
-
+https://github.com/jordanpotti/AWSBucketDump
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="teh-s3-bucketeers">Teh S3 Bucketeers</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/tomdev/teh_s3_bucketeers/
 
@@ -1874,34 +1896,32 @@ https://github.com/jordanpotti/AWSBucketDump</code></pre></div>
 <span style="color:#111">aws_secret_access_key</span> <span style="color:#f92672">=</span> &lt;secret&gt;
 
 <span style="color:#75715e"># Then just run it</span>
-./bucketeer.sh &lt;target&gt; &lt;target&gt;</code></pre></div>
-<p><br/></p>
-
-<h3 id="slurp-https-github-com-0xbharath-slurp">Slurp (<a href="https://github.com/0xbharath/slurp">https://github.com/0xbharath/slurp</a>)</h3>
+./bucketeer.sh &lt;target&gt; &lt;target&gt;
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="slurp-httpsgithubcom0xbharathslurp">Slurp (<a href="https://github.com/0xbharath/slurp">https://github.com/0xbharath/slurp</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Go tool to enumerates S3 buckets manually or via certstream</span>
 slurp domain &lt;-t<span style="color:#111">|</span>--target&gt; google.com
 slurp keyword &lt;-t<span style="color:#111">|</span>--target&gt; linux,golang,python
-slurp certstream</code></pre></div>
-<p><br/></p>
-
-<h3 id="bucket-stream-https-github-com-eth0izzle-bucket-stream">Bucket Stream (<a href="https://github.com/eth0izzle/bucket-stream">https://github.com/eth0izzle/bucket-stream</a>)</h3>
+slurp certstream
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="bucket-stream-httpsgithubcometh0izzlebucket-stream">Bucket Stream (<a href="https://github.com/eth0izzle/bucket-stream">https://github.com/eth0izzle/bucket-stream</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find interesting Amazon S3 Buckets by watching certificate transparency logs.</span>
-<span style="color:#75715e"># This tool simply listens to various certificate transparency logs (via certstream)</span> 
+<span style="color:#75715e"># This tool simply listens to various certificate transparency logs (via certstream) </span>
 <span style="color:#75715e"># and attempts to find public S3 buckets from permutations of the certificates domain name</span>
 
 <span style="color:#75715e"># Basic</span>
 python3 bucket-stream.py
 
-<span style="color:#75715e"># You can put credentials / API key in confi.yml file and the tool will try to authenticate and identify bucket owners</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="space-finder-digital-ocean-https-github-com-appsecco-spaces-finder">Space Finder &ndash; Digital Ocean (<a href="https://github.com/appsecco/spaces-finder">https://github.com/appsecco/spaces-finder</a>)</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Spaces finder is a tool to quickly enumerate DigitalOcean Spaces to look for loot.</span> 
+<span style="color:#75715e"># You can put credentials / API key in confi.yml file and the tool will try to authenticate and identify bucket owners</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="space-finder----digital-ocean-httpsgithubcomappseccospaces-finder">Space Finder &ndash; Digital Ocean (<a href="https://github.com/appsecco/spaces-finder">https://github.com/appsecco/spaces-finder</a>)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Spaces finder is a tool to quickly enumerate DigitalOcean Spaces to look for loot. </span>
 <span style="color:#75715e"># It&#39;s similar to a subdomain bruteforcer but is made specifically for DigitalOcean Spaces</span>
 <span style="color:#75715e"># Use SecLists as wordlists</span>
 <span style="color:#75715e"># If targetting specific company, uses enumall tool to get wordlist</span>
 
-python3 spaces_finder.py -l SpacesNames.txt -g interesting_keywords.txt -D -m <span style="color:#ae81ff">500000</span> -d <span style="color:#ae81ff">1</span> -t <span style="color:#ae81ff">5</span></code></pre></div>
+python3 spaces_finder.py -l SpacesNames.txt -g interesting_keywords.txt -D -m <span style="color:#ae81ff">500000</span> -d <span style="color:#ae81ff">1</span> -t <span style="color:#ae81ff">5</span>
+</code></pre></div>
 
     
     

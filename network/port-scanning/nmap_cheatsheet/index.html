@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Nmap Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1817,201 +1846,192 @@
     
     
     
-    
-
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/Tib3rius/AutoRecon</code></pre></div>
-<h3 id="full-commands-examples">Full commands examples</h3>
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/Tib3rius/AutoRecon
+</code></pre></div><h3 id="full-commands-examples">Full commands examples</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Ping scan</span>
-nmap -sP <span style="color:#ae81ff">192</span>.168.0.0/24
+nmap -sP 192.168.0.0/24
 
 <span style="color:#75715e"># Quick scan</span>
-nmap -T4 -F <span style="color:#ae81ff">192</span>.168.1.1 -vvv
+nmap -T4 -F 192.168.1.1 -vvv
 
 <span style="color:#75715e"># Quick scan plus (more info but more aggressive)</span>
-nmap -sV -T4 -O -F –version-light <span style="color:#ae81ff">192</span>.168.1.1 -vvv
+nmap -sV -T4 -O -F –version-light 192.168.1.1 -vvv
 
 <span style="color:#75715e"># TCP Syn and UDP Scan (requires root)</span>
-nmap -sS -sU -PN -p T:80,T:445,U:161 <span style="color:#ae81ff">192</span>.168.1.1
+nmap -sS -sU -PN -p T:80,T:445,U:161 192.168.1.1
 
 <span style="color:#75715e"># Soft nmap</span>
-nmap -v -Pn -n -T4 -sT -sV --version-intensity<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> --reason <span style="color:#ae81ff">192</span>.168.1.1
+nmap -v -Pn -n -T4 -sT -sV --version-intensity<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> --reason 192.168.1.1
 
 <span style="color:#75715e"># Full nmap</span>
-nmap -v -Pn -n -T4 -sT -p- --reason <span style="color:#ae81ff">192</span>.168.1.1
+nmap -v -Pn -n -T4 -sT -p- --reason 192.168.1.1
 
 <span style="color:#75715e"># Dedicated nmap</span>
-nmap -v -Pn -n -T4 -sV --version-intensity<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> -sT -p T:ports_found --reason &lt;IP&gt;</code></pre></div>
-<p><br/></p>
-
+nmap -v -Pn -n -T4 -sV --version-intensity<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> -sT -p T:ports_found --reason &lt;IP&gt;
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="target-specification">Target specification</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap <span style="color:#ae81ff">192</span>.168.1.1
-nmap <span style="color:#ae81ff">192</span>.168.1.1-10
-nmap <span style="color:#ae81ff">192</span>.168.1.0/24
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap 192.168.1.1
+nmap 192.168.1.1-10
+nmap 192.168.1.0/24
 nmap google.com
-nmap <span style="color:#ae81ff">192</span>.168.1.0/24 --exclude192.168.1.1
-nmap -iL targets.txt</code></pre></div>
-<p><br/></p>
-
+nmap 192.168.1.0/24 --exclude192.168.1.1
+nmap -iL targets.txt
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="scan-techniques">Scan techniques</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># TCP SYN port scan (default, root needed)</span>
-nmap -sS <span style="color:#ae81ff">192</span>.168.1.1
+nmap -sS 192.168.1.1
 
 <span style="color:#75715e"># TCP CONNECT port scan (default without root privilege)</span>
-<span style="color:#75715e"># Require full connection so it is slower</span> 
-nmap -sT <span style="color:#ae81ff">192</span>.168.1.1
+<span style="color:#75715e"># Require full connection so it is slower </span>
+nmap -sT 192.168.1.1
 
 <span style="color:#75715e"># UDP port scan</span>
-nmap -sU <span style="color:#ae81ff">192</span>.168.1.1
+nmap -sU 192.168.1.1
 
-nmap -sA <span style="color:#ae81ff">192</span>.168.1.1
-nmap -sW <span style="color:#ae81ff">192</span>.168.1.1
-nmap -sN <span style="color:#ae81ff">192</span>.168.1.1
+nmap -sA 192.168.1.1
+nmap -sW 192.168.1.1
+nmap -sN 192.168.1.1
 
 <span style="color:#75715e"># Ping scan</span>
-nmap -sP <span style="color:#ae81ff">192</span>.168.0.0/24</code></pre></div>
-<p><br/></p>
-
+nmap -sP 192.168.0.0/24
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="host-discovery">Host discovery</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># No scan, only list targets (get hostnames)</span>
-nmap -sL <span style="color:#ae81ff">192</span>.168.1.1
+nmap -sL 192.168.1.1
 
 <span style="color:#75715e"># Disable port scanning, only host discovery</span>
-nmap -sn <span style="color:#ae81ff">192</span>.168.1.1
+nmap -sn 192.168.1.1
 
 <span style="color:#75715e"># Disable host discovery, only port scanning, can be usefull if firewall deny PING</span>
-nmap -Pn <span style="color:#ae81ff">192</span>.168.1.1
+nmap -Pn 192.168.1.1
 
 <span style="color:#75715e"># Disable DNS resolution</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -n</code></pre></div>
-<p><br/></p>
-
+nmap 192.168.1.1 -n
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="services-ports-and-os-fingerprinting">Services, ports and OS (fingerprinting</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -p <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">192</span>.168.1.1
-nmap -p <span style="color:#ae81ff">20</span>-100 <span style="color:#ae81ff">192</span>.168.1.1
-nmap -p U:53,T:25-100 <span style="color:#ae81ff">192</span>.168.1.1
-nmap -p http,https <span style="color:#ae81ff">192</span>.168.1.1
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -p <span style="color:#ae81ff">20</span> 192.168.1.1
+nmap -p 20-100 192.168.1.1
+nmap -p U:53,T:25-100 192.168.1.1
+nmap -p http,https 192.168.1.1
 
 <span style="color:#75715e"># All ports</span>
-nmap -p- <span style="color:#ae81ff">192</span>.168.1.1
+nmap -p- 192.168.1.1
 
 <span style="color:#75715e"># Fast port scan (100 more common ports)</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -F
+nmap 192.168.1.1 -F
 
 <span style="color:#75715e"># Top X ports</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --top-ports <span style="color:#ae81ff">2000</span>
+nmap 192.168.1.1 --top-ports <span style="color:#ae81ff">2000</span>
 
 <span style="color:#75715e"># Try to get service version</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -sV
+nmap 192.168.1.1 -sV
 
 <span style="color:#75715e"># 0-9</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -sV --version-intensity <span style="color:#ae81ff">3</span>
+nmap 192.168.1.1 -sV --version-intensity <span style="color:#ae81ff">3</span>
 
 <span style="color:#75715e"># Light mode but faster</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -sV --version-light
+nmap 192.168.1.1 -sV --version-light
 
 <span style="color:#75715e"># Equivalent to version-intensity 9. Harder</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -sV --version-all
+nmap 192.168.1.1 -sV --version-all
 
 <span style="color:#75715e"># Aggressive mode (OS Detection, version, script, traceroute)</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -A
+nmap 192.168.1.1 -A
 
 <span style="color:#75715e"># OS Detection using TCP/IP</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -O 
+nmap 192.168.1.1 -O 
 
 <span style="color:#75715e"># Disable OS dection if at least one open and one closed port are not found</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -O --osscan-limit
+nmap 192.168.1.1 -O --osscan-limit
 
 <span style="color:#75715e"># OS Scan guess more aggressive</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -O --osscan-guess
+nmap 192.168.1.1 -O --osscan-guess
 
-<span style="color:#75715e"># Set the maximum number x of OS detection tries against a target</span> 
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -O --max-os-tries <span style="color:#ae81ff">2</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># Set the maximum number x of OS detection tries against a target </span>
+nmap 192.168.1.1 -O --max-os-tries <span style="color:#ae81ff">2</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="nse-scripts">NSE Scripts</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Default script scanning, considered safe</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -sC
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --script default
+nmap 192.168.1.1 -sC
+nmap 192.168.1.1 --script default
 
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --script<span style="color:#f92672">=</span>xxx
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --script<span style="color:#f92672">=</span>xxx --script-args <span style="color:#111">xx</span><span style="color:#f92672">=</span>xx
+nmap 192.168.1.1 --script<span style="color:#f92672">=</span>xxx
+nmap 192.168.1.1 --script<span style="color:#f92672">=</span>xxx --script-args <span style="color:#111">xx</span><span style="color:#f92672">=</span>xx
 
 <span style="color:#75715e"># Scan default, but remove intrusive scripts</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --script “not intrusive<span style="color:#d88200">&#34;</span></code></pre></div>
-<p><br/></p>
-
+nmap 192.168.1.1 --script “not intrusive<span style="color:#d88200">&#34;
+</span></code></pre></div><!-- raw HTML omitted -->
 <h3 id="misc">MISC</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scan speed</span>
 <span style="color:#75715e"># T0-T1 : Slow (useful for Intrusion Detection Systems evasion)</span>
 <span style="color:#75715e"># T2-T3 : Normal</span>
 <span style="color:#75715e"># T4-T5 : Agressive (Need a realiable and strong network)</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -T0
+nmap 192.168.1.1 -T0
 
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --host-timeout 10s
+nmap 192.168.1.1 --host-timeout 10s
 
 <span style="color:#75715e"># Delay between probes</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --scan-delay 1s
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --max-scan-delay 2s
+nmap 192.168.1.1 --scan-delay 1s
+nmap 192.168.1.1 --max-scan-delay 2s
 
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --max-retries <span style="color:#ae81ff">3</span>
+nmap 192.168.1.1 --max-retries <span style="color:#ae81ff">3</span>
 
 <span style="color:#75715e"># No faster or no slower than 100 packets/second</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --min-rate <span style="color:#ae81ff">100</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --max-rate <span style="color:#ae81ff">100</span>
+nmap 192.168.1.1 --min-rate <span style="color:#ae81ff">100</span>
+nmap 192.168.1.1 --max-rate <span style="color:#ae81ff">100</span>
 
 <span style="color:#75715e"># If you need to scan a large network in a short period of time</span>
 <span style="color:#75715e"># You can set up a timeout value for connection attemps</span>
 https://nmap.org/book/ncat-man-timing-options.html
-nmap <span style="color:#ae81ff">192</span>.168.0.0/16  --host-timeout &lt;msec&gt;</code></pre></div>
-<p><br/></p>
-
+nmap 192.168.0.0/16  --host-timeout &lt;msec&gt;
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="evading-ids">Evading IDS</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Tiny fragmented packets</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -f
+nmap 192.168.1.1 -f
 
 <span style="color:#75715e"># Set your own offset size</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -mtu <span style="color:#ae81ff">32</span>
+nmap 192.168.1.1 -mtu <span style="color:#ae81ff">32</span>
 
 <span style="color:#75715e"># Scan from spoofed IP</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -D <span style="color:#ae81ff">192</span>.168.1.2
+nmap 192.168.1.1 -D 192.168.1.2
 
 <span style="color:#75715e"># Scan Facebook from Microsoft</span>
 nmap -S www.microsoft.com www.facebook.com
 
 <span style="color:#75715e"># Use a specific source port</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -g <span style="color:#ae81ff">53</span>
+nmap 192.168.1.1 -g <span style="color:#ae81ff">53</span>
 
 <span style="color:#75715e"># Proxy</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --proxies http://X.X.X.X:8080
+nmap 192.168.1.1 --proxies http://X.X.X.X:8080
 
 <span style="color:#75715e"># Append random data to sent packets</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --data-length <span style="color:#ae81ff">200</span></code></pre></div>
-<p><br/></p>
-
+nmap 192.168.1.1 --data-length <span style="color:#ae81ff">200</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="output">Output</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Save result (oN=normal oX=xml oG=grepable oA=all)</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -oN scanResult.file
+nmap 192.168.1.1 -oN scanResult.file
 
 <span style="color:#75715e"># Verbosity level (one v or more) and debugging level</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -vvvvvv
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -ddd
+nmap 192.168.1.1 -vvvvvv
+nmap 192.168.1.1 -ddd
 
 <span style="color:#75715e"># Reason for the port state (equivalent to -vv)</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --reason
+nmap 192.168.1.1 --reason
 
 <span style="color:#75715e"># Show only open ports</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --open
+nmap 192.168.1.1 --open
 
 <span style="color:#75715e"># Show all packets sent and received</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --packets-trace
+nmap 192.168.1.1 --packets-trace
 
 <span style="color:#75715e"># Show the host interface and routes</span>
-nmap <span style="color:#ae81ff">192</span>.168.1.1 --iflist
+nmap 192.168.1.1 --iflist
 
 <span style="color:#75715e"># Resume a scan</span>
 nmap --resume scan.file
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -vvvvvv
-nmap <span style="color:#ae81ff">192</span>.168.1.1 -vvvvvv</code></pre></div>
+nmap 192.168.1.1 -vvvvvv
+nmap 192.168.1.1 -vvvvvv
+</code></pre></div>
 
     
     

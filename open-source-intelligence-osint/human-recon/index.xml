@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Human Investigation on Offensive Security Cheatsheet</title>
     <link>/open-source-intelligence-osint/human-recon/</link>
     <description>Recent content in Human Investigation on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/open-source-intelligence-osint/human-recon/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/open-source-intelligence-osint/human-recon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Searching Someone</title>
       <link>/open-source-intelligence-osint/human-recon/searchingsomeone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/searchingsomeone/</guid>
-      <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43 https://www.aware-online.com/en 
-Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org # Dead people registry (EU) https://deces.matchid.io # French search engine for dead people https://www.</description>
+      <description>Resources # GREAT resources containing different graphs and processes # to investigate based on what you have https://medium.com/@Peter_UXer/osint-how-to-find-information-on-anyone-5029a3c7fd56 https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43 https://www.aware-online.com/en Searching People # Very good and accurate tool # You can search by name, reverse phone or reverse address https://www.truepeoplesearch.com/ # Good search engine, different kinds of data https://webmii.com/ # Kinda amazing resource # Finding company related data about a person https://aleph.occrp.org # Dead people registry (EU) https://deces.matchid.io # French search engine for dead people https://www.</description>
     </item>
     
     <item>
@@ -26,8 +21,7 @@ Searching People # Very good and accurate tool # You can search by name, reverse
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/email/</guid>
-      <description>Tips &amp;amp; Tricks https://twitter.com/henkvaness/status/1308417260848062464 # Using Google Dorks you can search for e-mails like this # It can helps in identifying one target specific e-mail address # &amp;#34;john doe &amp;#34; &amp;#34;john * * com&amp;#34; 
-Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # Omail can find domain syntax as well as related e-mails addresses https://omail.io/ # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.</description>
+      <description>Tips &amp;amp; Tricks https://twitter.com/henkvaness/status/1308417260848062464 # Using Google Dorks you can search for e-mails like this # It can helps in identifying one target specific e-mail address # &amp;#34;john doe &amp;#34; &amp;#34;john * * com&amp;#34; Online tools # Domain e-mail syntax finder https://www.email-format.com https://hunter.io # Omail can find domain syntax as well as related e-mails addresses https://omail.io/ # E-mail validator https://tools.verifyemailaddress.io/ http://mailtester.com https://dnslytics.com/email-test https://verify-email.org/ https://verifalia.com/validate-email # IntelX new tool allows to browse records for a given domain https://phonebook.</description>
     </item>
     
     <item>
@@ -36,8 +30,7 @@ Online tools # Domain e-mail syntax finder https://www.email-format.com https://
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/leaks/</guid>
-      <description>Pastebeen # &amp;#34;We download, analyze and classify all the pastes that are posted online.&amp;#34; https://pastebeen.com/ # The tool can be used in order to crawl deleted pastebin files or to recover data like leaks. 
-PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool used to check haveIbeenpwned leaks for an e-mail or a list # The tool will then check if the dump is accessible (using haveibeenpwned/pastebin) to get passwords python pwnedornot.</description>
+      <description>Pastebeen # &amp;#34;We download, analyze and classify all the pastes that are posted online.&amp;#34; https://pastebeen.com/ # The tool can be used in order to crawl deleted pastebin files or to recover data like leaks. PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool used to check haveIbeenpwned leaks for an e-mail or a list # The tool will then check if the dump is accessible (using haveibeenpwned/pastebin) to get passwords python pwnedornot.py -h python pwnedornot.</description>
     </item>
     
     <item>
@@ -46,8 +39,7 @@ PwnedOrNot https://github.com/thewhiteh4t/pwnedOrNot.git # Simple python tool us
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/username/</guid>
-      <description># Username availability https://namechk.com/ # Another service (290 tests) https://whatsmyname.app/ 
-Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies. # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all # queries concurrently, resulting in very quick searching even with bulk queries.</description>
+      <description># Username availability https://namechk.com/ # Another service (290 tests) https://whatsmyname.app/ Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an account exists comes with false positive # 100% accuracy: Rather than scanning profile pages, socialscan queries the  # registration servers of the platforms directly, retrieving the appropriate # CSRF tokens, headers, and cookies.  # This eliminates all false positives/negatives, ensuring that results are accurate. # Speed: socialscan uses asyncio along with aiohttp to conduct all  # queries concurrently, resulting in very quick searching even with bulk queries.</description>
     </item>
     
     <item>
@@ -56,8 +48,7 @@ Socialscan (https://github.com/iojw/socialscan) # Many tools used to check if an
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/pictures/</guid>
-      <description>General # Flickr Image search https://www.flickr.com/map 
-Reverse Image Search # Mutiple sources reverse image search https://www.duplichecker.com/reverse-image-search.php # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ # Dedicated to faces # Results are not free but previews are available (used then on traditionnal engines) https://pimeyes.com/en/# If the classical method doesn&amp;#39;t give any result, for example for a logo # You can try to calculate the file hash (VT, Powershell, CyberChef.</description>
+      <description>General # Flickr Image search https://www.flickr.com/map Reverse Image Search # Mutiple sources reverse image search https://www.duplichecker.com/reverse-image-search.php # General Engines https://images.google.com/ https://tineye.com/ https://www.bing.com/?scope=images&amp;amp;nr=1&amp;amp;FORM=NOFORM # Reverse Russia https://www.yandex.com/images/ # Reverse China http://images.baidu.com/ # Dedicated to faces # Results are not free but previews are available (used then on traditionnal engines) https://pimeyes.com/en/ # If the classical method doesn&amp;#39;t give any result, for example for a logo # You can try to calculate the file hash (VT, Powershell, CyberChef.</description>
     </item>
     
     <item>
@@ -66,7 +57,7 @@ Reverse Image Search # Mutiple sources reverse image search https://www.dupliche
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/human-recon/phone/</guid>
-      <description>Using phone contact book apps https://www.bellingcat.com/resources/how-tos/2019/04/08/using-phone-contact-book-apps-for-digital-research/ # GetContact # Free, need SMS requirement (burner) + email # Banned in some countries but works good # List one possible name # TrueCaller # Free, need Google or Microsoft account # Works good, list one possible name and tags # CallApp # Free, need Google or Microsoft account OR SMS # Works good, lists comments from users about number, gives a # reliability score to number, shows how often the number was searched # Dalily # No requirements, free # Focused only on Arabic-speaking countries # Can search by either name or number, and also will provide all contact book # information (email, etc), not just name and number # Eyecon # Free, SMS requirement # Photograph and one name for the contact # Viewcaller / Showcaller # No requirements, free # Only one name, very basic details</description>
+      <description>Using phone contact book apps https://www.bellingcat.com/resources/how-tos/2019/04/08/using-phone-contact-book-apps-for-digital-research/ # GetContact # Free, need SMS requirement (burner) + email # Banned in some countries but works good # List one possible name # TrueCaller # Free, need Google or Microsoft account # Works good, list one possible name and tags # CallApp # Free, need Google or Microsoft account OR SMS # Works good, lists comments from users about number, gives a  # reliability score to number, shows how often the number was searched # Dalily # No requirements, free # Focused only on Arabic-speaking countries # Can search by either name or number, and also will provide all contact book # information (email, etc), not just name and number  # Eyecon # Free, SMS requirement # Photograph and one name for the contact # Viewcaller / Showcaller # No requirements, free # Only one name, very basic details Phone number verification and validation # The International Numbering Plans gives a nice database to find the country https://www.</description>
     </item>
     
     <item>

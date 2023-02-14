@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Gasmak :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1843,9 +1872,7 @@
     
     
     
-    
-
-<h3 id="general-informations">General Informations</h3>
+    <h3 id="general-informations">General Informations</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/twelvesec/gasmask
 
 <span style="color:#75715e"># All in one information gathering tool</span>
@@ -1859,9 +1886,8 @@
 <span style="color:#75715e"># - whois/dns/reverse DNS/bing virtual hosts</span>
 <span style="color:#75715e"># - search in other engines</span>
 
-<span style="color:#75715e"># API Keys needed : shodan, censys,</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># API Keys needed : shodan, censys,</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="usage">Usage</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    ______           __  ___           __ __
   / ____/___ ______/  <span style="color:#111">|</span>/  /___ ______/ //_/
@@ -1870,7 +1896,7 @@
 <span style="color:#8045ff">\_</span>___/<span style="color:#8045ff">\_</span>_,_/____/_/  /_/<span style="color:#8045ff">\_</span>_,_/____/_/ <span style="color:#111">|</span>_<span style="color:#111">|</span>
 
 GasMasK - All in one Information gathering tool - OSINT
-Ver. <span style="color:#ae81ff">1</span>.2
+Ver. 1.2
 Written by: @maldevel, @mikismaos, @xvass
 https://www.twelvesec.com/
 
@@ -1895,7 +1921,7 @@ optional arguments:
   
   -x PROXY, --proxy, PROXY Use a proxy server when retrieving results from search engines <span style="color:#f92672">(</span>eg. <span style="color:#d88200">&#39;-x http://127.0.0.1:8080&#39;</span><span style="color:#f92672">)</span>
   
-  -l LIMIT, --limit, LIMIT  Limit the number of search engine results <span style="color:#f92672">(</span>default: <span style="color:#ae81ff">100</span><span style="color:#f92672">)</span>.
+  -l LIMIT, --limit, LIMIT  Limit the number of search engine results <span style="color:#f92672">(</span>default: 100<span style="color:#f92672">)</span>.
   
   -i MODE, --info MODE  Limit information gathering <span style="color:#f92672">(</span>basic,whois,dns,revdns,vhosts,google,bing,yahoo,ask,dogpile,yandex,censys,linkedin,twitter,googleplus,youtube,reddit,github,instagram,crt,pgp,netcraft,virustotal,dnsdump<span style="color:#f92672">)</span>.
   
@@ -1911,7 +1937,7 @@ optional arguments:
   
   -R REPORT, --report REPORT, Stats on given field <span style="color:#f92672">(</span>use value <span style="color:#d88200">&#39;help&#39;</span> <span style="color:#00a8c8">for</span> listing interesting fields<span style="color:#f92672">)</span>
 						
-  -B REPORT_BUCKET, --report_bucket REPORT_BUCKET,  Bucket length in report mode <span style="color:#f92672">(</span>default: <span style="color:#ae81ff">50</span><span style="color:#f92672">)</span>
+  -B REPORT_BUCKET, --report_bucket REPORT_BUCKET,  Bucket length in report mode <span style="color:#f92672">(</span>default: 50<span style="color:#f92672">)</span>
 						
   -1 CENSYS_API_ID, --censys_api_id CENSYS_API_ID,  Provide the authentication ID <span style="color:#00a8c8">for</span> the censys.io search engine
   
@@ -1945,9 +1971,8 @@ optional arguments:
   
   -v, --verbose, Print raw JSON records
   
-  -H, --html,  Renders html elements in a browser</code></pre></div>
-<p><br/></p>
-
+  -H, --html,  Renders html elements in a browser
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="usage-example">Usage example</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Specifiyng mode</span>
 python gasmask.py -d example.com -i basic
@@ -1963,7 +1988,8 @@ python gasmask.py -i censys --html-title <span style="color:#d88200">&#34;Hacked
 python gasmask.py -i censys --tags heartbleed --report location.country.raw
 python gasmask.py -i censys -S NGINX --count
 python gasmask.py -i censys -d example.com
-python gasmask.py -i censys -t <span style="color:#d88200">&#34;Internal Server Error&#34;</span> -S Apache -m <span style="color:#d88200">&#34;HTTP 500&#34;</span> --Limit <span style="color:#ae81ff">15</span></code></pre></div>
+python gasmask.py -i censys -t <span style="color:#d88200">&#34;Internal Server Error&#34;</span> -S Apache -m <span style="color:#d88200">&#34;HTTP 500&#34;</span> --Limit <span style="color:#ae81ff">15</span>
+</code></pre></div>
 
     
     

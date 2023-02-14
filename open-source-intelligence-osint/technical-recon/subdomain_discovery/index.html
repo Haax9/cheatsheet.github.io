@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Subdomain Discovery :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1829,9 +1858,7 @@
     
     
     
-    
-
-<h3 id="google-dorks-bing-dorks">Google Dorks &amp; Bing Dorks</h3>
+    <h3 id="google-dorks--bing-dorks">Google Dorks &amp; Bing Dorks</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Google dorks are usefull for finding new subdomains</span>
 site:wikipedia.org
 site:*.wikipedia.org -www -store -jobs -uk
@@ -1841,17 +1868,16 @@ site:
 
 <span style="color:#75715e"># When you use the Google Dork:  site:*.example.com, NEVER forget to check</span>
 site:*.*.example.com
-site:*.*.*.example.com </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Github dorks also allow to find many subdomains</span>
+site:*.*.*.example.com 
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Github dorks also allow to find many subdomains</span>
 <span style="color:#d88200">&#34;teslamotors.com&#34;</span> password
-<span style="color:#75715e"># ...</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># ...</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="online-dns-tools-and-services">Online DNS tools and services</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># VirusTotal runs its own passive DNS replication service</span>
 
-<span style="color:#75715e"># DNS Dumpster can also find large number of sub-domains</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># DNS Dumpster can also find large number of sub-domains</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="certificate-transparency">Certificate Transparency</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># It&#39;s a project started by Google to log and audit SSL/TLS certificates for every CA</span>
 <span style="color:#75715e"># Interesting because you can request these certificates using some tools</span>
@@ -1872,9 +1898,8 @@ https://github.com/appsecco/bugcrowd-levelup-subdomain-enumeration
 ./ct.py icann.org <span style="color:#111">|</span> ./bin/massdns -r resolvers.txt -t A -q -a -o -w icann_resolvable_domains.txt -
 
 <span style="color:#75715e"># Another tool is ct-exposer</span>
-ct-exposer.py -d domain.com</code></pre></div>
-<p><br/></p>
-
+ct-exposer.py -d domain.com
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="dns-enumeration-bruteforce-and-passive-tools">DNS Enumeration, Bruteforce and Passive Tools</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DNSRecon is a powerfull enumeration tool</span>
 dnsrecon.py -h
@@ -1894,13 +1919,15 @@ python sublist3r.py -d domain.fr
 <span style="color:#75715e"># DNS enumeration and information gathering using fierce (not really passiv)</span>
 fierce -dns domain.fr
 
-<span style="color:#75715e"># Aquatone is also a great tool</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Subfinder</span>
+<span style="color:#75715e"># Aquatone is also a great tool</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Subfinder</span>
 <span style="color:#75715e"># Subdomain discovery tool that discovers valid subdomains for websites by using passive online sources.https://github.com/projectdiscovery/subfinder</span>
 $ subfinder -d freelancer.com -o output.txt
 
 $ subfinder -dL domains.txt -oD ~/path/to/output
 
-$ cat domains.txt <span style="color:#111">|</span> subfinders -subs</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Findomain</span>
+$ cat domains.txt <span style="color:#111">|</span> subfinders -subs
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Findomain</span>
 https://github.com/Findomain/Findomain
 
 <span style="color:#75715e"># Install</span>
@@ -1910,7 +1937,8 @@ $ cargo build --release
 $ sudo cp target/release/findomain /usr/bin/
 $ findomain
 
-$ findomain -t domain.com</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can also uses ffuf in order to bruteforce for subdomains</span>
+$ findomain -t domain.com
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can also uses ffuf in order to bruteforce for subdomains</span>
 
 <span style="color:#75715e"># Option 1</span>
 <span style="color:#75715e"># Redirecting to the host</span>
@@ -1918,9 +1946,8 @@ $ ffuf -u https://mydomain.com -w my_wordlist -H <span style="color:#d88200">&#3
 
 <span style="color:#75715e"># Option 2</span>
 <span style="color:#75715e"># But you&#39;ll have to wait for the timeout</span>
-$ ffuf -u https://FUZZ.mydomain.com -w my_wordlist</code></pre></div>
-<p><br/></p>
-
+$ ffuf -u https://FUZZ.mydomain.com -w my_wordlist
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="linked-discovery-using-burpsuite-pro">Linked Discovery (using BurpSuite Pro)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://drive.google.com/file/d/1aG_qqRvNW-s5_8vvPk5rJiMSMeNL2uY9/view
 
@@ -1934,9 +1961,8 @@ $ ffuf -u https://FUZZ.mydomain.com -w my_wordlist</code></pre></div>
 <span style="color:#75715e"># Select domains in the burp tree</span>
 <span style="color:#75715e"># &#34;Engagement Tools&#34; --&gt; &#34;Analyze Target&#34;</span>
 <span style="color:#75715e"># Save report as HTML</span>
-<span style="color:#75715e"># Copy hosts from the HTML</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># Copy hosts from the HTML</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="owasp-amass">OWASP Amass</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># OWASP Amass tool suite is used to build a network map of the target</span>
 <span style="color:#75715e"># It relies for subdomain enumeration on scrapping data-sources, recursive bruteforcing, crawling web services, permuting names and reverse DNS sweeping</span>
@@ -1953,15 +1979,14 @@ amass -passiv -d example.com
 <span style="color:#75715e"># Importing Amass results into Maltego</span>
 amass -src -ip --active -brute -do owasp.json -d owasp.org
 amass.viz -i owasp.json --maltego owasp.csv
-→ Then import csv files</code></pre></div>
-<p><br/></p>
-
+→ Then import csv files
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="subdomainizer">SubDomainizer</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/nsonaniya2010/SubDomainizer
 
 <span style="color:#75715e"># SubDomainizer is a tool designed to find hidden subdomains and secrets present in</span>
-<span style="color:#75715e"># either webpage, Github, and external javascripts present in the given URL.</span> 
-<span style="color:#75715e"># This tool also finds S3 buckets, cloudfront URL&#39;s and more from those JS files which</span> 
+<span style="color:#75715e"># either webpage, Github, and external javascripts present in the given URL. </span>
+<span style="color:#75715e"># This tool also finds S3 buckets, cloudfront URL&#39;s and more from those JS files which </span>
 <span style="color:#75715e"># could be interesting like S3 bucket is open to read/write, or subdomain takeover and similar case for cloudfront</span>
 
 <span style="color:#75715e"># To find subdomains, s3 buckets, and cloudfront URL&#39;s for given single URL:</span>
@@ -1980,14 +2005,14 @@ python3 SubDomainizer.py -u https://www.example.com -c <span style="color:#d8820
 python3 SubDomainizer.py -u https://www.example.com -o output.txt -gt &lt;github_token&gt; -g 
 
 <span style="color:#75715e"># No SSL Certificate Verification:</span>
-python3 SubDomainizer.py -u https://www.example.com -o output.txt -gt &lt;github_token&gt; -g  -k</code></pre></div>
-<p><br/></p>
+python3 SubDomainizer.py -u https://www.example.com -o output.txt -gt &lt;github_token&gt; -g  -k
 
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="knockpy">Knockpy</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Knockpy is a python tool designed to enumerate subdomains on a target</span> 
-<span style="color:#75715e"># domain through a wordlist. It is designed to scan for DNS zone transfer</span> 
-<span style="color:#75715e"># and to try to bypass the wildcard DNS record automatically if it is enabled.</span> 
-<span style="color:#75715e"># Now knockpy supports queries to VirusTotal subdomains, you can set</span> 
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Knockpy is a python tool designed to enumerate subdomains on a target </span>
+<span style="color:#75715e"># domain through a wordlist. It is designed to scan for DNS zone transfer </span>
+<span style="color:#75715e"># and to try to bypass the wildcard DNS record automatically if it is enabled. </span>
+<span style="color:#75715e"># Now knockpy supports queries to VirusTotal subdomains, you can set </span>
 <span style="color:#75715e"># the API_KEY within the config.json file.</span>
 
 <span style="color:#75715e"># Classic research with internal wordlist</span>
@@ -2003,20 +2028,18 @@ knockpy -r domain.com or IP
 knockpy -c domain.com
 
 <span style="color:#75715e"># export in JSON</span>
-knockpy -j domain.com</code></pre></div>
-<p><br/></p>
-
+knockpy -j domain.com
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="permutation-scanning">Permutation Scanning</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Another technique is to use permutations, alterations and mutations of known subdomains to find new ones</span>
 <span style="color:#75715e"># Tools like altdns.py can do that</span>
 <span style="color:#75715e"># -i : already known subdomains used in input</span>
 <span style="color:#75715e"># -o : file containing a massiv list of permuted subdomains</span>
 <span style="color:#75715e"># -w : words usef for permutations</span>
-<span style="color:#75715e"># -r : resolve each newly generated subdomain</span> 
+<span style="color:#75715e"># -r : resolve each newly generated subdomain </span>
 <span style="color:#75715e"># -s : result for the resolved permuted subdomains</span>
-altdns.py -i icann.domains -o data_output -w icann.words -r -s results_output.txt </code></pre></div>
-<p><br/></p>
-
+altdns.py -i icann.domains -o data_output -w icann.words -r -s results_output.txt 
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="autonomous-system-as-numbers">Autonomous System (AS) Numbers</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can use ASN to identify netblocks belonging to a company</span>
 
@@ -2029,22 +2052,20 @@ https://bgp.he.net/ <span style="color:#f92672">(</span>given a domain name<span
 <span style="color:#75715e"># Then you can use nmap NSE scripts to find netblocks for an ASN</span>
 nmap --script targets-asn --script-args targets-asn.asn<span style="color:#f92672">=</span><span style="color:#ae81ff">17012</span> &gt; netblocks.txt
 
-<span style="color:#75715e"># You will get range networks on which you can investigate more</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># You will get range networks on which you can investigate more</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="zone-transfer">Zone Transfer</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DNS transaction where a DNS Server gives a full/part copy of it&#39;s zone file to another DNS Server</span>
 <span style="color:#75715e"># If bad configuration, anyone can initiate a zone transfer and so access to the zone file</span>
 
-dig +multi AXFR @ns1.insecuredns.com insecuredns.com</code></pre></div>
-<p><br/></p>
-
+dig +multi AXFR @ns1.insecuredns.com insecuredns.com
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="subdomain-takeover">Subdomain Takeover</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Resource</span>
-https://www.hackerone.com/blog/Guide-Subdomain-Takeovers</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Subjack is a tool used to automate subdomain takeover discovery (https://github.com/haccer/subjack)</span>
-./subjack -w subdomains.txt -t <span style="color:#ae81ff">100</span> -timeout <span style="color:#ae81ff">30</span> -o results.txt -ssl</code></pre></div>
-<p><br/></p>
-
+https://www.hackerone.com/blog/Guide-Subdomain-Takeovers
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Subjack is a tool used to automate subdomain takeover discovery (https://github.com/haccer/subjack)</span>
+./subjack -w subdomains.txt -t <span style="color:#ae81ff">100</span> -timeout <span style="color:#ae81ff">30</span> -o results.txt -ssl
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="dnssec-walking">DNSSEC Walking</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># To prove things that do not exist, DNSSEC list all the things that exist</span>
 <span style="color:#75715e"># If the list is proven, then everything not listed must not exist</span>
@@ -2061,9 +2082,8 @@ ldns-walk insecuredns.com
 <span style="color:#75715e"># It&#39;s still possible to collect hashes and crack them</span>
 <span style="color:#75715e"># Tools like nsec3walker</span>
 ./collect icann.org &gt; icann.org.collect
-cat icann.org.unhash <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;icann&#34;</span> <span style="color:#111">|</span> awk <span style="color:#d88200">&#39;{print $2;}&#39;</span></code></pre></div>
-<p><br/></p>
-
+cat icann.org.unhash <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;icann&#34;</span> <span style="color:#111">|</span> awk <span style="color:#d88200">&#39;{print $2;}&#39;</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="project-collecting-data">Project Collecting Data</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Some projects collect data and provide them to the community</span>
 <span style="color:#75715e"># ForwardDNS dataset is a part of Project Sonar</span>
@@ -2074,7 +2094,8 @@ cat icann.org.unhash <span style="color:#111">|</span> grep <span style="color:#
 curl -silent https://scans.io/data/rapid7/sonar.fdns_v2/20170417-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep “.icann.org” <span style="color:#111">|</span> jq
 
 wget https://opendata.rapid7.com/sonar.fdns_v2/2019-11-29-1574985929-fdns_a.json.gz
-cat <span style="color:#ae81ff">20170417</span>-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;.target.org&#34;</span> <span style="color:#111">|</span> jq</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SonarSearch is a project built arond the Rapid7 Sonar&#39;s database</span>
+cat 20170417-fdns.json.gz <span style="color:#111">|</span> pigz -dc <span style="color:#111">|</span> grep <span style="color:#d88200">&#34;.target.org&#34;</span> <span style="color:#111">|</span> jq
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SonarSearch is a project built arond the Rapid7 Sonar&#39;s database</span>
 https://github.com/Cgboal/SonarSearch
 
 <span style="color:#75715e"># An API instance is available at</span>
@@ -2084,15 +2105,14 @@ https://omnisint.io/
 $ crobat -h                                                                                                                                                                      
 Usage of crobat:
   -r string
-        Perform reverse lookup on IP address or CIDR range. Supports files and quoted lists
+    	Perform reverse lookup on IP address or CIDR range. Supports files and quoted lists
   -s string
-        Get subdomains <span style="color:#00a8c8">for</span> this value. Supports files and quoted lists
+    	Get subdomains <span style="color:#00a8c8">for</span> this value. Supports files and quoted lists
   -t string
-        Get tlds <span style="color:#00a8c8">for</span> this value. Supports files and quoted lists
-  -u    Ensures results are unique, may cause instability on large queries due to RAM requirements</code></pre></div>
-<p><br/></p>
-
-<h3 id="asn-burp-example">ASN/Burp example</h3>
+    	Get tlds <span style="color:#00a8c8">for</span> this value. Supports files and quoted lists
+  -u	Ensures results are unique, may cause instability on large queries due to RAM requirements
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="asnburp-example">ASN/Burp example</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get ASN for your target</span>
 bgp.he.net
 
@@ -2123,7 +2143,8 @@ cat subdomains_servers <span style="color:#111">|</span> aquatone
 <span style="color:#75715e"># Dirsearch is good for recursive</span>
 https://github.com/ffuf/ffuf
 ffuf -u site/FUZZ -w wordlist
-ffuf -u site/FUZZ/HERE -w wordlist</code></pre></div>
+ffuf -u site/FUZZ/HERE -w wordlist
+</code></pre></div>
 
     
     

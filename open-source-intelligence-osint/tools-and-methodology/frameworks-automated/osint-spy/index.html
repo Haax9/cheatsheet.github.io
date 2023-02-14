@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>OSINT-SPY :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1843,9 +1872,7 @@
     
     
     
-    
-
-<h3 id="general-informations">General Informations</h3>
+    <h3 id="general-informations">General Informations</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Performs OSINT scan on email/domain/ip_address/organization using OSINT-SPY.</span>
 <span style="color:#75715e"># It can be used by Data Miners, Infosec Researchers, Penetration Testers and cyber crime</span>
 <span style="color:#75715e"># investigator in order to find deep information about their target.</span>
@@ -1860,9 +1887,8 @@
 
 <span style="color:#75715e"># Don&#39;t use the linux_install.py script, trash. go venv</span>
 
-<span style="color:#75715e"># API keys in modules/config.py file</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># API keys in modules/config.py file</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="usage">Usage</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Options</span>
 --ssl_cipher
@@ -1895,9 +1921,8 @@ python osint-spy.py --email haax@haax.fr
 
 <span style="color:#75715e"># Get information about an IP address (basic infos)</span>
 <span style="color:#75715e"># Host, country name, city, organization, ISP</span>
-python osint-spy.py --ip xxx.xxx.xxx.xxx</code></pre></div>
-<p><br/></p>
-
+python osint-spy.py --ip xxx.xxx.xxx.xxx
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="misc">MISC</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Search for specific device on shodan</span>
 python osint-spy.py --device webcam
@@ -1917,15 +1942,15 @@ python osint-spy.py --btc_block
 python osint-spy.py --btc_date <span style="color:#ae81ff">20190420</span>
 
 <span style="color:#75715e"># Get information about a particular wallet</span>
-python osint-spy.py --btc_address 1DST3gm6JthxhuoNKFqXrdpzPFfz1WgHpW</code></pre></div>
-<p><br/></p>
-
+python osint-spy.py --btc_address 1DST3gm6JthxhuoNKFqXrdpzPFfz1WgHpW
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="steganography">Steganography</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Hide text inside an image</span>
 python osint-spy.py --carrier receiver.png --stego_text “this is a secret text”
 
 <span style="color:#75715e"># Try to find text behind an image</span>
-<span style="color:#75715e"># python osint-spy.py --stego_find hidden.jpg</span></code></pre></div>
+<span style="color:#75715e"># python osint-spy.py --stego_find hidden.jpg</span>
+</code></pre></div>
 
     
     

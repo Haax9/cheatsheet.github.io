@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Picture Investigation :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1831,13 +1860,10 @@
     
     
     
-    
-
-<h3 id="general">General</h3>
+    <h3 id="general">General</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Flickr Image search</span>
-https://www.flickr.com/map</code></pre></div>
-<p><br/></p>
-
+https://www.flickr.com/map
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="reverse-image-search">Reverse Image Search</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Mutiple sources reverse image search</span>
 https://www.duplichecker.com/reverse-image-search.php
@@ -1845,7 +1871,7 @@ https://www.duplichecker.com/reverse-image-search.php
 <span style="color:#75715e"># General Engines</span>
 https://images.google.com/
 https://tineye.com/
-https://www.bing.com/?scope<span style="color:#f92672">=</span>images<span style="color:#111">&amp;</span><span style="color:#111">nr</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#111">&amp;</span><span style="color:#111">FORM</span><span style="color:#f92672">=</span>NOFORM
+https://www.bing.com/?scope<span style="color:#f92672">=</span>images<span style="color:#111">&amp;</span><span style="color:#111">nr</span><span style="color:#f92672">=</span>1<span style="color:#111">&amp;</span><span style="color:#111">FORM</span><span style="color:#f92672">=</span>NOFORM
 
 <span style="color:#75715e"># Reverse Russia</span>
 https://www.yandex.com/images/
@@ -1855,12 +1881,13 @@ http://images.baidu.com/
 
 <span style="color:#75715e"># Dedicated to faces</span>
 <span style="color:#75715e"># Results are not free but previews are available (used then on traditionnal engines)</span>
-https://pimeyes.com/en/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If the classical method doesn&#39;t give any result, for example for a logo</span>
+https://pimeyes.com/en/
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If the classical method doesn&#39;t give any result, for example for a logo</span>
 <span style="color:#75715e"># You can try to calculate the file hash (VT, Powershell, CyberChef...)</span>
 <span style="color:#75715e"># And then search for this hash on urlscan.io</span>
-Get-FileHash -Algorithm SHA256 -Path <span style="color:#d88200">&#34;file path&#34;</span></code></pre></div>
-<p><br/></p>
+Get-FileHash -Algorithm SHA256 -Path <span style="color:#d88200">&#34;file path&#34;</span>
 
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="image-investigation">Image Investigation</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://medium.com/@raebaker/5-tools-to-detect-digitally-altered-images-719db4015b5d
 
@@ -1884,32 +1911,32 @@ https://www.diffchecker.com/image-diff
 
 <span style="color:#75715e"># Online tool to chekc if provided image have been edited</span>
 <span style="color:#75715e"># Take care because images are sent to the server and may be stored</span>
-http://imageedited.com/</code></pre></div>
-<p><br/></p>
-
+http://imageedited.com/
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="working-with-videos">Working with videos</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Downloading videos from different platforms</span>
 https://nixintel.info/linux/grabbing-videos-for-osint-how-to-use-youtube-dl/
 
 $ youtube-dl https://www.youtube.com/watch?v<span style="color:#f92672">=</span>B9xE-40c2Oc
 $ youtube-dl https://twitter.com/i/status/1159811569045295104
-$ youtube-dl -o ~/Videos/facebookvideo https://www.facebook.com/watch/?v<span style="color:#f92672">=</span><span style="color:#ae81ff">328211061465570</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Getting frames and/or audio for a given video</span>
+$ youtube-dl -o ~/Videos/facebookvideo https://www.facebook.com/watch/?v<span style="color:#f92672">=</span><span style="color:#ae81ff">328211061465570</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Getting frames and/or audio for a given video</span>
 https://nixintel.info/osint-tools/using-ffmpeg-to-grab-stills-and-audio-for-osint/
 
 <span style="color:#75715e"># Getting frames</span>
 ffmpeg -i myvideo.mp4 img%06d.png -hide_banner
 
 <span style="color:#75715e"># Getting audio</span>
-ffmpeg -i myvideo.mp4 -r <span style="color:#ae81ff">1</span> img%06d.png -hide_banner</code></pre></div>
-<p><br/></p>
-
+ffmpeg -i myvideo.mp4 -r <span style="color:#ae81ff">1</span> img%06d.png -hide_banner
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="deblurring-images">Deblurring images</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Gaussian Blur</span>
 <span style="color:#75715e"># Install GIMP Plugin &#34;G&#39;MIC&#34;</span>
-<span style="color:#75715e"># Filters&gt;G’MIC&gt;Details&gt;Sharpen (Deblur)</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Pixelize</span>
-<span style="color:#75715e"># The Pixelize blur works by dividing an image into a number of squares</span> 
+<span style="color:#75715e"># Filters&gt;G’MIC&gt;Details&gt;Sharpen (Deblur)</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Pixelize</span>
+<span style="color:#75715e"># The Pixelize blur works by dividing an image into a number of squares </span>
 <span style="color:#75715e"># and then replacing all the pixels in each square by average of their values.</span>
-<span style="color:#75715e"># For example, if a square has 7 black pixels and 7 white pixels,</span> 
+<span style="color:#75715e"># For example, if a square has 7 black pixels and 7 white pixels, </span>
 <span style="color:#75715e"># all the pixels in that square will become gray.</span>
 
 <span style="color:#75715e"># - Start by applying Gaussian blur, increase radius until pixels disapear.</span>
@@ -1918,7 +1945,8 @@ ffmpeg -i myvideo.mp4 -r <span style="color:#ae81ff">1</span> img%06d.png -hide_
 <span style="color:#75715e"># - Colors&gt;Brightness-Contrast and increase until refined edges</span>
 <span style="color:#75715e"># - Layers tab, \/ icon and choose Soft Light, then adjust.</span>
 
-<span style="color:#75715e"># Not perfect results but can be ok and recognizable by search engines</span></code></pre></div>
+<span style="color:#75715e"># Not perfect results but can be ok and recognizable by search engines</span>
+</code></pre></div>
 
     
     

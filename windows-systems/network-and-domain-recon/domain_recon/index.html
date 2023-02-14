@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Domain Recon :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1823,15 +1852,11 @@
     
     
     
-    
-
-<h3 id="tips">Tips</h3>
+    <h3 id="tips">Tips</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Enumerate sessions</span>
-net session <span style="color:#8045ff">\\</span>computer</code></pre></div>
-<p><br/></p>
-
+net session <span style="color:#8045ff">\\</span>computer
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="domain-properties">Domain Properties</h3>
-
 <h4 id="rpcclient">rpcclient</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can use rpc to enumerate domain objects</span>
 rpcclient -U &lt;user&gt; &lt;IP-DC&gt;
@@ -1843,57 +1868,52 @@ rpcclient $&gt; srvinfo
 rpcclient $&gt; querygroup 0x42
 rpcclient $&gt; queryuser 0x42
 rpcclient $&gt; getdompwinfo
-rpcclient $&gt; getusrdompwinfo 0x42</code></pre></div>
-<p><br/></p>
-
+rpcclient $&gt; getusrdompwinfo 0x42
+</code></pre></div><!-- raw HTML omitted -->
 <h4 id="enum4linux">enum4linux</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can use enum4linux to enumerate domain users</span>
 <span style="color:#75715e"># You can try anonymous binding</span>
 sudo enum4linux domaine.fr
-./enum4linux.pl -R <span style="color:#ae81ff">1090</span>-1200
+./enum4linux.pl -R 1090-1200
 
 <span style="color:#75715e"># When using authenticated users, you need to provide options for enumeration</span>
-$ enum4linux -a -u <span style="color:#d88200">&#34;DOMAIN\\user&#34;</span> -p <span style="color:#d88200">&#34;pass&#34;</span> xx.xx.xx.xx</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># enum4linux-ng is a rewrite of the official tool (python3)</span>
+$ enum4linux -a -u <span style="color:#d88200">&#34;DOMAIN\\user&#34;</span> -p <span style="color:#d88200">&#34;pass&#34;</span> xx.xx.xx.xx
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># enum4linux-ng is a rewrite of the official tool (python3)</span>
 <span style="color:#75715e"># adding some features like colors and parsing</span>
-https://github.com/cddmp/enum4linux-ng</code></pre></div>
-<p><br/></p>
-
+https://github.com/cddmp/enum4linux-ng
+</code></pre></div><!-- raw HTML omitted -->
 <h4 id="windapsearch">windapsearch</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># windapsearch is also a very good tool to perform automated LDAP queries</span>
 <span style="color:#75715e"># Enumerate users</span>
 ./windapsearch.py -d lab.ropnop.com -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -U
-./windapsearch.py -dc-ip <span style="color:#ae81ff">10</span>.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -U
+./windapsearch.py -dc-ip 10.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -U
 
 <span style="color:#75715e"># enumerate all entries in objectCategory=group</span>
-./windapsearch.py -dc-ip <span style="color:#ae81ff">10</span>.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -G
+./windapsearch.py -dc-ip 10.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -G
 
 <span style="color:#75715e"># Query group membership</span>
-./windapsearch.py -dc-ip <span style="color:#ae81ff">10</span>.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -m &lt;CN/OU&gt;
+./windapsearch.py -dc-ip 10.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -m &lt;CN/OU&gt;
 
 <span style="color:#75715e"># Enumerate all domain admins and people having equivalent rights</span>
-./windapsearch.py -dc-ip <span style="color:#ae81ff">10</span>.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 --da
+./windapsearch.py -dc-ip 10.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 --da
 
 <span style="color:#75715e"># Enumerate all computers</span>
-./windapsearch.py -dc-ip <span style="color:#ae81ff">10</span>.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -C
+./windapsearch.py -dc-ip 10.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -C
 
 <span style="color:#75715e"># Custom search</span>
-./windapsearch.py -dc-ip <span style="color:#ae81ff">10</span>.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -s &lt;stringToSearch&gt;</code></pre></div>
-<p><br/></p>
-
+./windapsearch.py -dc-ip 10.10.10.10 -u ropnop<span style="color:#8045ff">\\</span>ldapbind -p GoCubs16 -s &lt;stringToSearch&gt;
+</code></pre></div><!-- raw HTML omitted -->
 <h4 id="pywerview">Pywerview</h4>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python pywerview.py get-netuser -w GALACTIC.LAN -u d.traya --dc-ip <span style="color:#ae81ff">192</span>.168.56.103 --username d.traya 
-python pywerview.py get-netgroup -w GALACTIC.LAN -u d.traya --dc-ip <span style="color:#ae81ff">192</span>.168.56.103 --username d.vador</code></pre></div>
-<p><br/></p>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python pywerview.py get-netuser -w GALACTIC.LAN -u d.traya --dc-ip 192.168.56.103 --username d.traya 
+python pywerview.py get-netgroup -w GALACTIC.LAN -u d.traya --dc-ip 192.168.56.103 --username d.vador
+</code></pre></div><!-- raw HTML omitted -->
 <h4 id="built-in-functions">Built-in functions</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://twitter.com/NinjaParanoid/status/1407137264283504640/photo/1
 
 <span style="color:#75715e"># You can use [adsisearcher] to enumerate AD objects</span>
-PS&gt; <span style="color:#f92672">([</span>adsisearcher<span style="color:#f92672">])</span><span style="color:#d88200">&#34;(&amp;(objectcategory=useer)(userAccountControl:1.2.840.113556.1.4.803:=65536))&#34;</span><span style="color:#f92672">)</span>.findAll<span style="color:#f92672">()</span></code></pre></div>
-<p><br/></p>
-
+PS&gt; <span style="color:#f92672">([</span>adsisearcher<span style="color:#f92672">])</span><span style="color:#d88200">&#34;(&amp;(objectcategory=useer)(userAccountControl:1.2.840.113556.1.4.803:=65536))&#34;</span><span style="color:#f92672">)</span>.findAll<span style="color:#f92672">()</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="users-and-passwords">Users and Passwords</h3>
-
 <h4 id="smartbrute">Smartbrute</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/ShutdownRepo/smartbrute
 <span style="color:#75715e"># The smart password spraying and bruteforcing tool for Active Directory Domain Services.</span>
@@ -1907,18 +1927,12 @@ PS&gt; <span style="color:#f92672">([</span>adsisearcher<span style="color:#f926
 smartbrute.py -v smart -bP passwords.txt ntlm -d domain.local -u user -p password kerberos
 
 <span style="color:#75715e"># Brute mode</span>
-<span style="color:#75715e"># The brute mode doesn&#39;t require prior knowledge of a low-priv user credentials but doesn&#39;t</span> 
+<span style="color:#75715e"># The brute mode doesn&#39;t require prior knowledge of a low-priv user credentials but doesn&#39;t </span>
 <span style="color:#75715e"># have safety features like the smart mode. This mode CAN effectively lock accounts</span>
-<span style="color:#d88200">````</span>
-&lt;br/&gt;
-
-
-<span style="color:#75715e">### SMB &amp; Share</span>
-
-<span style="color:#75715e">#### Basic enumeration</span>
-
-<span style="color:#d88200">```</span>bash
-<span style="color:#75715e"># Enumerate hostname</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="smb--share">SMB &amp; Share</h3>
+<h4 id="basic-enumeration">Basic enumeration</h4>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Enumerate hostname</span>
 nmblookup -A &lt;victim_ip&gt;
 enum4linux -n &lt;victim_ip&gt;
 $ nmap --script<span style="color:#f92672">=</span>smb-enum* --script-args<span style="color:#f92672">=</span><span style="color:#111">unsafe</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> -T5 &lt;victim_ip&gt;
@@ -1927,8 +1941,8 @@ $ nmap --script<span style="color:#f92672">=</span>smb-enum* --script-args<span 
 smbmap -H &lt;victim_ip&gt;
 
 <span style="color:#75715e"># Checking for vulns</span>
-nmap --script smb-vuln* -p139,445 -T4 -Pn &lt;victim_ip&gt;</code></pre></div>
-<h4 id="smbclient">Smbclient</h4>
+nmap --script smb-vuln* -p139,445 -T4 -Pn &lt;victim_ip&gt;
+</code></pre></div><h4 id="smbclient">Smbclient</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using smbclient</span>
 smbclient -L &lt;IP&gt;
 smbclient -U GALACTIC.LAN<span style="color:#8045ff">\\</span>d.vador -L //10.69.88.10
@@ -1936,8 +1950,8 @@ smbclient -U GALACTIC.LAN<span style="color:#8045ff">\\</span>d.vador -L //10.69
 <span style="color:#75715e"># You can recursively download a folder</span>
 smb: &gt; recurse ON
 smb: &gt; prompt OFF
-smb: &gt; mget *</code></pre></div>
-<h4 id="sysvol-ms14-025">SYSVOL &amp; MS14-025</h4>
+smb: &gt; mget *
+</code></pre></div><h4 id="sysvol--ms14-025">SYSVOL &amp; MS14-025</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can browse SMB share using smbclient</span>
 <span style="color:#75715e"># The SYSVOL share contains GPO, you can look for a MS14-025</span>
 smbclient -U user //10.34.67.4/SYSVOL
@@ -1945,15 +1959,17 @@ smbclient -U user //10.34.67.4/SYSVOL
 <span style="color:#75715e"># Instead of remotely connecting to SYSVOL and manually search</span>
 <span style="color:#75715e"># You can mount it locally and grep for informations</span>
 <span style="color:#75715e"># FASTER!</span>
-sudo mount -t cifs -o <span style="color:#111">username</span><span style="color:#f92672">=</span>domainUser,domainn<span style="color:#f92672">=</span>domain.com //IP/SYSVOL</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># MS14-025</span>
+sudo mount -t cifs -o <span style="color:#111">username</span><span style="color:#f92672">=</span>domainUser,domainn<span style="color:#f92672">=</span>domain.com //IP/SYSVOL
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># MS14-025</span>
 → smb: <span style="color:#8045ff">\N</span>ORZH.LAN<span style="color:#8045ff">\P</span>olicies<span style="color:#8045ff">\{</span>195471B6-B0C6-4AD2-9853-28E2B4E9CEF6<span style="color:#f92672">}</span><span style="color:#8045ff">\M</span>achine<span style="color:#8045ff">\P</span>references<span style="color:#8045ff">\G</span>roups<span style="color:#8045ff">\G</span>roups.xml
 → gpp-decrypt password
 
 <span style="color:#75715e"># The following tool allows a great decryption</span>
-https://github.com/lucasko/gpp-encrypt-decrypt</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you ever need to recreate this vulnerability</span>
+https://github.com/lucasko/gpp-encrypt-decrypt
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you ever need to recreate this vulnerability</span>
 <span style="color:#75715e"># You can encrypt a password using the following</span>
-https://gchq.github.io/CyberChef/#recipe<span style="color:#f92672">=</span>AES_Encrypt<span style="color:#f92672">(</span>%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;4e9906e8fcb66cc9faf49310620ffee8f496e806cc057990209b09a433b66c1b&#39;</span>%7D,%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;0000000000000000000000000000000&#39;</span>%7D,<span style="color:#d88200">&#39;CBC&#39;</span>,<span style="color:#d88200">&#39;Raw&#39;</span>,<span style="color:#d88200">&#39;Raw&#39;</span>,%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;&#39;</span>%7D<span style="color:#f92672">)</span>To_Base64<span style="color:#f92672">(</span><span style="color:#d88200">&#39;A-Za-z0-9%2B/%3D&#39;</span><span style="color:#f92672">)</span><span style="color:#111">&amp;</span><span style="color:#111">input</span><span style="color:#f92672">=</span>cGFzcw</code></pre></div>
-<h4 id="crackmapexec-impacket">CrackMapExec &amp; Impacket</h4>
+https://gchq.github.io/CyberChef/#recipe<span style="color:#f92672">=</span>AES_Encrypt<span style="color:#f92672">(</span>%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;4e9906e8fcb66cc9faf49310620ffee8f496e806cc057990209b09a433b66c1b&#39;</span>%7D,%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;0000000000000000000000000000000&#39;</span>%7D,<span style="color:#d88200">&#39;CBC&#39;</span>,<span style="color:#d88200">&#39;Raw&#39;</span>,<span style="color:#d88200">&#39;Raw&#39;</span>,%7B<span style="color:#d88200">&#39;option&#39;</span>:<span style="color:#d88200">&#39;Hex&#39;</span>,<span style="color:#d88200">&#39;string&#39;</span>:<span style="color:#d88200">&#39;&#39;</span>%7D<span style="color:#f92672">)</span>To_Base64<span style="color:#f92672">(</span><span style="color:#d88200">&#39;A-Za-z0-9%2B/%3D&#39;</span><span style="color:#f92672">)</span><span style="color:#111">&amp;</span><span style="color:#111">input</span><span style="color:#f92672">=</span>cGFzcw
+</code></pre></div><h4 id="crackmapexec--impacket">CrackMapExec &amp; Impacket</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Impacket SMB/MSRPC tools</span>
 <span style="color:#75715e"># lookupsids → SID Bruteforce through MSRPC Interface</span>
 <span style="color:#75715e"># samrdump → SAM Remote Interface (MSRPC) to extract system users, available share etc.</span>
@@ -1965,31 +1981,29 @@ https://gchq.github.io/CyberChef/#recipe<span style="color:#f92672">=</span>AES_
 tool.py domain<span style="color:#8045ff">\u</span>ser:password@IP &lt;command/parameter&gt;
 
 <span style="color:#75715e"># You can list all shares on a shares on a machine to find potential entry points</span>
-cme smb <span style="color:#ae81ff">10</span>.69.88.23 -u user -p password --shares</code></pre></div>
-<h4 id="defensive">Defensive</h4>
+cme smb 10.69.88.23 -u user -p password --shares
+</code></pre></div><h4 id="defensive">Defensive</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DEFENSIVE POINT OF VIEW</span>
 <span style="color:#75715e"># You can list active SMB sessions</span>
 C:<span style="color:#8045ff">\&gt;</span> net session
 <span style="color:#75715e"># And kill them</span>
-C:<span style="color:#8045ff">\&gt;</span> net session <span style="color:#8045ff">\[</span>LinuxIPaddr<span style="color:#f92672">]</span> /del</code></pre></div>
-<p><br/></p>
-
+C:<span style="color:#8045ff">\&gt;</span> net session <span style="color:#8045ff">\[</span>LinuxIPaddr<span style="color:#f92672">]</span> /del
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="dns-zones">DNS zones</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/dirkjanm/adidnsdump
 https://dirkjanm.io/getting-in-the-zone-dumping-active-directory-dns-with-adidnsdump/
 
-<span style="color:#75715e"># By default any user in Active Directory can enumerate all DNS records in the Domain</span> 
-<span style="color:#75715e"># or Forest DNS zones, similar to a zone transfer.</span> 
-<span style="color:#75715e"># This tool enables enumeration and exporting of all DNS records in the zone for</span> 
+<span style="color:#75715e"># By default any user in Active Directory can enumerate all DNS records in the Domain </span>
+<span style="color:#75715e"># or Forest DNS zones, similar to a zone transfer. </span>
+<span style="color:#75715e"># This tool enables enumeration and exporting of all DNS records in the zone for </span>
 <span style="color:#75715e"># recon purposes of internal networks.</span>
 
 <span style="color:#75715e"># Get DNS zones</span>
 $ adidnsdump -u icorp<span style="color:#8045ff">\\</span>testuser --print-zones icorp-dc.internal.corp
 
 <span style="color:#75715e"># Get zone content</span>
-$ adidnsdump -u icorp<span style="color:#8045ff">\\</span>testuser --zone zonename icorp-dc.internal.corp</code></pre></div>
-<p><br/></p>
-
+$ adidnsdump -u icorp<span style="color:#8045ff">\\</span>testuser --zone zonename icorp-dc.internal.corp
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="azure-ad-recon">Azure AD Recon</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Applications using Azure API Management</span>
 <span style="color:#75715e"># Requests made to that</span>
@@ -2009,7 +2023,8 @@ $ adidnsdump -u icorp<span style="color:#8045ff">\\</span>testuser --zone zonena
 &lt;name&gt;.management.azure-api.net
 
 <span style="color:#75715e"># Git</span>
-&lt;name&gt;.scm.azure-api.net</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html
+&lt;name&gt;.scm.azure-api.net
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://www.synacktiv.com/posts/pentest/azure-ad-introduction-for-red-teamers.html
 
 <span style="color:#75715e"># Tool o365recon can be used (https://github.com/nyxgeek/o365recon)</span>
 <span style="color:#75715e"># It mainly uses MS Online Powershell module</span>
@@ -2028,11 +2043,14 @@ PS&gt; powershell -ep bypass .<span style="color:#8045ff">\o</span>365recon.ps1 
 PS C:<span style="color:#8045ff">\&gt;</span> Get-GlobalAddressList -ExchHostname outlook.office365.com -UserName xxxx -Password xxxx -OutFile xxxx
 
 <span style="color:#75715e"># And associated usernames</span>
-PS C:<span style="color:#8045ff">\&gt;</span> Get-ADUsernameFromEWS -EmailList list.txt -ExchHostname outlook.office365.com -Remote</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># C# Module for Azure AD enumeration</span>
+PS C:<span style="color:#8045ff">\&gt;</span> Get-ADUsernameFromEWS -EmailList list.txt -ExchHostname outlook.office365.com -Remote
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># C# Module for Azure AD enumeration</span>
 https://twitter.com/benpturner/status/1384595006917431301?s<span style="color:#f92672">=</span><span style="color:#ae81ff">19</span>
-https://gist.github.com/benpturner/c7376718558bb118111c7cad651a25ce</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When having admin privileges you can check for MFA for users</span>
+https://gist.github.com/benpturner/c7376718558bb118111c7cad651a25ce
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When having admin privileges you can check for MFA for users</span>
 PS C:<span style="color:#8045ff">\&gt;</span> Connect-MsolService
-PS C:<span style="color:#8045ff">\&gt;</span> Get-MsolUser -EnabledFilter EnabledOnly -MaxResults <span style="color:#ae81ff">50000</span> <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> DisplayName,UserPrincipalName,@<span style="color:#f92672">{</span><span style="color:#111">N</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;MFA Status&#34;</span><span style="color:#111">;</span> <span style="color:#111">E</span><span style="color:#f92672">={</span> <span style="color:#00a8c8">if</span><span style="color:#f92672">(</span> <span style="color:#111">$_</span>.StrongAuthenticationRequirements.State -ne <span style="color:#111">$null</span><span style="color:#f92672">){</span> <span style="color:#111">$_</span>. StrongAuthenticationRequirements.State<span style="color:#f92672">}</span> <span style="color:#00a8c8">else</span> <span style="color:#f92672">{</span> <span style="color:#d88200">&#34;Disabled&#34;</span><span style="color:#f92672">}}}</span> <span style="color:#111">|</span> export-csv mfaresults.csv</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ROADTools (https://github.com/dirkjanm/ROADtools)*</span>
+PS C:<span style="color:#8045ff">\&gt;</span> Get-MsolUser -EnabledFilter EnabledOnly -MaxResults <span style="color:#ae81ff">50000</span> <span style="color:#111">|</span> <span style="color:#00a8c8">select</span> DisplayName,UserPrincipalName,@<span style="color:#f92672">{</span><span style="color:#111">N</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;MFA Status&#34;</span><span style="color:#111">;</span> <span style="color:#111">E</span><span style="color:#f92672">={</span> <span style="color:#00a8c8">if</span><span style="color:#f92672">(</span> <span style="color:#111">$_</span>.StrongAuthenticationRequirements.State -ne <span style="color:#111">$null</span><span style="color:#f92672">){</span> <span style="color:#111">$_</span>. StrongAuthenticationRequirements.State<span style="color:#f92672">}</span> <span style="color:#00a8c8">else</span> <span style="color:#f92672">{</span> <span style="color:#d88200">&#34;Disabled&#34;</span><span style="color:#f92672">}}}</span> <span style="color:#111">|</span> export-csv mfaresults.csv
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ROADTools (https://github.com/dirkjanm/ROADtools)*</span>
 <span style="color:#75715e"># It uses an internal undocumented version of Microsoft Graph API</span>
 
 PS C:<span style="color:#8045ff">\&gt;</span> roadrecon.exe auth -u user@domain
@@ -2049,7 +2067,8 @@ PS C:<span style="color:#8045ff">\&gt;</span> roadrecon-gui.exe -debug -d .<span
  * Running on http://127.0.0.1:5000/ <span style="color:#f92672">(</span>Press CTRL+C to quit<span style="color:#f92672">)</span>
 
 <span style="color:#75715e"># Plugin for getting Conditional Access Policies</span>
-PS C:<span style="color:#8045ff">\&gt;</span> roadrecon plugin policies</code></pre></div>
+PS C:<span style="color:#8045ff">\&gt;</span> roadrecon plugin policies
+</code></pre></div>
 
     
     

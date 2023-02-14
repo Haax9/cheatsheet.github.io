@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>John Cheatsheet :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1808,9 +1837,7 @@
     
     
     
-    
-
-<h3 id="cracking-modes">Cracking Modes</h3>
+    <h3 id="cracking-modes">Cracking Modes</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Dictionnary attack</span>
 ./john --wordlist<span style="color:#f92672">=</span>password.lst hashFile
 
@@ -1828,10 +1855,9 @@
 ./john --mask<span style="color:#f92672">=</span>?1?1?1?1?1?1 --1<span style="color:#f92672">=[</span>A-Z<span style="color:#f92672">]</span> hashFile --min-len<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>
 
 <span style="color:#75715e"># Dictionnary attack using masks</span>
-./john --wordlist<span style="color:#f92672">=</span>password.lst -mask<span style="color:#f92672">=</span><span style="color:#d88200">&#39;?l?l?w?l&#39;</span> hashFile</code></pre></div>
-<p><br/></p>
-
-<h3 id="misc-tricks">MISC &amp; Tricks</h3>
+./john --wordlist<span style="color:#f92672">=</span>password.lst -mask<span style="color:#f92672">=</span><span style="color:#d88200">&#39;?l?l?w?l&#39;</span> hashFile
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="misc--tricks">MISC &amp; Tricks</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Show hidden options</span>
 ./john --list<span style="color:#f92672">=</span>hidden-options
 
@@ -1846,20 +1872,21 @@
 
 <span style="color:#75715e"># Search if a root/uid0 have been cracked</span>
 john --show --users<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> mypasswdFile
-john --show --users<span style="color:#f92672">=</span>root mypasswdFile</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># List OpenCL devices and get their id</span>
+john --show --users<span style="color:#f92672">=</span>root mypasswdFile
+
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># List OpenCL devices and get their id</span>
 ./john --list<span style="color:#f92672">=</span>opencl-devices
 
 <span style="color:#75715e"># List format supported by OpenCL</span>
 ./john --list<span style="color:#f92672">=</span>formats --format<span style="color:#f92672">=</span>opencl
 
 <span style="color:#75715e"># Using multiples GPU</span>
-./john hashes --format:openclformat --wordlist:wordlist --rules:rules --dev<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,1 --fork<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+./john hashes --format:openclformat --wordlist:wordlist --rules:rules --dev<span style="color:#f92672">=</span>0,1 --fork<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
 
 <span style="color:#75715e"># Using multiple CPU (eg. 4 cores)</span>
-./john hashes --wordlist:wordlist --rules:rules --dev<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --fork<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="wordlists-incremental">Wordlists &amp; Incremental</h3>
+./john hashes --wordlist:wordlist --rules:rules --dev<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> --fork<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="wordlists--incremental">Wordlists &amp; Incremental</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Sort a wordlist for the wordlist mode</span>
 tr A-Z a-z &lt; SOURCE <span style="color:#111">|</span> sort -u &gt; TARGET
 
@@ -1867,7 +1894,8 @@ tr A-Z a-z &lt; SOURCE <span style="color:#111">|</span> sort -u &gt; TARGET
 cut -d <span style="color:#d88200">&#39;:&#39;</span> -f <span style="color:#ae81ff">2</span> john.pot <span style="color:#111">|</span> sort -u pot.dic
 
 <span style="color:#75715e"># Generate candidate password for slow hashes</span>
-./john --wordlist<span style="color:#f92672">=</span>password.lst --stdout --rules:Jumbo <span style="color:#111">|</span> ./unique -mem<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span> wordlist.uniq</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--incremental:Lower <span style="color:#75715e"># 26 char</span>
+./john --wordlist<span style="color:#f92672">=</span>password.lst --stdout --rules:Jumbo <span style="color:#111">|</span> ./unique -mem<span style="color:#f92672">=</span><span style="color:#ae81ff">25</span> wordlist.uniq
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">--incremental:Lower <span style="color:#75715e"># 26 char</span>
 --incremental:Alpha <span style="color:#75715e"># 52 char</span>
 --incremental:Digits <span style="color:#75715e"># 10 char</span>
 --incremental:Alnum <span style="color:#75715e"># 62 char</span>
@@ -1884,9 +1912,8 @@ cut -d <span style="color:#d88200">&#39;:&#39;</span> -f <span style="color:#ae8
 <span style="color:#111">CharCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">95</span>
 
 <span style="color:#75715e"># Using a specific charset</span>
-./john --incremental:charset hashFile</code></pre></div>
-<p><br/></p>
-
+./john --incremental:charset hashFile
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="rules">Rules</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Predefined rules</span>
 --rules:Single
@@ -1894,42 +1921,45 @@ cut -d <span style="color:#d88200">&#39;:&#39;</span> -f <span style="color:#ae8
 --rules:Extra
 --rules:Jumbo <span style="color:#75715e"># All the above</span>
 --rules:KoreLogic
---rules:All <span style="color:#75715e"># All the above</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create a new rule in John.conf</span>
+--rules:All <span style="color:#75715e"># All the above</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create a new rule in John.conf</span>
 <span style="color:#f92672">[</span>List.Rules:Tryout<span style="color:#f92672">]</span>
 l
 u
-...</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">|</span> Rule          <span style="color:#111">|</span> Description                                               <span style="color:#111">|</span>
-<span style="color:#111">|</span>------------   <span style="color:#111">|</span>-------------------------------------------------------    <span style="color:#111">|</span>
-<span style="color:#111">|</span> l             <span style="color:#111">|</span> Convert to lowercase                                      <span style="color:#111">|</span>
-<span style="color:#111">|</span> u             <span style="color:#111">|</span> Convert to uppercase                                      <span style="color:#111">|</span>
-<span style="color:#111">|</span> c             <span style="color:#111">|</span> Capitalize                                                <span style="color:#111">|</span>
-<span style="color:#111">|</span> l r           <span style="color:#111">|</span> Lowercase the word and reverse it                         <span style="color:#111">|</span>
-<span style="color:#111">|</span> l Az<span style="color:#d88200">&#34;2015&#34;</span>    <span style="color:#111">|</span> Lowercase the word and append <span style="color:#d88200">&#34;2015&#34;</span> at the end           <span style="color:#111">|</span>
-<span style="color:#111">|</span> d             <span style="color:#111">|</span> Duplicate                                                 <span style="color:#111">|</span>
-<span style="color:#111">|</span> l A0<span style="color:#d88200">&#34;2015&#34;</span>    <span style="color:#111">|</span> Lowercase the word and append <span style="color:#d88200">&#34;2015&#34;</span> at the beginning     <span style="color:#111">|</span>
-<span style="color:#111">|</span> A0<span style="color:#d88200">&#34;#&#34;</span>Az<span style="color:#d88200">&#34;#&#34;</span>    <span style="color:#111">|</span> Add <span style="color:#d88200">&#34;#&#34;</span> at the beginning and the end of the word          <span style="color:#111">|</span>
-<span style="color:#111">|</span> C             <span style="color:#111">|</span>  Lowercase the first char and uppercase the rest          <span style="color:#111">|</span>
-<span style="color:#111">|</span> t             <span style="color:#111">|</span> Toggle <span style="color:#00a8c8">case</span> of all char                                   <span style="color:#111">|</span>
-<span style="color:#111">|</span> TN            <span style="color:#111">|</span> Toggle the <span style="color:#00a8c8">case</span> of the char in position N                 <span style="color:#111">|</span>
-<span style="color:#111">|</span> r             <span style="color:#111">|</span> Reverse the word                                          <span style="color:#111">|</span>
-<span style="color:#111">|</span> f             <span style="color:#111">|</span> Reflect <span style="color:#f92672">(</span>Fred --&gt; Fredderf<span style="color:#f92672">)</span>                               <span style="color:#111">|</span>
-<span style="color:#111">|</span> <span style="color:#f92672">{</span>             <span style="color:#111">|</span> Rotate the word left                                      <span style="color:#111">|</span>
-<span style="color:#111">|</span> <span style="color:#f92672">}</span>             <span style="color:#111">|</span> Rotate the word right                                     <span style="color:#111">|</span>
-<span style="color:#111">|</span> <span style="color:#111">$x</span>            <span style="color:#111">|</span> Append char X to the word                                 <span style="color:#111">|</span>
-<span style="color:#111">|</span> ^x            <span style="color:#111">|</span> Prefix the word with X char                               <span style="color:#111">|</span>
-<span style="color:#111">|</span> <span style="color:#f92672">[</span>             <span style="color:#111">|</span> Remove the first char from the word                       <span style="color:#111">|</span>
-<span style="color:#111">|</span> <span style="color:#f92672">]</span>             <span style="color:#111">|</span> Remove the last char from the word                        <span style="color:#111">|</span>
-<span style="color:#111">|</span> DN            <span style="color:#111">|</span> Delete the char in position N                             <span style="color:#111">|</span>
-<span style="color:#111">|</span> xNM           <span style="color:#111">|</span> Extract substring from position N <span style="color:#00a8c8">for</span> M char              <span style="color:#111">|</span>
-<span style="color:#111">|</span> iNX           <span style="color:#111">|</span> Insert char X in position N and <span style="color:#111">shift</span> the rest right      <span style="color:#111">|</span>
-<span style="color:#111">|</span> oNX           <span style="color:#111">|</span> Overstrike char in position N with X                      <span style="color:#111">|</span>
-<span style="color:#111">|</span> S             <span style="color:#111">|</span> Shift <span style="color:#00a8c8">case</span>                                                <span style="color:#111">|</span>
-<span style="color:#111">|</span> V             <span style="color:#111">|</span> Lowercase vowels and uppercase consonants                 <span style="color:#111">|</span>
-<span style="color:#111">|</span> R             <span style="color:#111">|</span> Shift each char right on the keyboard                     <span style="color:#111">|</span>
-<span style="color:#111">|</span> L             <span style="color:#111">|</span> Shift each char left on the keyboard                      <span style="color:#111">|</span>
-<span style="color:#111">|</span> &lt;N            <span style="color:#111">|</span> Reject the word unless it is less than N char long        <span style="color:#111">|</span>
-<span style="color:#111">|</span> &gt;N            <span style="color:#111">|</span> Reject the word unless it is greater than N char long     <span style="color:#111">|</span>
-<span style="color:#111">|</span> <span style="color:#8045ff">\&#39;</span>N           <span style="color:#111">|</span> Truncate the word at length N                             <span style="color:#111">|</span></code></pre></div>
+...
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#111">|</span> Rule          <span style="color:#111">|</span> Description                                               <span style="color:#111">|</span>
+<span style="color:#111">|</span>------------	<span style="color:#111">|</span>-------------------------------------------------------	<span style="color:#111">|</span>
+<span style="color:#111">|</span> l          	<span style="color:#111">|</span> Convert to lowercase                                  	<span style="color:#111">|</span>
+<span style="color:#111">|</span> u          	<span style="color:#111">|</span> Convert to uppercase                                  	<span style="color:#111">|</span>
+<span style="color:#111">|</span> c          	<span style="color:#111">|</span> Capitalize                                            	<span style="color:#111">|</span>
+<span style="color:#111">|</span> l r        	<span style="color:#111">|</span> Lowercase the word and reverse it                     	<span style="color:#111">|</span>
+<span style="color:#111">|</span> l Az<span style="color:#d88200">&#34;2015&#34;</span> 	<span style="color:#111">|</span> Lowercase the word and append <span style="color:#d88200">&#34;2015&#34;</span> at the end       	<span style="color:#111">|</span>
+<span style="color:#111">|</span> d          	<span style="color:#111">|</span> Duplicate                                             	<span style="color:#111">|</span>
+<span style="color:#111">|</span> l A0<span style="color:#d88200">&#34;2015&#34;</span> 	<span style="color:#111">|</span> Lowercase the word and append <span style="color:#d88200">&#34;2015&#34;</span> at the beginning 	<span style="color:#111">|</span>
+<span style="color:#111">|</span> A0<span style="color:#d88200">&#34;#&#34;</span>Az<span style="color:#d88200">&#34;#&#34;</span> 	<span style="color:#111">|</span> Add <span style="color:#d88200">&#34;#&#34;</span> at the beginning and the end of the word      	<span style="color:#111">|</span>
+<span style="color:#111">|</span> C          	<span style="color:#111">|</span>  Lowercase the first char and uppercase the rest      	<span style="color:#111">|</span>
+<span style="color:#111">|</span> t          	<span style="color:#111">|</span> Toggle <span style="color:#00a8c8">case</span> of all char                               	<span style="color:#111">|</span>
+<span style="color:#111">|</span> TN         	<span style="color:#111">|</span> Toggle the <span style="color:#00a8c8">case</span> of the char in position N             	<span style="color:#111">|</span>
+<span style="color:#111">|</span> r          	<span style="color:#111">|</span> Reverse the word                                      	<span style="color:#111">|</span>
+<span style="color:#111">|</span> f          	<span style="color:#111">|</span> Reflect <span style="color:#f92672">(</span>Fred --&gt; Fredderf<span style="color:#f92672">)</span>                           	<span style="color:#111">|</span>
+<span style="color:#111">|</span> <span style="color:#f92672">{</span>          	<span style="color:#111">|</span> Rotate the word left                                  	<span style="color:#111">|</span>
+<span style="color:#111">|</span> <span style="color:#f92672">}</span>          	<span style="color:#111">|</span> Rotate the word right                                 	<span style="color:#111">|</span>
+<span style="color:#111">|</span> <span style="color:#111">$x</span>         	<span style="color:#111">|</span> Append char X to the word                             	<span style="color:#111">|</span>
+<span style="color:#111">|</span> ^x         	<span style="color:#111">|</span> Prefix the word with X char                           	<span style="color:#111">|</span>
+<span style="color:#111">|</span> <span style="color:#f92672">[</span>          	<span style="color:#111">|</span> Remove the first char from the word                   	<span style="color:#111">|</span>
+<span style="color:#111">|</span> <span style="color:#f92672">]</span>          	<span style="color:#111">|</span> Remove the last char from the word                    	<span style="color:#111">|</span>
+<span style="color:#111">|</span> DN         	<span style="color:#111">|</span> Delete the char in position N                         	<span style="color:#111">|</span>
+<span style="color:#111">|</span> xNM        	<span style="color:#111">|</span> Extract substring from position N <span style="color:#00a8c8">for</span> M char          	<span style="color:#111">|</span>
+<span style="color:#111">|</span> iNX        	<span style="color:#111">|</span> Insert char X in position N and <span style="color:#111">shift</span> the rest right  	<span style="color:#111">|</span>
+<span style="color:#111">|</span> oNX        	<span style="color:#111">|</span> Overstrike char in position N with X                  	<span style="color:#111">|</span>
+<span style="color:#111">|</span> S          	<span style="color:#111">|</span> Shift <span style="color:#00a8c8">case</span>                                            	<span style="color:#111">|</span>
+<span style="color:#111">|</span> V          	<span style="color:#111">|</span> Lowercase vowels and uppercase consonants             	<span style="color:#111">|</span>
+<span style="color:#111">|</span> R          	<span style="color:#111">|</span> Shift each char right on the keyboard                 	<span style="color:#111">|</span>
+<span style="color:#111">|</span> L          	<span style="color:#111">|</span> Shift each char left on the keyboard                  	<span style="color:#111">|</span>
+<span style="color:#111">|</span> &lt;N         	<span style="color:#111">|</span> Reject the word unless it is less than N char long    	<span style="color:#111">|</span>
+<span style="color:#111">|</span> &gt;N         	<span style="color:#111">|</span> Reject the word unless it is greater than N char long 	<span style="color:#111">|</span>
+<span style="color:#111">|</span> <span style="color:#8045ff">\&#39;</span>N         	<span style="color:#111">|</span> Truncate the word at length N                         	<span style="color:#111">|</span>
+</code></pre></div>
 
     
     

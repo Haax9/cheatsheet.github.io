@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>RSA Encryption :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1807,14 +1836,11 @@
     
     
     
-    
-
-<h3 id="resources">Resources</h3>
+    <h3 id="resources">Resources</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://bitsdeep.com/posts/attacking-rsa-for-fun-and-ctf-points-part-1/
 
-<span style="color:#75715e"># Think about factordb.com to retrieve p and q from n</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># Think about factordb.com to retrieve p and q from n</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="theory">Theory</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Used</span>
 <span style="color:#75715e"># c  → cyphertext</span>
@@ -1835,10 +1861,9 @@
 <span style="color:#111">m</span> <span style="color:#f92672">=</span> <span style="color:#111">c</span><span style="color:#f92672">^</span><span style="color:#111">(</span><span style="color:#111">d1</span> <span style="color:#f92672">*</span> <span style="color:#111">d2</span> <span style="color:#f92672">*</span> <span style="color:#111">d3</span> <span style="color:#f92672">*</span> <span style="color:#111">d4</span> <span style="color:#f92672">*</span> <span style="color:#111">d5</span><span style="color:#111">)</span>
 
 <span style="color:#75715e"># Can get n and e from openssl like this</span>
-<span style="color:#111">cat</span> <span style="color:#111">alice_pubkey</span><span style="color:#f92672">.</span><span style="color:#111">pem</span> <span style="color:#f92672">|</span> <span style="color:#111">openssl</span> <span style="color:#111">rsa</span> <span style="color:#f92672">-</span><span style="color:#111">pubin</span> <span style="color:#f92672">-</span><span style="color:#111">inform</span> <span style="color:#111">PEM</span> <span style="color:#f92672">-</span><span style="color:#111">text</span> <span style="color:#f92672">-</span><span style="color:#111">noout</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="tips-tricks">Tips &amp; Tricks</h3>
+<span style="color:#111">cat</span> <span style="color:#111">alice_pubkey</span><span style="color:#f92672">.</span><span style="color:#111">pem</span> <span style="color:#f92672">|</span> <span style="color:#111">openssl</span> <span style="color:#111">rsa</span> <span style="color:#f92672">-</span><span style="color:#111">pubin</span> <span style="color:#f92672">-</span><span style="color:#111">inform</span> <span style="color:#111">PEM</span> <span style="color:#f92672">-</span><span style="color:#111">text</span> <span style="color:#f92672">-</span><span style="color:#111">noout</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="tips--tricks">Tips &amp; Tricks</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Getting clear when you have c, d, n</span>
 <span style="color:#111">text</span> <span style="color:#f92672">=</span> <span style="color:#111">pow</span><span style="color:#111">(</span><span style="color:#111">c</span><span style="color:#111">,</span> <span style="color:#111">d</span><span style="color:#111">,</span> <span style="color:#111">n</span><span style="color:#111">)</span>   <span style="color:#75715e"># équivaut à text = (c^d)[n]</span>
 <span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">hex</span><span style="color:#111">(</span><span style="color:#111">text</span><span style="color:#111">)</span>
@@ -1858,36 +1883,30 @@
 
 <span style="color:#111">key</span> <span style="color:#f92672">=</span> <span style="color:#111">RSA</span><span style="color:#f92672">.</span><span style="color:#111">importKey</span><span style="color:#111">(</span><span style="color:#111">open</span><span style="color:#111">(</span><span style="color:#d88200">&#34;public_key_path.pem&#34;</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">read</span><span style="color:#111">())</span>
 <span style="color:#111">n</span> <span style="color:#f92672">=</span> <span style="color:#111">key</span><span style="color:#f92672">.</span><span style="color:#111">n</span>
-<span style="color:#111">e</span> <span style="color:#f92672">=</span> <span style="color:#111">key</span><span style="color:#f92672">.</span><span style="color:#111">e</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="attacks-public-key-message">Attacks : Public Key + Message</h3>
+<span style="color:#111">e</span> <span style="color:#f92672">=</span> <span style="color:#111">key</span><span style="color:#f92672">.</span><span style="color:#111">e</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="attacks--public-key--message">Attacks : Public Key + Message</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Factorization Attack:</span>
 → When n is small, go <span style="color:#00a8c8">for</span> factordb.com
 		
 <span style="color:#75715e"># Fermat Attack</span>
 → When n is quite small
 
-<span style="color:#75715e"># Low Exponent Attack:</span> 
+<span style="color:#75715e"># Low Exponent Attack: </span>
 → Usefull when <span style="color:#111">e</span><span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> and n is quite big because pow<span style="color:#f92672">(</span>m,e,n<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> pow<span style="color:#f92672">(</span>m,e<span style="color:#f92672">)</span>
 
-<span style="color:#75715e"># ROCA:</span> 
+<span style="color:#75715e"># ROCA: </span>
 → Usable when RSA key has <span style="color:#ae81ff">512</span> bits long n
 
-<span style="color:#75715e"># Twin Primes:</span> 
+<span style="color:#75715e"># Twin Primes: </span>
 → <span style="color:#111">q</span> <span style="color:#f92672">=</span> p + <span style="color:#ae81ff">2</span>
 → Usefull is most cases when n is too bid and others attacks doesn<span style="color:#8045ff">\&#39;</span>t work
 
 <span style="color:#75715e"># Boneh Durfee Attack:</span>
 → Allows to go slightly faster <span style="color:#00a8c8">then</span> Wiener Attack because d &lt; n^0.292
-<span style="color:#d88200">```</span>		
-&lt;br/&gt;
-
-	
-<span style="color:#75715e">### Attacks : Several public keys</span>	
-
-<span style="color:#d88200">```</span>bash
-<span style="color:#75715e"># Chinese Remainder Attack</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="attacks--several-public-keys">Attacks : Several public keys</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Chinese Remainder Attack</span>
 → Usable when <span style="color:#ae81ff">3</span> messages have the same exponent <span style="color:#f92672">(</span><span style="color:#111">c</span><span style="color:#f92672">=</span> m^3 mod <span style="color:#f92672">(</span>n^b * n^c * n^d<span style="color:#f92672">))</span>
 → 	chinese_reminder.py
 
@@ -1895,11 +1914,10 @@
 → Usable when you have <span style="color:#ae81ff">2</span> messages, <span style="color:#ae81ff">2</span> public keys and <span style="color:#111">n1</span> <span style="color:#f92672">==</span> n2
 
 <span style="color:#75715e"># Wiener Attack:</span>
-→ Usable when private exponen d is quite small compared to N <span style="color:#f92672">(</span>d &lt; n^<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span>/4<span style="color:#f92672">))</span> 
+→ Usable when private exponen d is quite small compared to N <span style="color:#f92672">(</span>d &lt; n^<span style="color:#f92672">(</span>1/4<span style="color:#f92672">))</span> 
 → https://github.com/rk700/attackrsa
-→ attackrsa -t wiener -n N_VALUE -e E_VALUE</code></pre></div>
-<p><br/></p>
-
+→ attackrsa -t wiener -n N_VALUE -e E_VALUE
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="remote-service-allowing-to-decrypt">Remote Service allowing to decrypt</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Decipher Oracle in Python</span>
 <span style="color:#f92672">from</span> <span style="color:#111">pwn</span> <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
@@ -1924,7 +1942,8 @@
 <span style="color:#111">res</span> <span style="color:#f92672">=</span> <span style="color:#111">r</span><span style="color:#f92672">.</span><span style="color:#111">recvline</span><span style="color:#111">()</span>
 <span style="color:#111">res</span> <span style="color:#f92672">=</span> <span style="color:#111">r</span><span style="color:#f92672">.</span><span style="color:#111">recvline</span><span style="color:#111">()</span>
 <span style="color:#111">dec</span> <span style="color:#f92672">=</span> <span style="color:#111">long_to_bytes</span><span style="color:#111">(</span><span style="color:#111">long</span><span style="color:#111">(</span><span style="color:#111">res</span><span style="color:#f92672">.</span><span style="color:#111">split</span><span style="color:#111">(</span><span style="color:#d88200">&#34; &#34;</span><span style="color:#111">)[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span><span style="color:#111">)</span>
-<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">dec</span><span style="color:#111">)</span></code></pre></div>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">dec</span><span style="color:#111">)</span>
+</code></pre></div>
 
     
     

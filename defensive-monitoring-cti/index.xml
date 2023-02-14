@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Defensive, Monitoring, CTI... on Offensive Security Cheatsheet</title>
     <link>/defensive-monitoring-cti/</link>
     <description>Recent content in Defensive, Monitoring, CTI... on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/defensive-monitoring-cti/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/defensive-monitoring-cti/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Defensive OSINT and CTI</title>
       <link>/defensive-monitoring-cti/defensive_osint_cti/</link>
@@ -17,7 +13,7 @@
       
       <guid>/defensive-monitoring-cti/defensive_osint_cti/</guid>
       <description>[WIP]
-Monitoring Certificate Transparendy https://certstream.calidog.io/ # Real-time certificate transparency log update stream. # See SSL certificates as they&amp;#39;re issued in real time. https://certstream.calidog.io/example.json # All Certstreams Github repos https://github.com/search?q=org%3ACaliDog+certstream # Certstream server https://github.com/CaliDog/certstream-server https://github.com/CaliDog/certstream-server-python # Certstream https://github.</description>
+Monitoring Certificate Transparendy https://certstream.calidog.io/ # Real-time certificate transparency log update stream. # See SSL certificates as they&amp;#39;re issued in real time.  https://certstream.calidog.io/example.json # All Certstreams Github repos https://github.com/search?q=org%3ACaliDog+certstream # Certstream server https://github.com/CaliDog/certstream-server https://github.com/CaliDog/certstream-server-python # Certstream https://github.com/CaliDog/certstream-python </description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@ Monitoring Certificate Transparendy https://certstream.calidog.io/ # Real-time c
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/defensive-monitoring-cti/defensive_active_directory/</guid>
-      <description>Resources (cross-post resources) # Talk by Riccardo Ancarani &amp;#34;Detecting Resilient Adversaries - Active Directory&amp;#34; # Prevention/Detection # - DCSync # - AdminSDHolder # - Ticket Forgery # - DSRM # - Skeleton Key # - DCShadow https://raw.githubusercontent.com/RiccardoAncarani/talks/master/r00tMI/20200709-r00tMi-ADDtalk_v1.0.pdf ```` &amp;lt;br/&amp;gt; ### BloodHound for defense ```bash https://posts.specterops.io/bloodhound-versus-ransomware-a-defenders-guide-28147dedb73b # Great post explaining how BloodHound can be used by defenders</description>
+      <description>Resources (cross-post resources) # Talk by Riccardo Ancarani &amp;#34;Detecting Resilient Adversaries - Active Directory&amp;#34; # Prevention/Detection # - DCSync # - AdminSDHolder # - Ticket Forgery # - DSRM # - Skeleton Key # - DCShadow https://raw.githubusercontent.com/RiccardoAncarani/talks/master/r00tMI/20200709-r00tMi-ADDtalk_v1.0.pdf BloodHound for defense https://posts.specterops.io/bloodhound-versus-ransomware-a-defenders-guide-28147dedb73b # Great post explaining how BloodHound can be used by defenders </description>
     </item>
     
   </channel>

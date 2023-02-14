@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Frameworks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1844,10 +1873,7 @@
     
     
 
-
-
 <h3 id="general-thoughts-about-each-framework-or-multitask-tool">General thoughts about each framework or multitask tool</h3>
-
 <table>
 <thead>
 <tr>
@@ -1860,7 +1886,6 @@
 <th>Really Usable ?</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Danger Zone</td>
@@ -1871,7 +1896,6 @@
 <td>Semi-Complete tool performing OSINT on 3 types of targets (domain, IP, email). Each type will then launch a bunch of tools and test to gather information</td>
 <td>Yes. It&rsquo;s not fully exhaustive but can give some interesting informations</td>
 </tr>
-
 <tr>
 <td>Gasmask</td>
 <td>Yes</td>
@@ -1881,7 +1905,6 @@
 <td>Seems to be a complete tool but hard to use/learn. The command lien syntax looks hards</td>
 <td>Yes but need some practice to learn the syntax</td>
 </tr>
-
 <tr>
 <td>Spiderfoot</td>
 <td>Not sure</td>
@@ -1891,7 +1914,6 @@
 <td>Big and complete tool but it can bring many false positive. You still can analyse manually results. Scan are long (45min/1h)</td>
 <td>Yes but it can be hard sometimes</td>
 </tr>
-
 <tr>
 <td>Datasploit</td>
 <td>No (wapp)</td>
@@ -1901,7 +1923,6 @@
 <td>Semi-complete and semi-passive tool. It will detect if IP, domain, username or phonenumber and perform some queries. You can specify quiet or active mode. Not totally passive, it acts like a web browser</td>
 <td>Probably yes. You can have good result but its not fully passive.</td>
 </tr>
-
 <tr>
 <td>Recon-ng</td>
 <td>No</td>
@@ -1911,7 +1932,6 @@
 <td>Big and complete tool but hard to use as long as you need to know modules</td>
 <td>Yes but need some practice to master modules</td>
 </tr>
-
 <tr>
 <td>Omnibus</td>
 <td>No</td>
@@ -1921,7 +1941,6 @@
 <td>Complete framework used to do many recon things. Individual commands so analysis can be fully passive. Features vocabulary is strange and need adapt</td>
 <td>Yes but need some practice to learn using session, modules etc</td>
 </tr>
-
 <tr>
 <td>ReconDog</td>
 <td>Yes</td>
@@ -1931,7 +1950,6 @@
 <td>Simple and basic recon, it only uses public API to gather informations</td>
 <td>Yes but informations won&rsquo;t be enough</td>
 </tr>
-
 <tr>
 <td>OSINT-SPY</td>
 <td>No</td>
@@ -1941,7 +1959,6 @@
 <td>Simple tool, not veru exhaustive but can gather some informations about a target. Some functionnalties may be useless and some are buggy</td>
 <td>Hard to use as long as some outputs are broken and some features are basic (manually doable) or useless</td>
 </tr>
-
 <tr>
 <td>Belati</td>
 <td>No</td>
@@ -1953,10 +1970,8 @@
 </tr>
 </tbody>
 </table>
-
-<p><br/></p>
-
-<h3 id="troubles-nope">Troubles / Nope</h3>
+<!-- raw HTML omitted -->
+<h3 id="troubles--nope">Troubles / Nope</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Maltego <span style="color:#f92672">(</span>https://www.paterva.com/web7/downloads.php<span style="color:#f92672">)</span>
 → Still not installed
 → Wait and see
@@ -1975,7 +1990,8 @@ PownRecon <span style="color:#f92672">(</span>https://github.com/pownjs/pown-rec
 
 Inquisitor <span style="color:#f92672">(</span>https://github.com/penafieljlm/inquisitor<span style="color:#f92672">)</span>
 → Not installed
-→ Not very efficient features</code></pre></div>
+→ Not very efficient features
+</code></pre></div>
 
 
     

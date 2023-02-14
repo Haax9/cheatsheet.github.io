@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Phishing, RedTeam and SE on Offensive Security Cheatsheet</title>
     <link>/phishing-redteam-and-se/</link>
     <description>Recent content in Phishing, RedTeam and SE on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/phishing-redteam-and-se/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/phishing-redteam-and-se/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Phishing Infrastructure (Gophish&#43;Vultr)</title>
       <link>/phishing-redteam-and-se/phishing_campaign_setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/phishing-redteam-and-se/phishing_campaign_setup/</guid>
-      <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup # Generate typo &amp;amp; permutations on a domain name https://dnstwister.report/# Message Header Analyzer https://mha.azurewebsites.net/ 
-# The Spamhaus Project # Interesting stats about The World&amp;#39;s Most Abused TLDs.</description>
+      <description>General Informations # Using a specific and dedicated machine is a good choice. # It avoid being indexed and referenced as a phishing server for your own VPS # All the server configuration is pulled from the following Github repository # it provides a fully functionnal bash script to automate the process https://github.com/n0pe-sled/Postfix-Server-Setup # Generate typo &amp;amp; permutations on a domain name https://dnstwister.report/ # Message Header Analyzer https://mha.azurewebsites.net/ # The Spamhaus Project # Interesting stats about The World&amp;#39;s Most Abused TLDs.</description>
     </item>
     
     <item>
@@ -26,7 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/phishing-redteam-and-se/lockpicking_keys/</guid>
-      <description>Key Decoder https://github.com/MaximeBeasse/KeyDecoder https://twitter.com/FrenchKey_fr/status/1343543963454754816?s=20</description>
+      <description>Key Decoder https://github.com/MaximeBeasse/KeyDecoder https://twitter.com/FrenchKey_fr/status/1343543963454754816?s=20 </description>
     </item>
     
   </channel>

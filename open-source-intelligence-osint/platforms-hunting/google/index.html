@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Google :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1836,9 +1865,7 @@
     
     
     
-    
-
-<h3 id="linking-to-google-account">Linking to Google Account</h3>
+    <h3 id="linking-to-google-account">Linking to Google Account</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://medium.com/week-in-osint/keeping-a-grip-on-googleids-506814ae098b
 https://subfn.net/2020/06/15/ga-osint-trick/
 
@@ -1846,13 +1873,12 @@ https://subfn.net/2020/06/15/ga-osint-trick/
 
 <span style="color:#75715e"># Log into Google Analytics</span>
 <span style="color:#75715e"># Navigate to Admin &gt; Account User Management &gt; Add user</span>
-<span style="color:#75715e"># At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Automated tool for identifying Google account, getting ID and relations on Google services</span>
+<span style="color:#75715e"># At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Automated tool for identifying Google account, getting ID and relations on Google services</span>
 <span style="color:#75715e"># Works like a charm (from https://epieos.com/)</span>
-https://tools.epieos.com/google-account.php</code></pre></div>
-<p><br/></p>
-
+https://tools.epieos.com/google-account.php
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="get-userids">Get UserIDs</h3>
-
 <h5 id="google-drive-documents">Google Drive Documents</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get user ID from Google Drive document</span>
 
@@ -1862,13 +1888,14 @@ https://tools.epieos.com/google-account.php</code></pre></div>
 
 <span style="color:#75715e"># Not logged in</span>
 <span style="color:#75715e"># Developer tools &gt; Network &gt; Filter &#34;Permissions&#34;</span>
-<span style="color:#75715e"># Load the document and get informations for owner &amp; co</span></code></pre></div>
-<h5 id="google-contacts">Google Contacts</h5>
+<span style="color:#75715e"># Load the document and get informations for owner &amp; co</span>
+</code></pre></div><h5 id="google-contacts">Google Contacts</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Google Contacts can help getting IDs from e-mails</span>
-<span style="color:#75715e"># But it may not work !</span> 
+<span style="color:#75715e"># But it may not work ! </span>
 
 <span style="color:#75715e"># CSV file with name and e-mails</span>
-<span style="color:#75715e"># Import it, then several methods</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Method 1</span>
+<span style="color:#75715e"># Import it, then several methods</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Method 1</span>
 <span style="color:#75715e"># - Developer tools and reload the page</span>
 <span style="color:#75715e"># - Look for 4th raw requests to &#34;contacts.google.com&#34; with &#34;batchexecute&#34; endpoint</span>
 <span style="color:#75715e"># - Copy request content to a file</span>
@@ -1881,8 +1908,8 @@ $ cat file <span style="color:#111">|</span> grep -oP <span style="color:#d88200
 
 <span style="color:#75715e"># Method 3</span>
 <span style="color:#75715e"># If you have target YouTube channel page</span>
-<span style="color:#75715e"># Look in the source code for the link to plus.google.com/&lt;id&gt;</span></code></pre></div>
-<h5 id="google-api">Google API</h5>
+<span style="color:#75715e"># Look in the source code for the link to plus.google.com/&lt;id&gt;</span>
+</code></pre></div><h5 id="google-api">Google API</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># The only trustworthly way is to use the Google API</span>
 
 <span style="color:#75715e"># First get contact information like above</span>
@@ -1896,8 +1923,8 @@ https://developers.google.com/people/api/rest/v1/people/get
 people/c0123456789...
 
 <span style="color:#75715e"># personFields</span>
-metada</code></pre></div>
-<h5 id="google-hangouts">Google Hangouts</h5>
+metada
+</code></pre></div><h5 id="google-hangouts">Google Hangouts</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://medium.com/week-in-osint/keeping-a-grip-on-googleids-506814ae098b
 
 <span style="color:#75715e"># Using the &#34;network&#34; developper tool, open a new chat and fill in the target e-mail address</span>
@@ -1907,27 +1934,26 @@ metada</code></pre></div>
 <span style="color:#75715e"># Look for &#34;autocomplete&#34;</span>
 <span style="color:#75715e"># You can get information about other Google Accounts connected to this ID</span>
 
-<span style="color:#75715e"># &#34;lastUpdateTimeMicros&#34; is the last time the account was edited (or sometimes created)</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># &#34;lastUpdateTimeMicros&#34; is the last time the account was edited (or sometimes created)</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="using-userids">Using UserIDs</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 3 ways</span>
 <span style="color:#75715e"># - Find photos albums</span>
 <span style="color:#75715e"># - Look for geolocation</span>
-<span style="color:#75715e"># - Find YouTube account connected to this</span></code></pre></div>
-<h5 id="photos-albums">Photos albums</h5>
+<span style="color:#75715e"># - Find YouTube account connected to this</span>
+</code></pre></div><h5 id="photos-albums">Photos albums</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Photos albums of a given user</span>
 https://get.google.com/albumarchive/<span style="color:#f92672">{</span>userID<span style="color:#f92672">}</span>
 
-<span style="color:#75715e"># Sometimes photos are tied to exact locations on Google Maps</span></code></pre></div>
-<h5 id="geolocation">Geolocation</h5>
+<span style="color:#75715e"># Sometimes photos are tied to exact locations on Google Maps</span>
+</code></pre></div><h5 id="geolocation">Geolocation</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Google Maps and Google Reviews can both be accessed via GMaps</span>
 https://www.google.com/maps/contrib/<span style="color:#f92672">{</span>userID<span style="color:#f92672">}</span>
 
 <span style="color:#75715e"># By default is shows the photos that are uploaded with location information</span>
 <span style="color:#75715e"># But the users reviews can be accessed via the option on the left.</span>
-<span style="color:#75715e"># You are still able to find out someones real name.</span></code></pre></div>
-<h5 id="youtube">Youtube</h5>
+<span style="color:#75715e"># You are still able to find out someones real name.</span>
+</code></pre></div><h5 id="youtube">Youtube</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Youtube ressources and tools</span>
 https://www.osintessentials.com/youtube
 
@@ -1947,9 +1973,8 @@ https://www.youtube.com/channel/UCAiaFvFFZOwlU8Sw8S0dunQ
 <span style="color:#75715e"># In the source code : &#34;ownerProfileUrl&#34; or &#34;vanityChannelUrl&#34;</span>
 
 <span style="color:#75715e"># Getting UserID</span>
-<span style="color:#75715e"># In the source code : &#34;plus.google.com&#34;</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># In the source code : &#34;plus.google.com&#34;</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="automating-google-account-hunt-ghunt">Automating Google Account Hunt (GHunt)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># GHunt is a fully functionnal automated tool used to recover many informations about a Google Account</span>
 https://github.com/mxrch/GHunt
@@ -1977,7 +2002,7 @@ $ docker run -v <span style="color:#00a8c8">$(</span><span style="color:#111">pw
 
 Name: xxx xxx
 
-Last profile edit : <span style="color:#ae81ff">2020</span>/09/09 <span style="color:#ae81ff">17</span>:40:47 <span style="color:#f92672">(</span>UTC<span style="color:#f92672">)</span>
+Last profile edit : 2020/09/09 17:40:47 <span style="color:#f92672">(</span>UTC<span style="color:#f92672">)</span>
 
 Email : xxx.xxx@gmail.com
 Google ID : 11xxxxxx
@@ -1990,7 +2015,7 @@ Activated Google services :
 - Photos
 - Maps
 
-Youtube channel <span style="color:#f92672">(</span><span style="color:#111">confidence</span> <span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">37</span>.5%<span style="color:#f92672">)</span> :
+Youtube channel <span style="color:#f92672">(</span><span style="color:#111">confidence</span> <span style="color:#f92672">=</span>&gt; 37.5%<span style="color:#f92672">)</span> :
 - <span style="color:#f92672">[</span>xxx xxx<span style="color:#f92672">]</span> https://youtube.com/channel/xx
 - <span style="color:#f92672">[</span>xxx xxx<span style="color:#f92672">]</span> https://youtube.com/channel/xx
 - <span style="color:#f92672">[</span>xxx xxx<span style="color:#f92672">]</span> https://youtube.com/channel/xx
@@ -1999,7 +2024,9 @@ Google Photos : https://get.google.com/albumarchive/xx/albums/profile-photos
 <span style="color:#f92672">=</span>&gt; Couldn<span style="color:#960050;background-color:#1e0010">&#39;</span>t fetch the public photos.            
 
 Google Maps : https://www.google.com/maps/contrib/xx/reviews
-<span style="color:#f92672">=</span>&gt; No reviews     </code></pre></div>
+<span style="color:#f92672">=</span>&gt; No reviews     
+
+</code></pre></div>
 
     
     

@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Services Enumeration on Offensive Security Cheatsheet</title>
     <link>/network/services-enumeration/</link>
     <description>Recent content in Services Enumeration on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/network/services-enumeration/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/network/services-enumeration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>21 - FTP</title>
       <link>/network/services-enumeration/21_ftp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/21_ftp/</guid>
-      <description>Identification # Base connection ftp &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # It can be usefull to try passive mode ftp -p &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # Using telnet telnet &amp;lt;IP&amp;gt; 21 Anonymous test bin (binary mode, don\&amp;#39;t forget it before transfering exe file) get / send # FTP Web Access ? # Try upload and execute through web access ftp://IP 
-Bruteforce hydra -L users.</description>
+      <description>Identification # Base connection ftp &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # It can be usefull to try passive mode ftp -p &amp;lt;IP&amp;gt; &amp;gt; USER Anonymous &amp;gt; PASS test # Using telnet telnet &amp;lt;IP&amp;gt; 21 Anonymous test bin (binary mode, don\&amp;#39;t forget it before transfering exe file) get / send # FTP Web Access ? # Try upload and execute through web access ftp://IP Bruteforce hydra -L users.txt -P passwords.</description>
     </item>
     
     <item>
@@ -26,9 +21,7 @@ Bruteforce hydra -L users.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/22_ssh/</guid>
-      <description> Recon # Banner grabbing using telnet telnet IP 22 
-Bruteforce # List of users using wordlists hydra -L users.txt -P &amp;lt;passwordList&amp;gt; -t 3 -s port &amp;lt;IP&amp;gt; ssh # Only one user and wordlist passwords hydra -l root -P &amp;lt;passwordList&amp;gt; -t 3 -s port &amp;lt;IP&amp;gt; ssh 
-OpenSSL # Connection through openssl openssl s_client -connect IP:PORT</description>
+      <description>Recon # Banner grabbing using telnet telnet IP 22 Bruteforce # List of users using wordlists hydra -L users.txt -P &amp;lt;passwordList&amp;gt; -t 3 -s port &amp;lt;IP&amp;gt; ssh # Only one user and wordlist passwords hydra -l root -P &amp;lt;passwordList&amp;gt; -t 3 -s port &amp;lt;IP&amp;gt; ssh OpenSSL # Connection through openssl openssl s_client -connect IP:PORT </description>
     </item>
     
     <item>
@@ -37,8 +30,7 @@ OpenSSL # Connection through openssl openssl s_client -connect IP:PORT</descript
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/25_smtp/</guid>
-      <description> Identification # Connection and test using telnet telnet &amp;lt;IP&amp;gt; 25 EHLO &amp;lt;IP&amp;gt; VRFY root EXPN root Mail from: me@test.com To: root@test.com Data: Subject: Message Hi, Just a test message. (Double carriage return) 
-Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t &amp;lt;IP&amp;gt;</description>
+      <description>Identification # Connection and test using telnet telnet &amp;lt;IP&amp;gt; 25 EHLO &amp;lt;IP&amp;gt; VRFY root EXPN root Mail from: me@test.com To: root@test.com Data: Subject: Message Hi, Just a test message. (Double carriage return) Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t &amp;lt;IP&amp;gt; </description>
     </item>
     
     <item>
@@ -47,8 +39,7 @@ Enumeration # using smtp-user-enum script smtp-user-enum -M VRFY -U users.txt -t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/53_dns/</guid>
-      <description>Zone Transfer # Port scan and trying zone transfer nmap --script=dns-transfer-zone -p 53 domain # DNS Zone Transfer using dig dig axfr @IP guess_domain_name 
-Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global Catalog dig -t SRV _gc._tcp.lab.ropnop.com # LDAP servers dig -t SRV _ldap._tcp.lab.ropnop.com # Kerberos KDC dig -t SRV _kerberos._tcp.lab.ropnop.com # Kerberos password change server dig -t SRV _kpasswd._tcp.lab.ropnop.com nmap --script dns-srv-enum --script-args “dns-srv-enum.</description>
+      <description>Zone Transfer # Port scan and trying zone transfer nmap --script=dns-transfer-zone -p 53 domain # DNS Zone Transfer using dig dig axfr @IP guess_domain_name Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global Catalog dig -t SRV _gc._tcp.lab.ropnop.com # LDAP servers dig -t SRV _ldap._tcp.lab.ropnop.com # Kerberos KDC dig -t SRV _kerberos._tcp.lab.ropnop.com # Kerberos password change server dig -t SRV _kpasswd._tcp.lab.ropnop.com nmap --script dns-srv-enum --script-args “dns-srv-enum.</description>
     </item>
     
     <item>
@@ -66,8 +57,7 @@ Active Directory DNS # Zone Transfer using dig # Find AD-DS through DNS # Global
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/110_pop3/</guid>
-      <description>Identification and Scans # Retrieve POP3 server capabilities (CAPA, TOP, USER, SASL, RESP-CODES, LOGIN-DELAY, PIPELINING, EXPIRE, UIDL, IMPLEMENTATION) nmap -v -sV --version-intensity=5 --script pop3-capabilities -p T:110 IP # Try to bruteforce POP3 accounts nmap --script pop3-brute --script-args pop3loginmethod=SASL-LOGIN -p T:110 IP nmap --script pop3-brute --script-args pop3loginmethod=SASL-CRAM-MD5 -p T:110 IP nmap --script pop3-brute --script-args pop3loginmethod=APOP -p T:110 IP 
-Banner grabbing/checking # Using netcat nc &amp;lt;IP&amp;gt; 110 # Using telnet telnet &amp;lt;IP&amp;gt; 110</description>
+      <description>Identification and Scans # Retrieve POP3 server capabilities (CAPA, TOP, USER, SASL, RESP-CODES, LOGIN-DELAY, PIPELINING, EXPIRE, UIDL, IMPLEMENTATION)	 nmap -v -sV --version-intensity=5 --script pop3-capabilities -p T:110 IP # Try to bruteforce POP3 accounts nmap --script pop3-brute --script-args pop3loginmethod=SASL-LOGIN -p T:110 IP nmap --script pop3-brute --script-args pop3loginmethod=SASL-CRAM-MD5 -p T:110 IP nmap --script pop3-brute --script-args pop3loginmethod=APOP -p T:110 IP Banner grabbing/checking # Using netcat nc &amp;lt;IP&amp;gt; 110 # Using telnet telnet &amp;lt;IP&amp;gt; 110 Authentication Checking (classical credentials) USER admin PASS admin USER root PASS root USER root PASS toor # Once logged list </description>
     </item>
     
     <item>
@@ -76,8 +66,7 @@ Banner grabbing/checking # Using netcat nc &amp;lt;IP&amp;gt; 110 # Using telnet
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/119_nntp/</guid>
-      <description> Banner Grabbing # Using telnet telnet IP 119 # Using netcat nc -nv IP 119 LIST 
-Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_name to display related messages POST From; test@knacki.fr Newsgroups: group_name Subject: Test This is a test. . HEAD identity_article ARTICLE identity_article BODY identity_article</description>
+      <description>Banner Grabbing # Using telnet telnet IP 119 # Using netcat nc -nv IP 119 LIST Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_name to display related messages POST From; test@knacki.fr Newsgroups: group_name Subject: Test This is a test. . HEAD identity_article ARTICLE identity_article BODY identity_article </description>
     </item>
     
     <item>
@@ -86,7 +75,7 @@ Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_nam
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/135_rpc/</guid>
-      <description>Resources http://attackerkb.com/Windows/rpcclient rpcclient # Anonymous connection (-N=no pass) rpcclient -U “” -N &amp;lt;ip&amp;gt; # Connection with user rpcclient -U “user” &amp;lt;ip&amp;gt; # Get information about the DC srvinfo # Get information about objects such as groups (enum*) enumdomains enumdomgroups enumalsgroups builtin # Try to get domain password policy getdompwinfo # Try to enumerate different truste domains dsr_enumtrustdom # Get username for a defined user ? getusername # Query user, group etc informations queryuser RID querygroupmem519 queryaliasmem builtin 0x220 # Query info policy lsaquery # Convert SID to names lookupsids SID</description>
+      <description>Resources http://attackerkb.com/Windows/rpcclient rpcclient # Anonymous connection (-N=no pass) rpcclient -U “” -N &amp;lt;ip&amp;gt; # Connection with user rpcclient -U “user” &amp;lt;ip&amp;gt; # Get information about the DC srvinfo # Get information about objects such as groups (enum*) enumdomains enumdomgroups enumalsgroups builtin # Try to get domain password policy getdompwinfo # Try to enumerate different truste domains dsr_enumtrustdom # Get username for a defined user ? getusername # Query user, group etc informations queryuser RID querygroupmem519 queryaliasmem builtin 0x220 # Query info policy lsaquery # Convert SID to names lookupsids SID enum4linux # Verbose mode enum4linux -v target-ip # Do everything enum4linux -a target-ip # List users enum4linux -U target-ip # If you&amp;#39;ve managed to obtain credentials, you can pull a full list of users regardless of the RestrictAnonymous option enum4linux -u administrator -p password -U target-ip # Get username from the defaut RID range (500-550, 1000-1050) enum4linux -r target-ip # Get username using a custom RID range enum4linux -R 600-660 target-ip # List groups enum4linux -G target-ip # List shares enum4linux -S target-ip # Perform a dictionary attack, if the server doesn&amp;#39;t let you retrieve a share list  enum4linux -s shares.</description>
     </item>
     
     <item>
@@ -95,8 +84,7 @@ Identification and manual test # Using netcat nc -nv IP 119 LIST GROUP group_nam
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/139_445_smb/</guid>
-      <description>General Informations SMB1 =&amp;gt; Win2000 / XP / 2003 SMB2.0 =&amp;gt; Vista / 2008 SMB2.1 =&amp;gt; Win7 / 2008R2 SMB3.0 =&amp;gt; Win8 / 2012 SMB 3.02 =&amp;gt; Win8.1 / 2012R2 # Configuration tips # Can be usefull to configure /etc/samba/smb.conf with: client min protocol = SMB2 client max protocol = SMB3 # Then service smbd restart 
-Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (identifier le nom/domaine) # Identity SMB2 support using metasploit use auxiliary/scanner/smb/smb2 set RHOST IP run # Discover real samba version if hidden ngrep -i -d tap0 ‘s.</description>
+      <description>General Informations SMB1 =&amp;gt; Win2000 / XP / 2003 SMB2.0 =&amp;gt; Vista / 2008 SMB2.1 =&amp;gt; Win7 / 2008R2 SMB3.0 =&amp;gt; Win8 / 2012 SMB 3.02 =&amp;gt; Win8.1 / 2012R2 # Configuration tips # Can be usefull to configure /etc/samba/smb.conf with: client min protocol = SMB2 client max protocol = SMB3 # Then service smbd restart Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (identifier le nom/domaine) # Identity SMB2 support using metasploit use auxiliary/scanner/smb/smb2 set RHOST IP run # Discover real samba version if hidden  ngrep -i -d tap0 ‘s.</description>
     </item>
     
     <item>
@@ -105,7 +93,7 @@ Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (id
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/143_imap/</guid>
-      <description> Identification and Scans # Nmap scan nmap -v -sV --version-intensity=5 --script imap-capabilities -p T:143 &amp;lt;IP&amp;gt; # Banner grabbing telnet &amp;lt;IP&amp;gt; 143 # Banner grabbing and test connection nc -nv IP 143 A1 LOGIN “root” “” A1 LOGIN root toor A1 LOGIN root root</description>
+      <description>Identification and Scans # Nmap scan nmap -v -sV --version-intensity=5 --script imap-capabilities -p T:143 &amp;lt;IP&amp;gt; # Banner grabbing telnet &amp;lt;IP&amp;gt; 143 # Banner grabbing and test connection nc -nv IP 143 A1 LOGIN “root” “” A1 LOGIN root toor A1 LOGIN root root </description>
     </item>
     
     <item>
@@ -114,9 +102,7 @@ Identification # Port 139 # Using nbtscan to identify host/domain nbtscan IP (id
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/161_162_snmp/</guid>
-      <description>Resources https://blog.cedrictemple.net/239-faire-des-requetes-snmp-en-ligne-de-commande-sous-linux/ 
-Identification &amp;amp; Scans nmap -vv -sV --version-intensity=5 -sU -Pn -p 161,162 --script=snmp-netstat,snmp-processes IP 
-Snmpwalk snmpwalk -c public -v1 IP 1 &amp;gt; snmpwalk.txt Windows RUNNING PROCESSES 1.3.6.1.2.1.25.4.2.1.2 Windows INSTALLED SOFTWARE 1.3.6.1.2.1.25.6.3.1.2 Windows SYSTEM INFO 1.3.6.1.2.1.1.1 Windows HOSTNAME 1.3.6.1.2.1.1.5 Windows DOMAIN 1.3.6.1.4.1.77.1.4.1 Windows UPTIME 1.3.6.1.2.1.1.3 Windows USERS 1.3.6.1.4.1.77.1.2.25 Windows SHARES 1.3.6.1.4.1.77.1.2.27 Windows DISKS 1.3.6.1.2.1.25.2.3.1.3 Windows SERVICES 1.3.6.1.4.1.77.1.2.3.1.1 Windows LISTENING TCP PORTS 1.3.6.1.2.1.6.13.1.3.0.0.0.0 Windows LISTENING UDP PORTS 1.3.6.1.2.1.7.5.1.2.0.0.0.0 Linux RUNNING PROCESSES 1.</description>
+      <description>Resources https://blog.cedrictemple.net/239-faire-des-requetes-snmp-en-ligne-de-commande-sous-linux/ Identification &amp;amp; Scans nmap -vv -sV --version-intensity=5 -sU -Pn -p 161,162 --script=snmp-netstat,snmp-processes IP Snmpwalk snmpwalk -c public -v1 IP 1 &amp;gt; snmpwalk.txt Windows	RUNNING PROCESSES	1.3.6.1.2.1.25.4.2.1.2 Windows	INSTALLED SOFTWARE	1.3.6.1.2.1.25.6.3.1.2 Windows	SYSTEM INFO	1.3.6.1.2.1.1.1 Windows	HOSTNAME	1.3.6.1.2.1.1.5 Windows	DOMAIN	1.3.6.1.4.1.77.1.4.1 Windows	UPTIME	1.3.6.1.2.1.1.3 Windows	USERS	1.3.6.1.4.1.77.1.2.25 Windows	SHARES	1.3.6.1.4.1.77.1.2.27 Windows	DISKS	1.3.6.1.2.1.25.2.3.1.3 Windows	SERVICES	1.3.6.1.4.1.77.1.2.3.1.1 Windows	LISTENING TCP PORTS	1.3.6.1.2.1.6.13.1.3.0.0.0.0 Windows	LISTENING UDP PORTS	1.3.6.1.2.1.7.5.1.2.0.0.0.0 Linux	RUNNING PROCESSES	1.</description>
     </item>
     
     <item>
@@ -125,7 +111,7 @@ Snmpwalk snmpwalk -c public -v1 IP 1 &amp;gt; snmpwalk.txt Windows RUNNING PROCE
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/389_636_3269_ldap/</guid>
-      <description>General Informations # Ports 389 - LDAP 636 - LDAPS (SSL) 3269 - LDAP Global Catalog # Architecture (LDAP is hierarchical) - DC = Domain Component, the domain name - OU = Organizational Unit, \&amp;#34;folders - CN = Common Name, the name fiven to the objects (Username, Group name, Computer name, etc.) # Research syntax ldapsearch &amp;lt;bind options&amp;gt; -b &amp;lt;base to search from&amp;gt; &amp;lt;search filter&amp;gt; &amp;lt;attributes&amp;gt; # Interesting attributes for user class ldapsearch “(objectClass=user)” interesting attributes: - sAMAccountName - userPrincipalName - memberOf (groups) - badPwdCount (failed logins) - lastLogoff (timestamp) - lastLogon (timestamp) - pwdLastSet (timestamp) - logonCount # Interesting attributes for group class ldapsearch “(objectClass=group)” interesting attributes: - cn - member (one per user/group) - memberOf (if nested in another group) # Interesting attributes for computer class ldapsearch “(objectClass=computer)” interesting attributes: - name (NetBIOS name) - DNSHostName (FQDN) =&amp;gt; combine it with DNS lookups and you can enumerate every IP address in the domain without scanning - operatingSystem - operatingSystemVersion (patch level) - lastLogonTimestamp - servicePrincipalName (running services =&amp;gt; TERMSRV, HTTP, MSSQL)</description>
+      <description>General Informations # Ports 389 - LDAP 636 - LDAPS (SSL) 3269 - LDAP Global Catalog # Architecture (LDAP is hierarchical) - DC = Domain Component, the domain name - OU = Organizational Unit, \&amp;#34;folders - CN = Common Name, the name fiven to the objects (Username, Group name, Computer name, etc.) # Research syntax ldapsearch &amp;lt;bind options&amp;gt; -b &amp;lt;base to search from&amp;gt; &amp;lt;search filter&amp;gt; &amp;lt;attributes&amp;gt; # Interesting attributes for user class ldapsearch “(objectClass=user)” interesting attributes: - sAMAccountName - userPrincipalName - memberOf (groups) - badPwdCount (failed logins) - lastLogoff (timestamp) - lastLogon (timestamp) - pwdLastSet (timestamp) - logonCount # Interesting attributes for group class ldapsearch “(objectClass=group)” interesting attributes: - cn - member (one per user/group) - memberOf (if nested in another group) # Interesting attributes for computer class ldapsearch “(objectClass=computer)” interesting attributes: - name (NetBIOS name) - DNSHostName (FQDN) =&amp;gt; combine it with DNS lookups and you can enumerate every IP address in the domain without scanning - operatingSystem - operatingSystemVersion (patch level) - lastLogonTimestamp - servicePrincipalName (running services =&amp;gt; TERMSRV, HTTP, MSSQL) Facing Active Directory # Research ldapsearch -LLL -x -H ldap://pdc01.</description>
     </item>
     
     <item>
@@ -134,9 +120,7 @@ Snmpwalk snmpwalk -c public -v1 IP 1 &amp;gt; snmpwalk.txt Windows RUNNING PROCE
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/995_pop3s/</guid>
-      <description> Identification and Scans # Retrieve POP3 server capabilities (CAPA, TOP, USER, SASL, RESP-CODES, LOGIN-DELAY, PIPELINING, EXPIRE, UIDL, IMPLEMENTATION) nmap -v -sV --version-intensity=5 --script pop3-capabilities -p T:995 IP # Try to bruteforce POP3 accounts nmap --script pop3-brute --script-args pop3loginmethod=SASL-LOGIN -p T:995 IP nmap --script pop3-brute --script-args pop3loginmethod=SASL-CRAM-MD5 -p T:995 IP nmap --script pop3-brute --script-args pop3loginmethod=APOP -p T:995 IP 
-SSL Checking # Using openssl openssl s_client -connect IP:995 
-Authentication Checking (classical credentials) USER admin PASS admin USER root PASS root USER root PASS toor</description>
+      <description>Identification and Scans # Retrieve POP3 server capabilities (CAPA, TOP, USER, SASL, RESP-CODES, LOGIN-DELAY, PIPELINING, EXPIRE, UIDL, IMPLEMENTATION)	 nmap -v -sV --version-intensity=5 --script pop3-capabilities -p T:995 IP # Try to bruteforce POP3 accounts nmap --script pop3-brute --script-args pop3loginmethod=SASL-LOGIN -p T:995 IP nmap --script pop3-brute --script-args pop3loginmethod=SASL-CRAM-MD5 -p T:995 IP nmap --script pop3-brute --script-args pop3loginmethod=APOP -p T:995 IP SSL Checking # Using openssl openssl s_client -connect IP:995 Authentication Checking (classical credentials) USER admin PASS admin USER root PASS root USER root PASS toor </description>
     </item>
     
     <item>
@@ -145,9 +129,7 @@ Authentication Checking (classical credentials) USER admin PASS admin USER root 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/1025_nfs_iis/</guid>
-      <description>Identification and Checking # Check on the Web port (80 ?): # _vti_pvt for OSCP /_vti_pvt/access.cnf /_vti_pvt/service.cnf /_vti_inf.htm 
-WebDAV Exploitation using Metasploit # Checking WebDAV using metasploit use auxiliary/scanner/http/webdav_scanner set rhosts &amp;lt;IP&amp;gt; run # Content discovery using metasploit use auxiliary/scanner/http/webdav_website_content set rhosts &amp;lt;IP&amp;gt; run # Checking authentication using metasploit use auxiliary/scanner/http/ms09_020_webdav_unicode_bypass set rhosts &amp;lt;IP&amp;gt; run # Upload exploitation using metasploit use exploit/windows/iis/iis_webdav_upload_asp 
-Manual WebDAV exploitation (cadaver) cadaver http://IP/ # Goal is to upload file on IIS Server.</description>
+      <description>Identification and Checking # Check on the Web port (80 ?): # _vti_pvt for OSCP /_vti_pvt/access.cnf /_vti_pvt/service.cnf /_vti_inf.htm WebDAV Exploitation using Metasploit # Checking WebDAV using metasploit use auxiliary/scanner/http/webdav_scanner set rhosts &amp;lt;IP&amp;gt; run # Content discovery using metasploit use auxiliary/scanner/http/webdav_website_content set rhosts &amp;lt;IP&amp;gt; run # Checking authentication using metasploit use auxiliary/scanner/http/ms09_020_webdav_unicode_bypass set rhosts &amp;lt;IP&amp;gt; run # Upload exploitation using metasploit use exploit/windows/iis/iis_webdav_upload_asp Manual WebDAV exploitation (cadaver) cadaver http://IP/ # Goal is to upload file on IIS Server.</description>
     </item>
     
     <item>
@@ -165,8 +147,7 @@ Manual WebDAV exploitation (cadaver) cadaver http://IP/ # Goal is to upload file
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/1721_500_vpn/</guid>
-      <description>Resources https://github.com/0x90/vpn-arsenal https://opensourceforu.com/2012/01/ipsec-vpn-penetration-testing-backtrack-tools/ http://devloop.users.sourceforge.net/index.php?article108/solution-du-ctf-hacklab-vulnvpn https://resources.infosecinstitute.com/vulnvpn/#gref https://0xrick.github.io/hack-the-box/conceal/#ike-scan-Setting-up-The-Connection 
-Exploitation Techniques # IKEv2 Authenthication IP spoofing ike-scan --sport=1723 --dport=1723 --sourceip=IP_To_Spoof --ikev2 &amp;lt;IP&amp;gt; # Trying all authentication modes ike-scan --dport=1723 --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing using ike-scan ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing and agressive mode ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 &amp;lt;IP&amp;gt; # Show fingerprint ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 --showbackoff &amp;lt;IP&amp;gt; # Crack the key using psk-crack psk-crack hash-file.</description>
+      <description>Resources https://github.com/0x90/vpn-arsenal https://opensourceforu.com/2012/01/ipsec-vpn-penetration-testing-backtrack-tools/ http://devloop.users.sourceforge.net/index.php?article108/solution-du-ctf-hacklab-vulnvpn https://resources.infosecinstitute.com/vulnvpn/#gref https://0xrick.github.io/hack-the-box/conceal/#ike-scan-Setting-up-The-Connection Exploitation Techniques # IKEv2 Authenthication IP spoofing  ike-scan --sport=1723 --dport=1723 --sourceip=IP_To_Spoof --ikev2 &amp;lt;IP&amp;gt; # Trying all authentication modes ike-scan --dport=1723 --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing using ike-scan ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof --auth=64221 &amp;lt;IP&amp;gt; # IP spoofing and agressive mode ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 &amp;lt;IP&amp;gt; # Show fingerprint ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=1 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=3 --showbackoff &amp;lt;IP&amp;gt; ike-scan --dport=1723 --sourceip=IP_To_Spoof -A --auth=64221 --showbackoff &amp;lt;IP&amp;gt; # Crack the key using psk-crack psk-crack hash-file.</description>
     </item>
     
     <item>
@@ -175,9 +156,7 @@ Exploitation Techniques # IKEv2 Authenthication IP spoofing ike-scan --sport=172
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/3306_mysql/</guid>
-      <description>Basics # Try connection from outside mysql --host &amp;lt;IP&amp;gt; -u root -proot # Connection from the target machine mysql -u root -p root database 
-Classical commands show databases; use database_name; show tables; describe table_name; select host, user, password from mysql.user; 
-Identification and Scan # Using nmap NSE scripts nmap -n -sV --version-intensity=5 -Pn -p T:3306 --script=xxxx &amp;lt;IP&amp;gt; # Audits MySQL database server security configuration mysql-audit # Bruteforce accounts and password against a MySQL Server mysql-brute # Attempts to list all databases on a MySQL server.</description>
+      <description>Basics # Try connection from outside mysql --host &amp;lt;IP&amp;gt; -u root -proot # Connection from the target machine mysql -u root -p root database Classical commands show databases; use database_name; show tables; describe table_name; select host, user, password from mysql.user; Identification and Scan # Using nmap NSE scripts nmap -n -sV --version-intensity=5 -Pn -p T:3306 --script=xxxx &amp;lt;IP&amp;gt; # Audits MySQL database server security configuration mysql-audit # Bruteforce accounts and password against a MySQL Server mysql-brute # Attempts to list all databases on a MySQL server.</description>
     </item>
     
     <item>
@@ -186,8 +165,7 @@ Identification and Scan # Using nmap NSE scripts nmap -n -sV --version-intensity
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/3389_rdp/</guid>
-      <description>Identification and Scans # Using nmap NSE scripts nmap -Pn -sV --version-intensity=5 -p T:3389 --script=xxxx &amp;lt;IP&amp;gt; # Determines which Security layer and Encryption level is supported by the RDP service rdp-enum-encryption # Checks if a machine is vulnerable to MS12-020 RDP vulnerability rdp-vuln-ms12-020.nse  
-Credentials bruteforce # Using ncrack for one user ncrack -vv -u nina -P passwords.txt rdp://IP # Using ncrack for several users ncrack -vv -U users.</description>
+      <description>Identification and Scans # Using nmap NSE scripts nmap -Pn -sV --version-intensity=5 -p T:3389 --script=xxxx &amp;lt;IP&amp;gt; # Determines which Security layer and Encryption level is supported by the RDP service rdp-enum-encryption # Checks if a machine is vulnerable to MS12-020 RDP vulnerability rdp-vuln-ms12-020.nse Credentials bruteforce # Using ncrack for one user ncrack -vv -u nina -P passwords.txt rdp://IP # Using ncrack for several users ncrack -vv -U users.txt -P passwords.txt rdp://IP Connexion # Using rdesktop rdesktop -u &amp;#34;username&amp;#34; -p &amp;#34;password&amp;#34; -g 80% -r disk:share=/path/to/share/with/remote/host &amp;lt;IP&amp;gt; # Remmina is cool too </description>
     </item>
     
     <item>
@@ -196,7 +174,7 @@ Credentials bruteforce # Using ncrack for one user ncrack -vv -u nina -P passwor
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/network/services-enumeration/4555_rsip/</guid>
-      <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax haaxpass # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.</description>
+      <description>Forwarding admin&amp;rsquo;s mails # Connection through netcat (can test for creds) nc -nv &amp;lt;IP&amp;gt; 4555 # Get commands HELP # Get users (hopefully an admin?) listusers # Add user adduser haax haaxpass # Set an alias for our user setalias mailadmin haax # Set mail forwarding setforwarding mailadmin haax@lab.local </description>
     </item>
     
   </channel>

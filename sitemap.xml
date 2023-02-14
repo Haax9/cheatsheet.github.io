@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -63,15 +63,15 @@
   </url>
   
   <url>
+    <loc>/open-source-intelligence-osint/company_investigations/company_informations/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/technical-recon/ip_address/</loc>
   </url>
   
   <url>
     <loc>/other-systems/ipbx/</loc>
-  </url>
-  
-  <url>
-    <loc>/open-source-intelligence-osint/company_investigations/company_informations/</loc>
   </url>
   
   <url>
@@ -91,11 +91,11 @@
   </url>
   
   <url>
-    <loc>/windows-systems/post-exploitation-techniques/ntds_database/</loc>
+    <loc>/windows-systems/network-and-domain-recon/</loc>
   </url>
   
   <url>
-    <loc>/windows-systems/network-and-domain-recon/</loc>
+    <loc>/windows-systems/post-exploitation-techniques/ntds_database/</loc>
   </url>
   
   <url>
@@ -111,19 +111,15 @@
   </url>
   
   <url>
-    <loc>/web-pentest/php-vulnerabilities/php_filters/</loc>
-  </url>
-  
-  <url>
     <loc>/phishing-redteam-and-se/phishing_campaign_setup/</loc>
   </url>
   
   <url>
-    <loc>/network/pivot_techniques/</loc>
+    <loc>/web-pentest/php-vulnerabilities/php_filters/</loc>
   </url>
   
   <url>
-    <loc>/cryptography/rsa/</loc>
+    <loc>/network/pivot_techniques/</loc>
   </url>
   
   <url>
@@ -135,7 +131,7 @@
   </url>
   
   <url>
-    <loc>/web-pentest/injections/server-side-injections/sql/</loc>
+    <loc>/cryptography/rsa/</loc>
   </url>
   
   <url>
@@ -144,6 +140,10 @@
   
   <url>
     <loc>/web-pentest/injections/server-side-injections/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-pentest/injections/server-side-injections/sql/</loc>
   </url>
   
   <url>
@@ -179,11 +179,11 @@
   </url>
   
   <url>
-    <loc>/cryptography/aes/</loc>
+    <loc>/linux-systems/privilege-escalation/abusing_sudo_rights/</loc>
   </url>
   
   <url>
-    <loc>/linux-systems/privilege-escalation/abusing_sudo_rights/</loc>
+    <loc>/cryptography/aes/</loc>
   </url>
   
   <url>
@@ -195,11 +195,11 @@
   </url>
   
   <url>
-    <loc>/web-pentest/injections/client-side-injections/csrf/</loc>
+    <loc>/web-pentest/injections/client-side-injections/</loc>
   </url>
   
   <url>
-    <loc>/web-pentest/injections/client-side-injections/</loc>
+    <loc>/web-pentest/injections/client-side-injections/csrf/</loc>
   </url>
   
   <url>
@@ -231,11 +231,11 @@
   </url>
   
   <url>
-    <loc>/other-systems/freeipa/</loc>
+    <loc>/web-pentest/files-and-files-inclusions/file_upload/</loc>
   </url>
   
   <url>
-    <loc>/web-pentest/files-and-files-inclusions/file_upload/</loc>
+    <loc>/other-systems/freeipa/</loc>
   </url>
   
   <url>
@@ -283,11 +283,11 @@
   </url>
   
   <url>
-    <loc>/web-pentest/php-vulnerabilities/functions/</loc>
+    <loc>/web-pentest/resources-discovery/parameters/</loc>
   </url>
   
   <url>
-    <loc>/web-pentest/resources-discovery/parameters/</loc>
+    <loc>/web-pentest/php-vulnerabilities/functions/</loc>
   </url>
   
   <url>
@@ -347,11 +347,11 @@
   </url>
   
   <url>
-    <loc>/windows-systems/exploitation/crackmapexec/</loc>
+    <loc>/passcracking-hashfiles/cracking_files/</loc>
   </url>
   
   <url>
-    <loc>/passcracking-hashfiles/cracking_files/</loc>
+    <loc>/windows-systems/exploitation/crackmapexec/</loc>
   </url>
   
   <url>
@@ -376,6 +376,10 @@
   
   <url>
     <loc>/windows-systems/exploitation/</loc>
+  </url>
+  
+  <url>
+    <loc>/web-pentest/tools/ffuf/</loc>
   </url>
   
   <url>
@@ -423,19 +427,15 @@
   </url>
   
   <url>
-    <loc>/web-pentest/php-vulnerabilities/serialization/</loc>
-  </url>
-  
-  <url>
     <loc>/linux-systems/programing-languages/perl/</loc>
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/company_investigations/documents_metadata/</loc>
+    <loc>/web-pentest/php-vulnerabilities/serialization/</loc>
   </url>
   
   <url>
-    <loc>/linux-systems/privilege-escalation/suid/</loc>
+    <loc>/open-source-intelligence-osint/company_investigations/documents_metadata/</loc>
   </url>
   
   <url>
@@ -452,6 +452,10 @@
   
   <url>
     <loc>/open-source-intelligence-osint/technical-recon/subdomain_discovery/</loc>
+  </url>
+  
+  <url>
+    <loc>/linux-systems/privilege-escalation/suid/</loc>
   </url>
   
   <url>
@@ -472,10 +476,6 @@
   
   <url>
     <loc>/shells-methods/webshell/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-pentest/tools/ffuf/</loc>
   </url>
   
   <url>
@@ -527,6 +527,10 @@
   </url>
   
   <url>
+    <loc>/web-pentest/tools/nuclei/</loc>
+  </url>
+  
+  <url>
     <loc>/open-source-intelligence-osint/technical-recon/misc/others/</loc>
   </url>
   
@@ -547,10 +551,6 @@
   </url>
   
   <url>
-    <loc>/cryptography/ssl_keys_extraction/</loc>
-  </url>
-  
-  <url>
     <loc>/windows-systems/post-exploitation-techniques/searching_informations/</loc>
   </url>
   
@@ -564,6 +564,10 @@
   
   <url>
     <loc>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/spiderfoot/</loc>
+  </url>
+  
+  <url>
+    <loc>/cryptography/ssl_keys_extraction/</loc>
   </url>
   
   <url>
@@ -588,10 +592,6 @@
   
   <url>
     <loc>/web-pentest/injections/server-side-injections/xpath/</loc>
-  </url>
-  
-  <url>
-    <loc>/web-pentest/tools/nuclei/</loc>
   </url>
   
   <url>
@@ -683,11 +683,11 @@
   </url>
   
   <url>
-    <loc>/windows-systems/privilege-escalation/dnsadmins_group/</loc>
+    <loc>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/</loc>
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/danger_zone/</loc>
+    <loc>/windows-systems/privilege-escalation/dnsadmins_group/</loc>
   </url>
   
   <url>
@@ -711,11 +711,11 @@
   </url>
   
   <url>
-    <loc>/web-pentest/php-vulnerabilities/</loc>
+    <loc>/open-source-intelligence-osint/human-recon/phone/</loc>
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/human-recon/phone/</loc>
+    <loc>/web-pentest/php-vulnerabilities/</loc>
   </url>
   
   <url>
@@ -843,11 +843,11 @@
   </url>
   
   <url>
-    <loc>/wireless/</loc>
+    <loc>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/</loc>
   </url>
   
   <url>
-    <loc>/open-source-intelligence-osint/tools-and-methodology/frameworks-automated/sn0int/</loc>
+    <loc>/wireless/</loc>
   </url>
   
   <url>
@@ -940,12 +940,10 @@
   
   <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

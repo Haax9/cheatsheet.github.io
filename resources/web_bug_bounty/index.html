@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Web / Bug Bounty :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1808,10 +1837,7 @@
     
     
     
-    
-
-<h4 id="apis">APIs</h4>
-
+    <h4 id="apis">APIs</h4>
 <ul>
 <li>API endpoints (<a href="https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d">https://gist.github.com/yassineaboukir/8e12adefbd505ef704674ad6ad48743d</a>)</li>
 <li>API Security part 1 (<a href="https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93">https://medium.com/datadriveninvestor/api-security-testing-part-1-b0fc38228b93</a>)</li>
@@ -1820,45 +1846,33 @@
 <li>IDOR/BOLA through API (<a href="https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2">https://medium.com/@inonst/a-deep-dive-on-the-most-critical-api-vulnerability-bola-1342224ec3f2</a>)</li>
 <li>KeyHacks, show how to use popular APIs (<a href="https://github.com/streaak/keyhacks">https://github.com/streaak/keyhacks</a>)</li>
 </ul>
-
 <h4 id="server-side-injections">Server-Side Injections</h4>
-
 <ul>
 <li>SQL Injections filter bypass (<a href="https://websec.wordpress.com/tag/sql-filter-bypass/">https://websec.wordpress.com/tag/sql-filter-bypass/</a>)</li>
 <li>SQL Injection Cheatsheet (<a href="https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md">https://github.com/codingo/OSCP-2/blob/master/Documents/SQL%20Injection%20Cheatsheet.md</a>)</li>
 <li>SSRF SVG Cheatsheet (<a href="https://github.com/allanlw/svg-cheatsheet">https://github.com/allanlw/svg-cheatsheet</a>)</li>
 </ul>
-
 <h4 id="client-side-injections">Client-Side Injections</h4>
-
 <ul>
 <li>HTML5 Security Cheatsheet (<a href="https://html5sec.org/">https://html5sec.org/</a>)</li>
 <li>XSS Payloads (<a href="https://gbhackers.com/top-500-important-xss-cheat-sheet/">https://gbhackers.com/top-500-important-xss-cheat-sheet/</a>)</li>
 <li>Polyglot XSS (<a href="https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot">https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot</a>)</li>
 <li>AwesomeXSS Payloads (<a href="https://github.com/s0md3v/AwesomeXSS/">https://github.com/s0md3v/AwesomeXSS/</a>)</li>
 </ul>
-
 <h4 id="php">PHP</h4>
-
 <ul>
 <li>PHP Object Injections (<a href="https://owasp.org/www-community/vulnerabilities/PHP_Object_Injection">https://owasp.org/www-community/vulnerabilities/PHP_Object_Injection</a>)</li>
 <li>PHP Vulnerability Audit Cheatsheet (<a href="https://github.com/dustyfresh/PHP-vulnerability-audit-cheatsheet">https://github.com/dustyfresh/PHP-vulnerability-audit-cheatsheet</a>)</li>
 </ul>
-
 <h4 id="cms">CMS</h4>
-
 <ul>
 <li>Attacking Drupal (<a href="https://github.com/gfoss/attacking-drupal">https://github.com/gfoss/attacking-drupal</a>)</li>
 </ul>
-
 <h4 id="bugbounty-tips">BugBounty Tips</h4>
-
 <ul>
 <li>Testing Password Reset functionnalities (<a href="https://twitter.com/HusseiN98D/status/1254888748216655872/photo/1">https://twitter.com/HusseiN98D/status/1254888748216655872/photo/1</a>)</li>
 </ul>
-
 <h4 id="others">Others</h4>
-
 <ul>
 <li>Reguest Smuggling (<a href="https://portswigger.net/web-security/request-smuggling">https://portswigger.net/web-security/request-smuggling</a>)</li>
 <li>The Powerfull HTTP Request Smuggling (<a href="https://medium.com/@ricardoiramar/the-powerful-http-request-smuggling-af208fafa142">https://medium.com/@ricardoiramar/the-powerful-http-request-smuggling-af208fafa142</a>)</li>
@@ -1869,9 +1883,7 @@
 <li>Web App Pentesting With Burp Suite Scan Profiles (<a href="https://www.whiteoaksecurity.com/blog/web-app-pentesting-burp-suite-scan-profile/">https://www.whiteoaksecurity.com/blog/web-app-pentesting-burp-suite-scan-profile/</a>)</li>
 <li>Subdomains Tools Review: a full and detailed comparison of subdomain enumeration tools (<a href="https://blog.yeswehack.com/yeswerhackers/subdomains-tools-review-full-detailed-comparison/">https://blog.yeswehack.com/yeswerhackers/subdomains-tools-review-full-detailed-comparison/</a>)</li>
 </ul>
-
 <h4 id="mobile-bug-bounty">Mobile Bug Bounty</h4>
-
 <ul>
 <li>Bug Bounty on Android : setup your Genymotion environment for APK analysis (<a href="https://blog.yeswehack.com/yeswerhackers/bug-bounty-android-setup-genymotion-environment-apk-analysis/">https://blog.yeswehack.com/yeswerhackers/bug-bounty-android-setup-genymotion-environment-apk-analysis/</a>)</li>
 </ul>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>Admin and Processes :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1833,18 +1862,15 @@
     
     
     
-    
-
-<h3 id="local-processes">Local Processes</h3>
+    <h3 id="local-processes">Local Processes</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Check local processes</span>
 net group “Domain Admins” /domain
 
 <span style="color:#75715e"># The account running the process should be in 7th column:</span>
 tasklist /v
 
-<span style="color:#75715e"># Then compare the 2 results</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># Then compare the 2 results</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="sessions">Sessions</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Query DC to check about domain active sessions:</span>
 net group “Domain Controllers” /domain <span style="color:#f92672">(</span>build dcs.txt with it<span style="color:#f92672">)</span>
@@ -1853,20 +1879,19 @@ net group “Domain Admins” /domain <span style="color:#f92672">(</span>build 
 netsess.exe
 netsess.exe servername
 netsess.exe servername /full <span style="color:#f92672">(</span>admin required<span style="color:#f92672">)</span>
-FOR /F %i in <span style="color:#f92672">(</span>dcs.txt<span style="color:#f92672">)</span> DO @echo <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Querying DC %i <span style="color:#f92672">&amp;&amp;</span> @netsess -h %i <span style="color:#ae81ff">2</span>&gt;nul &gt; sessions.txt <span style="color:#f92672">&amp;&amp;</span> FOR /F %a in <span style="color:#f92672">(</span>admins.txt<span style="color:#f92672">)</span> DO @type sessions.txt <span style="color:#111">|</span> @findstr /I %a</code></pre></div>
-<p><br/></p>
-
+FOR /F %i in <span style="color:#f92672">(</span>dcs.txt<span style="color:#f92672">)</span> DO @echo <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Querying DC %i <span style="color:#f92672">&amp;&amp;</span> @netsess -h %i 2&gt;nul &gt; sessions.txt <span style="color:#f92672">&amp;&amp;</span> FOR /F %a in <span style="color:#f92672">(</span>admins.txt<span style="color:#f92672">)</span> DO @type sessions.txt <span style="color:#111">|</span> @findstr /I %a
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="processes-owners">Processes owners</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net group “Domain Admins” /domain <span style="color:#f92672">(</span>build admins.txt with it<span style="color:#f92672">)</span>
-FOR /F %i in <span style="color:#f92672">(</span>ips.txt<span style="color:#f92672">)</span> DO @echo <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> %i <span style="color:#f92672">&amp;&amp;</span> @tasklist /V /S %i /U user /P password <span style="color:#ae81ff">2</span>&gt;NUL &gt; output.txt <span style="color:#f92672">&amp;&amp;</span> FOR  /F %n in <span style="color:#f92672">(</span>admins.txt<span style="color:#f92672">)</span> DO @type output.txt <span style="color:#111">|</span> findstr %n &gt; NUL  <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">echo</span> <span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> %n was found running a process on %i <span style="color:#f92672">&amp;&amp;</span>  pause</code></pre></div>
-<p><br/></p>
-
+FOR /F %i in <span style="color:#f92672">(</span>ips.txt<span style="color:#f92672">)</span> DO @echo <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> %i <span style="color:#f92672">&amp;&amp;</span> @tasklist /V /S %i /U user /P password 2&gt;NUL &gt; output.txt <span style="color:#f92672">&amp;&amp;</span> FOR  /F %n in <span style="color:#f92672">(</span>admins.txt<span style="color:#f92672">)</span> DO @type output.txt <span style="color:#111">|</span> findstr %n &gt; NUL  <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">echo</span> <span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> %n was found running a process on %i <span style="color:#f92672">&amp;&amp;</span>  pause
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="scanning-remote-system-using-nbt">Scanning remote system using NBT</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">net group “Domain Admins” /domain <span style="color:#f92672">(</span>build admins.txt with it<span style="color:#f92672">)</span>
-<span style="color:#00a8c8">for</span> /F %i in <span style="color:#f92672">(</span>ips.txt<span style="color:#f92672">)</span> <span style="color:#00a8c8">do</span> @echo <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Checking %i <span style="color:#f92672">&amp;&amp;</span> nbtstat -A %i <span style="color:#ae81ff">2</span>&gt;NUL &gt;nbsessions.txt <span style="color:#f92672">&amp;&amp;</span> FOR /F %n in <span style="color:#f92672">(</span>admins.txt<span style="color:#f92672">)</span> DO @type nbsessions.txt <span style="color:#111">|</span> findstr /I %n &gt; NUL <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">echo</span> <span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> %n was found logged into %i
+<span style="color:#00a8c8">for</span> /F %i in <span style="color:#f92672">(</span>ips.txt<span style="color:#f92672">)</span> <span style="color:#00a8c8">do</span> @echo <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Checking %i <span style="color:#f92672">&amp;&amp;</span> nbtstat -A %i 2&gt;NUL &gt;nbsessions.txt <span style="color:#f92672">&amp;&amp;</span> FOR /F %n in <span style="color:#f92672">(</span>admins.txt<span style="color:#f92672">)</span> DO @type nbsessions.txt <span style="color:#111">|</span> findstr /I %n &gt; NUL <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">echo</span> <span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> %n was found logged into %i
 
 <span style="color:#75715e"># OR if nbtscan uploaded:</span>
-<span style="color:#00a8c8">for</span> /F %i in <span style="color:#f92672">(</span>ips.txt<span style="color:#f92672">)</span> <span style="color:#00a8c8">do</span> @echo <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Checking %i <span style="color:#f92672">&amp;&amp;</span> nbtscan -f %i <span style="color:#ae81ff">2</span>&gt;NUL &gt;nbsessions.txt <span style="color:#f92672">&amp;&amp;</span> FOR /F %n in <span style="color:#f92672">(</span>admins.txt<span style="color:#f92672">)</span> DO @type nbsessions.txt <span style="color:#111">|</span> findstr /I %n &gt; NUL <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">echo</span> <span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> %n was found logged into %i</code></pre></div>
+<span style="color:#00a8c8">for</span> /F %i in <span style="color:#f92672">(</span>ips.txt<span style="color:#f92672">)</span> <span style="color:#00a8c8">do</span> @echo <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Checking %i <span style="color:#f92672">&amp;&amp;</span> nbtscan -f %i 2&gt;NUL &gt;nbsessions.txt <span style="color:#f92672">&amp;&amp;</span> FOR /F %n in <span style="color:#f92672">(</span>admins.txt<span style="color:#f92672">)</span> DO @type nbsessions.txt <span style="color:#111">|</span> findstr /I %n &gt; NUL <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">echo</span> <span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> %n was found logged into %i
+</code></pre></div>
 
     
     

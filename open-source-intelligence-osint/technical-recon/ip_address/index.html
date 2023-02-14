@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>IP Address :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1829,10 +1858,7 @@
     
     
     
-    
-
-<h3 id="getting-informations">Getting Informations</h3>
-
+    <h3 id="getting-informations">Getting Informations</h3>
 <h4 id="whois-and-asn">Whois and ASN</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get information on an IP</span>
 whois &lt;IP&gt;
@@ -1844,15 +1870,18 @@ https://www.ip2location.com
 https://whoisology.com
 
 <span style="color:#75715e"># myip.ms can provie additional informations</span>
-https://myip.ms/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get ASN for your target</span>
+https://myip.ms/
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get ASN for your target</span>
 bgp.he.net
 
 <span style="color:#75715e"># Pear is a tool used to get informations about an AS</span>
 https://github.com/routeur/Pear
-python3 Pear.py -a <span style="color:#f92672">[</span>ASNumber<span style="color:#f92672">]</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can identify IP block owned by a company</span>
-ipv4info.com</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># IP Reputation</span>
-https://reputation.team-cymru.com/</code></pre></div>
-<h4 id="online-scanners">Online Scanners</h4>
+python3 Pear.py -a <span style="color:#f92672">[</span>ASNumber<span style="color:#f92672">]</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># You can identify IP block owned by a company</span>
+ipv4info.com
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># IP Reputation</span>
+https://reputation.team-cymru.com/
+</code></pre></div><h4 id="online-scanners">Online Scanners</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Shodan.io and Censys.io are also usefull</span>
 <span style="color:#75715e"># Keywords on Shodan</span>
 https://beta.shodan.io/search/filters
@@ -1867,21 +1896,22 @@ port:22
 <span style="color:#75715e"># https://github.com/jakejarvis/awesome-shodan-queries</span>
 
 <span style="color:#75715e"># Using a premium account, you can search by image</span>
-https://images.shodan.io</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get information about the target IP</span>
+https://images.shodan.io
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get information about the target IP</span>
 https://www.onyphe.io/
 
 <span style="color:#75715e"># Robtex is a great and complete tool</span>
-https://www.robtex.com</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Zoomeye can be very efficient, but in Chinese</span>
+https://www.robtex.com
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Zoomeye can be very efficient, but in Chinese</span>
 https://www.zoomeye.org/
 
 <span style="color:#75715e"># BinaryEdge is also known and powerfull</span>
-https://www.binaryedge.io/</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Spyse can also be a good solution</span>
+https://www.binaryedge.io/
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Spyse can also be a good solution</span>
 <span style="color:#75715e"># But very limite in free plan</span>
-https://spyse.com/</code></pre></div>
-<p><br/></p>
-
+https://spyse.com/
+</code></pre></div><!-- raw HTML omitted -->
 <h4 id="finding-real-ip-behind-cloudflare-or-tor">Finding real IP behind CloudFlare or Tor</h4>
-
 <p><a href="https://www.secjuice.com/finding-real-ips-of-origin-servers-behind-cloudflare-or-tor/">https://www.secjuice.com/finding-real-ips-of-origin-servers-behind-cloudflare-or-tor/</a></p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># SSL Certificates</span>
 
@@ -1897,28 +1927,27 @@ parsed.names: xyz123boot.com and tags.raw: trusted
 <span style="color:#75715e"># Explore &gt; What&#39;s using this certificate &gt; IPv4 Hosts</span>
 
 <span style="color:#75715e"># One of the servers could be the real one</span>
-<span style="color:#75715e"># Does it redirect ?</span> </code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DNS Records</span>
+<span style="color:#75715e"># Does it redirect ? </span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># DNS Records</span>
 
 <span style="color:#75715e"># Even after moving to CloudFlare, some data-driven services still have old A records</span>
 <span style="color:#75715e"># SecurityTrails can do it (&#34;historical data&#34;)</span>
 https://securitytrails.com/
 
-<span style="color:#75715e"># MX can also be a good way</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># MX can also be a good way</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="domain-identification">Domain Identification</h3>
-
 <h4 id="dorks">Dorks</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Bing dorks to identify host sharing</span>
-ip:xxx.xxx.xxx.xxx</code></pre></div>
-<h4 id="reverse-dns">Reverse DNS</h4>
+ip:xxx.xxx.xxx.xxx
+</code></pre></div><h4 id="reverse-dns">Reverse DNS</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Reverse DNS Resolution (also usefull for subdomains)</span>
-<span style="color:#00a8c8">for</span> x in <span style="color:#f92672">{</span><span style="color:#ae81ff">1</span>..255<span style="color:#f92672">}</span><span style="color:#111">;</span> <span style="color:#00a8c8">do</span> host xx.xx.xx.<span style="color:#111">$x</span><span style="color:#111">;</span> <span style="color:#00a8c8">done</span>
+<span style="color:#00a8c8">for</span> x in <span style="color:#f92672">{</span>1..255<span style="color:#f92672">}</span><span style="color:#111">;</span> <span style="color:#00a8c8">do</span> host xx.xx.xx.<span style="color:#111">$x</span><span style="color:#111">;</span> <span style="color:#00a8c8">done</span>
 
 <span style="color:#75715e"># Knockknock is a small automated script allowing you to find domaine names</span>
 <span style="color:#75715e"># For a registrant (person or company)</span>
-python3 k2.py -n company -d</code></pre></div>
-<h4 id="online-services">Online Services</h4>
+python3 k2.py -n company -d
+</code></pre></div><h4 id="online-services">Online Services</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Then you can find domains and subdomains associated to an IP by using Passive Reverse DNS</span>
 https://www.virustotal.com/gui/home/search
 
@@ -1940,7 +1969,8 @@ https://intelx.io/tools
 https://osint.sh/
 
 <span style="color:#75715e"># Multi tools like DNS Tools, Network Tools, HTTP Tools, Database lookups</span>
-https://w3dt.net//</code></pre></div>
+https://w3dt.net//
+</code></pre></div>
 
     
     

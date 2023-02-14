@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network and Domain Recon on Offensive Security Cheatsheet</title>
     <link>/windows-systems/network-and-domain-recon/</link>
     <description>Recent content in Network and Domain Recon on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/windows-systems/network-and-domain-recon/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/windows-systems/network-and-domain-recon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Out of Domain (No credentials)</title>
       <link>/windows-systems/network-and-domain-recon/no_credentials_recon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/no_credentials_recon/</guid>
-      <description>Identification # Passiv network listening to identify machines # By default, it uses interactive mode (incompatible with clean output) # You can use the -P option to get off interactive sudo netdiscover -p -i eth0 sudo netdiscover -p -i eth0 -P # You can find the domain big using dig dig -x IP # If the NAC is blocking, you can listen broadcast and collect MAC address # Use printer&amp;#39;s MAC address to bypass NAC</description>
+      <description>Identification # Passiv network listening to identify machines # By default, it uses interactive mode (incompatible with clean output) # You can use the -P option to get off interactive sudo netdiscover -p -i eth0 sudo netdiscover -p -i eth0 -P # You can find the domain big using dig dig -x IP # If the NAC is blocking, you can listen broadcast and collect MAC address # Use printer&amp;#39;s MAC address to bypass NAC LLMNR / NBT-NS # You can Man in The Middle using LLMNR and NBT-NS if they&amp;#39;re bad configured sudo responder -I eth0 -wFv # If you get hashes, will be necessary to crack them john --format=netntlmv2 --wordlist=&amp;#34;/usr/share/wordlists/rockyou.</description>
     </item>
     
     <item>
@@ -25,9 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/domain_recon/</guid>
-      <description>Tips # Enumerate sessions net session \\computer 
-Domain Properties rpcclient # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 
-enum4linux # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.</description>
+      <description>Tips # Enumerate sessions net session \\computer Domain Properties rpcclient # You can use rpc to enumerate domain objects rpcclient -U &amp;lt;user&amp;gt; &amp;lt;IP-DC&amp;gt; rpcclient $&amp;gt; enumdomusers rpcclient $&amp;gt; enumdomgroups rpcclient $&amp;gt; querygroupmem 0x200 rpcclient $&amp;gt; srvinfo rpcclient $&amp;gt; querygroup 0x42 rpcclient $&amp;gt; queryuser 0x42 rpcclient $&amp;gt; getdompwinfo rpcclient $&amp;gt; getusrdompwinfo 0x42 enum4linux # You can use enum4linux to enumerate domain users # You can try anonymous binding sudo enum4linux domaine.fr .</description>
     </item>
     
     <item>
@@ -36,7 +30,7 @@ enum4linux # You can use enum4linux to enumerate domain users # You can try anon
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/windows-systems/network-and-domain-recon/domain_mapping/</guid>
-      <description>BloodHound # /!\ Information here might be outdated # Future update incoming Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want# If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
+      <description>BloodHound # /!\ Information here might be outdated # Future update incoming Tips # Right Click # Get information about the node and also how to compromise the user / machine # Owned # Can be usefull during an internal pentest to note where you are # Nodes will be tagged with a skull # It&amp;#39;s then possible to ask the shortest path to a node from the owned ones # Filters # Can be usefull # Shortcuts # CTRL --&amp;gt; Change node display # CTRL+SHIFT+I --&amp;gt; Developper Tools # CTRL+R --&amp;gt; Reload display # Still possible to edit data to set what you want # If you don&amp;#39;t have access to a domain machine but have creds # You can run from host runas /netonly /user:FQDN.</description>
     </item>
     
   </channel>

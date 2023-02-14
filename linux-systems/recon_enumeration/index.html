@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Recon and Enumeration :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1812,15 +1841,12 @@
     
     
     
-    
-
-<h3 id="resources">Resources</h3>
+    <h3 id="resources">Resources</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
 
 <span style="color:#75715e"># Tmux shortcuts</span>
-https://gist.github.com/MohamedAlaa/2961058</code></pre></div>
-<p><br/></p>
-
+https://gist.github.com/MohamedAlaa/2961058
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="basics">Basics</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hostname
 whoami
@@ -1829,7 +1855,7 @@ ifconfig
 uname -a
 uname -m
 
-<span style="color:#75715e"># Check version using</span> 
+<span style="color:#75715e"># Check version using </span>
 searchsploit -w distrib
 searchsploit -w kernel_version
 
@@ -1850,9 +1876,8 @@ cat /etc/issue<span style="color:#111">;</span> cat /etc/*-release<span style="c
 cat /etc/profile<span style="color:#111">;</span> cat /etc/bashrc<span style="color:#111">;</span> cat ~/.bash_profile<span style="color:#111">;</span> cat ~/.bashrc<span style="color:#111">;</span> cat ~/.bash_logout<span style="color:#111">;</span> env<span style="color:#111">;</span> <span style="color:#111">set</span>
 
 <span style="color:#75715e"># Look for files and getting filename, path, user, group, mode as columns</span>
-find /home -printf -type f <span style="color:#d88200">&#34;%f\t%p\t%u\t%g\%m\n&#34;</span> <span style="color:#ae81ff">2</span>&gt;/dev/null <span style="color:#111">|</span> column -t</code></pre></div>
-<p><br/></p>
-
+find /home -printf -type f <span style="color:#d88200">&#34;%f\t%p\t%u\t%g\%m\n&#34;</span> 2&gt;/dev/null <span style="color:#111">|</span> column -t
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="running-services">Running Services</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">netstat -lantp
 lsof -i
@@ -1864,9 +1889,8 @@ lpstat -a
 
 <span style="color:#75715e"># Network</span>
 <span style="color:#75715e"># TCP ports, UDP ports, numerical adresses, only listening ports, PID of process</span>
-netstat -tunlp</code></pre></div>
-<p><br/></p>
-
+netstat -tunlp
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="checking-different-things">Checking Different Things</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Check sudo rights</span>
 sudo -l
@@ -1875,7 +1899,7 @@ sudo -l
 cat ~/.bash_history<span style="color:#111">;</span> cat ~/.nano_history<span style="color:#111">;</span> cat ~/.atftp_history<span style="color:#111">;</span> cat ~/.mysql_history<span style="color:#111">;</span> cat ~/.php_history
 
 <span style="color:#75715e"># Look for writable configuration files</span>
-find /etc/ -writable -type f <span style="color:#ae81ff">2</span>&gt;/dev/null
+find /etc/ -writable -type f 2&gt;/dev/null
 
 <span style="color:#75715e"># Checks web config files or databases config files</span>
 
@@ -1883,21 +1907,19 @@ find /etc/ -writable -type f <span style="color:#ae81ff">2</span>&gt;/dev/null
 which gcc g++ cc
 
 <span style="color:#75715e"># Look for SUID or GUID binaries</span>
-find / -perm -g<span style="color:#f92672">=</span>s -o -perm -4000 ! -type l -maxdepth <span style="color:#ae81ff">6</span> -exec ls -ld <span style="color:#f92672">{}</span> <span style="color:#8045ff">\;</span> <span style="color:#ae81ff">2</span>&gt;/dev/null
-find / -perm -1000 -type d <span style="color:#ae81ff">2</span>&gt;/dev/null
-find / -perm -g<span style="color:#f92672">=</span>s -type f <span style="color:#ae81ff">2</span>&gt;/dev/null
+find / -perm -g<span style="color:#f92672">=</span>s -o -perm -4000 ! -type l -maxdepth <span style="color:#ae81ff">6</span> -exec ls -ld <span style="color:#f92672">{}</span> <span style="color:#8045ff">\;</span> 2&gt;/dev/null
+find / -perm -1000 -type d 2&gt;/dev/null
+find / -perm -g<span style="color:#f92672">=</span>s -type f 2&gt;/dev/null
 
 <span style="color:#75715e"># ARP cache can get you new IP</span>
-cat /proc/net/arp</code></pre></div>
-<p><br/></p>
-
+cat /proc/net/arp
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="pspy">Pspy</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># pspy is a command line tool designed to snoop on processes without need</span> 
-<span style="color:#75715e"># for root permissions. It allows you to see commands run by other</span> 
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># pspy is a command line tool designed to snoop on processes without need </span>
+<span style="color:#75715e"># for root permissions. It allows you to see commands run by other </span>
 <span style="color:#75715e"># users, cron jobs, etc. as they execute.</span>
-https://github.com/DominicBreuker/pspy</code></pre></div>
-<p></br></p>
-
+https://github.com/DominicBreuker/pspy
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="usefull-scripts">Usefull scripts</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/pentestmonkey/unix-privesc-check
 https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py
@@ -1911,13 +1933,12 @@ https://github.com/codingo/OSCP-2/blob/master/BASH/CronJobChecker.sh
 https://github.com/codingo/OSCP-2/blob/master/BASH/LinuxPrivCheck.sh
 
 <span style="color:#75715e"># Clear and efficient</span>
-https://github.com/diego-treitos/linux-smart-enumeration</code></pre></div>
-<p><br/></p>
-
+https://github.com/diego-treitos/linux-smart-enumeration
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="swap-digger">Swap Digger</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/sevagas/swap_digger
 
-<span style="color:#75715e"># swap_digger is a bash script used to automate Linux swap analysis for post-exploitation</span> 
+<span style="color:#75715e"># swap_digger is a bash script used to automate Linux swap analysis for post-exploitation </span>
 <span style="color:#75715e"># or forensics purpose. It automates swap extraction and searches for Linux user credentials,</span>
 <span style="color:#75715e"># Web form credentials, Web form emails, HTTP basic authentication, WiFi SSID and keys, etc.</span>
 
@@ -1937,7 +1958,8 @@ https://github.com/diego-treitos/linux-smart-enumeration</code></pre></div>
   -s PATH, --swap-path<span style="color:#f92672">=</span>PATH   Location of swap device or swap dump to analyse
         Use this option <span style="color:#00a8c8">for</span> forensic/remote analysis of a swap dump or a mounted external swap partition.
         This option should be used with the -r option where at least /&lt;root-path&gt;/etc/shadow exists.
-  -S, --swap-search   Search <span style="color:#00a8c8">for</span> all available swap devices <span style="color:#f92672">(</span>use <span style="color:#00a8c8">for</span> forensics<span style="color:#f92672">)</span>.</code></pre></div>
+  -S, --swap-search   Search <span style="color:#00a8c8">for</span> all available swap devices <span style="color:#f92672">(</span>use <span style="color:#00a8c8">for</span> forensics<span style="color:#f92672">)</span>.
+</code></pre></div>
 
     
     

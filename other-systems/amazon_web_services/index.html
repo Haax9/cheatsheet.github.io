@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Amazon Web Services (AWS) :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1809,9 +1838,7 @@
     
     
     
-    
-
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/toniblyx/my-arsenal-of-aws-security-tools
+    <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/toniblyx/my-arsenal-of-aws-security-tools
 
 https://github.com/RhinoSecurityLabs/ccat
 https://github.com/RhinoSecurityLabs/pacu
@@ -1819,20 +1846,18 @@ https://github.com/carnal0wnage/weirdAAL
 https://github.com/Static-Flow/CloudCopy
 
 <span style="color:#75715e"># Cheatsheet</span>
-https://www.magnussen.funcmylife.fr/article_35</code></pre></div>
-<h3 id="gitleaks-https-github-com-zricethezav-gitleaks">GitLeaks (<a href="https://github.com/zricethezav/gitleaks">https://github.com/zricethezav/gitleaks</a>)</h3>
+https://www.magnussen.funcmylife.fr/article_35
+</code></pre></div><h3 id="gitleaks-httpsgithubcomzricethezavgitleaks">GitLeaks (<a href="https://github.com/zricethezav/gitleaks">https://github.com/zricethezav/gitleaks</a>)</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Audit git repos for secrets keys</span>
-./gitleaks --repo<span style="color:#f92672">=</span>xxxxx --verbose --pretty</code></pre></div>
-<p><br/></p>
-
-<h3 id="enumerate-iam-https-github-com-andresriancho-enumerate-iam">Enumerate IAM (<a href="https://github.com/andresriancho/enumerate-iam">https://github.com/andresriancho/enumerate-iam</a>)</h3>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Enumerate the permissions associated with AWS credential set</span> 
+./gitleaks --repo<span style="color:#f92672">=</span>xxxxx --verbose --pretty
+</code></pre></div><!-- raw HTML omitted -->
+<h3 id="enumerate-iam-httpsgithubcomandresrianchoenumerate-iam">Enumerate IAM (<a href="https://github.com/andresriancho/enumerate-iam">https://github.com/andresriancho/enumerate-iam</a>)</h3>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Enumerate the permissions associated with AWS credential set </span>
 ./enumerate-iam.py --access-key AKIA... --secret-key StF0q...
 
 <span style="color:#75715e"># enumerate-iam.py tries to brute force all API calls allowed by the IAM policy.</span>
-<span style="color:#75715e"># The calls performed by this tool are all non-destructive (only get* and list* calls are performed).</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># The calls performed by this tool are all non-destructive (only get* and list* calls are performed).</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="sqlmap-proxy-for-aws">SQLmap proxy for AWS</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://github.com/puresec/lambda-proxy
 
@@ -1843,7 +1868,8 @@ https://www.magnussen.funcmylife.fr/article_35</code></pre></div>
 $ python3 main.py
 
 <span style="color:#75715e"># Update request.txt, which is the file containing your Lambda function&#39;s event data, and run</span>
-$ sqlmap -r request.txt</code></pre></div>
+$ sqlmap -r request.txt
+</code></pre></div>
 
     
     

@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Buffer Overflow (BoF) on Offensive Security Cheatsheet</title>
     <link>/pwn/buffer-overflow/</link>
     <description>Recent content in Buffer Overflow (BoF) on Offensive Security Cheatsheet</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/pwn/buffer-overflow/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/pwn/buffer-overflow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Easy - No Protections</title>
       <link>/pwn/buffer-overflow/easy_no_protection/</link>

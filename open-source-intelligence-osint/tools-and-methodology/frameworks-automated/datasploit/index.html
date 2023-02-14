@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-11T16:52:52 CEST">
+<meta name="revised" content="2023-02-14T12:07:00 CET">
 <title>Datasploit :: Offensive Security Cheatsheet</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,36 @@
     
       <header>
   <div class="logo">
-    <a class="baselink" href="/">Offensive Security Cheatsheet</a>
+    <head>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q5C993721K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<a class="baselink" href="/">Offensive Security Cheatsheet</a>
+
   </div>
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
     <nav class="shortcuts">
@@ -1843,9 +1872,7 @@
     
     
     
-    
-
-<h3 id="general-informations">General Informations</h3>
+    <h3 id="general-informations">General Informations</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Performs automated OSINT on a domain / email / username / IP and find out relevant information from different sources.</span>
 <span style="color:#75715e"># Easy to contribute OSINT Framework.</span>
 <span style="color:#75715e"># Code for Banner, Main and Output function. Datasploit automagically do rest of the things for you.</span>
@@ -1857,13 +1884,12 @@
 <span style="color:#75715e"># Generates HTML, along with text files.</span>
 
 <span style="color:#75715e"># If “module” error in the venv</span>
-→ python -m pip install <span style="color:#111">pip</span><span style="color:#f92672">==</span><span style="color:#ae81ff">9</span>.0.3
+→ python -m pip install <span style="color:#111">pip</span><span style="color:#f92672">==</span>9.0.3
 
 <span style="color:#75715e"># API keys needed in the config.py file</span>
 <span style="color:#75715e"># shodan_api, censysio_id, censysio_secret, zoomeyeuser, zoomeyepass, clearbit_apikey</span>
-<span style="color:#75715e"># emailhunter, fullcontact, google_cse_key, google_cse_cx, github_travis_key.</span></code></pre></div>
-<p><br/></p>
-
+<span style="color:#75715e"># emailhunter, fullcontact, google_cse_key, google_cse_cx, github_travis_key.</span>
+</code></pre></div><!-- raw HTML omitted -->
 <h3 id="usage">Usage</h3>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Datasploit allows you to perform OSINT on domain name, email, username or phone number</span>
 
@@ -1892,7 +1918,8 @@ optional arguments:
 <span style="color:#75715e"># Usage</span>
 python datasploit.py -i domain.com -a/-q
 python domainOsint.py -d example.com
-python domain_subdomains.py example.com</code></pre></div>
+python domain_subdomains.py example.com
+</code></pre></div>
 
     
     
